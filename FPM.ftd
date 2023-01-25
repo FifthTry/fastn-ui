@@ -1,4 +1,24 @@
 -- import: fpm
 
--- fpm.package: <user_name>.github.io/<repo_name>
-download-base-url: https://raw.githubusercontent.com/<user_name>/<repo_name>/main
+-- fpm.package: fifthtry.github.io/fastn.io
+download-base-url: https://raw.githubusercontent.com/fifthtry/fastn.io/main
+
+
+-- fpm.auto-import: fpm
+
+
+
+
+-- fpm.sitemap:
+
+
+# Why fastn: index.html
+
+# Use Cases: /
+
+
+# Learn: /
+
+# Build: /
+
+# Authoring: /

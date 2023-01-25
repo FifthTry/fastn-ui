@@ -1,0 +1,495 @@
+-- import: fifthtry.github.io/fastn.io/assets
+-- import: fpm
+-- import: fpm/processors as pr
+
+
+
+-- ftd.type hero-desktop:
+size.px: 80
+weight: 700
+line-height.px: 104
+font-family: sans-serif
+
+
+-- ftd.type hero-mobile:
+size.px: 32
+weight: 800
+line-height.px: 48
+;;font-family: sans-serif
+
+
+-- ftd.responsive-type hero:
+desktop: $hero-desktop
+mobile: $hero-mobile
+
+
+-- pr.toc-item list sections:
+
+-- pr.toc-item list sub-sections:
+
+-- pr.toc-item list toc:
+
+-- pr.toc-item list footer-toc:
+
+-- pr.sitemap-data sitemap:
+$processor$: pr.sitemap
+
+
+-- ftd.color link-active:
+dark: #EF8435
+light: #EF8435
+
+
+
+
+
+
+
+
+
+
+-- component page:
+optional caption title: 
+optional body body: 
+pr.toc-item list sections: $sitemap.sections
+pr.toc-item list sub-sections: $sitemap.subsections
+optional pr.toc-item current-section: $sitemap.current-section
+optional pr.toc-item current-subsection: $sitemap.current-subsection
+optional pr.toc-item current-page: $sitemap.current-page
+pr.toc-item list toc: $sitemap.toc
+pr.toc-item list footer-toc: $footer-toc
+optional ftd.image-src logo: 
+optional string sitename: fastn
+string login-button: Get Started
+integer width: 1160
+children wrapper:
+
+-- ftd.column:
+width: fill-container
+align-self: center
+background.solid: #000000
+height.fixed.px: 3000 
+overflow-y: auto
+
+-- header-fastn:
+logo: $page.logo
+sitename: $page.sitename
+login-button: $page.login-button
+sections: $page.sections
+sub-sections: $page.sub-sections
+current-section: $page.current-section
+current-subsection: $page.current-subsection
+current-page: $page.current-page
+toc: $page.toc
+width: $page.width
+
+
+-- ftd.column:
+width: fill-container
+children: $page.wrapper
+
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+
+-- end: page
+
+
+
+
+
+
+
+
+
+
+-- component header-fastn:
+ftd.image-src logo: 
+optional string sitename:
+pr.toc-item list sections: 
+pr.toc-item list sub-sections: 
+optional pr.toc-item current-section: 
+optional pr.toc-item current-subsection: 
+optional pr.toc-item current-page: 
+pr.toc-item list toc:
+string login-button:
+integer width: 1160
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px: $header-fastn.width
+align-self: center
+padding-vertical.px: 41
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.text: $header-fastn.sitename
+if: { header-fastn.sitename != NULL && header-fastn.logo == NULL }
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+
+-- ftd.image:
+if: { header-fastn.logo != NULL }
+src: $header-fastn.logo
+width.fixed.px: 140
+height.fixed.px: 40
+
+-- end: ftd.row
+
+-- ftd.row:
+align-self: center
+spacing.px: 100
+
+-- ftd.row:
+align-self: center
+spacing.px: 28
+
+-- menu-links: $obj.title
+$loop$: $header-fastn.sections as $obj
+link: $obj.url
+is-active: $obj.is-active
+width: $header-fastn.width
+sub-sections: $header-fastn.sub-sections
+current-section: $obj
+current-subsection: $header-fastn.current-subsection
+current-page: $header-fastn.current-page
+
+-- end: ftd.row
+
+-- ftd.text: Get Started ->
+role: $inherited.types.fine-print
+color: $inherited.colors.text-strong
+border-radius.px: 30
+background.solid: $link-active
+padding-vertical.px: 20
+padding-horizontal.px: 47
+white-space: nowrap
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: header-fastn
+
+
+
+
+
+
+
+
+
+
+-- component menu-links:
+caption title:
+string link:
+boolean is-active: false
+boolean $mouse-in: false
+boolean $show-menu: false
+integer width: 
+pr.toc-item list sub-sections: 
+optional pr.toc-item current-section: 
+optional pr.toc-item current-subsection: 
+optional pr.toc-item current-page: 
+pr.toc-item list toc:
+
+-- ftd.column:
+width: fill-container
+$on-mouse-enter$: $ftd.set-bool($a = $menu-links.show-menu, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $menu-links.show-menu, v = false)
+
+-- ftd.text: $menu-links.title
+link: $menu-links.link
+color: $inherited.colors.text
+color if { $menu-links.is-active }: $link-active
+color if { $menu-links.mouse-in }: $link-active
+color if { !$menu-links.mouse-in }: $inherited.colors.text
+$on-mouse-enter$: $ftd.set-bool($a = $menu-links.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $menu-links.mouse-in, v = false)
+white-space: nowrap
+
+-- ftd.column:
+if: { $menu-links.show-menu }
+width: fill-container
+min-width.fixed.px: $menu-links.width
+anchor: parent
+z-index: 999
+top.px: 34
+left.px: $divideToTwo(a = $menu-links.width)
+$on-click-outside$: $ftd.set-bool($a = $menu-links.show-menu, v = false)
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.column:
+width: fill-container
+background.solid: #222222
+padding-vertical.px: 42
+padding-horizontal.px: 42
+border-top-left-radius.px: 12
+border-bottom-left-radius.px: 12
+
+-- ftd.column:
+anchor: parent
+top.px: -18
+right.px: 0
+z-index: 999
+
+-- ftd.image:
+src: $assets.files.static.header.polygon.svg
+width: fill-container
+height: auto
+
+-- end: ftd.column
+
+-- ftd.row:
+width: fill-container
+spacing.px: 64
+
+-- ftd.column:
+
+-- ftd.text: $menu-links.current-section.title
+link: $menu-links.current-section.url
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+
+-- ftd.text: 
+text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+role: $inherited.types.copy-relaxed
+color: $inherited.colors.text
+margin-top.px: 12
+
+-- ftd.image:
+src: $assets.files.static.header.why-menu-img.svg
+width: auto
+height: auto
+margin-top.px: 40 
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+spacing.px: 12
+
+;; looped sub-section card
+
+;;-- loop-section-card:
+
+-- ftd.column:
+background.solid if { menu-links.mouse-in }: #111111
+padding-vertical.px: 12
+padding-horizontal.px: 24
+border-color if { !menu-links.mouse-in }: #222222
+border-color if { menu-links.mouse-in }: #333333
+border-width.px: 1
+border-radius.px: 5
+$on-mouse-enter$: $ftd.set-bool($a = $menu-links.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $menu-links.mouse-in, v = false)
+spacing.px: 12
+min-width.fixed.px: 234
+cursor: default
+
+-- ftd.row:
+width: fill-container
+spacing.px: 12
+align-self: center
+
+-- ftd.image:
+src: $assets.files.static.header.sub-section-icon.svg
+width: auto
+height: auto
+align-self: center
+
+-- ftd.text: $menu-links.current-section.title
+link: $menu-links.current-section.url
+role: $inherited.types.copy-tight
+color: #FFFFFF
+white-space: nowrap
+align-self: center
+
+-- ftd.image:
+src: $assets.files.static.header.sub-section-right-arrow.svg
+width: auto
+height: auto
+align-self: center
+margin-left.px: 4
+
+-- end: ftd.row
+
+-- ftd.text: 
+text: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+background.solid: #333333
+padding-vertical.px: 42
+padding-horizontal.px: 42
+border-top-right-radius.px: 12
+border-bottom-right-radius.px: 12
+
+-- ftd.text: Right Menu Section
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: menu-links
+
+
+
+
+
+
+
+
+
+
+-- component loop-section-card:
+
+-- ftd.column:
+background.solid if { menu-links.mouse-in }: #111111
+padding-vertical.px: 12
+padding-horizontal.px: 24
+border-color if { !menu-links.mouse-in }: #222222
+border-color if { menu-links.mouse-in }: #333333
+border-width.px: 1
+border-radius.px: 5
+$on-mouse-enter$: $ftd.set-bool($a = $menu-links.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $menu-links.mouse-in, v = false)
+spacing.px: 12
+min-width.fixed.px: 234
+cursor: default
+
+-- ftd.row:
+width: fill-container
+spacing.px: 12
+align-self: center
+
+-- ftd.image:
+src: $assets.files.static.header.sub-section-icon.svg
+width: auto
+height: auto
+align-self: center
+
+-- ftd.text: $menu-links.current-section.title
+link: $menu-links.current-section.url
+role: $inherited.types.copy-tight
+color: #FFFFFF
+white-space: nowrap
+align-self: center
+
+-- ftd.image:
+src: $assets.files.static.header.sub-section-right-arrow.svg
+width: auto
+height: auto
+align-self: center
+margin-left.px: 4
+
+-- end: ftd.row
+
+-- ftd.text: 
+text: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: loop-section-card
+
+
+
+-- integer divideToTwo(a):
+integer a:
+
+- (a / 2) + 50
+
+
+
+
+
+
+
+
+
+-- component hero-section: 
+caption title: 
+ftd.image-src image: 
+optional string cta-left-text:
+optional string cta-right-text:
+optional string info:
+children childs:
+
+-- ftd.column:
+width: fill-container
+z-index: 11
+max-width.fixed.px: 1440
+align-self: center
+
+-- ftd.column:
+width: fill-container
+anchor: parent
+right.px: 0
+top.px: 0
+z-index: -1
+
+-- ftd.image:
+src: $hero-section.image
+width: fill-container
+height: auto
+
+-- end: ftd.column
+
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px: 1160
+align-self: center
+
+-- ftd.text: $hero-section.title
+role: $hero
+color: $inherited.colors.text-strong
+padding-right.px: 100
+
+-- ftd.text:
+if: { $hero-section.info != NULL }
+text: $hero-section.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text
+max-width.fixed.px: 530
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+children: $hero-section.childs
+max-width.fixed.px: 1160
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: hero-section

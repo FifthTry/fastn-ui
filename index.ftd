@@ -1,1 +1,45 @@
--- ftd.text: Hello World
+-- import: fifthtry.github.io/fastn.io/assets
+-- import: fpm
+-- import: fpm/processors as pr
+-- import: fifthtry.github.io/fastn.io/lib as ft
+
+
+
+
+
+
+-- ft.page: This is page
+
+
+This is page body
+
+-- ft.hero-section: Programming Language For Prose
+image: $assets.files.static.hero-image.svg
+cta-left-text: Explore More
+cta-right-text: How to Use
+
+
+-- ft.hero-section.info:
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
+
+
+-- end: ft.hero-section
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

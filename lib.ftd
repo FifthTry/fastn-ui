@@ -2114,11 +2114,13 @@ optional ftd.image-src avatar:
 optional ftd.color bgcolor: #5C2860
 integer width: $width
 integer margin-top: 0
+integer margin-right: 0
 
 -- ftd.column:
 width: fill-container
 max-width.fixed.px: $testimonial-card.width
 margin-top.px: $testimonial-card.margin-top
+right.px: $testimonial-card.margin-right
 
 -- ftd.column:
 width: fill-container

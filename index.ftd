@@ -433,7 +433,7 @@ icon: $assets.files.static.slider.flutter-logo.svg
 -- end: ft.logo-slider
 
 
--- ft.heart-line-title-card: Loved  by 1M+folks
+-- ft.heart-line-title-card: Loved by 1M+folks
 
 
 Browse dozens of professionaly designed templates. 
@@ -450,6 +450,7 @@ avatar: $assets.files.static.testimonials.avatar-1.svg
 bgcolor: #5C2860
 label: CEO, ABC Company
 width: 500
+margin-right: -80
 
 At nulla tristique facilisis augue. 
 
@@ -464,6 +465,7 @@ bgcolor: #EF8435
 label: CEO, ABC Company
 width: 500
 margin-top: 80
+margin-right: -80
 
 At nulla tristique facilisis augue. 
 
@@ -478,6 +480,7 @@ bgcolor: #EBBE52
 label: CEO, ABC Company
 width: 500
 margin-top: -80
+margin-right: -80
 
 At nulla tristique facilisis augue. 
 
@@ -492,6 +495,7 @@ bgcolor: #4AA35C
 label: CEO, ABC Company
 width: 500
 margin-top: 80
+margin-right: -80
 
 At nulla tristique facilisis augue. 
 

@@ -7,9 +7,7 @@
 
 
 
-
 -- ft.page: This is page
-
 
 This is page body
 
@@ -18,7 +16,6 @@ image: $assets.files.static.hero-image.svg
 cta-left-text: Explore More
 cta-right-text: How to Use
 
-
 -- ft.hero-section.info:
 
 At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
@@ -26,14 +23,505 @@ At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentes
 
 -- end: ft.hero-section
 
+-- ft.metrics-card:
+
+
+-- ft.features-card:
+
+-- ft.snippet-card-left: Blue Jeans
+cta-text: START NOW
+link: /
+z-index: 10000
+
+-- ft.snippet-card-left.description:
+
+This is a card Description, write something here to describe about the content of the card
+
+-- ft.featured-card-text: Front End Infrastructure
+cta-title: Get Started
+cta-link: /
+
+-- ft.featured-card-text.description:
+
+At nulla tristique facilisis augue. Lectus diam dignissim 
+erat blandit pellentesque egestas nulla .
+
+-- end: ft.snippet-card-left
+
+
+
+
+
+-- ft.snippet-card-right: Blue Jeans
+cta-text: START NOW
+link: /
+bgcolor: #4AA35C
+pull-top: -80
+z-index: 1000
+
+-- ft.snippet-card-right.description:
+
+This is a card Description, write something here to describe about the content of the card
+
+-- ft.featured-card-text: Building WebApps
+cta-title: Get Started
+cta-link: /
+
+-- ft.featured-card-text.description:
+
+At nulla tristique facilisis augue. Lectus diam dignissim 
+erat blandit pellentesque egestas nulla .
+
+-- end: ft.snippet-card-right
+
+
+
+
+
+-- ft.snippet-card-left: Blue Jeans
+cta-text: START NOW
+link: /
+bgcolor: #EF8435
+pull-top: -50
+z-index: 100
+
+-- ft.snippet-card-left.description:
+
+This is a card Description, write something here to describe about the content of the card
+
+-- ft.featured-card-text: Component Library
+cta-title: Get Started
+cta-link: /
+
+-- ft.featured-card-text.description:
+
+At nulla tristique facilisis augue. Lectus diam dignissim 
+erat blandit pellentesque egestas nulla .
+
+-- end: ft.snippet-card-left
+
+
+
+
+
+-- ft.snippet-card-right: Blue Jeans
+cta-text: START NOW
+link: /
+bgcolor: #5C2860
+pull-top: -80
+hide-arrows: true
+z-index: 10
+
+-- ft.snippet-card-right.description:
+
+This is a card Description, write something here to describe about the content of the card
+
+-- ft.featured-card-text: Internet OS
+cta-title: Get Started
+cta-link: /
+
+-- ft.featured-card-text.description:
+
+At nulla tristique facilisis augue. Lectus diam dignissim 
+erat blandit pellentesque egestas nulla .
+
+-- end: ft.snippet-card-right
+
+-- end: ft.features-card
+
+
+
+
+
+-- ft.benefits-card: Benefits of Fastn
+
+-- ft.benefits-info-card: Everyone is everywhere
+icon: $assets.files.static.benefits.benefits-icon-1.svg
+
+
+-- ft.benefits-info-card.info: 
+
+Metaverse and other web 3.0 destinations are global.
+ You no longer have audiences restricted to local 
+& hyperlocal cohorts.
+
+
+-- end: ft.benefits-info-card
+
+-- ft.benefits-info-card: Everyone is everywhere
+icon: $assets.files.static.benefits.benefits-icon-2.svg
+
+
+-- ft.benefits-info-card.info: 
+
+Metaverse and other web 3.0 destinations are global.
+ You no longer have audiences restricted to local 
+& hyperlocal cohorts.
+
+
+-- end: ft.benefits-info-card
+
+-- ft.benefits-info-card: Everyone is everywhere
+icon: $assets.files.static.benefits.benefits-icon-3.svg
+
+
+-- ft.benefits-info-card.info: 
+
+Metaverse and other web 3.0 destinations are global.
+ You no longer have audiences restricted to local 
+& hyperlocal cohorts.
+
+
+-- end: ft.benefits-info-card
+
+
+
+-- ft.benefits-info-card: Everyone is everywhere
+icon: $assets.files.static.benefits.benefits-icon-4.svg
+
+
+-- ft.benefits-info-card.info: 
+
+Metaverse and other web 3.0 destinations are global.
+ You no longer have audiences restricted to local 
+& hyperlocal cohorts.
+
+
+-- end: ft.benefits-info-card
+
+-- end: ft.benefits-card
+
+
+
+
+-- ft.trending-templates: Trending Templates
+cta-text: Browse Templates
+cta-link: /
+
+-- ft.trending-templates.info:
+
+Browse dozens of professionaly designed templates. 
+Easily change structure,style,and graphics -then host instantly.
+
+
+
+-- ft.trending-card: Crayon
+image: $assets.files.static.templates.image-1.svg
+link: /
+
+-- end: ft.trending-card
+
+-- ft.trending-card: Lucid
+image: $assets.files.static.templates.image-2.svg
+link: /
+
+-- end: ft.trending-card
+
+-- ft.trending-card: Games
+image: $assets.files.static.templates.image-3.svg
+link: /
+
+-- end: ft.trending-card
+
+-- ft.trending-card: Pop
+image: $assets.files.static.templates.image-4.svg
+link: /
+
+-- end: ft.trending-card
+
+-- ft.trending-card: Forest
+image: $assets.files.static.templates.image-5.svg
+link: /
+
+-- end: ft.trending-card
+
+-- ft.trending-card: Joy
+image: $assets.files.static.templates.image-6.svg
+link: /
+
+-- end: ft.trending-card
+
+-- end: ft.trending-templates
+
+
+-- ft.excel-promo-card: If you know Excel, you know Fastn !!
+cta-text: Learn More
+cta-link: /
+cta-role: secondary
+
+-- ft.excel-promo-card.info:
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+-- end: ft.excel-promo-card
+
+
+
+
+
+-- ft.card-with-icons-bottom: Components & Fastn Library
+cta-text: Browse Components
+cta-link: /
+
+
+-- ft.card-with-icons-bottom.info: 
+
+Browse dozens of professionaly designed templates. 
+
+Easily change structure,style,and graphics -then host instantly.
+
+
+-- ft.image-card-with-title: Atom
+src: $assets.files.static.vertical-bar.svg
+
+-- ft.image-card-with-title: 
+src: $assets.files.static.icons.plus-sign-circled.svg
+
+-- ft.image-card-with-title: Molecule
+src: $assets.files.static.polygon-top.svg
+
+-- ft.image-card-with-title: 
+src: $assets.files.static.icons.plus-sign-circled.svg
+
+-- ft.image-card-with-title: Organism
+src: $assets.files.static.circle-shape.svg
+
+-- ft.image-card-with-title: 
+src: $assets.files.static.icons.eqals-sign-circled.svg
+
+-- ft.image-card-with-title: Template
+src: $assets.files.static.mixed-chart-icons.svg
+
+
+-- end: ft.card-with-icons-bottom
+
+
+
+
+
+-- ft.rounded-corner-card: Become an Author
+cta-text: Learn More
+cta-link: /
+image: $assets.files.static.charts-image.svg
+
+-- ft.rounded-corner-card.info:
+
+Browse dozens of professionaly designed templates. 
+
+Easily change structure,style,and graphics -then host instantly.
+
+-- end: ft.rounded-corner-card
+
+
+
+
+-- ft.excel-promo-card: Create beautiful designs with Fastn
+cta-text: Create Now
+cta-link: /
+cta-role: primary
+bgcolor: #000000
+
+-- ft.excel-promo-card.info:
+
+Browse dozens of professionaly designed templates. 
+
+Easily change structure,style,and graphics -then host instantly.
+
+
+
+-- ft.row-container:
+spacing: 80
+
+-- ft.text-bubble:
+text-image-1: $assets.files.static.text-with-circle.svg
+text-image-2: $assets.files.static.text-without-circle.svg
+spacing: 170
+width: 500
+
+
+-- ft.code-block-system:
+lang: ftd
+width: 500
+
+
+\-- import: fpm
+\-- fpm.package: <username_or_orgname>.github.io/<repo_name> 
+zip: github.com/<username_or_orgname>
+
+-- end: ft.row-container
+
+
+-- end: ft.excel-promo-card
+
+-- ft.row-container: How FASTN is better than { REACT.js }
+padding-vertical: 150
+spacing: 80
+
+-- ft.rectangle-card:
+width: 425
+
+
+-- ft.title-with-body-card: Fastn
+logo: $assets.files.static.slider.fastn-slider-logo.svg
+width: 325
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+
+
+-- end: ft.rectangle-card
+
+-- ft.rectangle-card:
+show-border: false
+bgcolor: #FFFFFF
+width: 425
+
+-- ft.title-with-body-card: React Js
+logo: $assets.files.static.slider.react-js-logo.svg
+body-color: #222222
+width: 325
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+-- end: ft.rectangle-card
+
+-- end: ft.row-container
+
+-- ft.logo-slider:
+
+-- ft.slider-item: 
+icon: $assets.files.static.slider.react-js-logo.svg
+$active-item: true
+
+-- ft.slider-item: 
+icon: $assets.files.static.slider.angular-js-logo.svg
+
+-- ft.slider-item: 
+icon: $assets.files.static.slider.flutter-logo.svg
+
+-- ft.slider-item: 
+icon: $assets.files.static.slider.react-js-logo.svg
+
+-- ft.slider-item: 
+icon: $assets.files.static.slider.angular-js-logo.svg
+
+-- ft.slider-item: 
+icon: $assets.files.static.slider.flutter-logo.svg
+
+-- end: ft.logo-slider
+
+
+-- ft.heart-line-title-card: Loved  by 1M+folks
+
+
+Browse dozens of professionaly designed templates. 
+
+Easily change structure,style,and graphics -then host instantly.
+
+
+-- ft.row-container:
+wrap: true
+spacing: 80
+
+-- ft.testimonial-card: Jenny Wilson
+avatar: $assets.files.static.testimonials.avatar-1.svg
+bgcolor: #5C2860
+label: CEO, ABC Company
+width: 500
+
+At nulla tristique facilisis augue. 
+
+Lectus diam dignissim erat blandit pellentesque 
+
+egestas nulla .
+
+
+-- ft.testimonial-card: Jenny Wilson
+avatar: $assets.files.static.testimonials.avatar-2.svg
+bgcolor: #EF8435
+label: CEO, ABC Company
+width: 500
+margin-top: 80
+
+At nulla tristique facilisis augue. 
+
+Lectus diam dignissim erat blandit pellentesque 
+
+egestas nulla .
+
+
+-- ft.testimonial-card: Jenny Wilson
+avatar: $assets.files.static.testimonials.avatar-3.svg
+bgcolor: #EBBE52
+label: CEO, ABC Company
+width: 500
+margin-top: -80
+
+At nulla tristique facilisis augue. 
+
+Lectus diam dignissim erat blandit pellentesque 
+
+egestas nulla .
+
+
+-- ft.testimonial-card: Jenny Wilson
+avatar: $assets.files.static.testimonials.avatar-4.svg
+bgcolor: #4AA35C
+label: CEO, ABC Company
+width: 500
+margin-top: 80
+
+At nulla tristique facilisis augue. 
+
+Lectus diam dignissim erat blandit pellentesque 
+
+egestas nulla .
+
+-- end: ft.row-container
+
+
+-- ft.rounded-corner-card: Become a Builder
+cta-text: Learn More
+cta-link: /
+image: $assets.files.static.charts-image.svg
+bgcolor: #EF8435
+
+-- ft.rounded-corner-card.info:
+
+Browse dozens of professionaly designed templates. 
+
+Easily change structure,style,and graphics -then host instantly.
+
+-- end: ft.rounded-corner-card
+
+
+-- ft.footer:
+
+
+
 -- end: ft.page
-
-
-
-
-
-
-
 
 
 

@@ -1,0 +1,472 @@
+-- import: fifthtry.github.io/fastn.io/assets
+-- import: fpm
+-- import: fpm/processors as pr
+
+-- integer $x: 1
+
+-- row-container: How FASTN is better than { REACT.js }
+padding-vertical: 150
+spacing: 80
+index: 1
+r: $x
+
+
+-- rectangle-card:
+width: 425
+
+
+-- title-with-body-card: Fastn
+logo: $assets.files.static.slider.fastn-slider-logo.svg
+width: 325
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+
+
+-- end: rectangle-card
+
+-- rectangle-card:
+show-border: false
+bgcolor: #FFFFFF
+width: 425
+
+-- title-with-body-card: React Js
+logo: $assets.files.static.slider.react-js-logo.svg
+body-color: #222222
+width: 325
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+-- end: rectangle-card
+
+-- end: row-container
+
+
+-- row-container: How FASTN is better than { REACT.js }
+padding-vertical: 150
+spacing: 80
+index: 2
+r: $x
+
+-- rectangle-card:
+width: 425
+
+
+-- title-with-body-card: Fastn
+logo: $assets.files.static.slider.fastn-slider-logo.svg
+width: 325
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+
+
+-- end: rectangle-card
+
+-- rectangle-card:
+show-border: false
+bgcolor: #FFFFFF
+width: 425
+
+-- title-with-body-card: React Js
+logo: $assets.files.static.slider.react-js-logo.svg
+body-color: #222222
+width: 325
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+-- end: rectangle-card
+
+-- end: row-container
+
+-- row-container: How FASTN is better than { REACT.js }
+padding-vertical: 150
+spacing: 80
+index: 3
+r: $x
+
+
+-- rectangle-card:
+width: 425
+
+
+-- title-with-body-card: Fastn
+logo: $assets.files.static.slider.fastn-slider-logo.svg
+width: 325
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+
+
+-- end: rectangle-card
+
+-- rectangle-card:
+show-border: false
+bgcolor: #FFFFFF
+width: 425
+
+-- title-with-body-card: React Js
+logo: $assets.files.static.slider.react-js-logo.svg
+body-color: #222222
+width: 325
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+-- end: rectangle-card
+
+
+-- end: row-container
+
+
+-- logo-slider:
+
+-- slider-item: 
+icon: $assets.files.static.slider.react-js-logo.svg
+$active-item: true
+index: 1
+
+-- slider-item: 
+icon: $assets.files.static.slider.angular-js-logo.svg
+index: 2
+
+-- slider-item: 
+icon: $assets.files.static.slider.flutter-logo.svg
+index: 3
+
+-- slider-item: 
+icon: $assets.files.static.slider.react-js-logo.svg
+index: 4
+
+-- slider-item: 
+icon: $assets.files.static.slider.angular-js-logo.svg
+index: 5
+
+-- slider-item: 
+icon: $assets.files.static.slider.flutter-logo.svg
+index: 6
+
+-- end: logo-slider
+
+
+
+
+-- component title-with-body-card:
+optional caption title:
+optional ftd.image-src logo:
+optional body body:
+optional ftd.color body-color: #FFFFFF
+integer width: $width
+
+-- ftd.column:
+width: fill-container
+align-self: center
+align-content: center
+spacing.fixed.px: 32
+max-width.fixed.px: $title-with-body-card.width
+
+-- ftd.image:
+if: { title-with-body-card.logo != NULL }
+src: $title-with-body-card.logo
+width: auto
+height: auto
+
+-- ftd.text: $title-with-body-card.title
+if: { title-with-body-card.title != NULL }
+role: $font-28
+color: $title-with-body-card.body-color
+
+-- ftd.text:
+text: $title-with-body-card.body
+color: $title-with-body-card.body-color
+role: $inherited.types.copy-relaxed
+
+-- end: ftd.column
+
+-- end: title-with-body-card
+
+-- ftd.type font-28-desktop:
+size.px: 28
+weight: 600
+line-height.px: 29
+font-family: Manrope
+
+
+-- ftd.type font-28-mobile:
+size.px: 22
+weight: 600
+line-height.px: 23
+font-family: Manrope
+
+
+-- ftd.responsive-type font-28:
+desktop: $font-28-desktop
+mobile: $font-28-mobile
+
+
+
+
+
+
+-- ftd.type font-50-desktop:
+size.px: 50
+weight: 700
+line-height.px: 65
+font-family: Manrope
+
+
+-- ftd.type font-50-mobile:
+size.px: 32
+weight: 800
+line-height.px: 48
+font-family: Manrope
+
+
+-- ftd.responsive-type font-50:
+desktop: $font-50-desktop
+mobile: $font-50-mobile
+
+
+
+
+-- integer $width: 1160
+
+-- component row-container:
+optional caption title:
+optional integer spacing:
+children row-wrap:
+integer width: $width
+integer index:
+integer r:
+optional integer padding-vertical: 
+boolean wrap: false
+
+-- ftd.column:
+if:{ row-container.index == row-container.r }
+align-self: center
+max-width.fixed.px: $row-container.width
+padding-vertical.px if { row-container.padding-vertical != NULL }: $row-container.padding-vertical
+align-content: center
+
+-- ftd.text: $row-container.title
+if: { row-container.title != NULL }
+role: $font-50
+color: $inherited.colors.text-strong
+align-self: center
+margin-bottom.px: 80
+
+-- ftd.row:
+width: fill-container
+children: $row-container.row-wrap
+spacing.fixed.px if { row-container.spacing != NULL }: $row-container.spacing
+max-width.fixed.px: $row-container.width
+align-self: center
+align-content: center
+wrap: $row-container.wrap
+
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: row-container
+
+
+
+
+
+
+
+
+
+
+-- component rectangle-card:
+boolean show-border: true
+integer width: $width
+children wrapper:
+optional ftd.color bgcolor: #EF8435
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px: $rectangle-card.width
+
+-- ftd.column:
+if: { rectangle-card.show-border }
+width: fill-container
+height: fill-container
+border-width.px: 1
+border-color: #FFFFFF
+border-radius.px: 30
+z-index: 11
+anchor: parent
+right.px: -15
+bottom.px: -15
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+children: $rectangle-card.wrapper
+background.solid: $rectangle-card.bgcolor
+border-radius.px: 30
+padding-vertical.px: 48
+padding-horizontal.px: 34
+z-index: 0
+
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: rectangle-card
+
+
+
+-- component slider-item:
+ftd.image-src icon:
+optional caption title:
+integer index:
+optional boolean $active-item: false
+optional boolean $mouse-in: false
+
+-- ftd.column:
+padding-vertical.px: 15
+padding-horizontal.px: 45
+border-radius.px: 9
+border-color if { !$slider-item.mouse-in }: #D9D9D9
+border-color if { $slider-item.mouse-in }: #EF8435
+border-color if { $slider-item.active-item }: #EF8435
+border-color if { !$slider-item.active-item }: #D9D9D9
+border-width.px: 1
+$on-mouse-enter$: $ftd.set-bool($a = $slider-item.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $slider-item.mouse-in, v = false)
+$on-click$: $ftd.set-integer($a = $x, v = $slider-item.index)
+
+-- ftd.image:
+src: $slider-item.icon
+width: auto
+height.fixed.px: 58
+
+-- ftd.text: $slider-item.title
+if: { slider-item.title != NULL }
+role: $inherited.types.copy-large
+color if { !$slider-item.mouse-in }: #D9D9D9
+color if { $slider-item.mouse-in }: #EF8435
+
+-- end: ftd.column
+
+-- end: slider-item
+
+
+
+
+-- component logo-slider:
+optional string active-item:
+children slider-wrap:
+integer width: $width
+
+-- ftd.column:
+width: fill-container
+align-self: center
+align-content: center
+max-width.fixed.px: $logo-slider.width
+padding-bottom.px: 150
+
+-- ftd.row:
+width: fill-container
+align-content: center
+spacing.fixed.px: 55
+
+-- ftd.image:
+src: $assets.files.static.slider.arrow-left.svg
+width: auto
+height: auto
+
+-- ftd.row:
+width: fill-container
+max-width.fixed.px: $logo-slider.width
+overflow-x: auto
+children: $logo-slider.slider-wrap
+spacing.fixed.px: 55
+
+-- end: ftd.row
+
+-- ftd.image:
+src: $assets.files.static.slider.arrow-right.svg
+width: auto
+height: auto
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: logo-slider
+
+
+
+
+

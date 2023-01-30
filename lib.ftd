@@ -122,8 +122,6 @@ light: #EF8435
 
 
 
-
-
 -- component page:
 optional caption title: 
 optional body body: 
@@ -677,13 +675,40 @@ integer width: $width
 
 -- ftd.column:
 width: fill-container
+
+-- metrics-card-desktop:
+if: { ftd.device != "mobile" }
+width: $metrics-card.width
+
+-- metrics-card-mobile:
+if: { ftd.device == "mobile" }
+width: $metrics-card.width
+
+-- end: ftd.column
+
+-- end: metrics-card
+
+
+
+
+
+
+
+
+
+
+-- component metrics-card-desktop:
+integer width:
+
+-- ftd.column:
+width: fill-container
 background.solid: #111111
 padding-vertical.px: 96
 z-index: 10
 align-content: center
 
 -- ftd.column:
-width.fixed.px: $metrics-card.width
+width.fixed.px: $metrics-card-desktop.width
 
 -- ftd.row:
 width: fill-container
@@ -776,7 +801,146 @@ color: $inherited.colors.text
 
 -- end: ftd.column
 
--- end: metrics-card
+-- end: metrics-card-desktop
+
+
+
+
+
+
+
+
+
+
+-- component metrics-card-mobile:
+integer width:
+
+-- ftd.column:
+width: fill-container
+background.solid: #111111
+padding-vertical.px: 96
+z-index: 10
+align-content: center
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 15
+align-content: center
+
+-- ftd.column:
+width: fill-container
+align-content: center
+spacing.fixed.px: 14
+
+-- ftd.image:
+src: $assets.files.static.projects-icon.svg
+width: auto
+height.fixed.px: 60
+
+-- ftd.text: 500
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+
+-- ftd.text: Projects created
+role: $inherited.types.copy-tight
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- ftd.column:
+border-left-width.px: 1
+border-color: $inherited.colors.border
+height.fixed.px: 50
+;;width.fixed.px: 45
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+align-content: center
+spacing.fixed.px: 14
+
+-- ftd.image:
+src: $assets.files.static.hostings-icon.svg
+width: auto
+height.fixed.px: 60
+
+-- ftd.text: 200
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+
+-- ftd.text: Projects created
+role: $inherited.types.copy-tight
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 15
+align-content: center
+margin-top.px: 85
+
+-- ftd.column:
+width: fill-container
+align-content: center
+spacing.fixed.px: 14
+
+-- ftd.image:
+src: $assets.files.static.feature-icon-1.svg
+width: auto
+height.fixed.px: 60
+
+-- ftd.text: 90
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+
+-- ftd.text: Hostings
+role: $inherited.types.copy-tight
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- ftd.column:
+border-left-width.px: 1
+border-color: $inherited.colors.border
+height.fixed.px: 50
+;;width.fixed.px: 45
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+align-content: center
+spacing.fixed.px: 14
+
+-- ftd.image:
+src: $assets.files.static.feature-icon-2.svg
+width: auto
+height.fixed.px: 60
+
+-- ftd.text: 16
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+
+-- ftd.text: Hostings
+role: $inherited.types.copy-tight
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: metrics-card-mobile
 
 
 

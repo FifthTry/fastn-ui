@@ -2,13 +2,13 @@
 -- import: fpm
 -- import: fpm/processors as pr
 
--- integer $x: 1
+-- integer $current: 1
 
 -- row-container: How FASTN is better than { REACT.js }
 padding-vertical: 150
 spacing: 80
 index: 1
-r: $x
+reset: $current
 
 
 -- rectangle-card:
@@ -68,7 +68,7 @@ At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentes
 padding-vertical: 150
 spacing: 80
 index: 2
-r: $x
+reset: $current
 
 -- rectangle-card:
 width: 425
@@ -126,7 +126,7 @@ At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentes
 padding-vertical: 150
 spacing: 80
 index: 3
-r: $x
+reset: $current
 
 
 -- rectangle-card:
@@ -301,12 +301,12 @@ optional integer spacing:
 children row-wrap:
 integer width: $width
 integer index:
-integer r:
+integer reset:
 optional integer padding-vertical: 
 boolean wrap: false
 
 -- ftd.column:
-if:{ row-container.index == row-container.r }
+if:{ row-container.index == row-container.reset }
 align-self: center
 max-width.fixed.px: $row-container.width
 padding-vertical.px if { row-container.padding-vertical != NULL }: $row-container.padding-vertical
@@ -404,7 +404,7 @@ border-color if { !$slider-item.active-item }: #D9D9D9
 border-width.px: 1
 $on-mouse-enter$: $ftd.set-bool($a = $slider-item.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $slider-item.mouse-in, v = false)
-$on-click$: $ftd.set-integer($a = $x, v = $slider-item.index)
+$on-click$: $ftd.set-integer($a = $current, v = $slider-item.index)
 
 -- ftd.image:
 src: $slider-item.icon

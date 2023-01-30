@@ -3,6 +3,7 @@
 -- import: fpm/processors as pr
 -- import: fifthtry.github.io/fastn.io/footer-toc as toc
 
+-- integer $current-slide: 1
 
 
 -- ftd.type hero-desktop:
@@ -310,6 +311,7 @@ border-radius.px: 30
 padding-vertical.px: 20
 padding-horizontal.px: 42
 align-content: center
+
 
 -- ftd.text: $cta-button.title
 role: $inherited.types.fine-print
@@ -1787,8 +1789,11 @@ children row-wrap:
 integer width: $width
 optional integer padding-vertical: 
 boolean wrap: false
+optional integer index:
+optional integer reset:
 
 -- ftd.column:
+if:{ row-container.index == row-container.reset }
 align-self: center
 max-width.fixed.px: $row-container.width
 padding-vertical.px if { row-container.padding-vertical != NULL }: $row-container.padding-vertical
@@ -1898,12 +1903,13 @@ align-self: center
 align-content: center
 spacing.fixed.px: 32
 max-width.fixed.px: $title-with-body-card.width
+min-height.fixed.px: 450
 
 -- ftd.image:
 if: { title-with-body-card.logo != NULL }
 src: $title-with-body-card.logo
 width: auto
-height: auto
+height.fixed.px: 70
 
 -- ftd.text: $title-with-body-card.title
 if: { title-with-body-card.title != NULL }
@@ -1932,6 +1938,7 @@ role: $inherited.types.copy-relaxed
 optional string active-item:
 children slider-wrap:
 integer width: $width
+integer pull-top: 0
 
 -- ftd.column:
 width: fill-container
@@ -1939,6 +1946,7 @@ align-self: center
 align-content: center
 max-width.fixed.px: $logo-slider.width
 padding-bottom.px: 150
+margin-top.px: $logo-slider.pull-top
 
 -- ftd.row:
 width: fill-container
@@ -1984,6 +1992,7 @@ ftd.image-src icon:
 optional caption title:
 optional boolean $active-item: false
 optional boolean $mouse-in: false
+integer index:
 
 -- ftd.column:
 padding-vertical.px: 15
@@ -1996,7 +2005,8 @@ border-color if { !$slider-item.active-item }: #D9D9D9
 border-width.px: 1
 $on-mouse-enter$: $ftd.set-bool($a = $slider-item.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $slider-item.mouse-in, v = false)
-$on-click$: $ftd.set-bool($a = $slider-item.active-item, v = true)
+$on-click$: $ftd.toggle($a = $slider-item.active-item)
+$on-click$: $ftd.set-integer($a = $current-slide, v = $slider-item.index)
 
 -- ftd.image:
 src: $slider-item.icon

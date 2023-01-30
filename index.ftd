@@ -4,6 +4,7 @@
 -- import: fifthtry.github.io/fastn.io/lib as ft
 
 
+-- $ft.current-slide: 1
 
 
 
@@ -355,7 +356,14 @@ zip: github.com/<username_or_orgname>
 
 -- ft.row-container: How FASTN is better than { REACT.js }
 padding-vertical: 150
+
+;; Repeat below `row-continer` for slider items
+
+-- ft.row-container: 
 spacing: 80
+index: 1
+reset: $ft.current-slide
+
 
 -- ft.rectangle-card:
 width: 425
@@ -387,7 +395,7 @@ show-border: false
 bgcolor: #FFFFFF
 width: 425
 
--- ft.title-with-body-card: React Js
+-- ft.title-with-body-card: React JS
 logo: $assets.files.static.slider.react-js-logo.svg
 body-color: #222222
 width: 325
@@ -407,28 +415,158 @@ At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentes
 
 -- end: ft.rectangle-card
 
+
+-- end: ft.row-container
+
+-- ft.row-container: 
+spacing: 80
+index: 2
+reset: $ft.current-slide
+
+
+-- ft.rectangle-card:
+width: 425
+
+
+-- ft.title-with-body-card: Fastn
+logo: $assets.files.static.slider.fastn-slider-logo.svg
+width: 325
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+
+
+-- end: ft.rectangle-card
+
+-- ft.rectangle-card:
+show-border: false
+bgcolor: #FFFFFF
+width: 425
+
+-- ft.title-with-body-card: Angular JS
+logo: $assets.files.static.slider.angular-js-logo.svg
+body-color: #222222
+width: 325
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+-- end: ft.rectangle-card
+
+
+-- end: ft.row-container
+
+-- ft.row-container:
+spacing: 80
+index: 3
+reset: $ft.current-slide
+
+
+-- ft.rectangle-card:
+width: 425
+
+
+-- ft.title-with-body-card: Fastn
+logo: $assets.files.static.slider.fastn-slider-logo.svg
+width: 325
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+
+
+-- end: ft.rectangle-card
+
+-- ft.rectangle-card:
+show-border: false
+bgcolor: #FFFFFF
+width: 425
+
+-- ft.title-with-body-card: Flutter
+logo: $assets.files.static.slider.flutter-logo.svg
+body-color: #222222
+width: 325
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+
+-- end: ft.rectangle-card
+
+
+-- end: ft.row-container
+
+;; repeat of `row-container` ends
+
 -- end: ft.row-container
 
 -- ft.logo-slider:
+pull-top: -70
 
 -- ft.slider-item: 
 icon: $assets.files.static.slider.react-js-logo.svg
 $active-item: true
+index: 1
 
 -- ft.slider-item: 
 icon: $assets.files.static.slider.angular-js-logo.svg
+index: 2
 
 -- ft.slider-item: 
 icon: $assets.files.static.slider.flutter-logo.svg
+index: 3
 
 -- ft.slider-item: 
 icon: $assets.files.static.slider.react-js-logo.svg
+index: 1
 
 -- ft.slider-item: 
 icon: $assets.files.static.slider.angular-js-logo.svg
+index: 2
 
 -- ft.slider-item: 
 icon: $assets.files.static.slider.flutter-logo.svg
+index: 3
 
 -- end: ft.logo-slider
 

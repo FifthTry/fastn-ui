@@ -262,7 +262,7 @@ link: $obj.url
 is-active: $obj.is-active
 width: $header-fastn.width
 sub-sections: $header-fastn.sub-sections
-current-section: $obj
+current-section: $header-fastn.current-section
 current-subsection: $header-fastn.current-subsection
 current-page: $header-fastn.current-page
 
@@ -433,14 +433,12 @@ spacing.fixed.px: 12
 ;; looped sub-section card
 
 -- loop-section-card: $obj.title
+if: { !ftd.is_empty(menu-links.sub-sections) }
 $loop$: $menu-links.sub-sections as $obj
 link: $obj.url
 is-active: $obj.is-active
-sub-sections: $menu-links.sub-sections
-current-section: $obj
 current-subsection: $menu-links.current-subsection
 current-page: $menu-links.current-page
-
 
 -- end: ftd.column
 
@@ -504,7 +502,6 @@ spacing.fixed.px: 40
 -- component loop-section-card:
 caption title:
 boolean $mouse-in: false
-pr.toc-item list sub-sections: 
 optional pr.toc-item current-section: 
 optional pr.toc-item current-subsection: 
 optional pr.toc-item current-page: 
@@ -537,8 +534,8 @@ width: auto
 height: auto
 align-self: center
 
--- ftd.text: Why Fastn
-link: $loop-section-card.current-subsection.url
+-- ftd.text: $loop-section-card.title
+link: $loop-section-card.link
 role: $inherited.types.copy-tight
 color: #FFFFFF
 white-space: nowrap

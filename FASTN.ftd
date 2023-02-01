@@ -1,15 +1,15 @@
--- import: fpm
+-- import: fastn
 
--- fpm.package: fifthtry.github.io/fastn.io
+-- fastn.package: fifthtry.github.io/fastn.io
 download-base-url: https://raw.githubusercontent.com/fifthtry/fastn.io/main
 
 
--- fpm.auto-import: fpm
+-- fastn.auto-import: fastn
 
 
 
 
--- fpm.sitemap:
+-- fastn.sitemap:
 
 
 # Why fastn: index.html

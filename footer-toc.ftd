@@ -17,17 +17,17 @@ width: fill-container
 spacing.fixed.px: 14
 
 -- ftd.text: Fastn
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: How to use Fastn
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Feature listing
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
@@ -61,22 +61,22 @@ width: fill-container
 spacing.fixed.px: 14
 
 -- ftd.text: Landing Page
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Microsite
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Documentation Page
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Blog Page
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
@@ -109,27 +109,27 @@ width: fill-container
 spacing.fixed.px: 14
 
 -- ftd.text: Contributors
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Authoring
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Learning FTD
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Open Source
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Internet OS
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
@@ -161,32 +161,32 @@ width: fill-container
 spacing.fixed.px: 14
 
 -- ftd.text: Template list
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Component list
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Font list
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Icons /Illustrations
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Design Theory
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Color Library
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
@@ -220,32 +220,32 @@ width: fill-container
 spacing.fixed.px: 14
 
 -- ftd.text: FTD
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Hosting
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Builder Manual
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Blog
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Events
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
 -- ftd.text: Open source
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: /
 
@@ -376,3 +376,46 @@ role: $inherited.types.fine-print
 -- end: ftd.row
 
 -- end: menu-details-3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component toc-items:
+caption title:
+string link: 
+
+-- ftd.row:
+width: fill-container
+wrap: true
+spacing: space-between
+
+-- ftd.column:
+max-width.fixed.percent: 50
+
+-- ftd.text: $toc-items.title
+role: $inherited.types.copy-large
+color: $inherited.colors.text
+link: $toc-items.link
+
+-- ftd.text: 
+role: $inherited.types.fine-print
+color: $inherited.colors.text-strong
+
+Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: toc-items

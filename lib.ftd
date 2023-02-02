@@ -1215,7 +1215,7 @@ margin-left.px: 22
 margin-top.px: 220
 align-content: right
 
-/-- ftd.image:
+-- ftd.image:
 if: { !snippet-card-right.hide-arrows }
 src: $assets.files.static.features.floating-arrow-left.svg
 width: auto

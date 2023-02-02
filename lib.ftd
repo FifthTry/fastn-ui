@@ -3,6 +3,7 @@
 -- import: fastn/processors as pr
 -- import: fifthtry.github.io/fastn.io/footer-toc as toc
 -- import: fastn-cs
+-- import: typo
 
 -- integer $current-slide: 1
 
@@ -140,7 +141,8 @@ optional string sitename: fastn
 string login-button: Get Started
 integer width: $width
 children wrapper:
-;;ftd.color-scheme colors: $fastn-cs.main
+ftd.color-scheme colors: $fastn-cs.main
+ftd.type-data types: $typo.manrope-type
 
 -- ftd.column:
 width: fill-container
@@ -648,7 +650,7 @@ max-width.fixed.px: $hero-section.width
 align-self: center
 
 -- ftd.text: $hero-section.title
-role: $hero
+role: $inherited.types.heading-hero
 color: $inherited.colors.text-strong
 padding-right.px: 100
 
@@ -1089,9 +1091,8 @@ width.fixed.px: 250
 height.fixed.px: 130
 
 -- ftd.text: $snippet-card-left.title
-role: $code-snippet-title
-color: $inherited.colors.background.base
-;; color: $inherited.colors.cta-secondary.text
+role: $inherited.types.button-large
+color: $inherited.colors.cta-secondary.text
 
 -- ftd.text: 
 text: $snippet-card-left.description
@@ -1099,8 +1100,7 @@ role: $inherited.types.fine-print
 color: $inherited.colors.cta-secondary.pressed
 
 -- ftd.text: $snippet-card-left.cta-text
-color: $inherited.colors.background.base
-;;color: $inherited.colors.cta-secondary.text
+color: $inherited.colors.cta-secondary.text
 role: $inherited.types.copy-small
 
 -- end: ftd.column
@@ -1264,9 +1264,8 @@ width.fixed.px: 250
 height.fixed.px: 130
 
 -- ftd.text: $snippet-card-right.title
-role: $code-snippet-title
-color: $inherited.colors.background.base
-;; color: $inherited.colors.cta-secondary.text
+role: $inherited.types.button-large
+color: $inherited.colors.cta-secondary.text
 
 -- ftd.text: 
 text: $snippet-card-right.description
@@ -1274,8 +1273,7 @@ role: $inherited.types.fine-print
 color: $inherited.colors.cta-secondary.pressed
 
 -- ftd.text: $snippet-card-right.cta-text
-color: $inherited.colors.background.base
-;;color: $inherited.colors.cta-secondary.text
+color: $inherited.colors.cta-secondary.text
 role: $inherited.types.copy-small
 
 -- end: ftd.column

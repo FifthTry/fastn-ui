@@ -347,8 +347,8 @@ optional integer width:
 width.fixed.px if { cta-button.width != NULL}: $cta-button.width
 spacing.fixed.px: 10
 link if { cta-button.link != NULL }: $cta-button.link
-background.solid if { cta-button.role == "primary" }: #EF8435
-background.solid if { cta-button.role == "secondary" }: #EBE8E5
+background.solid if { cta-button.role == "primary" }: $inherited.colors.cta-primary.base
+background.solid if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.base
 border-radius.px: 30
 padding-vertical.px: 20
 padding-horizontal.px: 42
@@ -357,9 +357,8 @@ align-content: center
 
 
 -- ftd.text: $cta-button.title
-role: $inherited.types.fine-print
-color if { cta-button.role == "secondary" }: #333333
-;; color if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.text
+role: $inherited.types.button-medium
+color if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.text
 color if { cta-button.role == "primary" }: $inherited.colors.cta-primary.text
 white-space: nowrap
 text-align: center
@@ -408,8 +407,8 @@ $on-mouse-leave$: $ftd.set-bool($a = $menu-links.show-menu, v = false)
 role: $inherited.types.button-large
 link: $menu-links.link
 color: $inherited.colors.cta-primary.text
-color if { $menu-links.is-active }: $link-active
-color if { $menu-links.mouse-in }: $link-active
+color if { $menu-links.is-active }: $inherited.colors.cta-primary.base
+color if { $menu-links.mouse-in }: $inherited.colors.cta-primary.base
 color if { !$menu-links.mouse-in }: $inherited.colors.text
 $on-mouse-enter$: $ftd.set-bool($a = $menu-links.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $menu-links.mouse-in, v = false)
@@ -428,7 +427,7 @@ $on-click-outside$: $ftd.set-bool($a = $menu-links.show-menu, v = false)
 
 -- ftd.column:
 width: fill-container
-background.solid: #222222
+background.solid: $inherited.colors.custom.five
 padding-vertical.px: 42
 padding-horizontal.px: 42
 border-radius.px: 12
@@ -451,7 +450,7 @@ height: auto
 width.fixed.percent: 50
 height: fill-container
 z-index: 0
-background.solid: #333333
+background.solid: $inherited.colors.background.step-1
 anchor: parent
 right.px: 0
 top.px: 0
@@ -474,12 +473,12 @@ width.fixed.px: 240
 
 -- ftd.text: $menu-links.title
 link: $menu-links.link
-role: $inherited.types.heading-medium
+role: $inherited.types.heading-small
 color: $inherited.colors.text.dark
 
 -- ftd.text: 
 role: $inherited.types.copy-regular
-color: $inherited.colors.text-strong
+color: $inherited.colors.text-strong.dark
 margin-top.px: 12
 width: fill-container
 
@@ -501,6 +500,7 @@ margin-top.px: 40
 width: fill-container
 ;;min-height.fixed.px: 500
 ;;background.solid: red
+spacing.fixed.px: 12
 
 ;; right column
 
@@ -558,12 +558,12 @@ width.fixed.px: 284
 align-self: start
 
 -- ftd.column:
-background.solid if { loop-section-card.mouse-in }: #111111
-background.solid if { loop-section-card.is-active }: #111111
+background.solid if { loop-section-card.mouse-in }: $inherited.colors.custom.four.dark
+background.solid if { loop-section-card.is-active }: $inherited.colors.custom.four.dark
 padding-vertical.px: 12
 padding-horizontal.px: 24
-border-color: #222222
-border-color if { loop-section-card.mouse-in || loop-section-card.is-active }: #333333
+border-color: $inherited.colors.custom.five
+border-color if { loop-section-card.mouse-in || loop-section-card.is-active }: $inherited.colors.border-strong
 border-width.px: 1
 border-radius.px: 5
 $on-mouse-enter$: $ftd.set-bool($a = $loop-section-card.mouse-in, v = true)
@@ -588,7 +588,7 @@ align-self: center
 -- ftd.text: $loop-section-card.title
 link: $loop-section-card.link
 role: $inherited.types.copy-small
-color: #FFFFFF
+color: $inherited.colors.text.dark
 white-space: nowrap
 align-self: center
 
@@ -604,14 +604,14 @@ margin-left.px: 4
 -- ftd.text: 
 text: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 role: $inherited.types.fine-print
-color: $inherited.colors.text
+color: $inherited.colors.text-strong.dark
 
 -- end: ftd.column
 
 -- end: ftd.column
 
 -- ftd.column:
-background.solid: #333333
+;;background.solid: #333333
 ;;min-height.fixed.px: 500
 ;;anchor: parent
 ;;right.px: 0
@@ -689,7 +689,7 @@ align-self: center
 -- ftd.text: $hero-section.title
 role: $inherited.types.heading-hero
 color: $inherited.colors.text-strong
-padding-right.px: 100
+padding-right.px: 200
 
 -- ftd.text:
 if: { $hero-section.info != NULL }

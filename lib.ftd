@@ -1146,7 +1146,6 @@ color: $inherited.colors.background.base
 role: $inherited.types.copy-small
 text-align: start
 
-
 -- end: ftd.column
 
 
@@ -1483,6 +1482,7 @@ height.fixed.px if { ftd.device == "mobile"}: 42
 top.px if { ftd.device == "mobile"}: -30
 left.px if { ftd.device == "mobile"}: 42
 
+
 -- ftd.image:
 src: $assets.files.static.templates.hanging-icon-2.svg
 width: auto
@@ -1494,6 +1494,7 @@ width.fixed.px if { ftd.device == "mobile"}: 46
 height.fixed.px if { ftd.device == "mobile"}: 43
 top.px if { ftd.device == "mobile"}: -30
 right.px if { ftd.device == "mobile"}: 42
+
 
 -- ftd.image:
 if: { ftd.device != "mobile"}
@@ -1523,6 +1524,10 @@ margin-bottom.px: 70
 -- ftd.text: $trending-templates.title
 role: $inherited.types.heading-large
 color: $inherited.colors.text-strong
+role if { ftd.device == "mobile" }: $inherited.types.heading-medium
+height.fixed.px if { ftd.device == "mobile" }: 48
+width.fixed.px if { ftd.device == "mobile" }: 310
+text-align: center
 
 -- ftd.text:
 text: $trending-templates.info
@@ -1532,6 +1537,8 @@ role if { ftd.device == "mobile" }: $inherited.types.copy-regular
 width.fixed.px if { ftd.device == "mobile" }: 325
 margin-bottom.px: 16
 text-align: center
+width.fixed.px if { ftd.device == "mobile" }: 325
+height.fixed.px if { ftd.device == "mobile" }: 78
 
 -- cta-button: $trending-templates.cta-text
 if: { trending-templates.cta-text != NULL }
@@ -1838,6 +1845,7 @@ icons-wrap: $card-with-icons-bottom.icons-wrap
 -- end: ftd.column
 
 -- end: card-with-icons-bottom
+
 
 
 

@@ -3314,12 +3314,12 @@ spacing.fixed.px: 12
 
 -- ftd.text: $toc-items-loop.title
 role: $inherited.types.copy-large
-color: $inherited.colors.text
+color: $inherited.colors.text.dark
 link: $toc-items-loop.link
 
 -- ftd.text: 
 role: $inherited.types.fine-print
-color: $inherited.colors.text-strong
+color: $inherited.colors.text-strong.dark
 
 Lorem ipsum dolor sit amet, consectetur elit.
 

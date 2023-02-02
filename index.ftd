@@ -1,7 +1,7 @@
--- import: fifthtry.github.io/fastn.io/assets
+-- import: fifthtry.github.io/fastn-io/assets
 -- import: fastn
 -- import: fastn/processors as pr
--- import: fifthtry.github.io/fastn.io/lib as ft
+-- import: fifthtry.github.io/fastn-io/lib as ft
 -- import: fastn-cs
 
 

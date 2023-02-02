@@ -377,8 +377,6 @@ $on-mouse-leave$: $ftd.set-bool($a = $menu-links.mouse-in, v = false)
 white-space: nowrap
 min-height.fixed.px: 34
 
-/-- ftd.integer: $menu-links.idx
-
 -- ftd.column:
 if: { $menu-links.show-menu }
 width: fill-container
@@ -593,8 +591,6 @@ toc: $loop-section-card.toc
 -- end: ftd.column
 
 -- end: ftd.row
-
-
 
 -- end: ftd.column
 
@@ -1882,9 +1878,9 @@ role: $font-50
 color: $inherited.colors.text-strong
 
 -- ftd.text: 
-if: { card-with-icons-bottom.info != NULL }
-text: $card-with-icons-bottom.info
-role: $inherited.types.copy-tight
+if: { card-with-icons-bottom-desktop.info != NULL }
+text: $card-with-icons-bottom-desktop.info
+role: $inherited.types.copy-small
 color: $inherited.colors.text-strong
 margin-bottom.px: 16
 

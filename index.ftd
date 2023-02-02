@@ -7,12 +7,6 @@
 
 -- $ft.current-slide: 1
 
--- string $s: Hello
-
--- ftd.text: $s
-
--- ftd.text: Click to set the string as World 
-$on-click$: $ftd.set-string($a = $s, v = World)
 
 -- ft.page: This is page
 

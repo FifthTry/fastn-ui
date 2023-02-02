@@ -1,8 +1,10 @@
 -- import: fifthtry.github.io/fastn.io/assets
--- import: fpm
--- import: fpm/processors as pr
+-- import: fastn
+-- import: fastn/processors as pr
 -- import: fifthtry.github.io/fastn.io/footer-toc as toc
+-- import: fastn-cs
 
+-- integer $current-slide: 1
 
 
 -- ftd.type hero-desktop:
@@ -107,7 +109,7 @@ $processor$: pr.toc
 
 
 -- pr.sitemap-data sitemap:
-$processor$: pr.sitemap
+$processor$: pr.full-sitemap
 
 -- ftd.color link-active:
 dark: #EF8435
@@ -115,6 +117,7 @@ light: #EF8435
 
 -- integer $width: 1160
 
+-- integer $footer-width: 1340
 
 
 
@@ -137,11 +140,12 @@ optional string sitename: fastn
 string login-button: Get Started
 integer width: $width
 children wrapper:
+;;ftd.color-scheme colors: $fastn-cs.main
 
 -- ftd.column:
 width: fill-container
 align-self: center
-background.solid: #000000
+background.solid: $inherited.colors.background.base
 overflow-y: auto
 
 -- header-fastn:
@@ -182,7 +186,7 @@ height: auto
 align-self: center
 
 -- ftd.text: Docs
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text-strong
 
 -- end: ftd.row
@@ -260,10 +264,12 @@ $loop$: $header-fastn.sections as $obj
 link: $obj.url
 is-active: $obj.is-active
 width: $header-fastn.width
-sub-sections: $header-fastn.sub-sections
-current-section: $obj
-current-subsection: $header-fastn.current-subsection
-current-page: $header-fastn.current-page
+sub-sections: $obj.children
+icon: $obj.font-icon
+;;current-section: $header-fastn.current-section
+;;current-subsection: $header-fastn.current-subsection
+;;current-page: $header-fastn.current-page
+;;idx: $LOOP.COUNTER
 
 -- end: ftd.row
 
@@ -308,6 +314,8 @@ border-radius.px: 30
 padding-vertical.px: 20
 padding-horizontal.px: 42
 align-content: center
+;;spacing: space-around
+
 
 -- ftd.text: $cta-button.title
 role: $inherited.types.fine-print
@@ -340,15 +348,17 @@ align-self: center
 -- component menu-links:
 caption title:
 string link:
+optional ftd.image-src icon:
 boolean is-active: false
 boolean $mouse-in: false
 boolean $show-menu: false
 integer width: 
+optional integer idx:
 pr.toc-item list sub-sections: 
-optional pr.toc-item current-section: 
-optional pr.toc-item current-subsection: 
-optional pr.toc-item current-page: 
-pr.toc-item list toc:
+;;optional pr.toc-item current-section: 
+;;optional pr.toc-item current-subsection: 
+;;optional pr.toc-item current-page: 
+;;pr.toc-item list toc:
 
 -- ftd.column:
 width: fill-container
@@ -356,14 +366,18 @@ $on-mouse-enter$: $ftd.set-bool($a = $menu-links.show-menu, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $menu-links.show-menu, v = false)
 
 -- ftd.text: $menu-links.title
+role: $inherited.types.button-large
 link: $menu-links.link
-color: $inherited.colors.text
+color: $inherited.colors.cta-primary.text
 color if { $menu-links.is-active }: $link-active
 color if { $menu-links.mouse-in }: $link-active
 color if { !$menu-links.mouse-in }: $inherited.colors.text
 $on-mouse-enter$: $ftd.set-bool($a = $menu-links.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $menu-links.mouse-in, v = false)
 white-space: nowrap
+min-height.fixed.px: 34
+
+/-- ftd.integer: $menu-links.idx
 
 -- ftd.column:
 if: { $menu-links.show-menu }
@@ -375,22 +389,19 @@ top.px: 34
 left.px: $divideToTwo(a = $menu-links.width)
 $on-click-outside$: $ftd.set-bool($a = $menu-links.show-menu, v = false)
 
--- ftd.row:
-width: fill-container
-
 -- ftd.column:
 width: fill-container
 background.solid: #222222
 padding-vertical.px: 42
 padding-horizontal.px: 42
-border-top-left-radius.px: 12
-border-bottom-left-radius.px: 12
+border-radius.px: 12
+;;min-height.fixed.px: 500
 
 -- ftd.column:
 anchor: parent
 top.px: -18
-right.px: 0
-z-index: 999
+left.calc: 50% - 50px
+z-index: 0
 
 -- ftd.image:
 src: $assets.files.static.header.polygon.svg
@@ -399,45 +410,71 @@ height: auto
 
 -- end: ftd.column
 
+-- ftd.column:
+width.fixed.percent: 50
+height: fill-container
+z-index: 0
+background.solid: #333333
+anchor: parent
+right.px: 0
+top.px: 0
+border-top-right-radius.px: 12
+border-bottom-right-radius.px: 12
+
+-- end: ftd.column
+
 -- ftd.row:
 width: fill-container
-spacing.fixed.px: 64
+spacing.fixed.px: 60
+z-index: 111
+
+-- ftd.column:
+width.fixed.px: 240
+
+;; left column
 
 -- ftd.column:
 
--- ftd.text: $menu-links.current-section.title
-link: $menu-links.current-section.url
+-- ftd.text: $menu-links.title
+link: $menu-links.link
 role: $inherited.types.heading-medium
-color: $inherited.colors.text-strong
+color: $inherited.colors.text.dark
 
 -- ftd.text: 
-text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-role: $inherited.types.copy-relaxed
-color: $inherited.colors.text
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
 margin-top.px: 12
+width: fill-container
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua. 
 
 -- ftd.image:
-src: $assets.files.static.header.why-menu-img.svg
+if: { menu-links.icon != NULL }
+src: $menu-links.icon
 width: auto
 height: auto
 margin-top.px: 40 
 
 -- end: ftd.column
 
+-- end: ftd.column
+
 -- ftd.column:
 width: fill-container
-spacing.fixed.px: 12
+;;min-height.fixed.px: 500
+;;background.solid: red
 
-;; looped sub-section card
+;; right column
 
 -- loop-section-card: $obj.title
+if: { !ftd.is_empty(menu-links.sub-sections) }
 $loop$: $menu-links.sub-sections as $obj
 link: $obj.url
 is-active: $obj.is-active
-sub-sections: $menu-links.sub-sections
-current-section: $obj
-current-subsection: $menu-links.current-subsection
-current-page: $menu-links.current-page
+toc: $obj.children
+;;current-subsection: $menu-links.title
+;;current-page: $menu-links.current-page
 
 
 -- end: ftd.column
@@ -445,44 +482,6 @@ current-page: $menu-links.current-page
 -- end: ftd.row
 
 -- end: ftd.column
-
--- ftd.column:
-width: fill-container
-background.solid: #333333
-padding-vertical.px: 64
-padding-horizontal.px: 42
-border-top-right-radius.px: 12
-border-bottom-right-radius.px: 12
-
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 40
-
--- ftd.text: Benefits of Fastn
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 40
-
-
--- toc.menu-details-1:
-
--- toc.menu-details-2:
-
--- toc.menu-details-3:
-
-
--- end: ftd.column
-
-
--- end: ftd.column
-
-
--- end: ftd.column
-
--- end: ftd.row
 
 -- end: ftd.column
 
@@ -502,27 +501,41 @@ spacing.fixed.px: 40
 -- component loop-section-card:
 caption title:
 boolean $mouse-in: false
-pr.toc-item list sub-sections: 
-optional pr.toc-item current-section: 
-optional pr.toc-item current-subsection: 
-optional pr.toc-item current-page: 
+;;optional pr.toc-item current-section: 
+;;optional pr.toc-item current-subsection: 
+;;optional pr.toc-item current-page: 
 pr.toc-item list toc:
 boolean is-active: false
 string link:
+boolean $show-sub-menu: false
+
+-- ftd.column: 
+width: fill-container
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 60
+
+-- ftd.column:
+width.fixed.px: 284
+align-self: start
 
 -- ftd.column:
 background.solid if { loop-section-card.mouse-in }: #111111
+background.solid if { loop-section-card.is-active }: #111111
 padding-vertical.px: 12
 padding-horizontal.px: 24
-border-color if { !loop-section-card.mouse-in }: #222222
-border-color if { loop-section-card.mouse-in }: #333333
+border-color: #222222
+border-color if { loop-section-card.mouse-in || loop-section-card.is-active }: #333333
 border-width.px: 1
 border-radius.px: 5
 $on-mouse-enter$: $ftd.set-bool($a = $loop-section-card.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $loop-section-card.mouse-in, v = false)
 spacing.fixed.px: 12
-min-width.fixed.px: 234
+max-width.fixed.px: 234
 cursor: default
+$on-mouse-enter$: $ftd.set-bool($a = $loop-section-card.show-sub-menu, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $loop-section-card.show-sub-menu, v = false)
 
 -- ftd.row:
 width: fill-container
@@ -535,9 +548,9 @@ width: auto
 height: auto
 align-self: center
 
--- ftd.text: Why Fastn
-link: $loop-section-card.current-subsection.url
-role: $inherited.types.copy-tight
+-- ftd.text: $loop-section-card.title
+link: $loop-section-card.link
+role: $inherited.types.copy-small
 color: #FFFFFF
 white-space: nowrap
 align-self: center
@@ -555,6 +568,33 @@ margin-left.px: 4
 text: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 role: $inherited.types.fine-print
 color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+background.solid: #333333
+;;min-height.fixed.px: 500
+;;anchor: parent
+;;right.px: 0
+;;top.px: 0
+
+-- ftd.column:
+width: fill-container
+if: { loop-section-card.show-sub-menu || loop-section-card.is-active}
+
+-- toc-items: 
+if: { !ftd.is_empty(loop-section-card.toc) }
+toc: $loop-section-card.toc
+ 
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+
 
 -- end: ftd.column
 
@@ -730,7 +770,7 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 
 -- ftd.text: Projects created
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 
 -- end: ftd.column
@@ -750,7 +790,7 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 
 -- ftd.text: Hostings
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 
 -- end: ftd.column
@@ -770,7 +810,7 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 
 -- ftd.text: Loreum ipsums
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 
 -- end: ftd.column
@@ -790,7 +830,7 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 
 -- ftd.text: Loreum ipsums
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 
 -- end: ftd.column
@@ -845,7 +885,7 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 
 -- ftd.text: Projects created
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 
 -- end: ftd.column
@@ -873,7 +913,7 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 
 -- ftd.text: Projects created
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 
 -- end: ftd.column
@@ -901,7 +941,7 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 
 -- ftd.text: Hostings
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 
 -- end: ftd.column
@@ -929,7 +969,7 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 
 -- ftd.text: Hostings
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 
 -- end: ftd.column
@@ -1065,7 +1105,7 @@ color: $inherited.colors.cta-secondary.pressed
 -- ftd.text: $snippet-card-left.cta-text
 color: $inherited.colors.background.base
 ;;color: $inherited.colors.cta-secondary.text
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 
 -- end: ftd.column
 
@@ -1241,7 +1281,7 @@ color: $inherited.colors.cta-secondary.pressed
 -- ftd.text: $snippet-card-right.cta-text
 color: $inherited.colors.background.base
 ;;color: $inherited.colors.cta-secondary.text
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 
 -- end: ftd.column
 
@@ -1292,7 +1332,7 @@ color: $inherited.colors.text-strong
 
 -- ftd.text:
 text: $featured-card-text.description
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 color: $inherited.colors.text
 margin-bottom.px: 22
 
@@ -1393,7 +1433,7 @@ text-align: center
 -- ftd.text:
 text: $benefits-info-card.info
 color: $inherited.colors.text
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 text-align: center
 
 -- end: ftd.column
@@ -1978,7 +2018,6 @@ align-content: center
 align-self: center
 spacing.fixed.px: 16
 
-
 -- ftd.text: $image-card-with-title-desktop.title
 if: { image-card-with-title-desktop.title != NULL }
 role: $inherited.types.copy-regular
@@ -2300,7 +2339,7 @@ overflow-x: auto
 text: $code-block-system.body
 lang: $code-block-system.lang
 width: fill-container
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 color: $inherited.colors.text
 padding-top.px: 10
 padding-left.px: 20
@@ -2315,7 +2354,7 @@ white-space: break-spaces
 text: $code-block-system.body
 lang: $code-block-system.lang
 width: fill-container
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 color: $inherited.colors.text
 padding-top.px: 10
 padding-left.px: 20
@@ -2346,8 +2385,11 @@ children row-wrap:
 integer width: $width
 optional integer padding-vertical: 
 boolean wrap: false
+optional integer index:
+optional integer reset:
 
 -- ftd.column:
+if:{ row-container.index == row-container.reset }
 align-self: center
 max-width.fixed.px: $row-container.width
 padding-vertical.px if { row-container.padding-vertical != NULL }: $row-container.padding-vertical
@@ -2490,12 +2532,13 @@ align-self: center
 align-content: center
 spacing.fixed.px: 32
 max-width.fixed.px: $title-with-body-card.width
+min-height.fixed.px: 450
 
 -- ftd.image:
 if: { title-with-body-card.logo != NULL }
 src: $title-with-body-card.logo
 width: auto
-height: auto
+height.fixed.px: 70
 
 -- ftd.text: $title-with-body-card.title
 if: { title-with-body-card.title != NULL }
@@ -2505,7 +2548,7 @@ color: $title-with-body-card.body-color
 -- ftd.text:
 text: $title-with-body-card.body
 color: $title-with-body-card.body-color
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 
 -- end: ftd.column
 
@@ -2524,6 +2567,7 @@ role: $inherited.types.copy-relaxed
 optional string active-item:
 children slider-wrap:
 integer width: $width
+integer pull-top: 0
 
 -- ftd.column:
 width: fill-container
@@ -2531,6 +2575,7 @@ align-self: center
 align-content: center
 max-width.fixed.px: $logo-slider.width
 padding-bottom.px: 150
+margin-top.px: $logo-slider.pull-top
 
 -- ftd.row:
 width: fill-container
@@ -2576,6 +2621,7 @@ ftd.image-src icon:
 optional caption title:
 optional boolean $active-item: false
 optional boolean $mouse-in: false
+integer index:
 
 -- ftd.column:
 width: fill-container
@@ -2591,7 +2637,8 @@ border-color if { !$slider-item.active-item }: #D9D9D9
 border-width.px: 1
 $on-mouse-enter$: $ftd.set-bool($a = $slider-item.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $slider-item.mouse-in, v = false)
-$on-click$: $ftd.set-bool($a = $slider-item.active-item, v = true)
+$on-click$: $ftd.toggle($a = $slider-item.active-item)
+$on-click$: $ftd.set-integer($a = $current-slide, v = $slider-item.index)
 
 -- ftd.image:
 src: $slider-item.icon
@@ -2766,7 +2813,7 @@ align-self: center
 if: { testimonial-card.body != NULL }
 text: $testimonial-card.body
 color: $inherited.colors.custom.five
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 align-self: center
 
 -- end: ftd.row
@@ -2780,7 +2827,7 @@ role: $inherited.types.blockquote
 color: $inherited.colors.custom.five
 
 -- ftd.text: $testimonial-card.label
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.custom.five
 
 -- end: ftd.column
@@ -2802,7 +2849,7 @@ color: $inherited.colors.custom.five
 
 -- component footer:
 pr.toc-item list footer-toc:
-integer width: 1320
+integer width: $footer-width
 
 -- ftd.column:
 width: fill-container
@@ -2814,7 +2861,7 @@ width: fill-container
 max-width.fixed.px: $footer.width
 padding-vertical.px: 60
 padding-horizontal.px: 60
-
+align-self: center
 
 -- ftd.row:
 width: fill-container
@@ -2851,15 +2898,42 @@ spacing.fixed.px: 70
 
 -- end: ftd.row
 
+-- dropdown:
+
+-- ftd.row:
+width: fill-container
+border-top-width.px: 1
+border-color: $inherited.colors.border-strong
+margin-top.px: 82
+padding-top.px: 17
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 18
+
+-- ftd.image:
+src: $assets.files.static.footer.discord.svg
+width.fixed.px: 42
+
+-- ftd.image:
+src: $assets.files.static.footer.linkedin.svg
+width.fixed.px: 42
+
+-- ftd.image:
+src: $assets.files.static.footer.twitter.svg
+width.fixed.px: 42
+
+-- end: ftd.row
+
+-- ftd.text: © 2022 Fastn.inc
+role: $inherited.types.button-medium
+color: #707070
+
+-- end: ftd.row
 
 -- end: ftd.column
 
-
 -- end: ftd.column
-
-
-
-
 
 -- end: footer
 
@@ -2899,7 +2973,7 @@ caption title:
 width: fill-container
 
 -- ftd.text: $footer-link.title
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: $footer-link.url
 
@@ -2933,3 +3007,302 @@ background.solid: #111111
 
 
 -- end: dark-mode-switcher
+
+
+
+
+
+
+
+
+
+
+-- component toc-items:
+pr.toc-item list toc:
+
+-- ftd.row:
+width: fill-container
+wrap: true
+spacing: space-between
+
+-- toc-items-loop: $obj.title
+if: { !ftd.is_empty(toc-items.toc) }
+$loop$: $toc-items.toc as $obj
+link: $obj.url
+
+-- end: ftd.row
+
+-- end: toc-items
+
+
+
+-- component toc-items-loop:
+caption title: 
+string link:
+
+-- ftd.column:
+width.fixed.px: 295
+spacing.fixed.px: 12
+
+-- ftd.text: $toc-items-loop.title
+role: $inherited.types.copy-large
+color: $inherited.colors.text
+link: $toc-items-loop.link
+
+-- ftd.text: 
+role: $inherited.types.fine-print
+color: $inherited.colors.text-strong
+
+Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: ftd.column
+
+-- end: toc-items-loop
+
+
+
+
+
+
+-- string $selected-item: System
+
+
+
+
+
+
+
+
+-- component dropdown:
+caption title: $selected-item
+ftd.color theme-color: #333333
+boolean $show-options: false
+
+-- ftd.column:
+width: fill-container
+z-index: 0
+
+-- ftd.row:
+background.solid: #111111
+padding-vertical.px: 11
+padding-horizontal.px: 14
+border-radius.px: 30
+anchor: parent
+bottom.px: 23
+right.px: 23
+min-width.fixed.px: 152
+$on-click$: $ftd.toggle($a = $dropdown.show-options)
+
+-- ftd.text: $selected-item
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+padding-right.px: 52
+min-width.fixed.px: 112
+
+-- ftd.image:
+src: $assets.files.static.footer.down.svg
+width.fixed.px: 12
+height: auto
+align-self: center
+
+
+-- ftd.column:
+if: { $dropdown.show-options }
+
+-- mode-changer: $dropdown.title
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: dropdown
+
+
+
+
+
+-- component mode-changer:
+caption title:
+string $mode-1: Dark
+string $mode-2: Light
+string $mode-3: System
+
+
+-- ftd.column:
+
+-- ftd.column:
+if: { mode-changer.title == "System" }
+
+-- ftd.row:
+background.solid: #111111
+padding-vertical.px: 11
+padding-horizontal.px: 14
+border-radius.px: 30
+anchor: parent
+top.px: 35
+left.px: -136
+min-width.fixed.px: 152
+$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-1)
+$on-click$: $ftd.enable-dark-mode()
+
+-- ftd.text: $mode-changer.mode-1
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+padding-right.px: 52
+min-width.fixed.px: 112
+
+
+-- ftd.image:
+src: $assets.files.static.footer.down.svg
+width.fixed.px: 12
+height: auto
+align-self: center
+
+-- end: ftd.row
+
+-- ftd.row:
+background.solid: #111111
+padding-vertical.px: 11
+padding-horizontal.px: 14
+border-radius.px: 30
+anchor: parent
+top.px: 80
+left.px: -131
+min-width.fixed.px: 152
+$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-2)
+$on-click$: $ftd.enable-light-mode()
+
+
+-- ftd.text: $mode-changer.mode-2
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+padding-right.px: 52
+width.fixed.px: 112
+
+-- ftd.image:
+src: $assets.files.static.footer.down.svg
+width.fixed.px: 12
+height: auto
+align-self: center
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { mode-changer.title == "Dark" }
+
+-- ftd.row:
+background.solid: #111111
+padding-vertical.px: 11
+padding-horizontal.px: 14
+border-radius.px: 30
+anchor: parent
+top.px: 35
+left.px: -136
+min-width.fixed.px: 152
+
+-- ftd.text: $mode-changer.mode-2
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-2)
+$on-click$: $ftd.enable-light-mode()
+min-width.fixed.px: 112
+
+-- ftd.image:
+src: $assets.files.static.footer.down.svg
+width.fixed.px: 12
+height: auto
+align-self: center
+
+-- end: ftd.row
+
+-- ftd.row:
+background.solid: #111111
+padding-vertical.px: 11
+padding-horizontal.px: 14
+border-radius.px: 30
+anchor: parent
+top.px: 80
+left.px: -131
+min-width.fixed.px: 152
+
+-- ftd.text: $mode-changer.mode-3
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-3)
+$on-click$: $ftd.enable-system-mode()
+min-width.fixed.px: 112
+
+-- ftd.image:
+src: $assets.files.static.footer.down.svg
+width.fixed.px: 12
+height: auto
+align-self: center
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { mode-changer.title == "Light" }
+
+-- ftd.row:
+background.solid: #111111
+padding-vertical.px: 11
+padding-horizontal.px: 14
+border-radius.px: 30
+anchor: parent
+top.px: 45
+min-width.fixed.px: 152
+left.px: -131
+
+-- ftd.text: $mode-changer.mode-1
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-1)
+$on-click$: $ftd.enable-dark-mode()
+min-width.fixed.px: 112
+
+-- ftd.image:
+src: $assets.files.static.footer.down.svg
+width.fixed.px: 12
+height: auto
+align-self: center
+
+-- end: ftd.row
+
+-- ftd.row:
+background.solid: #111111
+padding-vertical.px: 11
+padding-horizontal.px: 14
+border-radius.px: 30
+anchor: parent
+top.px: 80
+left.px: -131
+min-width.fixed.px: 152
+
+-- ftd.text: $mode-changer.mode-3
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-3)
+$on-click$: $ftd.enable-system-mode()
+min-width.fixed.px: 112
+
+-- ftd.image:
+src: $assets.files.static.footer.down.svg
+width.fixed.px: 12
+height: auto
+align-self: center
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: mode-changer
+
+

@@ -2,6 +2,7 @@
 -- import: fastn
 -- import: fastn/processors as pr
 -- import: fifthtry.github.io/fastn.io/footer-toc as toc
+-- import: fastn-cs
 
 -- integer $current-slide: 1
 
@@ -138,11 +139,12 @@ optional string sitename: fastn
 string login-button: Get Started
 integer width: $width
 children wrapper:
+ftd.color-scheme colors: $fastn-cs.main
 
 -- ftd.column:
 width: fill-container
 align-self: center
-background.solid: #000000
+background.solid: $inherited.colors.background.base
 overflow-y: auto
 
 -- header-fastn:
@@ -371,6 +373,7 @@ color if { !$menu-links.mouse-in }: $inherited.colors.text
 $on-mouse-enter$: $ftd.set-bool($a = $menu-links.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $menu-links.mouse-in, v = false)
 white-space: nowrap
+min-height.fixed.px: 34
 
 /-- ftd.integer: $menu-links.idx
 
@@ -380,7 +383,7 @@ width: fill-container
 min-width.fixed.px: $menu-links.width
 anchor: parent
 z-index: 999
-top.px: 24
+top.px: 34
 left.px: $divideToTwo(a = $menu-links.width)
 $on-click-outside$: $ftd.set-bool($a = $menu-links.show-menu, v = false)
 
@@ -395,8 +398,8 @@ border-radius.px: 12
 -- ftd.column:
 anchor: parent
 top.px: -18
-left.px: $divideToTwo(a = $menu-links.width)
-z-index: 999
+left.calc: 50% - 50px
+z-index: 0
 
 -- ftd.image:
 src: $assets.files.static.header.polygon.svg
@@ -458,6 +461,7 @@ margin-top.px: 40
 -- ftd.column:
 width: fill-container
 ;;min-height.fixed.px: 500
+;;background.solid: red
 
 ;; right column
 
@@ -2569,6 +2573,7 @@ caption title:
 string link:
 
 -- ftd.column:
+width.fixed.px: 295
 spacing.fixed.px: 12
 
 -- ftd.text: $toc-items-loop.title

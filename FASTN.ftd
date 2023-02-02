@@ -4,6 +4,9 @@
 download-base-url: https://raw.githubusercontent.com/fifthtry/fastn.io/main
 
 
+-- fastn.dependency: fifthtry.github.io/fastn-cs as fastn-cs
+
+
 -- fastn.auto-import: fastn
 
 
@@ -15,7 +18,7 @@ download-base-url: https://raw.githubusercontent.com/fifthtry/fastn.io/main
 # Why fastn: index.html
 icon: /-/fifthtry.github.io/fastn.io/static/header/why-menu-img-dark.svg
 
-## Why fastn: index.html
+## Why fastn Child: index.html
 
 - Benefits of Fastn: /
 

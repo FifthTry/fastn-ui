@@ -2,6 +2,7 @@
 -- import: fastn
 -- import: fastn/processors as pr
 -- import: fifthtry.github.io/fastn.io/lib as ft
+-- import: fastn-cs
 
 
 -- $ft.current-slide: 1
@@ -9,6 +10,7 @@
 
 
 -- ft.page: This is page
+
 
 This is page body
 

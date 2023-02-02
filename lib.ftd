@@ -139,7 +139,7 @@ optional string sitename: fastn
 string login-button: Get Started
 integer width: $width
 children wrapper:
-ftd.color-scheme colors: $fastn-cs.main
+;;ftd.color-scheme colors: $fastn-cs.main
 
 -- ftd.column:
 width: fill-container

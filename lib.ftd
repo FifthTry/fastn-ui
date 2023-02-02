@@ -2908,6 +2908,14 @@ footer-toc: $footer.footer-toc
 -- end: footer
 
 
+
+
+
+
+
+
+
+
 -- component footer-desktop:
 pr.toc-item list footer-toc: $footer-toc
 integer width: 1320
@@ -2995,6 +3003,12 @@ color: #707070
 
 
 
+
+
+
+
+
+
 -- component footer-mobile:
 pr.toc-item list footer-toc: $footer-toc
 integer width: 1320
@@ -3039,7 +3053,6 @@ padding-top.px: 17
 spacing.fixed.px: 18
 
 -- ftd.row:
-width: fill-container
 align-self: center
 spacing.fixed.px: 18
 

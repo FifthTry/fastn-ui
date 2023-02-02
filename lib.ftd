@@ -184,6 +184,7 @@ width: fill-container
 align-self: center
 background.solid: $inherited.colors.background.base
 overflow-y: auto
+padding-horizontal.px: 48
 
 -- header-fastn:
 logo: $page.logo
@@ -274,6 +275,7 @@ width: fill-container
 
 -- ftd.row:
 width: fill-container
+margin-right.px: 24
 
 -- ftd.text: $header-fastn.sitename
 if: { header-fastn.sitename != NULL && header-fastn.logo == NULL }

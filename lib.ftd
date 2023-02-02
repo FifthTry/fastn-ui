@@ -313,6 +313,7 @@ border-radius.px: 30
 padding-vertical.px: 20
 padding-horizontal.px: 42
 align-content: center
+;;spacing: space-around
 
 
 -- ftd.text: $cta-button.title
@@ -2590,3 +2591,136 @@ Lorem ipsum dolor sit amet, consectetur elit.
 -- end: ftd.column
 
 -- end: toc-items-loop
+
+
+
+
+
+
+-- string $selected-item: System
+
+
+
+
+
+
+-- component dropdown:
+caption title: $selected-item
+ftd.color theme-color: #333333
+boolean $show-options: false
+
+-- ftd.column:
+width: fill-container
+z-index: 0
+
+-- ftd.row:
+width: fill-container
+background.solid: $dropdown.theme-color
+$on-click$: $ftd.toggle($a = $dropdown.show-options)
+
+-- ftd.text: $selected-item
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+
+-- ftd.text: `v`
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+
+-- end: ftd.row
+
+
+-- ftd.column:
+if: { $dropdown.show-options }
+width: fill-container
+border-radius.px: 6
+border-width.px: 1
+border-color: $inherited.colors.border
+padding-horizontal.px: 12
+padding-vertical.px: 12
+anchor: parent
+top.px: 30
+left.px: 0
+z-index: 10
+spacing.fixed.px: 16
+
+-- mode-changer: $dropdown.title
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: dropdown
+
+
+
+
+
+-- component mode-changer:
+caption title:
+string $mode-1: Dark
+string $mode-2: Light
+string $mode-3: System
+
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.column:
+if: { mode-changer.title == "System" }
+width: fill-container
+
+-- ftd.text: $mode-changer.mode-1
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-1)
+$on-click$: $ftd.enable-dark-mode()
+
+-- ftd.text: $mode-changer.mode-2
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-2)
+$on-click$: $ftd.enable-light-mode()
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { mode-changer.title == "Dark" }
+width: fill-container
+
+-- ftd.text: $mode-changer.mode-2
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-2)
+$on-click$: $ftd.enable-light-mode()
+
+-- ftd.text: $mode-changer.mode-3
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-3)
+$on-click$: $ftd.enable-system-mode()
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { mode-changer.title == "Light" }
+width: fill-container
+
+-- ftd.text: $mode-changer.mode-1
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-1)
+$on-click$: $ftd.enable-dark-mode()
+
+-- ftd.text: $mode-changer.mode-3
+role: $inherited.types.button-large
+color: $inherited.colors.accent.primary
+$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-3)
+$on-click$: $ftd.enable-system-mode()
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: mode-changer
+
+

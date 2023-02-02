@@ -21,8 +21,8 @@ icon: /-/fifthtry.github.io/fastn.io/static/header/why-menu-img-dark.svg
 
 ## How to use fastn: /sample-1/
 
-/- Front end infrastructure: /build/
-/- Component Library: /learn/
+- Front end infrastructure: /build/
+- Component Library: /learn/
 
 ## Features listing page: /sample-1/
 
@@ -30,8 +30,8 @@ icon: /-/fifthtry.github.io/fastn.io/static/header/why-menu-img-dark.svg
 
 ## Use Cases1: /sample-1/
 
-/# Learn: /learn/
+# Learn: /learn/
 
-/# Build: /build/
+# Build: /build/
 
-/# Authoring: /authoring/
+# Authoring: /authoring/

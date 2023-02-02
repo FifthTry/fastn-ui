@@ -390,7 +390,7 @@ background.solid: #222222
 padding-vertical.px: 42
 padding-horizontal.px: 42
 border-radius.px: 12
-min-height.fixed.px: 500
+;;min-height.fixed.px: 500
 
 -- ftd.column:
 anchor: parent
@@ -457,7 +457,7 @@ margin-top.px: 40
 
 -- ftd.column:
 width: fill-container
-min-height.fixed.px: 500
+;;min-height.fixed.px: 500
 
 ;; right column
 

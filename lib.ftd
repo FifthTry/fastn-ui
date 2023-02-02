@@ -405,9 +405,23 @@ height: auto
 
 -- end: ftd.column
 
+-- ftd.column:
+width.fixed.percent: 50
+height: fill-container
+z-index: 0
+background.solid: #333333
+anchor: parent
+right.px: 0
+top.px: 0
+border-top-right-radius.px: 12
+border-bottom-right-radius.px: 12
+
+-- end: ftd.column
+
 -- ftd.row:
 width: fill-container
 spacing.fixed.px: 60
+z-index: 111
 
 -- ftd.column:
 width.fixed.px: 240
@@ -494,24 +508,25 @@ width: fill-container
 
 -- ftd.row:
 width: fill-container
+spacing.fixed.px: 60
 
 -- ftd.column:
-width: fill-container
+width.fixed.px: 284
+align-self: start
 
 -- ftd.column:
 background.solid if { loop-section-card.mouse-in }: #111111
 background.solid if { loop-section-card.is-active }: #111111
 padding-vertical.px: 12
 padding-horizontal.px: 24
-border-color if { !loop-section-card.mouse-in }: #222222
-border-color if { loop-section-card.mouse-in }: #333333
-border-color if { loop-section-card.is-active }: #333333
+border-color: #222222
+border-color if { loop-section-card.mouse-in || loop-section-card.is-active }: #333333
 border-width.px: 1
 border-radius.px: 5
 $on-mouse-enter$: $ftd.set-bool($a = $loop-section-card.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $loop-section-card.mouse-in, v = false)
 spacing.fixed.px: 12
-min-width.fixed.px: 234
+max-width.fixed.px: 234
 cursor: default
 $on-mouse-enter$: $ftd.set-bool($a = $loop-section-card.show-sub-menu, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $loop-section-card.show-sub-menu, v = false)
@@ -552,18 +567,16 @@ color: $inherited.colors.text
 
 -- end: ftd.column
 
--- end: ftd.row
-
 -- ftd.column:
-;;background.solid: #333333
-min-height.fixed.px: 500
-anchor: parent
-right.px: 0
-top.px: 0
+background.solid: #333333
+;;min-height.fixed.px: 500
+;;anchor: parent
+;;right.px: 0
+;;top.px: 0
 
 -- ftd.column:
 width: fill-container
-if: { loop-section-card.show-sub-menu }
+if: { loop-section-card.show-sub-menu || loop-section-card.is-active}
 
 -- toc-items: 
 if: { !ftd.is_empty(loop-section-card.toc) }
@@ -572,6 +585,10 @@ toc: $loop-section-card.toc
 -- end: ftd.column
 
 -- end: ftd.column
+
+-- end: ftd.row
+
+
 
 -- end: ftd.column
 
@@ -2552,7 +2569,6 @@ caption title:
 string link:
 
 -- ftd.column:
-max-width.fixed.percent: 50
 spacing.fixed.px: 12
 
 -- ftd.text: $toc-items-loop.title

@@ -2890,7 +2890,7 @@ color: $inherited.colors.custom.five
 
 -- component footer:
 pr.toc-item list footer-toc: $footer-toc
-integer width: 1320
+integer width: $footer-width
 
 -- ftd.column:
 width: fill-container
@@ -2918,7 +2918,7 @@ footer-toc: $footer.footer-toc
 
 -- component footer-desktop:
 pr.toc-item list footer-toc: $footer-toc
-integer width: 1320
+integer width: $footer-width
 
 -- ftd.column:
 width: fill-container
@@ -2930,7 +2930,7 @@ width: fill-container
 max-width.fixed.px: $footer-desktop.width
 padding-vertical.px: 60
 padding-horizontal.px: 60
-align-content: center
+align-self: center
 
 -- ftd.row:
 width: fill-container

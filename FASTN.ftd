@@ -18,7 +18,7 @@ download-base-url: https://raw.githubusercontent.com/fifthtry/fastn-io/main
 
 
 # Why fastn: index.html
-icon: -/fifthtry.github.io/fastn.io/static/header/why-menu-img.svg
+icon: /static/header/why-menu-img.svg
 
 ## Why fastn Child: index.html
 

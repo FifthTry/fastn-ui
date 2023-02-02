@@ -333,17 +333,16 @@ Easily change structure,style,and graphics -then host instantly.
 
 -- ft.row-container:
 spacing: 80
+padding-vertical: 80
 
 -- ft.text-bubble:
 text-image-1: $assets.files.static.text-with-circle.svg
 text-image-2: $assets.files.static.text-without-circle.svg
 spacing: 170
-width: 500
 
 
 -- ft.code-block-system:
 lang: ftd
-width: 500
 
 
 \-- import: fastn

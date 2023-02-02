@@ -117,6 +117,7 @@ light: #EF8435
 
 -- integer $width: 1160
 
+-- integer $footer-width: 1340
 
 
 
@@ -2409,7 +2410,7 @@ color: $inherited.colors.custom.five
 
 -- component footer:
 pr.toc-item list footer-toc:
-integer width: 1320
+integer width: $footer-width
 
 -- ftd.column:
 width: fill-container
@@ -2421,6 +2422,7 @@ width: fill-container
 max-width.fixed.px: $footer.width
 padding-vertical.px: 60
 padding-horizontal.px: 60
+align-self: center
 
 -- ftd.row:
 width: fill-container

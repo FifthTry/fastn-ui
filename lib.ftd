@@ -1988,6 +1988,7 @@ ftd.image-src src:
 
 -- ftd.column:
 width: fill-container
+align-self: center
 
 -- image-card-with-title-desktop: $image-card-with-title.title
 if: { ftd.device != "mobile" }
@@ -2060,6 +2061,8 @@ width: auto
 height: auto
 align-self: center
 margin-bottom.px: 16
+margin-bottom.px if {image-card-with-title-mobile.title == NULL }: 26
+margin-top.px if {image-card-with-title-mobile.title == NULL }: 26
 
 -- ftd.text: $image-card-with-title-mobile.title
 if: { image-card-with-title-mobile.title != NULL }

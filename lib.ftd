@@ -214,11 +214,11 @@ padding-bottom.px: 6
 align-content: center
 padding-horizontal.px: 10
 padding-vertical.px: 10
-border-color: $inherited.colors.text-strong
+border-color: $inherited.colors.border
 border-width.px: 1
 border-radius.px: 70
 spacing.fixed.px: 12
-background.solid: #EF8435
+background.solid: $inherited.colors.cta-primary.base
 link: /
 
 -- ftd.image:
@@ -229,7 +229,7 @@ align-self: center
 
 -- ftd.text: Docs
 role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
+color: $inherited.colors.text.dark
 
 -- end: ftd.row
 

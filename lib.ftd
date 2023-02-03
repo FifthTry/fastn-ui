@@ -2996,9 +2996,11 @@ width.fixed.px: 42
 
 -- end: ftd.row
 
--- ftd.text: © 2022 Fastn.inc
+-- ftd.text: © 2023 Fastn.inc
 role: $inherited.types.button-medium
-color: #707070
+color: $inherited.colors.text-strong
+white-space: nowrap
+align-self: center
 
 -- end: ftd.row
 

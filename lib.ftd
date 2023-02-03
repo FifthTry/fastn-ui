@@ -3957,6 +3957,7 @@ link: $footer-loop-desktop.url
 
 -- children-loop: $obj.title
 url: $obj.url
+children: $obj.children
 $loop$: $footer-loop-desktop.children as $obj
 
 -- end: ftd.column
@@ -3976,6 +3977,7 @@ $loop$: $footer-loop-desktop.children as $obj
 -- component children-loop:
 caption title:
 string url:
+pr.toc-item list children:
 
 -- ftd.column:
 spacing.fixed.px: 14
@@ -3991,6 +3993,16 @@ if: { ftd.device == "mobile"}
 role: $inherited.types.button-medium
 color: $inherited.colors.text
 link: $children-loop.url
+
+-- ftd.column:
+if: { !ftd.is_empty(children-loop.children) }
+
+-- children-loop: $obj.title
+url: $obj.url
+children: $obj.children
+$loop$: $children-loop.children as $obj
+
+-- end: ftd.column
 
 -- end: ftd.column
 

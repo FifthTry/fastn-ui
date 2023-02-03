@@ -2522,7 +2522,7 @@ wrap: $row-container.wrap
 boolean show-border: true
 integer width: $width
 children wrapper:
-optional ftd.color bgcolor: #EF8435
+optional ftd.color bgcolor: $inherited.colors.accent.primary
 
 -- ftd.column:
 width: fill-container
@@ -2533,7 +2533,7 @@ if: { rectangle-card.show-border }
 width: fill-container
 height: fill-container
 border-width.px: 1
-border-color: #FFFFFF
+border-color: $inherited.colors.border
 border-radius.px: 30
 z-index: 11
 anchor: parent
@@ -2570,7 +2570,7 @@ z-index: 0
 optional caption title:
 optional ftd.image-src logo:
 optional body body:
-optional ftd.color body-color: #FFFFFF
+optional ftd.color body-color: $inherited.colors.border.dark
 integer width: $width
 
 -- ftd.column:

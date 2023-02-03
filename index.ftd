@@ -388,7 +388,7 @@ At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentes
 
 -- ft.rectangle-card:
 show-border: false
-bgcolor: #FFFFFF
+bgcolor: $inherited.colors.custom.four.light
 width: 425
 
 -- ft.title-with-body-card: React JS
@@ -447,7 +447,7 @@ At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentes
 
 -- ft.rectangle-card:
 show-border: false
-bgcolor: #FFFFFF
+bgcolor: $inherited.colors.custom.four.light
 width: 425
 
 -- ft.title-with-body-card: Angular JS
@@ -506,7 +506,7 @@ At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentes
 
 -- ft.rectangle-card:
 show-border: false
-bgcolor: #FFFFFF
+bgcolor: $inherited.colors.custom.four.light
 width: 425
 
 -- ft.title-with-body-card: Flutter

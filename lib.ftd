@@ -477,7 +477,7 @@ width: fill-container
 color: $inherited.colors.text-strong
 
 -- header-toc-loop: $obj.title
-if: { ! is_empty(header-toc-loop.children)}
+if: { ! ftd.is_empty(header-toc-loop.children)}
 url: $obj.url
 is-active: $obj.is-active
 children: $obj.children
@@ -584,7 +584,7 @@ width: fill-container
 -- ftd.text: $header-fastn-mobile.sitename
 if: { header-fastn-mobile.sitename != NULL && header-fastn-mobile.logo == NULL }
 role: $inherited.types.heading-large
-color: $inherited.colors.text.dark
+color: $inherited.colors.text
 
 -- ftd.image:
 if: { header-fastn-mobile.logo != NULL }
@@ -596,7 +596,7 @@ height.fixed.px: 40
 -- end: ftd.column
 
 -- ftd.image:
-src: $assets.files.static.header.menu-icons.hambergar.svg
+src: $assets.files.static.header.menu-icons.hamburger.svg
 width.fixed.px: 24
 height: auto
 ;;align-self: center
@@ -3791,14 +3791,11 @@ $loop$: $footer-mobile.footer-toc as $obj
 children: $obj.children
 url: $obj.url
 
-
 -- end: ftd.column
 
 -- dark-mode-switcher:
 
-
 -- dropdown:
-
 
 -- ftd.column:
 width: fill-container
@@ -3839,6 +3836,14 @@ width: fill-container
 -- end: ftd.column
 
 -- end: footer-mobile
+
+
+
+
+
+
+
+
 
 
 
@@ -3887,25 +3892,32 @@ padding-horizontal.px: 16
 
 -- ftd.row:
 width: fill-container
-$on-click$: $ftd.toggle($a= $footer-loop-mobile.shows-data)
 
 -- ftd.text: $footer-loop-mobile.title
 role: $inherited.types.heading-tiny
 width: fill-container
 color: $inherited.colors.text-strong
+link: $footer-loop-mobile.url
 
 -- ftd.image:
 if: {footer-loop-mobile.shows-data}
-src: $assets.files.static.footer.drop-down.svg
+src: $assets.files.static.footer.drop-up.svg
 width.fixed.px: 16
+$on-click$: $ftd.toggle($a= $footer-loop-mobile.shows-data)
+align-self: center
 
 -- ftd.image:
 if: {!footer-loop-mobile.shows-data}
-src: $assets.files.static.footer.drop-up.svg
+src: $assets.files.static.footer.drop-down.svg
 width.fixed.px: 16
-
+$on-click$: $ftd.toggle($a= $footer-loop-mobile.shows-data)
+align-self: center
 
 -- end: ftd.row
+
+-- ftd.column:
+spacing.fixed.px: 14
+margin-top.px if { $footer-loop-mobile.shows-data }: 12
 
 -- children-loop: $obj.title
 if: {footer-loop-mobile.shows-data}
@@ -3916,7 +3928,19 @@ $loop$: $footer-loop-mobile.children as $obj
 
 -- end: ftd.column
 
+-- end: ftd.column
+
 -- end: footer-loop-mobile
+
+
+
+
+
+
+
+
+
+
 
 -- component footer-loop-desktop:
 caption title:
@@ -3929,6 +3953,7 @@ spacing.fixed.px: 14
 -- ftd.text: $footer-loop-desktop.title
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
+link: $footer-loop-desktop.url
 
 -- children-loop: $obj.title
 url: $obj.url
@@ -3937,6 +3962,16 @@ $loop$: $footer-loop-desktop.children as $obj
 -- end: ftd.column
 
 -- end: footer-loop-desktop
+
+
+
+
+
+
+
+
+
+
 
 -- component children-loop:
 caption title:
@@ -3949,15 +3984,22 @@ spacing.fixed.px: 14
 if: { ftd.device != "mobile"}
 role: $inherited.types.copy-small
 color: $inherited.colors.text
+link: $children-loop.url
 
 -- ftd.text: $children-loop.title
 if: { ftd.device == "mobile"}
 role: $inherited.types.button-medium
 color: $inherited.colors.text
+link: $children-loop.url
 
 -- end: ftd.column
 
 -- end: children-loop
+
+
+
+
+
 
 
 

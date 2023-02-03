@@ -183,8 +183,12 @@ ftd.type-data types: $typo.manrope-type
 width: fill-container
 align-self: center
 background.solid: $inherited.colors.background.base
-overflow-y: auto
-padding-horizontal.px: 48
+
+-- ftd.column:
+width: fill-container
+;;padding-horizontal.px if { ftd.device != "mobile" }: 48
+min-width.fixed.px if { ftd.device != "mobile" }: $page.width
+overflow-x: auto
 
 -- header-fastn:
 logo: $page.logo
@@ -235,11 +239,11 @@ color: $inherited.colors.text-strong
 width: fill-container
 children: $page.wrapper
 
-
 -- end: ftd.column
 
 -- end: ftd.column
 
+-- end: ftd.column
 
 -- end: page
 
@@ -276,6 +280,7 @@ width: fill-container
 -- ftd.row:
 width: fill-container
 margin-right.px: 24
+align-self: center
 
 -- ftd.text: $header-fastn.sitename
 if: { header-fastn.sitename != NULL && header-fastn.logo == NULL }
@@ -413,7 +418,6 @@ color if { !$menu-links.mouse-in }: $inherited.colors.text
 $on-mouse-enter$: $ftd.set-bool($a = $menu-links.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $menu-links.mouse-in, v = false)
 white-space: nowrap
-min-height.fixed.px: 34
 
 -- ftd.column:
 if: { $menu-links.show-menu }
@@ -783,12 +787,13 @@ z-index: 10
 align-content: center
 
 -- ftd.column:
-width.fixed.px: $metrics-card-desktop.width
+width: fill-container
+align-self: center
+max-width.fixed.px: $metrics-card-desktop.width
 
 -- ftd.row:
 width: fill-container
-spacing.fixed.px: 198
-align-content: center
+align-self: center
 
 -- ftd.column:
 width: fill-container
@@ -1067,12 +1072,14 @@ optional string link:
 optional integer pull-top: 0
 children card-wrap:
 integer z-index: 0
+integer width: $width
 
 -- ftd.column:
 width: fill-container
 align-content: center
 margin-top.px: $snippet-card-left.pull-top
 z-index: $snippet-card-left.z-index
+max-width.fixed.px: $snippet-card-left.width
 
 -- ftd.row:
 width: fill-container

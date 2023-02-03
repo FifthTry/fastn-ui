@@ -321,7 +321,8 @@ Easily change structure,style,and graphics -then host instantly.
 cta-text: Create Now
 cta-link: /
 cta-role: primary
-bgcolor: #000000
+bgcolor: $inherited.colors.background.base
+keep-dark: false
 
 -- ft.excel-promo-card.info:
 
@@ -388,7 +389,7 @@ At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentes
 
 -- ft.rectangle-card:
 show-border: false
-bgcolor: #FFFFFF
+bgcolor: $inherited.colors.custom.four.light
 width: 425
 
 -- ft.title-with-body-card: React JS
@@ -447,7 +448,7 @@ At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentes
 
 -- ft.rectangle-card:
 show-border: false
-bgcolor: #FFFFFF
+bgcolor: $inherited.colors.custom.four.light
 width: 425
 
 -- ft.title-with-body-card: Angular JS
@@ -506,7 +507,7 @@ At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentes
 
 -- ft.rectangle-card:
 show-border: false
-bgcolor: #FFFFFF
+bgcolor: $inherited.colors.custom.four.light
 width: 425
 
 -- ft.title-with-body-card: Flutter
@@ -581,7 +582,7 @@ spacing: 80
 
 -- ft.testimonial-card: Jenny Wilson
 avatar: $assets.files.static.testimonials.avatar-1.svg
-bgcolor: #5C2860
+bgcolor: $inherited.colors.custom.two
 label: CEO, ABC Company
 width: 500
 margin-right: -80
@@ -644,7 +645,7 @@ egestas nulla .
 cta-text: Learn More
 cta-link: /
 image: $assets.files.static.charts-image.svg
-bgcolor: #EF8435
+bgcolor: $inherited.colors.accent.primary
 
 -- ft.rounded-corner-card.info:
 

@@ -699,7 +699,7 @@ padding-right.px: 200
 if: { $hero-section.info != NULL }
 text: $hero-section.info
 role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 max-width.fixed.px: 520
 margin-top.px: 15
 
@@ -807,11 +807,11 @@ height.fixed.px: 86
 
 -- ftd.text: 500
 role: $inherited.types.heading-medium
-color: $inherited.colors.text
+color: $inherited.colors.text.dark
 
 -- ftd.text: Projects created
 role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
+color: $inherited.colors.text-strong.dark
 
 -- end: ftd.column
 
@@ -827,11 +827,11 @@ height.fixed.px: 86
 
 -- ftd.text: 200
 role: $inherited.types.heading-medium
-color: $inherited.colors.text
+color: $inherited.colors.text.dark
 
 -- ftd.text: Hostings
 role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
+color: $inherited.colors.text-strong.dark
 
 -- end: ftd.column
 
@@ -847,11 +847,11 @@ height.fixed.px: 86
 
 -- ftd.text: 90
 role: $inherited.types.heading-medium
-color: $inherited.colors.text
+color: $inherited.colors.text.dark
 
 -- ftd.text: Loreum ipsums
 role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
+color: $inherited.colors.text-strong.dark
 
 -- end: ftd.column
 
@@ -867,11 +867,11 @@ height.fixed.px: 86
 
 -- ftd.text: 16
 role: $inherited.types.heading-medium
-color: $inherited.colors.text
+color: $inherited.colors.text.dark
 
 -- ftd.text: Loreum ipsums
 role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
+color: $inherited.colors.text-strong.dark
 
 -- end: ftd.column
 
@@ -922,11 +922,11 @@ height.fixed.px: 60
 
 -- ftd.text: 500
 role: $inherited.types.heading-medium
-color: $inherited.colors.text
+color: $inherited.colors.text.dark
 
 -- ftd.text: Projects created
 role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
+color: $inherited.colors.text-strong.dark
 
 -- end: ftd.column
 
@@ -950,11 +950,11 @@ height.fixed.px: 60
 
 -- ftd.text: 200
 role: $inherited.types.heading-medium
-color: $inherited.colors.text
+color: $inherited.colors.text.dark
 
 -- ftd.text: Projects created
 role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
+color: $inherited.colors.text-strong.dark
 
 -- end: ftd.column
 
@@ -978,11 +978,11 @@ height.fixed.px: 60
 
 -- ftd.text: 90
 role: $inherited.types.heading-medium
-color: $inherited.colors.text
+color: $inherited.colors.text.dark
 
 -- ftd.text: Hostings
 role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
+color: $inherited.colors.text-strong.dark
 
 -- end: ftd.column
 
@@ -1006,11 +1006,11 @@ height.fixed.px: 60
 
 -- ftd.text: 16
 role: $inherited.types.heading-medium
-color: $inherited.colors.text
+color: $inherited.colors.text.dark
 
 -- ftd.text: Hostings
 role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
+color: $inherited.colors.text-strong.dark
 
 -- end: ftd.column
 
@@ -1120,7 +1120,7 @@ width.fixed.px if { ftd.device == "mobile"}: 343
 -- ftd.column:
 if: { ftd.device != "mobile" }
 max-width.fixed.px: 280
-background.solid: $inherited.colors.border
+background.solid: $inherited.colors.border.dark
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 20
@@ -1141,7 +1141,7 @@ color: $inherited.colors.cta-secondary.text
 -- ftd.text: 
 text: $snippet-card-left.description
 role: $inherited.types.fine-print
-color: $inherited.colors.cta-secondary.pressed
+color: $inherited.colors.text-strong
 
 -- ftd.text: $snippet-card-left.cta-text
 color: $inherited.colors.cta-secondary.text
@@ -1169,20 +1169,18 @@ height.fixed.px: 91
 
 -- ftd.text: $snippet-card-left.title
 role: $code-snippet-title
-color: $inherited.colors.background.base
-;; color: $inherited.colors.cta-secondary.text
+color: $inherited.colors.cta-secondary.text.dark
 text-align: start
 
 -- ftd.text: 
 text: $snippet-card-left.description
 role: $inherited.types.fine-print
-color: $inherited.colors.cta-secondary.pressed
+color: $inherited.colors.cta-secondary.pressed.dark
 text-align: start
-
 
 -- ftd.text: $snippet-card-left.cta-text
 color: $inherited.colors.background.base
-;;color: $inherited.colors.cta-secondary.text
+;;color: $inherited.colors.cta-secondary.text.dark
 role: $inherited.types.copy-small
 text-align: start
 
@@ -1293,7 +1291,7 @@ margin-left.px: -22
 
 -- ftd.column:
 max-width.fixed.px: 280
-background.solid: $inherited.colors.border
+background.solid: $inherited.colors.border.dark
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 20
@@ -1314,7 +1312,7 @@ color: $inherited.colors.cta-secondary.text
 -- ftd.text: 
 text: $snippet-card-right.description
 role: $inherited.types.fine-print
-color: $inherited.colors.cta-secondary.pressed
+color: $inherited.colors.text-strong
 
 -- ftd.text: $snippet-card-right.cta-text
 color: $inherited.colors.cta-secondary.text
@@ -1773,12 +1771,12 @@ spacing.fixed.px: 16
 
 -- ftd.text: $excel-promo-card.title
 role: $inherited.types.heading-large
-color: $inherited.colors.text
+color: $inherited.colors.text.dark
 
 -- ftd.text:
 text: $excel-promo-card.info
 role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
+color: $inherited.colors.text-strong.dark
 margin-bottom.px: 16 
 
 -- cta-button: $excel-promo-card.cta-text
@@ -2198,19 +2196,19 @@ width if { ftd.device == "mobile" }: fill-container
 
 -- ftd.text: $rounded-corner-card.title
 role: $inherited.types.heading-large
-color: $inherited.colors.text
+color: $inherited.colors.text.dark
 
 -- ftd.text:
 if: { ftd.device != "mobile"}
 text: $rounded-corner-card.info
-color: $inherited.colors.text-strong
+color: $inherited.colors.text-strong.dark
 role: $inherited.types.copy-large
 margin-bottom.px: 16
 
 -- ftd.text:
 if: { ftd.device == "mobile"}
 text: $rounded-corner-card.info
-color: $inherited.colors.text
+color: $inherited.colors.text.dark
 role: $inherited.types.copy-regular
 margin-bottom.px: 16
 
@@ -2809,7 +2807,7 @@ caption title:
 optional string label:
 optional body body:
 optional ftd.image-src avatar:
-optional ftd.color bgcolor: #5C2860
+optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
 integer margin-top: 0
 integer margin-right: 0
@@ -2839,7 +2837,7 @@ left.px if { ftd.device == "mobile"}: -5
 
 -- ftd.column:
 width: fill-container
-background.solid: $inherited.colors.text
+background.solid: $inherited.colors.custom.four.light
 padding-vertical.px: 34
 padding-horizontal.px: 26
 padding-bottom.px: 70
@@ -2862,7 +2860,7 @@ align-self: center
 -- ftd.text:
 if: { testimonial-card.body != NULL }
 text: $testimonial-card.body
-color: $inherited.colors.custom.five
+color: $inherited.colors.custom.five.dark
 role: $inherited.types.copy-regular
 align-self: center
 
@@ -2874,11 +2872,11 @@ spacing.fixed.px: 6
 
 -- ftd.text: $testimonial-card.title
 role: $inherited.types.blockquote
-color: $inherited.colors.custom.five
+color: $inherited.colors.custom.five.dark
 
 -- ftd.text: $testimonial-card.label
 role: $inherited.types.fine-print
-color: $inherited.colors.custom.five
+color: $inherited.colors.custom.five.dark
 
 -- end: ftd.column
 

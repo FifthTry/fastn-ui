@@ -581,7 +581,7 @@ spacing: 80
 
 -- ft.testimonial-card: Jenny Wilson
 avatar: $assets.files.static.testimonials.avatar-1.svg
-bgcolor: #5C2860
+bgcolor: $inherited.colors.custom.two
 label: CEO, ABC Company
 width: 500
 margin-right: -80
@@ -644,7 +644,7 @@ egestas nulla .
 cta-text: Learn More
 cta-link: /
 image: $assets.files.static.charts-image.svg
-bgcolor: #EF8435
+bgcolor: $inherited.colors.accent.primary
 
 -- ft.rounded-corner-card.info:
 

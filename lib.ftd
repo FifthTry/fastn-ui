@@ -692,14 +692,14 @@ align-self: center
 
 -- ftd.text: $hero-section.title
 role: $inherited.types.heading-hero
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 padding-right.px: 200
 
 -- ftd.text:
 if: { $hero-section.info != NULL }
 text: $hero-section.info
 role: $inherited.types.copy-large
-color: $inherited.colors.text
+color: $inherited.colors.text-strong
 max-width.fixed.px: 520
 margin-top.px: 15
 
@@ -807,11 +807,11 @@ height.fixed.px: 86
 
 -- ftd.text: 500
 role: $inherited.types.heading-medium
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 
 -- ftd.text: Projects created
 role: $inherited.types.copy-small
-color: $inherited.colors.text
+color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
@@ -827,11 +827,11 @@ height.fixed.px: 86
 
 -- ftd.text: 200
 role: $inherited.types.heading-medium
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 
 -- ftd.text: Hostings
 role: $inherited.types.copy-small
-color: $inherited.colors.text
+color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
@@ -847,11 +847,11 @@ height.fixed.px: 86
 
 -- ftd.text: 90
 role: $inherited.types.heading-medium
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 
 -- ftd.text: Loreum ipsums
 role: $inherited.types.copy-small
-color: $inherited.colors.text
+color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
@@ -867,11 +867,11 @@ height.fixed.px: 86
 
 -- ftd.text: 16
 role: $inherited.types.heading-medium
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 
 -- ftd.text: Loreum ipsums
 role: $inherited.types.copy-small
-color: $inherited.colors.text
+color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
@@ -922,11 +922,11 @@ height.fixed.px: 60
 
 -- ftd.text: 500
 role: $inherited.types.heading-medium
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 
 -- ftd.text: Projects created
 role: $inherited.types.copy-small
-color: $inherited.colors.text
+color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
@@ -950,11 +950,11 @@ height.fixed.px: 60
 
 -- ftd.text: 200
 role: $inherited.types.heading-medium
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 
 -- ftd.text: Projects created
 role: $inherited.types.copy-small
-color: $inherited.colors.text
+color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
@@ -978,11 +978,11 @@ height.fixed.px: 60
 
 -- ftd.text: 90
 role: $inherited.types.heading-medium
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 
 -- ftd.text: Hostings
 role: $inherited.types.copy-small
-color: $inherited.colors.text
+color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
@@ -1006,11 +1006,11 @@ height.fixed.px: 60
 
 -- ftd.text: 16
 role: $inherited.types.heading-medium
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 
 -- ftd.text: Hostings
 role: $inherited.types.copy-small
-color: $inherited.colors.text
+color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
@@ -1066,7 +1066,7 @@ children: $features-card.fearures-wrap
 caption title:
 optional string description:
 optional string cta-text:
-optional ftd.color bgcolor: #EBBE52
+optional ftd.color bgcolor: $inherited.colors.custom.three
 optional ftd.image-src image-mask: $assets.files.static.features.web-project-mask.svg
 optional string link: 
 optional integer pull-top: 0
@@ -1101,7 +1101,7 @@ margin-left.px if { ftd.device == "mobile"}: 30
 width: fill-container
 padding-vertical.px: 16
 ;;padding-horizontal.px: 22
-border-color: #FFFFFF
+border-color: $inherited.colors.border
 border-width.px: 1
 border-radius.px: 32
 border-radius.px if { ftd.device == "mobile"}: 20
@@ -1120,9 +1120,9 @@ width.fixed.px if { ftd.device == "mobile"}: 343
 -- ftd.column:
 if: { ftd.device != "mobile" }
 max-width.fixed.px: 280
-background.solid: #FFFFFF
+background.solid: $inherited.colors.border
 border-width.px: 1
-border-color: #FFFFFF
+border-color: $inherited.colors.border
 border-radius.px: 20
 padding-vertical.px: 16
 padding-horizontal.px: 16
@@ -1152,9 +1152,9 @@ role: $inherited.types.copy-small
 -- ftd.column:
 if: { ftd.device == "mobile" }
 max-width.fixed.px: 280
-background.solid: #FFFFFF
+background.solid: $inherited.colors.border
 border-width.px: 1
-border-color: #FFFFFF
+border-color: $inherited.colors.border
 border-radius.px: 20
 padding-vertical.px: 16
 padding-horizontal.px: 16
@@ -1235,7 +1235,7 @@ height: auto
 caption title:
 optional string description:
 optional string cta-text:
-optional ftd.color bgcolor: #EBBE52
+optional ftd.color bgcolor: $inherited.colors.custom.one
 optional ftd.image-src image-mask: $assets.files.static.features.web-project-mask.svg
 optional string link: 
 optional integer pull-top: 0
@@ -1279,7 +1279,7 @@ margin-left.px: 22
 width: fill-container
 padding-vertical.px: 16
 ;;padding-horizontal.px: 22
-border-color: #FFFFFF
+border-color: $inherited.colors.border
 border-width.px: 1
 border-radius.px: 32
 
@@ -1293,9 +1293,9 @@ margin-left.px: -22
 
 -- ftd.column:
 max-width.fixed.px: 280
-background.solid: #FFFFFF
+background.solid: $inherited.colors.border
 border-width.px: 1
-border-color: #FFFFFF
+border-color: $inherited.colors.border
 border-radius.px: 20
 padding-vertical.px: 16
 padding-horizontal.px: 16
@@ -1365,12 +1365,12 @@ z-index: 1111
 
 -- ftd.text: $featured-card-text.title
 role: $inherited.types.heading-large
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 
 -- ftd.text:
 text: $featured-card-text.description
 role: $inherited.types.copy-regular
-color: $inherited.colors.text
+color: $inherited.colors.text-strong
 margin-bottom.px: 22
 
 -- cta-button: $featured-card-text.cta-title
@@ -1399,7 +1399,7 @@ children benefits-wrap:
 
 -- ftd.column:
 width: fill-container
-background.solid: #111111
+background.solid: $inherited.colors.background.step-1
 align-content: center
 align-self: center
 
@@ -1412,7 +1412,7 @@ padding-vertical.px: 150
 
 -- ftd.text: $benefits-card.title
 role: $inherited.types.heading-large
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 
 -- ftd.row:
 width: fill-container
@@ -1464,12 +1464,12 @@ align-self: center
 
 -- ftd.text: $benefits-info-card.title
 role: $inherited.types.heading-medium
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 text-align: center
 
 -- ftd.text:
 text: $benefits-info-card.info
-color: $inherited.colors.text
+color: $inherited.colors.text-strong
 role: $inherited.types.copy-regular
 text-align: center
 
@@ -1561,17 +1561,17 @@ margin-bottom.px: 70
 
 -- ftd.text: $trending-templates.title
 role: $inherited.types.heading-large
-color: $inherited.colors.text-strong
-role if { ftd.device == "mobile" }: $inherited.types.heading-medium
+color: $inherited.colors.text
+role if { ftd.device == "mobile" }: $inherited.types.heading-hero
 height.fixed.px if { ftd.device == "mobile" }: 48
 width.fixed.px if { ftd.device == "mobile" }: 310
 text-align: center
 
 -- ftd.text:
 text: $trending-templates.info
-color: $inherited.colors.text
+color: $inherited.colors.text-strong
 role: $inherited.types.copy-large
-role if { ftd.device == "mobile" }: $inherited.types.copy-regular
+role if { ftd.device == "mobile" }: $inherited.types.copy-small
 width.fixed.px if { ftd.device == "mobile" }: 325
 margin-bottom.px: 16
 text-align: center
@@ -1741,7 +1741,7 @@ optional string cta-text:
 optional string cta-link:
 optional string cta-role: 
 optional ftd.image-src image:
-optional ftd.color bgcolor: #5C2860
+optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
 children promo-wrap:
 
@@ -1773,12 +1773,12 @@ spacing.fixed.px: 16
 
 -- ftd.text: $excel-promo-card.title
 role: $inherited.types.heading-large
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 
 -- ftd.text:
 text: $excel-promo-card.info
 role: $inherited.types.copy-large
-color: $inherited.colors.text
+color: $inherited.colors.text-strong
 margin-bottom.px: 16 
 
 -- cta-button: $excel-promo-card.cta-text
@@ -1797,13 +1797,13 @@ align-content: center
 
 -- ftd.text: $excel-promo-card.title
 role: $inherited.types.heading-large
-color: $inherited.colors.text-strong
+color: $inherited.colors.accent.secondary
 text-align: center
 
 -- ftd.text:
 text: $excel-promo-card.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
 margin-bottom.px: 16 
 
 -- cta-button: $excel-promo-card.cta-text
@@ -1916,14 +1916,14 @@ width: fill-container
 spacing.fixed.px: 16
 
 -- ftd.text: $card-with-icons-bottom-desktop.title
-role: $font-50
-color: $inherited.colors.text-strong
+role: $inherited.types.heading-large
+color: $inherited.colors.text
 
 -- ftd.text: 
 if: { card-with-icons-bottom-desktop.info != NULL }
 text: $card-with-icons-bottom-desktop.info
 role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 margin-bottom.px: 16
 
 -- cta-button: $card-with-icons-bottom-desktop.cta-text
@@ -1983,15 +1983,15 @@ width.fixed.px: 343
 align-content: center
 
 -- ftd.text: $card-with-icons-bottom-mobile.title
-role: $font-50
-color: $inherited.colors.text-strong
+role: $inherited.types.heading-hero
+color: $inherited.colors.text
 text-align: center
 
 -- ftd.text: 
 if: { card-with-icons-bottom-mobile.info != NULL }
 text: $card-with-icons-bottom-mobile.info
-role: $inherited.types.copy-regular
-color: $inherited.colors.text
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
 margin-bottom.px: 16
 text-align: center
 
@@ -2067,8 +2067,8 @@ spacing.fixed.px: 16
 
 -- ftd.text: $image-card-with-title-desktop.title
 if: { image-card-with-title-desktop.title != NULL }
-role: $inherited.types.copy-regular
-color: $inherited.colors.text-strong
+role: $inherited.types.heading-small
+color: $inherited.colors.text
 
 -- ftd.image:
 src: $image-card-with-title-desktop.src
@@ -2110,8 +2110,8 @@ margin-top.px if {image-card-with-title-mobile.title == NULL }: 26
 
 -- ftd.text: $image-card-with-title-mobile.title
 if: { image-card-with-title-mobile.title != NULL }
-role: $inherited.types.copy-regular
-color: $inherited.colors.text-strong
+role: $inherited.types.copy-large
+color: $inherited.colors.text
 
 -- end: ftd.column
 
@@ -2133,7 +2133,7 @@ optional string cta-text:
 optional string cta-link:
 optional ftd.image-src image:
 integer width: $width
-ftd.color bgcolor: #5C2860
+ftd.color bgcolor: $inherited.colors.custom.two
 children card-wrap:
 
 -- ftd.column:
@@ -2160,7 +2160,7 @@ border-radius.px if { ftd.device == "mobile" }: 10
 width: fill-container
 height: fill-container
 border-width.px: 1
-border-color: #FFFFFF
+border-color: $inherited.colors.border
 border-radius.px: 30
 z-index: 11
 anchor: parent
@@ -2197,8 +2197,8 @@ align-self: center
 width if { ftd.device == "mobile" }: fill-container
 
 -- ftd.text: $rounded-corner-card.title
-role: $font-50
-color: $inherited.colors.text-strong
+role: $inherited.types.heading-large
+color: $inherited.colors.text
 
 -- ftd.text:
 if: { ftd.device != "mobile"}
@@ -2450,8 +2450,8 @@ width: fill-container
 
 -- ftd.text: $row-container.title
 if: { row-container.title != NULL }
-role: $font-50
-color: $inherited.colors.text-strong
+role: $inherited.types.heading-large
+color: $inherited.colors.text
 align-self: center
 margin-bottom.px: 80
 text-align: center
@@ -2464,8 +2464,8 @@ width.fixed.px: 353
 
 -- ftd.text: $row-container.title
 if: { row-container.title != NULL }
-role: $font-50
-color: $inherited.colors.text-strong
+role: $inherited.types.heading-hero
+color: $inherited.colors.text
 align-self: center
 margin-bottom.px: 80
 text-align: center
@@ -2749,6 +2749,7 @@ color: $inherited.colors.text-strong
 align-self: center
 margin-top.px: 24
 text-align if { ftd.device == "mobile" }: center
+white-space if { ftd.device != "mobile" }: nowrap
 
 -- ftd.image:
 if: {ftd.device != "mobile"}
@@ -2775,7 +2776,7 @@ height: auto
 -- ftd.text:
 if: { heart-line-title-card.body != NULL }
 text: $heart-line-title-card.body
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 role: $inherited.types.copy-large
 text-align: center
 
@@ -2825,7 +2826,7 @@ margin-top.px if { ftd.device == "mobile"}: 12
 width: fill-container
 height: fill-container
 border-width.px: 1
-border-color: #333333
+border-color: $inherited.colors.border-strong
 border-radius.px: 30
 z-index: 0
 anchor: parent
@@ -2838,7 +2839,7 @@ left.px if { ftd.device == "mobile"}: -5
 
 -- ftd.column:
 width: fill-container
-background.solid: #FFFFFF
+background.solid: $inherited.colors.text
 padding-vertical.px: 34
 padding-horizontal.px: 26
 padding-bottom.px: 70
@@ -2876,7 +2877,7 @@ role: $inherited.types.blockquote
 color: $inherited.colors.custom.five
 
 -- ftd.text: $testimonial-card.label
-role: $inherited.types.copy-small
+role: $inherited.types.fine-print
 color: $inherited.colors.custom.five
 
 -- end: ftd.column

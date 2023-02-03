@@ -8,39 +8,10 @@
 -- integer $current-slide: 1
 
 
--- pr.toc-item list footer-toc:
-$processor$: pr.toc
+-- pr.sitemap-data footer-toc:
+$processor$: pr.full-sitemap
 
-- Why fastn: /
-  - Fastn: /
-  - How to use Fastn: /
-  - Feature listing: /
-- Use Case: /
-  - Landing Page: /
-  - Microsite: /
-  - Documentation Page: /
-  - Blog Page: /
-- Learn: /
-  - Contributors: /
-  - Authoring: /
-  - Learning FTD: /
-  - Open Source: /
-  - Internet OS: /
-- Design: /
-  - Template list: /
-  - Component list: /
-  - Font list: /
-  - Icons /Illustrations: /
-  - Design Theory: /
-  - Color Library: /
-- Developers: /
-  - FTD: /
-  - Hosting: /
-  - Builder Manual: /
-  - Blog: /
-  - Events: /
-  - Open source: /
-- Build: /
+
 
 
 -- ftd.type hero-desktop:
@@ -135,12 +106,6 @@ mobile: $font-28-mobile
 
 -- pr.toc-item list toc:
 
--- pr.toc-item list footer-toc:
-$processor$: pr.toc
-
-- How to use Fastn: /
-- Feature listing: /
-- Feature listing: /
 
 
 
@@ -170,7 +135,7 @@ optional pr.toc-item current-section: $sitemap.current-section
 optional pr.toc-item current-subsection: $sitemap.current-subsection
 optional pr.toc-item current-page: $sitemap.current-page
 pr.toc-item list toc: $sitemap.toc
-pr.toc-item list footer-toc: $footer-toc
+pr.toc-item list footer-toc: $footer-toc.sections
 optional ftd.image-src logo: 
 optional string sitename: Fastn
 string login-button: Get Started
@@ -1626,7 +1591,7 @@ link: $snippet-card-left.link
 pull-top: $snippet-card-left.pull-top
 card-wrap: $snippet-card-left.card-wrap
 z-index: $snippet-card-left.z-index
-max-width.fixed.px: $snippet-card-left.width
+width: $snippet-card-left.width
 
 -- snippet-card-left-mobile: $snippet-card-left.title
 if:{ftd.device == "mobile"}
@@ -1748,6 +1713,7 @@ optional string link:
 optional integer pull-top: 0
 children card-wrap:
 integer z-index: 0
+integer width: $width
 
 -- ftd.column:
 width: fill-container
@@ -2219,11 +2185,11 @@ caption title:
 optional string info:
 
 -- ftd.column:
-;; width.fixed.px if {ftd.device != "mobile"}: 500
+width.fixed.px if {ftd.device != "mobile"}: 500
 spacing.fixed.px: 70
 
 -- ftd.row:
-;; min-width.fixed.px if {ftd.device != "mobile"}: 500
+min-width.fixed.px if {ftd.device != "mobile"}: 500
 wrap: true
 
 -- ftd.column:
@@ -3676,7 +3642,7 @@ color: $inherited.colors.custom.five.dark
 
 
 -- component footer:
-pr.toc-item list footer-toc: $footer-toc
+pr.toc-item list footer-toc: $footer-toc.sections
 integer width: $footer-width
 
 -- ftd.column:
@@ -3704,7 +3670,7 @@ footer-toc: $footer.footer-toc
 
 
 -- component footer-desktop:
-pr.toc-item list footer-toc: $footer-toc
+pr.toc-item list footer-toc: 
 integer width: $footer-width
 
 -- ftd.column:
@@ -3744,7 +3710,7 @@ url: $obj.url
 
 -- end: ftd.column
 
--- dark-mode-switcher:
+;;-- dark-mode-switcher:
 
 -- end: ftd.row
 
@@ -3799,7 +3765,7 @@ align-self: center
 
 
 -- component footer-mobile:
-pr.toc-item list footer-toc: $footer-toc
+pr.toc-item list footer-toc: 
 integer width: 1320
 
 -- ftd.column:
@@ -4139,7 +4105,7 @@ width: fill-container
 z-index: 0
 
 -- ftd.row:
-background.solid: #111111
+background.solid: $inherited.colors.background.base
 padding-vertical.px: 11
 padding-horizontal.px: 14
 border-radius.px: 30
@@ -4150,6 +4116,8 @@ bottom.px if {ftd.device == "mobile}: -65
 right.px if {ftd.device == "mobile}: 104
 min-width.fixed.px: 152
 $on-click$: $ftd.toggle($a = $dropdown.show-options)
+border-color: $inherited.colors.border
+border-width.px: 1
 
 -- ftd.text: $selected-item
 role: $inherited.types.button-large
@@ -4186,48 +4154,49 @@ caption title:
 string $mode-1: Dark
 string $mode-2: Light
 string $mode-3: System
+boolean $mouse-in: false
 
 
 -- ftd.column:
-background.solid: #111111
+background.solid: $inherited.colors.background.base
 padding-vertical.px: 11
 padding-horizontal.px: 14
 anchor: parent
-top.px: 35
+top.px: 38
 left.px: -136
 min-width.fixed.px: 152
 spacing.fixed.px: 20
+border-color: $inherited.colors.border
+border-width.px: 1
+border-radius.px: 10
 
 -- ftd.column:
 if: { mode-changer.title == "System" }
+spacing.fixed.px: 24
 
--- ftd.row:
-$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-1)
-$on-click$: $ftd.enable-dark-mode()
 
 -- ftd.text: $mode-changer.mode-1
 role: $inherited.types.button-large
 color: $inherited.colors.accent.primary
 padding-right.px: 52
 min-width.fixed.px: 112
-
-
-
--- end: ftd.row
-
-
+$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-1)
+$on-click$: $ftd.enable-dark-mode()
 
 -- ftd.text: $mode-changer.mode-2
 role: $inherited.types.button-large
 color: $inherited.colors.accent.primary
 padding-right.px: 52
 width.fixed.px: 112
+$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-2)
+$on-click$: $ftd.enable-light-mode()
 
 
 -- end: ftd.column
 
 -- ftd.column:
 if: { mode-changer.title == "Dark" }
+spacing.fixed.px: 12
 
 
 -- ftd.text: $mode-changer.mode-2
@@ -4250,6 +4219,7 @@ min-width.fixed.px: 112
 
 -- ftd.column:
 if: { mode-changer.title == "Light" }
+spacing.fixed.px: 12
 
 
 -- ftd.text: $mode-changer.mode-1

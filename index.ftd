@@ -328,9 +328,11 @@ keep-dark: false
 
 Browse dozens of professionaly designed templates. Easily change structure,style,and graphics -then host instantly.
 
--- ft.row-container:
+-- ft.row-container-one:
 spacing: 80
+spacing if {ftd.device == "mobile"}: 60
 padding-vertical: 80
+padding-vertical if {ftd.device == "mobile"}: 0
 
 -- ft.text-bubble:
 text-image-1: $assets.files.static.text-with-circle.svg
@@ -346,13 +348,15 @@ lang: ftd
 \-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
 zip: github.com/<username_or_orgname>
 
--- end: ft.row-container
+-- end: ft.row-container-one
 
 
 -- end: ft.excel-promo-card
 
 -- ft.row-container: How FASTN is better than { REACT.js }
 padding-vertical: 150
+padding-vertical if {ftd.device == "mobile"}: 44
+
 
 ;; Repeat below `row-continer` for slider items
 
@@ -576,9 +580,10 @@ Browse dozens of professionaly designed templates.
 Easily change structure,style,and graphics -then host instantly.
 
 
--- ft.row-container:
+-- ft.row-container-one:
 wrap: true
 spacing: 80
+spacing if {ftd.device == "mobile"}: 32
 
 -- ft.testimonial-card: Jenny Wilson
 avatar: $assets.files.static.testimonials.avatar-1.svg
@@ -638,7 +643,7 @@ Lectus diam dignissim erat blandit pellentesque
 
 egestas nulla .
 
--- end: ft.row-container
+-- end: ft.row-container-one
 
 
 -- ft.rounded-corner-card: Become a Builder

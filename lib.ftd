@@ -172,6 +172,8 @@ width: $page.width
 -- ftd.column:
 width: fill-container
 align-content: right
+align-content if { ftd.device == "mobile" }: left
+padding-left.px if { ftd.device == "mobile" }: 16
 max-width.fixed.px: $width
 align-self: center
 padding-top.px: 12
@@ -189,7 +191,15 @@ background.solid: $inherited.colors.cta-primary.base
 link: /
 
 -- ftd.image:
+if: { ftd.device != "mobile" }
 src: $assets.files.static.doc-cta-icon.svg
+width: auto
+height: auto
+align-self: center
+
+-- ftd.image:
+if: { ftd.device == "mobile" }
+src: $assets.files.static.doc-cta-icon-mobile.svg
 width: auto
 height: auto
 align-self: center
@@ -306,13 +316,12 @@ padding-bottom.px: 12
 padding-left.px: 16
 padding-right.px: 22
 width: fill-container
-$on-click$: $ftd.toggle($a= $header-section-loop.show-section)
 
 -- ftd.text: $header-section-loop.title
 if: {header-section-loop.url != NULL}
 role: $inherited.types.heading-small
 width: fill-container
-;;link: $header-section-loop.url
+link: $header-section-loop.url
 color: $inherited.colors.text-strong
 
 -- ftd.text: $header-section-loop.title
@@ -324,6 +333,7 @@ color: $inherited.colors.text-strong
 -- ftd.image:
 src: $assets.files.static.header.menu-icons.down.svg
 width.fixed.px: 24
+$on-click$: $ftd.toggle($a= $header-section-loop.show-section)
 
 -- end: ftd.row
 
@@ -363,11 +373,10 @@ spacing.fixed.px: 32
 padding-left.px: 16
 padding-right.px: 22
 width: fill-container
-$on-click$: $ftd.toggle($a= $header-subsection-loop.shows-toc)
 
 -- ftd.text: $header-subsection-loop.title
 if: {header-subsection-loop.url != NULL}
-;;link: $header-subsection-loop.url
+link: $header-subsection-loop.url
 role: $inherited.types.heading-tiny
 width: fill-container
 color: $inherited.colors.text
@@ -382,6 +391,7 @@ color: $inherited.colors.text
 if: {! ftd.is_empty(header-subsection-loop.children) }
 src: $assets.files.static.header.menu-icons.left.svg
 width.fixed.px: 24
+$on-click$: $ftd.toggle($a= $header-subsection-loop.shows-toc)
 
 -- end: ftd.row
 
@@ -420,6 +430,7 @@ width: fill-container
 role: $inherited.types.heading-small
 width: fill-container
 color: $inherited.colors.text-strong
+link: $header-subsection-loop.url
 
 -- ftd.image:
 src: $assets.files.static.header.menu-icons.left.svg
@@ -465,7 +476,7 @@ width: fill-container
 
 -- ftd.text: $header-toc-loop.title
 if: {header-toc-loop.url != NULL}
-;;link: $header-toc-loop.url
+link: $header-toc-loop.url
 role: $inherited.types.heading-tiny
 width: fill-container
 color: $inherited.colors.text-strong
@@ -548,7 +559,7 @@ $on-click$: $ftd.toggle($a= $header-menu.show-mobile-menu)
 -- end: ftd.row
 
 -- header-section-loop: $obj.title
-url: $obj.title
+url: $obj.url
 is-active: $obj.is-active
 children:  $obj.children
 $loop$: $header-menu.sections as $obj
@@ -558,6 +569,15 @@ $show-toc: $header-menu.show-toc
 -- end: ftd.column
 
 -- end: header-menu
+
+
+
+
+
+
+
+
+
 
 -- component header-fastn-mobile:
 ftd.image-src logo: 
@@ -592,7 +612,6 @@ src: $header-fastn-mobile.logo
 width.fixed.px: 140
 height.fixed.px: 40
 
-
 -- end: ftd.column
 
 -- ftd.image:
@@ -606,6 +625,12 @@ $on-click$: $ftd.toggle($a= $header-fastn-mobile.show-mobile-menu)
 -- end: ftd.row
 
 -- end: header-fastn-mobile
+
+
+
+
+
+
 
 
 
@@ -1392,7 +1417,7 @@ integer width:
 
 -- ftd.column:
 width: fill-container
-background.solid: #111111
+background.solid: $inherited.colors.background.step-1 
 padding-vertical.px: 96
 z-index: 10
 align-content: center
@@ -1417,11 +1442,11 @@ height.fixed.px: 60
 
 -- ftd.text: 500
 role: $inherited.types.heading-medium
-color: $inherited.colors.text.dark
+color: $inherited.colors.text
 
 -- ftd.text: Projects created
 role: $inherited.types.copy-small
-color: $inherited.colors.text-strong.dark
+color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
@@ -1445,11 +1470,11 @@ height.fixed.px: 60
 
 -- ftd.text: 200
 role: $inherited.types.heading-medium
-color: $inherited.colors.text.dark
+color: $inherited.colors.text
 
 -- ftd.text: Projects created
 role: $inherited.types.copy-small
-color: $inherited.colors.text-strong.dark
+color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
@@ -1473,11 +1498,11 @@ height.fixed.px: 60
 
 -- ftd.text: 90
 role: $inherited.types.heading-medium
-color: $inherited.colors.text.dark
+color: $inherited.colors.text
 
 -- ftd.text: Hostings
 role: $inherited.types.copy-small
-color: $inherited.colors.text-strong.dark
+color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
@@ -1501,11 +1526,11 @@ height.fixed.px: 60
 
 -- ftd.text: 16
 role: $inherited.types.heading-medium
-color: $inherited.colors.text.dark
+color: $inherited.colors.text
 
 -- ftd.text: Hostings
 role: $inherited.types.copy-small
-color: $inherited.colors.text-strong.dark
+color: $inherited.colors.text-strong
 
 -- end: ftd.column
 
@@ -1649,7 +1674,7 @@ border-radius.px: 30
 padding-vertical.px: 22
 
 -- ftd.column:
-background.solid: #FFFFFF
+background.solid: $inherited.colors.border.dark
 border-width.px: 1
 border-color: #FFFFFF
 border-radius.px: 20
@@ -1665,8 +1690,7 @@ height.fixed.px: 91
 
 -- ftd.text: $snippet-card-left-mobile.title
 role: $code-snippet-title
-color: $inherited.colors.background.base
-;; color: $inherited.colors.cta-secondary.text
+color: $inherited.colors.cta-secondary.text
 
 -- ftd.text: 
 text: $snippet-card-left-mobile.description
@@ -1674,8 +1698,7 @@ role: $inherited.types.fine-print
 color: $inherited.colors.cta-secondary.pressed
 
 -- ftd.text: $snippet-card-left-mobile.cta-text
-color: $inherited.colors.background.base
-;;color: $inherited.colors.cta-secondary.text
+color: $inherited.colors.cta-secondary.text
 role: $inherited.types.copy-small
 
 -- end: ftd.column
@@ -1879,7 +1902,7 @@ z-index: $snippet-card-right.z-index
 caption title:
 optional string description:
 optional string cta-text:
-optional ftd.color bgcolor: #EBBE52
+optional ftd.color bgcolor: $inherited.colors.custom.three
 optional ftd.image-src image-mask: $assets.files.static.features.web-project-mask.svg
 optional string link: 
 optional integer pull-top: 0
@@ -1887,18 +1910,15 @@ optional boolean hide-arrows: false
 children card-wrap:
 integer z-index: 0
 
-
-
 -- ftd.column:
 width: fill-container
 margin-bottom.px: 40
-
 
 -- ftd.column:
 width: fill-container
 padding-vertical.px: 16
 ;;padding-horizontal.px: 22
-border-color: #FFFFFF
+border-color: $inherited.colors.border.dark
 border-width.px: 1
 border-radius.px: 32
 
@@ -1907,27 +1927,39 @@ width: fill-container
 background.solid: $snippet-card-right-mobile.bgcolor
 border-radius.px: 30
 align-content: center
+padding.px: 6
 
 
 -- ftd.column:
-background.solid: #FFFFFF
+width: fill-container
+margin-top.px: -12
 border-width.px: 1
-border-color: #FFFFFF
+border-color: $inherited.colors.border
+border-radius.px: 20
+padding-vertical.px: 26
+padding-horizontal.px: 16
+align-content: center
+
+
+-- ftd.column:
+background.solid: $inherited.colors.border.dark
+border-width.px: 1
+border-color: $inherited.colors.border
 border-radius.px: 20
 padding-vertical.px: 16
 padding-horizontal.px: 16
 spacing.fixed.px: 10
 link: $snippet-card-right-mobile.link
+max-width.fixed.px: 200
 
 -- ftd.image:
 src: $snippet-card-right-mobile.image-mask
-width.fixed.px: 250
-height.fixed.px: 130
+width: fill-container
+height: auto
 
 -- ftd.text: $snippet-card-right-mobile.title
 role: $code-snippet-title
-color: $inherited.colors.background.base
-;; color: $inherited.colors.cta-secondary.text
+color: $inherited.colors.cta-secondary.text
 
 -- ftd.text: 
 text: $snippet-card-right-mobile.description
@@ -1935,8 +1967,7 @@ role: $inherited.types.fine-print
 color: $inherited.colors.cta-secondary.pressed
 
 -- ftd.text: $snippet-card-right-mobile.cta-text
-color: $inherited.colors.background.base
-;;color: $inherited.colors.cta-secondary.text
+color: $inherited.colors.cta-secondary.text
 role: $inherited.types.copy-small
 
 -- end: ftd.column
@@ -1945,6 +1976,7 @@ role: $inherited.types.copy-small
 
 -- end: ftd.column
 
+-- end: ftd.column
 
 
 -- ftd.column:

@@ -142,7 +142,7 @@ string login-button: Get Started
 integer width: $width
 children wrapper:
 ftd.color-scheme colors: $fastn-cs.main
-ftd.type-data types: $typo.types
+ftd.type-data types: $typo.manrope-type
 boolean $show-mobile-menu: false
 
 -- ftd.column:

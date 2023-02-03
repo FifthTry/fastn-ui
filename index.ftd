@@ -321,7 +321,8 @@ Easily change structure,style,and graphics -then host instantly.
 cta-text: Create Now
 cta-link: /
 cta-role: primary
-bgcolor: #000000
+bgcolor: $inherited.colors.background.base
+keep-dark: false
 
 -- ft.excel-promo-card.info:
 

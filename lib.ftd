@@ -1742,6 +1742,7 @@ optional ftd.image-src image:
 optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
 children promo-wrap:
+boolean keep-dark: true
 
 -- ftd.column:
 width: fill-container
@@ -1772,11 +1773,13 @@ spacing.fixed.px: 16
 -- ftd.text: $excel-promo-card.title
 role: $inherited.types.heading-large
 color: $inherited.colors.text.dark
+color if { excel-promo-card.keep-dark }: $inherited.colors.text.dark
 
 -- ftd.text:
 text: $excel-promo-card.info
 role: $inherited.types.copy-large
-color: $inherited.colors.text-strong.dark
+color: $inherited.colors.text-strong
+color if { excel-promo-card.keep-dark }: $inherited.colors.text-strong.dark
 margin-bottom.px: 16 
 
 -- cta-button: $excel-promo-card.cta-text

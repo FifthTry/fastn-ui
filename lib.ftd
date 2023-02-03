@@ -1648,7 +1648,7 @@ z-index: $snippet-card-left.z-index
 caption title:
 optional string description:
 optional string cta-text:
-optional ftd.color bgcolor: #EBBE52
+optional ftd.color bgcolor: 
 optional ftd.image-src image-mask: $assets.files.static.features.web-project-mask.svg
 optional string link: 
 optional integer pull-top: 0
@@ -1661,32 +1661,43 @@ margin-bottom.px: 40
 
 -- ftd.column:
 width: fill-container
-padding-vertical.px: 16
-;;padding-horizontal.px: 22
-border-color: $inherited.colors.border
-border-width.px: 1
-border-radius.px: 32
+
 
 -- ftd.column:
 width: fill-container
 background.solid: $snippet-card-left-mobile.bgcolor
 border-radius.px: 30
-padding-vertical.px: 22
+align-content: center
+padding.px: 6
+
+
+-- ftd.column:
+width: fill-container
+margin-top.px: -12
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 20
+padding-vertical.px: 26
+padding-horizontal.px: 16
+align-content: center
+
 
 -- ftd.column:
 background.solid: $inherited.colors.border.dark
 border-width.px: 1
-border-color: #FFFFFF
+border-color: $inherited.colors.border
 border-radius.px: 20
 padding-vertical.px: 16
 padding-horizontal.px: 16
 spacing.fixed.px: 10
 link: $snippet-card-left-mobile.link
+max-width.fixed.px: 200
+
 
 -- ftd.image:
 src: $snippet-card-left-mobile.image-mask
-width.fixed.px: 176
-height.fixed.px: 91
+width: fill-container
+height: auto
 
 -- ftd.text: $snippet-card-left-mobile.title
 role: $code-snippet-title
@@ -1700,6 +1711,8 @@ color: $inherited.colors.cta-secondary.pressed
 -- ftd.text: $snippet-card-left-mobile.cta-text
 color: $inherited.colors.cta-secondary.text
 role: $inherited.types.copy-small
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -1730,7 +1743,7 @@ children: $snippet-card-left-mobile.card-wrap
 caption title:
 optional string description:
 optional string cta-text:
-optional ftd.color bgcolor: #EBBE52
+optional ftd.color bgcolor: 
 optional ftd.image-src image-mask: $assets.files.static.features.web-project-mask.svg
 optional string link: 
 optional integer pull-top: 0
@@ -1760,7 +1773,7 @@ margin-left.px: 22
 width: fill-container
 padding-vertical.px: 16
 ;;padding-horizontal.px: 22
-border-color: #FFFFFF
+border-color: $inherited.colors.border
 border-width.px: 1
 border-radius.px: 32
 
@@ -1916,11 +1929,7 @@ margin-bottom.px: 40
 
 -- ftd.column:
 width: fill-container
-padding-vertical.px: 16
-;;padding-horizontal.px: 22
-border-color: $inherited.colors.border.dark
-border-width.px: 1
-border-radius.px: 32
+
 
 -- ftd.column:
 width: fill-container
@@ -4028,6 +4037,7 @@ color: $inherited.colors.text
 link: $children-loop.url
 
 -- ftd.column:
+spacing.fixed.px: 14
 if: { !ftd.is_empty(children-loop.children) }
 
 -- children-loop: $obj.title

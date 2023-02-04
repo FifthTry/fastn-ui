@@ -3262,7 +3262,7 @@ align-content: center
 
 -- ftd.text: $row-container.title
 if: { row-container.title != NULL }
-role: $font-50
+role: $inherited.types.heading-large
 color: $inherited.colors.text-strong
 align-self: center
 margin-bottom.px: 80
@@ -3619,7 +3619,7 @@ color: $inherited.colors.text-strong
 align-self: center
 width: fill-container
 margin-top.px: 24
-text-align if { ftd.device == "mobile" }: center
+text-align: center
 white-space if { ftd.device != "mobile" }: nowrap
 
 -- ftd.image:

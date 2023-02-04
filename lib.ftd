@@ -3918,7 +3918,7 @@ url: $obj.url
 
 -- end: ftd.column
 
--- dark-mode-switcher:
+;;-- dark-mode-switcher:
 
 -- dropdown:
 

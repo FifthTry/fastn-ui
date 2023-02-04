@@ -1107,6 +1107,13 @@ childs: $hero-section.childs
 -- end: hero-section
 
 
+
+
+
+
+
+
+
 -- component hero-section-mobile: 
 caption title: 
 ftd.image-src image: 
@@ -1153,13 +1160,10 @@ width: 162
 
 -- end: ftd.row
 
-
 -- ftd.image:
 src: $hero-section-mobile.image
 width: fill-container
 height: auto
-
-
 
 -- ftd.column:
 width: fill-container
@@ -1167,10 +1171,16 @@ children: $hero-section-mobile.childs
 
 -- end: ftd.column
 
-
 -- end: ftd.column
 
 -- end: hero-section-mobile
+
+
+
+
+
+
+
 
 
 
@@ -2974,13 +2984,11 @@ right.px if { ftd.device == "mobile" }: -6
 top.px if { ftd.device == "mobile" }: -16
 border-radius.px if { ftd.device == "mobile" }: 15
 
-
 -- ftd.row:
 width: fill-container
 padding-vertical.px: 60
 padding-horizontal.px: 60
 padding-horizontal.px if { ftd.device == "mobile" }: 16
-
 
 -- ftd.column:
 if: { ftd.device != "mobile" }
@@ -3730,7 +3738,7 @@ align-self: center
 -- ftd.text:
 if: { testimonial-card.body != NULL }
 text: $testimonial-card.body
-color: $inherited.colors.custom.five.dark
+color: $inherited.colors.custom.seven
 role: $inherited.types.copy-regular
 align-self: center
 
@@ -3742,11 +3750,11 @@ spacing.fixed.px: 6
 
 -- ftd.text: $testimonial-card.title
 role: $inherited.types.blockquote
-color: $inherited.colors.custom.five.dark
+color: $inherited.colors.custom.seven
 
 -- ftd.text: $testimonial-card.label
 role: $inherited.types.fine-print
-color: $inherited.colors.custom.five.dark
+color: $inherited.colors.custom.seven
 
 -- end: ftd.column
 

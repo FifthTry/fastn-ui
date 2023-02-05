@@ -2583,7 +2583,7 @@ spacing.fixed.px: 16
 
 -- ftd.text: $excel-promo-card.title
 role: $inherited.types.heading-large
-color: $inherited.colors.text.dark
+color: $inherited.colors.text
 color if { excel-promo-card.keep-dark }: $inherited.colors.text.dark
 
 -- ftd.text:

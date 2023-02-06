@@ -3587,13 +3587,14 @@ caption title:
 optional body body:
 boolean show-arrow: true
 integer width: $width
+boolean is-padding: false
 children wrapper:
 
 -- ftd.column:
 width: fill-container
 z-index: 0
-max-width.fixed.px if { ftd.device == "mobile" }: 1460
 align-self: center
+padding-top.px if { heart-line-title-card.is-padding}:  150
 padding-bottom.px: 80
 padding-bottom.px if { ftd.device == "mobile" }: 24
 padding-horizontal.px if { ftd.device == "mobile" }: 12

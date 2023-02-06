@@ -5,7 +5,18 @@
 -- import: fifthtry.github.io/fastn-ui/lib as ft
 
 
+-- integer width: 1160
 -- integer $current-active: 1
+
+
+
+
+
+
+
+
+
+
 
 -- ft.page:
 
@@ -50,6 +61,7 @@ white_check_mark
 eyes
 raised_hands
 
+
 -- upcoming-event:FTD Hands - On Workshop (Beta)
 image: $assets.files.static.events.upcoming-3.svg
 day: SUN,
@@ -66,6 +78,7 @@ white_check_mark
 eyes
 raised_hands
 
+
 -- upcoming-event:FTD Hands - On Workshop (Beta)
 image: $assets.files.static.events.upcoming-4.svg
 day: SUN,
@@ -99,11 +112,10 @@ white_check_mark
 eyes
 raised_hands
 
-
-
 -- next-previous-slider:
 
 -- number-item: 1
+$active-item: true
 index: 1
 
 -- number-item: 2
@@ -117,19 +129,18 @@ index: 4
 
 -- number-item: 5
 index: 5
+
 -- end: next-previous-slider
 
-
-
 -- end: upcoming-container
-
 
 -- upcoming-container: Past Events
 section-logo: $assets.files.static.events.past-section-logo.svg
 wrap: true
+bgcolor: $inherited.colors.background.step-1
 
 -- past-event: FTD Hands - On Workshop (Beta)
-image: $assets.files.static.events.upcoming-4.svg
+image: $assets.files.static.events.past.svg
 day: SUN,
 date: 08
 month: JAN
@@ -145,7 +156,7 @@ eyes
 raised_hands
 
 -- past-event:FTD Hands - On Workshop (Beta)
-image: $assets.files.static.events.upcoming-4.svg
+image: $assets.files.static.events.past.svg
 day: SUN,
 date: 08
 month: JAN
@@ -160,24 +171,22 @@ white_check_mark
 eyes
 raised_hands
 
-
 -- next-previous-slider:
 
 -- number-item: 1
+$active-item: true
 index: 1
 
 -- number-item: 2
 index: 2
 
-
 -- end: next-previous-slider
-
-
 
 -- end: upcoming-container
 
 -- ft.heart-line-title-card: Subscribe now
 show-arrow: false
+is-padding: true
 
 -- subscribe-now:
 social-text-one:  TWITTER
@@ -197,16 +206,30 @@ social-link-three: /
 -- end: ft.page
 
 
+
+
+
+
+
+
+
+
 -- component next-previous-slider:
 children next-wrapper:
 
 -- ftd.row:
 children: $next-previous-slider.next-wrapper
 width: fill-container
+align-content: center
+spacing.fixed.px: 16
+margin-top.px: 80
 
 -- end: ftd.row
 
 -- end:next-previous-slider
+
+
+
 
 
 
@@ -221,16 +244,16 @@ optional boolean $mouse-in: false
 integer index:
 
 -- ftd.column:
-padding-vertical.px: 15
-padding-horizontal.px: 45
-padding-vertical.px if {ftd.device == "mobile"}: 6
-padding-horizontal.px if {ftd.device == "mobile"}: 25
-border-radius.px: 9
-border-color if { !$number-item.mouse-in }: $inherited.colors.border-strong
-border-color if { $number-item.mouse-in }: $inherited.colors.shadow
-border-color if { $number-item.active-item }: $inherited.colors.shadow
-border-color if { !$number-item.active-item }: $inherited.colors.border-strong
-border-width.px: 1
+padding-vertical.px: 5 
+padding-horizontal.px: 15
+border-radius.px: 5
+background.solid if { number-item.mouse-in }: $inherited.colors.accent.primary
+border-color if { !number-item.mouse-in }: $inherited.colors.border-strong
+border-color if { number-item.mouse-in }: $inherited.colors.text
+border-color if { !number-item.active-item }: $inherited.colors.border-strong
+border-color if { number-item.active-item }: $inherited.colors.text
+background.solid if { number-item.active-item }: $inherited.colors.accent.primary
+border-width.px: 2
 $on-mouse-enter$: $ftd.set-bool($a = $number-item.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $number-item.mouse-in, v = false)
 $on-click$: $ftd.toggle($a = $number-item.active-item)
@@ -238,13 +261,19 @@ $on-click$: $ftd.set-integer($a = $current-active, v = $number-item.index)
 
 -- ftd.text: $number-item.title
 if: { number-item.title != NULL }
-role: $inherited.types.copy-large
-color if { !$number-item.mouse-in }: $inherited.colors.border-strong
-color if { $number-item.mouse-in }: $inherited.colors.shadow
+role: $inherited.types.button-medium
+color if { !$number-item.mouse-in }: $inherited.colors.text
+color if { $number-item.mouse-in }: $inherited.colors.text
 
 -- end: ftd.column
 
 -- end: number-item
+
+
+
+
+
+
 
 
 
@@ -274,7 +303,6 @@ src: $subscribe-now.social-src-one
 url: $subscribe-now.social-link-two
 src: $subscribe-now.social-src-two
 
-
 -- social-card: $subscribe-now.social-text-three
 url: $subscribe-now.social-link-three
 src: $subscribe-now.social-src-three
@@ -282,6 +310,15 @@ src: $subscribe-now.social-src-three
 -- end: ftd.row
 
 -- end: subscribe-now
+
+
+
+
+
+
+
+
+
 
 -- component social-card:
 optional caption title:
@@ -292,7 +329,6 @@ optional string url:
 width.fixed.px: 102
 spacing.fixed.px: 40
 margin-top.px: 131
-
 
 -- ftd.image:
 if: { social-card.url != NULL}
@@ -307,10 +343,17 @@ if: { social-card.title != NULL}
 role: $inherited.types.heading-tiny
 color: $inherited.colors.text
 
-
 -- end: ftd.column
 
 -- end: social-card
+
+
+
+
+
+
+
+
 
 -- component event-main:
 ftd.image-src image: $assets.files.static.event-background.svg
@@ -375,10 +418,15 @@ children upcoming-wrap:
 caption title:
 ftd.image-src section-logo:
 boolean wrap: false
+ftd.color bgcolor: $inherited.colors.background.overlay
 
 -- ftd.column:
 width: fill-container
-max-width.fixed.px: 1160
+background.solid: $upcoming-container.bgcolor
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px: $width
 align-self: center
 margin-top.px: 150
 
@@ -400,8 +448,11 @@ padding-left.px: 24
 if: {!upcoming-container.wrap}
 children: $upcoming-container.upcoming-wrap
 width: fill-container
-max-width.fixed.px: 1160
+max-width.fixed.px: $width
 align-self: center
+spacing.fixed.px: 20
+margin-bottom.px: 150
+margin-top.px: 40
 
 -- end: ftd.column
 
@@ -409,10 +460,14 @@ align-self: center
 if: {upcoming-container.wrap}
 children: $upcoming-container.upcoming-wrap
 width: fill-container
-max-width.fixed.px: 1160
+max-width.fixed.px: $width
 wrap: true
+spacing.fixed.px: 20
+margin-bottom.px: 64
 
 -- end: ftd.row
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -442,41 +497,37 @@ optional integer reset:
 
 -- ftd.row:
 align-self: center
-spacing.fixed.px: 16
-margin-bottom.px: 40
-margin-top.px: 60
-width.fixed.px: 1156
+width.fixed.px: $width
 height.fixed.px: 378
 border-bottom-width.px: 1
-background.solid if { upcoming-event.index == upcoming-event.reset }: orange
 border-color: $inherited.colors.border-strong
 padding-bottom.px: 56
-background.solid: $inherited.colors.shadow
 
 -- ftd.image:
 src: $upcoming-event.image
-height.fixed.px: 378
+min-height.fixed.px: 378
 width.fixed.px: 440
 
 -- ftd.column:
-margin-left.px: 51
-margin-top.px: 12
+padding-left.px: 51
+padding-vertical.px: 62
+spacing.fixed.px: 12
+background.solid if { upcoming-event.index == upcoming-event.reset }:$inherited.colors.accent.primary 
 
 -- ftd.row:
-margin-top.px: 62
 spacing.fixed.px: 10
 
 -- ftd.text: $upcoming-event.day
 color: $inherited.colors.text
-role: $inherited.types.copy-large
+role: $inherited.types.heading-tiny
 
 -- ftd.text: $upcoming-event.month
 color: $inherited.colors.text
-role: $inherited.types.copy-large
+role: $inherited.types.heading-tiny
 
 -- ftd.integer: $upcoming-event.date
 color: $inherited.colors.text
-role: $inherited.types.copy-large
+role: $inherited.types.heading-tiny
 
 -- ftd.column:
 width.fixed.px: 4
@@ -490,7 +541,7 @@ align-content: center
 
 -- ftd.text: $upcoming-event.time
 color: $inherited.colors.text
-role: $inherited.types.copy-large
+role: $inherited.types.heading-tiny
 
 -- end: ftd.row
 
@@ -500,14 +551,18 @@ role: $inherited.types.heading-small
 
 -- ftd.text: $upcoming-event.info
 color: $inherited.colors.text-strong
+role: $inherited.types.copy-large
+
 -- ftd.row:
 spacing.fixed.px: 10
 link if { upcoming-event.cta-link != NULL }: $upcoming-event.cta-link
-background.solid : $inherited.colors.cta-primary.base
+border-color : $inherited.colors.cta-secondary.base
+border-width.px: 1
 border-radius.px: 30
-padding-vertical.px: 20
-padding-horizontal.px: 42
+padding-vertical.px: 8
+padding-horizontal.px: 20
 align-content: center
+margin-top.px: 20
 
 -- ftd.image:
 src: $assets.files.static.events.video.svg
@@ -521,13 +576,18 @@ text-align: center
 
 -- end: ftd.row
 
-
-
 -- end: ftd.column
 
 -- end: ftd.row
 
 -- end: upcoming-event
+
+
+
+
+
+
+
 
 
 
@@ -547,46 +607,66 @@ optional integer reset:
 
 -- ftd.column:
 spacing.fixed.px: 16
-margin-bottom.px: 40
-margin-top.px: 60
+min-height.fixed.px: 680
 width.fixed.px: 566
-border-bottom-width.px: 1
-background.solid if { past-event.index == past-event.reset }: orange
-border-color: $inherited.colors.border-strong
-padding-bottom.px: 56
-
-
+;;background.solid if { past-event.index == past-event.reset }: $inherited.colors.accent.primary
+background.solid : $inherited.colors.background.overlay
 -- ftd.image:
 src: $past-event.image
-height.fixed.px: 378
-width.fixed.px: 440
+height.fixed.px: 300
+width: fill-container
 
 -- ftd.column:
+padding-vertical.px: 40
+padding-horizontal.px: 32
+spacing.fixed.px: 12
 
 -- ftd.row:
+spacing.fixed.px: 10
 
 -- ftd.text: $past-event.day
-color: $inherited.colors.text-strong
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
 
 -- ftd.text: $past-event.month
-color: $inherited.colors.text-strong
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
+
 -- ftd.integer: $past-event.date
-color: $inherited.colors.text-strong
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
+
+-- ftd.column:
+width.fixed.px: 4
+height.fixed.px: 4
+border-radius.px: 100
+background.solid: $inherited.colors.accent.primary
+align-self: center
+align-content: center
+
+-- end: ftd.column
+
 -- ftd.text: $past-event.time
-color: $inherited.colors.text-strong
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
 -- end: ftd.row
 
 -- ftd.text: $past-event.title
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
+role: $inherited.types.heading-medium
+
 -- ftd.text: $past-event.info
 color: $inherited.colors.text-strong
+role: $inherited.types.copy-large
+
 -- ftd.row:
 spacing.fixed.px: 10
 link if { past-event.cta-link != NULL }: $past-event.cta-link
-background.solid : $inherited.colors.cta-primary.base
+border-color : $inherited.colors.text
 border-radius.px: 30
-padding-vertical.px: 20
-padding-horizontal.px: 42
+border-width.px: 1
+padding-vertical.px: 8
+padding-horizontal.px: 20
 align-content: center
 
 -- ftd.image:

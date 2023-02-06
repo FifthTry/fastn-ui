@@ -1,7 +1,6 @@
 -- import: fifthtry.github.io/fastn-ui/lib as ft
 -- import: fastn-cs
 -- import: fastn/processors as pr
--- import: typo
 -- import: fifthtry.github.io/fastn-ui/assets
 -- import: fifthtry.github.io/fastn-ui/lib as ft
 
@@ -215,9 +214,9 @@ ftd.image-src image: $assets.files.static.event-background.svg
 caption title: Fastn Events
 body info:
 
-
 -- ftd.column:
 width: fill-container
+background.solid: $inherited.colors.background.step-1
 
 -- ftd.column:
 align-self: center
@@ -228,11 +227,9 @@ margin-top.px: 60
 width: fill-container
 height.fixed.px: 413
 
-
 -- ftd.column:
 anchor: parent
 z-index: 1
-
 
 -- ftd.image:
 src: $event-main.image
@@ -257,10 +254,17 @@ z-index: 1
 
 -- end: ftd.column
 
-
 -- end: ftd.column
 
 -- end: event-main
+
+
+
+
+
+
+
+
 
 
 -- component upcoming-container:
@@ -273,16 +277,19 @@ boolean wrap: false
 width: fill-container
 max-width.fixed.px: 1160
 align-self: center
+margin-top.px: 150
 
 -- ftd.row:
 
 -- ftd.image:
 src: $upcoming-container.section-logo
 width.fixed.px: 40
+align-self: center
 
 -- ftd.text: $upcoming-container.title
 color: $inherited.colors.text
 role: $inherited.types.heading-medium
+padding-left.px: 24
 
 -- end: ftd.row
 
@@ -306,7 +313,16 @@ wrap: true
 
 -- end: ftd.column
 
--- end:upcoming-container
+-- end: upcoming-container
+
+
+
+
+
+
+
+
+
 
 -- component upcoming-event:
 ftd.image-src image:
@@ -321,14 +337,15 @@ optional string cta-link:
 
 -- ftd.row:
 align-self: center
-align-content: center
 spacing.fixed.px: 16
 margin-bottom.px: 40
 margin-top.px: 60
-width: fill-container
+width.fixed.px: 1156
+height.fixed.px: 378
 border-bottom-width.px: 1
 border-color: $inherited.colors.border-strong
 padding-bottom.px: 56
+background.solid: $inherited.colors.shadow
 
 -- ftd.image:
 src: $upcoming-event.image
@@ -336,22 +353,45 @@ height.fixed.px: 378
 width.fixed.px: 440
 
 -- ftd.column:
+margin-left.px: 51
+margin-top.px: 12
 
 -- ftd.row:
+margin-top.px: 62
+spacing.fixed.px: 10
 
 -- ftd.text: $upcoming-event.day
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
+role: $inherited.types.copy-large
 
 -- ftd.text: $upcoming-event.month
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
+role: $inherited.types.copy-large
+
 -- ftd.integer: $upcoming-event.date
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
+role: $inherited.types.copy-large
+
+-- ftd.column:
+width.fixed.px: 4
+height.fixed.px: 4
+border-radius.px: 100
+background.solid: $inherited.colors.text
+align-self: center
+align-content: center
+
+-- end: ftd.column
+
 -- ftd.text: $upcoming-event.time
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
+role: $inherited.types.copy-large
+
 -- end: ftd.row
 
 -- ftd.text: $upcoming-event.title
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
+role: $inherited.types.heading-small
+
 -- ftd.text: $upcoming-event.info
 color: $inherited.colors.text-strong
 -- ftd.row:

@@ -5,6 +5,8 @@
 -- import: fifthtry.github.io/fastn-ui/lib as ft
 
 
+-- integer $current-active: 1
+
 -- ft.page:
 
 -- event-main:
@@ -23,6 +25,8 @@ month: JAN
 time: 12:30 PM IST
 cta-text: Online
 cta-link: /
+index: 1
+reset: $current-active
 
 Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
 white_check_mark
@@ -38,6 +42,8 @@ month: JAN
 time: 12:30 PM IST
 cta-text: Online
 cta-link: /
+index: 2
+reset: $current-active
 
 Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
 white_check_mark
@@ -52,6 +58,8 @@ month: JAN
 time: 12:30 PM IST
 cta-text: Online
 cta-link: /
+index: 3
+reset: $current-active
 
 Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
 white_check_mark
@@ -66,6 +74,8 @@ month: JAN
 time: 12:30 PM IST
 cta-text: Online
 cta-link: /
+index: 4
+reset: $current-active
 
 Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
 white_check_mark
@@ -81,11 +91,35 @@ month: JAN
 time: 12:30 PM IST
 cta-text: Online
 cta-link: /
+index: 5
+reset: $current-active
 
 Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
 white_check_mark
 eyes
 raised_hands
+
+
+
+-- next-previous-slider:
+
+-- number-item: 1
+index: 1
+
+-- number-item: 2
+index: 2
+
+-- number-item: 3
+index: 3
+
+-- number-item: 4
+index: 4
+
+-- number-item: 5
+index: 5
+-- end: next-previous-slider
+
+
 
 -- end: upcoming-container
 
@@ -102,6 +136,8 @@ month: JAN
 time: 12:30 PM IST
 cta-text: Online
 cta-link: /
+index: 1
+reset: $current-active
 
 Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
 white_check_mark
@@ -116,11 +152,26 @@ month: JAN
 time: 12:30 PM IST
 cta-text: Online
 cta-link: /
+index: 2
+reset: $current-active
 
 Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
 white_check_mark
 eyes
 raised_hands
+
+
+-- next-previous-slider:
+
+-- number-item: 1
+index: 1
+
+-- number-item: 2
+index: 2
+
+
+-- end: next-previous-slider
+
 
 
 -- end: upcoming-container
@@ -144,6 +195,58 @@ social-link-three: /
 -- ft.footer:
 
 -- end: ft.page
+
+
+-- component next-previous-slider:
+children next-wrapper:
+
+-- ftd.row:
+children: $next-previous-slider.next-wrapper
+width: fill-container
+
+-- end: ftd.row
+
+-- end:next-previous-slider
+
+
+
+
+
+
+
+-- component number-item:
+optional caption title:
+optional boolean $active-item: false
+optional boolean $mouse-in: false
+integer index:
+
+-- ftd.column:
+padding-vertical.px: 15
+padding-horizontal.px: 45
+padding-vertical.px if {ftd.device == "mobile"}: 6
+padding-horizontal.px if {ftd.device == "mobile"}: 25
+border-radius.px: 9
+border-color if { !$number-item.mouse-in }: $inherited.colors.border-strong
+border-color if { $number-item.mouse-in }: $inherited.colors.shadow
+border-color if { $number-item.active-item }: $inherited.colors.shadow
+border-color if { !$number-item.active-item }: $inherited.colors.border-strong
+border-width.px: 1
+$on-mouse-enter$: $ftd.set-bool($a = $number-item.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $number-item.mouse-in, v = false)
+$on-click$: $ftd.toggle($a = $number-item.active-item)
+$on-click$: $ftd.set-integer($a = $current-active, v = $number-item.index)
+
+-- ftd.text: $number-item.title
+if: { number-item.title != NULL }
+role: $inherited.types.copy-large
+color if { !$number-item.mouse-in }: $inherited.colors.border-strong
+color if { $number-item.mouse-in }: $inherited.colors.shadow
+
+-- end: ftd.column
+
+-- end: number-item
+
+
 
 
 -- component subscribe-now:
@@ -334,6 +437,8 @@ integer date:
 string time:
 optional string cta-text:
 optional string cta-link:
+optional integer index:
+optional integer reset:
 
 -- ftd.row:
 align-self: center
@@ -343,6 +448,7 @@ margin-top.px: 60
 width.fixed.px: 1156
 height.fixed.px: 378
 border-bottom-width.px: 1
+background.solid if { upcoming-event.index == upcoming-event.reset }: orange
 border-color: $inherited.colors.border-strong
 padding-bottom.px: 56
 background.solid: $inherited.colors.shadow
@@ -436,6 +542,8 @@ integer date:
 string time:
 optional string cta-text:
 optional string cta-link:
+optional integer index:
+optional integer reset:
 
 -- ftd.column:
 spacing.fixed.px: 16
@@ -443,6 +551,7 @@ margin-bottom.px: 40
 margin-top.px: 60
 width.fixed.px: 566
 border-bottom-width.px: 1
+background.solid if { past-event.index == past-event.reset }: orange
 border-color: $inherited.colors.border-strong
 padding-bottom.px: 56
 

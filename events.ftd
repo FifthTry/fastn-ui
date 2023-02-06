@@ -20,13 +20,12 @@
 
 -- ft.page:
 
--- event-main:
+-- event: Fastn Events 2023
 
 At nulla tristique facilisis augue. Lectus diam dignissim
 erat blandit pellentesque egestas nulla.
 
--- upcoming-container: Upcoming
-section-logo: $assets.files.static.events.upcoming-section-logo.svg
+-- event-list: Upcoming
 
 -- upcoming-event: FTD Hands - On Workshop (Beta)
 image: $assets.files.static.events.upcoming-1.svg
@@ -132,11 +131,11 @@ index: 5
 
 -- end: next-previous-slider
 
--- end: upcoming-container
+-- end: event-list
 
--- upcoming-container: Past Events
-section-logo: $assets.files.static.events.past-section-logo.svg
-wrap: true
+-- event-list: Past Events
+icon: $assets.files.static.events.past-section-logo.svg
+show-grid: true
 bgcolor: $inherited.colors.background.step-1
 
 -- past-event: FTD Hands - On Workshop (Beta)
@@ -155,7 +154,7 @@ white_check_mark
 eyes
 raised_hands
 
--- past-event:FTD Hands - On Workshop (Beta)
+-- past-event: FTD Hands - On Workshop (Beta)
 image: $assets.files.static.events.past.svg
 day: SUN,
 date: 08
@@ -182,24 +181,28 @@ index: 2
 
 -- end: next-previous-slider
 
--- end: upcoming-container
+-- end: event-list
 
 -- ft.heart-line-title-card: Subscribe now
 show-arrow: false
-is-padding: true
 
--- subscribe-now:
-social-text-one:  TWITTER
-social-text-two: LINKEDIN
-social-text-three: DISCORD
-social-src-one: $assets.files.static.footer.twitter.svg
-social-src-two: $assets.files.static.footer.linkedin.svg
-social-src-three: $assets.files.static.footer.discord.svg
-social-link-one: /
-social-link-two: /
-social-link-three: /
+-- ft.row-container:
+wrap: true
+spacing: 80
 
--- end: ft.heart-line-title-card
+-- social-card: DISCORD
+url: /
+src: $assets.files.static.footer.discord.svg
+
+-- social-card: TWITTER
+url: /
+src: $assets.files.static.footer.twitter.svg
+
+-- social-card: LINKEDIN
+url: /
+src: $assets.files.static.footer.linkedin.svg
+
+-- end: ft.row-container
 
 -- ft.footer:
 
@@ -295,9 +298,7 @@ max-width.fixed.px: 678
 align-self: center
 spacing: space-between
 
--- social-card: $subscribe-now.social-text-one
-url: $subscribe-now.social-link-one
-src: $subscribe-now.social-src-one
+
 
 -- social-card: $subscribe-now.social-text-two
 url: $subscribe-now.social-link-two
@@ -355,7 +356,7 @@ color: $inherited.colors.text
 
 
 
--- component event-main:
+-- component event:
 ftd.image-src image: $assets.files.static.event-background.svg
 caption title: Fastn Events
 body info:
@@ -378,20 +379,20 @@ anchor: parent
 z-index: 1
 
 -- ftd.image:
-src: $event-main.image
+src: $event.image
 width:auto
 height:auto
 
 -- end: ftd.column
 
--- ftd.text: $event-main.title
+-- ftd.text: $event.title
 role: $inherited.types.heading-hero
 color: $inherited.colors.text
 text-align: center
 z-index: 1
 
 -- ftd.text:
-text: $event-main.info
+text: $event.info
 color: $inherited.colors.text-strong
 role: $inherited.types.copy-large
 margin-bottom.px: 16
@@ -402,7 +403,7 @@ z-index: 1
 
 -- end: ftd.column
 
--- end: event-main
+-- end: event
 
 
 
@@ -413,16 +414,16 @@ z-index: 1
 
 
 
--- component upcoming-container:
-children upcoming-wrap:
+-- component event-list:
+children wrap:
 caption title:
-ftd.image-src section-logo:
-boolean wrap: false
+ftd.image-src icon: $assets.files.static.events.upcoming-section-logo.svg
+boolean show-grid: false
 ftd.color bgcolor: $inherited.colors.background.overlay
 
 -- ftd.column:
 width: fill-container
-background.solid: $upcoming-container.bgcolor
+background.solid: $event-list.bgcolor
 
 -- ftd.column:
 width: fill-container
@@ -433,11 +434,11 @@ margin-top.px: 150
 -- ftd.row:
 
 -- ftd.image:
-src: $upcoming-container.section-logo
+src: $event-list.icon
 width.fixed.px: 40
 align-self: center
 
--- ftd.text: $upcoming-container.title
+-- ftd.text: $event-list.title
 color: $inherited.colors.text
 role: $inherited.types.heading-medium
 padding-left.px: 24
@@ -445,8 +446,8 @@ padding-left.px: 24
 -- end: ftd.row
 
 -- ftd.column:
-if: {!upcoming-container.wrap}
-children: $upcoming-container.upcoming-wrap
+if: {!event-list.show-grid}
+children: $event-list.wrap
 width: fill-container
 max-width.fixed.px: $width
 align-self: center
@@ -457,8 +458,8 @@ margin-top.px: 40
 -- end: ftd.column
 
 -- ftd.row:
-if: {upcoming-container.wrap}
-children: $upcoming-container.upcoming-wrap
+if: {event-list.show-grid}
+children: $event-list.wrap
 width: fill-container
 max-width.fixed.px: $width
 wrap: true
@@ -471,7 +472,7 @@ margin-bottom.px: 64
 
 -- end: ftd.column
 
--- end: upcoming-container
+-- end: event-list
 
 
 

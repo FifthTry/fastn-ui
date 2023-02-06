@@ -1,0 +1,459 @@
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fastn-cs
+-- import: fastn/processors as pr
+-- import: typo
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+
+
+-- ft.page:
+
+-- event-main:
+
+At nulla tristique facilisis augue. Lectus diam dignissim
+erat blandit pellentesque egestas nulla.
+
+-- upcoming-container: Upcoming
+section-logo: $assets.files.static.events.upcoming-section-logo.svg
+
+-- upcoming-event: FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.upcoming-1.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+
+-- upcoming-event:FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.upcoming-2.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+-- upcoming-event:FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.upcoming-3.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+-- upcoming-event:FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.upcoming-4.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+
+-- upcoming-event:FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.upcoming-4.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+-- end: upcoming-container
+
+
+-- upcoming-container: Past Events
+section-logo: $assets.files.static.events.past-section-logo.svg
+wrap: true
+
+-- past-event: FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.upcoming-4.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+-- past-event:FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.upcoming-4.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+
+-- end: upcoming-container
+
+-- ft.heart-line-title-card: Subscribe now
+show-arrow: false
+
+-- subscribe-now:
+social-text-one:  TWITTER
+social-text-two: LINKEDIN
+social-text-three: DISCORD
+social-src-one: $assets.files.static.footer.twitter.svg
+social-src-two: $assets.files.static.footer.linkedin.svg
+social-src-three: $assets.files.static.footer.discord.svg
+social-link-one: /
+social-link-two: /
+social-link-three: /
+
+-- end: ft.heart-line-title-card
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+-- component subscribe-now:
+optional string social-text-one:
+optional string social-text-two:
+optional string social-text-three:
+ftd.image-src social-src-one:
+ftd.image-src social-src-two:
+ftd.image-src social-src-three:
+optional string social-link-one:
+optional string social-link-two:
+optional string social-link-three:
+
+-- ftd.row:
+width: fill-container
+max-width.fixed.px: 678
+align-self: center
+spacing: space-between
+
+-- social-card: $subscribe-now.social-text-one
+url: $subscribe-now.social-link-one
+src: $subscribe-now.social-src-one
+
+-- social-card: $subscribe-now.social-text-two
+url: $subscribe-now.social-link-two
+src: $subscribe-now.social-src-two
+
+
+-- social-card: $subscribe-now.social-text-three
+url: $subscribe-now.social-link-three
+src: $subscribe-now.social-src-three
+
+-- end: ftd.row
+
+-- end: subscribe-now
+
+-- component social-card:
+optional caption title:
+ftd.image-src src:
+optional string url:
+
+-- ftd.column:
+width.fixed.px: 102
+spacing.fixed.px: 40
+margin-top.px: 131
+
+
+-- ftd.image:
+if: { social-card.url != NULL}
+src: $social-card.src
+width: auto
+height.fixed.px: 102
+align-self: center
+link: $social-card.url
+
+-- ftd.text: $social-card.title
+if: { social-card.title != NULL}
+role: $inherited.types.heading-tiny
+color: $inherited.colors.text
+
+
+-- end: ftd.column
+
+-- end: social-card
+
+-- component event-main:
+ftd.image-src image: $assets.files.static.event-background.svg
+caption title: Fastn Events
+body info:
+
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.column:
+align-self: center
+align-content: center
+spacing.fixed.px: 16
+margin-bottom.px: 40
+margin-top.px: 60
+width: fill-container
+height.fixed.px: 413
+
+
+-- ftd.column:
+anchor: parent
+z-index: 1
+
+
+-- ftd.image:
+src: $event-main.image
+width:auto
+height:auto
+
+-- end: ftd.column
+
+-- ftd.text: $event-main.title
+role: $inherited.types.heading-hero
+color: $inherited.colors.text
+text-align: center
+z-index: 1
+
+-- ftd.text:
+text: $event-main.info
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-large
+margin-bottom.px: 16
+text-align: center
+z-index: 1
+
+-- end: ftd.column
+
+
+-- end: ftd.column
+
+-- end: event-main
+
+
+-- component upcoming-container:
+children upcoming-wrap:
+caption title:
+ftd.image-src section-logo:
+boolean wrap: false
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px: 1160
+align-self: center
+
+-- ftd.row:
+
+-- ftd.image:
+src: $upcoming-container.section-logo
+width.fixed.px: 40
+
+-- ftd.text: $upcoming-container.title
+color: $inherited.colors.text
+role: $inherited.types.heading-medium
+
+-- end: ftd.row
+
+-- ftd.column:
+if: {!upcoming-container.wrap}
+children: $upcoming-container.upcoming-wrap
+width: fill-container
+max-width.fixed.px: 1160
+align-self: center
+
+-- end: ftd.column
+
+-- ftd.row:
+if: {upcoming-container.wrap}
+children: $upcoming-container.upcoming-wrap
+width: fill-container
+max-width.fixed.px: 1160
+wrap: true
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end:upcoming-container
+
+-- component upcoming-event:
+ftd.image-src image:
+caption title:
+body info:
+string day:
+string month:
+integer date:
+string time:
+optional string cta-text:
+optional string cta-link:
+
+-- ftd.row:
+align-self: center
+align-content: center
+spacing.fixed.px: 16
+margin-bottom.px: 40
+margin-top.px: 60
+width: fill-container
+border-bottom-width.px: 1
+border-color: $inherited.colors.border-strong
+padding-bottom.px: 56
+
+-- ftd.image:
+src: $upcoming-event.image
+height.fixed.px: 378
+width.fixed.px: 440
+
+-- ftd.column:
+
+-- ftd.row:
+
+-- ftd.text: $upcoming-event.day
+color: $inherited.colors.text-strong
+
+-- ftd.text: $upcoming-event.month
+color: $inherited.colors.text-strong
+-- ftd.integer: $upcoming-event.date
+color: $inherited.colors.text-strong
+-- ftd.text: $upcoming-event.time
+color: $inherited.colors.text-strong
+-- end: ftd.row
+
+-- ftd.text: $upcoming-event.title
+color: $inherited.colors.text-strong
+-- ftd.text: $upcoming-event.info
+color: $inherited.colors.text-strong
+-- ftd.row:
+spacing.fixed.px: 10
+link if { upcoming-event.cta-link != NULL }: $upcoming-event.cta-link
+background.solid : $inherited.colors.cta-primary.base
+border-radius.px: 30
+padding-vertical.px: 20
+padding-horizontal.px: 42
+align-content: center
+
+-- ftd.image:
+src: $assets.files.static.events.video.svg
+width.fixed.px: 20
+
+-- ftd.text: $upcoming-event.cta-text
+role: $inherited.types.button-medium
+color: $inherited.colors.cta-primary.text
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: upcoming-event
+
+
+
+
+-- component past-event:
+ftd.image-src image:
+caption title:
+body info:
+string day:
+string month:
+integer date:
+string time:
+optional string cta-text:
+optional string cta-link:
+
+-- ftd.column:
+spacing.fixed.px: 16
+margin-bottom.px: 40
+margin-top.px: 60
+width.fixed.px: 566
+border-bottom-width.px: 1
+border-color: $inherited.colors.border-strong
+padding-bottom.px: 56
+
+
+-- ftd.image:
+src: $past-event.image
+height.fixed.px: 378
+width.fixed.px: 440
+
+-- ftd.column:
+
+-- ftd.row:
+
+-- ftd.text: $past-event.day
+color: $inherited.colors.text-strong
+
+-- ftd.text: $past-event.month
+color: $inherited.colors.text-strong
+-- ftd.integer: $past-event.date
+color: $inherited.colors.text-strong
+-- ftd.text: $past-event.time
+color: $inherited.colors.text-strong
+-- end: ftd.row
+
+-- ftd.text: $past-event.title
+color: $inherited.colors.text-strong
+-- ftd.text: $past-event.info
+color: $inherited.colors.text-strong
+-- ftd.row:
+spacing.fixed.px: 10
+link if { past-event.cta-link != NULL }: $past-event.cta-link
+background.solid : $inherited.colors.cta-primary.base
+border-radius.px: 30
+padding-vertical.px: 20
+padding-horizontal.px: 42
+align-content: center
+
+-- ftd.image:
+src: $assets.files.static.events.video.svg
+width.fixed.px: 20
+
+-- ftd.text: $past-event.cta-text
+role: $inherited.types.button-medium
+color: $inherited.colors.cta-primary.text
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: past-event

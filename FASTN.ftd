@@ -1,7 +1,7 @@
 -- import: fastn
 
--- fastn.package: fifthtry.github.io/fastn-io
-download-base-url: https://raw.githubusercontent.com/fifthtry/fastn-io/main
+-- fastn.package: fifthtry.github.io/fastn-ui
+download-base-url: https://raw.githubusercontent.com/fifthtry/fastn-ui/main
 
 
 -- fastn.dependency: fifthtry.github.io/fastn-cs as fastn-cs

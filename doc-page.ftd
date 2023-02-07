@@ -174,9 +174,14 @@ max-width.fixed.px: $width
 align-self: center
 padding-top.px: 100
 
+-- ftd.column:
+padding-horizontal.px: 24
+
 -- render-toc:
 $loop$: $doc-page-desktop.sections as $obj
 subsection: $obj.children
+
+-- end: ftd.column
 
 -- ftd.column:
 border-left-width.px: 1
@@ -360,7 +365,6 @@ spacing.fixed.px: 70
 -- ftd.row:
 spacing.fixed.px: 24
 width: fill-container
-padding-horizontal.px: 24
 
 -- ftd.row:
 spacing.fixed.px: 12
@@ -430,11 +434,12 @@ boolean $show-children: false
 
 -- ftd.column:
 spacing.fixed.px: 24
-padding-horizontal.px: 24
+padding-left.px: 24
 width: fill-container
 
 -- ftd.row:
 spacing.fixed.px: 24
+width: fill-container
 
 -- ftd.column:
 if: { ftd.is_empty(toc-page-children.children.children)} 
@@ -531,11 +536,13 @@ if: { page-children.children.url != NULL }
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
 link: $page-children.children.url
+color if {page-children.children.is-active}: $inherited.colors.cta-primary.base
 
 -- ftd.text: $page-children.children.title
 if: { page-children.children.url == NULL }
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
+color if {page-children.children.is-active}: $inherited.colors.cta-primary.base
 
 -- end: ftd.row
 
@@ -1194,7 +1201,7 @@ pr.toc-item list item:
 -- ftd.row:
 width: fill-container
 wrap: true
-spacing.fixed.px: 4
+spacing.fixed.px: 8
 
 -- subsections-items:
 $loop$: $subsections-links-mobile.item as $obj
@@ -1210,18 +1217,45 @@ item: $obj
 
 
 
-
-
-
 -- component subsections-items:
+pr.toc-item item:
+
+-- ftd.column:
+
+
+-- subsections-items-desktop:
+if: { ftd.device != "mobile" }
+item: $subsections-items.item
+
+-- subsections-items-mobile:
+if: { ftd.device == "mobile" }
+item: $subsections-items.item
+
+-- end: ftd.column
+
+-- end: subsections-items
+
+
+-- component subsections-items-desktop:
 pr.toc-item item:
 
 -- ftd.row:
 width if {ftd.device != "mobile"}: fill-container
 spacing.fixed.px: 12
 
--- ftd.text: $subsections-items.item.title
+-- ftd.text: $subsections-items-desktop.item.title
+if: {subsections-items-desktop.item.url == NULL}
 color: $inherited.colors.text
+color if { subsections-items-desktop.item.is-active }: $inherited.colors.cta-primary.base
+role: $inherited.types.button-medium
+width if {ftd.device != "mobile"}: fill-container
+white-space: nowrap
+
+-- ftd.text: $subsections-items-desktop.item.title
+if: {subsections-items-desktop.item.url != NULL}
+color: $inherited.colors.text
+link: $subsections-items-desktop.item.url
+color if { subsections-items-desktop.item.is-active }: $inherited.colors.cta-primary.base
 role: $inherited.types.button-medium
 width if {ftd.device != "mobile"}: fill-container
 white-space: nowrap
@@ -1232,11 +1266,42 @@ role: $inherited.types.button-medium
 
 -- end: ftd.row
 
--- end: subsections-items
+-- end: subsections-items-desktop
 
 
 
 
+-- component subsections-items-mobile:
+pr.toc-item item:
+
+-- ftd.row:
+width if {ftd.device != "mobile"}: fill-container
+spacing.fixed.px: 12
+
+-- ftd.text: $subsections-items-mobile.item.title
+if: {subsections-items-mobile.item.url == NULL}
+color: $inherited.colors.text-strong
+color if { subsections-items-mobile.item.is-active }: $inherited.colors.cta-primary.base
+role: $inherited.types.button-medium
+width if {ftd.device != "mobile"}: fill-container
+white-space: nowrap
+
+-- ftd.text: $subsections-items-mobile.item.title
+if: {subsections-items-mobile.item.url != NULL}
+color: $inherited.colors.text-strong
+link: $subsections-items-mobile.item.url
+color if { subsections-items-mobile.item.is-active }: $inherited.colors.cta-primary.base
+role: $inherited.types.button-medium
+width if {ftd.device != "mobile"}: fill-container
+white-space: nowrap
+
+-- ftd.text: /
+color: $inherited.colors.text
+role: $inherited.types.button-medium
+
+-- end: ftd.row
+
+-- end: subsections-items-mobile
 
 
 
@@ -1267,8 +1332,8 @@ $on-mouse-leave$: $ftd.set-bool($a = $menu-links.show-menu, v = false)
 role: $inherited.types.button-large
 link: $menu-links.link
 color: $inherited.colors.cta-primary.text
-color if { $menu-links.is-active }: $inherited.colors.cta-primary.base
-color if { $menu-links.mouse-in }: $inherited.colors.cta-primary.base
+color if { menu-links.is-active }: $inherited.colors.cta-primary.base
+color if { menu-links.mouse-in }: $inherited.colors.cta-primary.base
 color if { !$menu-links.mouse-in }: $inherited.colors.text
 $on-mouse-enter$: $ftd.set-bool($a = $menu-links.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $menu-links.mouse-in, v = false)

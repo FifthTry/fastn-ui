@@ -190,6 +190,7 @@ show-arrow: false
 wrap: true
 spacing: 80
 
+
 -- social-card: DISCORD
 url: /
 src: $assets.files.static.footer.discord.svg

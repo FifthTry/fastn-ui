@@ -23,34 +23,32 @@ icon: /static/header/why-menu-img.svg
 
 ## Why fastn Child: index.html
 
-- Benefits of Fastn: /
-
-## How to use fastn: /sample-1/
-
-- Front end infrastructure: /build/
+- ui: /build/
+icon: /static/toc.svg
   - Component Library: /learn/
+    - Component Library: /learn/
+    - Component Library: /learn/
+    - Component Library: /learn/
+    - Component Library: /learn/
   - Front end infrastructure: /build/
     - Component Library: /learn/
-- Component Library: /learn/
-- Front end infrastructure: /build/
-- Component Library: /learn/
-- Front end infrastructure: /build/
-- Component Library: /learn/
+  - Front end infrastructure: /build/
+  - Front end infrastructure: /build/
+
+  
+## How to use fastn: /sample-1/
+
+
 
 ## Features listing page: /sample-1/
 
 # Use Cases: /use-cases/
 
-## Use Cases1: /sample-1/
 
 # Learn: /learn/
 
 
-## Use Cases3: /sample-1/
-
 # Build: /build/
 
-
-## Use Cases2: /sample-1/
 
 # Authoring: /authoring/

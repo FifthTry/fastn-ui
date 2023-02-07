@@ -3,6 +3,7 @@
 -- import: fastn/processors as pr
 -- import: fifthtry.github.io/fastn-ui/assets
 -- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fifthtry.github.io/common as common
 
 
 -- integer width: 1160
@@ -20,7 +21,7 @@
 
 
 -- ft.page:
-bgcolor: $inherited.colors.background.step-1
+;;$bgcolor: $inherited.colors.background.step-1
 
 -- event: Fastn Events 2023
 

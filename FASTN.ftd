@@ -8,7 +8,7 @@ download-base-url: https://raw.githubusercontent.com/fifthtry/fastn-ui/main
 
 -- fastn.dependency: fifthtry.github.io/fastn-typography as typo
 
-
+-- fastn.dependency: fifthtry.github.io/common as common
 
 -- fastn.auto-import: fastn
 

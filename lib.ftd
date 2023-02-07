@@ -3908,19 +3908,22 @@ optional integer padding-vertical:
 boolean wrap: false
 optional integer index:
 optional integer reset:
+optional ftd.color bgcolor: $inherited.colors.background.base
 
 -- ftd.column:
 width if { ftd.device == "mobile}: fill-container
 if: { row-container-one.index == row-container-one.reset }
+background.solid: $row-container-one.bgcolor
+width: fill-container
+if:{ row-container-one.index == row-container-one.reset }
 align-self: center
-max-width.fixed.px if { ftd.device != "mobile}: $row-container-one.width
 padding-vertical.px if { row-container-one.padding-vertical != NULL }: $row-container-one.padding-vertical
 align-content: center
 
 -- ftd.text: $row-container-one.title
 if: { row-container-one.title != NULL }
 role: $font-50
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 align-self: center
 margin-bottom.px: 80
 
@@ -3942,6 +3945,8 @@ width.fixed.calc: 100vw
 children: $row-container-one.row-wrap
 spacing.fixed.px if { row-container-one.spacing != NULL }: $row-container-one.spacing
 wrap: $row-container-one.wrap
+align-self: center
+align-content: center
 padding-horizontal.px if {ftd.device == "mobile"}: 24
 
 -- end: ftd.column
@@ -5201,5 +5206,207 @@ min-width.fixed.px: 112
 -- end: ftd.column
 
 -- end: mode-changer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component social-card:
+optional caption title:
+ftd.image-src src:
+optional string url:
+
+-- ftd.column:
+width.fixed.px: 102
+spacing.fixed.px: 40
+
+
+-- ftd.image:
+if: { social-card.url != NULL}
+src: $social-card.src
+width: auto
+height.fixed.px: 102
+align-self: center
+link: $social-card.url
+
+-- ftd.text: $social-card.title
+if: { social-card.title != NULL}
+role: $inherited.types.heading-tiny
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: social-card
+
+
+
+
+
+
+
+
 
 

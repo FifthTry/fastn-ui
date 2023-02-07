@@ -5,10 +5,12 @@
 -- import: fifthtry.github.io/fastn-ui/assets
 
 
+-- integer $width: 1160
+
 -- pr.sitemap-data sitemap:
 $processor$: pr.full-sitemap
 
--- doc-page: This is page
+-- doc-page:  Documenattaion
 
 
 
@@ -48,7 +50,7 @@ width: fill-container
 min-width.fixed.px if { ftd.device != "mobile" }: $doc-page.width
 overflow-x: auto
 
--- header-fastn:
+-- header-fastn: $doc-page.title
 logo: $doc-page.logo
 sitename: $doc-page.sitename
 login-button: $doc-page.login-button
@@ -60,40 +62,20 @@ toc: $doc-page.toc
 $show-mobile-menu: $doc-page.show-mobile-menu
 width: $doc-page.width
 
+
 -- ftd.row: 
 width: fill-container
 max-width.fixed.px: $width
 align-self: center
 padding-top.px: 100
-spacing.fixed.px: 21
 
--- ftd.column:
-spacing.fixed.px: 70
-width.fixed.px: 255
 
--- ftd.row:
-width: fill-container
-
--- ftd.row:
-spacing.fixed.px: 12
-
--- ftd.image:
-src: $assets.files.static.toc.svg
-align-self: center
-
--- ftd.text: UI
-role: $inherited.types.heading-medium
-color: $inherited.colors.text
-
--- end: ftd.row
-
--- end: ftd.row
 
 -- render-toc:
 $loop$: $doc-page.sections as $obj
 subsection: $obj.children
 
--- end: ftd.column
+
 
 -- ftd.column:
 border-left-width.px: 1
@@ -107,13 +89,7 @@ align-self: start
 padding-top.px: 12
 padding-bottom.px: 6
 
--- ftd.text: $doc-page.title
-role:   $inherited.types.heading-large
-color: $inherited.colors.text
 
-/-- ftd.text: $doc-page.current-section.title
-role:   $inherited.types.heading-large
-color: $inherited.colors.text
 
 -- ftd.text: 
 if: { doc-page.body != NULL}
@@ -154,12 +130,8 @@ children: $doc-page.wrapper
 pr.toc-item list subsection:
 
 -- ftd.column:
-width: fill-container
-spacing.fixed.px: 24
-border-left-width.px: 4
-border-style: dashed
-border-color: $inherited.colors.border-strong
-padding-left.px: 24
+
+
 
 -- toc-item:
 $loop$: $render-toc.subsection as $obj
@@ -175,7 +147,6 @@ toc: $obj.children
 pr.toc-item list toc:
 
 -- ftd.column:
-width.fixed.px: 255
 spacing.fixed.px: 24
 
 -- toc-page: 
@@ -190,11 +161,87 @@ toc: $obj
 
 -- component toc-page:
 pr.toc-item toc:
+boolean $show-toc: true
 
+-- ftd.column:
+width.fixed.px: 255
+spacing.fixed.px: 70
+
+-- ftd.row:
+spacing.fixed.px: 24
+width: fill-container
+
+-- ftd.row:
+spacing.fixed.px: 12
+width: fill-container
+
+-- ftd.image:
+if: {toc-page.toc.font-icon != NULL}
+src: $toc-page.toc.font-icon
+align-self: center
+
+-- ftd.text: $toc-page.toc.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.column:
+if: { !ftd.is_empty(toc-page.toc.children)}
+width: fill-container
+align-self: center
+
+-- ftd.image:
+if: { toc-page.show-toc }
+src: $assets.files.static.footer.drop-up.svg
+$on-click$: $ftd.toggle($a = $toc-page.show-toc, v = true)
+align-self: center
+
+
+-- ftd.image:
+if: { !toc-page.show-toc }
+src: $assets.files.static.footer.drop-down.svg
+$on-click$: $ftd.toggle($a = $toc-page.show-toc, v = false)
+align-self: center
+
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.column:
+if: { toc-page.show-toc }
+spacing.fixed.px: 24
+border-left-width.px: 2
+border-style: dashed
+border-color: $inherited.colors.border-strong
+padding-left.px: 24
+
+-- toc-page-children:
+children: $obj
+$loop$: $toc-page.toc.children as $obj
+
+-- end: ftd.column
+
+
+
+
+-- end: ftd.column
+
+-- end: toc-page
+
+
+-- component toc-page-children:
+pr.toc-item children:
+boolean $show-children: false
+
+-- ftd.column:
+spacing.fixed.px: 24
 -- ftd.row:
 spacing.fixed.px: 24
 
 -- ftd.column:
+if: { ftd.is_empty(toc-page-children.children.children)} 
 color: $inherited.colors.text
 height.fixed.px: 8
 width.fixed.px: 8
@@ -207,14 +254,95 @@ left.px: -29
 
 -- end: ftd.column
 
--- ftd.text: $toc-page.toc.title
-color: white
+-- ftd.column:
+if: { !ftd.is_empty(toc-page-children.children.children)} 
+color: $inherited.colors.accent.primary
+height.fixed.px: 20
+width.fixed.px: 20
+background.solid: $inherited.colors.accent.primary
+border-radius.px: 100
+anchor: parent
+top.px: 8
+left.px: -34
+
+
+-- end: ftd.column
+
+-- ftd.text: $toc-page-children.children.title
+role: $inherited.types.button-large
+color: $inherited.colors.text
+
+-- ftd.column:
+if: { !ftd.is_empty(toc-page-children.children.children)}
+width: fill-container
+align-self: center
+
+-- ftd.image:
+if: { toc-page-children.show-children }
+src: $assets.files.static.footer.drop-up.svg
+$on-click$: $ftd.toggle($a = $toc-page-children.show-children, v = true)
+align-self: center
+
+
+-- ftd.image:
+if: { !toc-page-children.show-children }
+src: $assets.files.static.footer.drop-down.svg
+$on-click$: $ftd.toggle($a = $toc-page-children.show-children, v = false)
+align-self: center
+
+
+-- end: ftd.column
+
 
 -- end: ftd.row
 
--- end: toc-page
+-- ftd.column:
+spacing.fixed.px: 18
+if: { toc-page-children.show-children }
 
+-- page-children:
+children: $obj
+$loop$: $toc-page-children.children.children as $obj
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+
+-- end: toc-page-children
+
+
+
+
+-- component page-children:
+pr.toc-item children:
+
+
+-- ftd.row:
+spacing.fixed.px: 24
+
+
+
+-- ftd.text: $page-children.children.title
+if: { page-children.children.url != NULL }
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+link: $page-children.children.url
+
+
+-- ftd.text: $page-children.children.title
+if: { page-children.children.url == NULL }
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+
+-- end: ftd.row
+
+
+
+-- end: page-children
 -- component header-fastn:
+optional caption title:
 ftd.image-src logo: 
 optional string sitename:
 pr.toc-item list sections: 
@@ -229,7 +357,7 @@ integer width: $width
 -- ftd.column:
 width: fill-container
 
--- header-fastn-desktop:
+-- header-fastn-desktop: $header-fastn.title
 if: {ftd.device != "mobile"}
 logo: $header-fastn.logo
 sitename: $header-fastn.sitename
@@ -247,9 +375,10 @@ width: $header-fastn.width
 
 
 
--- integer $width: 1160
+
 
 -- component header-fastn-desktop:
+optional caption title:
 ftd.image-src logo: 
 optional string sitename:
 pr.toc-item list sections: 
@@ -320,15 +449,18 @@ item: $obj.children
 
 
 -- ftd.row:
+align-self if { header-fastn-desktop.title == NULL }: end
+align-content: right
 width: fill-container
 
--- ftd.text: Documentation
+-- ftd.text: $header-fastn-desktop.title
+if: { header-fastn-desktop.title != NULL }
 role: $inherited.types.heading-large
-color: $inherited.colors.text-strong
+color: $inherited.colors.text
 width: fill-container
 
 -- ftd.row:
-align-content: right
+align-self: end
 padding-horizontal.px: 10
 padding-vertical.px: 10
 border-color: $inherited.colors.border

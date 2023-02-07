@@ -1,12 +1,18 @@
 -- import: fifthtry.github.io/fastn-ui/assets
-
--- import: fifthtry.github.io/fastn-ui/lib as ft
--- import: fastn-cs
--- import: fastn/processors as pr
--- import: fifthtry.github.io/fastn-ui/assets
 -- import: fifthtry.github.io/fastn-ui/lib as ft
 
--- ft.page:
+
+
+
+
+
+
+
+
+
+
+
+-- ft.page: event detail
 
 -- event:  FTD Hands - On Workshop (Beta)
 src: $assets.files.static.events.event-banner.svg
@@ -20,7 +26,6 @@ end-month: January 15
 end-date: 2023
 share-link: https://us042web.zoom.us/js/ 3121243tedss?
 share-title: Online
-
 
 Lorem ipsum dolor sit amet consectetur. Molestie massa pretium adipiscing magna at. Amet varius ante fringilla egestas eu. Purus tristique rhoncus in mauris. Quam eget nulla euismod purus viverra phasellus. Massa orci curabitur arcu nibh viverra nibh. At blandit sagittis et sollicitudin. Ornare ullamcorper mollis congue feugiat in vitae adipiscing aenean. Nunc sapien sapien rutrum magnis at aliquam eget tincidunt suspendisse. Turpis turpis et tincidunt justo maecenas egestas porta. Varius fusce vivamus velit egestas fames viverra risus urna tellus. Sagittis pellentesque vulputate egestas enim sollicitudin. Lobortis pretium elementum nisi non mauris proin placerat vitae.
 
@@ -46,8 +51,41 @@ organization: fifthrty
 
 -- end: speaker
 
+-- end: event
+
+-- ft.row-container-one: System
+spacing: 90
+padding-vertical: 80
+bgcolor: $inherited.colors.background.step-1
+
+-- ft.social-card: DISCORD
+url: /
+src: $assets.files.static.footer.discord.svg
+
+-- ft.social-card: TWITTER
+url: /
+src: $assets.files.static.footer.twitter.svg
+
+-- ft.social-card: LINKEDIN
+url: /
+src: $assets.files.static.footer.linkedin.svg
+
+-- end: ft.row-container-one
+
+-- ft.footer:
 
 -- end: ft.page
+
+
+
+
+
+
+
+
+
+
+
 
 
 -- component speaker:
@@ -55,6 +93,7 @@ children wrap:
 caption title:
 
 -- ftd.column:
+width: fill-container
 
 -- speaker-desktop: $speaker.title
 if: {ftd.device != "mobile"}
@@ -105,16 +144,16 @@ caption title:
 -- ftd.column:
 width: fill-container
 spacing.fixed.px: 24
-padding-horizontal.px: 24
 
 -- ftd.text: $speaker-mobile.title
 role: $inherited.types.heading-tiny
 color: $inherited.colors.text
+width: fill-container
 
 -- ftd.row:
 children:$speaker-mobile.wrap
 wrap: true
-width.fixed.percent: 50
+width: fill-container
 spacing.fixed.px: 44
 
 -- end: ftd.row
@@ -185,6 +224,7 @@ optional body body:
 children wrap:
 
 -- ftd.column:
+width: fill-container
 
 -- event-desktop: $event.title
 if: {ftd.device != "mobile"}
@@ -296,7 +336,7 @@ width: fill-container
 spacing.fixed.px: 24
 
 -- ftd.image:
-src: $assets.files.static.event-desktops.clock.svg
+src: $assets.files.static.events.clock.svg
 
 
 -- ftd.row:
@@ -306,9 +346,7 @@ spacing.fixed.px: 10
 
 -- ftd.row:
 
--- ftd.text: $event-desktop.start-day
-role: $inherited.types.button-medium
-color: $inherited.colors.text
+-- title-name: $event-desktop.start-day
 
 -- ftd.text: ,
 role: $inherited.types.button-medium
@@ -316,31 +354,19 @@ color: $inherited.colors.text
 
 -- end: ftd.row
 
--- ftd.text: $event-desktop.start-month
-role: $inherited.types.button-medium
-color: $inherited.colors.text
+-- title-name: $event-desktop.start-month
 
--- ftd.text: $event-desktop.start-date
-role: $inherited.types.button-medium
-color: $inherited.colors.text
+-- title-name: $event-desktop.start-date
 
--- ftd.text: at
-role: $inherited.types.button-medium
-color: $inherited.colors.text
+-- title-name: at
 
--- ftd.text: $event-desktop.start-timestamp
-role: $inherited.types.button-medium
-color: $inherited.colors.text
+-- title-name: $event-desktop.start-timestamp
 
--- ftd.text: to
-role: $inherited.types.button-medium
-color: $inherited.colors.text
+-- title-name: to
 
 -- ftd.row:
 
--- ftd.text: $event-desktop.end-day
-role: $inherited.types.button-medium
-color: $inherited.colors.text
+-- title-name: $event-desktop.end-day
 
 -- ftd.text: ,
 role: $inherited.types.button-medium
@@ -348,21 +374,13 @@ color: $inherited.colors.text
 
 -- end: ftd.row
 
--- ftd.text: $event-desktop.end-month
-role: $inherited.types.button-medium
-color: $inherited.colors.text
+-- title-name: $event-desktop.end-month
 
--- ftd.text: $event-desktop.end-date
-role: $inherited.types.button-medium
-color: $inherited.colors.text
+-- title-name: $event-desktop.end-date
 
--- ftd.text: at
-role: $inherited.types.button-medium
-color: $inherited.colors.text
+-- title-name: at
 
--- ftd.text: $event-desktop.end-timestamp
-role: $inherited.types.button-medium
-color: $inherited.colors.text
+-- title-name: $event-desktop.end-timestamp
 
 -- end: ftd.row
 
@@ -372,19 +390,15 @@ color: $inherited.colors.text
 spacing.fixed.px: 24
 
 -- ftd.image:
-src: $assets.files.static.event-desktops.live-recording.svg
+src: $assets.files.static.events.live-recording.svg
 
 -- ftd.column:
 spacing.fixed.px: 8
 
--- ftd.text: $event-desktop.share-title
-role: $inherited.types.button-medium
-color: $inherited.colors.text
+-- title-name: $event-desktop.share-title
 
--- ftd.text: $event-desktop.share-link
-link: $event-desktop.share-link
-role: $inherited.types.button-medium
-color: $inherited.colors.text
+-- title-name: $event-desktop.share-link
+url: $event-desktop.share-link
 
 -- end: ftd.column
 
@@ -395,12 +409,11 @@ color: $inherited.colors.text
 spacing.fixed.px: 24
 
 -- ftd.image:
-src: $assets.files.static.event-desktops.share.svg
+src: $assets.files.static.events.share.svg
 
--- ftd.text: share
-link: $event-desktop.share-link
-role: $inherited.types.button-medium
-color: $inherited.colors.accent.primary
+-- title-name: share
+url: $event-desktop.share-link
+text-color: $inherited.colors.accent.primary
 
 -- end: ftd.row
 
@@ -411,6 +424,7 @@ color: $inherited.colors.accent.primary
 -- ftd.column:
 children: $event-desktop.wrap
 width: fill-container
+padding-bottom.px: 150
 
 -- end: ftd.column
 
@@ -456,8 +470,9 @@ children wrap:
 
 -- ftd.column:
 width: fill-container
-spacing.fixed.px: 24
+spacing.fixed.px: 40
 padding-horizontal.px: 16
+padding-top.px: 40
 
 -- ftd.text: $event-mobile.title
 role: $inherited.types.heading-large
@@ -494,7 +509,7 @@ spacing.fixed.px: 10
 
 -- ftd.row:
 
--- text: $event-mobile.start-day
+-- title-name: $event-mobile.start-day
 
 -- ftd.text: ,
 role: $inherited.types.button-medium
@@ -502,23 +517,19 @@ color: $inherited.colors.text
 
 -- end: ftd.row
 
--- text: $event-mobile.start-month
+-- title-name: $event-mobile.start-month
 
--- text: $event-mobile.start-date
+-- title-name: $event-mobile.start-date
 
+-- title-name: at
 
--- text: at
+-- title-name: $event-mobile.start-timestamp
 
-
--- text: $event-mobile.start-timestamp
-
-
--- text: to
+-- title-name: to
 
 -- ftd.row:
 
--- text: $event-mobile.end-day
-
+-- title-name: $event-mobile.end-day
 
 -- ftd.text: ,
 role: $inherited.types.button-medium
@@ -526,16 +537,13 @@ color: $inherited.colors.text
 
 -- end: ftd.row
 
--- text: $event-mobile.end-month
+-- title-name: $event-mobile.end-month
 
+-- title-name: $event-mobile.end-date
 
--- text: $event-mobile.end-date
+-- title-name: at
 
-
--- text: at
-
--- text: $event-mobile.end-timestamp
-
+-- title-name: $event-mobile.end-timestamp
 
 -- end: ftd.row
 
@@ -550,9 +558,9 @@ src: $assets.files.static.events.live-recording.svg
 -- ftd.column:
 spacing.fixed.px: 8
 
--- text: $event-mobile.share-title
+-- title-name: $event-mobile.share-title
 
--- text: $event-mobile.share-link
+-- title-name: $event-mobile.share-link
 url: $event-mobile.share-link
 
 -- end: ftd.column
@@ -566,7 +574,7 @@ spacing.fixed.px: 24
 -- ftd.image:
 src: $assets.files.static.events.share.svg
 
--- text: share
+-- title-name: share
 url: $event-mobile.share-link
 text-color: $inherited.colors.accent.primary
 
@@ -592,7 +600,7 @@ color: $inherited.colors.text
 -- ftd.column:
 children: $event-mobile.wrap
 width: fill-container
-padding-horizontal.px: 24
+padding-bottom.px: 70
 
 -- end: ftd.column
 
@@ -602,7 +610,7 @@ padding-horizontal.px: 24
 
 
 
--- component text:
+-- component title-name:
 caption title:
 ftd.color text-color: $inherited.colors.text
 optional string url:
@@ -610,16 +618,16 @@ optional string url:
 -- ftd.column:
 
 
--- ftd.text: $text.title
-if: {text.url != NULL}
+-- ftd.text: $title-name.title
+if: {title-name.url != NULL}
 role: $inherited.types.button-medium
-color: $text.text-color
-link: $text.url
+color: $title-name.text-color
+link: $title-name.url
 
--- ftd.text: $text.title
-if: {text.url == NULL}
+-- ftd.text: $title-name.title
+if: {title-name.url == NULL}
 role: $inherited.types.button-medium
-color: $text.text-color
+color: $title-name.text-color
 
 -- end: ftd.column
--- end: text
+-- end: title-name

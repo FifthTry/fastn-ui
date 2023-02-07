@@ -6,6 +6,7 @@
 
 
 -- integer width: 1160
+
 -- integer $current-active: 1
 
 
@@ -187,24 +188,26 @@ index: 2
 -- ft.heart-line-title-card: Subscribe now
 show-arrow: false
 
--- ft.row-container:
+-- ft.row-container-one:
 wrap: true
 spacing: 80
+padding-vertical: 140
+bgcolor: $inherited.colors.background.step-1
 
 
--- social-card: DISCORD
+-- ft.social-card: DISCORD
 url: /
 src: $assets.files.static.footer.discord.svg
 
--- social-card: TWITTER
+-- ft.social-card: TWITTER
 url: /
 src: $assets.files.static.footer.twitter.svg
 
--- social-card: LINKEDIN
+-- ft.social-card: LINKEDIN
 url: /
 src: $assets.files.static.footer.linkedin.svg
 
--- end: ft.row-container
+-- end: ft.row-container-one
 
 -- ft.footer:
 
@@ -254,12 +257,12 @@ padding-vertical.px: 5
 padding-horizontal.px: 15
 border-radius.px: 5
 background.solid if { number-item.mouse-in }: $inherited.colors.accent.primary
+border-color : $inherited.colors.border-strong
+background.solid if { number-item.index == current-active }: $inherited.colors.accent.primary
+border-color if { number-item.index == current-active }: $inherited.colors.text
+border-width.px: 2
 border-color if { !number-item.mouse-in }: $inherited.colors.border-strong
 border-color if { number-item.mouse-in }: $inherited.colors.text
-border-color if { !number-item.active-item }: $inherited.colors.border-strong
-border-color if { number-item.active-item }: $inherited.colors.text
-background.solid if { number-item.active-item }: $inherited.colors.accent.primary
-border-width.px: 2
 $on-mouse-enter$: $ftd.set-bool($a = $number-item.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $number-item.mouse-in, v = false)
 $on-click$: $ftd.toggle($a = $number-item.active-item)
@@ -281,45 +284,10 @@ color if { $number-item.mouse-in }: $inherited.colors.text
 
 
 
-
--- component social-card:
-optional caption title:
-ftd.image-src src:
-optional string url:
-
--- ftd.column:
-width.fixed.px: 102
-spacing.fixed.px: 40
-margin-top.px: 131
-
--- ftd.image:
-if: { social-card.url != NULL}
-src: $social-card.src
-width: auto
-height.fixed.px: 102
-align-self: center
-link: $social-card.url
-
--- ftd.text: $social-card.title
-if: { social-card.title != NULL}
-role: $inherited.types.heading-tiny
-color: $inherited.colors.text
-
--- end: ftd.column
-
--- end: social-card
-
-
-
-
-
-
-
 -- component event:
 ftd.image-src image: $assets.files.static.event-background.svg
 caption title: Fastn Events
 body info:
-
 
 -- ftd.column:
 width: fill-container
@@ -337,6 +305,15 @@ image: $event.image
 -- end: ftd.column
 
 -- end: event
+
+
+
+
+
+
+
+
+
 
 -- component event-desktop:
 ftd.image-src image: $assets.files.static.event-background.svg
@@ -395,6 +372,7 @@ z-index: 1
 
 
 
+
 -- component event-mobile:
 ftd.image-src image: $assets.files.static.event-background.svg
 caption title: Fastn Events
@@ -429,9 +407,13 @@ height:auto
 
 -- end: ftd.column
 
-
-
 -- end: event-mobile
+
+
+
+
+
+
 
 
 
@@ -450,6 +432,7 @@ width: fill-container
 if: {ftd.device != "mobile"}
 wrap: $event-list.wrap
 icon: $event-list.icon
+show-grid:  $event-list.show-grid
 bgcolor: $event-list.bgcolor
 
 -- event-list-mobile: $event-list.title
@@ -480,6 +463,7 @@ margin-top.px: 150
 
 -- ftd.row:
 padding-horizontal.px: 24
+padding-bottom.px if { event-list-desktop.show-grid} : 70
 
 -- ftd.image:
 src: $event-list-desktop.icon
@@ -494,7 +478,7 @@ padding-left.px: 24
 -- end: ftd.row
 
 -- ftd.column:
-if: {!event-list-desktop.show-grid}
+if: { !event-list-desktop.show-grid }
 children: $event-list-desktop.wrap
 width: fill-container
 max-width.fixed.px: $width
@@ -505,8 +489,9 @@ margin-top.px: 40
 
 -- end: ftd.column
 
+
 -- ftd.row:
-if: {event-list-desktop.show-grid}
+if: { event-list-desktop.show-grid }
 children: $event-list-desktop.wrap
 width: fill-container
 max-width.fixed.px: $width
@@ -521,6 +506,12 @@ margin-bottom.px: 64
 -- end: ftd.column
 
 -- end: event-list-desktop
+
+
+
+
+
+
 
 
 
@@ -577,14 +568,6 @@ padding-bottom.px: 40
 
 
 
-
-
-
-
-
-
-
-
 -- component upcoming-event:
 ftd.image-src image:
 caption title:
@@ -628,6 +611,9 @@ reset: $upcoming-event.reset
 -- end: ftd.column
 
 -- end: upcoming-event
+
+
+
 
 
 
@@ -739,6 +725,12 @@ text-align: center
 
 
 
+
+
+
+
+
+
 -- component upcoming-event-mobile:
 ftd.image-src image:
 caption title:
@@ -838,7 +830,10 @@ text-align: center
 -- end: ftd.column
 
 -- end: ftd.column
+
 -- end: upcoming-event-mobile
+
+
 
 
 
@@ -866,7 +861,6 @@ min-height.fixed.px: 680
 width.fixed.px if {ftd.device != "mobile"}: 566
 ;;background.solid if { past-event.index == past-event.reset }: $inherited.colors.accent.primary
 background.solid : $inherited.colors.background.overlay
-
 
 -- ftd.image:
 src: $past-event.image

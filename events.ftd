@@ -19,6 +19,7 @@
 
 
 -- ft.page:
+bgcolor: $inherited.colors.background.step-1
 
 -- event: Fastn Events 2023
 
@@ -227,6 +228,7 @@ width: fill-container
 align-content: center
 spacing.fixed.px: 16
 margin-top.px: 80
+margin-top.px if {ftd.device == "mobile"}: 40
 
 -- end: ftd.row
 
@@ -280,48 +282,6 @@ color if { $number-item.mouse-in }: $inherited.colors.text
 
 
 
-
-
--- component subscribe-now:
-optional string social-text-one:
-optional string social-text-two:
-optional string social-text-three:
-ftd.image-src social-src-one:
-ftd.image-src social-src-two:
-ftd.image-src social-src-three:
-optional string social-link-one:
-optional string social-link-two:
-optional string social-link-three:
-
--- ftd.row:
-width: fill-container
-max-width.fixed.px: 678
-align-self: center
-spacing: space-between
-
-
-
--- social-card: $subscribe-now.social-text-two
-url: $subscribe-now.social-link-two
-src: $subscribe-now.social-src-two
-
--- social-card: $subscribe-now.social-text-three
-url: $subscribe-now.social-link-three
-src: $subscribe-now.social-src-three
-
--- end: ftd.row
-
--- end: subscribe-now
-
-
-
-
-
-
-
-
-
-
 -- component social-card:
 optional caption title:
 ftd.image-src src:
@@ -355,9 +315,30 @@ color: $inherited.colors.text
 
 
 
-
-
 -- component event:
+ftd.image-src image: $assets.files.static.event-background.svg
+caption title: Fastn Events
+body info:
+
+
+-- ftd.column:
+width: fill-container
+
+-- event-desktop: $event.title
+if:  {ftd.device != "mobile"}
+info: $event.info
+image: $event.image
+
+-- event-mobile: $event.title
+if:  {ftd.device == "mobile"}
+info: $event.info
+image: $event.image
+
+-- end: ftd.column
+
+-- end: event
+
+-- component event-desktop:
 ftd.image-src image: $assets.files.static.event-background.svg
 caption title: Fastn Events
 body info:
@@ -380,20 +361,20 @@ anchor: parent
 z-index: 1
 
 -- ftd.image:
-src: $event.image
+src: $event-desktop.image
 width:auto
 height:auto
 
 -- end: ftd.column
 
--- ftd.text: $event.title
+-- ftd.text: $event-desktop.title
 role: $inherited.types.heading-hero
 color: $inherited.colors.text
 text-align: center
 z-index: 1
 
 -- ftd.text:
-text: $event.info
+text: $event-desktop.info
 color: $inherited.colors.text-strong
 role: $inherited.types.copy-large
 margin-bottom.px: 16
@@ -404,13 +385,53 @@ z-index: 1
 
 -- end: ftd.column
 
--- end: event
+-- end: event-desktop
 
 
 
 
 
 
+
+
+
+-- component event-mobile:
+ftd.image-src image: $assets.files.static.event-background.svg
+caption title: Fastn Events
+body info:
+
+-- ftd.column:
+width: fill-container
+padding-horizontal.px: 16
+padding-vertical.px: 24
+align-self: center
+align-content: center
+spacing.fixed.px: 16
+
+-- ftd.text: $event-mobile.title
+role: $inherited.types.heading-hero
+color: $inherited.colors.text
+text-align: center
+z-index: 1
+
+-- ftd.text:
+text: $event-mobile.info
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-large
+margin-bottom.px: 16
+text-align: center
+z-index: 1
+
+-- ftd.image:
+src: $event-mobile.image
+width.fixed.percent: 70
+height:auto
+
+-- end: ftd.column
+
+
+
+-- end: event-mobile
 
 
 
@@ -424,7 +445,32 @@ ftd.color bgcolor: $inherited.colors.background.overlay
 
 -- ftd.column:
 width: fill-container
-background.solid: $event-list.bgcolor
+
+-- event-list-desktop: $event-list.title
+if: {ftd.device != "mobile"}
+wrap: $event-list.wrap
+icon: $event-list.icon
+bgcolor: $event-list.bgcolor
+
+-- event-list-mobile: $event-list.title
+if: {ftd.device == "mobile"}
+wrap: $event-list.wrap
+icon: $event-list.icon
+bgcolor: $event-list.bgcolor
+
+-- end: ftd.column
+-- end: event-list
+
+-- component event-list-desktop:
+children wrap:
+caption title:
+ftd.image-src icon: $assets.files.static.events.upcoming-section-logo.svg
+boolean show-grid: false
+ftd.color bgcolor: $inherited.colors.background.overlay
+
+-- ftd.column:
+width: fill-container
+background.solid: $event-list-desktop.bgcolor
 
 -- ftd.column:
 width: fill-container
@@ -433,13 +479,14 @@ align-self: center
 margin-top.px: 150
 
 -- ftd.row:
+padding-horizontal.px: 24
 
 -- ftd.image:
-src: $event-list.icon
+src: $event-list-desktop.icon
 width.fixed.px: 40
 align-self: center
 
--- ftd.text: $event-list.title
+-- ftd.text: $event-list-desktop.title
 color: $inherited.colors.text
 role: $inherited.types.heading-medium
 padding-left.px: 24
@@ -447,8 +494,8 @@ padding-left.px: 24
 -- end: ftd.row
 
 -- ftd.column:
-if: {!event-list.show-grid}
-children: $event-list.wrap
+if: {!event-list-desktop.show-grid}
+children: $event-list-desktop.wrap
 width: fill-container
 max-width.fixed.px: $width
 align-self: center
@@ -459,8 +506,8 @@ margin-top.px: 40
 -- end: ftd.column
 
 -- ftd.row:
-if: {event-list.show-grid}
-children: $event-list.wrap
+if: {event-list-desktop.show-grid}
+children: $event-list-desktop.wrap
 width: fill-container
 max-width.fixed.px: $width
 wrap: true
@@ -473,7 +520,61 @@ margin-bottom.px: 64
 
 -- end: ftd.column
 
--- end: event-list
+-- end: event-list-desktop
+
+
+
+
+-- component event-list-mobile:
+children wrap:
+caption title:
+ftd.image-src icon: $assets.files.static.events.upcoming-section-logo.svg
+boolean show-grid: false
+ftd.color bgcolor: $inherited.colors.background.overlay
+
+-- ftd.column:
+width: fill-container
+background.solid: $event-list-mobile.bgcolor
+padding-top.px : 70
+padding-bottom.px : 50
+spacing.fixed.px: 24
+
+-- ftd.row:
+padding-horizontal.px: 24
+
+-- ftd.image:
+src: $event-list-mobile.icon
+width.fixed.px: 40
+align-self: center
+
+-- ftd.text: $event-list-mobile.title
+color: $inherited.colors.text
+role: $inherited.types.heading-medium
+padding-left.px: 24
+
+-- end: ftd.row
+
+-- ftd.column:
+children: $event-list-mobile.wrap
+width: fill-container
+spacing.fixed.px: 40
+padding-bottom.px: 40
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: event-list-mobile
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -497,6 +598,57 @@ optional string cta-link:
 optional integer index:
 optional integer reset:
 
+-- ftd.column:
+
+-- upcoming-event-desktop: $upcoming-event.title
+if: {ftd.device != "mobile"}
+image: $upcoming-event.image
+info: $upcoming-event.info
+day: $upcoming-event.day
+month: $upcoming-event.month
+date: $upcoming-event.date
+time: $upcoming-event.time
+cta-text: $upcoming-event.cta-text
+cta-link: $upcoming-event.cta-link
+index: $upcoming-event.index
+reset: $upcoming-event.reset
+
+-- upcoming-event-mobile: $upcoming-event.title
+if: {ftd.device == "mobile"}
+image: $upcoming-event.image
+info: $upcoming-event.info
+day: $upcoming-event.day
+month: $upcoming-event.month
+date: $upcoming-event.date
+time: $upcoming-event.time
+cta-text: $upcoming-event.cta-text
+cta-link: $upcoming-event.cta-link
+index: $upcoming-event.index
+reset: $upcoming-event.reset
+-- end: ftd.column
+
+-- end: upcoming-event
+
+
+
+
+
+
+
+
+-- component upcoming-event-desktop:
+ftd.image-src image:
+caption title:
+body info:
+string day:
+string month:
+integer date:
+string time:
+optional string cta-text:
+optional string cta-link:
+optional integer index:
+optional integer reset:
+
 -- ftd.row:
 align-self: center
 width.fixed.px: $width
@@ -506,7 +658,7 @@ border-color: $inherited.colors.border-strong
 padding-bottom.px: 56
 
 -- ftd.image:
-src: $upcoming-event.image
+src: $upcoming-event-desktop.image
 min-height.fixed.px: 378
 width.fixed.px: 440
 
@@ -514,20 +666,20 @@ width.fixed.px: 440
 padding-left.px: 51
 padding-vertical.px: 62
 spacing.fixed.px: 12
-background.solid if { upcoming-event.index == upcoming-event.reset }:$inherited.colors.accent.primary 
+background.solid if { upcoming-event-desktop.index == upcoming-event-desktop.reset }:$inherited.colors.accent.primary 
 
 -- ftd.row:
 spacing.fixed.px: 10
 
--- ftd.text: $upcoming-event.day
+-- ftd.text: $upcoming-event-desktop.day
 color: $inherited.colors.text
 role: $inherited.types.heading-tiny
 
--- ftd.text: $upcoming-event.month
+-- ftd.text: $upcoming-event-desktop.month
 color: $inherited.colors.text
 role: $inherited.types.heading-tiny
 
--- ftd.integer: $upcoming-event.date
+-- ftd.integer: $upcoming-event-desktop.date
 color: $inherited.colors.text
 role: $inherited.types.heading-tiny
 
@@ -541,23 +693,23 @@ align-content: center
 
 -- end: ftd.column
 
--- ftd.text: $upcoming-event.time
+-- ftd.text: $upcoming-event-desktop.time
 color: $inherited.colors.text
 role: $inherited.types.heading-tiny
 
 -- end: ftd.row
 
--- ftd.text: $upcoming-event.title
+-- ftd.text: $upcoming-event-desktop.title
 color: $inherited.colors.text
 role: $inherited.types.heading-small
 
--- ftd.text: $upcoming-event.info
+-- ftd.text: $upcoming-event-desktop.info
 color: $inherited.colors.text-strong
 role: $inherited.types.copy-large
 
 -- ftd.row:
 spacing.fixed.px: 10
-link if { upcoming-event.cta-link != NULL }: $upcoming-event.cta-link
+link if { upcoming-event-desktop.cta-link != NULL }: $upcoming-event-desktop.cta-link
 border-color : $inherited.colors.cta-secondary.base
 border-width.px: 1
 border-radius.px: 30
@@ -570,7 +722,7 @@ margin-top.px: 20
 src: $assets.files.static.events.video.svg
 width.fixed.px: 20
 
--- ftd.text: $upcoming-event.cta-text
+-- ftd.text: $upcoming-event-desktop.cta-text
 role: $inherited.types.button-medium
 color: $inherited.colors.cta-primary.text
 white-space: nowrap
@@ -582,10 +734,111 @@ text-align: center
 
 -- end: ftd.row
 
--- end: upcoming-event
+-- end: upcoming-event-desktop
 
 
 
+
+-- component upcoming-event-mobile:
+ftd.image-src image:
+caption title:
+body info:
+string day:
+string month:
+integer date:
+string time:
+optional string cta-text:
+optional string cta-link:
+optional integer index:
+optional integer reset:
+
+-- ftd.column:
+border-bottom-width.px: 1
+border-color: $inherited.colors.border-strong
+padding-bottom.px: 40
+width: fill-container
+
+-- ftd.column:
+spacing.fixed.px: 24
+width: fill-container
+padding-horizontal.px: 24
+;;background.solid if { upcoming-event-mobile.index == upcoming-event-mobile.reset }: $inherited.colors.accent.primary
+background.solid : $inherited.colors.background.overlay
+
+-- ftd.image:
+src: $upcoming-event-mobile.image
+height.fixed.px: 300
+width: fill-container
+
+-- ftd.column:
+spacing.fixed.px: 12
+
+-- ftd.row:
+spacing.fixed.px: 10
+
+-- ftd.text: $upcoming-event-mobile.day
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
+
+-- ftd.text: $upcoming-event-mobile.month
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
+
+-- ftd.integer: $upcoming-event-mobile.date
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
+
+-- ftd.column:
+width.fixed.px: 4
+height.fixed.px: 4
+border-radius.px: 100
+background.solid: $inherited.colors.accent.primary
+align-self: center
+align-content: center
+
+-- end: ftd.column
+
+-- ftd.text: $upcoming-event-mobile.time
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
+-- end: ftd.row
+
+-- ftd.text: $upcoming-event-mobile.title
+color: $inherited.colors.text
+role: $inherited.types.heading-medium
+
+-- ftd.text: $upcoming-event-mobile.info
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-large
+
+-- ftd.row:
+spacing.fixed.px: 10
+link if { upcoming-event-mobile.cta-link != NULL }: $upcoming-event-mobile.cta-link
+border-color : $inherited.colors.text
+border-radius.px: 30
+border-width.px: 1
+padding-vertical.px: 8
+padding-horizontal.px: 20
+align-content: center
+
+-- ftd.image:
+src: $assets.files.static.events.video.svg
+width.fixed.px: 20
+
+-- ftd.text: $upcoming-event-mobile.cta-text
+role: $inherited.types.button-medium
+color: $inherited.colors.cta-primary.text
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+-- end: upcoming-event-mobile
 
 
 
@@ -610,12 +863,14 @@ optional integer reset:
 -- ftd.column:
 spacing.fixed.px: 16
 min-height.fixed.px: 680
-width.fixed.px: 566
+width.fixed.px if {ftd.device != "mobile"}: 566
 ;;background.solid if { past-event.index == past-event.reset }: $inherited.colors.accent.primary
 background.solid : $inherited.colors.background.overlay
+
+
 -- ftd.image:
 src: $past-event.image
-height.fixed.px: 300
+height.fixed.px if {ftd.device != "mobile"}: 300
 width: fill-container
 
 -- ftd.column:

@@ -143,13 +143,13 @@ children wrapper:
 ftd.color-scheme colors: $fastn-cs.main
 ftd.type-data types: $typo.types
 boolean $show-mobile-menu: false
-ftd.color $bgcolor: $inherited.colors.background.base
+;;ftd.color $bgcolor: $inherited.colors.background.base
 
 -- ftd.column:
 width: fill-container
 align-self: center
-background.solid: $page.bgcolor
-;;background.solid: $inherited.colors.background.base
+;;background.solid: $page.bgcolor
+background.solid: $inherited.colors.background.base
 
 -- ftd.column:
 width: fill-container
@@ -5376,8 +5376,8 @@ min-width.fixed.px: 112
 
 -- component social-card:
 optional caption title:
-ftd.image-src src:
-optional string url:
+ftd.image-src icon:
+optional string link:
 
 -- ftd.column:
 width.fixed.px: 102
@@ -5385,12 +5385,12 @@ spacing.fixed.px: 40
 
 
 -- ftd.image:
-if: { social-card.url != NULL}
-src: $social-card.src
+if: { social-card.link != NULL}
+src: $social-card.icon
 width: auto
 height.fixed.px: 102
 align-self: center
-link: $social-card.url
+link: $social-card.link
 
 -- ftd.text: $social-card.title
 if: { social-card.title != NULL}

@@ -13,6 +13,11 @@ $processor$: pr.full-sitemap
 
 
 
+
+
+
+
+
 -- component doc-page:
 optional caption title: 
 optional body body: 
@@ -29,7 +34,7 @@ string login-button: Get Started
 integer width: $width
 children wrapper:
 ftd.color-scheme colors: $fastn-cs.main
-ftd.type-data types: $typo.manrope-type
+ftd.type-data types: $typo.types
 boolean $show-mobile-menu: false
 
 -- ftd.column:
@@ -48,7 +53,6 @@ logo: $doc-page.logo
 sitename: $doc-page.sitename
 login-button: $doc-page.login-button
 sections: $doc-page.sections
-sub-sections: $doc-page.sub-sections
 current-section: $doc-page.current-section
 current-subsection: $doc-page.current-subsection
 current-page: $doc-page.current-page
@@ -56,26 +60,78 @@ toc: $doc-page.toc
 $show-mobile-menu: $doc-page.show-mobile-menu
 width: $doc-page.width
 
--- ftd.column:
+-- ftd.row: 
 width: fill-container
-min-height.fixed.calc: 100vh
-align-content: right
-align-content if { ftd.device == "mobile" }: left
-padding-left.px if { ftd.device == "mobile" }: 16
 max-width.fixed.px: $width
 align-self: center
-padding-top.px: 12
-padding-bottom.px: 6
+padding-top.px: 100
+spacing.fixed.px: 21
 
+-- ftd.column:
+spacing.fixed.px: 70
+width.fixed.px: 255
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.row:
+spacing.fixed.px: 12
+
+-- ftd.image:
+src: $assets.files.static.toc.svg
+align-self: center
+
+-- ftd.text: UI
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- render-toc:
+$loop$: $doc-page.sections as $obj
+subsection: $obj.children
 
 -- end: ftd.column
 
 -- ftd.column:
+border-left-width.px: 1
+border-color: $inherited.colors.border-strong
+padding-left.px: 64
 width: fill-container
+min-height.fixed.calc: 100vh
+align-content: top-left
+max-width.fixed.px: $width
+align-self: start
+padding-top.px: 12
+padding-bottom.px: 6
+
+-- ftd.text: $doc-page.title
+role:   $inherited.types.heading-large
+color: $inherited.colors.text
+
+/-- ftd.text: $doc-page.current-section.title
+role:   $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- ftd.text: 
+if: { doc-page.body != NULL}
+text: $doc-page.body
+role:   $inherited.types.copy-regular
+color: $inherited.colors.text
+margin-top.px: 20
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 120
 children: $doc-page.wrapper
 
 -- end: ftd.column
 
+-- end: ftd.column
+
+-- end: ftd.row
 -- end: ftd.column
 
 -- end: ftd.column
@@ -94,14 +150,74 @@ children: $doc-page.wrapper
 
 
 
+-- component render-toc: 
+pr.toc-item list subsection:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+border-left-width.px: 4
+border-style: dashed
+border-color: $inherited.colors.border-strong
+padding-left.px: 24
+
+-- toc-item:
+$loop$: $render-toc.subsection as $obj
+toc: $obj.children
+
+-- end: ftd.column
+
+-- end: render-toc
 
 
+
+-- component toc-item:
+pr.toc-item list toc:
+
+-- ftd.column:
+width.fixed.px: 255
+spacing.fixed.px: 24
+
+-- toc-page: 
+$loop$: $toc-item.toc as $obj
+toc: $obj
+
+-- end: ftd.column
+
+-- end: toc-item
+
+
+
+-- component toc-page:
+pr.toc-item toc:
+
+-- ftd.row:
+spacing.fixed.px: 24
+
+-- ftd.column:
+color: $inherited.colors.text
+height.fixed.px: 8
+width.fixed.px: 8
+background.solid: $inherited.colors.text
+border-radius.px: 100
+anchor: parent
+top.px: 8
+left.px: -29
+
+
+-- end: ftd.column
+
+-- ftd.text: $toc-page.toc.title
+color: white
+
+-- end: ftd.row
+
+-- end: toc-page
 
 -- component header-fastn:
 ftd.image-src logo: 
 optional string sitename:
 pr.toc-item list sections: 
-pr.toc-item list sub-sections: 
 optional pr.toc-item current-section: 
 optional pr.toc-item current-subsection: 
 optional pr.toc-item current-page: 
@@ -118,7 +234,6 @@ if: {ftd.device != "mobile"}
 logo: $header-fastn.logo
 sitename: $header-fastn.sitename
 sections: $header-fastn.sections
-sub-sections: $header-fastn.sub-sections
 current-section: $header-fastn.current-section
 current-subsection: $header-fastn.current-subsection
 current-page: $header-fastn.current-page
@@ -138,7 +253,6 @@ width: $header-fastn.width
 ftd.image-src logo: 
 optional string sitename:
 pr.toc-item list sections: 
-pr.toc-item list sub-sections: 
 optional pr.toc-item current-section: 
 optional pr.toc-item current-subsection: 
 optional pr.toc-item current-page: 
@@ -258,16 +372,14 @@ color: $inherited.colors.text.dark
 -- component subsections-links:
 pr.toc-item list item:
 
-
 -- ftd.row:
 width: fill-container
+spacing.fixed.px: 12
 
 
-
--- ftd.text: $obj.title
-color: white
-width: fill-container
+-- subsections-items:
 $loop$: $subsections-links.item as $obj
+item: $obj
 
 -- end: ftd.row
 
@@ -275,7 +387,27 @@ $loop$: $subsections-links.item as $obj
 
 
 
+-- component subsections-items:
+pr.toc-item item:
 
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 12
+
+
+-- ftd.text: $subsections-items.item.title
+color: $inherited.colors.text
+role: $inherited.types.button-medium
+width: fill-container
+white-space: nowrap
+
+-- ftd.text: /
+color: $inherited.colors.text
+role: $inherited.types.button-medium
+
+-- end: ftd.row
+
+-- end: subsections-items
 
 
 

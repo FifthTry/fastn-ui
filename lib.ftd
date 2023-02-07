@@ -140,6 +140,7 @@ optional string sitename: Fastn
 string login-button: Get Started
 integer width: $width
 children wrapper:
+ftd.color bgcolor: $inherited.colors.background.base
 ftd.color-scheme colors: $fastn-cs.main
 ftd.type-data types: $typo.types
 boolean $show-mobile-menu: false
@@ -147,7 +148,7 @@ boolean $show-mobile-menu: false
 -- ftd.column:
 width: fill-container
 align-self: center
-background.solid: $inherited.colors.background.base
+background.solid: $page.bgcolor
 
 -- ftd.column:
 width: fill-container
@@ -3252,50 +3253,113 @@ optional integer index:
 optional integer reset:
 
 -- ftd.column:
-width if { ftd.device == "mobile}: fill-container
-if:{ row-container.index == row-container.reset }
+width: fill-container
+
+-- row-container-desktop: $row-container.title
+if: {ftd.device != "mobile"}
+spacing: $row-container.spacing
+row-wrap: $row-container.row-wrap
+width: $row-container.width
+padding-vertical: $row-container.padding-vertical
+wrap: $row-container.wrap
+index: $row-container.index
+reset: $row-container.reset
+
+-- row-container-mobile: $row-container.title
+if: {ftd.device == "mobile"}
+spacing: $row-container.spacing
+row-wrap: $row-container.row-wrap
+width: $row-container.width
+padding-vertical: $row-container.padding-vertical
+wrap: $row-container.wrap
+index: $row-container.index
+reset: $row-container.reset
+
+
+-- end: ftd.column 
+
+
+-- end: row-container
+
+
+-- component row-container-desktop:
+optional caption title:
+optional integer spacing:
+children row-wrap:
+integer width: 
+optional integer padding-vertical: 
+boolean wrap: false
+optional integer index:
+optional integer reset:
+
+-- ftd.column:
+if:{ row-container-desktop.index == row-container-desktop.reset }
 align-self: center
-max-width.fixed.px if { ftd.device != "mobile}: $row-container.width
-padding-vertical.px if { row-container.padding-vertical != NULL }: $row-container.padding-vertical
+max-width.fixed.px: $row-container-desktop.width
+padding-vertical.px if { row-container-desktop.padding-vertical != NULL }: $row-container-desktop.padding-vertical
 align-content: center
 
--- ftd.text: $row-container.title
-if: { row-container.title != NULL }
+-- ftd.text: $row-container-desktop.title
+if: { row-container-desktop.title != NULL }
 role: $inherited.types.heading-large
 color: $inherited.colors.text-strong
 align-self: center
 margin-bottom.px: 80
-margin-bottom.px if {ftd.device == "mobile"}: 40
-padding-horizontal.px if {ftd.device == "mobile"}: 24
 text-align: center
 
 -- ftd.row:
-if: {ftd.device != "mobile"}
-width: fill-container
-children: $row-container.row-wrap
-spacing.fixed.px if { row-container.spacing != NULL }: $row-container.spacing
-max-width.fixed.px: $row-container.width
+children: $row-container-desktop.row-wrap
+spacing.fixed.px if { row-container-desktop.spacing != NULL }: $row-container-desktop.spacing
+max-width.fixed.px: $row-container-desktop.width
 align-self: center
 align-content: center
-wrap: $row-container.wrap
-
-
-
--- end: ftd.row
-
--- ftd.row:
-if: {ftd.device == "mobile"}
-width.fixed.calc: 100vw
-children: $row-container.row-wrap
-spacing.fixed.px if { row-container.spacing != NULL }: $row-container.spacing
-overflow-x: auto
-padding-horizontal.px if {ftd.device == "mobile"}: 24
+wrap: $row-container-desktop.wrap
 
 -- end: ftd.row
 
 -- end: ftd.column
 
--- end: row-container
+-- end: row-container-desktop
+
+
+
+-- component row-container-mobile:
+optional caption title:
+optional integer spacing:
+children row-wrap:
+integer width: 
+optional integer padding-vertical: 
+boolean wrap: false
+optional integer index:
+optional integer reset:
+
+-- ftd.column:
+if:{ row-container-mobile.index == row-container-mobile.reset }
+margin-bottom.px: 40
+padding-horizontal.px: 24
+padding-vertical.px if { row-container-mobile.padding-vertical != NULL }: $row-container-mobile.padding-vertical
+
+
+-- ftd.text: $row-container-mobile.title
+if: { row-container-mobile.title != NULL }
+role: $inherited.types.heading-large
+color: $inherited.colors.text-strong
+align-self: center
+margin-bottom.px: 80
+text-align: center
+
+-- ftd.row:
+width.fixed.calc: 100vw
+children: $row-container-mobile.row-wrap
+spacing.fixed.px if { row-container-mobile.spacing != NULL }: $row-container-mobile.spacing
+overflow-x: auto
+padding-horizontal.px: 24
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: row-container-mobile
 
 
 

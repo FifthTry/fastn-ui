@@ -359,7 +359,8 @@ pr.toc-item toc:
 boolean $show-toc: true
 
 -- ftd.column:
-width.fixed.px: 255
+min-width.fixed.px: 255
+width.fixed.percent: 40
 spacing.fixed.px: 70
 
 -- ftd.row:
@@ -1221,7 +1222,6 @@ item: $obj
 pr.toc-item item:
 
 -- ftd.column:
-
 
 -- subsections-items-desktop:
 if: { ftd.device != "mobile" }

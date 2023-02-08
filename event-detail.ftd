@@ -24,7 +24,7 @@ website: www.91springboard.com
 
 
 
--- ft.page: event detail
+-- ft.page: Events
 
 -- event: FTD Hands - On Workshop (Beta)
 banner-src: $assets.files.static.events.event-banner.svg
@@ -41,6 +41,24 @@ event-type: Online
 
 Lorem ipsum dolor sit amet consectetur. Molestie massa pretium adipiscing magna at. Amet varius ante fringilla egestas eu. Purus tristique rhoncus in mauris. Quam eget nulla euismod purus viverra phasellus. Massa orci curabitur arcu nibh viverra nibh. At blandit sagittis et sollicitudin. Ornare ullamcorper mollis congue feugiat in vitae adipiscing aenean. Nunc sapien sapien rutrum magnis at aliquam eget tincidunt suspendisse. Turpis turpis et tincidunt justo maecenas egestas porta. Varius fusce vivamus velit egestas fames viverra risus urna tellus. Sagittis pellentesque vulputate egestas enim sollicitudin. Lobortis pretium elementum nisi non mauris proin placerat vitae.
 
+-- event-terms: Rules:
+
+- Lorem ipsum dolor sit amet consectetur.
+
+- Lorem ipsum dolor sit amet consectetur.
+
+- Lorem ipsum dolor sit amet consectetur.
+
+-- event-terms: Terms and Conditions:
+
+- Lorem ipsum dolor sit amet consectetur.
+
+- Lorem ipsum dolor sit amet consectetur.
+
+- Lorem ipsum dolor sit amet consectetur.
+
+-- end: event
+
 -- speakers: Speaker
 
 -- speaker: Robert Fox
@@ -50,7 +68,6 @@ link: /
 email: abc@abc.com
 
 -- speaker: Robert Fox
-avatar: $assets.files.static.events.avatar.svg
 profile: Sr. Developer, FifthTry Inc.
 link: /
 email: abc@abc.com
@@ -63,11 +80,11 @@ email: abc@abc.com
 
 -- end: speakers
 
--- end: event
-
--- ft.row-container: Subscribe  now
+-- ft.row-container: Subscribe now
 spacing: 90
+switch-to-column: true
 padding-vertical: 80
+title-medium: true
 
 -- ft.social-card: DISCORD
 link: /
@@ -136,7 +153,7 @@ caption title:
 max-width.fixed.px: 1160
 align-self: center
 width: fill-container
-spacing.fixed.px: 44
+spacing.fixed.px: 24
 
 -- ftd.text: $speakers-desktop.title
 role: $inherited.types.heading-medium
@@ -145,8 +162,8 @@ color: $inherited.colors.text
 -- ftd.row:
 children:$speakers-desktop.wrap
 wrap: true
-width.fixed.percent: 50
-spacing.fixed.px: 44
+width.fixed.percent: 70
+spacing.fixed.px: 24
 
 -- end: ftd.row
 
@@ -170,9 +187,10 @@ caption title:
 -- ftd.column:
 width: fill-container
 spacing.fixed.px: 24
+padding-horizontal.px: 16
 
 -- ftd.text: $speakers-mobile.title
-role: $inherited.types.heading-tiny
+role: $inherited.types.heading-medium
 color: $inherited.colors.text
 width: fill-container
 
@@ -199,7 +217,7 @@ spacing.fixed.px: 44
 
 -- component speaker:
 caption title:
-ftd.image-src avatar:
+ftd.image-src avatar: $assets.files.static.avatar.svg
 optional string link:
 optional string profile:
 string email:
@@ -255,6 +273,8 @@ optional string event-type:
 optional string presence:
 optional body body:
 children wrap:
+common.host host: $amitu
+common.venue venue: $venue
 
 -- ftd.column:
 width: fill-container
@@ -275,6 +295,8 @@ event-type: $event.event-type
 presence: $event.presence
 body: $event.body
 wrap: $event.wrap
+venue: $event.venue
+host: $event.host
 
 -- event-mobile: $event.title
 if: {ftd.device == "mobile"}
@@ -292,7 +314,8 @@ event-type: $event.event-type
 presence: $event.presence
 body: $event.body
 wrap: $event.wrap
-
+venue: $event.venue
+host: $event.host
 -- end: ftd.column
 
 -- end: event
@@ -317,12 +340,15 @@ optional string event-type:
 optional string presence:
 optional body body:
 children wrap:
+common.host host:
+common.venue venue:
 
 -- ftd.column:
 width: fill-container
 max-width.fixed.px: 1160
 align-self: center
 spacing.fixed.px: 48
+margin-top.px: 80
 
 -- ftd.text: $event-desktop.title
 role: $inherited.types.heading-large
@@ -350,6 +376,14 @@ text: $event-desktop.body
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
 
+-- ftd.column:
+children: $event-desktop.wrap
+width: fill-container
+spacing.fixed.px: 48
+padding-bottom.px: 48
+
+-- end: ftd.column
+
 -- end: ftd.column
 
 -- ftd.column:
@@ -373,42 +407,11 @@ src: $assets.files.static.events.host.svg
 height.fixed.px: 32
 width.fixed.px: 32
 
--- ftd.text: Host
-role: $inherited.types.button-medium
-color: $inherited.colors.text
-
--- end: ftd.row
-
--- ftd.row:
-padding-horizontal.px: 48
-
--- ftd.image:
-src: $assets.files.static.events.amitu.jpg
-height.fixed.px: 32
-width.fixed.px: 32
-border-radius.px: 100
-
--- ftd.column:
-padding-horizontal.px: 16
-spacing.fixed.px: 16
-
--- ftd.text: $amitu.name
-role: $inherited.types.copy-large
-color: $inherited.colors.text
-
--- ftd.text: $amitu.title
-role: $inherited.types.fine-print
-color: $inherited.colors.text
-
--- ftd.text: $amitu.email
-role: $inherited.types.fine-print
-color: $inherited.colors.text
-
--- ftd.text: $amitu.website
-role: $inherited.types.fine-print
-color: $inherited.colors.text
-
--- end: ftd.column
+-- body-wrap: $event-desktop.host.name
+title: $event-desktop.host.title
+email: $event-desktop.host.email
+website: $event-desktop.host.website
+avatar: $event-desktop.host.avatar
 
 -- end: ftd.row
 
@@ -426,32 +429,15 @@ src: $assets.files.static.events.venue.svg
 height.fixed.px: 32
 width.fixed.px: 32
 
--- ftd.text: Venue
-role: $inherited.types.copy-large
-color: $inherited.colors.text
-
--- end: ftd.row
 
 -- ftd.row:
-padding-horizontal.px: 48
 
--- ftd.column:
-padding-horizontal.px: 16
-spacing.fixed.px: 16
+-- body-wrap: $event-desktop.venue.name
+is-venue: true
+website: $event-desktop.venue.website
+location: $event-desktop.venue.location
 
--- ftd.text: $venue.name
-role: $inherited.types.copy-large
-color: $inherited.colors.text
-
--- ftd.text: $venue.location
-role: $inherited.types.fine-print
-color: $inherited.colors.text
-
--- ftd.text: $venue.website
-role: $inherited.types.fine-print
-color: $inherited.colors.text
-
--- end: ftd.column
+-- end: ftd.row
 
 -- end: ftd.row
 
@@ -533,11 +519,12 @@ url: $event-desktop.event-link
 
 -- ftd.row:
 spacing.fixed.px: 24
+align-content: center
 
 -- ftd.image:
 src: $assets.files.static.events.share.svg
 
--- title-name: share
+-- title-name: Share now
 url: $event-desktop.event-link
 text-color: $inherited.colors.accent.primary
 
@@ -546,13 +533,6 @@ text-color: $inherited.colors.accent.primary
 -- end: ftd.column
 
 -- end: ftd.row
-
--- ftd.column:
-children: $event-desktop.wrap
-width: fill-container
-padding-bottom.px: 150
-
--- end: ftd.column
 
 -- end: ftd.column
 
@@ -593,6 +573,8 @@ optional string event-type:
 optional string presence:
 optional body body:
 children wrap:
+common.host host:
+common.venue venue:
 
 -- ftd.column:
 width: fill-container
@@ -637,42 +619,11 @@ src: $assets.files.static.events.host.svg
 height.fixed.px: 32
 width.fixed.px: 32
 
--- ftd.text: Host
-role: $inherited.types.button-medium
-color: $inherited.colors.text
-
--- end: ftd.row
-
--- ftd.row:
-padding-horizontal.px: 48
-
--- ftd.image:
-src: $assets.files.static.events.amitu.jpg
-height.fixed.px: 32
-width.fixed.px: 32
-border-radius.px: 100
-
--- ftd.column:
-padding-horizontal.px: 16
-spacing.fixed.px: 16
-
--- ftd.text: $amitu.name
-role: $inherited.types.copy-large
-color: $inherited.colors.text
-
--- ftd.text: $amitu.title
-role: $inherited.types.fine-print
-color: $inherited.colors.text
-
--- ftd.text: $amitu.email
-role: $inherited.types.fine-print
-color: $inherited.colors.text
-
--- ftd.text: $amitu.website
-role: $inherited.types.fine-print
-color: $inherited.colors.text
-
--- end: ftd.column
+-- body-wrap: $event-mobile.host.name
+title: $event-mobile.host.title
+email: $event-mobile.host.email
+website: $event-mobile.host.website
+avatar: $event-mobile.host.avatar
 
 -- end: ftd.row
 
@@ -690,32 +641,14 @@ src: $assets.files.static.events.venue.svg
 height.fixed.px: 32
 width.fixed.px: 32
 
--- ftd.text: Venue
-role: $inherited.types.copy-large
-color: $inherited.colors.text
+-- ftd.row:
+
+-- body-wrap: $event-mobile.venue.name
+is-venue: true
+website: $event-mobile.venue.website
+location: $event-mobile.venue.location
 
 -- end: ftd.row
-
--- ftd.row:
-padding-left.px: 32
-
--- ftd.column:
-padding-horizontal.px: 16
-spacing.fixed.px: 16
-
--- ftd.text: $venue.name
-role: $inherited.types.copy-large
-color: $inherited.colors.text
-
--- ftd.text: $venue.location
-role: $inherited.types.fine-print
-color: $inherited.colors.text
-
--- ftd.text: $venue.website
-role: $inherited.types.fine-print
-color: $inherited.colors.text
-
--- end: ftd.column
 
 -- end: ftd.row
 
@@ -727,7 +660,6 @@ spacing.fixed.px: 24
 
 -- ftd.image:
 src: $assets.files.static.events.clock.svg
-
 
 -- ftd.row:
 width: fill-container
@@ -797,11 +729,12 @@ url: $event-mobile.event-link
 
 -- ftd.row:
 spacing.fixed.px: 24
+align-content: center
 
 -- ftd.image:
 src: $assets.files.static.events.share.svg
 
--- title-name: share
+-- title-name: Share now
 url: $event-mobile.event-link
 text-color: $inherited.colors.accent.primary
 
@@ -827,7 +760,9 @@ color: $inherited.colors.text
 -- ftd.column:
 children: $event-mobile.wrap
 width: fill-container
-padding-bottom.px: 70
+spacing.fixed.px: 40
+padding-bottom.px: 40
+
 
 -- end: ftd.column
 
@@ -844,7 +779,6 @@ optional string url:
 
 -- ftd.column:
 
-
 -- ftd.text: $title-name.title
 if: {title-name.url != NULL}
 role: $inherited.types.button-medium
@@ -857,4 +791,101 @@ role: $inherited.types.button-medium
 color: $title-name.text-color
 
 -- end: ftd.column
+
 -- end: title-name
+
+
+
+
+
+
+
+
+
+
+-- component event-terms:
+caption title:
+optional body body:
+
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.text: $event-terms.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- ftd.text: 
+if:{ event-terms.body != NULL }
+text: $event-terms.body 
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+padding-left.px: 32
+-- end: ftd.column
+
+-- end: event-terms
+
+
+
+-- component body-wrap:
+caption name:
+optional string title:
+optional string email:
+optional string website:
+optional string location:
+ftd.image-src avatar: $assets.files.static.avatar.svg
+optional body bio:
+boolean is-venue: false
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.image:
+if: { !body-wrap.is-venue}
+src: $body-wrap.avatar
+height.fixed.px: 32
+width.fixed.px: 32
+border-radius.px: 100
+
+-- ftd.column:
+padding-horizontal.px if { !body-wrap.is-venue} : 16
+spacing.fixed.px: 16
+
+-- ftd.text: $body-wrap.name
+role: $inherited.types.copy-large
+color: $inherited.colors.text
+
+-- ftd.text: $body-wrap.title
+if: { body-wrap.title != NULL }
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text: $body-wrap.email
+if: { body-wrap.email != NULL }
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text: $body-wrap.website
+if: { body-wrap.website != NULL }
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text: $body-wrap.location
+if: { body-wrap.location != NULL }
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text:
+if: { body-wrap.bio != NULL}
+text: $body-wrap.bio
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+
+
+-- end: body-wrap

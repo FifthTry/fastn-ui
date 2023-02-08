@@ -20,8 +20,8 @@
 
 
 
--- ft.page:
-;;$bgcolor: $inherited.colors.background.step-1
+-- ft.page: Events
+$show-breadcrum: true
 
 -- event: Fastn Events 2023
 
@@ -31,7 +31,7 @@ erat blandit pellentesque egestas nulla.
 -- event-list: Upcoming
 
 -- upcoming-event: FTD Hands - On Workshop (Beta)
-image: $assets.files.static.events.upcoming-1.svg
+image: $assets.files.static.events.placeholder.svg
 day: SUN,
 date: 08
 month: JAN
@@ -40,6 +40,7 @@ cta-text: Online
 cta-link: /
 index: 1
 reset: $current-active
+link: /event-detail/
 
 Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
 white_check_mark
@@ -57,6 +58,7 @@ cta-text: Online
 cta-link: /
 index: 2
 reset: $current-active
+link: /event-detail/
 
 Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
 white_check_mark
@@ -74,6 +76,7 @@ cta-text: Online
 cta-link: /
 index: 3
 reset: $current-active
+link: /event-detail/
 
 Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
 white_check_mark
@@ -91,6 +94,7 @@ cta-text: Online
 cta-link: /
 index: 4
 reset: $current-active
+link: /event-detail/
 
 Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
 white_check_mark
@@ -99,7 +103,7 @@ raised_hands
 
 
 -- upcoming-event:FTD Hands - On Workshop (Beta)
-image: $assets.files.static.events.upcoming-4.svg
+image: $assets.files.static.events.placeholder.svg
 day: SUN,
 date: 08
 month: JAN
@@ -108,6 +112,7 @@ cta-text: Online
 cta-link: /
 index: 5
 reset: $current-active
+link: /event-detail/
 
 Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
 white_check_mark
@@ -151,6 +156,7 @@ cta-text: Online
 cta-link: /
 index: 1
 reset: $current-active
+link: /event-detail/
 
 Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
 white_check_mark
@@ -167,6 +173,7 @@ cta-text: Online
 cta-link: /
 index: 2
 reset: $current-active
+link: /event-detail/
 
 Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
 white_check_mark
@@ -186,29 +193,33 @@ index: 2
 
 -- end: event-list
 
+-- ft.col-container:
+padding-vertical: 150
+
+
 -- ft.heart-line-title-card: Subscribe now
 show-arrow: false
 
--- ft.row-container-one:
+-- ft.row-container:
 wrap: true
+switch-to-column: true
 spacing: 80
-padding-vertical: 140
-bgcolor: $inherited.colors.background.step-1
-
 
 -- ft.social-card: DISCORD
-url: /
-src: $assets.files.static.footer.discord.svg
+link: /
+icon: $assets.files.static.footer.discord.svg
 
 -- ft.social-card: TWITTER
-url: /
-src: $assets.files.static.footer.twitter.svg
+link: /
+icon: $assets.files.static.footer.twitter.svg
 
 -- ft.social-card: LINKEDIN
-url: /
-src: $assets.files.static.footer.linkedin.svg
+link: /
+icon: $assets.files.static.footer.linkedin.svg
 
--- end: ft.row-container-one
+-- end: ft.row-container
+
+-- end: ft.col-container
 
 -- ft.footer:
 
@@ -386,6 +397,7 @@ padding-vertical.px: 24
 align-self: center
 align-content: center
 spacing.fixed.px: 16
+background.solid: $inherited.colors.background.step-1
 
 -- ftd.text: $event-mobile.title
 role: $inherited.types.heading-hero
@@ -424,7 +436,7 @@ children wrap:
 caption title:
 ftd.image-src icon: $assets.files.static.events.upcoming-section-logo.svg
 boolean show-grid: false
-ftd.color bgcolor: $inherited.colors.background.overlay
+ftd.color bgcolor: $inherited.colors.background.base
 
 -- ftd.column:
 width: fill-container
@@ -581,6 +593,8 @@ optional string cta-text:
 optional string cta-link:
 optional integer index:
 optional integer reset:
+boolean $is-hover: false
+string link: /
 
 -- ftd.column:
 
@@ -596,6 +610,8 @@ cta-text: $upcoming-event.cta-text
 cta-link: $upcoming-event.cta-link
 index: $upcoming-event.index
 reset: $upcoming-event.reset
+link: $upcoming-event.link
+$is-hover: $upcoming-event.is-hover
 
 -- upcoming-event-mobile: $upcoming-event.title
 if: {ftd.device == "mobile"}
@@ -609,6 +625,9 @@ cta-text: $upcoming-event.cta-text
 cta-link: $upcoming-event.cta-link
 index: $upcoming-event.index
 reset: $upcoming-event.reset
+$is-hover: $upcoming-event.is-hover
+link: $upcoming-event.link
+
 -- end: ftd.column
 
 -- end: upcoming-event
@@ -635,25 +654,48 @@ optional string cta-text:
 optional string cta-link:
 optional integer index:
 optional integer reset:
+boolean $is-hover: 
+string link:
 
 -- ftd.row:
 align-self: center
 width.fixed.px: $width
-height.fixed.px: 378
 border-bottom-width.px: 1
 border-color: $inherited.colors.border-strong
 padding-bottom.px: 56
 
--- ftd.image:
-src: $upcoming-event-desktop.image
-min-height.fixed.px: 378
-width.fixed.px: 440
+
+-- ftd.row:
+align-self: center
+width.fixed.px: $width
+max-height.fixed.px: 378
+$on-mouse-enter$: $ftd.set-bool($a=$upcoming-event-desktop.is-hover, v=true) 
+$on-mouse-leave$: $ftd.set-bool($a=$upcoming-event-desktop.is-hover, v=false) 
+background.solid if {upcoming-event-desktop.is-hover}: $inherited.colors.accent.primary
+background.solid if { upcoming-event-desktop.index == upcoming-event-desktop.reset }:$inherited.colors.accent.primary 
+
 
 -- ftd.column:
-padding-left.px: 51
-padding-vertical.px: 62
+min-width.fixed.px: 440
+height.fixed.px: 300
+
+-- ftd.image:
+src: $upcoming-event-desktop.image
+height: fill-container
+width: fill-container
+link: $upcoming-event-desktop.link
+
+-- end: ftd.column
+
+-- ftd.column:
+link: $upcoming-event-desktop.link
+
+-- ftd.column:
+padding-left.px: 24
+padding-vertical.px: 23
 spacing.fixed.px: 12
-background.solid if { upcoming-event-desktop.index == upcoming-event-desktop.reset }:$inherited.colors.accent.primary 
+
+
 
 -- ftd.row:
 spacing.fixed.px: 10
@@ -719,6 +761,10 @@ text-align: center
 
 -- end: ftd.column
 
+-- end: ftd.column
+
+-- end: ftd.row
+
 -- end: ftd.row
 
 -- end: upcoming-event-desktop
@@ -744,27 +790,37 @@ optional string cta-text:
 optional string cta-link:
 optional integer index:
 optional integer reset:
+boolean $is-hover:
+string link:
 
 -- ftd.column:
 border-bottom-width.px: 1
 border-color: $inherited.colors.border-strong
-padding-bottom.px: 40
 width: fill-container
+$on-mouse-enter$: $ftd.set-bool($a=$upcoming-event-mobile.is-hover, v=true) 
+$on-mouse-leave$: $ftd.set-bool($a=$upcoming-event-mobile.is-hover, v=false) 
+background.solid if {upcoming-event-mobile.is-hover}: $inherited.colors.accent.primary
+
 
 -- ftd.column:
 spacing.fixed.px: 24
 width: fill-container
+padding-top.px: 24
+padding-bottom.px: 40
 padding-horizontal.px: 24
-;;background.solid if { upcoming-event-mobile.index == upcoming-event-mobile.reset }: $inherited.colors.accent.primary
-background.solid : $inherited.colors.background.overlay
+background.solid : $inherited.colors.background.base
+background.solid if { upcoming-event-mobile.index == upcoming-event-mobile.reset }: $inherited.colors.accent.primary
+
 
 -- ftd.image:
 src: $upcoming-event-mobile.image
 height.fixed.px: 300
 width: fill-container
+link: $upcoming-event-mobile.link
 
 -- ftd.column:
 spacing.fixed.px: 12
+link: $upcoming-event-mobile.link
 
 -- ftd.row:
 spacing.fixed.px: 10
@@ -843,6 +899,8 @@ text-align: center
 
 
 
+
+
 -- component past-event:
 ftd.image-src image:
 caption title:
@@ -855,23 +913,33 @@ optional string cta-text:
 optional string cta-link:
 optional integer index:
 optional integer reset:
+boolean $is-hover: false
+string link: /
 
 -- ftd.column:
-spacing.fixed.px: 16
-min-height.fixed.px: 680
 width.fixed.px if {ftd.device != "mobile"}: 566
-;;background.solid if { past-event.index == past-event.reset }: $inherited.colors.accent.primary
-background.solid : $inherited.colors.background.overlay
+background.solid : $inherited.colors.background.base
+$on-mouse-enter$: $ftd.set-bool($a=$past-event.is-hover, v=true) 
+$on-mouse-leave$: $ftd.set-bool($a=$past-event.is-hover, v=false) 
+background.solid if {past-event.is-hover}: $inherited.colors.accent.primary
+background.solid if { past-event.index == past-event.reset }: $inherited.colors.accent.primary
+padding-vertical.px if {ftd.device == "mobile"}: 24
+padding-horizontal.px if {ftd.device == "mobile"}: 24
 
 -- ftd.image:
 src: $past-event.image
 height.fixed.px if {ftd.device != "mobile"}: 300
 width: fill-container
+link: $past-event.link
+
+-- ftd.column:
+link: $past-event.link
 
 -- ftd.column:
 padding-vertical.px: 40
-padding-horizontal.px: 32
+padding-horizontal.px if {ftd.device != "mobile"}: 32
 spacing.fixed.px: 12
+
 
 -- ftd.row:
 spacing.fixed.px: 10
@@ -932,6 +1000,8 @@ white-space: nowrap
 text-align: center
 
 -- end: ftd.row
+
+-- end: ftd.column
 
 -- end: ftd.column
 

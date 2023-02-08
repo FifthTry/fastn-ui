@@ -25,7 +25,7 @@ icon: /static/header/why-menu-img.svg
 
 - ui: /build/
 icon: /static/toc.svg
-  - Component Library: /learn/
+  - Component Library: /events/
     - Component Library: /learn/
     - Component Library: /learn/
     - Component Library: /learn/
@@ -39,11 +39,11 @@ icon: /static/toc.svg
 ## How to use fastn: /sample-1/
 
 
-
 ## Features listing page: /sample-1/
 
 # Use Cases: /use-cases/
 
+# Events: /events/
 
 # Learn: /learn/
 

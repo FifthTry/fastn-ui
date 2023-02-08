@@ -125,6 +125,9 @@ light: #EF8435
 
 
 
+
+
+
 -- component page:
 optional caption title: 
 optional body body: 
@@ -140,6 +143,7 @@ optional string sitename: Fastn
 string login-button: Get Started
 integer width: $width
 children wrapper:
+boolean $show-breadcrum: false
 ftd.color-scheme colors: $fastn-cs.main
 ftd.type-data types: $typo.types
 boolean $show-mobile-menu: false
@@ -157,7 +161,7 @@ width: fill-container
 min-width.fixed.px if { ftd.device != "mobile" }: $page.width
 overflow-x: auto
 
--- header-fastn:
+-- header-fastn: $page.title
 logo: $page.logo
 sitename: $page.sitename
 login-button: $page.login-button
@@ -169,19 +173,47 @@ current-page: $page.current-page
 toc: $page.toc
 $show-mobile-menu: $page.show-mobile-menu
 width: $page.width
+show-breadcrum: $page.show-breadcrum
 
 -- ftd.column:
 width: fill-container
 align-content: right
 align-content if { ftd.device == "mobile" }: left
-padding-left.px if { ftd.device == "mobile" }: 16
+padding-horizontal.px if { ftd.device == "mobile" }: 16
 max-width.fixed.px: $width
 align-self: center
 padding-top.px: 12
 padding-bottom.px: 6
 
 -- ftd.row:
-align-content: center
+if: {page.show-breadcrum}
+width: fill-container
+spacing.fixed.px: 28
+padding-bottom.px: 27
+wrap: true
+
+-- subsections-links: $obj.title
+$loop$: $page.sections as $obj
+item: $obj.children
+url: $obj.url
+is-active: $obj.is-active
+
+-- end: ftd.row
+
+-- ftd.row:
+align-self if { page.title == NULL }: end
+align-content: right
+width: fill-container
+
+-- ftd.text: $page.title
+if: { page.title != NULL }
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+width: fill-container
+
+-- ftd.row:
+align-self: end
+align-self if { page.title != NULL }: center
 padding-horizontal.px: 10
 padding-vertical.px: 10
 border-color: $inherited.colors.border
@@ -192,14 +224,6 @@ background.solid: $inherited.colors.cta-primary.base
 link: /
 
 -- ftd.image:
-if: { ftd.device != "mobile" }
-src: $assets.files.static.doc-cta-icon.svg
-width: auto
-height: auto
-align-self: center
-
--- ftd.image:
-if: { ftd.device == "mobile" }
 src: $assets.files.static.doc-cta-icon-mobile.svg
 width: auto
 height: auto
@@ -208,6 +232,8 @@ align-self: center
 -- ftd.text: Docs
 role: $inherited.types.copy-small
 color: $inherited.colors.text.dark
+
+-- end: ftd.row
 
 -- end: ftd.row
 
@@ -235,6 +261,7 @@ children: $page.wrapper
 
 
 -- component header-fastn:
+optional caption title:
 ftd.image-src logo: 
 optional string sitename:
 pr.toc-item list sections: 
@@ -244,13 +271,14 @@ optional pr.toc-item current-subsection:
 optional pr.toc-item current-page: 
 pr.toc-item list toc:
 string login-button:
+boolean show-breadcrum: false
 boolean $show-mobile-menu:
 integer width: $width
 
 -- ftd.column:
 width: fill-container
 
--- header-fastn-desktop:
+-- header-fastn-desktop: $header-fastn.title
 if: {ftd.device != "mobile"}
 logo: $header-fastn.logo
 sitename: $header-fastn.sitename
@@ -262,8 +290,9 @@ current-page: $header-fastn.current-page
 toc: $header-fastn.toc
 login-button: $header-fastn.login-button
 width: $header-fastn.width
+show-breadcrum: $header-fastn.show-breadcrum
 
--- header-fastn-mobile:
+-- header-fastn-mobile: $header-fastn.title
 if: {ftd.device == "mobile"}
 logo: $header-fastn.logo
 sitename: $header-fastn.sitename
@@ -276,6 +305,7 @@ toc: $header-fastn.toc
 login-button: $header-fastn.login-button
 width: $header-fastn.width
 $show-mobile-menu: $header-fastn.show-mobile-menu
+show-breadcrum: $header-fastn.show-breadcrum
 
 -- header-menu:
 if: {header-fastn.show-mobile-menu}
@@ -581,6 +611,7 @@ $show-toc: $header-menu.show-toc
 
 
 -- component header-fastn-mobile:
+optional caption title:
 ftd.image-src logo: 
 optional string sitename:
 pr.toc-item list sections: 
@@ -592,6 +623,7 @@ pr.toc-item list toc:
 string login-button:
 integer width: $width
 boolean $show-mobile-menu:
+boolean show-breadcrum: 
 
 -- ftd.row:
 width: fill-container
@@ -639,6 +671,7 @@ $on-click$: $ftd.toggle($a= $header-fastn-mobile.show-mobile-menu)
 
 
 -- component header-fastn-desktop:
+optional caption title:
 ftd.image-src logo: 
 optional string sitename:
 pr.toc-item list sections: 
@@ -648,16 +681,19 @@ optional pr.toc-item current-subsection:
 optional pr.toc-item current-page: 
 pr.toc-item list toc:
 string login-button:
+boolean show-breadcrum: 
 integer width: $width
+
 
 -- ftd.column:
 width: fill-container
 max-width.fixed.px: $header-fastn-desktop.width
 align-self: center
-padding-vertical.px: 40
+
 
 -- ftd.row:
 width: fill-container
+padding-vertical.px: 40
 
 -- ftd.row:
 width: fill-container
@@ -3772,6 +3808,8 @@ optional integer padding-vertical:
 boolean wrap: false
 optional integer index:
 optional integer reset:
+boolean switch-to-column: false
+boolean title-medium: false
 
 -- ftd.column:
 width: fill-container
@@ -3785,6 +3823,7 @@ padding-vertical: $row-container.padding-vertical
 wrap: $row-container.wrap
 index: $row-container.index
 reset: $row-container.reset
+title-medium: $row-container.title-medium
 
 -- row-container-mobile: $row-container.title
 if: { ftd.device == "mobile" }
@@ -3795,6 +3834,8 @@ padding-vertical: $row-container.padding-vertical
 wrap: $row-container.wrap
 index: $row-container.index
 reset: $row-container.reset
+switch-to-column: $row-container.switch-to-column
+title-medium: $row-container.title-medium
 
 -- end: ftd.column
 
@@ -3818,6 +3859,7 @@ optional integer padding-vertical:
 boolean wrap:
 optional integer index:
 optional integer reset:
+boolean title-medium: 
 
 -- ftd.column:
 if:{ row-container-desktop.index == row-container-desktop.reset }
@@ -3826,6 +3868,9 @@ max-width.fixed.px: $row-container-desktop.width
 padding-vertical.px if { row-container-desktop.padding-vertical != NULL }: $row-container-desktop.padding-vertical
 align-content: center
 
+-- ftd.column:
+if: { !row-container-desktop.title-medium }
+
 -- ftd.text: $row-container-desktop.title
 if: { row-container-desktop.title != NULL }
 role: $inherited.types.heading-large
@@ -3833,6 +3878,21 @@ color: $inherited.colors.text-strong
 align-self: center
 margin-bottom.px: 80
 text-align: center
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { row-container-desktop.title-medium }
+
+-- ftd.text: $row-container-desktop.title
+if: { row-container-desktop.title != NULL }
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+align-self: center
+margin-bottom.px: 80
+text-align: center
+
+-- end: ftd.column
 
 -- ftd.row:
 width: fill-container
@@ -3867,6 +3927,8 @@ optional integer padding-vertical:
 boolean wrap:
 optional integer index:
 optional integer reset:
+boolean switch-to-column: false
+boolean title-medium: 
 
 -- ftd.column:
 width: fill-container
@@ -3874,6 +3936,9 @@ if:{ row-container-mobile.index == row-container-mobile.reset }
 align-self: center
 padding-vertical.px if { row-container-mobile.padding-vertical != NULL }: $row-container-mobile.padding-vertical
 align-content: center
+
+-- ftd.column:
+if: { !row-container-mobile.title-medium }
 
 -- ftd.text: $row-container-mobile.title
 if: { row-container-mobile.title != NULL }
@@ -3884,7 +3949,23 @@ margin-bottom.px: 40
 padding-horizontal.px: 24
 text-align: center
 
+-- end: ftd.column
+
+-- ftd.column:
+if: { row-container-mobile.title-medium }
+
+-- ftd.text: $row-container-mobile.title
+if: { row-container-mobile.title != NULL }
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+align-self: center
+margin-bottom.px: 40
+padding-horizontal.px: 24
+text-align: center
+
+-- end: ftd.column
 -- ftd.row:
+if: { !row-container-mobile.switch-to-column }
 width.fixed.calc: 100vw
 children: $row-container-mobile.row-wrap
 spacing.fixed.px if { row-container-mobile.spacing != NULL }: $row-container-mobile.spacing
@@ -3893,75 +3974,43 @@ padding-horizontal.px: 24
 
 -- end: ftd.row
 
+-- ftd.column:
+if: { row-container-mobile.switch-to-column }
+width: fill-container
+children: $row-container-mobile.row-wrap
+spacing.fixed.px if { row-container-mobile.spacing != NULL }: $row-container-mobile.spacing
+align-self: center
+align-content: center
+padding-horizontal.px: 24
+
+-- end: ftd.column
+
 -- end: ftd.column
 
 -- end: row-container-mobile
 
 
 
--- component row-container-one:
-optional caption title:
-optional integer spacing:
-children row-wrap:
-integer width: $width
+
+
+-- component col-container:
+children col-wrap:
 optional integer padding-vertical: 
-boolean wrap: false
-optional integer index:
-optional integer reset:
-optional ftd.color bgcolor: $inherited.colors.background.base
+optional integer width: 
+optional integer spacing: 
 
 -- ftd.column:
-width if { ftd.device == "mobile}: fill-container
-if: { row-container-one.index == row-container-one.reset }
-background.solid: $row-container-one.bgcolor
 width: fill-container
-if:{ row-container-one.index == row-container-one.reset }
 align-self: center
-padding-vertical.px if { row-container-one.padding-vertical != NULL }: $row-container-one.padding-vertical
-align-content: center
-
--- ftd.text: $row-container-one.title
-if: { row-container-one.title != NULL }
-role: $font-50
-color: $inherited.colors.text
-align-self: center
-margin-bottom.px: 80
-
--- ftd.row:
-if: {ftd.device != "mobile"}
-width: fill-container
-children: $row-container-one.row-wrap
-spacing.fixed.px if { row-container-one.spacing != NULL }: $row-container-one.spacing
-max-width.fixed.px: $row-container-one.width
-align-self: center
-align-content: center
-wrap: $row-container-one.wrap
-
--- end: ftd.row
-
--- ftd.column:
-if: {ftd.device == "mobile"}
-width.fixed.calc: 100vw
-children: $row-container-one.row-wrap
-spacing.fixed.px if { row-container-one.spacing != NULL }: $row-container-one.spacing
-wrap: $row-container-one.wrap
-align-self: center
-align-content: center
-padding-horizontal.px if {ftd.device == "mobile"}: 24
+max-width.fixed.px if { col-container.width != NULL }: $col-container.width
+children: $col-container.col-wrap
+padding-vertical.px if { col-container.padding-vertical != NULL && ftd.device != "mobile"}: $col-container.padding-vertical
+padding-vertical.px if { col-container.padding-vertical != NULL && ftd.device == "mobile"}: 80
+spacing.fixed.px if { col-container.spacing != NULL }: $col-container.spacing
 
 -- end: ftd.column
 
--- end: ftd.column
-
--- end: row-container-one
-
-
-
-
-
-
-
-
+-- end: col-container
 
 
 
@@ -4391,6 +4440,12 @@ z-index: 0
 align-self: center
 padding-bottom.px: 24
 padding-horizontal.px: 12
+
+-- ftd.image:
+src: $assets.files.static.chart-line-type-2.svg
+width: fill-container
+height: auto
+
 
 -- ftd.row:
 align-self: center
@@ -5199,8 +5254,6 @@ $on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-3)
 $on-click$: $ftd.enable-system-mode()
 min-width.fixed.px: 112
 
-
-
 -- end: ftd.column
 
 -- end: ftd.column
@@ -5382,7 +5435,7 @@ optional string link:
 -- ftd.column:
 width.fixed.px: 102
 spacing.fixed.px: 40
-
+align-content: center
 
 -- ftd.image:
 if: { social-card.link != NULL}
@@ -5408,5 +5461,202 @@ color: $inherited.colors.text
 
 
 
+
+
+
+
+
+
+
+
+-- component subsections-links:
+pr.toc-item list item:
+caption title:
+string url:
+boolean is-active:
+
+-- ftd.column:
+
+-- subsections-links-desktop: $subsections-links.title
+if: {ftd.device != "mobile"}
+item: $subsections-links.item
+url: $subsections-links.url
+is-active: $subsections-links.is-active
+
+-- subsections-links-mobile:
+if: {ftd.device == "mobile"}
+item: $subsections-links.item
+
+-- end: ftd.column
+
+-- end: subsections-links
+
+
+
+
+
+
+
+
+
+
+-- component subsections-links-desktop:
+pr.toc-item list item:
+caption title:
+string url:
+boolean is-active:
+
+-- ftd.row: 
+width: fill-container
+spacing.fixed.px: 12
+
+
+-- ftd.text: $subsections-links-desktop.title
+if: {subsections-links-desktop.is-active}
+role: $inherited.types.button-medium
+color: $inherited.colors.cta-primary.base
+
+-- subsections-items:
+if: {subsections-links-desktop.is-active}
+$loop$: $subsections-links-desktop.item as $obj
+item: $obj
+
+-- end: ftd.row
+
+-- end: subsections-links-desktop
+
+
+
+
+
+
+
+
+
+
+-- component subsections-links-mobile:
+pr.toc-item list item:
+
+-- ftd.row:
+width: fill-container
+wrap: true
+spacing.fixed.px: 8
+
+-- subsections-items:
+$loop$: $subsections-links-mobile.item as $obj
+item: $obj
+
+-- end: ftd.row
+
+-- end: subsections-links-mobile
+
+
+
+
+
+
+
+-- component subsections-items:
+pr.toc-item item:
+
+-- ftd.column:
+
+-- subsections-items-desktop:
+if: { ftd.device != "mobile" }
+item: $subsections-items.item
+
+-- subsections-items-mobile:
+if: { ftd.device == "mobile" }
+item: $subsections-items.item
+
+-- end: ftd.column
+
+-- end: subsections-items
+
+
+-- component subsections-items-desktop:
+pr.toc-item item:
+
+-- ftd.row:
+width if {ftd.device != "mobile"}: fill-container
+spacing.fixed.px: 12
+
+-- ftd.row:
+if: {subsections-items-desktop.item.is-active}
+spacing.fixed.px: 12
+
+-- ftd.text: $subsections-items-desktop.item.title
+if: {subsections-items-desktop.item.url == NULL}
+color: $inherited.colors.text-strong
+color if { subsections-items-desktop.item.is-active }: $inherited.colors.cta-primary.base
+role: $inherited.types.button-medium
+width if {ftd.device != "mobile"}: fill-container
+white-space: nowrap
+
+-- ftd.text: /
+color: $inherited.colors.text
+role: $inherited.types.button-medium
+
+-- end: ftd.row
+
+-- ftd.row:
+if: {subsections-items-desktop.item.is-active}
+spacing.fixed.px: 12
+
+-- ftd.text: $subsections-items-desktop.item.title
+if: {subsections-items-desktop.item.url != NULL}
+color: $inherited.colors.text-strong
+link: $subsections-items-desktop.item.url
+color if { subsections-items-desktop.item.is-active }: $inherited.colors.cta-primary.base
+role: $inherited.types.button-medium
+width if {ftd.device != "mobile"}: fill-container
+white-space: nowrap
+
+-- ftd.text: /
+color: $inherited.colors.text
+role: $inherited.types.button-medium
+
+-- end: ftd.row
+
+
+
+-- end: ftd.row
+
+-- end: subsections-items-desktop
+
+
+
+
+-- component subsections-items-mobile:
+pr.toc-item item:
+
+-- ftd.row:
+width if {ftd.device != "mobile"}: fill-container
+spacing.fixed.px: 12
+
+-- ftd.text: $subsections-items-mobile.item.title
+if: {subsections-items-mobile.item.url == NULL}
+color: $inherited.colors.text-strong
+color if { subsections-items-mobile.item.is-active }: $inherited.colors.cta-primary.base
+role: $inherited.types.button-medium
+width if {ftd.device != "mobile"}: fill-container
+white-space: nowrap
+
+-- ftd.text: $subsections-items-mobile.item.title
+if: {subsections-items-mobile.item.url != NULL}
+color: $inherited.colors.text-strong
+link: $subsections-items-mobile.item.url
+color if { subsections-items-mobile.item.is-active }: $inherited.colors.cta-primary.base
+role: $inherited.types.button-medium
+width if {ftd.device != "mobile"}: fill-container
+white-space: nowrap
+
+-- ftd.text: /
+color: $inherited.colors.text
+role: $inherited.types.button-medium
+
+-- end: ftd.row
+
+-- end: subsections-items-mobile
 
 

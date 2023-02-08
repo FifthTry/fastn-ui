@@ -8,10 +8,9 @@
 -- $ft.current-slide: 1
 
 
--- ft.page: This is page
+-- ft.page:
 
 
-This is page body
 
 -- ft.hero-section: Programming Language For Prose
 image: $assets.files.static.hero-image.svg

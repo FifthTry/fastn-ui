@@ -328,8 +328,9 @@ keep-dark: false
 
 Browse dozens of professionaly designed templates. Easily change structure,style,and graphics -then host instantly.
 
--- ft.row-container-one:
+-- ft.row-container:
 spacing: 80
+switch-to-column: true
 spacing if {ftd.device == "mobile"}: 60
 padding-vertical: 80
 padding-vertical if {ftd.device == "mobile"}: 0
@@ -348,7 +349,7 @@ lang: ftd
 \-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
 zip: github.com/<username_or_orgname>
 
--- end: ft.row-container-one
+-- end: ft.row-container
 
 
 -- end: ft.excel-promo-card
@@ -580,9 +581,10 @@ Browse dozens of professionaly designed templates.
 Easily change structure,style,and graphics -then host instantly.
 
 
--- ft.row-container-one:
+-- ft.row-container:
 wrap: true
 spacing: 80
+switch-to-column: true
 spacing if {ftd.device == "mobile"}: 32
 
 -- ft.testimonial-card: Jenny Wilson
@@ -643,7 +645,7 @@ Lectus diam dignissim erat blandit pellentesque
 
 egestas nulla .
 
--- end: ft.row-container-one
+-- end: ft.row-container
 
 
 -- ft.rounded-corner-card: Become a Builder
@@ -670,7 +672,6 @@ Easily change structure,style,and graphics -then host instantly.
 
 
 -- end: ft.page
-
 
 
 

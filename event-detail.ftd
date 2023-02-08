@@ -1,0 +1,891 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fifthtry.github.io/common as common
+
+
+
+
+-- common.host amitu: Amit Upadhyay
+title: CEO, FifthTry, Inc
+email: amitu@fifthtry.com
+website: www.fifthtry.com
+avatar: $assets.files.static.amitu.jpg
+
+-- common.venue venue:
+name: 91Springboard
+location: https://goo.gl/maps/zJb9qGMSq6JcUpd58
+address: 175 & 176, Bannerghatta Main Rd, Dollars Colony, Phase 4, J. P. Nagar, Bengaluru, Karnataka 560076
+website: www.91springboard.com
+
+
+
+
+
+
+
+
+-- ft.page: Events
+
+-- event: FTD Hands - On Workshop (Beta)
+banner-src: $assets.files.static.events.event-banner.svg
+start-time: 3:00 PM
+end-time: 4:00 PM (IST)
+start-day: Saturday
+start-month: January
+start-date: 2023
+end-day: Saturday
+end-month: January 15
+end-date: 2023
+event-link: https://us042web.zoom.us/js/ 3121243tedss?
+event-type: Online
+
+Lorem ipsum dolor sit amet consectetur. Molestie massa pretium adipiscing magna at. Amet varius ante fringilla egestas eu. Purus tristique rhoncus in mauris. Quam eget nulla euismod purus viverra phasellus. Massa orci curabitur arcu nibh viverra nibh. At blandit sagittis et sollicitudin. Ornare ullamcorper mollis congue feugiat in vitae adipiscing aenean. Nunc sapien sapien rutrum magnis at aliquam eget tincidunt suspendisse. Turpis turpis et tincidunt justo maecenas egestas porta. Varius fusce vivamus velit egestas fames viverra risus urna tellus. Sagittis pellentesque vulputate egestas enim sollicitudin. Lobortis pretium elementum nisi non mauris proin placerat vitae.
+
+-- event-terms: Rules:
+
+- Lorem ipsum dolor sit amet consectetur.
+
+- Lorem ipsum dolor sit amet consectetur.
+
+- Lorem ipsum dolor sit amet consectetur.
+
+-- event-terms: Terms and Conditions:
+
+- Lorem ipsum dolor sit amet consectetur.
+
+- Lorem ipsum dolor sit amet consectetur.
+
+- Lorem ipsum dolor sit amet consectetur.
+
+-- end: event
+
+-- speakers: Speaker
+
+-- speaker: Robert Fox
+avatar: $assets.files.static.events.avatar.svg
+profile: Sr. Developer, FifthTry Inc.
+link: /
+email: abc@abc.com
+
+-- speaker: Robert Fox
+profile: Sr. Developer, FifthTry Inc.
+link: /
+email: abc@abc.com
+
+-- speaker: Robert Fox
+avatar: $assets.files.static.events.avatar.svg
+profile: Sr. Developer, FifthTry Inc.
+link: /
+email: abc@abc.com
+
+-- end: speakers
+
+-- ft.row-container: Subscribe now
+spacing: 90
+switch-to-column: true
+padding-vertical: 80
+title-medium: true
+
+-- ft.social-card: DISCORD
+link: /
+icon: $assets.files.static.footer.discord.svg
+
+-- ft.social-card: TWITTER
+link: /
+icon: $assets.files.static.footer.twitter.svg
+
+-- ft.social-card: LINKEDIN
+link: /
+icon: $assets.files.static.footer.linkedin.svg
+
+-- end: ft.row-container
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component speakers:
+children wrap:
+caption title:
+
+-- ftd.column:
+width: fill-container
+
+-- speakers-desktop: $speakers.title
+if: {ftd.device != "mobile"}
+wrap: $speakers.wrap
+
+
+-- speakers-mobile: $speakers.title
+if: {ftd.device == "mobile"}
+wrap: $speakers.wrap
+
+-- end: ftd.column
+
+-- end: speakers
+
+
+
+
+
+
+
+
+
+
+-- component speakers-desktop:
+children wrap:
+caption title:
+
+-- ftd.column:
+max-width.fixed.px: 1160
+align-self: center
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.text: $speakers-desktop.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- ftd.row:
+children:$speakers-desktop.wrap
+wrap: true
+width.fixed.percent: 70
+spacing.fixed.px: 24
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: speakers-desktop
+
+
+
+
+
+
+
+
+
+
+-- component speakers-mobile:
+children wrap:
+caption title:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+padding-horizontal.px: 16
+
+-- ftd.text: $speakers-mobile.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+width: fill-container
+
+-- ftd.row:
+children:$speakers-mobile.wrap
+wrap: true
+width: fill-container
+spacing.fixed.px: 44
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: speakers-mobile
+
+
+
+
+
+
+
+
+
+
+-- component speaker:
+caption title:
+ftd.image-src avatar: $assets.files.static.avatar.svg
+optional string link:
+optional string profile:
+string email:
+
+-- ftd.row:
+spacing.fixed.px: 24
+margin-right.px: 84
+
+-- ftd.image:
+src: $speaker.avatar
+width.fixed.px: 24
+height: auto
+border-radius.px: 100
+
+-- ftd.column:
+spacing.fixed.px: 8
+
+-- ftd.text: $speaker.title
+role: $inherited.types.button-small
+color: $inherited.colors.text
+
+-- ftd.text: $speaker.profile
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+link: $speaker.link
+
+-- ftd.text: $speaker.email
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: speaker
+
+
+
+
+-- component event:
+optional caption title:
+ftd.image-src banner-src:
+optional string start-time:
+optional string end-time:
+optional string start-day:
+optional string start-month:
+optional string start-date:
+optional string end-day:
+optional string end-month:
+optional string end-date:
+optional string event-link:
+optional string event-type:
+optional string presence:
+optional body body:
+children wrap:
+common.host host: $amitu
+common.venue venue: $venue
+
+-- ftd.column:
+width: fill-container
+
+-- event-desktop: $event.title
+if: {ftd.device != "mobile"}
+banner-src: $event.banner-src
+start-time: $event.start-time
+end-time: $event.end-time
+start-day: $event.start-day
+start-month: $event.start-month
+start-date: $event.start-date
+end-day: $event.end-day
+end-month: $event.end-month
+end-date: $event.end-date
+event-link: $event.event-link
+event-type: $event.event-type
+presence: $event.presence
+body: $event.body
+wrap: $event.wrap
+venue: $event.venue
+host: $event.host
+
+-- event-mobile: $event.title
+if: {ftd.device == "mobile"}
+banner-src: $event.banner-src
+start-time: $event.start-time
+end-time: $event.end-time
+start-day: $event.start-day
+start-month: $event.start-month
+start-date: $event.start-date
+end-day: $event.end-day
+end-month: $event.end-month
+end-date: $event.end-date
+event-link: $event.event-link
+event-type: $event.event-type
+presence: $event.presence
+body: $event.body
+wrap: $event.wrap
+venue: $event.venue
+host: $event.host
+-- end: ftd.column
+
+-- end: event
+
+
+
+
+
+-- component event-desktop:
+optional caption title:
+ftd.image-src banner-src:
+optional string start-time:
+optional string end-time:
+optional string start-day:
+optional string start-month:
+optional string start-date:
+optional string end-day:
+optional string end-month:
+optional string end-date:
+optional string event-link:
+optional string event-type:
+optional string presence:
+optional body body:
+children wrap:
+common.host host:
+common.venue venue:
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px: 1160
+align-self: center
+spacing.fixed.px: 48
+margin-top.px: 80
+
+-- ftd.text: $event-desktop.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- ftd.image:
+src: $event-desktop.banner-src
+width: fill-container
+height: auto
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 48
+
+-- ftd.column:
+width.fixed.percent: 60
+spacing.fixed.px: 24
+
+-- ftd.text: Overview
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- ftd.text: 
+text: $event-desktop.body
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- ftd.column:
+children: $event-desktop.wrap
+width: fill-container
+spacing.fixed.px: 48
+padding-bottom.px: 48
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width.fixed.percent: 40
+padding-vertical.px: 52
+padding-horizontal.px: 36
+border-radius.px: 6
+border-color: $inherited.colors.border-strong
+border-width.px: 1
+spacing.fixed.px: 42
+
+
+-- ftd.column:
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.host.svg
+height.fixed.px: 32
+width.fixed.px: 32
+
+-- body-wrap: $event-desktop.host.name
+title: $event-desktop.host.title
+email: $event-desktop.host.email
+website: $event-desktop.host.website
+avatar: $event-desktop.host.avatar
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+spacing.fixed.px: 24
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.venue.svg
+height.fixed.px: 32
+width.fixed.px: 32
+
+
+-- ftd.row:
+
+-- body-wrap: $event-desktop.venue.name
+is-venue: true
+website: $event-desktop.venue.website
+location: $event-desktop.venue.location
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.clock.svg
+
+-- ftd.row:
+width: fill-container
+wrap: true
+spacing.fixed.px: 10
+
+-- ftd.row:
+
+-- title-name: $event-desktop.start-day
+
+-- ftd.text: ,
+role: $inherited.types.button-medium
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- title-name: $event-desktop.start-month
+
+-- title-name: $event-desktop.start-date
+
+-- title-name: at
+
+-- title-name: $event-desktop.start-time
+
+-- title-name: to
+
+-- ftd.row:
+
+-- title-name: $event-desktop.end-day
+
+-- ftd.text: ,
+role: $inherited.types.button-medium
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- title-name: $event-desktop.end-month
+
+-- title-name: $event-desktop.end-date
+
+-- title-name: at
+
+-- title-name: $event-desktop.end-time
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.live-recording.svg
+
+-- ftd.column:
+spacing.fixed.px: 8
+
+-- title-name: $event-desktop.event-type
+
+-- title-name: $event-desktop.event-link
+url: $event-desktop.event-link
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+
+-- ftd.row:
+spacing.fixed.px: 24
+align-content: center
+
+-- ftd.image:
+src: $assets.files.static.events.share.svg
+
+-- title-name: Share now
+url: $event-desktop.event-link
+text-color: $inherited.colors.accent.primary
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: event-desktop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component event-mobile:
+optional caption title:
+ftd.image-src banner-src:
+optional string start-time:
+optional string end-time:
+optional string start-day:
+optional string start-month:
+optional string start-date:
+optional string end-day:
+optional string end-month:
+optional string end-date:
+optional string event-link:
+optional string event-type:
+optional string presence:
+optional body body:
+children wrap:
+common.host host:
+common.venue venue:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 40
+padding-horizontal.px: 16
+padding-top.px: 40
+
+-- ftd.text: $event-mobile.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+width: fill-container
+text-align: center
+
+-- ftd.image:
+src: $event-mobile.banner-src
+width: fill-container
+height: auto
+
+
+-- ftd.column:
+padding-vertical.px: 32
+padding-horizontal.px: 26
+border-radius.px: 6
+border-color: $inherited.colors.border-strong
+border-width.px: 1
+spacing.fixed.px: 24
+
+
+-- ftd.row:
+width: fill-container
+wrap: true
+spacing.fixed.px: 10
+
+-- ftd.column:
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.host.svg
+height.fixed.px: 32
+width.fixed.px: 32
+
+-- body-wrap: $event-mobile.host.name
+title: $event-mobile.host.title
+email: $event-mobile.host.email
+website: $event-mobile.host.website
+avatar: $event-mobile.host.avatar
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+spacing.fixed.px: 24
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.venue.svg
+height.fixed.px: 32
+width.fixed.px: 32
+
+-- ftd.row:
+
+-- body-wrap: $event-mobile.venue.name
+is-venue: true
+website: $event-mobile.venue.website
+location: $event-mobile.venue.location
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.clock.svg
+
+-- ftd.row:
+width: fill-container
+wrap: true
+spacing.fixed.px: 10
+
+-- ftd.row:
+
+-- title-name: $event-mobile.start-day
+
+-- ftd.text: ,
+role: $inherited.types.button-medium
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- title-name: $event-mobile.start-month
+
+-- title-name: $event-mobile.start-date
+
+-- title-name: at
+
+-- title-name: $event-mobile.start-time
+
+-- title-name: to
+
+-- ftd.row:
+
+-- title-name: $event-mobile.end-day
+
+-- ftd.text: ,
+role: $inherited.types.button-medium
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- title-name: $event-mobile.end-month
+
+-- title-name: $event-mobile.end-date
+
+-- title-name: at
+
+-- title-name: $event-mobile.end-time
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.live-recording.svg
+
+-- ftd.column:
+spacing.fixed.px: 8
+
+-- title-name: $event-mobile.event-type
+
+-- title-name: $event-mobile.event-link
+url: $event-mobile.event-link
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+
+-- ftd.row:
+spacing.fixed.px: 24
+align-content: center
+
+-- ftd.image:
+src: $assets.files.static.events.share.svg
+
+-- title-name: Share now
+url: $event-mobile.event-link
+text-color: $inherited.colors.accent.primary
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.text: Overview
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- ftd.text: 
+text: $event-mobile.body
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- ftd.column:
+children: $event-mobile.wrap
+width: fill-container
+spacing.fixed.px: 40
+padding-bottom.px: 40
+
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: event-mobile
+
+
+
+-- component title-name:
+caption title:
+ftd.color text-color: $inherited.colors.text
+optional string url:
+
+-- ftd.column:
+
+-- ftd.text: $title-name.title
+if: {title-name.url != NULL}
+role: $inherited.types.button-medium
+color: $title-name.text-color
+link: $title-name.url
+
+-- ftd.text: $title-name.title
+if: {title-name.url == NULL}
+role: $inherited.types.button-medium
+color: $title-name.text-color
+
+-- end: ftd.column
+
+-- end: title-name
+
+
+
+
+
+
+
+
+
+
+-- component event-terms:
+caption title:
+optional body body:
+
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.text: $event-terms.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- ftd.text: 
+if:{ event-terms.body != NULL }
+text: $event-terms.body 
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+padding-left.px: 32
+-- end: ftd.column
+
+-- end: event-terms
+
+
+
+-- component body-wrap:
+caption name:
+optional string title:
+optional string email:
+optional string website:
+optional string location:
+ftd.image-src avatar: $assets.files.static.avatar.svg
+optional body bio:
+boolean is-venue: false
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.image:
+if: { !body-wrap.is-venue}
+src: $body-wrap.avatar
+height.fixed.px: 32
+width.fixed.px: 32
+border-radius.px: 100
+
+-- ftd.column:
+padding-horizontal.px if { !body-wrap.is-venue} : 16
+spacing.fixed.px: 16
+
+-- ftd.text: $body-wrap.name
+role: $inherited.types.copy-large
+color: $inherited.colors.text
+
+-- ftd.text: $body-wrap.title
+if: { body-wrap.title != NULL }
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text: $body-wrap.email
+if: { body-wrap.email != NULL }
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text: $body-wrap.website
+if: { body-wrap.website != NULL }
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text: $body-wrap.location
+if: { body-wrap.location != NULL }
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text:
+if: { body-wrap.bio != NULL}
+text: $body-wrap.bio
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+
+
+-- end: body-wrap

@@ -1,10 +1,8 @@
 -- import: fifthtry.github.io/fastn-ui/lib as ft
 
--- ft.page: Events
-width: 1160
+-- ft.page: Typography
 
 -- ft.col-container:
-width: 1160
 
 -- h0: Heading Hero
 
@@ -41,6 +39,23 @@ officia deserunt mollit anim id est laborum.
 -- ft.footer:
 
 -- end: ft.page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- component h0:
 caption title:
@@ -79,7 +94,6 @@ width: fill-container
 -- end: ftd.column
 
 -- end: h0
-
 
 
 
@@ -248,19 +262,4 @@ color: $inherited.colors.text
 margin-bottom.px: 24
 
 -- end: markdown
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

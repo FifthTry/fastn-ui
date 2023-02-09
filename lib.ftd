@@ -6,6 +6,12 @@
 
 -- integer $current-slide: 1
 
+-- string docs-site-link: /
+
+-- string login-button-link: /
+
+-- string site-url: /
+
 
 -- pr.sitemap-data footer-toc:
 $processor$: pr.full-sitemap
@@ -13,23 +19,6 @@ $processor$: pr.full-sitemap
 
 
 
--- ftd.type hero-desktop:
-size.px: 80
-weight: 700
-line-height.px: 104
-font-family: sans-serif
-
-
--- ftd.type hero-mobile:
-size.px: 32
-weight: 800
-line-height.px: 48
-font-family: sans-serif
-
-
--- ftd.responsive-type hero:
-desktop: $hero-desktop
-mobile: $hero-mobile
 
 
 
@@ -147,7 +136,9 @@ boolean $show-breadcrum: false
 ftd.color-scheme colors: $fastn-cs.main
 ftd.type-data types: $typo.types
 boolean $show-mobile-menu: false
-;;ftd.color $bgcolor: $inherited.colors.background.base
+optional string docs-link: $docs-site-link
+optional string login-button-link: $login-button-link
+optional string site-url: $site-url
 
 -- ftd.column:
 width: fill-container
@@ -174,6 +165,8 @@ toc: $page.toc
 $show-mobile-menu: $page.show-mobile-menu
 width: $page.width
 show-breadcrum: $page.show-breadcrum
+login-button-link: $page.login-button-link 
+site-url: $page.site-url
 
 -- ftd.column:
 width: fill-container
@@ -221,7 +214,7 @@ border-width.px: 1
 border-radius.px: 70
 spacing.fixed.px: 12
 background.solid: $inherited.colors.cta-primary.base
-link: /
+link: $page.docs-link
 
 -- ftd.image:
 src: $assets.files.static.doc-cta-icon-mobile.svg
@@ -230,7 +223,7 @@ height: auto
 align-self: center
 
 -- ftd.text: Docs
-role: $inherited.types.copy-small
+role: $inherited.types.button-small
 color: $inherited.colors.text.dark
 
 -- end: ftd.row
@@ -276,6 +269,8 @@ string login-button:
 boolean show-breadcrum: false
 boolean $show-mobile-menu:
 integer width: $width
+optional string login-button-link: 
+optional string site-url:
 
 -- ftd.column:
 width: fill-container
@@ -293,6 +288,8 @@ toc: $header-fastn.toc
 login-button: $header-fastn.login-button
 width: $header-fastn.width
 show-breadcrum: $header-fastn.show-breadcrum
+login-button-link: $header-fastn.login-button-link
+site-url: $header-fastn.site-url
 
 -- header-fastn-mobile: $header-fastn.title
 if: {ftd.device == "mobile"}
@@ -308,6 +305,8 @@ login-button: $header-fastn.login-button
 width: $header-fastn.width
 $show-mobile-menu: $header-fastn.show-mobile-menu
 show-breadcrum: $header-fastn.show-breadcrum
+login-button-link: $header-fastn.login-button-link
+site-url: $header-fastn.site-url
 
 -- header-menu:
 if: {header-fastn.show-mobile-menu}
@@ -315,6 +314,8 @@ logo: $header-fastn.logo
 sitename: $header-fastn.sitename
 sections: $header-fastn.sections
 $show-mobile-menu: $header-fastn.show-mobile-menu
+login-button-link: $header-fastn.login-button-link
+site-url: $header-fastn.site-url
 
 -- end: ftd.column
 
@@ -579,6 +580,9 @@ boolean $show-section: false
 boolean $show-toc: false
 pr.toc-item list sections:
 optional pr.toc-item current-section: 
+optional string login-button-link: 
+optional string site-url:
+
 
 -- ftd.column:
 width: fill-container
@@ -603,12 +607,14 @@ width: fill-container
 if: { header-menu.sitename != NULL && header-menu.logo == NULL }
 role: $inherited.types.heading-small
 color: $inherited.colors.text
+link: $header-menu.site-url
 
 -- ftd.image:
 if: { header-menu.logo != NULL }
 src: $header-menu.logo
 width.fixed.px: 140
 height.fixed.px: 40
+link: $header-menu.site-url
 
 
 -- end: ftd.column
@@ -656,6 +662,8 @@ string login-button:
 integer width: $width
 boolean $show-mobile-menu:
 boolean show-breadcrum: 
+optional string login-button-link: 
+optional string site-url:
 
 -- ftd.row:
 width: fill-container
@@ -670,12 +678,14 @@ width: fill-container
 if: { header-fastn-mobile.sitename != NULL && header-fastn-mobile.logo == NULL }
 role: $inherited.types.heading-large
 color: $inherited.colors.text
+link: $header-fastn-mobile.site-url
 
 -- ftd.image:
 if: { header-fastn-mobile.logo != NULL }
 src: $header-fastn-mobile.logo
 width.fixed.px: 140
 height.fixed.px: 40
+link: $header-fastn-mobile.site-url
 
 -- end: ftd.column
 
@@ -715,13 +725,13 @@ pr.toc-item list toc:
 string login-button:
 boolean show-breadcrum: 
 integer width: $width
-
+optional string login-button-link:
+optional string site-url:
 
 -- ftd.column:
 width: fill-container
 max-width.fixed.px: $header-fastn-desktop.width
 align-self: center
-
 
 -- ftd.row:
 width: fill-container
@@ -730,17 +740,20 @@ padding-vertical.px: 40
 -- ftd.row:
 width: fill-container
 margin-right.px: 24
+align-self: center
 
 -- ftd.text: $header-fastn-desktop.sitename
 if: { header-fastn-desktop.sitename != NULL && header-fastn-desktop.logo == NULL }
 role: $inherited.types.heading-small
 color: $inherited.colors.text
+link: $header-fastn-desktop.site-url
 
 -- ftd.image:
 if: { header-fastn-desktop.logo != NULL }
 src: $header-fastn-desktop.logo
 width.fixed.px: 140
 height.fixed.px: 40
+link: $header-fastn-desktop.site-url
 
 -- end: ftd.row
 
@@ -769,9 +782,8 @@ icon: $obj.font-icon
 -- cta-button: $header-fastn-desktop.login-button
 if: { header-fastn-desktop.login-button != NULL }
 role: primary
-link: /
+link: $header-fastn-desktop.login-button-link
 show-arrow: true
-
 
 -- end: ftd.row
 
@@ -1944,7 +1956,7 @@ color: $inherited.colors.cta-secondary.text
 -- ftd.text: 
 text: $snippet-card-left-desktop.description
 role: $inherited.types.fine-print
-color: $inherited.colors.text-strong
+color: $inherited.colors.cta-secondary.text
 
 -- ftd.text: $snippet-card-left-desktop.cta-text
 color: $inherited.colors.cta-secondary.text
@@ -2220,18 +2232,16 @@ width.fixed.px: 250
 height.fixed.px: 130
 
 -- ftd.text: $snippet-card-right-desktop.title
-role: $code-snippet-title
-color: $inherited.colors.background.base
-;; color: $inherited.colors.cta-secondary.text
+role: $inherited.types.button-large
+color: $inherited.colors.cta-secondary.text
 
 -- ftd.text: 
 text: $snippet-card-right-desktop.description
 role: $inherited.types.fine-print
-color: $inherited.colors.text-strong
+color: $inherited.colors.cta-secondary.text
 
 -- ftd.text: $snippet-card-right-desktop.cta-text
-color: $inherited.colors.background.base
-;;color: $inherited.colors.cta-secondary.text
+color: $inherited.colors.cta-secondary.text
 role: $inherited.types.copy-small
 
 -- end: ftd.column
@@ -4029,7 +4039,7 @@ padding-horizontal.px: 24
 -- component col-container:
 children col-wrap:
 optional integer padding-vertical: 
-optional integer width: 
+optional integer width: $width
 optional integer spacing: 
 
 -- ftd.column:

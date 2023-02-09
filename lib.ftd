@@ -1848,13 +1848,13 @@ width: fill-container
 height: auto
 
 -- ftd.text: $snippet-card-left-mobile.title
-role: $code-snippet-title
+role: $inherited.types.button-large
 color: $inherited.colors.cta-secondary.text
 
 -- ftd.text: 
 text: $snippet-card-left-mobile.description
 role: $inherited.types.fine-print
-color: $inherited.colors.cta-secondary.pressed
+color: $inherited.colors.cta-secondary.text
 
 -- ftd.text: $snippet-card-left-mobile.cta-text
 color: $inherited.colors.cta-secondary.text
@@ -2115,13 +2115,13 @@ width: fill-container
 height: auto
 
 -- ftd.text: $snippet-card-right-mobile.title
-role: $code-snippet-title
+role: $inherited.types.button-large
 color: $inherited.colors.cta-secondary.text
 
 -- ftd.text: 
 text: $snippet-card-right-mobile.description
 role: $inherited.types.fine-print
-color: $inherited.colors.cta-secondary.pressed
+color: $inherited.colors.cta-secondary.text
 
 -- ftd.text: $snippet-card-right-mobile.cta-text
 color: $inherited.colors.cta-secondary.text
@@ -2134,7 +2134,6 @@ role: $inherited.types.copy-small
 -- end: ftd.column
 
 -- end: ftd.column
-
 
 -- ftd.column:
 width: fill-container
@@ -3601,7 +3600,7 @@ children: $rounded-corner-card-mobile.card-wrap
 
 
 -- component text-bubble:
-optional ftd.color bgcolor: #4AA35C
+optional ftd.color bgcolor: $inherited.colors.custom.one
 optional ftd.image-src text-image-1: 
 optional ftd.image-src text-image-2: 
 optional integer spacing: 
@@ -3702,20 +3701,19 @@ border-radius.px: 28
 background.solid: $text-bubble-mobile.bgcolor
 spacing.fixed.px: 45
 padding-vertical.px: 40
-padding-horizontal.px: 40
-max-width.fixed.px: 341
+max-width.fixed.px: $text-bubble-mobile.width
 margin-top.px: 40
 
 -- ftd.image:
 if: { text-bubble-mobile.text-image-1 != NULL }
 src: $text-bubble-mobile.text-image-1
-width.fixed.px: 250
+width: fill-container
 height: auto
 
 -- ftd.image:
 if: { text-bubble-mobile.text-image-2 != NULL }
 src: $text-bubble-mobile.text-image-2
-width.fixed.px: 250
+width: fill-container
 height: auto
 
 -- end: ftd.column
@@ -3989,7 +3987,7 @@ role: $inherited.types.heading-large
 color: $inherited.colors.text-strong
 align-self: center
 margin-bottom.px: 40
-padding-horizontal.px: 24
+;;padding-horizontal.px: 24
 text-align: center
 
 -- end: ftd.column
@@ -4003,7 +4001,7 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 align-self: center
 margin-bottom.px: 40
-padding-horizontal.px: 24
+;;padding-horizontal.px: 24
 text-align: center
 
 -- end: ftd.column
@@ -4013,7 +4011,7 @@ width.fixed.calc: 100vw
 children: $row-container-mobile.row-wrap
 spacing.fixed.px if { row-container-mobile.spacing != NULL }: $row-container-mobile.spacing
 overflow-x: auto
-padding-horizontal.px: 24
+;;padding-horizontal.px: 24
 
 -- end: ftd.row
 
@@ -4024,7 +4022,7 @@ children: $row-container-mobile.row-wrap
 spacing.fixed.px if { row-container-mobile.spacing != NULL }: $row-container-mobile.spacing
 align-self: center
 align-content: center
-padding-horizontal.px: 24
+;;padding-horizontal.px: 24
 
 -- end: ftd.column
 
@@ -4565,6 +4563,11 @@ integer margin-right: 0
 -- ftd.column:
 width: fill-container
 max-width.fixed.px: $testimonial-card.width
+padding-horizontal.px if { ftd.device == "mobile" }: 24
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px: $testimonial-card.width
 margin-top.px: $testimonial-card.margin-top
 right.px: $testimonial-card.margin-right
 right.px if { ftd.device == "mobile"}: 0
@@ -4581,7 +4584,7 @@ anchor: parent
 left.px: -18
 bottom.px: -18
 background.solid: $testimonial-card.bgcolor
-left.px if { ftd.device == "mobile"}: -5
+left.px if { ftd.device == "mobile"}: -12
 
 -- end: ftd.column
 
@@ -4627,6 +4630,8 @@ color: $inherited.colors.custom.seven
 -- ftd.text: $testimonial-card.label
 role: $inherited.types.fine-print
 color: $inherited.colors.custom.seven
+
+-- end: ftd.column
 
 -- end: ftd.column
 

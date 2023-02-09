@@ -330,8 +330,8 @@ Browse dozens of professionaly designed templates. Easily change structure,style
 -- ft.row-container:
 spacing: 80
 switch-to-column: true
-spacing if {ftd.device == "mobile"}: 60
 padding-vertical: 80
+spacing if {ftd.device == "mobile"}: 60
 padding-vertical if {ftd.device == "mobile"}: 0
 
 -- ft.text-bubble:

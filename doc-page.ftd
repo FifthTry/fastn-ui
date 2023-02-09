@@ -382,6 +382,7 @@ color: $inherited.colors.text
 
 -- end: ftd.row
 
+
 -- ftd.column:
 if: { !ftd.is_empty(toc-page.toc.children)}
 align-self: center
@@ -841,6 +842,7 @@ width.fixed.px: 24
 -- end: ftd.row
 
 -- ftd.column:
+width: fill-container
 spacing.fixed.px: 14
 
 -- header-toc-loop: $obj.title
@@ -875,6 +877,10 @@ boolean $shows-section:  false
 
 -- ftd.column:
 width: fill-container
+spacing.fixed.px: 14
+
+-- ftd.row:
+width: fill-container
 
 -- ftd.text: $header-toc-loop.title
 if: {header-toc-loop.url != NULL}
@@ -889,12 +895,38 @@ role: $inherited.types.heading-tiny
 width: fill-container
 color: $inherited.colors.text-strong
 
+-- ftd.column:
+if: { !ftd.is_empty(header-toc-loop.children)}
+
+
+-- ftd.image:
+if: { header-toc-loop.shows-section }
+src: $assets.files.static.footer.drop-up.svg
+$on-click$: $ftd.toggle($a = $header-toc-loop.shows-section, v = true)
+align-self: center
+
+-- ftd.image:
+if: { !header-toc-loop.shows-section }
+src: $assets.files.static.footer.drop-down.svg
+$on-click$: $ftd.toggle($a = $header-toc-loop.shows-section, v = false)
+align-self: center
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.column:
+if: {header-toc-loop.shows-section}
+width: fill-container
+spacing.fixed.px: 14
+
 -- header-toc-loop: $obj.title
-if: { ! ftd.is_empty(header-toc-loop.children)}
 url: $obj.url
 is-active: $obj.is-active
 children: $obj.children
 $loop$: $header-toc-loop.children as $obj
+
+-- end: ftd.column
 
 -- end: ftd.column
 

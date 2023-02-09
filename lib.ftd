@@ -8,85 +8,21 @@
 
 -- string docs-site-link: /
 
+-- string site-name: Fastn
+
+-- optional ftd.image-src site-logo: NULL
+
 -- string login-button-link: /
 
 -- string site-url: /
 
+-- integer $width: 1160
+
+-- integer $footer-width: 1340
+
 
 -- pr.sitemap-data footer-toc:
 $processor$: pr.full-sitemap
-
-
-
-
-
-
-
-
-
--- ftd.type code-snippet-title-desktop:
-size.px: 18
-weight: 700
-line-height.px: 32
-font-family: Manrope
-
-
--- ftd.type code-snippet-title-mobile:
-size.px: 13
-weight: 600
-line-height.px: 22
-font-family: Manrope
-
-
--- ftd.responsive-type code-snippet-title:
-desktop: $code-snippet-title-desktop
-mobile: $code-snippet-title-mobile
-
-
-
-
-
-
--- ftd.type font-50-desktop:
-size.px: 50
-weight: 700
-line-height.px: 65
-font-family: Manrope
-
-
--- ftd.type font-50-mobile:
-size.px: 32
-weight: 800
-line-height.px: 48
-font-family: Manrope
-
-
--- ftd.responsive-type font-50:
-desktop: $font-50-desktop
-mobile: $font-50-mobile
-
-
-
-
-
--- ftd.type font-28-desktop:
-size.px: 28
-weight: 600
-line-height.px: 29
-font-family: Manrope
-
-
--- ftd.type font-28-mobile:
-size.px: 22
-weight: 600
-line-height.px: 23
-font-family: Manrope
-
-
--- ftd.responsive-type font-28:
-desktop: $font-28-desktop
-mobile: $font-28-mobile
-
 
 -- pr.toc-item list sections:
 
@@ -94,19 +30,14 @@ mobile: $font-28-mobile
 
 -- pr.toc-item list toc:
 
-
-
-
 -- pr.sitemap-data sitemap:
 $processor$: pr.full-sitemap
 
--- ftd.color link-active:
-dark: #EF8435
-light: #EF8435
+-- integer divideToTwo(a):
+integer a:
 
--- integer $width: 1160
+- (a / 2) + 50
 
--- integer $footer-width: 1340
 
 
 
@@ -127,8 +58,8 @@ optional pr.toc-item current-subsection: $sitemap.current-subsection
 optional pr.toc-item current-page: $sitemap.current-page
 pr.toc-item list toc: $sitemap.toc
 pr.toc-item list footer-toc: $footer-toc.sections
-optional ftd.image-src logo: 
-optional string sitename: Fastn
+optional ftd.image-src logo: $site-logo
+optional string sitename: $site-name
 string login-button: Get Started
 integer width: $width
 children wrapper:
@@ -498,6 +429,7 @@ $loop$: $header-subsection-loop.children as $obj
 
 
 
+
 -- component header-toc-loop:
 caption title:
 string url:
@@ -527,7 +459,6 @@ color: $inherited.colors.text-strong
 
 -- ftd.column:
 if: { !ftd.is_empty(header-toc-loop.children)}
-
 
 -- ftd.image:
 if: { header-toc-loop.shows-section }
@@ -571,7 +502,6 @@ $loop$: $header-toc-loop.children as $obj
 
 
 
-
 -- component header-menu:
 ftd.image-src logo: 
 optional string sitename:
@@ -582,7 +512,6 @@ pr.toc-item list sections:
 optional pr.toc-item current-section: 
 optional string login-button-link: 
 optional string site-url:
-
 
 -- ftd.column:
 width: fill-container
@@ -615,7 +544,6 @@ src: $header-menu.logo
 width.fixed.px: 140
 height.fixed.px: 40
 link: $header-menu.site-url
-
 
 -- end: ftd.column
 
@@ -700,8 +628,6 @@ $on-click$: $ftd.toggle($a= $header-fastn-mobile.show-mobile-menu)
 -- end: ftd.row
 
 -- end: header-fastn-mobile
-
-
 
 
 
@@ -825,7 +751,6 @@ padding-horizontal.px: 42
 align-content: center
 ;;spacing: space-around
 
-
 -- ftd.text: $cta-button.title
 role: $inherited.types.button-medium
 color if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.text
@@ -856,7 +781,6 @@ padding-vertical.px if {ftd.device == "mobile"}: 15
 padding-horizontal.px if {ftd.device == "mobile"}: 30
 align-content: center
 ;;spacing: space-around
-
 
 -- ftd.text: $cta-button.title
 role: $inherited.types.button-small
@@ -1017,7 +941,6 @@ toc: $obj.children
 ;;current-subsection: $menu-links.title
 ;;current-page: $menu-links.current-page
 
-
 -- end: ftd.column
 
 -- end: ftd.row
@@ -1141,11 +1064,6 @@ toc: $loop-section-card.toc
 
 
 
--- integer divideToTwo(a):
-integer a:
-
-- (a / 2) + 50
-
 
 
 
@@ -1186,6 +1104,7 @@ childs: $hero-section.childs
 -- end: ftd.column
 
 -- end: hero-section
+
 
 
 
@@ -1294,7 +1213,6 @@ width: fill-container
 height: auto
 
 -- end: ftd.column
-
 
 -- ftd.column:
 width: fill-container
@@ -1794,8 +1712,6 @@ z-index: $snippet-card-left.z-index
 
 
 
-
-
 -- component snippet-card-left-mobile:
 caption title:
 optional string description:
@@ -2005,8 +1921,6 @@ height: auto
 
 
 
-
-
 -- component snippet-card-right:
 caption title:
 optional string description:
@@ -2078,14 +1992,12 @@ margin-bottom.px: 40
 -- ftd.column:
 width: fill-container
 
-
 -- ftd.column:
 width: fill-container
 background.solid: $snippet-card-right-mobile.bgcolor
 border-radius.px: 30
 align-content: center
 padding.px: 6
-
 
 -- ftd.column:
 width: fill-container
@@ -2096,7 +2008,6 @@ border-radius.px: 20
 padding-vertical.px: 26
 padding-horizontal.px: 16
 align-content: center
-
 
 -- ftd.column:
 background.solid: $inherited.colors.border.dark
@@ -2639,7 +2550,6 @@ spacing.fixed.px: 130
 
 
 
-
 -- component trending-templates-mobile:
 caption title:
 optional string info:
@@ -2845,7 +2755,6 @@ color: $inherited.colors.text-strong
 
 
 
-
 -- component excel-promo-card:
 caption title:
 optional string info:
@@ -3004,7 +2913,7 @@ boolean keep-dark: true
 -- ftd.column:
 width: fill-container
 background.solid: $excel-promo-card-mobile.bgcolor
-padding-horizontal.px: 37
+padding-horizontal.px: 34
 padding-vertical.px: 26
 
 -- ftd.column:
@@ -3119,7 +3028,6 @@ icons-wrap: $card-with-icons-bottom.icons-wrap
 
 
 
-
 -- component card-with-icons-bottom-desktop:
 caption title:
 optional string cta-text:
@@ -3208,6 +3116,7 @@ align-content: center
 spacing.fixed.px: 24
 width: fill-container
 align-content: center
+
 
 -- ftd.text: $card-with-icons-bottom-mobile.title
 role: $inherited.types.heading-hero
@@ -4127,7 +4036,7 @@ height.fixed.px: 70
 
 -- ftd.text: $title-with-body-card.title
 if: { title-with-body-card.title != NULL }
-role: $font-28
+role: $inherited.types.heading-small
 color: $title-with-body-card.body-color
 
 -- ftd.text:

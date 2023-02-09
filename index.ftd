@@ -591,7 +591,6 @@ avatar: $assets.files.static.testimonials.avatar-1.svg
 bgcolor: $inherited.colors.custom.two
 label: CEO, ABC Company
 width: 500
-margin-right: -80
 
 At nulla tristique facilisis augue. 
 
@@ -621,7 +620,6 @@ bgcolor: #EBBE52
 label: CEO, ABC Company
 width: 500
 margin-top: -80
-margin-right: -80
 
 At nulla tristique facilisis augue. 
 

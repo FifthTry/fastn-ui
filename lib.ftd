@@ -5065,6 +5065,7 @@ string link:
 -- ftd.column:
 width.fixed.px: 295
 spacing.fixed.px: 12
+margin-bottom.px: 28
 
 -- ftd.text: $toc-items-loop.title
 role: $inherited.types.copy-large

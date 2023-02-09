@@ -659,6 +659,10 @@ width: fill-container
 max-width.fixed.px: $header-fastn-desktop.width
 align-self: center
 
+-- ftd.column:
+width: fill-container
+id: header-wrap
+
 -- ftd.row:
 width: fill-container
 padding-vertical.px: 40
@@ -702,6 +706,7 @@ icon: $obj.font-icon
 ;;current-subsection: $header-fastn-desktop.current-subsection
 ;;current-page: $header-fastn-desktop.current-page
 ;;idx: $LOOP.COUNTER
+parent-id: header-wrap
 
 -- end: ftd.row
 
@@ -714,6 +719,8 @@ show-arrow: true
 -- end: ftd.row
 
 -- end: ftd.row
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -826,11 +833,14 @@ pr.toc-item list sub-sections:
 ;;optional pr.toc-item current-subsection: 
 ;;optional pr.toc-item current-page: 
 ;;pr.toc-item list toc:
+optional string parent-id: 
 
 -- ftd.column:
 width: fill-container
 $on-mouse-enter$: $ftd.set-bool($a = $menu-links.show-menu, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $menu-links.show-menu, v = false)
+
+-- ftd.column:
 
 -- ftd.text: $menu-links.title
 role: $inherited.types.button-large
@@ -845,12 +855,29 @@ white-space: nowrap
 
 -- ftd.column:
 if: { $menu-links.show-menu }
-width: fill-container
-min-width.fixed.px: $menu-links.width
 anchor: parent
+top.px: 18
+left.calc: 50% -30px
+z-index: 0
+
+-- ftd.image:
+src: $assets.files.static.header.polygon.svg
+width: fill-container
+height: auto
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { $menu-links.show-menu }
+width: fill-container
+max-width.fixed.px: $menu-links.width
+anchor.id: $menu-links.parent-id
 z-index: 999
-top.px: 34
-left.px: $divideToTwo(a = $menu-links.width)
+top.px: 94
+left.px: 0
+;;left.px: $divideToTwo(a = $menu-links.width)
 $on-click-outside$: $ftd.set-bool($a = $menu-links.show-menu, v = false)
 
 -- ftd.column:
@@ -860,19 +887,6 @@ padding-vertical.px: 42
 padding-horizontal.px: 42
 border-radius.px: 12
 ;;min-height.fixed.px: 500
-
--- ftd.column:
-anchor: parent
-top.px: -18
-left.calc: 50% - 50px
-z-index: 0
-
--- ftd.image:
-src: $assets.files.static.header.polygon.svg
-width: fill-container
-height: auto
-
--- end: ftd.column
 
 -- ftd.column:
 width.fixed.percent: 50
@@ -891,6 +905,7 @@ border-bottom-right-radius.px: 12
 width: fill-container
 spacing.fixed.px: 60
 z-index: 111
+
 
 -- ftd.column:
 width.fixed.px: 240
@@ -940,6 +955,8 @@ is-active: $obj.is-active
 toc: $obj.children
 ;;current-subsection: $menu-links.title
 ;;current-page: $menu-links.current-page
+parent-id: menu-items
+icon: $obj.font-icon
 
 -- end: ftd.column
 
@@ -971,7 +988,9 @@ boolean $mouse-in: false
 pr.toc-item list toc:
 boolean is-active: false
 string link:
+optional ftd.image-src icon:
 boolean $show-sub-menu: false
+string parent-id: 
 
 -- ftd.column: 
 width: fill-container
@@ -1007,7 +1026,8 @@ spacing.fixed.px: 12
 align-self: center
 
 -- ftd.image:
-src: $assets.files.static.header.sub-section-icon.svg
+if: { loop-section-card.icon != NULL }
+src: $loop-section-card.icon
 width: auto
 height: auto
 align-self: center
@@ -1038,15 +1058,20 @@ color: $inherited.colors.text-strong.dark
 -- end: ftd.column
 
 -- ftd.column:
+width.fixed.percent: 51
 ;;background.solid: #333333
-;;min-height.fixed.px: 500
-;;anchor: parent
-;;right.px: 0
-;;top.px: 0
+min-height.fixed.px: 500
+anchor.id: $loop-section-card.parent-id
+right.px: 0
+top.px: 0
 
 -- ftd.column:
 width: fill-container
-if: { loop-section-card.show-sub-menu || loop-section-card.is-active}
+;;if: { loop-section-card.show-sub-menu || loop-section-card.is-active}
+if: { loop-section-card.show-sub-menu }
+align-content: center
+margin-left.px: 38
+margin-top.px: 40
 
 -- toc-items: 
 if: { !ftd.is_empty(loop-section-card.toc) }

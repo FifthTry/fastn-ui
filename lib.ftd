@@ -3641,8 +3641,8 @@ height: auto
 
 -- component code-block-system:
 optional caption title:
-optional ftd.color bgcolor: #111111
-optional ftd.color code-bg: #000000
+optional ftd.color bgcolor: $inherited.colors.custom.five
+optional ftd.color code-bg: $inherited.colors.custom.five
 optional body body:
 optional string lang: 
 integer width: $width
@@ -5617,3 +5617,54 @@ role: $inherited.types.button-medium
 -- end: subsections-items-mobile
 
 
+
+
+
+
+
+
+
+
+-- component code:
+optional caption caption:
+optional body body:
+string lang:
+
+-- ftd.column:
+padding-bottom.px: 12
+padding-top.px: 12
+width: fill-container
+
+-- ftd.text: $code.caption
+if: {code.caption != NULL}
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+width: fill-container
+background.solid: $inherited.colors.custom.five
+padding-top.px: 10
+padding-bottom.px: 10
+padding-left.px: 20
+padding-right.px: 20
+border-top-left-radius.px: 4
+border-top-right-radius.px: 4
+
+-- ftd.code:
+text: $code.body
+lang: $code.lang
+width: fill-container
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+padding-top.px: 10
+padding-left.px: 20
+padding-bottom.px: 10
+padding-right.px: 20
+background.solid: #2b303b
+border-top-left-radius.px if {$code.caption == NULL}: 4
+border-top-right-radius.px if {$code.caption == NULL}: 4
+border-bottom-left-radius.px: 4
+border-bottom-right-radius.px: 4
+overflow-x: auto
+
+-- end: ftd.column
+
+-- end: code

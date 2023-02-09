@@ -6,7 +6,7 @@
 -- import: fifthtry.github.io/common as common
 
 
--- integer width: 1160
+-- integer $width: 1160
 
 -- integer $current-active: 1
 
@@ -23,10 +23,12 @@
 -- ft.page: Events
 $show-breadcrum: true
 
+
 -- event: Fastn Events 2023
 
 At nulla tristique facilisis augue. Lectus diam dignissim
 erat blandit pellentesque egestas nulla.
+
 
 -- event-list: Upcoming
 
@@ -119,7 +121,7 @@ white_check_mark
 eyes
 raised_hands
 
--- next-previous-slider:
+-- pagination:
 
 -- number-item: 1
 $active-item: true
@@ -137,9 +139,13 @@ index: 4
 -- number-item: 5
 index: 5
 
--- end: next-previous-slider
+-- end: pagination
 
 -- end: event-list
+
+
+
+
 
 -- event-list: Past Events
 icon: $assets.files.static.events.past-section-logo.svg
@@ -180,7 +186,7 @@ white_check_mark
 eyes
 raised_hands
 
--- next-previous-slider:
+-- pagination:
 
 -- number-item: 1
 $active-item: true
@@ -189,13 +195,16 @@ index: 1
 -- number-item: 2
 index: 2
 
--- end: next-previous-slider
+-- end: pagination
 
 -- end: event-list
 
+
+
+
+
 -- ft.col-container:
 padding-vertical: 150
-
 
 -- ft.heart-line-title-card: Subscribe now
 show-arrow: false
@@ -221,6 +230,10 @@ icon: $assets.files.static.footer.linkedin.svg
 
 -- end: ft.col-container
 
+
+
+
+
 -- ft.footer:
 
 -- end: ft.page
@@ -234,11 +247,11 @@ icon: $assets.files.static.footer.linkedin.svg
 
 
 
--- component next-previous-slider:
+-- component pagination:
 children next-wrapper:
 
 -- ftd.row:
-children: $next-previous-slider.next-wrapper
+children: $pagination.next-wrapper
 width: fill-container
 align-content: center
 spacing.fixed.px: 16
@@ -247,7 +260,7 @@ margin-top.px if {ftd.device == "mobile"}: 40
 
 -- end: ftd.row
 
--- end:next-previous-slider
+-- end:pagination
 
 
 
@@ -455,7 +468,17 @@ icon: $event-list.icon
 bgcolor: $event-list.bgcolor
 
 -- end: ftd.column
+
 -- end: event-list
+
+
+
+
+
+
+
+
+
 
 -- component event-list-desktop:
 children wrap:
@@ -501,7 +524,6 @@ margin-bottom.px: 150
 margin-top.px: 40
 
 -- end: ftd.column
-
 
 -- ftd.row:
 if: { event-list-desktop.show-grid }
@@ -569,8 +591,6 @@ padding-bottom.px: 40
 -- end: ftd.column
 
 -- end: event-list-mobile
-
-
 
 
 
@@ -664,7 +684,6 @@ border-bottom-width.px: 1
 border-color: $inherited.colors.border-strong
 padding-bottom.px: 56
 
-
 -- ftd.row:
 align-self: center
 width.fixed.px: $width
@@ -673,7 +692,6 @@ $on-mouse-enter$: $ftd.set-bool($a=$upcoming-event-desktop.is-hover, v=true)
 $on-mouse-leave$: $ftd.set-bool($a=$upcoming-event-desktop.is-hover, v=false) 
 background.solid if {upcoming-event-desktop.is-hover}: $inherited.colors.accent.primary
 background.solid if { upcoming-event-desktop.index == upcoming-event-desktop.reset }:$inherited.colors.accent.primary 
-
 
 -- ftd.column:
 min-width.fixed.px: 440
@@ -694,8 +712,6 @@ link: $upcoming-event-desktop.link
 padding-left.px: 24
 padding-vertical.px: 23
 spacing.fixed.px: 12
-
-
 
 -- ftd.row:
 spacing.fixed.px: 10
@@ -801,7 +817,6 @@ $on-mouse-enter$: $ftd.set-bool($a=$upcoming-event-mobile.is-hover, v=true)
 $on-mouse-leave$: $ftd.set-bool($a=$upcoming-event-mobile.is-hover, v=false) 
 background.solid if {upcoming-event-mobile.is-hover}: $inherited.colors.accent.primary
 
-
 -- ftd.column:
 spacing.fixed.px: 24
 width: fill-container
@@ -810,7 +825,6 @@ padding-bottom.px: 40
 padding-horizontal.px: 24
 background.solid : $inherited.colors.background.base
 background.solid if { upcoming-event-mobile.index == upcoming-event-mobile.reset }: $inherited.colors.accent.primary
-
 
 -- ftd.image:
 src: $upcoming-event-mobile.image
@@ -899,8 +913,6 @@ text-align: center
 
 
 
-
-
 -- component past-event:
 ftd.image-src image:
 caption title:
@@ -939,7 +951,6 @@ link: $past-event.link
 padding-vertical.px: 40
 padding-horizontal.px if {ftd.device != "mobile"}: 32
 spacing.fixed.px: 12
-
 
 -- ftd.row:
 spacing.fixed.px: 10

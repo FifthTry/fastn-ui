@@ -257,6 +257,12 @@ color: $inherited.colors.text
 
 
 
+
+
+
+
+
+
 -- component event:
 optional caption title:
 ftd.image-src banner-src:
@@ -316,9 +322,15 @@ body: $event.body
 wrap: $event.wrap
 venue: $event.venue
 host: $event.host
+
 -- end: ftd.column
 
 -- end: event
+
+
+
+
+
 
 
 

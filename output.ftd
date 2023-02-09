@@ -1,0 +1,82 @@
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+
+-- ft.page: Events
+width: 1160
+
+-- output:
+
+-- ftd.text: FifthTry
+color: red
+
+-- end: output
+
+-- highlight:  highlight title
+
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+-- component output:
+caption title: Output
+children output-container:
+
+-- ftd.column:
+padding-top.px: 12
+width: fill-container
+
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.text: $output.title
+color: $inherited.colors.text
+background.solid: $inherited.colors.background.base
+border-top-left-radius.px: 2
+border-top-right-radius.px: 2
+padding-vertical.px: 3
+padding-horizontal.px: 10
+role: $inherited.types.label-large
+
+-- end: ftd.column
+
+-- ftd.column:
+border-width.px: 1
+border-color: $inherited.colors.text
+width: fill-container
+children: $output.output-container
+padding-vertical.px: 30
+padding-horizontal.px: 20
+border-radius.px: 2
+background.solid: $inherited.colors.background.base
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: output
+
+
+
+-- component highlight:
+caption title:
+
+
+-- ftd.text: $highlight.title
+role: $inherited.types.button-medium
+background.solid: $inherited.colors.custom.two
+color: $inherited.colors.text
+padding.px: 6
+border-radius.px: 3
+margin-top.px: 14
+margin-bottom.px: 14
+
+-- end: highlight
+
+
+
+
+
+
+

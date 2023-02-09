@@ -1,0 +1,266 @@
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+
+-- ft.page: Events
+width: 1160
+
+-- ft.col-container:
+width: 1160
+
+-- h0: Heading Hero
+
+Body text here in h0
+
+
+-- h1: Heading Large
+
+Body text here in h1
+
+
+-- h2: Heading Medium
+
+Body text here in h2
+
+
+-- h3: Heading Small
+
+Body text here in h3
+
+-- markdown:
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Duis aute irure dolor in reprehenderit in voluptate velit
+esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+sint occaecat cupidatat non proident, sunt in culpa qui 
+officia deserunt mollit anim id est laborum.
+
+-- end: ft.col-container
+
+-- ft.footer:
+
+-- end: ft.page
+
+-- component h0:
+caption title:
+optional body body:
+children inner:
+
+-- ftd.column:
+width: fill-container
+region: h1
+;;append-at: inner -- TODO FTD 0.3
+margin-top.px: 32
+margin-bottom.px: 16
+
+-- ftd.text: $h0.title
+role: $inherited.types.heading-hero
+color: $inherited.colors.text
+padding-bottom.px: 16
+padding-top.px: 8
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px if {h0.body != NULL}: -26
+
+-- markdown:
+if: { h0.body != NULL }
+body: $h0.body
+
+-- ftd.column:
+children: $h0.inner
+width: fill-container
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: h0
+
+
+
+
+
+
+
+
+
+
+
+-- component h1:
+caption title:
+optional body body:
+children inner:
+
+-- ftd.column:
+;;append-at: inner -- TODO FTD 0.3
+width: fill-container
+region: h1
+margin-top.px: 32
+margin-bottom.px: 16
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 20
+
+-- ftd.text: $h1.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+padding-bottom.px: 16
+padding-top.px: 8
+
+-- end: ftd.row
+
+-- ftd.column:
+;;id: inner -- TODO FTD 0.3
+width: fill-container
+margin-bottom.px if {$h1.body != NULL}: -26
+
+-- markdown:
+if: { h1.body != NULL }
+body: $h1.body
+
+-- ftd.column:
+children: $h1.inner
+width: fill-container
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: h1
+
+
+
+
+
+
+
+
+
+
+-- component h2:
+caption title:
+optional body body:
+children inner:
+
+-- ftd.column:
+width: fill-container
+region: h2
+;;append-at: inner -- TODO FTD 0.3
+margin-top.px: 32
+margin-bottom.px: 16
+
+-- ftd.text: $h2.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+padding-bottom.px: 16
+padding-top.px: 8
+
+-- ftd.column:
+;;id: inner -- TODO FTD 0.3
+width: fill-container
+margin-bottom.px if {$h2.body != NULL}: -26
+
+-- markdown:
+if: { h2.body != NULL }
+body: $h2.body
+
+-- ftd.column:
+children: $h2.inner
+width: fill-container
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: h2
+
+
+
+
+
+
+
+
+
+
+-- component h3:
+caption title:
+optional body body:
+children inner:
+
+-- ftd.column:
+width: fill-container
+region: h3
+margin-top.px: 32
+margin-bottom.px: 16
+
+-- ftd.text: $h3.title
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+padding-bottom.px: 16
+padding-top.px: 8
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px if {$h3.body != NULL}: -26
+
+-- markdown:
+if: { h3.body != NULL }
+body: $h3.body
+
+-- ftd.column:
+children: $h3.inner
+width: fill-container
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: h3
+
+
+
+
+
+
+
+
+
+
+-- component markdown:
+body body:
+
+-- ftd.text: 
+text: $markdown.body
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+margin-bottom.px: 24
+
+-- end: markdown
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

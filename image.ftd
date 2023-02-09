@@ -1,0 +1,75 @@
+-- import: fifthtry.github.io/fastn-ui/typography as tf
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fifthtry.github.io/fastn-ui/assets
+
+-- ft.page: Events
+
+-- ft.col-container:
+width: 1160
+spacing: 30
+
+-- image: This is the image with caption
+src: $assets.files.static.events.event-banner.svg
+width.fixed.px: 500
+
+-- image: This is the image with caption
+src: $assets.files.static.events.event-banner.svg
+
+-- end: ft.col-container
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+-- component image:
+optional caption caption:
+optional body body:
+optional string link:
+optional ftd.align alignment: center
+optional ftd.resizing width: 
+optional ftd.resizing height: 
+ftd.image-src src:
+
+-- ftd.column:
+width if {image.width != NULL}: auto
+width: auto
+max-width.fixed.px: 800
+height: auto
+align-content if {image.width == NULL}: center
+
+-- ftd.image:
+src: $image.src
+width: $image.width
+height: $image.height
+max-width.fixed.px: 800
+;;align-content: $image.alignment
+
+-- ftd.text:
+if: {image.caption != NULL}
+text: $image.caption
+color: $inherited.colors.text
+;;width if {image.width != NULL}: $width
+width: fill-container
+role: $inherited.types.label-large
+border-bottom-left-radius.px: 5
+border-bottom-right-radius.px: 5
+background.solid:$inherited.colors.background.step-1
+padding-vertical.px: 8
+padding-horizontal.px: 20
+text-align: center
+
+-- ftd.column:
+if: {image.body != NULL}
+margin-top.px: 20
+
+-- tf.markdown:
+body: $image.body
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: image
+
+

@@ -1,0 +1,59 @@
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+
+-- ft.page: Events
+
+-- ft.row-container:
+width: 1160
+
+-- youtube:
+v: rny1EGkqw_M
+
+-- end: ft.row-container
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+-- component iframe:
+string src:
+
+-- ftd.iframe:
+src: $iframe.src
+height.fixed.px: 400
+width: fill-container
+margin-bottom.px: 34
+
+-- end: iframe
+
+
+
+
+
+
+
+
+-- component youtube:
+caption v:
+optional integer width:
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.iframe:
+youtube: $youtube.v
+height.fixed.px: 400
+width: fill-container
+width.fixed.px if {youtube.width != NULL}: $youtube.width
+margin-bottom.px: 24
+
+-- end: ftd.column
+
+-- end: youtube

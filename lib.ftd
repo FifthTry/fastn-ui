@@ -3,10 +3,12 @@
 -- import: fastn/processors as pr
 -- import: fastn-cs
 -- import: typo
+-- import: fifthtry.github.io/fastn-ui/typography as tf
+
 
 -- integer $current-slide: 1
 
--- string docs-site-link: /
+-- string docs-site-link: https://fifthtry.github.io/ds-theme-1/
 
 -- string site-name: Fastn
 
@@ -5694,3 +5696,153 @@ overflow-x: auto
 -- end: ftd.column
 
 -- end: code
+
+
+
+
+
+
+
+
+
+
+-- component image:
+optional caption caption:
+optional body body:
+optional string link:
+optional ftd.align alignment: center
+optional ftd.resizing width: 
+optional ftd.resizing height: 
+ftd.image-src src:
+
+-- ftd.column:
+width if {image.width != NULL}: auto
+width: auto
+max-width.fixed.px: 800
+height: auto
+align-content if {image.width == NULL}: center
+
+-- ftd.image:
+src: $image.src
+width: $image.width
+height: $image.height
+max-width.fixed.px: 800
+;;align-content: $image.alignment
+
+-- ftd.text:
+if: {image.caption != NULL}
+text: $image.caption
+color: $inherited.colors.text
+;;width if {image.width != NULL}: $width
+width: fill-container
+role: $inherited.types.label-large
+border-bottom-left-radius.px: 5
+border-bottom-right-radius.px: 5
+background.solid:$inherited.colors.background.step-1
+padding-vertical.px: 8
+padding-horizontal.px: 20
+text-align: center
+
+-- ftd.column:
+if: {image.body != NULL}
+margin-top.px: 20
+
+-- tf.markdown:
+body: $image.body
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: image
+
+
+
+
+
+
+
+
+
+
+-- component h0: 
+caption title:
+optional body body:
+
+-- tf.h0: $h0.title
+
+$h0.body
+
+-- end: h0
+
+
+
+
+
+
+
+
+
+
+-- component h1: 
+caption title:
+optional body body:
+
+-- tf.h1: $h1.title
+
+$h1.body
+
+-- end: h1
+
+
+
+
+
+
+
+
+
+-- component h2: 
+caption title:
+optional body body:
+
+-- tf.h2: $h2.title
+
+$h2.body
+
+-- end: h2
+
+
+
+
+
+
+
+
+-- component h3: 
+caption title:
+optional body body:
+
+-- tf.h3: $h3.title
+
+$h3.body
+
+-- end: h3
+
+
+
+
+
+
+
+
+
+-- component h4: 
+caption title:
+optional body body:
+
+-- tf.h4: $h3.title
+
+$h4.body
+
+-- end: h4

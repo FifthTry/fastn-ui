@@ -50,7 +50,9 @@ icon: /static/header/sub-section-icon.svg
 
 # Use Cases: use-cases/
 
-# Events: events/
+# Events: event/
+
+## Event Details: event/event-details/
 
 # Learn: learn/
 

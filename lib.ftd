@@ -10,7 +10,7 @@
 
 -- string docs-site-link: https://fifthtry.github.io/ds-theme-1/
 
--- string site-name: Fastn
+-- string site-name: fastn
 
 -- optional ftd.image-src site-logo: NULL
 
@@ -167,9 +167,24 @@ color: $inherited.colors.text.dark
 
 -- ftd.column:
 width: fill-container
+max-width.fixed.px: $page.width
+align-self: center
+min-height.fixed.calc if { page.body != NULL}: 100vh
+
+-- ftd.text: 
+if: { page.body != NULL}
+text: $page.body
+role:   $inherited.types.copy-regular
+color: $inherited.colors.text
+margin-top.px: 24
+margin-bottom.px: 24
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
 align-self if {page.width != NULL}: center
 children: $page.wrapper
-min-height.fixed.calc: 100vh
 
 -- end: ftd.column
 
@@ -5563,7 +5578,7 @@ item: $subsections-items.item
 pr.toc-item item:
 
 -- ftd.row:
-width if {ftd.device != "mobile"}: fill-container
+align-self: start
 spacing.fixed.px: 12
 
 -- ftd.row:

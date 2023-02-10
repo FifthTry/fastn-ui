@@ -26,36 +26,36 @@ icon: /static/header/sub-section-icon.svg
 
 - Benefits of Fastn: /
 
-## How to use fastn: /sample-1/
+## How to use fastn: sample-1/
 icon: /-/fifthtry.github.io/fastn-ui/static/header/sub-section-icon.svg
 
-- Front end infrastructure: /build/
-- Component Library: /learn/
+- Front end infrastructure: build/
+- Component Library: learn/
 
-;;- ui: /build/
+;;- ui: build/
 ;;icon: /static/toc.svg
-;;  - Component Library: /events/
-;;    - Component Library: /learn/
-;;    - Component Library: /learn/
-;;    - Component Library: /learn/
-;;    - Component Library: /learn/
-;;  - Front end infrastructure: /build/
-;;    - Component Library: /learn/
-;;  - Front end infrastructure: /build/
-;;  - Front end infrastructure: /build/
+;;  - Component Library: events/
+;;    - Component Library: learn/
+;;    - Component Library: learn/
+;;    - Component Library: learn/
+;;    - Component Library: learn/
+;;  - Front end infrastructure: build/
+;;    - Component Library: learn/
+;;  - Front end infrastructure: build/
+;;  - Front end infrastructure: build/
 
 
-## Features listing page: /sample-1/
+## Features listing page: sample-1/
 icon: /static/header/sub-section-icon.svg
 
-# Use Cases: /use-cases/
+# Use Cases: use-cases/
 
 # Events: events/
 
-# Learn: /learn/
+# Learn: learn/
 
 
-# Build: /build/
+# Build: build/
 
 
-# Authoring: /authoring/
+# Authoring: authoring/

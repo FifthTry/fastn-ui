@@ -19,21 +19,21 @@ download-base-url: https://raw.githubusercontent.com/fifthtry/fastn-ui/main
 
 
 # Why fastn: index.html
-icon: /static/header/why-menu-img.svg
+icon: static/header/why-menu-img.svg
 
 ## Why fastn Child: index.html
-icon: /static/header/sub-section-icon.svg
+icon: static/header/sub-section-icon.svg
 
 - Benefits of Fastn: /
 
 ## How to use fastn: sample-1/
-icon: /-/fifthtry.github.io/fastn-ui/static/header/sub-section-icon.svg
+icon: static/header/sub-section-icon.svg
 
 - Front end infrastructure: build/
 - Component Library: learn/
 
 ;;- ui: build/
-;;icon: /static/toc.svg
+;;icon: static/toc.svg
 ;;  - Component Library: events/
 ;;    - Component Library: learn/
 ;;    - Component Library: learn/
@@ -46,7 +46,7 @@ icon: /-/fifthtry.github.io/fastn-ui/static/header/sub-section-icon.svg
 
 
 ## Features listing page: sample-1/
-icon: /static/header/sub-section-icon.svg
+icon: static/header/sub-section-icon.svg
 
 # Use Cases: use-cases/
 

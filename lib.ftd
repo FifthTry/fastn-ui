@@ -2411,7 +2411,7 @@ boolean align-left: false
 -- ftd.column:
 width.fixed.px if {ftd.device != "mobile"}: 500
 spacing.fixed.px: 70
-padding-horizontal.px if { benefits-info-card.align-left}: 16
+
 
 -- ftd.row:
 min-width.fixed.px if {ftd.device != "mobile"}: 500
@@ -5909,6 +5909,7 @@ $h4.body
 -- component hr:
 
 -- ftd.column:
+if: {ftd.device != "mobile"}
 background.solid: $inherited.colors.border-strong
 width: fill-container
 height.fixed.px: 1

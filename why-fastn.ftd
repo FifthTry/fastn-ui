@@ -123,6 +123,7 @@ Metaverse and other web 3.0 destinations are global.
 -- end: ft.benefits-info-card
 
 -- ft.code-block-system:
+if: {ftd.device != "mobile"}
 lang: ftd
 width: 412
 show-double: false
@@ -156,6 +157,7 @@ Metaverse and other web 3.0 destinations are global.
 
 
 -- ft.code-block-system:
+if: {ftd.device != "mobile"}
 lang: ftd
 width: 412
 show-double: false

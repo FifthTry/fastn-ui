@@ -3,6 +3,7 @@
 -- fastn.package: fifthtry.github.io/fastn-ui
 download-base-url: https://raw.githubusercontent.com/fifthtry/fastn-ui/main
 
+-- fastn.dependency: fifthtry.github.io/bling
 
 -- fastn.dependency: fifthtry.github.io/dark-flame-cs as fastn-cs
 

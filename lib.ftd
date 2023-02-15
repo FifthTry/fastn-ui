@@ -3970,6 +3970,7 @@ margin-bottom.px: 40
 text-align: center
 
 -- end: ftd.column
+
 -- ftd.row:
 if: { !row-container-mobile.switch-to-column }
 width.fixed.calc: 100vw
@@ -3996,9 +3997,6 @@ align-content: center
 -- end: row-container-mobile
 
 
-
-
-
 -- component col-container:
 children col-wrap:
 optional caption title:
@@ -4010,42 +4008,122 @@ optional boolean align-left:  false
 
 -- ftd.column:
 width: fill-container
-max-width.fixed.px if { col-container.width != NULL }: $col-container.width
-align-self if { ftd.device != "mobile"}: center
-padding-vertical.px if { col-container.padding-vertical != NULL && ftd.device != "mobile"}: $col-container.padding-vertical
-padding-horizontal.px if {ftd.device == "mobile"}: 16
-padding-vertical.px: 80
-padding-vertical.px if { col-container.padding-vertical != NULL && ftd.device == "mobile"}: 80
-spacing.fixed.px if { !col-container.align-left  }: 12
 
--- ftd.text: $col-container.title
-if: { col-container.title != NULL }
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-text-align if { ftd.device != "mobile"}: center
-width: fill-container
+-- col-container-desktop: $col-container.title
+if: {ftd.device != "mobile"}
+col-wrap: $col-container.col-wrap
+body: $col-container.body
+padding-vertical: $col-container.padding-vertical
+width: $col-container.width
+spacing: $col-container.spacing
+align-left: $col-container.align-left
 
--- ftd.text: $col-container.body
-if: { col-container.body != NULL }
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-text-align if { ftd.device != "mobile"  }: center
-width: fill-container
-
--- ftd.column:
-width: fill-container
-align-self: center
-max-width.fixed.px if { col-container.width != NULL }: $col-container.width
-children: $col-container.col-wrap
-margin-top.px if { col-container.spacing != NULL }: $col-container.spacing
-
-
--- end: ftd.column
+-- col-container-mobile: $col-container.title
+if: {ftd.device == "mobile"}
+col-wrap: $col-container.col-wrap
+body: $col-container.body
+padding-vertical: $col-container.padding-vertical
+width: $col-container.width
+spacing: $col-container.spacing
+align-left: $col-container.align-left
 
 -- end: ftd.column
 
 -- end: col-container
 
+
+
+-- component col-container-desktop:
+children col-wrap:
+optional caption title:
+optional body body:
+optional integer padding-vertical: 
+optional integer width: 
+optional integer spacing: 
+optional boolean align-left:  false
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px if { col-container-desktop.width != NULL }: $col-container-desktop.width
+align-self: center
+padding-vertical.px if { col-container-desktop.padding-vertical != NULL}: $col-container-desktop.padding-vertical
+padding-vertical.px: 80
+
+
+-- ftd.text: $col-container-desktop.title
+if: { col-container-desktop.title != NULL }
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+text-align: center
+width: fill-container
+
+-- ftd.column:
+width.fixed.px: 615
+align-self: center
+margin-top.px : 15
+
+-- ftd.text: $col-container-desktop.body
+if: { col-container-desktop.body != NULL }
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+text-align: center
+width: fill-container
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+align-self: center
+max-width.fixed.px if { col-container-desktop.width != NULL }: $col-container-desktop.width
+children: $col-container-desktop.col-wrap
+margin-top.px if { col-container-desktop.spacing != NULL }: $col-container-desktop.spacing
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: col-container-desktop
+
+
+-- component col-container-mobile:
+children col-wrap:
+optional caption title:
+optional body body:
+optional integer padding-vertical: 
+optional integer width: 
+optional integer spacing: 
+optional boolean align-left:  false
+
+-- ftd.column:
+width: fill-container
+padding-horizontal.px : 16
+padding-vertical.px: 80
+spacing.fixed.px if { !col-container-mobile.align-left  }: 12
+
+-- ftd.text: $col-container-mobile.title
+if: { col-container-mobile.title != NULL }
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+width: fill-container
+
+-- ftd.text: $col-container-mobile.body
+if: { col-container-mobile.body != NULL }
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+width: fill-container
+
+-- ftd.column:
+width: fill-container
+align-self: center
+max-width.fixed.px if { col-container-mobile.width != NULL }: $col-container-mobile.width
+children: $col-container-mobile.col-wrap
+spacing.fixed.px if { col-container-mobile.spacing != NULL }: $col-container-mobile.spacing
+margin.px if { col-container-mobile.spacing != NULL }: $col-container-mobile.spacing
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: col-container-mobile
 
 
 -- component rectangle-card:

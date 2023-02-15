@@ -69,24 +69,23 @@ align-center: true
 
 -- end: ft.col-container
 
--- why-fastn: How to use Fastn?
-image: $assets.files.static.why-fastn.background2.svg
-align-right: true
-top: 280
-left: 280 
+-- image-with-text: How to use Fastn?
+cta-text: Get Started
+cta-url: /
 
 Fastn is here to serve to your unique requirements with an easy-to-use platform.
 
 -- ft.col-container: Benefits of fastn
 padding-vertical: 160
-spacing: 120
-spacing if {ftd.device == "mobile}: 37
+spacing: 80
+spacing if {ftd.device == "mobile}: 72
 align-left: true
 
 Fastn is here to serve to your unique requirements with an easy-to-use platform. 
 
 -- ft.row-container:
 align-left: true
+switch-to-column: true
 
 -- ft.benefits-info-card: Everyoe is everywhere
 icon: $assets.files.static.why-fastn.group.svg
@@ -171,9 +170,9 @@ zip: github.com/<username_or_orgname>
 
 -- ft.hr:
 
-
 -- ft.row-container:
 align-left: true
+switch-to-column: true
 
 -- ft.benefits-info-card: Everyone is everywhere
 icon: $assets.files.static.why-fastn.group4.svg
@@ -500,7 +499,7 @@ spacing.fixed.px: 42
 padding-bottom.px: 150
 
 -- ftd.column:
-max-width.fixed.px: 1160
+max-width.fixed.px: 943
 width: fill-container
 align-self: center
 spacing.fixed.px: 32
@@ -575,6 +574,7 @@ children: $title-card-desktop.wrapper
 
 
 
+
 -- component title-card-mobile:
 caption title:
 optional body body:
@@ -600,7 +600,7 @@ align-self: center
 role: $inherited.types.heading-large
 color: $inherited.colors.text-strong
 align-self: center
-width: fill-container
+width.fixed.px: 344
 margin-top.px: 24
 text-align: center
 
@@ -637,7 +637,6 @@ width: fill-container
 height: auto
 align-self: center
 
-
 -- ftd.image:
 src: $assets.files.static.why-fastn.right-side.svg
 width: fill-container
@@ -658,3 +657,174 @@ padding-horizontal.px: 12
 -- end: ftd.column
 
 -- end: title-card-mobile
+
+
+
+
+
+
+
+
+
+
+-- component image-with-text:
+ftd.image-src image: $assets.files.static.why-fastn.background2.svg
+caption title: Fastn Events
+body info:
+optional string cta-text:
+optional string cta-url: 
+
+-- ftd.column:
+width: fill-container
+
+-- image-with-text-desktop: $image-with-text.title
+if:  {ftd.device != "mobile"}
+info: $image-with-text.info
+image: $image-with-text.image
+cta-text: $image-with-text.cta-text
+cta-url: $image-with-text.cta-url
+
+-- image-with-text-mobile: $image-with-text.title
+if:  {ftd.device == "mobile"}
+info: $image-with-text.info
+image: $image-with-text.image
+cta-text: $image-with-text.cta-text
+cta-url: $image-with-text.cta-url
+
+-- end: ftd.column
+
+-- end: image-with-text
+
+
+
+
+
+
+
+
+
+
+-- component image-with-text-desktop:
+ftd.image-src image: $assets.files.static.why-fastn.background2.svg
+caption title: How to use Fastn?
+body info:
+optional string cta-text: 
+optional string cta-url: 
+
+-- ftd.column:
+width: fill-container
+background.solid: $inherited.colors.background.step-1
+
+-- ftd.column:
+align-self: end
+align-content: right
+spacing.fixed.px: 16
+width: fill-container
+height.fixed.px: 452
+
+-- ftd.column:
+anchor: parent
+z-index: 1
+top.px: 0
+left.px: 0
+
+-- ftd.image:
+src: $image-with-text-desktop.image
+width:auto
+height:auto
+
+-- end: ftd.column
+
+-- ftd.column:
+width.fixed.percent: 60
+z-index: 1
+
+-- ftd.text: $image-with-text-desktop.title
+role: $inherited.types.heading-hero
+color: $inherited.colors.text
+text-align: center
+z-index: 1
+margin-bottom.px: 24
+
+-- ftd.text:
+text: $image-with-text-desktop.info
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-large
+width.fixed.percent: 80
+margin-bottom.px: 40
+
+-- ft.cta-button: $image-with-text-desktop.cta-text
+if: { image-with-text-desktop.cta-text != NULL }
+role: primary
+link: $image-with-text-desktop.cta-url
+show-arrow: true
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: image-with-text-desktop
+
+
+
+
+
+
+
+
+
+
+-- component image-with-text-mobile:
+ftd.image-src image: $assets.files.static.why-fastn.background2-mobile.svg
+caption title: How to use Fastn?
+body info:
+optional string cta-text:
+optional string cta-url: /
+
+-- ftd.column:
+width: fill-container
+background.solid: $inherited.colors.background.step-1
+padding-horizontal.px: 16
+padding-vertical.px: 52
+
+-- ftd.column:
+spacing.fixed.px: 16
+width: fill-container
+
+-- ftd.text: $image-with-text-mobile.title
+role: $inherited.types.heading-hero
+color: $inherited.colors.text
+
+-- ftd.text:
+text: $image-with-text-mobile.info
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-large
+margin-bottom.px: 16
+z-index: 1
+
+-- ft.cta-button: $image-with-text-mobile.cta-text
+if: { image-with-text-mobile.cta-text != NULL }
+role: primary
+link: $image-with-text-mobile.cta-url
+show-arrow: true
+
+-- ftd.column:
+anchor: parent
+z-index: 1
+right.px: 28
+bottom.px: 0
+
+-- ftd.image:
+src: $assets.files.static.why-fastn.background2-mobile.svg
+width:auto
+height:auto
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: image-with-text-mobile

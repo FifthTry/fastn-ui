@@ -759,8 +759,12 @@ string link:
 boolean medium: false
 boolean show-arrow: false
 optional integer width:
+boolean align-center: false
 
 -- ftd.column:
+align-self if { cta-button.align-center }: center
+margin-top.px if { cta-button.align-center && ftd.device != "mobile"}: 100
+margin-top.px if { cta-button.align-center && ftd.device == "mobile"}: 40
 
 -- ftd.row:
 if: {!cta-button.medium}
@@ -2402,10 +2406,12 @@ margin-top.px: 40
 ftd.image-src icon: $assets.files.static.benefits.benefits-icon-1.svg
 caption title:
 optional string info:
+boolean align-left: false
 
 -- ftd.column:
 width.fixed.px if {ftd.device != "mobile"}: 500
 spacing.fixed.px: 70
+padding-horizontal.px if { benefits-info-card.align-left}: 16
 
 -- ftd.row:
 min-width.fixed.px if {ftd.device != "mobile"}: 500
@@ -2413,24 +2419,26 @@ wrap: true
 
 -- ftd.column:
 width: fill-container
-align-content: center
+align-content if { !benefits-info-card.align-left}: center
+spacing.fixed.px if { benefits-info-card.align-left &&ftd.device != "mobile"}: 16
+spacing.fixed.px if { benefits-info-card.align-left &&ftd.device == "mobile"}: 40
 
 -- ftd.image:
 src: $benefits-info-card.icon
 width: auto
 height: auto
-align-self: center
+align-self if { !benefits-info-card.align-left}: center
 
 -- ftd.text: $benefits-info-card.title
 role: $inherited.types.heading-medium
 color: $inherited.colors.text
-text-align: center
+text-align if { !benefits-info-card.align-left}: center
 
 -- ftd.text:
 text: $benefits-info-card.info
 color: $inherited.colors.text-strong
 role: $inherited.types.copy-regular
-text-align: center
+text-align if { !benefits-info-card.align-left}: center
 
 -- end: ftd.column
 
@@ -3688,6 +3696,7 @@ optional ftd.color code-bg: $inherited.colors.custom.five
 optional body body:
 optional string lang: 
 integer width: $width
+optional boolean show-double: true
 
 -- ftd.column:
 width: fill-container
@@ -3695,7 +3704,7 @@ padding-horizontal.px: 18
 padding-vertical.px: 14
 background.solid: $code-block-system.bgcolor
 border-radius.px: 15
-max-width.fixed.px: $code-block-system.width
+max-width.fixed.px if {ftd.device!= "mobile"}: $code-block-system.width
 align-self: center
 
 -- ftd.column:
@@ -3744,6 +3753,7 @@ white-space: break-spaces
 overflow-x: auto
 
 -- ftd.code:
+if: {code-block-system.show-double}
 ;;if: { $ftd.dark-mode }
 text: $code-block-system.body
 lang: $code-block-system.lang
@@ -3801,6 +3811,7 @@ optional integer index:
 optional integer reset:
 boolean switch-to-column: false
 boolean title-medium: false
+boolean align-left: false
 
 -- ftd.column:
 width: fill-container
@@ -3814,6 +3825,7 @@ padding-vertical: $row-container.padding-vertical
 wrap: $row-container.wrap
 index: $row-container.index
 reset: $row-container.reset
+align-left: $row-container.align-left
 title-medium: $row-container.title-medium
 
 -- row-container-mobile: $row-container.title
@@ -3827,6 +3839,7 @@ index: $row-container.index
 reset: $row-container.reset
 switch-to-column: $row-container.switch-to-column
 title-medium: $row-container.title-medium
+align-left: $row-container.align-left
 
 -- end: ftd.column
 
@@ -3851,6 +3864,7 @@ boolean wrap:
 optional integer index:
 optional integer reset:
 boolean title-medium: 
+boolean align-left: 
 
 -- ftd.column:
 if:{ row-container-desktop.index == row-container-desktop.reset }
@@ -3891,8 +3905,8 @@ width: fill-container
 children: $row-container-desktop.row-wrap
 spacing.fixed.px if { row-container-desktop.spacing != NULL }: $row-container-desktop.spacing
 max-width.fixed.px: $row-container-desktop.width
-align-self: center
-align-content: center
+align-self if { !row-container-desktop.align-left }: center
+align-content if { !row-container-desktop.align-left }: center
 wrap: $row-container-desktop.wrap
 
 -- end: ftd.row
@@ -3921,6 +3935,7 @@ optional integer index:
 optional integer reset:
 boolean switch-to-column: false
 boolean title-medium: 
+boolean align-left:
 
 -- ftd.column:
 width: fill-container
@@ -3938,7 +3953,6 @@ role: $inherited.types.heading-large
 color: $inherited.colors.text-strong
 align-self: center
 margin-bottom.px: 40
-;;padding-horizontal.px: 24
 text-align: center
 
 -- end: ftd.column
@@ -3987,18 +4001,46 @@ align-content: center
 
 -- component col-container:
 children col-wrap:
+optional caption title:
+optional body body:
 optional integer padding-vertical: 
-optional integer width: $width
+optional integer width: 
 optional integer spacing: 
+optional boolean align-left:  false
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px if { col-container.width != NULL }: $col-container.width
+align-self if { ftd.device != "mobile"}: center
+padding-vertical.px if { col-container.padding-vertical != NULL && ftd.device != "mobile"}: $col-container.padding-vertical
+padding-horizontal.px if {ftd.device == "mobile"}: 16
+padding-vertical.px: 80
+padding-vertical.px if { col-container.padding-vertical != NULL && ftd.device == "mobile"}: 80
+spacing.fixed.px if { !col-container.align-left  }: 12
+
+-- ftd.text: $col-container.title
+if: { col-container.title != NULL }
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+text-align if { ftd.device != "mobile"}: center
+width: fill-container
+
+-- ftd.text: $col-container.body
+if: { col-container.body != NULL }
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+text-align if { ftd.device != "mobile"  }: center
+width: fill-container
 
 -- ftd.column:
 width: fill-container
 align-self: center
 max-width.fixed.px if { col-container.width != NULL }: $col-container.width
 children: $col-container.col-wrap
-padding-vertical.px if { col-container.padding-vertical != NULL && ftd.device != "mobile"}: $col-container.padding-vertical
-padding-vertical.px if { col-container.padding-vertical != NULL && ftd.device == "mobile"}: 80
-spacing.fixed.px if { col-container.spacing != NULL }: $col-container.spacing
+margin-top.px if { col-container.spacing != NULL }: $col-container.spacing
+
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -5861,3 +5903,19 @@ optional body body:
 $h4.body
 
 -- end: h4
+
+
+
+-- component hr:
+
+-- ftd.column:
+background.solid: $inherited.colors.border-strong
+width: fill-container
+height.fixed.px: 1
+margin-top.px: 36
+margin-bottom.px: 36
+
+
+-- end: ftd.column
+
+-- end: hr

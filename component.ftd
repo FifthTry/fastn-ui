@@ -11,12 +11,14 @@
 -- ft.page: Components Library
 $show-breadcrum: true
 
--- component-hero: Component Library
+-- ft.excel-promo-card: Component Library
 image: $assets.files.static.component.component-hero.svg
+bgcolor: $inherited.colors.background.step-2
+right: true
 
-At nulla tristique facilisis augue. Lectus diam dignissim
-erat blandit pellentesque egestas nulla.
+-- ft.excel-promo-card.info: 
 
+Fastn is here to serve to your unique requirements with an easy-to-use platform.
 
 -- right-image-component: Button
 icon: $assets.files.static.events.upcoming-section-logo.svg
@@ -34,7 +36,6 @@ image: $assets.files.static.component.left-image.svg
 
 FastN has an expansive ever-growing color library. It places no restriction when it comes to color palettes or color combinations unlike some design systems. Because it has been incrementally built by designers for developers, FastN color libraries provide an array of compatible options for developers to skin & re-skin their creations to their hearts’ content.
 
-
 -- right-image-component: Other Component
 icon: $assets.files.static.component.other-comp.svg
 cta-text: Explore More
@@ -43,12 +44,15 @@ image: $assets.files.static.component.other-img.svg
 
 FastN typographic library comes with named typographic roles. Once a role has been picked the design system specifies the attributes associated with a particular role. Thus with pre-defined value sets for font family, size, line height etc, a designer can focus on specific application of the typographic components, leading to very consistent design, yet highly customizable from a design standpoint
 
-
-
--- create-now: Use it for free and start creating now!
-icon: $assets.files.static.component.figma-icon.svg
+-- ft.excel-promo-card: Use it for free and start creating now!
+image: $assets.files.static.component.figma-icon.svg
+bgcolor: $inherited.colors.background.step-1
 cta-text: Download
 cta-link: /
+cta-role: primary
+left: true
+
+-- ft.excel-promo-card.info: 
 
 Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
 
@@ -59,148 +63,6 @@ Most websites only change colors of background and text when using dark mode, Fa
 
 
 
-
-
-
-
-
-
--- component component-hero:
-caption title:
-body info:
-ftd.image-src image:
-
--- ftd.column:
-width: fill-container
-
--- component-hero-desktop: $component-hero.title
-if: { ftd.device != "mobile" }
-info: $component-hero.info
-image: $component-hero.image
-
--- component-hero-mobile: $component-hero.title
-if: { ftd.device == "mobile" }
-info: $component-hero.info
-image: $component-hero.image
-
--- end: ftd.column
-
--- end: component-hero
-
-
-
-
-
-
-
-
-
-
--- component component-hero-desktop:
-caption title:
-body info:
-ftd.image-src image:
-
--- ftd.column:
-width: fill-container
-margin-top.px: 50
-padding-bottom.px: 100
-
--- ftd.column:
-width: fill-container
-align-self: center
-
--- ftd.row:
-width: fill-container
-
--- ftd.column:
-align-self: start
-padding-top.px: 100
-padding-horizontal.px: 180
-
--- ftd.column:
-spacing.fixed.px: 32
-
--- ftd.text: $component-hero-desktop.title
-role: $inherited.types.heading-hero
-color: $inherited.colors.text
-
--- ftd.text:
-text: $component-hero-desktop.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
-align-self: end
-
--- ftd.image:
-src: $component-hero-desktop.image
-width:auto
-height:auto
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: component-hero-desktop
-
-
-
-
-
-
-
-
-
-
--- component component-hero-mobile:
-caption title:
-body info:
-ftd.image-src image:
-
--- ftd.column:
-width: fill-container
-margin-top.px: 30
-
--- ftd.column:
-width: fill-container
-align-self: center
-padding-horizontal.px: 16
-spacing.fixed.px: 24
-
--- ftd.text: $component-hero-mobile.title
-role: $inherited.types.heading-small
-color: $inherited.colors.text
-
--- ftd.text:
-text: $component-hero-mobile.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-margin-top.px: 32
-
--- ftd.image:
-src: $component-hero-mobile.image
-height.fixed.px: 508 
-width: auto 
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: component-hero-mobile
 
 
 
@@ -531,153 +393,3 @@ width.fixed.px: 343
 -- end: ftd.column
 
 -- end: left-image-component-mobile
-
-
-
-
-
-
-
-
-
-
--- component create-now:
-ftd.image-src icon:
-caption title:
-body info:
-string cta-text:
-string cta-link:
-
--- ftd.column:
-width: fill-container
-
--- create-now-desktop: $create-now.title
-if: { ftd.device != "mobile" }
-icon: $create-now.icon
-info: $create-now.info
-cta-text: $create-now.cta-text
-cta-link: $create-now.cta-link
-
--- create-now-mobile: $create-now.title
-if: { ftd.device == "mobile" }
-icon: $create-now.icon
-info: $create-now.info
-cta-text: $create-now.cta-text
-cta-link: $create-now.cta-link
-
--- end: ftd.column
-
--- end: create-now
-
-
-
-
-
-
-
-
-
-
--- component create-now-desktop:
-ftd.image-src icon:
-caption title:
-body info:
-string cta-text:
-string cta-link:
-
--- ftd.row:
-width: fill-container
-background.solid: $inherited.colors.background.step-1
-padding-horizontal.px: 140
-margin-top.px: 150
-
--- ftd.column:
-padding-right.px: 140
-align-self: center
-
--- ftd.image:
-src: $create-now-desktop.icon
-width: auto
-height: auto
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-padding-vertical.px: 72
-spacing.fixed.px: 24
-
--- ftd.text: $create-now-desktop.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- ftd.text:
-text: $create-now-desktop.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- ft.cta-button: $create-now-desktop.cta-text
-role: primary
-link: $create-now-desktop.cta-link
-show-arrow: true
-
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: create-now-desktop
-
-
-
-
-
-
-
-
-
-
-
--- component create-now-mobile:
-ftd.image-src icon:
-caption title:
-body info:
-string cta-text:
-string cta-link:
-
--- ftd.column:
-width: fill-container
-background.solid: $inherited.colors.background.step-1
-padding-horizontal.px: 16
-padding-vertical.px: 58
-margin-top.px: 150
-
--- ftd.image:
-src: $create-now-mobile.icon
-width.fixed.px: 66
-height.fixed.px: 66
-
--- ftd.column:
-width: fill-container
-padding-vertical.px: 24
-spacing.fixed.px: 44
-
--- ftd.text: $create-now-mobile.title
-role: $inherited.types.heading-small
-color: $inherited.colors.text
-
--- ftd.text:
-text: $create-now-mobile.info
-role: $inherited.types.copy-regular
-color: $inherited.colors.text-strong
-
--- ft.cta-button: $create-now-mobile.cta-text
-role: primary
-link: $create-now-mobile.cta-link
-show-arrow: true
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: create-now-mobile

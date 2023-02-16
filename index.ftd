@@ -249,6 +249,7 @@ link: /
 cta-text: Learn More
 cta-link: /
 cta-role: secondary
+image: $assets.files.static.charts-image.svg
 
 -- ft.excel-promo-card.info:
 
@@ -322,6 +323,7 @@ cta-link: /
 cta-role: primary
 bgcolor: $inherited.colors.background.base
 keep-dark: false
+image: $assets.files.static.charts-image.svg
 
 -- ft.excel-promo-card.info:
 

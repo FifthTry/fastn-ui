@@ -17,6 +17,15 @@
 -- ft.page: Hosting
 $show-breadcrum: true
 
+-- ft.excel-promo-card: How to lorem the ipsum on fastn ?
+image: $assets.files.static.hosting.hosting-hero.svg
+bgcolor: $inherited.colors.background.step-1
+
+-- ft.excel-promo-card.info: 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc , libero et velit interdum, ac aliquet  libero et velit interdum libero et velit interdum odio mattis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc , libero et velit interdum, ac aliquet  libero et velit interdum libero et velit interdum odio mattis.
+
+
 -- hosting-hero: How to lorem the ipsum on fastn ?
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc , libero et velit interdum, ac aliquet  libero et velit interdum libero et velit interdum odio mattis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc , libero et velit interdum, ac aliquet  libero et velit interdum libero et velit interdum odio mattis.

@@ -1129,8 +1129,8 @@ integer width: $width
 children childs:
 boolean center: false
 integer height: 870
+optional boolean learn: false
  
-
 -- ftd.column:
 width: fill-container
 
@@ -1144,6 +1144,7 @@ width: $hero-section.width
 childs: $hero-section.childs
 center: $hero-section.center
 height: $hero-section.height
+learn: $hero-section.learn
 
 -- hero-section-mobile:$hero-section.title
 if: {ftd.device == "mobile"}
@@ -1155,6 +1156,7 @@ width: $hero-section.width
 childs: $hero-section.childs
 center: $hero-section.center
 height: $hero-section.height
+learn: $hero-section.learn
 
 -- end: ftd.column
 
@@ -1179,6 +1181,7 @@ integer width:
 children childs:
 boolean center: false
 integer height:
+optional boolean learn:
 
 -- ftd.column:
 align-self if {hero-section-mobile.center }: center
@@ -1272,8 +1275,8 @@ optional string info:
 integer width: $width
 children childs:
 boolean center: 
-integer height: 
-
+integer height:
+optional boolean learn:
 
 -- ftd.column:
 width: fill-container
@@ -1285,28 +1288,17 @@ min-height.fixed.px: $hero-section-desktop.height
 
 -- ftd.column:
 width: fill-container
-anchor: parent
-right.px: 0
-top.px: 0
-z-index: -1
-
--- ftd.image:
-src: $hero-section-desktop.image
-width: fill-container
-height: auto
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
 max-width.fixed.px: $hero-section-desktop.width
 align-self: center
 align-content if {hero-section-desktop.center}: center
+padding-horizontal.px if { hero-section-desktop.learn }: 140
+padding-vertical.px if { hero-section-desktop.learn }: 100
 
 -- ftd.text: $hero-section-desktop.title
 role: $inherited.types.heading-hero
 color: $inherited.colors.text
 padding-right.px if { !hero-section-desktop.center}: 200
+text-align if { hero-section-desktop.learn }: center
 
 -- ftd.text:
 if: { $hero-section-desktop.info != NULL }
@@ -1316,8 +1308,10 @@ color: $inherited.colors.text
 max-width.fixed.px if { !hero-section-desktop.center}: 520
 max-width.fixed.px: 715
 margin-top.px: 15
+text-align if { hero-section-desktop.learn }: center
 
 -- ftd.column:
+if: {!hero-section-desktop.learn}
 width: fill-container
 margin-top.px: 40
 align-content if {hero-section-desktop.center}: center
@@ -1339,6 +1333,17 @@ link: /
 width: 220
 
 -- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+if: {hero-section-desktop.learn}
+width: fill-container
+align-content: center
+
+-- ftd.image:
+src: $hero-section-desktop.image
+width.fixed.px: 343
 
 -- end: ftd.column
 
@@ -2909,6 +2914,9 @@ children promo-wrap:
 boolean left: false
 boolean right: false
 boolean keep-dark: true
+boolean two-btn: false
+optional string cta-left-text:
+optional string cta-right-text:
 
 
 -- ftd.column:
@@ -2927,6 +2935,9 @@ promo-wrap: $excel-promo-card.promo-wrap
 keep-dark: $excel-promo-card.keep-dark
 left: $excel-promo-card.left
 right: $excel-promo-card.right
+two-btn: $excel-promo-card.two-btn
+cta-left-text: $excel-promo-card.cta-left-text
+cta-right-text: $excel-promo-card.cta-right-text
 
 -- excel-promo-card-mobile: $excel-promo-card.title
 if: { ftd.device == "mobile" }
@@ -2941,6 +2952,9 @@ promo-wrap: $excel-promo-card.promo-wrap
 keep-dark: $excel-promo-card.keep-dark
 left: $excel-promo-card.left
 right: $excel-promo-card.right
+two-btn: $excel-promo-card.two-btn
+cta-left-text: $excel-promo-card.cta-left-text
+cta-right-text: $excel-promo-card.cta-right-text
 
 -- end: ftd.column
 
@@ -2960,7 +2974,9 @@ caption title:
 optional string info:
 optional string cta-text:
 optional string cta-link:
-optional string cta-role: 
+optional string cta-role:
+optional string cta-left-text:
+optional string cta-right-text:
 optional ftd.image-src image:
 optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
@@ -2968,18 +2984,19 @@ children promo-wrap:
 boolean keep-dark: true
 boolean left:
 boolean right:
+boolean two-btn:
 
 -- ftd.column:
 width: fill-container
 background.solid: $excel-promo-card-desktop.bgcolor
 padding-vertical.px: 60
 padding-horizontal.px: 140
-margin-top.px if { excel-promo-card-desktop.left }: 150
+;;margin-top.px if { excel-promo-card-desktop.left }: 150
 
 -- ftd.column:
 width: fill-container
-max-width.fixed.px: $excel-promo-card-desktop.width
-max-width.fixed.px if { excel-promo-card-desktop.left } : 1439
+max-width.fixed.px if {!excel-promo-card-desktop.two-btn } : $excel-promo-card-desktop.width
+max-width.fixed.px if { excel-promo-card-desktop.left }: 1439
 align-self: center
 
 -- ftd.row:
@@ -3006,7 +3023,8 @@ align-self: start
 margin-left.px if { excel-promo-card-desktop.left}: 163
 
 -- ftd.column:
-max-width.fixed.px if { !excel-promo-card-desktop.left}: 600
+max-width.fixed.px if { !excel-promo-card-desktop.left && !excel-promo-card-desktop.two-btn}: 600
+max-width.fixed.px if { excel-promo-card-desktop.two-btn}: 620
 spacing.fixed.px: 16
 padding-top.px if { excel-promo-card-desktop.right}: 250
 padding-left.px if { !excel-promo-card-desktop.right}: 50
@@ -3022,7 +3040,9 @@ text: $excel-promo-card-desktop.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 color if { excel-promo-card-desktop.keep-dark }: $inherited.colors.text-strong.dark
-margin-bottom.px: 16 
+margin-bottom.px: 16
+
+-- ftd.column:
 
 -- cta-button: $excel-promo-card-desktop.cta-text
 if: { excel-promo-card-desktop.cta-text != NULL }
@@ -3030,6 +3050,27 @@ role: $excel-promo-card-desktop.cta-role
 link: $excel-promo-card-desktop.cta-link
 width: 220
 show-arrow: true
+
+-- end: ftd.column
+
+-- ftd.row:
+if: { $excel-promo-card-desktop.two-btn }
+spacing.fixed.px: 24
+
+-- cta-button: $excel-promo-card-desktop.cta-left-text
+if: { $excel-promo-card-desktop.cta-left-text != NULL }
+role: primary
+link: /
+show-arrow: true
+width: 220
+
+-- cta-button: $excel-promo-card-desktop.cta-right-text
+if: { excel-promo-card-desktop.cta-right-text != NULL }
+role: secondary
+link: /
+width: 220
+
+-- end: ftd.row
 
 -- end: ftd.column
 
@@ -3084,6 +3125,9 @@ children promo-wrap:
 boolean keep-dark: true
 boolean left:
 boolean right:
+boolean two-btn:
+optional string cta-left-text:
+optional string cta-right-text:
 
 -- ftd.column:
 width: fill-container
@@ -3119,10 +3163,38 @@ role: $inherited.types.copy-small
 color: $inherited.colors.text-strong
 text-align if { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right}: center
  
+
+-- ftd.column:
+
 -- cta-button: $excel-promo-card-mobile.cta-text
 if: { excel-promo-card-mobile.cta-text != NULL }
 role: $excel-promo-card-mobile.cta-role
 link: $excel-promo-card-mobile.cta-link
+width: 220
+show-arrow: true
+
+-- end: ftd.column
+
+-- ftd.row:
+if: { $excel-promo-card-mobile.two-btn }
+spacing.fixed.px: 33
+margin-top.px: 10
+margin-bottom.px: 40
+
+-- cta-button: $excel-promo-card-mobile.cta-left-text
+if: { $excel-promo-card-mobile.cta-left-text != NULL }
+role: primary
+link: /
+show-arrow: true
+width: 220
+
+-- cta-button: $excel-promo-card-mobile.cta-right-text
+if: { excel-promo-card-mobile.cta-right-text != NULL }
+role: secondary
+link: /
+width: 220
+
+-- end: ftd.row
 
 -- end: ftd.column
 
@@ -6793,6 +6865,7 @@ optional ftd.color stage-bgcolor:
 string cta-text:
 string cta-link:
 body info:
+optional boolean right: false
 
 -- ftd.column:
 width: fill-container
@@ -6805,6 +6878,7 @@ stage-bgcolor: $stages-vertical.stage-bgcolor
 cta-text: $stages-vertical.cta-text
 cta-link: $stages-vertical.cta-link
 info: $stages-vertical.info
+right: $stages-vertical.right
 
 -- stages-vertical-mobile: $stages-vertical.title
 if: { ftd.device == "mobile" }
@@ -6814,6 +6888,8 @@ stage-bgcolor: $stages-vertical.stage-bgcolor
 cta-text: $stages-vertical.cta-text
 cta-link: $stages-vertical.cta-link
 info: $stages-vertical.info
+right: $stages-vertical.right
+
 
 -- end: ftd.column
 
@@ -6836,15 +6912,19 @@ optional ftd.color stage-bgcolor:
 string cta-text:
 string cta-link:
 body info:
+optional boolean right:
 
 -- ftd.row:
 width: fill-container
-align-content: center
 padding-vertical.px: 150
+align-content: center
+padding-top.px if {stages-vertical-desktop.right}: 60
+padding-bottom.px if {stages-vertical-desktop.right}: 200
 
 -- ftd.row:
 
 -- ftd.column:
+if: { !stages-vertical-desktop.right }
 align-content: center
 
 -- ftd.image:
@@ -6887,9 +6967,8 @@ text: $stages-vertical-desktop.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 
--- end: ftd.column
-
 -- ftd.column:
+if: { !stages-vertical-desktop.right }
 padding-vertical.px: 40
 
 -- detail.detail: Lorem Ipsum
@@ -6927,7 +7006,37 @@ padding-horizontal.px: 42
 
 -- end: ftd.column
 
+-- end: ftd.column
+
 -- ftd.column:
+if: { stages-vertical-desktop.right }
+align-content: center
+
+-- ftd.image:
+src: $stages-vertical-desktop.rect
+height: auto
+width: auto
+
+-- ftd.integer: $stages-vertical-desktop.stage
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+anchor: parent
+top.px: 48
+right.px: 54
+
+-- ftd.column:
+border-width.px: 1
+border-color: $inherited.colors.border
+anchor: parent
+top.px: 122
+min-height.fixed.px: 400
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { !stages-vertical-desktop.right }
 padding-vertical.px: 148
 padding-left.px: 25
 
@@ -6961,6 +7070,7 @@ optional ftd.color stage-bgcolor:
 string cta-text:
 string cta-link:
 body info:
+optional boolean right:
 
 -- ftd.column:
 width: fill-container

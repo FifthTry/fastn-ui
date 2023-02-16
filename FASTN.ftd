@@ -10,8 +10,9 @@ download-base-url: https://raw.githubusercontent.com/fifthtry/fastn-ui/main
 
 -- fastn.dependency: fifthtry.github.io/common as common
 
--- fastn.auto-import: fastn
+-- fastn.dependency: fifthtry.github.io/bling
 
+-- fastn.auto-import: fastn
 
 
 

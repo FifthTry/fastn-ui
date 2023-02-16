@@ -43,6 +43,8 @@ image: $assets.files.static.component.other-img.svg
 
 FastN typographic library comes with named typographic roles. Once a role has been picked the design system specifies the attributes associated with a particular role. Thus with pre-defined value sets for font family, size, line height etc, a designer can focus on specific application of the typographic components, leading to very consistent design, yet highly customizable from a design standpoint
 
+
+
 -- create-now: Use it for free and start creating now!
 icon: $assets.files.static.component.figma-icon.svg
 cta-text: Download
@@ -280,16 +282,10 @@ text: $right-image-component-desktop.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 
--- ftd.text: $right-image-component-desktop.cta-text
-role: $inherited.types.button-medium
-color: $inherited.colors.cta-primary.text
-white-space: nowrap
-text-align: center
-border-radius.px: 30
-border-width.px: 1
-background.solid: $inherited.colors.cta-primary.base
-padding-vertical.px: 20
-padding-horizontal.px: 72
+-- ft.cta-button: $right-image-component-desktop.cta-text
+role: primary
+link: $right-image-component-desktop.cta-link
+show-arrow: true
 
 -- end: ftd.column
 
@@ -349,16 +345,11 @@ text: $right-image-component-mobile.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 
--- ftd.text: $right-image-component-mobile.cta-text
-role: $inherited.types.button-medium
-color: $inherited.colors.cta-primary.text
-white-space: nowrap
-text-align: center
-border-radius.px: 30
-border-width.px: 1
-background.solid: $inherited.colors.cta-primary.base
-padding-vertical.px: 20
-padding-horizontal.px: 72
+-- ft.cta-button: $right-image-component-mobile.cta-text
+role: primary
+link: $right-image-component-mobile.cta-link
+show-arrow: true
+
 
 -- end: ftd.column
 
@@ -468,16 +459,11 @@ text: $left-image-component-desktop.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 
--- ftd.text: $left-image-component-desktop.cta-text
-role: $inherited.types.button-medium
-color: $inherited.colors.cta-primary.text
-white-space: nowrap
-text-align: center
-border-radius.px: 30
-border-width.px: 1
-background.solid: $inherited.colors.cta-primary.base
-padding-vertical.px: 20
-padding-horizontal.px: 72
+-- ft.cta-button: $left-image-component-desktop.cta-text
+role: primary
+link: $left-image-component-desktop.cta-link
+show-arrow: true
+
 
 -- end: ftd.column
 
@@ -525,16 +511,10 @@ text: $left-image-component-mobile.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 
--- ftd.text: $left-image-component-mobile.cta-text
-role: $inherited.types.button-medium
-color: $inherited.colors.cta-primary.text
-white-space: nowrap
-text-align: center
-border-radius.px: 30
-border-width.px: 1
-background.solid: $inherited.colors.cta-primary.base
-padding-vertical.px: 20
-padding-horizontal.px: 72
+-- ft.cta-button: $left-image-component-mobile.cta-text
+role: primary
+link: $left-image-component-mobile.cta-link
+show-arrow: true
 
 -- end: ftd.column
 
@@ -636,16 +616,11 @@ text: $create-now-desktop.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 
--- ftd.text: $create-now-desktop.cta-text
-role: $inherited.types.button-medium
-color: $inherited.colors.cta-primary.text
-white-space: nowrap
-text-align: center
-border-radius.px: 30
-border-width.px: 1
-background.solid: $inherited.colors.cta-primary.base
-padding-vertical.px: 20
-padding-horizontal.px: 72
+-- ft.cta-button: $create-now-desktop.cta-text
+role: primary
+link: $create-now-desktop.cta-link
+show-arrow: true
+
 
 -- end: ftd.column
 
@@ -696,16 +671,10 @@ text: $create-now-mobile.info
 role: $inherited.types.copy-regular
 color: $inherited.colors.text-strong
 
--- ftd.text: $create-now-mobile.cta-text
-role: $inherited.types.button-medium
-color: $inherited.colors.cta-primary.text
-white-space: nowrap
-text-align: center
-border-radius.px: 30
-border-width.px: 1
-background.solid: $inherited.colors.cta-primary.base
-padding-vertical.px: 14
-padding-horizontal.px: 49
+-- ft.cta-button: $create-now-mobile.cta-text
+role: primary
+link: $create-now-mobile.cta-link
+show-arrow: true
 
 -- end: ftd.column
 

@@ -2338,16 +2338,18 @@ optional ftd.image-src logo:
 
 -- ftd.column:
 width: fill-container
-background.solid: $inherited.colors.background.step-1
+background.solid: $benefits-card-desktop.bg-color
 align-content: center
 align-self: center
 
+
 -- ftd.column:
 width: fill-container
-max-width.fixed.px: $benefits-card-desktop.width
+max-width.fixed.px if { !benefits-card-desktop.widthfill}: $benefits-card-desktop.width
 align-self: center
 align-content: center
 padding-vertical.px: 80
+spacing.fixed.px: 32
 
 -- ftd.image: 
 if: { benefits-card-desktop.logo != NULL}
@@ -2355,19 +2357,34 @@ src: $benefits-card-desktop.logo
 align-self: center
 width: auto
 height: auto
-
 -- ftd.text: $benefits-card-desktop.title
+if: { benefits-card-desktop.role == NULL}
 role: $inherited.types.heading-large
 color: $inherited.colors.text
+width.fixed.px if { benefits-card-desktop.widthfill}: 943
+
+-- ftd.text: $benefits-card-desktop.title
+if: { benefits-card-desktop.role != NULL}
+role: $inherited.types.heading-hero
+color: $inherited.colors.text
+width.fixed.px if { benefits-card-desktop.widthfill}: 943
+
+-- ftd.text: $benefits-card-desktop.body
+if: { benefits-card-desktop.body != NULL}
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+width.fixed.px if { benefits-card-desktop.widthfill}: 943
+text-align if { benefits-card-desktop.widthfill}: center
 
 -- ftd.row:
 width: fill-container
+width if { benefits-card-desktop.widthfill}: fill-container
 align-content: center
 min-width.fixed.px: 500
 children: $benefits-card-desktop.benefits-wrap
-spacing.fixed.px: 160
+spacing.fixed.px: $benefits-card-desktop.spacing
 wrap: true
-;;margin-top.px: 80
+margin-top.px: 80
 
 -- end: ftd.row
 
@@ -2376,8 +2393,6 @@ wrap: true
 -- end: ftd.column
 
 -- end: benefits-card-desktop
-
-
 
 
 

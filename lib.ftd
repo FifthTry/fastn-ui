@@ -3028,6 +3028,7 @@ width: 220
 -- end: ftd.column
 
 -- ftd.column:
+if: { !excel-promo-card-desktop.left}
 width.fixed.percent: 30
 align-self: end
 
@@ -4082,8 +4083,8 @@ width: fill-container
 children: $row-container-desktop.row-wrap
 spacing.fixed.px if { row-container-desktop.spacing != NULL }: $row-container-desktop.spacing
 max-width.fixed.px: $row-container-desktop.width
-align-self: center
-align-content: center
+align-self if { !row-container-desktop.align-left }: center
+align-content if { !row-container-desktop.align-left }: center
 wrap: $row-container-desktop.wrap
 overflow-y if {row-container-desktop.slides}: auto
 

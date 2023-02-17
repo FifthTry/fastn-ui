@@ -20,7 +20,8 @@
 image: $assets.files.static.learn.learn-hero.svg
 center: true
 height: 485
-width: 1160
+width: 800
+bottom: true
 
 
 -- ft.hero-section.info: At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
@@ -46,6 +47,7 @@ icon: $assets.files.static.events.upcoming-section-logo.svg
 cta-text: Explore More
 cta-link: /
 image: $assets.files.static.component.right-image.svg
+padding-vertical: 105
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
 

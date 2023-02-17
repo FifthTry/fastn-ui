@@ -765,7 +765,7 @@ boolean align-center: false
 
 -- ftd.column:
 align-self if { cta-button.align-center }: center
-margin-top.px if { cta-button.align-center && ftd.device != "mobile"}: 100
+;;margin-top.px if { cta-button.align-center && ftd.device != "mobile"}: 100
 margin-top.px if { cta-button.align-center && ftd.device == "mobile"}: 40
 
 -- ftd.row:
@@ -1285,6 +1285,7 @@ align-content if {hero-section-desktop.center}: center
 role: $inherited.types.heading-hero
 color: $inherited.colors.text
 padding-right.px if { !hero-section-desktop.center}: 200
+text-align if { hero-section-desktop.bottom}: center
 
 -- ftd.text:
 if: { $hero-section-desktop.info != NULL }
@@ -1294,6 +1295,7 @@ color: $inherited.colors.text
 max-width.fixed.px if { !hero-section-desktop.center}: 520
 max-width.fixed.px: 715
 margin-top.px: 15
+text-align if { hero-section-desktop.bottom}: center
 
 -- ftd.column:
 width: fill-container
@@ -1324,6 +1326,7 @@ width: 220
 
 -- ftd.column:
 if: { hero-section-desktop.bottom}
+
 -- ftd.image:
 if: { hero-section-desktop.image != NULL }
 src: $hero-section-desktop.image

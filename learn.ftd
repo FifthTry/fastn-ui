@@ -23,7 +23,6 @@ height: 485
 width: 800
 bottom: true
 
-
 -- ft.hero-section.info: At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
 
 -- end: ft.hero-section
@@ -34,6 +33,7 @@ bgcolor: $inherited.colors.background.step-1
 cta-left-text: Developer
 cta-right-text: Designer
 two-btn: true
+right: true
 
 -- ft.excel-promo-card.info: 
 
@@ -86,6 +86,7 @@ Fastn is powered by a one of a kind design system guiding the overarching framew
 -- ft.row-container:
 spacing: 24
 spacing if {ftd.device == "mobile"}: 32
+switch-to-column if {ftd.device == "mobile"}: true
 
 -- ft.stages-vertical: Download lorem ipsum
 rect: $assets.files.static.hosting.rect-num.svg
@@ -97,7 +98,6 @@ right: true
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.
 
 -- ft.code-block-system:
-if: {ftd.device != "mobile"}
 lang: ftd
 width: 412
 show-double: false
@@ -111,6 +111,7 @@ zip: github.com/<username_or_orgname>
 -- ft.row-container:
 spacing: 24
 spacing if {ftd.device == "mobile"}: 32
+switch-to-column if {ftd.device == "mobile"}: true
 
 -- ft.stages-vertical: Download lorem ipsum
 rect: $assets.files.static.hosting.rect-img2.svg
@@ -122,7 +123,6 @@ right: true
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.
 
 -- ft.code-block-system:
-if: {ftd.device != "mobile"}
 lang: ftd
 width: 412
 show-double: false

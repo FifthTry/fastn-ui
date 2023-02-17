@@ -1137,7 +1137,7 @@ center: $hero-section.center
 height: $hero-section.height
 bottom: $hero-section.bottom
 
--- hero-section-mobile:$hero-section.title
+-- hero-section-mobile: $hero-section.title
 if: {ftd.device == "mobile"}
 image: $hero-section.image
 cta-left-text: $hero-section.cta-left-text
@@ -1180,10 +1180,12 @@ align-self if {hero-section-mobile.center }: center
 align-content if {hero-section-mobile.center}: center
 width: fill-container
 padding-horizontal.px: 16
+margin-top.px if { hero-section-mobile.bottom }: 30
 
 -- ftd.text: $hero-section-mobile.title
 role: $inherited.types.heading-hero
 color: $inherited.colors.text-strong
+text-align if {hero-section-mobile.bottom}: center
 
 -- ftd.text:
 if: { hero-section-mobile.info != NULL }
@@ -1191,6 +1193,7 @@ text: $hero-section-mobile.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text
 margin-top.px: 15
+text-align if {hero-section-mobile.bottom}: center
 
 -- ftd.row:
 spacing.fixed.px: 33
@@ -3020,7 +3023,6 @@ padding-top.px if { excel-promo-card-desktop.right}: 250
 padding-left.px if { !excel-promo-card-desktop.right}: 50
 
 -- ftd.text: $excel-promo-card-desktop.title
-role if { excel-promo-card-desktop.right}: $inherited.types.heading-hero
 role: $inherited.types.heading-large
 color: $inherited.colors.text
 color if { excel-promo-card-desktop.keep-dark }: $inherited.colors.text.dark
@@ -3141,9 +3143,7 @@ width: fill-container
 spacing.fixed.px: 32
 align-content if { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right}: center
 
-
 -- ftd.text: $excel-promo-card-mobile.title
-role if { excel-promo-card-mobile.right}: $inherited.types.heading-medium
 role: $inherited.types.heading-large
 color: $inherited.colors.accent.secondary
 text-align if { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right}: center
@@ -3154,7 +3154,6 @@ role: $inherited.types.copy-small
 color: $inherited.colors.text-strong
 text-align if { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right}: center
  
-
 -- ftd.column:
 
 -- cta-button: $excel-promo-card-mobile.cta-text
@@ -3177,13 +3176,13 @@ if: { $excel-promo-card-mobile.cta-left-text != NULL }
 role: primary
 link: /
 show-arrow: true
-width: 220
+width: 150
 
 -- cta-button: $excel-promo-card-mobile.cta-right-text
 if: { excel-promo-card-mobile.cta-right-text != NULL }
 role: secondary
 link: /
-width: 220
+width: 150
 
 -- end: ftd.row
 
@@ -3220,8 +3219,7 @@ width: fill-container
 -- ftd.image:
 if: { excel-promo-card-mobile.right}
 src: $excel-promo-card-mobile.image
-width.fixed.px: 391
-margin-left.px: -35
+width.fixed.px: 300
 margin-top.px: 32
 
 -- end: ftd.column
@@ -7155,6 +7153,7 @@ padding-horizontal.px: 42
 -- end: ftd.column
 
 -- ftd.column:
+if: { !stages-vertical-mobile.right }
 padding-vertical.px: 32
 
 -- ftd.image:
@@ -7180,10 +7179,20 @@ width: auto
 ftd.image-src icon: $assets.files.static.benefits.benefits-icon-1.svg
 caption title:
 optional body info:
+optional boolean num: false
+optional integer numb:
 
 -- ftd.row:
 width.fixed.px if {ftd.device != "mobile"}: 436
 spacing.fixed.px: 18
+
+-- ftd.integer: $key-features.numb
+if: { key-features.num }
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+anchor: parent
+top.px: 20
+left.px: 40
 
 -- ftd.image:
 src: $key-features.icon

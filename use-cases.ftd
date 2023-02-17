@@ -5,7 +5,7 @@
 -- import: fifthtry.github.io/fastn-ui/events as et
 -- import: fastn-cs
 
--- ft.page: WHY FASTN
+-- ft.page: Use Case
 bg-color: $inherited.colors.background.step-1
 
 
@@ -30,12 +30,12 @@ width: 345
 -- end: ft.row-container
 
 
--- ft.benefits-card: Key features of Fastn
+-- ft.benefits-card: Landing Page
 spacing: 34
 bg-color: $inherited.colors.custom.two
 logo: $assets.files.static.uses.image1.svg
 
-Fastn is here to serve to your unique requirements with an easy-to-use platform.
+ Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
 
 -- ft.cta-button: Features
 role: primary
@@ -77,14 +77,14 @@ width if {ftd.device == "mobile"}: 156
 spacing: 48
 switch-to-column: true
 
--- ft.right-image-component: Button
+-- ft.right-image-component: API & Documentation
 icon: $assets.files.static.events.upcoming-section-logo.svg
 cta-text: Explore More
 cta-link: /
 padding-vertical: 105
 
 
-Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
 
 -- ft.row-container:
 width: 650
@@ -116,12 +116,12 @@ width if {ftd.device == "mobile"}: 156
 
 -- end: ft.row-container
 
--- ft.benefits-card: Key features of Fastn
+-- ft.benefits-card: Blog Page
 spacing: 34
 bg-color: $inherited.colors.custom.two
 logo: $assets.files.static.uses.image1.svg
 
-Fastn is here to serve to your unique requirements with an easy-to-use platform.
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
 
 -- ft.cta-button: Features
 role: primary
@@ -164,15 +164,13 @@ width if {ftd.device == "mobile"}: 156
 spacing: 48
 switch-to-column: true
 
--- ft.right-image-component: Button
+-- ft.right-image-component: Microsite
 icon: $assets.files.static.events.upcoming-section-logo.svg
 cta-text: Explore More
 cta-link: /
 padding-vertical: 105
 
-
-
-Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
 
 -- ft.row-container:
 width: 650

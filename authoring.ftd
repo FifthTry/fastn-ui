@@ -5,15 +5,16 @@
 -- import: fifthtry.github.io/fastn-ui/events as et
 -- import: fastn-cs
 
--- ft.page: WHY FASTN
+-- ft.page: Authoring
 bg-color: $inherited.colors.background.step-1
 
--- ft.hero-section: Dream. Design. Develop.
+-- ft.hero-section: Fastn helps you create your website.
 height: 485
 center: true
-width: 1160
+width: 1080
+bottom: true
 
--- ft.hero-section.info: Fastn is here to serve to your unique requirements with an easy-to-use platform. At nulla tristique facilisis augue. Lectus diam dignissim.
+-- ft.hero-section.info: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
 
 
 
@@ -21,13 +22,14 @@ width: 1160
 spacing: 48
 switch-to-column: true
 
--- ft.right-image-component: Button
+-- ft.right-image-component: Featured components
 icon: $assets.files.static.events.upcoming-section-logo.svg
 cta-text: Explore More
 cta-link: /
 
 
-Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
+We have designed and developed below components using FTD and FPM package. Use them for writing e-books, blogs, web technical documentation etc.
+
 
 -- ft.row-container:
 width: 650
@@ -59,12 +61,12 @@ width if {ftd.device == "mobile"}: 156
 -- end: ft.row-container
 
 
--- ft.benefits-card: Key features of Fastn
+-- ft.benefits-card: How to use
 logo: $assets.files.static.builder.icon-3.svg
 spacing: 0
 bg-color: $inherited.colors.background.base
 
-Fastn is here to serve to your unique requirements with an easy-to-use platform.
+We have designed and developed below components using FTD and FPM package. Use them for writing e-books, blogs, web technical documentation etc.
 
 -- ft.row-container:
 width: 1160
@@ -73,25 +75,33 @@ spacing: 92
 spacing if {ftd.device == "mobile"}: 40
 switch-to-column: true
 
--- ft.key-features: Lorem ipsum dolor
-icon: $assets.files.static.builder.1.svg
+-- ft.key-features: Install FPM
+icon: $assets.files.static.builder.outline.svg
+num: true
+numb: 01
 
-Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+We have a youtube channel filled with plethora of content about fastn.
 
--- ft.key-features: Lorem ipsum dolor
-icon: $assets.files.static.builder.2.svg
+-- ft.key-features: How to use
+icon: $assets.files.static.builder.outline.svg
+num: true
+numb: 02
 
-Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+We have a youtube channel filled with plethora of content about fastn.
 
--- ft.key-features: Lorem ipsum dolor
-icon: $assets.files.static.builder.3.svg
+-- ft.key-features: How to use
+icon: $assets.files.static.builder.outline.svg
+num: true
+numb: 03
 
-Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+We have a youtube channel filled with plethora of content about fastn.
 
--- ft.key-features: Lorem ipsum dolor
-icon: $assets.files.static.builder.4.svg
+-- ft.key-features: How to use
+icon: $assets.files.static.builder.outline.svg
+num: true
+numb: 04
 
-Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+We have a youtube channel filled with plethora of content about fastn.
 
 -- end: ft.row-container
 

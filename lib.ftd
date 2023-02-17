@@ -6765,7 +6765,7 @@ integer height: 600
 optional integer width:
 
 -- ftd.column:
-;;width: fill-container
+width: fill-container
 
 -- stages-vertical-image-desktop:
 if: { ftd.device != "mobile" }
@@ -6800,8 +6800,9 @@ optional integer width:
 
 -- ftd.column:
 width: fill-container
-max-width.fixed.px: 1400
+max-width.fixed.px: $width
 align-content: center
+align-self: center
 
 -- ftd.column:
 align-content: center
@@ -6813,7 +6814,6 @@ width.fixed.px if {stages-vertical-image-desktop.width != NULL}: $stages-vertica
 height: auto
 align-self: center
 
--- end: ftd.column
 
 -- end: ftd.column
 

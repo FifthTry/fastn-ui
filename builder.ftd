@@ -1,0 +1,101 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fastn
+-- import: fastn/processors as pr
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fifthtry.github.io/fastn-ui/events as et
+-- import: fastn-cs
+
+
+
+-- ft.page: Builder Manual
+bg-color: $inherited.colors.background.step-1
+
+-- ft.hero-section: Builder Manual
+image: $assets.files.static.builder.background.svg
+height: 485
+center: true
+width: 1160
+
+-- ft.hero-section.info: 
+
+At nulla tristique facilisis augue. Lectus diam dignissimerat blandit pellentesque egestas nulla.
+
+-- ft.right-image-component: About Builder Manual
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.builder.rectangle.svg
+padding-vertical: 120
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
+
+-- ft.row-container:
+wrap: true
+spacing: 20
+width: 1160
+switch-to-column: true
+
+-- ft.card: FTD
+image: $assets.files.static.builder.common.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+
+-- ft.card: FTD
+image: $assets.files.static.builder.common.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+
+-- ft.card: FTD
+image: $assets.files.static.builder.common.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+
+-- ft.card: FTD
+image: $assets.files.static.builder.common.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.card: FTD
+image: $assets.files.static.builder.common.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.card: FTD
+image: $assets.files.static.builder.common.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- end: ft.row-container
+
+-- ft.right-image-component: FPM Typography
+icon: $assets.files.static.builder.icon-1.svg
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.builder.rectangle.svg
+padding-vertical: 150
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
+
+
+-- ft.left-image-component: FPM Color
+icon: $assets.files.static.builder.icon-2.svg
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.builder.rectangle.svg
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
+
+
+-- ft.right-image-component: FPM Space
+icon: $assets.files.static.builder.icon-1.svg
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.builder.rectangle.svg
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
+
+-- ft.footer:
+
+-- end: ft.page

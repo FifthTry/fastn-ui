@@ -37,12 +37,13 @@ image: $assets.files.static.component.left-image.svg
 FastN has an expansive ever-growing color library. It places no restriction when it comes to color palettes or color combinations unlike some design systems. Because it has been incrementally built by designers for developers, FastN color libraries provide an array of compatible options for developers to skin & re-skin their creations to their hearts’ content.
 
 -- ft.right-image-component: Other Component
-icon: $assets.files.static.component.other-comp.svg
+icon: $assets.files.static.events.upcoming-section-logo.svg
 cta-text: Explore More
 cta-link: /
-image: $assets.files.static.component.other-img.svg
+image: $assets.files.static.component.right-image.svg
 
 FastN typographic library comes with named typographic roles. Once a role has been picked the design system specifies the attributes associated with a particular role. Thus with pre-defined value sets for font family, size, line height etc, a designer can focus on specific application of the typographic components, leading to very consistent design, yet highly customizable from a design standpoint
+
 
 -- ft.excel-promo-card: Use it for free and start creating now!
 image: $assets.files.static.component.figma-icon.svg

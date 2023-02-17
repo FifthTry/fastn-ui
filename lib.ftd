@@ -2292,6 +2292,7 @@ optional string role:
 ftd.color bg-color: $inherited.colors.background.step-1
 optional ftd.image-src logo:
 
+
 -- ftd.column:
 width: fill-container
 
@@ -2311,6 +2312,11 @@ logo: $benefits-card.logo
 if: { ftd.device == "mobile" }
 width: $benefits-card.width
 benefits-wrap: $benefits-card.benefits-wrap
+body: $benefits-card.body
+spacing: $benefits-card.spacing
+role: $benefits-card.role
+bg-color: $benefits-card.bg-color
+widthfill: $benefits-card.widthfill
 
 -- end: ftd.column
 
@@ -2405,10 +2411,16 @@ margin-top.px: 80
 caption title:
 optional integer width: $width
 children benefits-wrap:
+optional body body:
+integer spacing:
+optional string role:
+ftd.color bg-color: 
+boolean widthfill:
+
 
 -- ftd.column:
 width: fill-container
-background.solid: $inherited.colors.background.step-1
+background.solid: $benefits-card-mobile.bg-color
 align-content: center
 align-self: center
 
@@ -2418,18 +2430,25 @@ align-self: center
 align-content: center
 margin-top.px: 50
 margin-bottom.px: 50
-padding-horizontal.px: 24
+
 
 -- ftd.text: $benefits-card-mobile.title
 role: $inherited.types.heading-large
 color: $inherited.colors.text
+padding-horizontal.px: 24
+
+-- ftd.text: $benefits-card-mobile.body
+if: { benefits-card-mobile.body != NULL}
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+padding-horizontal.px: 24
 
 -- ftd.row:
 width: fill-container
 align-content: center
 children: $benefits-card-mobile.benefits-wrap
-spacing.fixed.px: 48
-padding-horizontal.px: 24
+spacing.fixed.px if {!benefits-card-mobile.widthfill}: 48
+padding-horizontal.px if {!benefits-card-mobile.widthfill}: 24
 wrap: true
 margin-top.px: 40
 
@@ -2857,7 +2876,7 @@ optional string info:
 optional string cta-text:
 optional string cta-link:
 optional string cta-role: 
-optional ftd.image-src image:
+optional ftd.image-src image: $assets.files.static.charts-image.svg
 optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
 children promo-wrap:
@@ -2973,6 +2992,7 @@ align-self: center
 width.fixed.percent: 70
 width.fixed.percent if { excel-promo-card-desktop.left}: 100
 align-self: start
+margin-left.px if { excel-promo-card-desktop.left}: 163
 
 -- ftd.column:
 max-width.fixed.px if { !excel-promo-card-desktop.left && !excel-promo-card-desktop.two-btn}: 600
@@ -3001,6 +3021,7 @@ if: { excel-promo-card-desktop.cta-text != NULL }
 role: $excel-promo-card-desktop.cta-role
 link: $excel-promo-card-desktop.cta-link
 width: 220
+show-arrow: true
 
 -- end: ftd.column
 
@@ -3028,12 +3049,11 @@ width: 220
 -- end: ftd.column
 
 -- ftd.column:
-if: { !excel-promo-card-desktop.left}
+if: { !excel-promo-card-desktop.left }
 width.fixed.percent: 30
 align-self: end
 
 -- ftd.image:
-if: { excel-promo-card-desktop.image != NULL }
 src: $excel-promo-card-desktop.image
 width: auto
 height: auto
@@ -3081,7 +3101,6 @@ boolean two-btn:
 optional string cta-left-text:
 optional string cta-right-text:
 
-
 -- ftd.column:
 width: fill-container
 background.solid: $excel-promo-card-mobile.bgcolor
@@ -3090,13 +3109,13 @@ padding-vertical.px: 26
 
 -- ftd.column:
 width: fill-container
-align-self: center
+align-self if {!excel-promo-card-mobile.left} : center
 
 -- ftd.row:
 width: fill-container
 
 -- ftd.column:
-align-self: center
+align-self if {!excel-promo-card-mobile.left} : center
 width: fill-container
 
 -- ftd.column:
@@ -3493,6 +3512,7 @@ optional ftd.image-src image:
 integer width: $width
 ftd.color bgcolor: $inherited.colors.custom.two
 children card-wrap:
+
 
 -- ftd.column:
 width: fill-container
@@ -3998,9 +4018,9 @@ padding-vertical: $row-container.padding-vertical
 wrap: $row-container.wrap
 index: $row-container.index
 reset: $row-container.reset
+align-left: $row-container.align-left
 title-medium: $row-container.title-medium
 slides: $row-container.slides
-align-left: $row-container.align-left
 
 -- row-container-mobile: $row-container.title
 if: { ftd.device == "mobile" }
@@ -4015,7 +4035,6 @@ switch-to-column: $row-container.switch-to-column
 title-medium: $row-container.title-medium
 align-left: $row-container.align-left
 slides: $row-container.slides
-
 
 -- end: ftd.column
 
@@ -4042,7 +4061,6 @@ optional integer reset:
 boolean title-medium: 
 boolean align-left: 
 boolean slides: 
-
 
 -- ftd.column:
 if:{ row-container-desktop.index == row-container-desktop.reset }
@@ -4133,7 +4151,6 @@ role: $inherited.types.heading-large
 color: $inherited.colors.text-strong
 align-self: center
 margin-bottom.px: 40
-;;padding-horizontal.px: 24
 text-align: center
 
 -- end: ftd.column
@@ -4151,6 +4168,7 @@ margin-bottom.px: 40
 text-align: center
 
 -- end: ftd.column
+
 -- ftd.row:
 if: { !row-container-mobile.switch-to-column }
 width.fixed.calc: 100vw
@@ -4180,28 +4198,133 @@ align-content: center
 -- end: row-container-mobile
 
 
-
-
-
 -- component col-container:
 children col-wrap:
+optional caption title:
+optional body body:
 optional integer padding-vertical: 
-optional integer width: $width
+optional integer width: 
 optional integer spacing: 
+optional boolean align-left:  false
 
 -- ftd.column:
 width: fill-container
-align-self: center
-max-width.fixed.px if { col-container.width != NULL }: $col-container.width
-children: $col-container.col-wrap
-padding-vertical.px if { col-container.padding-vertical != NULL && ftd.device != "mobile"}: $col-container.padding-vertical
-padding-vertical.px if { col-container.padding-vertical != NULL && ftd.device == "mobile"}: 80
-spacing.fixed.px if { col-container.spacing != NULL }: $col-container.spacing
+
+-- col-container-desktop: $col-container.title
+if: {ftd.device != "mobile"}
+col-wrap: $col-container.col-wrap
+body: $col-container.body
+padding-vertical: $col-container.padding-vertical
+width: $col-container.width
+spacing: $col-container.spacing
+align-left: $col-container.align-left
+
+-- col-container-mobile: $col-container.title
+if: {ftd.device == "mobile"}
+col-wrap: $col-container.col-wrap
+body: $col-container.body
+padding-vertical: $col-container.padding-vertical
+width: $col-container.width
+spacing: $col-container.spacing
+align-left: $col-container.align-left
 
 -- end: ftd.column
 
 -- end: col-container
 
+
+
+-- component col-container-desktop:
+children col-wrap:
+optional caption title:
+optional body body:
+optional integer padding-vertical: 
+optional integer width: 
+optional integer spacing: 
+optional boolean align-left:  false
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px if { col-container-desktop.width != NULL }: $col-container-desktop.width
+align-self: center
+padding-vertical.px if { col-container-desktop.padding-vertical != NULL}: $col-container-desktop.padding-vertical
+padding-vertical.px: 80
+
+
+-- ftd.text: $col-container-desktop.title
+if: { col-container-desktop.title != NULL }
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+text-align: center
+width: fill-container
+
+-- ftd.column:
+width.fixed.px: 615
+align-self: center
+margin-top.px : 15
+
+-- ftd.text: $col-container-desktop.body
+if: { col-container-desktop.body != NULL }
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+text-align: center
+width: fill-container
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+align-self: center
+max-width.fixed.px if { col-container-desktop.width != NULL }: $col-container-desktop.width
+children: $col-container-desktop.col-wrap
+margin-top.px if { col-container-desktop.spacing != NULL }: $col-container-desktop.spacing
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: col-container-desktop
+
+
+-- component col-container-mobile:
+children col-wrap:
+optional caption title:
+optional body body:
+optional integer padding-vertical: 
+optional integer width: 
+optional integer spacing: 
+optional boolean align-left:  false
+
+-- ftd.column:
+width: fill-container
+padding-horizontal.px : 16
+padding-vertical.px: 80
+spacing.fixed.px if { !col-container-mobile.align-left  }: 12
+
+-- ftd.text: $col-container-mobile.title
+if: { col-container-mobile.title != NULL }
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+width: fill-container
+
+-- ftd.text: $col-container-mobile.body
+if: { col-container-mobile.body != NULL }
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+width: fill-container
+
+-- ftd.column:
+width: fill-container
+align-self: center
+max-width.fixed.px if { col-container-mobile.width != NULL }: $col-container-mobile.width
+children: $col-container-mobile.col-wrap
+spacing.fixed.px if { col-container-mobile.spacing != NULL }: $col-container-mobile.spacing
+margin.px if { col-container-mobile.spacing != NULL }: $col-container-mobile.spacing
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: col-container-mobile
 
 
 -- component rectangle-card:
@@ -6189,8 +6312,7 @@ optional ftd.image-src image:
 width: fill-container
 max-width.fixed.px: 1160
 align-self: center
-margin-top.px: 150
-
+padding-bottom.px: 150
 
 -- ftd.column:
 width: fill-container
@@ -6358,7 +6480,8 @@ ftd.image-src image:
 
 -- ftd.row:
 width: fill-container
-margin-top.px: 150
+;;margin-top.px: 150
+padding-bottom.px: 150
 max-width.fixed.px: 1160
 align-self: center
 
@@ -6673,20 +6796,22 @@ height: $stages-vertical-image.height
 -- component stages-vertical-image-desktop:
 ftd.image-src image:
 integer height: 600
-optional integer width: 
+optional integer width:
 
 -- ftd.column:
 width: fill-container
+max-width.fixed.px: 1400
 align-content: center
 
 -- ftd.column:
-;;padding-vertical.px: 150
+align-content: center
 
 -- ftd.image:
 src: $stages-vertical-image-desktop.image
 width: fill-container
 width.fixed.px if {stages-vertical-image-desktop.width != NULL}: $stages-vertical-image-desktop.width
 height: auto
+align-self: center
 
 -- end: ftd.column
 
@@ -6794,7 +6919,7 @@ optional boolean right:
 
 -- ftd.row:
 width: fill-container
-;;padding-vertical.px: 150
+padding-vertical.px: 150
 align-content: center
 padding-top.px if {stages-vertical-desktop.right}: 60
 padding-bottom.px if {stages-vertical-desktop.right}: 200
@@ -7118,4 +7243,3 @@ align-self: center
 -- end: ftd.column
 
 -- end: card
-

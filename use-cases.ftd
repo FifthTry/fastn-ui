@@ -8,6 +8,15 @@
 -- ft.page: Use Cases
 bg-color: $inherited.colors.background.step-1
 
+-- ft.excel-promo-card: Loreum ipsum
+image: $assets.files.static.uses.use-case.svg
+bgcolor: $inherited.colors.background.step-2
+center: true
+right if {ftd.device == "mobile"} : true
+
+-- ft.excel-promo-card.info: 
+
+Fastn provides exhaustive frameworks to set up and  scale your project in minutes. Fastn provides exhaustive frameworks to set up and  scale your project in minutes.
 
 
 -- ft.row-container: Featured Templates 

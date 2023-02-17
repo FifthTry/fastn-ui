@@ -1120,6 +1120,7 @@ integer width: $width
 children childs:
 boolean center: false
 integer height: 870
+boolean bottom: false
  
 
 -- ftd.column:
@@ -1135,6 +1136,7 @@ width: $hero-section.width
 childs: $hero-section.childs
 center: $hero-section.center
 height: $hero-section.height
+bottom: $hero-section.bottom
 
 -- hero-section-mobile:$hero-section.title
 if: {ftd.device == "mobile"}
@@ -1146,6 +1148,7 @@ width: $hero-section.width
 childs: $hero-section.childs
 center: $hero-section.center
 height: $hero-section.height
+bottom: $hero-section.bottom
 
 -- end: ftd.column
 
@@ -1170,6 +1173,7 @@ integer width:
 children childs:
 boolean center: false
 integer height:
+boolean bottom:
 
 -- ftd.column:
 align-self if {hero-section-mobile.center }: center
@@ -1245,7 +1249,7 @@ integer width: $width
 children childs:
 boolean center: 
 integer height: 
-
+boolean bottom:
 
 -- ftd.column:
 width: fill-container
@@ -1256,6 +1260,7 @@ align-content if {hero-section-desktop.center}: center
 min-height.fixed.px: $hero-section-desktop.height
 
 -- ftd.column:
+if: { !hero-section-desktop.bottom }
 width: fill-container
 anchor: parent
 right.px: 0
@@ -1314,6 +1319,16 @@ width: 220
 -- end: ftd.row
 
 -- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { hero-section-desktop.bottom}
+-- ftd.image:
+if: { hero-section-desktop.image != NULL }
+src: $hero-section-desktop.image
+width: fill-container
+height: auto
 
 -- end: ftd.column
 

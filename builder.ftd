@@ -7,18 +7,20 @@
 
 
 
--- ft.page: WHY FASTN
+-- ft.page: Builder Manual
 bg-color: $inherited.colors.background.step-1
 
--- ft.hero-section: Dream. Design. Develop.
+-- ft.hero-section: Builder Manual
 image: $assets.files.static.builder.background.svg
 height: 485
 center: true
 width: 1160
 
--- ft.hero-section.info: Fastn is here to serve to your unique requirements with an easy-to-use platform. At nulla tristique facilisis augue. Lectus diam dignissim.
+-- ft.hero-section.info: 
 
--- ft.right-image-component: Button
+At nulla tristique facilisis augue. Lectus diam dignissimerat blandit pellentesque egestas nulla.
+
+-- ft.right-image-component: About Builder Manual
 cta-text: Explore More
 cta-link: /
 image: $assets.files.static.builder.rectangle.svg
@@ -67,7 +69,7 @@ You can package your components as fastn packages to share with community and ac
 
 -- end: ft.row-container
 
--- ft.right-image-component: Button
+-- ft.right-image-component: FPM Typography
 icon: $assets.files.static.builder.icon-1.svg
 cta-text: Explore More
 cta-link: /
@@ -77,7 +79,7 @@ padding-vertical: 150
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
 
 
--- ft.left-image-component: Button
+-- ft.left-image-component: FPM Color
 icon: $assets.files.static.builder.icon-2.svg
 cta-text: Explore More
 cta-link: /
@@ -86,7 +88,7 @@ image: $assets.files.static.builder.rectangle.svg
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
 
 
--- ft.right-image-component: Button
+-- ft.right-image-component: FPM Space
 icon: $assets.files.static.builder.icon-1.svg
 cta-text: Explore More
 cta-link: /

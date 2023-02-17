@@ -1298,7 +1298,7 @@ color: $inherited.colors.text
 max-width.fixed.px if { !hero-section-desktop.center}: 520
 max-width.fixed.px: 715
 margin-top.px: 15
-text-align if { hero-section-desktop.bottom}: center
+text-align if { hero-section-desktop.bottom || hero-section-desktop.center}: center
 
 -- ftd.column:
 width: fill-container
@@ -6823,14 +6823,12 @@ max-width.fixed.px: $width
 align-content: center
 align-self: center
 
-
 -- ftd.image:
 src: $stages-vertical-image-desktop.image
 width: fill-container
 width.fixed.px if {stages-vertical-image-desktop.width != NULL}: $stages-vertical-image-desktop.width
 height: auto
 align-self: center
-
 
 -- end: ftd.column
 

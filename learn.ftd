@@ -33,7 +33,6 @@ bgcolor: $inherited.colors.background.step-1
 cta-left-text: Developer
 cta-right-text: Designer
 two-btn: true
-right: true
 
 -- ft.excel-promo-card.info: 
 

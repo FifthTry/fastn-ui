@@ -104,6 +104,7 @@ icon: $assets.files.static.builder.icon-1.svg
 cta-text: Explore More
 cta-link: /
 image: $assets.files.static.builder.rectangle.svg
+padding-vertical: 105
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
 

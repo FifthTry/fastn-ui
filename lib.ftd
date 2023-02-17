@@ -1120,7 +1120,6 @@ integer width: $width
 children childs:
 boolean center: false
 integer height: 870
- 
 
 -- ftd.column:
 width: fill-container
@@ -6267,6 +6266,7 @@ body info:
 string cta-text:
 string cta-link:
 optional ftd.image-src image:
+optional integer padding-vertical:
 
 -- ftd.column:
 width: fill-container
@@ -6278,6 +6278,7 @@ info: $right-image-component.info
 cta-text: $right-image-component.cta-text
 cta-link: $right-image-component.cta-link
 image: $right-image-component.image
+padding-vertical: $right-image-component.padding-vertical
 
 -- right-image-component-mobile: $right-image-component.title
 if: { ftd.device == "mobile" }
@@ -6307,12 +6308,14 @@ body info:
 string cta-text:
 string cta-link:
 optional ftd.image-src image:
+integer padding-vertical:
 
 -- ftd.row:
 width: fill-container
 max-width.fixed.px: 1160
 align-self: center
 padding-bottom.px: 150
+padding-top.px if {right-image-component-desktop.padding-vertical != NULL}:  $right-image-component-desktop.padding-vertical
 
 -- ftd.column:
 width: fill-container
@@ -6765,7 +6768,6 @@ integer height: 600
 optional integer width:
 
 -- ftd.column:
-width: fill-container
 
 -- stages-vertical-image-desktop:
 if: { ftd.device != "mobile" }
@@ -6804,8 +6806,6 @@ max-width.fixed.px: $width
 align-content: center
 align-self: center
 
--- ftd.column:
-align-content: center
 
 -- ftd.image:
 src: $stages-vertical-image-desktop.image

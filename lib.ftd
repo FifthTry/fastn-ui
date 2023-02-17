@@ -6642,7 +6642,7 @@ integer height: 600
 optional integer width:
 
 -- ftd.column:
-;;width: fill-container
+width: fill-container
 
 -- stages-vertical-image-desktop:
 if: { ftd.device != "mobile" }
@@ -6677,10 +6677,11 @@ optional integer width:
 
 -- ftd.column:
 width: fill-container
+max-width.fixed.px: $width
 align-content: center
+align-self: center
 
--- ftd.column:
-;;padding-vertical.px: 150
+
 
 -- ftd.image:
 src: $stages-vertical-image-desktop.image
@@ -6688,7 +6689,6 @@ width: fill-container
 width.fixed.px if {stages-vertical-image-desktop.width != NULL}: $stages-vertical-image-desktop.width
 height: auto
 
--- end: ftd.column
 
 -- end: ftd.column
 

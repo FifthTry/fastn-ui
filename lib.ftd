@@ -2907,6 +2907,7 @@ boolean keep-dark: true
 boolean two-btn: false
 optional string cta-left-text:
 optional string cta-right-text:
+boolean center:
 
 
 -- ftd.column:
@@ -2925,6 +2926,7 @@ promo-wrap: $excel-promo-card.promo-wrap
 keep-dark: $excel-promo-card.keep-dark
 left: $excel-promo-card.left
 right: $excel-promo-card.right
+center: $excel-promo-card.center
 two-btn: $excel-promo-card.two-btn
 cta-left-text: $excel-promo-card.cta-left-text
 cta-right-text: $excel-promo-card.cta-right-text
@@ -2976,6 +2978,7 @@ children promo-wrap:
 boolean keep-dark: true
 boolean left:
 boolean right:
+boolean center:
 boolean two-btn:
 
 
@@ -3020,6 +3023,7 @@ max-width.fixed.px if { !excel-promo-card-desktop.left && !excel-promo-card-desk
 max-width.fixed.px if { excel-promo-card-desktop.two-btn}: 620
 spacing.fixed.px: 16
 padding-top.px if { excel-promo-card-desktop.right}: 250
+padding-top.px if { excel-promo-card-desktop.center}: 100
 padding-left.px if { !excel-promo-card-desktop.right}: 50
 
 -- ftd.text: $excel-promo-card-desktop.title

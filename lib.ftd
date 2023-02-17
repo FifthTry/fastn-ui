@@ -1024,6 +1024,7 @@ spacing.fixed.px: 60
 -- ftd.column:
 width.fixed.px: 284
 align-self: start
+z-index: 1
 
 -- ftd.column:
 background.solid if { loop-section-card.mouse-in }: $inherited.colors.custom.four.dark
@@ -1094,6 +1095,7 @@ if: { loop-section-card.show-sub-menu }
 align-content: center
 margin-left.px: 38
 margin-top.px: 40
+z-index: 9999999
 
 -- toc-items: 
 if: { !ftd.is_empty(loop-section-card.toc) }
@@ -6797,7 +6799,7 @@ color: $inherited.colors.text-strong
 ftd.image-src image: $assets.files.static.hosting.stage-hero.svg
 integer height: 600
 optional integer width:
-string link:
+optional string link:
 
 -- ftd.column:
 

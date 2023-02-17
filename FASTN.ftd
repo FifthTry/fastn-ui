@@ -30,8 +30,8 @@ icon: static/header/sub-section-icon.svg
 ## How to use fastn: 
 icon: static/header/sub-section-icon.svg
 
-- Front end infrastructure: build/
-- Component Library: learn/
+- Hosting: hosting/
+- Component Library: component/
 
 ;;- ui: build/
 ;;icon: static/toc.svg

@@ -40,21 +40,25 @@ wrap: true
 image: $assets.files.static.builder.theme.svg
 width: 304
 width if {ftd.device == "mobile"}: 156
+link: authoring/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.builder.theme-2.svg
 width: 304
 width if {ftd.device == "mobile"}: 156
+link: authoring/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.builder.theme-3.svg
 width: 304
 width if {ftd.device == "mobile"}: 156
+link: authoring/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.builder.theme-3.svg
 width: 304
 width if {ftd.device == "mobile"}: 156
+link: authoring/
 
 -- end: ft.row-container
 

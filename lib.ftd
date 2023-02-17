@@ -833,6 +833,15 @@ align-self: center
 
 -- end: cta-button
 
+
+
+
+
+
+
+
+
+
 -- component menu-links:
 caption title:
 string link:
@@ -919,7 +928,6 @@ border-bottom-right-radius.px: 12
 width: fill-container
 spacing.fixed.px: 60
 z-index: 111
-
 
 -- ftd.column:
 width.fixed.px: 240
@@ -6783,6 +6791,7 @@ color: $inherited.colors.text-strong
 ftd.image-src image: $assets.files.static.hosting.stage-hero.svg
 integer height: 600
 optional integer width:
+string link:
 
 -- ftd.column:
 
@@ -6791,6 +6800,7 @@ if: { ftd.device != "mobile" }
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
 height: $stages-vertical-image.height
+link: $stages-vertical-image.link
 
 
 -- stages-vertical-image-mobile:
@@ -6798,6 +6808,7 @@ if: { ftd.device == "mobile" }
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
 height: $stages-vertical-image.height
+link: $stages-vertical-image.link
 
 -- end: ftd.column
 
@@ -6816,6 +6827,7 @@ height: $stages-vertical-image.height
 ftd.image-src image:
 integer height: 600
 optional integer width:
+string link:
 
 -- ftd.column:
 width: fill-container
@@ -6829,6 +6841,7 @@ width: fill-container
 width.fixed.px if {stages-vertical-image-desktop.width != NULL}: $stages-vertical-image-desktop.width
 height: auto
 align-self: center
+link: $stages-vertical-image-desktop.link
 
 -- end: ftd.column
 
@@ -6847,6 +6860,7 @@ align-self: center
 ftd.image-src image:
 integer height: 
 optional integer width:
+string link:
 
 -- ftd.column:
 ;;width: fill-container
@@ -6859,6 +6873,7 @@ padding-vertical.px: 70
 src: $stages-vertical-image-mobile.image
 width: fill-container
 height.fixed.px: 204
+link: $stages-vertical-image-mobile.link
 
 -- end: ftd.column
 

@@ -5,7 +5,7 @@
 -- import: typo
 -- import: fifthtry.github.io/fastn-ui/typography as tf
 -- import: fifthtry.github.io/bling/detail as detail
-
+-- import: fifthtry.github.io/fastn-ui/header-data as toc
 
 
 -- integer $current-slide: 1
@@ -229,7 +229,7 @@ width: fill-container
 if: {ftd.device != "mobile"}
 logo: $header-fastn.logo
 sitename: $header-fastn.sitename
-sections: $header-fastn.sections
+sections: $toc.sections
 sub-sections: $header-fastn.sub-sections
 current-section: $header-fastn.current-section
 current-subsection: $header-fastn.current-subsection
@@ -661,7 +661,7 @@ $on-click$: $ftd.toggle($a= $header-fastn-mobile.show-mobile-menu)
 optional caption title:
 ftd.image-src logo: 
 optional string sitename:
-pr.toc-item list sections: 
+$toc.header-item list sections: 
 pr.toc-item list sub-sections: 
 optional pr.toc-item current-section: 
 optional pr.toc-item current-subsection: 
@@ -843,7 +843,7 @@ boolean $mouse-in: false
 boolean $show-menu: false
 integer width: 
 optional integer idx:
-pr.toc-item list sub-sections: 
+$toc.header-item list sub-sections: 
 ;;optional pr.toc-item current-section: 
 ;;optional pr.toc-item current-subsection: 
 ;;optional pr.toc-item current-page: 
@@ -972,6 +972,7 @@ toc: $obj.children
 ;;current-page: $menu-links.current-page
 parent-id: menu-items
 icon: $obj.font-icon
+is-heading: $obj.is-heading
 
 -- end: ftd.column
 
@@ -1000,12 +1001,13 @@ boolean $mouse-in: false
 ;;optional pr.toc-item current-section: 
 ;;optional pr.toc-item current-subsection: 
 ;;optional pr.toc-item current-page: 
-pr.toc-item list toc:
+$toc.header-item list toc:
 boolean is-active: false
 string link:
 optional ftd.image-src icon:
 boolean $show-sub-menu: false
 string parent-id: 
+boolean is-heading: false
 
 -- ftd.column: 
 width: fill-container
@@ -1091,6 +1093,7 @@ margin-top.px: 40
 -- toc-items: 
 if: { !ftd.is_empty(loop-section-card.toc) }
 toc: $loop-section-card.toc
+is-heading: $loop-section-card.is-heading
  
 -- end: ftd.column
 
@@ -5559,9 +5562,14 @@ background.solid: #111111
 
 
 -- component toc-items:
-pr.toc-item list toc:
+$toc.header-item list toc:
+boolean is-heading: false
+
+-- ftd.column:
+width: fill-container
 
 -- ftd.row:
+if: { !toc-items.is-heading }
 width: fill-container
 wrap: true
 spacing: space-between
@@ -5573,29 +5581,50 @@ link: $obj.url
 
 -- end: ftd.row
 
+-- ftd.column:
+if: { toc-items.is-heading }
+width: fill-container
+align-self: start
+
+-- toc-items-loop: $obj.title
+if: { !ftd.is_empty(toc-items.toc) }
+$loop$: $toc-items.toc as $obj
+link: $obj.url
+
+$obj.body
+
+-- end: ftd.column
+
+-- end: ftd.column
+
 -- end: toc-items
 
 
 
 -- component toc-items-loop:
-caption title: 
+optional caption title: 
 string link:
+boolean is-heading: false
+optional body body: 
 
 -- ftd.column:
-width.fixed.px: 295
+width.fixed.px if { !toc-items-loop.is-heading}: 295
 spacing.fixed.px: 12
 margin-bottom.px: 28
 
 -- ftd.text: $toc-items-loop.title
+if: { toc-items-loop.title != NULL }
 role: $inherited.types.copy-large
-color: $inherited.colors.text.dark
+color: $inherited.colors.text
 link: $toc-items-loop.link
 
 -- ftd.text: 
+if: { toc-items-loop.body != NULL}
 role: $inherited.types.fine-print
-color: $inherited.colors.text-strong.dark
+color: $inherited.colors.text-strong
 
-Lorem ipsum dolor sit amet, consectetur elit.
+$toc-items-loop.body
+
 
 -- end: ftd.column
 

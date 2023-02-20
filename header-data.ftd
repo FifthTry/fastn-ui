@@ -1,0 +1,145 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+
+
+
+-- record header-item:
+optional caption title: 
+optional string url:
+optional body body: 
+optional string document: 
+optional ftd.image-src font-icon: 
+optional ftd.image-src img-src: 
+optional boolean is-active: true
+optional boolean is-disabled: false
+optional boolean is-heading: false
+optional boolean is-open: false
+optional integer number: 
+optional string path: 
+header-item list children: 
+
+
+
+-- header-item list sections: 
+
+-- header-item: Why fastn
+url: why-fastn/
+font-icon: $assets.files.static.header.why-menu-img.svg
+is-active: true
+
+-- header-item.children:
+
+-- header-item: 1st Child
+url: why-fastn/
+font-icon: $assets.files.static.header.sub-section-icon.svg
+is-active: false
+is-heading: true
+
+-- header-item.children:
+
+-- header-item: Benefits of fastn
+
+-- end: header-item
+
+-- header-item: 
+
+Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id molestie mi commodo. Sit curabitur nulla sit vel enim hac pulvinar in ultricies sit urna.
+
+-- end: header-item
+
+-- end: header-item.children
+
+
+
+-- end: header-item.children
+
+-- header-item: Use Cases
+url: use-cases/
+font-icon: $assets.files.static.header.why-menu-img.svg
+is-active: false
+
+-- end: sections
+
+
+
+
+-- dummy-list:
+sections: $sections
+
+
+
+
+
+
+-- component dummy-list:
+header-item list sections: 
+
+-- ftd.column:
+
+-- dummy-loop: $obj.title
+$loop$: $dummy-list.sections as $obj
+children: $obj.children 
+
+-- end: ftd.column
+
+-- end: dummy-list
+
+
+
+
+
+-- component dummy-loop:
+caption title:
+optional string url:
+boolean is-active: false
+optional string description: 
+optional string document: 
+optional ftd.image-src font-icon: 
+optional ftd.image-src img-src: 
+optional boolean is-active: true
+optional boolean is-disabled: false
+optional boolean is-heading: false
+optional boolean is-open: false
+optional integer number: 
+optional string path: 
+header-item list children:
+
+-- ftd.column:
+
+-- ftd.text: $dummy-loop.title
+link: $dummy-loop.url
+color: $inherited.colors.text
+
+-- dummy-children: $obj.title
+$loop$: $dummy-loop.children as $obj
+url: $obj.url
+is-active: $obj.is-active
+children: $obj.children
+
+-- end: ftd.column
+
+-- end: dummy-loop
+
+
+
+-- component dummy-children:
+caption title:
+optional string url:
+optional boolean is-active: false
+header-item list children:
+
+-- ftd.column:
+
+
+-- ftd.text: $dummy-children.title
+link: $dummy-children.url
+color: $inherited.colors.text
+
+
+-- dummy-children: $obj.title
+$loop$: $dummy-children.children as $obj
+url: $obj.url
+is-active: $obj.is-active
+
+-- end: ftd.column
+
+-- end: dummy-children

@@ -782,6 +782,7 @@ align-content: center
 ;;spacing: space-around
 
 -- ftd.text: $cta-button.title
+if: { $cta-button.title != NULL}
 role: $inherited.types.button-medium
 color if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.text
 color if { cta-button.role == "primary" }: $inherited.colors.cta-primary.text
@@ -832,15 +833,6 @@ align-self: center
 -- end: ftd.column
 
 -- end: cta-button
-
-
-
-
-
-
-
-
-
 
 -- component menu-links:
 caption title:
@@ -928,6 +920,7 @@ border-bottom-right-radius.px: 12
 width: fill-container
 spacing.fixed.px: 60
 z-index: 111
+
 
 -- ftd.column:
 width.fixed.px: 240
@@ -1024,7 +1017,6 @@ spacing.fixed.px: 60
 -- ftd.column:
 width.fixed.px: 284
 align-self: start
-z-index: 1
 
 -- ftd.column:
 background.solid if { loop-section-card.mouse-in }: $inherited.colors.custom.four.dark
@@ -1095,7 +1087,6 @@ if: { loop-section-card.show-sub-menu }
 align-content: center
 margin-left.px: 38
 margin-top.px: 40
-z-index: 9999999
 
 -- toc-items: 
 if: { !ftd.is_empty(loop-section-card.toc) }
@@ -1131,6 +1122,7 @@ children childs:
 boolean center: false
 integer height: 870
 boolean bottom: false
+optional boolean small-img: false
 
 -- ftd.column:
 width: fill-container
@@ -1146,6 +1138,7 @@ childs: $hero-section.childs
 center: $hero-section.center
 height: $hero-section.height
 bottom: $hero-section.bottom
+small-img: $hero-section.small-img
 
 -- hero-section-mobile: $hero-section.title
 if: {ftd.device == "mobile"}
@@ -1158,7 +1151,7 @@ childs: $hero-section.childs
 center: $hero-section.center
 height: $hero-section.height
 bottom: $hero-section.bottom
-
+small-img: $hero-section.small-img
 
 -- end: ftd.column
 
@@ -1184,6 +1177,7 @@ children childs:
 boolean center: false
 integer height:
 boolean bottom:
+optional boolean small-img:
 
 -- ftd.column:
 align-self if {hero-section-mobile.center }: center
@@ -1263,6 +1257,7 @@ children childs:
 boolean center: 
 integer height: 
 boolean bottom:
+optional boolean small-img:
 
 -- ftd.column:
 width: fill-container
@@ -1273,7 +1268,23 @@ align-content if {hero-section-desktop.center}: center
 min-height.fixed.px: $hero-section-desktop.height
 
 -- ftd.column:
-if: { !hero-section-desktop.bottom }
+if: { hero-section-desktop.small-img }
+width.fixed.percent: 48
+anchor: parent
+left.px: 300
+top.px: 120
+z-index: -1
+
+-- ftd.image:
+if: { hero-section-desktop.image != NULL}
+src: $hero-section-desktop.image
+width: fill-container
+height: auto
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { !hero-section-desktop.bottom && !hero-section-desktop.small-img }
 width: fill-container
 anchor: parent
 right.px: 0
@@ -1298,7 +1309,7 @@ align-content if {hero-section-desktop.center}: center
 role: $inherited.types.heading-hero
 color: $inherited.colors.text
 padding-right.px if { !hero-section-desktop.center}: 200
-text-align if { hero-section-desktop.bottom}: center
+text-align if { hero-section-desktop.bottom || hero-section-desktop.center}: center
 
 -- ftd.text:
 if: { $hero-section-desktop.info != NULL }
@@ -2560,6 +2571,10 @@ optional string cta-text:
 optional string cta-link:
 integer width: $width
 children trending-wrap:
+optional boolean no-img: false
+optional boolean img:
+optional ftd.color bgcolor: $inherited.colors.background.step-2
+optional ftd.image image:
 
 -- ftd.column:
 width: fill-container
@@ -2571,6 +2586,10 @@ cta-text: $trending-templates.cta-text
 cta-link: $trending-templates.cta-link
 width: $trending-templates.width
 trending-wrap: $trending-templates.trending-wrap
+no-img: $trending-templates.no-img
+img: $trending-templates.img
+bgcolor: $trending-templates.bgcolor
+image: $trending-templates.image
 
 -- trending-templates-mobile: $trending-templates.title
 if: { ftd.device == "mobile" }
@@ -2579,6 +2598,10 @@ cta-text: $trending-templates.cta-text
 cta-link: $trending-templates.cta-link
 width: $trending-templates.width
 trending-wrap: $trending-templates.trending-wrap
+no-img: $trending-templates.no-img
+img: $trending-templates.img
+bgcolor: $trending-templates.bgcolor
+image: $trending-templates.image
 
 -- end: ftd.column
 
@@ -2600,11 +2623,16 @@ optional string cta-text:
 optional string cta-link:
 integer width: $width
 children trending-wrap:
+optional boolean no-img:
+optional boolean img:
+optional ftd.color bgcolor:
+optional ftd.image image:
 
 -- ftd.column:
 width: fill-container
-padding-top.px: 150
-padding-bottom.px: 240
+padding-top.px if {!trending-templates-desktop.no-img}: 150
+padding-bottom.px if {!trending-templates-desktop.no-img}: 240
+background.solid: $trending-templates-desktop.bgcolor
 
 -- ftd.column:
 width: fill-container
@@ -2613,6 +2641,7 @@ align-content: center
 align-self: center
 
 -- ftd.image:
+if: {!trending-templates-desktop.no-img}
 src: $assets.files.static.templates.hanging-icon-1.svg
 width: auto
 height: auto
@@ -2621,6 +2650,7 @@ top.px: 0
 left.px: 0
 
 -- ftd.image:
+if: {!trending-templates-desktop.no-img}
 src: $assets.files.static.templates.hanging-icon-2.svg
 width: auto
 height: auto
@@ -2629,6 +2659,7 @@ top.px: 10
 right.px: 0
 
 -- ftd.image:
+if: {!trending-templates-desktop.no-img}
 src: $assets.files.static.templates.hanging-icon-3.svg
 width: auto
 height: auto
@@ -2637,6 +2668,7 @@ top.px: 500
 right.px: -100
 
 -- ftd.image:
+if: {!trending-templates-desktop.no-img}
 src: $assets.files.static.templates.hanging-icon-4.svg
 width: auto
 height: auto
@@ -2646,6 +2678,7 @@ left.px: -80
 
 -- ftd.column:
 width.fixed.px: 500
+width.fixed.percent if {trending-templates-desktop.no-img}: 55
 align-self: center
 align-content: center
 spacing.fixed.px: 16
@@ -2703,9 +2736,15 @@ optional string cta-text:
 optional string cta-link:
 integer width: $width
 children trending-wrap:
+optional boolean no-img:
+optional boolean img:
+optional ftd.color bgcolor:
+optional ftd.image image:
 
 -- ftd.column:
 width: fill-container
+width.fixed.percent if {trending-templates-mobile.no-img}: 85
+align-self if {trending-templates-mobile.no-img}: center
 margin-bottom.px: 70
 margin-top.px: 70
 
@@ -2716,6 +2755,7 @@ align-self: center
 spacing.fixed.px: 24
 
 -- ftd.image:
+if: {!trending-templates-mobile.no-img}
 src: $assets.files.static.templates.hanging-icon-1.svg
 width.fixed.px: 42
 height.fixed.px: 42
@@ -2724,6 +2764,7 @@ top.px: -30
 left.px: -10
 
 -- ftd.image:
+if: {!trending-templates-mobile.no-img}
 src: $assets.files.static.templates.hanging-icon-2.svg
 width.fixed.px: 43
 height.fixed.px: 43
@@ -2919,7 +2960,6 @@ optional string cta-left-text:
 optional string cta-right-text:
 optional boolean center: false
 
-
 -- ftd.column:
 width: fill-container
 
@@ -3030,7 +3070,7 @@ align-self: start
 margin-left.px if { excel-promo-card-desktop.left}: 163
 
 -- ftd.column:
-max-width.fixed.px if { !excel-promo-card-desktop.left && !excel-promo-card-desktop.two-btn}: 600
+max-width.fixed.px if { !excel-promo-card-desktop.left || !excel-promo-card-desktop.two-btn }: 600
 max-width.fixed.px if { excel-promo-card-desktop.two-btn}: 620
 spacing.fixed.px: 16
 padding-top.px if { excel-promo-card-desktop.right}: 250
@@ -3157,18 +3197,18 @@ width: fill-container
 -- ftd.column:
 width: fill-container
 spacing.fixed.px: 32
-align-content if { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right}: center
+align-content if { !excel-promo-card-mobile.left || !excel-promo-card-mobile.right }: center
 
 -- ftd.text: $excel-promo-card-mobile.title
 role: $inherited.types.heading-large
 color: $inherited.colors.accent.secondary
-text-align if { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right}: center
+text-align if { !excel-promo-card-mobile.left || !excel-promo-card-mobile.right}: center
 
 -- ftd.text:
 text: $excel-promo-card-mobile.info
 role: $inherited.types.copy-small
 color: $inherited.colors.text-strong
-text-align if { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right}: center
+text-align if { !excel-promo-card-mobile.left || !excel-promo-card-mobile.right}: center
  
 -- ftd.column:
 
@@ -3210,7 +3250,7 @@ width: 150
 z-index: 1
 
 -- ftd.image:
-if: {!excel-promo-card-mobile.left && !excel-promo-card-mobile.right}
+if: {!excel-promo-card-mobile.left || !excel-promo-card-mobile.right }
 src: $assets.files.static.create-fastn.svg
 width.fixed.px: 89
 height.fixed.px: 140
@@ -4026,6 +4066,8 @@ white-space: break-spaces
 -- component row-container:
 optional caption title:
 optional integer spacing:
+optional integer margin-bottom:
+optional integer margin-top:
 children row-wrap:
 integer width: $width
 optional integer padding-vertical: 
@@ -4044,6 +4086,8 @@ width: fill-container
 -- row-container-desktop: $row-container.title
 if: { ftd.device != "mobile" }
 spacing: $row-container.spacing
+margin-bottom: $row-container.margin-bottom
+margin-top: $row-container.margin-top
 row-wrap: $row-container.row-wrap
 width: $row-container.width
 padding-vertical: $row-container.padding-vertical
@@ -4084,6 +4128,8 @@ slides: $row-container.slides
 -- component row-container-desktop:
 optional caption title:
 optional integer spacing:
+optional integer margin-bottom:
+optional integer margin-top:
 children row-wrap:
 integer width:
 optional integer padding-vertical: 
@@ -4095,12 +4141,14 @@ boolean align-left:
 boolean slides: 
 
 -- ftd.column:
-if:{ row-container-desktop.index == row-container-desktop.reset }
+if: { row-container-desktop.index == row-container-desktop.reset }
 align-self: center
 width.fixed.px: $row-container-desktop.width
 max-width.fixed.px: $row-container-desktop.width
 padding-vertical.px if { row-container-desktop.padding-vertical != NULL }: $row-container-desktop.padding-vertical
 align-content: center
+margin-bottom.px if { row-container-desktop.margin-bottom != NULL }: $row-container-desktop.margin-bottom
+margin-top.px if { row-container-desktop.margin-top != NULL }: $row-container-desktop.margin-top
 
 -- ftd.column:
 if: { !row-container-desktop.title-medium }
@@ -4912,9 +4960,13 @@ optional string label:
 optional body body:
 optional ftd.image-src avatar:
 optional ftd.color bgcolor: $inherited.colors.custom.two
+optional ftd.color bg-color: $inherited.colors.custom.four.light
 integer width: $width
 integer margin-top: 0
 integer margin-right: 0
+optional boolean right: false
+optional string cta-text:
+optional string cta-link:
 
 -- ftd.column:
 width: fill-container
@@ -4930,6 +4982,7 @@ right.px if { ftd.device == "mobile"}: 0
 margin-top.px if { ftd.device == "mobile"}: 12
 
 -- ftd.column:
+if: {!testimonial-card.right}
 width: fill-container
 height: fill-container
 border-width.px: 1
@@ -4945,16 +4998,57 @@ left.px if { ftd.device == "mobile"}: -12
 -- end: ftd.column
 
 -- ftd.column:
+if: {testimonial-card.right}
 width: fill-container
-background.solid: $inherited.colors.custom.four.light
+height: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border-strong
+border-radius.px: 30
+z-index: 0
+anchor: parent
+left.px: 10
+bottom.px: -15
+background.solid: $testimonial-card.bgcolor
+left.px if { ftd.device == "mobile"}: -12
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+background.solid: $testimonial-card.bg-color
 padding-vertical.px: 34
 padding-horizontal.px: 26
-padding-bottom.px: 70
+padding-bottom.px if {!testimonial-card.right}: 70
 spacing.fixed.px: 32
 z-index: 11
 border-radius.px: 30
 
+-- ftd.column:
+if: {testimonial-card.right}
+width: fill-container
+align-content: center
+spacing.fixed.px: 26
+
+-- ftd.text: $testimonial-card.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+text-align: center
+
+-- ftd.text:
+if: { testimonial-card.body != NULL }
+text: $testimonial-card.body
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-regular
+
+-- cta-button: $testimonial-card.cta-text
+role: primary
+link: $testimonial-card.cta-link
+show-arrow: true
+
+-- end: ftd.column
+
 -- ftd.row:
+if: {!testimonial-card.right}
 width: fill-container
 spacing.fixed.px: 26
 
@@ -4980,10 +5074,13 @@ width: fill-container
 spacing.fixed.px: 6
 
 -- ftd.text: $testimonial-card.title
+if: {!testimonial-card.right}
 role: $inherited.types.blockquote
 color: $inherited.colors.custom.seven
 
--- ftd.text: $testimonial-card.label
+-- ftd.text:
+if: { testimonial-card.label != NULL } 
+text: $testimonial-card.label
 role: $inherited.types.fine-print
 color: $inherited.colors.custom.seven
 
@@ -6295,11 +6392,14 @@ margin-bottom.px: 36
 -- component right-image-component:
 optional ftd.image-src icon:
 caption title:
-body info:
-string cta-text:
-string cta-link:
+optional body info:
+optional string cta-text:
+optional string cta-link:
 optional ftd.image-src image:
 optional integer padding-vertical:
+optional boolean top: false
+optional boolean bottom: false
+optional boolean btn: false
 
 -- ftd.column:
 width: fill-container
@@ -6312,6 +6412,9 @@ cta-text: $right-image-component.cta-text
 cta-link: $right-image-component.cta-link
 image: $right-image-component.image
 padding-vertical: $right-image-component.padding-vertical
+top: $right-image-component.top
+bottom: $right-image-component.bottom
+btn: $right-image-component.btn
 
 -- right-image-component-mobile: $right-image-component.title
 if: { ftd.device == "mobile" }
@@ -6320,6 +6423,9 @@ info: $right-image-component.info
 cta-text: $right-image-component.cta-text
 cta-link: $right-image-component.cta-link
 image: $right-image-component.image
+top: $right-image-component.top
+bottom: $right-image-component.bottom
+btn: $right-image-component.btn
 
 -- end: ftd.column
 
@@ -6342,6 +6448,9 @@ string cta-text:
 string cta-link:
 optional ftd.image-src image:
 integer padding-vertical:
+optional boolean top:
+optional boolean bottom:
+optional boolean btn:
 
 -- ftd.row:
 width: fill-container
@@ -6355,7 +6464,7 @@ width: fill-container
 spacing.fixed.px: 32
 
 -- ftd.image:
-if: { right-image-component-desktop.icon != NULL }
+if: { right-image-component-desktop.icon != NULL && !right-image-component-desktop.bottom }
 src: $right-image-component-desktop.icon
 width.fixed.px: 70
 height.fixed.px: 67
@@ -6363,11 +6472,16 @@ height.fixed.px: 67
 -- ftd.text: $right-image-component-desktop.title
 role: $inherited.types.heading-large
 color: $inherited.colors.text
+padding-left.px if { right-image-component-desktop.btn }: 70
 
 -- ftd.text:
+if: { right-image-component-desktop.info != NULL }
 text: $right-image-component-desktop.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
+
+-- ftd.column:
+if: { !right-image-component-desktop.bottom && !right-image-component-desktop.btn }
 
 -- cta-button: $right-image-component-desktop.cta-text
 role: primary
@@ -6376,16 +6490,30 @@ show-arrow: true
 
 -- end: ftd.column
 
+-- end: ftd.column
+
 -- ftd.column:
 if: {right-image-component-desktop.image != NULL}
 width: fill-container
-padding-vertical.px: 101
-padding-left.px: 125
+padding-vertical.px if { !right-image-component-desktop.btn }: 30
+padding-left.px if { !right-image-component-desktop.btn }: 90
 
 -- ftd.image:
 src: $right-image-component-desktop.image
 width: auto
 height: auto
+
+-- ftd.column:
+if: {right-image-component-desktop.bottom}
+align-self: end
+margin-top.px: -35
+
+-- ftd.image:
+if: { right-image-component-desktop.icon != NULL }
+src: $right-image-component-desktop.icon
+width.fixed.px: 70
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -6409,10 +6537,13 @@ body info:
 string cta-text:
 string cta-link:
 optional ftd.image-src image:
+optional boolean top:
+optional boolean bottom:
+optional boolean btn:
 
 -- ftd.column:
 width: fill-container
-margin-top.px: 70
+margin-top.px if { !right-image-component-mobile.top } : 70
 padding-horizontal.px: 16
 
 -- ftd.column:
@@ -6420,7 +6551,7 @@ width: fill-container
 spacing.fixed.px: 32
 
 -- ftd.image:
-if: { right-image-component-mobile.icon != NULL }
+if: { right-image-component-mobile.icon != NULL && !right-image-component-mobile.bottom }
 src: $right-image-component-mobile.icon
 width.fixed.px: 70
 height.fixed.px: 67
@@ -6430,15 +6561,20 @@ role: $inherited.types.heading-large
 color: $inherited.colors.text
 
 -- ftd.text:
+if: { right-image-component-mobile.info != NULL }
 text: $right-image-component-mobile.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
+
+-- ftd.column:
+if: { !right-image-component-mobile.bottom && !right-image-component-mobile.btn }
 
 -- cta-button: $right-image-component-mobile.cta-text
 role: primary
 link: $right-image-component-mobile.cta-link
 show-arrow: true
 
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -6450,6 +6586,18 @@ align-self: center
 -- ftd.image:
 src: $right-image-component-mobile.image
 width.fixed.px: 343
+
+-- ftd.column:
+if: {right-image-component-mobile.bottom}
+align-self: end
+margin-top.px: -35
+
+-- ftd.image:
+if: { right-image-component-mobile.icon != NULL }
+src: $right-image-component-mobile.icon
+width.fixed.px: 70
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -6467,12 +6615,13 @@ width.fixed.px: 343
 
 
 -- component left-image-component:
-ftd.image-src icon:
+optional ftd.image-src icon:
 caption title:
 body info:
 string cta-text:
 string cta-link:
 ftd.image-src image:
+optional boolean top:
 
 -- ftd.column:
 width: fill-container
@@ -6484,6 +6633,7 @@ info: $left-image-component.info
 cta-text: $left-image-component.cta-text
 cta-link: $left-image-component.cta-link
 image: $left-image-component.image
+top: $left-image-component.top
 
 -- left-image-component-mobile: $left-image-component.title
 if: { ftd.device == "mobile" }
@@ -6507,24 +6657,25 @@ image: $left-image-component.image
 
 
 -- component left-image-component-desktop:
-ftd.image-src icon:
+optional ftd.image-src icon:
 caption title:
 body info:
 string cta-text:
 string cta-link:
 ftd.image-src image:
+optional boolean top:
 
 -- ftd.row:
 width: fill-container
-;;margin-top.px: 150
+margin-top.px if { left-image-component-desktop.top} : 100
 padding-bottom.px: 150
 max-width.fixed.px: 1160
 align-self: center
 
-
 -- ftd.column:
 width: fill-container
-padding-vertical.px: 101
+padding-vertical.px if { !left-image-component-desktop.top}: 101
+padding-vertical.px if { left-image-component-desktop.top}: 30
 
 -- ftd.image:
 src: $left-image-component-desktop.image
@@ -6539,6 +6690,7 @@ spacing.fixed.px: 24
 padding-left.px: 119
 
 -- ftd.image:
+if: { left-image-component-desktop.icon != NULL}
 src: $left-image-component-desktop.icon
 width.fixed.px: 70
 height.fixed.px: 67
@@ -6574,12 +6726,13 @@ show-arrow: true
 
 
 -- component left-image-component-mobile:
-ftd.image-src icon:
+optional ftd.image-src icon:
 caption title:
 body info:
 string cta-text:
 string cta-link:
 ftd.image-src image:
+optional integer padding-vertical:
 
 -- ftd.column:
 width: fill-container
@@ -6591,6 +6744,7 @@ width: fill-container
 spacing.fixed.px: 32
 
 -- ftd.image:
+if: { left-image-component-mobile.icon != NULL}
 src: $left-image-component-mobile.icon
 width.fixed.px: 70
 height.fixed.px: 67
@@ -6799,7 +6953,6 @@ color: $inherited.colors.text-strong
 ftd.image-src image: $assets.files.static.hosting.stage-hero.svg
 integer height: 600
 optional integer width:
-optional string link:
 
 -- ftd.column:
 
@@ -6808,7 +6961,6 @@ if: { ftd.device != "mobile" }
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
 height: $stages-vertical-image.height
-link: $stages-vertical-image.link
 
 
 -- stages-vertical-image-mobile:
@@ -6816,7 +6968,6 @@ if: { ftd.device == "mobile" }
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
 height: $stages-vertical-image.height
-link: $stages-vertical-image.link
 
 -- end: ftd.column
 
@@ -6835,7 +6986,6 @@ link: $stages-vertical-image.link
 ftd.image-src image:
 integer height: 600
 optional integer width:
-string link:
 
 -- ftd.column:
 width: fill-container
@@ -6849,7 +6999,6 @@ width: fill-container
 width.fixed.px if {stages-vertical-image-desktop.width != NULL}: $stages-vertical-image-desktop.width
 height: auto
 align-self: center
-link: $stages-vertical-image-desktop.link
 
 -- end: ftd.column
 
@@ -6868,7 +7017,6 @@ link: $stages-vertical-image-desktop.link
 ftd.image-src image:
 integer height: 
 optional integer width:
-string link:
 
 -- ftd.column:
 ;;width: fill-container
@@ -6881,7 +7029,6 @@ padding-vertical.px: 70
 src: $stages-vertical-image-mobile.image
 width: fill-container
 height.fixed.px: 204
-link: $stages-vertical-image-mobile.link
 
 -- end: ftd.column
 
@@ -6899,13 +7046,13 @@ link: $stages-vertical-image-mobile.link
 
 
 -- component stages-vertical:
-caption title:
+optional caption title:
 ftd.image-src rect:
 integer stage:
 optional ftd.color stage-bgcolor:
 string cta-text:
 string cta-link:
-body info:
+optional body info:
 optional boolean right: false
 
 -- ftd.column:
@@ -6946,13 +7093,13 @@ right: $stages-vertical.right
 
 
 -- component stages-vertical-desktop:
-caption title:
+optional caption title:
 ftd.image-src rect:
 integer stage:
 optional ftd.color stage-bgcolor:
 string cta-text:
 string cta-link:
-body info:
+optional body info:
 optional boolean right:
 
 -- ftd.row:
@@ -7034,16 +7181,12 @@ image: $assets.files.static.hosting.bullet.svg
 
 -- end: ftd.column
 
--- ftd.text: $stages-vertical-desktop.cta-text
-role: $inherited.types.button-medium
-color: $inherited.colors.cta-primary.text
-white-space: nowrap
-text-align: center
-border-radius.px: 30
-border-width.px: 1
-background.solid: $inherited.colors.cta-primary.base
-padding-vertical.px: 20
-padding-horizontal.px: 42
+
+-- cta-button: $stages-vertical-desktop.cta-text
+if: { stages-vertical-desktop.cta-text != NULL }
+role: primary
+link: $stages-vertical-desktop.cta-link
+show-arrow: true
 
 -- end: ftd.column
 
@@ -7104,13 +7247,13 @@ width: auto
 
 
 -- component stages-vertical-mobile:
-caption title:
+optional caption title:
 ftd.image-src rect:
 integer stage:
 optional ftd.color stage-bgcolor:
 string cta-text:
 string cta-link:
-body info:
+optional body info:
 optional boolean right:
 
 -- ftd.column:
@@ -7262,6 +7405,7 @@ caption title:
 body body:
 ftd.image-src image:
 ftd.color bgcolor: $inherited.colors.background.step-2
+optional boolean top: false
 
 -- ftd.column:
 width.fixed.px: 372
@@ -7271,19 +7415,27 @@ border-color: $inherited.colors.border-strong
 border-radius.px: 10
 padding-vertical.px: 22
 padding-horizontal.px: 26
+spacing.fixed.px if {card.top}: 32
+
+-- ftd.image:
+if: {card.top}
+src: $card.image
+width.fixed.px: 332
+height: auto
 
 -- ftd.text: $card.title
 role: $inherited.types.heading-small
 color: $inherited.colors.text
-margin-bottom.px: 12
+margin-bottom.px if {!card.top}: 12
 
 -- ftd.text:
 text: $card.body
 role: $inherited.types.copy-regular
 color: $inherited.colors.text-strong
-margin-bottom.px: 24
+margin-bottom.px if {!card.top}: 24
 
 -- ftd.image:
+if: {!card.top}
 src: $card.image
 width.fixed.px: 255
 height: auto
@@ -7292,3 +7444,4 @@ align-self: center
 -- end: ftd.column
 
 -- end: card
+

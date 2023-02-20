@@ -7445,3 +7445,55 @@ align-self: center
 
 -- end: card
 
+
+
+
+
+-- component search-bar:
+caption title: Landing Page
+intger width: 364
+
+-- ftd.row:
+background.solid: $inherited.colors.background.step-1
+width.fixed.px: $search-bar.width
+padding-horizontal.px: 19
+padding-vertical.px: 33
+
+-- ftd.image:
+src: $assets.files.static.search.svg
+
+
+-- ftd.text: $search-bar.title
+role: $inherited.types.copy-regular
+color: $inherited.colors.accent.primary
+
+-- ftd.text: 
+
+-- end: ftd.row
+
+
+-- end: search-bar
+
+
+
+
+
+
+
+
+
+
+
+
+-- record card-data:
+caption title:
+body body:
+
+ftd.image-src image
+
+
+
+-- record tab:
+caption title:
+integer index:
+

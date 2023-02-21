@@ -1125,9 +1125,11 @@ optional string info:
 integer width: $width
 children childs:
 boolean center: false
+boolean center-img: false
 integer height: 870
 boolean bottom: false
 optional boolean small-img: false
+optional boolean top-img: false
 
 -- ftd.column:
 width: fill-container
@@ -1141,9 +1143,11 @@ info: $hero-section.info
 width: $hero-section.width
 childs: $hero-section.childs
 center: $hero-section.center
+center-img: $hero-section.center-img
 height: $hero-section.height
 bottom: $hero-section.bottom
 small-img: $hero-section.small-img
+top-img: $hero-section.top-img
 
 -- hero-section-mobile: $hero-section.title
 if: {ftd.device == "mobile"}
@@ -1157,6 +1161,7 @@ center: $hero-section.center
 height: $hero-section.height
 bottom: $hero-section.bottom
 small-img: $hero-section.small-img
+top-img: $hero-section.top-img
 
 -- end: ftd.column
 
@@ -1183,6 +1188,7 @@ boolean center: false
 integer height:
 boolean bottom:
 optional boolean small-img:
+optional boolean top-img:
 
 -- ftd.column:
 align-self if {hero-section-mobile.center }: center
@@ -1190,6 +1196,12 @@ align-content if {hero-section-mobile.center}: center
 width: fill-container
 padding-horizontal.px: 16
 margin-top.px if { hero-section-mobile.bottom }: 30
+
+-- ftd.image:
+if: { hero-section-mobile.image != NULL && hero-section-mobile.top-img}
+src: $hero-section-mobile.image
+width: fill-container
+height: auto
 
 -- ftd.text: $hero-section-mobile.title
 role: $inherited.types.heading-hero
@@ -1227,7 +1239,7 @@ width: 162
 -- end: ftd.row
 
 -- ftd.image:
-if: { hero-section-mobile.image != NULL }
+if: { hero-section-mobile.image != NULL && !hero-section-mobile.top-img }
 src: $hero-section-mobile.image
 width: fill-container
 height: auto
@@ -1260,9 +1272,11 @@ optional string info:
 integer width: $width
 children childs:
 boolean center: 
+boolean center-img:
 integer height: 
 boolean bottom:
 optional boolean small-img:
+optional boolean top-img:
 
 -- ftd.column:
 width: fill-container
@@ -1289,7 +1303,23 @@ height: auto
 -- end: ftd.column
 
 -- ftd.column:
-if: { !hero-section-desktop.bottom && !hero-section-desktop.small-img }
+if: { hero-section-desktop.center-img }
+width.fixed.percent: 80
+anchor: parent
+left.px: 140
+top.px: 20
+z-index: -1
+
+-- ftd.image:
+if: { hero-section-desktop.image != NULL}
+src: $hero-section-desktop.image
+width: fill-container
+height: auto
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { !hero-section-desktop.bottom && !hero-section-desktop.small-img && !hero-section-desktop.center-img }
 width: fill-container
 anchor: parent
 right.px: 0
@@ -1308,23 +1338,24 @@ height: auto
 width: fill-container
 max-width.fixed.px: $hero-section-desktop.width
 align-self: center
-align-content if {hero-section-desktop.center}: center
+align-content if {hero-section-desktop.center || hero-section-desktop.center-img}: center
 
 -- ftd.text: $hero-section-desktop.title
 role: $inherited.types.heading-hero
 color: $inherited.colors.text
-padding-right.px if { !hero-section-desktop.center}: 200
-text-align if { hero-section-desktop.bottom || hero-section-desktop.center}: center
+padding-right.px if { !hero-section-desktop.center && !hero-section-desktop.center-img}: 200
+text-align if { hero-section-desktop.bottom || hero-section-desktop.center || hero-section-desktop.center-img}: center
 
 -- ftd.text:
 if: { $hero-section-desktop.info != NULL }
 text: $hero-section-desktop.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text
-max-width.fixed.px if { !hero-section-desktop.center}: 520
+max-width.fixed.px if { !hero-section-desktop.center && !hero-section-desktop.center-img  }: 520
+max-width.fixed.px if { hero-section-desktop.center-img  }: 622
 max-width.fixed.px: 715
 margin-top.px: 15
-text-align if { hero-section-desktop.bottom || hero-section-desktop.center}: center
+text-align if { hero-section-desktop.bottom || hero-section-desktop.center || hero-section-desktop.center-img}: center
 
 -- ftd.column:
 width: fill-container
@@ -2580,6 +2611,7 @@ optional boolean no-img: false
 optional boolean img:
 optional ftd.color bgcolor: $inherited.colors.background.step-2
 optional ftd.image image:
+optional integer margin-top:
 
 -- ftd.column:
 width: fill-container
@@ -2595,6 +2627,7 @@ no-img: $trending-templates.no-img
 img: $trending-templates.img
 bgcolor: $trending-templates.bgcolor
 image: $trending-templates.image
+margin-top: $trending-templates.margin-top
 
 -- trending-templates-mobile: $trending-templates.title
 if: { ftd.device == "mobile" }
@@ -2632,12 +2665,14 @@ optional boolean no-img:
 optional boolean img:
 optional ftd.color bgcolor:
 optional ftd.image image:
+optional integer margin-top:
 
 -- ftd.column:
 width: fill-container
 padding-top.px if {!trending-templates-desktop.no-img}: 150
 padding-bottom.px if {!trending-templates-desktop.no-img}: 240
 background.solid: $trending-templates-desktop.bgcolor
+margin-top.px if {trending-templates-desktop.no-img}: $trending-templates-desktop.margin-top
 
 -- ftd.column:
 width: fill-container
@@ -2695,6 +2730,7 @@ color: $inherited.colors.text
 text-align: center
 
 -- ftd.text:
+if: {$trending-templates-desktop.info != NULL}
 text: $trending-templates-desktop.info
 color: $inherited.colors.text-strong
 role: $inherited.types.copy-large
@@ -2788,7 +2824,8 @@ color: $inherited.colors.text
 role: $inherited.types.heading-hero
 text-align: center
 
--- ftd.text: 
+-- ftd.text:
+if: {$trending-templates-mobile.info != NULL}
 text: $trending-templates-mobile.info
 color: $inherited.colors.text
 role: $inherited.types.copy-small
@@ -6425,10 +6462,17 @@ margin-bottom.px: 36
 optional ftd.image-src icon:
 caption title:
 optional body info:
+optional string domain-text:
 optional string cta-text:
 optional string cta-link:
+optional string cta-role:
 optional ftd.image-src image:
 optional integer padding-vertical:
+optional boolean top: false
+optional boolean bottom: false
+optional boolean btn: false
+optional boolean join-btn: false
+optional boolean two-text: false
 optional boolean top: false
 optional boolean bottom: false
 optional boolean btn: false
@@ -6440,11 +6484,15 @@ width: fill-container
 if: { ftd.device != "mobile" }
 icon: $right-image-component.icon
 info: $right-image-component.info
+domain-text: $right-image-component.domain-text
 cta-text: $right-image-component.cta-text
 cta-link: $right-image-component.cta-link
+cta-role: $right-image-component.cta-role
 image: $right-image-component.image
 padding-vertical: $right-image-component.padding-vertical
 top: $right-image-component.top
+join-btn: $right-image-component.join-btn
+two-text: $right-image-component.two-text
 bottom: $right-image-component.bottom
 btn: $right-image-component.btn
 
@@ -6452,10 +6500,13 @@ btn: $right-image-component.btn
 if: { ftd.device == "mobile" }
 icon: $right-image-component.icon
 info: $right-image-component.info
+domain-text: $right-image-component.domain-text
 cta-text: $right-image-component.cta-text
 cta-link: $right-image-component.cta-link
 image: $right-image-component.image
 top: $right-image-component.top
+join-btn: $right-image-component.join-btn
+two-text: $right-image-component.two-text
 bottom: $right-image-component.bottom
 btn: $right-image-component.btn
 
@@ -6476,11 +6527,15 @@ btn: $right-image-component.btn
 optional ftd.image-src icon:
 caption title:
 body info:
+optional string domain-text:
 string cta-text:
 string cta-link:
+optional string cta-role:
 optional ftd.image-src image:
 integer padding-vertical:
 optional boolean top:
+optional boolean join-btn:
+optional boolean two-text:
 optional boolean bottom:
 optional boolean btn:
 
@@ -6492,6 +6547,7 @@ padding-bottom.px: 150
 padding-top.px if {right-image-component-desktop.padding-vertical != NULL}:  $right-image-component-desktop.padding-vertical
 
 -- ftd.column:
+if: { !right-image-component-desktop.two-text }
 width: fill-container
 spacing.fixed.px: 32
 
@@ -6513,12 +6569,158 @@ role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 
 -- ftd.column:
-if: { !right-image-component-desktop.bottom && !right-image-component-desktop.btn }
+if: { !right-image-component-desktop.bottom && !right-image-component-desktop.btn && !right-image-component-desktop.join-btn }
 
 -- cta-button: $right-image-component-desktop.cta-text
-role: primary
+role: $right-image-component-desktop.cta-role
 link: $right-image-component-desktop.cta-link
 show-arrow: true
+width: 140
+
+-- end: ftd.column
+
+-- ftd.row:
+if: { right-image-component-desktop.join-btn }
+spacing.fixed.px: 18
+
+-- ftd.column:
+align-content: center
+spacing.fixed.px: 18
+
+-- ftd.image:
+src: $assets.files.static.open-source.discord.svg
+link: /
+
+-- ftd.text: Join Now
+role: $inherited.types.label-small
+color: $inherited.colors.border-strong
+
+-- end: ftd.column
+
+-- ftd.column:
+align-content: center
+spacing.fixed.px: 18
+
+-- ftd.image:
+src: $assets.files.static.open-source.github.svg
+link: /
+
+-- ftd.text: Join Now
+role: $inherited.types.label-small
+color: $inherited.colors.border-strong
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { right-image-component-desktop.two-text }
+spacing.fixed.px: 80
+
+-- ftd.column:
+spacing.fixed.px: 24
+
+-- ftd.row:
+spacing.fixed.px: 18
+
+-- ftd.image:
+if: { right-image-component-desktop.icon != NULL && !right-image-component-desktop.bottom }
+src: $right-image-component-desktop.icon
+width.fixed.px: 70
+height.fixed.px: 67
+
+-- ftd.text: $right-image-component-desktop.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.text:
+if: { right-image-component-desktop.info != NULL }
+text: $right-image-component-desktop.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- ftd.row:
+align-content: center
+spacing.fixed.px: 18
+
+-- ftd.text:
+if: { right-image-component-desktop.info != NULL }
+text: $right-image-component-desktop.domain-text
+role: $inherited.types.copy-small
+color: $inherited.colors.border-strong
+
+-- ftd.column:
+height.fixed.px: 8
+width.fixed.px: 8
+border-radius.px: 100
+background.solid: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- ftd.text:
+if: { right-image-component-desktop.info != NULL }
+text: $right-image-component-desktop.domain-text
+role: $inherited.types.copy-small
+color: $inherited.colors.border-strong
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+spacing.fixed.px: 24
+
+-- ftd.row:
+if: { right-image-component-desktop.two-text }
+spacing.fixed.px: 18
+
+-- ftd.image:
+if: { right-image-component-desktop.icon != NULL && !right-image-component-desktop.bottom }
+src: $right-image-component-desktop.icon
+width.fixed.px: 70
+height.fixed.px: 67
+
+-- ftd.text: $right-image-component-desktop.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.text:
+if: { right-image-component-desktop.info != NULL }
+text: $right-image-component-desktop.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- ftd.row:
+align-content: center
+spacing.fixed.px: 18
+
+-- ftd.text:
+if: { right-image-component-desktop.info != NULL }
+text: $right-image-component-desktop.domain-text
+role: $inherited.types.copy-small
+color: $inherited.colors.border-strong
+
+-- ftd.column:
+height.fixed.px: 8
+width.fixed.px: 8
+border-radius.px: 100
+background.solid: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- ftd.text:
+if: { right-image-component-desktop.info != NULL }
+text: $right-image-component-desktop.domain-text
+role: $inherited.types.copy-small
+color: $inherited.colors.border-strong
+
+-- end: ftd.row
 
 -- end: ftd.column
 
@@ -6529,11 +6731,27 @@ if: {right-image-component-desktop.image != NULL}
 width: fill-container
 padding-vertical.px if { !right-image-component-desktop.btn }: 30
 padding-left.px if { !right-image-component-desktop.btn }: 90
+height.fixed.px if {right-image-component-desktop.two-text}: 626
+width.fixed.px if {right-image-component-desktop.two-text}: 512
 
 -- ftd.image:
 src: $right-image-component-desktop.image
 width: auto
 height: auto
+height.fixed.px if {right-image-component-desktop.two-text}: 626
+width.fixed.px if {right-image-component-desktop.two-text}: 512
+
+-- ftd.column:
+if: {right-image-component-desktop.bottom}
+align-self: end
+margin-top.px: -35
+
+-- ftd.image:
+if: { right-image-component-desktop.icon != NULL }
+src: $right-image-component-desktop.icon
+width.fixed.px: 70
+
+-- end: ftd.column
 
 -- ftd.column:
 if: {right-image-component-desktop.bottom}
@@ -6566,10 +6784,13 @@ width.fixed.px: 70
 optional ftd.image-src icon:
 caption title:
 body info:
+optional string domain-text:
 string cta-text:
 string cta-link:
 optional ftd.image-src image:
 optional boolean top:
+optional boolean join-btn:
+optional boolean two-text:
 optional boolean bottom:
 optional boolean btn:
 
@@ -6579,6 +6800,7 @@ margin-top.px if { !right-image-component-mobile.top } : 70
 padding-horizontal.px: 16
 
 -- ftd.column:
+if: { !right-image-component-mobile.two-text }
 width: fill-container
 spacing.fixed.px: 32
 
@@ -6599,7 +6821,7 @@ role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 
 -- ftd.column:
-if: { !right-image-component-mobile.bottom && !right-image-component-mobile.btn }
+if: { !right-image-component-mobile.bottom && !right-image-component-mobile.btn && !right-image-component-mobile.join-btn }
 
 -- cta-button: $right-image-component-mobile.cta-text
 role: primary
@@ -6608,7 +6830,153 @@ show-arrow: true
 
 -- end: ftd.column
 
+-- ftd.row:
+if: { right-image-component-mobile.join-btn }
+spacing.fixed.px: 18
+
+-- ftd.column:
+align-content: center
+spacing.fixed.px: 18
+
+-- ftd.image:
+src: $assets.files.static.open-source.discord.svg
+link: /
+
+-- ftd.text: Join Now
+role: $inherited.types.label-small
+color: $inherited.colors.border-strong
+
 -- end: ftd.column
+
+-- ftd.column:
+align-content: center
+spacing.fixed.px: 18
+
+-- ftd.image:
+src: $assets.files.static.open-source.github.svg
+link: /
+
+-- ftd.text: Join Now
+role: $inherited.types.label-small
+color: $inherited.colors.border-strong
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { right-image-component-mobile.two-text }
+spacing.fixed.px: 80
+
+-- ftd.column:
+spacing.fixed.px: 24
+
+-- ftd.row:
+spacing.fixed.px: 18
+
+-- ftd.image:
+if: { right-image-component-mobile.icon != NULL && !right-image-component-mobile.bottom }
+src: $right-image-component-mobile.icon
+width.fixed.px: 70
+height.fixed.px: 67
+
+-- ftd.text: $right-image-component-mobile.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.text:
+if: { right-image-component-mobile.info != NULL }
+text: $right-image-component-mobile.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- ftd.row:
+align-content: center
+spacing.fixed.px: 18
+
+-- ftd.text:
+if: { right-image-component-mobile.info != NULL }
+text: $right-image-component-mobile.domain-text
+role: $inherited.types.copy-small
+color: $inherited.colors.border-strong
+
+-- ftd.column:
+height.fixed.px: 8
+width.fixed.px: 8
+border-radius.px: 100
+background.solid: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- ftd.text:
+if: { right-image-component-mobile.info != NULL }
+text: $right-image-component-mobile.domain-text
+role: $inherited.types.copy-small
+color: $inherited.colors.border-strong
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+spacing.fixed.px: 24
+
+-- ftd.row:
+if: { right-image-component-mobile.two-text }
+spacing.fixed.px: 18
+
+-- ftd.image:
+if: { right-image-component-mobile.icon != NULL && !right-image-component-mobile.bottom }
+src: $right-image-component-mobile.icon
+width.fixed.px: 70
+height.fixed.px: 67
+
+-- ftd.text: $right-image-component-mobile.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.text:
+if: { right-image-component-mobile.info != NULL }
+text: $right-image-component-mobile.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- ftd.row:
+align-content: center
+spacing.fixed.px: 18
+
+-- ftd.text:
+if: { right-image-component-mobile.info != NULL }
+text: $right-image-component-mobile.domain-text
+role: $inherited.types.copy-small
+color: $inherited.colors.border-strong
+
+-- ftd.column:
+height.fixed.px: 8
+width.fixed.px: 8
+border-radius.px: 100
+background.solid: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- ftd.text:
+if: { right-image-component-mobile.info != NULL }
+text: $right-image-component-mobile.domain-text
+role: $inherited.types.copy-small
+color: $inherited.colors.border-strong
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
 
 -- ftd.column:
 if: {right-image-component-mobile.image != NULL}
@@ -6652,6 +7020,7 @@ caption title:
 body info:
 string cta-text:
 string cta-link:
+optional string cta-role:
 ftd.image-src image:
 optional boolean top:
 
@@ -6664,6 +7033,7 @@ icon: $left-image-component.icon
 info: $left-image-component.info
 cta-text: $left-image-component.cta-text
 cta-link: $left-image-component.cta-link
+cta-role: $left-image-component.cta-role
 image: $left-image-component.image
 top: $left-image-component.top
 
@@ -6687,13 +7057,13 @@ image: $left-image-component.image
 
 
 
-
 -- component left-image-component-desktop:
 optional ftd.image-src icon:
 caption title:
 body info:
 string cta-text:
 string cta-link:
+optional string cta-role:
 ftd.image-src image:
 optional boolean top:
 
@@ -6720,6 +7090,7 @@ height: auto
 width: fill-container
 spacing.fixed.px: 24
 padding-left.px: 119
+padding-top.px if { left-image-component-desktop.top }: 30
 
 -- ftd.image:
 if: { left-image-component-desktop.icon != NULL}
@@ -6737,10 +7108,10 @@ role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 
 -- cta-button: $left-image-component-desktop.cta-text
-role: primary
+role: $left-image-component-desktop.cta-role
 link: $left-image-component-desktop.cta-link
 show-arrow: true
-
+width: 140
 
 -- end: ftd.column
 
@@ -7485,7 +7856,6 @@ align-self: center
 
 
 
-
 -- component search-bar:
 caption title: Landing Page
 integer width: 364
@@ -7612,7 +7982,6 @@ src: $display-card.image
 width: fill-container
 border-radius.px: 12
 
-
 -- ftd.column:
 spacing.fixed.px: 12
 padding-horizontal.px: 15
@@ -7676,16 +8045,3 @@ max-width.fixed.px: $column-wrap.width
 -- end: ftd.column
 
 -- end: column-wrap
-
-
-
-
-
-
-
-
-
-
-
-
-

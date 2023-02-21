@@ -10,6 +10,8 @@
 
 -- integer $current-slide: 1
 
+-- integer $current-tab: 1
+
 -- string docs-site-link: https://fifthtry.github.io/ds-theme-1/
 
 -- string site-name: fastn
@@ -4648,7 +4650,7 @@ width.fixed.px: 20
 
 
 -- component slider-item:
-ftd.image-src icon:
+optional ftd.image-src icon:
 optional caption title:
 optional boolean $active-item: false
 optional boolean $mouse-in: false
@@ -4674,6 +4676,7 @@ $on-click$: $ftd.toggle($a = $slider-item.active-item)
 $on-click$: $ftd.set-integer($a = $current-slide, v = $slider-item.index)
 
 -- ftd.image:
+if: { slider-item.icon != NULL}
 src: $slider-item.icon
 width: auto
 height.fixed.px: 58
@@ -7478,25 +7481,34 @@ align-self: center
 
 
 
+
+
+
+
+
 -- component search-bar:
 caption title: Landing Page
-intger width: 364
+integer width: 364
+
 
 -- ftd.row:
 background.solid: $inherited.colors.background.step-1
 width.fixed.px: $search-bar.width
-padding-horizontal.px: 19
-padding-vertical.px: 33
+padding-horizontal.px: 33
+border-radius.px: 38
+padding-vertical.px: 19
+align-self: start
+spacing.fixed.px: 20
 
 -- ftd.image:
 src: $assets.files.static.search.svg
-
+width: auto
+align-self: center
 
 -- ftd.text: $search-bar.title
 role: $inherited.types.copy-regular
 color: $inherited.colors.accent.primary
 
--- ftd.text: 
 
 -- end: ftd.row
 
@@ -7517,12 +7529,163 @@ color: $inherited.colors.accent.primary
 -- record card-data:
 caption title:
 body body:
-
-ftd.image-src image
+ftd.image-src image:
 
 
 
 -- record tab:
 caption title:
 integer index:
+card-data list cards:
+
+
+
+-- component tabs:
+caption title:
+optional boolean $active-item: false
+optional boolean $mouse-in: false
+integer index: 
+
+-- ftd.column:
+padding-bottom.px: 7
+border-bottom-width.px: 2
+$on-mouse-enter$: $ftd.set-bool($a = $tabs.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $tabs.mouse-in, v = false)
+$on-click$: $ftd.toggle($a = $tabs.active-item)
+$on-click$: $ftd.set-integer($a = $current-tab, v = $tabs.index)
+border-color if { tabs.index == current-tab }: $inherited.colors.accent.primary
+
+-- ftd.text: $tabs.title
+role: $inherited.types.button-large
+color: $inherited.colors.text-strong
+color if { tabs.index == current-tab }: $inherited.colors.text
+white-space: nowrap
+
+-- end: ftd.column
+
+-- end: tabs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component display-card:
+optional ftd.image-src image:
+caption title:
+body info:
+integer width: 318
+optional integer border-width:
+optional string cta-text:
+optional string cta-link:
+boolean center: false
+optional integer padding-vertical:
+ftd.color bgcolor: $inherited.colors.text
+ftd.color textcolor: $inherited.colors.background.base
+ftd.color titlecolor: $inherited.colors.background.base
+optional integer height:
+
+-- ftd.column:
+width.fixed.px: $display-card.width
+max-width.fixed.px: $display-card.width
+align-self if {display-card.center} : center
+background.solid: $display-card.bgcolor
+border-radius.px: 12
+border-width.px if {display-card.border-width != NULL}: $display-card.border-width
+border-color if {display-card.border-width != NULL}: $inherited.colors.border-strong
+margin-top.px if {display-card.padding-vertical != NULL}: $display-card.padding-vertical
+margin-bottom.px if {display-card.padding-vertical != NULL}: $display-card.padding-vertical
+padding-horizontal.px if {display-card.border-width != NULL}: 15
+
+-- ftd.image:
+if: { display-card.image != NULL }
+src: $display-card.image
+width: fill-container
+border-radius.px: 12
+
+
+-- ftd.column:
+spacing.fixed.px: 12
+padding-horizontal.px: 15
+padding-vertical.px: 17
+
+-- ftd.text: $display-card.title
+role: $inherited.types.heading-tiny
+color: $display-card.titlecolor
+
+-- ftd.text: 
+text: $display-card.info
+role: $inherited.types.copy-small
+color: $display-card.textcolor
+
+-- cta-button: $display-card.cta-text
+if: { display-card.cta-text != NULL }
+role: primary
+link: $display-card.cta-link
+show-arrow: true
+
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: display-card
+
+
+
+
+
+
+
+-- component column-wrap:
+optional integer height:
+boolean wrap:
+optional integer index:
+children wraper:
+integer spacing: 90
+integer width: $width
+optional integer reset:
+
+-- ftd.column:
+width: fill-container
+align-content: center
+align-self: center
+height: fill-container
+
+
+-- ftd.column:
+if: { column-wrap.index == column-wrap.reset }
+wrap if { column-wrap.wrap }: true
+children: $column-wrap.wraper
+height.fixed.px if { column-wrap.height != NULL }: $column-wrap.height
+spacing.fixed.px: $column-wrap.spacing
+width: fill-container
+max-width.fixed.px: $column-wrap.width
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: column-wrap
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,11 +1,139 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fastn
+-- import: fastn/processors as pr
 -- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fastn-cs
 
+-- ft.page: Internet OS
 
+-- ft.hero-section: Fastn is Open Source
+image: $assets.files.static.open-source.open-src.png
+center: true
+height: 485
+width: 1160
 
--- ft.page: Open source
+-- ft.hero-section.info: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
 
-Coming soon....
+-- ft.right-image-component: Available via Github
+image: $assets.files.static.open-source.img.svg
+padding-vertical: 105
+join-btn: true
+
+We belive a uniform language must exist to represent data and prose that any human being can learn easily. Further most software are incompatible with others. A graph made in one software one can not be used with another software. 
+
+-- ft.hero-section: Loreum ipsum
+image: $assets.files.static.open-source.background.svg
+center-img: true
+height: 485
+width: 1160
+
+-- ft.hero-section.info: Browse dozens of professionaly designed templates. Easily change structurestyle, and graphics -then host instantly.
+
+-- ft.right-image-component: Interface
+icon: $assets.files.static.about.about-icon.svg
+image: $assets.files.static.open-source.img.svg
+two-text: true
+domain-text: Personal domain
+
+We belive a uniform language must exist to represent data and prose that any human being can learn easily. Further most software are incompatible with others. 
+
+-- ft.trending-templates: You got questions in mind ? We have answers
+no-img: true
+
+-- ft.row-container:
+spacing: 24
+wrap: true
+switch-to-column: true
+
+-- border-box: Dark mode For Images
+cta-text: Explore More
+cta-link: /
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- border-box: Dark mode For Images
+cta-text: Explore More
+cta-link: /
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- border-box: Dark mode For Images
+cta-text: Explore More
+cta-link: /
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- border-box: Dark mode For Images
+cta-text: Explore More
+cta-link: /
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- end: ft.row-container
+
+-- ft.excel-promo-card: YC Winter batch 2021
+image: $assets.files.static.open-source.ycomb.svg
+bgcolor: $inherited.colors.background.step-1
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+left: true
+
+-- ft.excel-promo-card.info: 
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
 
 -- ft.footer:
 
 -- end: ft.page
+
+
+
+
+
+
+
+
+
+
+-- component border-box:
+caption title:
+body info:
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
+
+-- ftd.column:
+padding-vertical.px: 40
+
+-- ftd.column:
+border-width.px: 1
+border-radius.px: 12
+border-color: $inherited.colors.border-strong
+;;width: fill-container
+max-width.fixed.px: 563
+padding-vertical.px: 31
+padding-horizontal.px: 40
+spacing.fixed.px: 12
+
+-- ftd.text: $border-box.title
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+
+-- ftd.text:
+text: $border-box.info
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
+
+-- ft.cta-button: $border-box.cta-text
+if: { border-box.cta-text != NULL }
+role: $border-box.cta-role
+link: $border-box.cta-link
+width: 140
+show-arrow: true
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: border-box

@@ -4713,7 +4713,6 @@ $on-click$: $ftd.toggle($a = $slider-item.active-item)
 $on-click$: $ftd.set-integer($a = $current-slide, v = $slider-item.index)
 
 -- ftd.image:
-if: { slider-item.icon != NULL}
 src: $slider-item.icon
 width: auto
 height.fixed.px: 58
@@ -6576,6 +6575,151 @@ role: $right-image-component-desktop.cta-role
 link: $right-image-component-desktop.cta-link
 show-arrow: true
 width: 140
+
+-- end: ftd.column
+
+-- ftd.row:
+if: { right-image-component-desktop.join-btn }
+spacing.fixed.px: 18
+
+-- ftd.column:
+align-content: center
+spacing.fixed.px: 18
+
+-- ftd.image:
+src: $assets.files.static.open-source.discord.svg
+link: /
+
+-- ftd.text: Join Now
+role: $inherited.types.label-small
+color: $inherited.colors.border-strong
+
+-- end: ftd.column
+
+-- ftd.column:
+align-content: center
+spacing.fixed.px: 18
+
+-- ftd.image:
+src: $assets.files.static.open-source.github.svg
+link: /
+
+-- ftd.text: Join Now
+role: $inherited.types.label-small
+color: $inherited.colors.border-strong
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { right-image-component-desktop.two-text }
+spacing.fixed.px: 80
+
+-- ftd.column:
+spacing.fixed.px: 24
+
+-- ftd.row:
+spacing.fixed.px: 18
+
+-- ftd.image:
+if: { right-image-component-desktop.icon != NULL && !right-image-component-desktop.bottom }
+src: $right-image-component-desktop.icon
+width.fixed.px: 70
+height.fixed.px: 67
+
+-- ftd.text: $right-image-component-desktop.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.text:
+if: { right-image-component-desktop.info != NULL }
+text: $right-image-component-desktop.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- ftd.row:
+align-content: center
+spacing.fixed.px: 18
+
+-- ftd.text:
+if: { right-image-component-desktop.info != NULL }
+text: $right-image-component-desktop.domain-text
+role: $inherited.types.copy-small
+color: $inherited.colors.border-strong
+
+-- ftd.column:
+height.fixed.px: 8
+width.fixed.px: 8
+border-radius.px: 100
+background.solid: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- ftd.text:
+if: { right-image-component-desktop.info != NULL }
+text: $right-image-component-desktop.domain-text
+role: $inherited.types.copy-small
+color: $inherited.colors.border-strong
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+spacing.fixed.px: 24
+
+-- ftd.row:
+if: { right-image-component-desktop.two-text }
+spacing.fixed.px: 18
+
+-- ftd.image:
+if: { right-image-component-desktop.icon != NULL && !right-image-component-desktop.bottom }
+src: $right-image-component-desktop.icon
+width.fixed.px: 70
+height.fixed.px: 67
+
+-- ftd.text: $right-image-component-desktop.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.text:
+if: { right-image-component-desktop.info != NULL }
+text: $right-image-component-desktop.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- ftd.row:
+align-content: center
+spacing.fixed.px: 18
+
+-- ftd.text:
+if: { right-image-component-desktop.info != NULL }
+text: $right-image-component-desktop.domain-text
+role: $inherited.types.copy-small
+color: $inherited.colors.border-strong
+
+-- ftd.column:
+height.fixed.px: 8
+width.fixed.px: 8
+border-radius.px: 100
+background.solid: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- ftd.text:
+if: { right-image-component-desktop.info != NULL }
+text: $right-image-component-desktop.domain-text
+role: $inherited.types.copy-small
+color: $inherited.colors.border-strong
+
+-- end: ftd.row
 
 -- end: ftd.column
 

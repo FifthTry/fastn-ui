@@ -4188,7 +4188,7 @@ align-self: center
 width.fixed.px: $row-container-desktop.width
 max-width.fixed.px: $row-container-desktop.width
 padding-vertical.px if { row-container-desktop.padding-vertical != NULL }: $row-container-desktop.padding-vertical
-align-content: center
+align-content if {!row-container-desktop.align-left }: center
 margin-bottom.px if { row-container-desktop.margin-bottom != NULL }: $row-container-desktop.margin-bottom
 margin-top.px if { row-container-desktop.margin-top != NULL }: $row-container-desktop.margin-top
 
@@ -4199,9 +4199,8 @@ if: { !row-container-desktop.title-medium }
 if: { row-container-desktop.title != NULL }
 role: $inherited.types.heading-large
 color: $inherited.colors.text-strong
-align-self: center
+text-align if {!row-container-desktop.align-left }: center
 margin-bottom.px: 80
-text-align: center
 
 -- end: ftd.column
 

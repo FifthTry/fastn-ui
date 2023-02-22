@@ -1,10 +1,214 @@
+-- import: fifthtry.github.io/fastn-ui/assets
 -- import: fifthtry.github.io/fastn-ui/lib as ft
 
 
-
 -- ft.page: Templates
+bg-color: $inherited.colors.background.step-1
 
-Coming soon....
+-- ft.hero-section: Templates for you
+image: $assets.files.static.open-source.open-src.png
+center: true
+height: 485
+width: 1160
+
+-- ft.hero-section.info:
+
+Fastn provides exhaustive frameworks to set up and  scale your project in minutes. Fastn provides exhaustive frameworks to set up and  scale your project in minutes.
+
+
+
+-- ft.row-container: Featured Templates 
+spacing: 12
+padding-vertical: 120
+switch-to-column: true
+align-left: true
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.tem1.svg
+width: 345
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.tem1.svg
+width: 345
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.tem1.svg
+width: 345
+
+-- end: ft.row-container
+
+
+-- ft.benefits-card: Landing Page
+spacing: 34
+bg-color: $inherited.colors.custom.two
+logo: $assets.files.static.uses.image1.svg
+
+ Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
+
+-- ft.cta-button: Features
+role: primary
+link: /
+show-arrow: true
+align-center: true
+
+
+-- ft.row-container:
+spacing: 12
+padding-vertical: 0
+slides: true
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- end: ft.row-container
+
+-- end: ft.benefits-card
+
+-- ft.row-container:
+spacing: 48
+switch-to-column: true
+
+-- ft.right-image-component: API & Documentation
+icon: $assets.files.static.events.upcoming-section-logo.svg
+cta-text: Explore More
+cta-link: /
+padding-vertical: 105
+
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
+
+-- ft.row-container:
+width: 650
+spacing: 12
+slides: true
+
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- end: ft.row-container
+
+-- end: ft.row-container
+
+-- ft.benefits-card: Blog Page
+spacing: 34
+bg-color: $inherited.colors.custom.two
+logo: $assets.files.static.uses.image1.svg
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
+
+-- ft.cta-button: Features
+role: primary
+link: /
+show-arrow: true
+align-center: true
+
+
+-- ft.row-container:
+spacing: 12
+padding-vertical: 0
+wrap: true
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- end: ft.row-container
+
+-- end: ft.benefits-card
+
+
+-- ft.row-container:
+spacing: 48
+switch-to-column: true
+
+-- ft.right-image-component: Microsite
+icon: $assets.files.static.events.upcoming-section-logo.svg
+cta-text: Explore More
+cta-link: /
+padding-vertical: 105
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
+
+-- ft.row-container:
+width: 650
+spacing: 12
+slides: true
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+
+-- end: ft.row-container
+
+-- end: ft.row-container
 
 -- ft.footer:
 

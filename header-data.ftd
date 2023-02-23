@@ -5,7 +5,7 @@
 -- record header-item:
 optional caption title: 
 optional string url:
-optional body body: 
+optional string body: 
 optional string document: 
 optional ftd.image-src font-icon: 
 optional ftd.image-src img-src: 
@@ -25,24 +25,74 @@ header-item list children:
 url: why-fastn/
 font-icon: $assets.files.static.header.why-menu-img.svg
 is-active: true
+is-open: true
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 
 -- header-item.children:
 
--- header-item: 1st Child
-url: why-fastn/
+-- header-item: Why Fastn
+url: why-fastn/why-fastn/
 font-icon: $assets.files.static.header.sub-section-icon.svg
-is-active: false
+is-active: true
 is-heading: true
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 -- header-item.children:
 
 -- header-item: Benefits of fastn
+url: why-fastn/why-fastn/benefits-of-fastn/
 
 -- end: header-item
 
 -- header-item: 
+font-icon: $assets.files.static.header.menu-icons.smily-icon.svg
+body: Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id molestie mi commodo. Sit curabitur nulla sit vel enim hac pulvinar in ultricies sit urna.
 
-Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id molestie mi commodo. Sit curabitur nulla sit vel enim hac pulvinar in ultricies sit urna.
+-- end: header-item
+
+-- header-item: 
+font-icon: $assets.files.static.header.menu-icons.sad-icon.svg
+body: Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id molestie mi commodo. Sit curabitur nulla sit vel enim hac pulvinar in ultricies sit urna.
+
+-- end: header-item
+
+-- header-item: 
+font-icon: $assets.files.static.header.menu-icons.square-face-icon.svg
+body: Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id molestie mi commodo. Sit curabitur nulla sit vel enim hac pulvinar in ultricies sit urna.
+
+-- end: header-item
+
+-- end: header-item.children
+
+-- header-item: How to use Fastn
+url: why-fastn/how-to-use-fastn/
+font-icon: $assets.files.static.header.sub-section-icon.svg
+is-active: false
+is-heading: true
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- header-item.children:
+
+-- header-item: Benefits of fastn
+url: why-fastn/how-to-use-fastn/benefits-of-fastn/
+
+-- end: header-item
+
+-- header-item: 
+font-icon: $assets.files.static.header.menu-icons.smily-icon.svg
+body: Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id molestie mi commodo. Sit curabitur nulla sit vel enim hac pulvinar in ultricies sit urna.
+
+-- end: header-item
+
+-- header-item: 
+font-icon: $assets.files.static.header.menu-icons.sad-icon.svg
+body: Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id molestie mi commodo. Sit curabitur nulla sit vel enim hac pulvinar in ultricies sit urna.
+
+-- end: header-item
+
+-- header-item: 
+font-icon: $assets.files.static.header.menu-icons.square-face-icon.svg
+body: Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id molestie mi commodo. Sit curabitur nulla sit vel enim hac pulvinar in ultricies sit urna.
 
 -- end: header-item
 
@@ -50,96 +100,349 @@ Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id molestie mi
 
 
 
+-- header-item: Features listing page
+url: why-fastn/feature-listing-page/
+font-icon: $assets.files.static.header.sub-section-icon.svg
+is-active: false
+is-heading: false
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- header-item.children:
+
+-- header-item: Front end infrastructure
+url: why-fastn/feature-listing-page/front-end-infrastructure/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- header-item: Templates
+url: why-fastn/feature-listing-page/templates/
+body: Lorem ipsum dolor sit amet.
+
+-- end: header-item
+
+-- header-item: Component Library
+url: why-fastn/feature-listing-page/component-library/
+body: Lorem ipsum dolor sit amet.
+
+-- end: header-item
+
+-- header-item: Building Webapps
+url: why-fastn/feature-listing-page/building-webapps/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- header-item: Internet OS
+url: why-fastn/feature-listing-page/internet-os/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
 -- end: header-item.children
+
+-- end: header-item.children
+
+
+
+
+
+
 
 -- header-item: Use Cases
 url: use-cases/
 font-icon: $assets.files.static.header.why-menu-img.svg
 is-active: false
+is-open: true
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+-- header-item.children:
+
+-- header-item: 
+is-active: false
+is-heading: false
+url: use-cases/
+
+-- end: header-item
+
+-- header-item.children:
+
+-- header-item: Landing Page
+url: use-cases/landing-pages/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- header-item: Microsite
+url: use-cases/microsite/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- header-item: Blog Page
+url: use-cases/blog-page/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- header-item: API & Documentation Page
+url: use-cases/api-and-documentation/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- end: header-item.children
+
+-- end: header-item.children
+
+
+
+
+
+-- header-item: Events
+url: event/
+font-icon: $assets.files.static.header.why-menu-img.svg
+is-active: false
+is-open: false
+
+
+
+
+
+-- header-item: Learn
+url: learn/
+font-icon: $assets.files.static.header.why-menu-img.svg
+is-active: false
+is-open: true
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+-- header-item.children:
+
+-- header-item: Learn
+url: learn/learn/
+font-icon: $assets.files.static.header.sub-section-icon.svg
+is-active: true
+is-heading: true
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- header-item.children:
+
+-- header-item: Contribution
+ur: learn/learn/contribution
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- header-item: Design system
+ur: learn/learn/design-system/
+body: Lorem ipsum dolor sit amet.
+
+-- end: header-item
+
+-- header-item: Authoring
+ur: learn/learn/authoring/
+body: Lorem ipsum dolor sit amet.
+
+-- end: header-item
+
+-- header-item: Learning FTD
+ur: learn/learn/learning/
+body: Lorem ipsum dolor sit amet.
+
+-- end: header-item
+
+-- header-item: Open source
+ur: learn/learn/authoring/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- header-item: Internet OS
+ur: learn/learn/authoring/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- end: header-item.children
+
+-- header-item: Design
+url: learn/design/
+font-icon: $assets.files.static.header.sub-section-icon.svg
+is-active: false
+is-heading: true
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- header-item.children:
+
+-- header-item: Templates
+ur: learn/design/templates/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- header-item: Component list pages
+ur: learn/design/component-list-pages/
+body: Lorem ipsum dolor sit amet.
+
+-- end: header-item
+
+-- header-item: Color list pages
+ur: learn/design/color-list-pages/
+body: Lorem ipsum dolor sit amet.
+
+-- end: header-item
+
+-- header-item: Font list pages
+ur: learn/design/font-list-pages/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- header-item: Design theory
+ur: learn/design/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- header-item: Icons / illustration
+ur: learn/icons/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- end: header-item.children
+
+
+
+-- header-item: Developers
+url: learn/developers/
+font-icon: $assets.files.static.header.sub-section-icon.svg
+is-active: false
+is-heading: false
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- header-item.children:
+
+-- header-item: FTD
+ur: learn/developers/FTD/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- header-item: Hosting
+ur: learn/developers/hosting/
+body: Lorem ipsum dolor sit amet.
+
+-- end: header-item
+
+-- header-item: Builder manual
+ur: learn/developers/builder-manual/
+body: Lorem ipsum dolor sit amet.
+
+-- end: header-item
+
+-- header-item: Blog
+ur: learn/developers/blog/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- header-item: Events
+ur: learn/developers/events/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- header-item: Open source
+ur: learn/developers/open-source/
+body: Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: header-item
+
+-- end: header-item.children
+
+-- end: header-item.children
+
+
+
+
+
+-- header-item: Build
+url: build/
+font-icon: $assets.files.static.header.why-menu-img.svg
+is-active: false
+is-open: true
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+-- header-item.children:
+
+-- header-item: Landing Page
+url: build/landing-page/
+font-icon: $assets.files.static.header.sub-section-icon.svg
+is-active: true
+is-heading: true
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- header-item.children:
+
+-- header-item: Documentation Page
+font-icon: $assets.files.static.header.menu-icons.build-doc-page-icon.svg
+ur: build/landing-page/documenatation/
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- end: header-item
+
+-- end: header-item.children
+
+-- header-item: Microsite
+url: build/microsite/
+font-icon: $assets.files.static.header.sub-section-icon.svg
+is-active: false
+is-heading: true
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- header-item.children:
+
+-- header-item: Documentation Page
+font-icon: $assets.files.static.header.menu-icons.build-doc-page-icon.svg
+ur: build/landing-page/documenatation/
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- end: header-item
+
+-- end: header-item.children
+
+-- header-item: Blog Section
+url: build/blog-section/
+font-icon: $assets.files.static.header.sub-section-icon.svg
+is-active: false
+is-heading: true
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- header-item.children:
+
+-- header-item: Documentation Page
+font-icon: $assets.files.static.header.menu-icons.build-doc-page-icon.svg
+ur: build/landing-page/documenatation/
+body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- end: header-item
+
+-- end: header-item.children
+
+-- end: header-item.children
+
+
+-- header-item: Authoring
+url: authoring/
+font-icon: $assets.files.static.header.why-menu-img.svg
+is-active: false
+is-open: false
+
 
 -- end: sections
 
 
 
 
--- dummy-list:
-sections: $sections
 
-
-
-
-
-
--- component dummy-list:
-header-item list sections: 
-
--- ftd.column:
-
--- dummy-loop: $obj.title
-$loop$: $dummy-list.sections as $obj
-children: $obj.children 
-
--- end: ftd.column
-
--- end: dummy-list
-
-
-
-
-
--- component dummy-loop:
-caption title:
-optional string url:
-boolean is-active: false
-optional string description: 
-optional string document: 
-optional ftd.image-src font-icon: 
-optional ftd.image-src img-src: 
-optional boolean is-active: true
-optional boolean is-disabled: false
-optional boolean is-heading: false
-optional boolean is-open: false
-optional integer number: 
-optional string path: 
-header-item list children:
-
--- ftd.column:
-
--- ftd.text: $dummy-loop.title
-link: $dummy-loop.url
-color: $inherited.colors.text
-
--- dummy-children: $obj.title
-$loop$: $dummy-loop.children as $obj
-url: $obj.url
-is-active: $obj.is-active
-children: $obj.children
-
--- end: ftd.column
-
--- end: dummy-loop
-
-
-
--- component dummy-children:
-caption title:
-optional string url:
-optional boolean is-active: false
-header-item list children:
-
--- ftd.column:
-
-
--- ftd.text: $dummy-children.title
-link: $dummy-children.url
-color: $inherited.colors.text
-
-
--- dummy-children: $obj.title
-$loop$: $dummy-children.children as $obj
-url: $obj.url
-is-active: $obj.is-active
-
--- end: ftd.column
-
--- end: dummy-children

@@ -1,43 +1,39 @@
 -- import: fifthtry.github.io/fastn-ui/assets
--- import: fastn
--- import: fastn/processors as pr
 -- import: fifthtry.github.io/fastn-ui/lib as ft
--- import: fifthtry.github.io/fastn-ui/events as et
--- import: fastn-cs
 
--- ft.page: Use Cases
+
+-- ft.page: Templates
 bg-color: $inherited.colors.background.step-1
 
--- ft.excel-promo-card: Loreum ipsum
-image: $assets.files.static.uses.use-case.svg
-bgcolor: $inherited.colors.background.step-2
+-- ft.hero-section: Templates for you
+image: $assets.files.static.open-source.open-src.png
 center: true
-right if {ftd.device == "mobile"} : true
+height: 485
+width: 1160
 
--- ft.excel-promo-card.info: 
+-- ft.hero-section.info:
 
 Fastn provides exhaustive frameworks to set up and  scale your project in minutes. Fastn provides exhaustive frameworks to set up and  scale your project in minutes.
+
 
 
 -- ft.row-container: Featured Templates 
 spacing: 12
 padding-vertical: 120
 switch-to-column: true
+align-left: true
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.tem1.svg
 width: 345
-link: use-cases/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.tem1.svg
 width: 345
-link: use-cases/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.tem1.svg
 width: 345
-link: use-cases/
 
 -- end: ft.row-container
 
@@ -65,26 +61,22 @@ slides: true
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- end: ft.row-container
 
@@ -113,25 +105,21 @@ slides: true
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- end: ft.row-container
 
@@ -160,25 +148,21 @@ wrap: true
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- end: ft.row-container
 
@@ -206,25 +190,21 @@ slides: true
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- end: ft.row-container
 

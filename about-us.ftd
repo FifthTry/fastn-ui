@@ -1,0 +1,101 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fastn
+-- import: fastn/processors as pr
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fifthtry.github.io/fastn-ui/events as et
+-- import: fastn-cs
+
+
+
+
+
+-- ft.page: About OS
+$show-breadcrum: true
+
+-- ft.left-image-component: What’s OS about?
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.builder.rectangle.svg
+top: true
+
+Lorem ipsum dolor sit amet consectetur. Sit venenatis nunc cras consectetur libero. Felis faucibus bibendum amet amet sed tellus accumsan dui. Placerat sit gravida tincidunt pharetra in ac laoreet interdum. Blandit proin tortor a ultrices consequat. Sed eget.
+
+-- ft.right-image-component: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+icon: $assets.files.static.about.colon.svg
+image: $assets.files.static.about.about1.svg
+btn: true
+
+-- ft.right-image-component: Nextra: Docs starter Kit
+icon: $assets.files.static.about.about-icon.svg
+image: $assets.files.static.about.about2.svg
+bottom: true
+
+Lorem ipsum dolor sit amet consectetur. Nulla odio tortor nec sit id arcu. Duis aliquam sed massa pharetra. Aliquam risus viverra velit porta nec ac at. Magna id id eleifend sapien. Sed blandit semper nulla in sem leo. Montes maecenas in est lorem vel quis in fringilla. Pretium sed.
+
+-- ft.right-image-component: Nextra: Docs starter Kit
+icon: $assets.files.static.about.about-icon.svg
+image: $assets.files.static.about.about2.svg
+bottom: true
+
+Lorem ipsum dolor sit amet consectetur. Nulla odio tortor nec sit id arcu. Duis aliquam sed massa pharetra. Aliquam risus viverra velit porta nec ac at. Magna id id eleifend sapien. Sed blandit semper nulla in sem leo. Montes maecenas in est lorem vel quis in fringilla. Pretium sed.
+
+-- ft.right-image-component: Nextra: Docs starter Kit
+icon: $assets.files.static.about.icon.svg
+image: $assets.files.static.about.about2.svg
+bottom: true
+
+Lorem ipsum dolor sit amet consectetur. Nulla odio tortor nec sit id arcu. Duis aliquam sed massa pharetra. Aliquam risus viverra velit porta nec ac at. Magna id id eleifend sapien. Sed blandit semper nulla in sem leo. Montes maecenas in est lorem vel quis in fringilla. Pretium sed.
+
+-- ft.trending-templates: Benefits of Internet OS
+no-img: true
+
+-- ft.trending-templates.info:
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform. At nulla tristique facilisis augue. Lectus diam dignissim.
+
+-- ft.row-container:
+wrap: true
+switch-to-column: true
+margin-bottom: 150
+
+-- ft.card: FTD
+top: true
+image: $assets.files.static.about.about-card.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.card: FTD
+top: true
+image: $assets.files.static.about.about-card.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.card: FTD
+top: true
+image: $assets.files.static.about.about-card.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.card: FTD
+top: true
+image: $assets.files.static.about.about-card.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.card: FTD
+top: true
+image: $assets.files.static.about.about-card.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.card: FTD
+top: true
+image: $assets.files.static.about.about-card.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- end: ft.row-container
+
+-- ft.footer:
+
+-- end: ft.page

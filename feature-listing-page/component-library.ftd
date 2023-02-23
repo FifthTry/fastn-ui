@@ -1,0 +1,62 @@
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fastn-cs
+-- import: fastn/processors as pr
+-- import: fifthtry.github.io/fastn-ui/assets
+
+
+
+
+
+
+-- ft.page: Components Library
+$show-breadcrum: true
+
+-- ft.excel-promo-card: Component Library
+image: $assets.files.static.component.component-hero.png
+bgcolor: $inherited.colors.background.step-2
+right: true
+
+-- ft.excel-promo-card.info: 
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform.
+
+-- ft.right-image-component: Button
+icon: $assets.files.static.events.upcoming-section-logo.svg
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.component.right-image.svg
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
+
+-- ft.left-image-component: Header
+icon: $assets.files.static.component.header-icon.svg
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.component.left-image.svg
+
+FastN has an expansive ever-growing color library. It places no restriction when it comes to color palettes or color combinations unlike some design systems. Because it has been incrementally built by designers for developers, FastN color libraries provide an array of compatible options for developers to skin & re-skin their creations to their hearts’ content.
+
+-- ft.right-image-component: Other Component
+icon: $assets.files.static.events.upcoming-section-logo.svg
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.component.right-image.svg
+
+FastN typographic library comes with named typographic roles. Once a role has been picked the design system specifies the attributes associated with a particular role. Thus with pre-defined value sets for font family, size, line height etc, a designer can focus on specific application of the typographic components, leading to very consistent design, yet highly customizable from a design standpoint
+
+
+-- ft.excel-promo-card: Use it for free and start creating now!
+image: $assets.files.static.component.figma-icon.svg
+bgcolor: $inherited.colors.background.step-1
+cta-text: Download
+cta-link: /
+cta-role: primary
+left: true
+
+-- ft.excel-promo-card.info: 
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- ft.footer:
+
+-- end: ft.page

@@ -241,10 +241,12 @@ width: fill-container
 spacing.fixed.px: 8
 
 -- ftd.text: $key-features.title
+if: { key-features.title }
 role: $inherited.types.heading-small
 color: $inherited.colors.text
 
 -- ftd.text:
+if: { key-features.info != NULL }
 text: $key-features.info
 color: $inherited.colors.text-strong
 role: $inherited.types.copy-regular

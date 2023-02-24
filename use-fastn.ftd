@@ -18,7 +18,7 @@
 bg-color: $inherited.colors.background.step-1
 
 -- ft.hero-section: How to use Fastn?
-image: $assets.files.static.use-fastn.background.svg
+image: $assets.files.static.why-use-background.svg
 center: true
 height: 485
 width: 1160

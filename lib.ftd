@@ -689,7 +689,7 @@ cta-link: $featured-card-text.cta-link
 
 -- component benefits-card:
 caption title:
-optional integer width:  99
+optional integer width:  $width
 children benefits-wrap:
 optional body body:
 integer spacing: 160
@@ -698,10 +698,18 @@ optional string role:
 ftd.color bg-color: $inherited.colors.background.step-1
 optional ftd.image-src logo:
 
--- ftd.column:
+
+-- lib4.benefits-card: $benefits-card.title
+width: $benefits-card.width 
+benefits-wrap: $benefits-card.benefits-wrap 
+body: $benefits-card.body 
+spacing: $benefits-card.spacing 
+widthfill: $benefits-card.widthfill 
+role: $benefits-card.role 
+bg-color: $benefits-card.bg-color 
+logo: $benefits-card.logo 
 
 
--- end: ftd.column
 
 -- end: benefits-card
 
@@ -713,10 +721,10 @@ optional string info:
 boolean align-left: false
 
 
--- ftd.column:
-
-
--- end: ftd.column
+-- lib4.benefits-info-card: $benefits-info-card.title
+icon: $benefits-info-card.icon 
+info: $benefits-info-card.info 
+align-left: $benefits-info-card.align-left 
 
 -- end: benefits-info-card
 
@@ -2286,6 +2294,7 @@ ftd.color bgcolor: $inherited.colors.text
 ftd.color textcolor: $inherited.colors.background.base
 ftd.color titlecolor: $inherited.colors.background.base
 optional integer height:
+boolean role: false
 
 -- lib4.display-card: $display-card.title
 image: $display-card.image
@@ -2300,6 +2309,7 @@ bgcolor: $display-card.bgcolor
 textcolor: $display-card.textcolor
 titlecolor: $display-card.titlecolor
 spacing: $display-card.spacing
+role: $display-card.role
 
 -- end: lib4.display-card
 

@@ -57,6 +57,7 @@ integer width: 318
 optional integer border-width:
 optional string cta-text:
 optional string cta-link:
+boolean role: false
 boolean center: false
 optional integer padding-vertical:
 boolean spacing: false
@@ -79,6 +80,7 @@ margin-bottom.px if {display-card.padding-vertical != NULL}: $display-card.paddi
 padding-horizontal.px if {display-card.border-width != NULL}: 15
 padding-horizontal.px if {display-card.spacing}: 62
 padding-vertical.px if {display-card.spacing}: 74
+spacing.fixed.px if {display-card.role}: 40
 
 -- ftd.image:
 if: { display-card.image != NULL }
@@ -88,23 +90,54 @@ border-radius.px: 12
 
 -- ftd.column:
 spacing.fixed.px: 16
-padding-horizontal.px: 15
-padding-vertical.px: 17
+padding-horizontal.px if { display-card.image == NULL }: 15
+padding-vertical.px if { display-card.image == NULL }: 17
 
 -- ftd.text: $display-card.title
+if: { display-card.image == NULL }
 role: $inherited.types.heading-tiny
 color: $display-card.titlecolor
 
+-- ftd.text: $display-card.title
+if: { display-card.image != NULL }
+role: $inherited.types.heading-large
+color: $display-card.titlecolor
+
 -- ftd.text: 
+if: { display-card.image == NULL }
 text: $display-card.info
 role: $inherited.types.copy-small
 color: $display-card.textcolor
 
+-- ftd.text: 
+if: { display-card.image != NULL }
+text: $display-card.info
+role: $inherited.types.copy-large
+color: $display-card.textcolor
+
+
+-- ftd.row:
+if: {!display-card.role}
+
 -- lib5.cta-button: $display-card.cta-text
 if: { display-card.cta-text != NULL }
-role: primary
+link: $display-card.cta-link
+
+
+-- end: ftd.row
+
+-- ftd.row:
+if: {display-card.role}
+margin-top.px: 24
+
+-- lib5.cta-button: $display-card.cta-text
+if: { display-card.cta-text != NULL }
 link: $display-card.cta-link
 show-arrow: true
+role: primary
+
+
+-- end: ftd.row
 
 -- end: ftd.column
 
@@ -1184,7 +1217,7 @@ color: $inherited.colors.border-strong
 -- end: ftd.column
 
 -- ftd.column:
-if: { !right-image-component-desktop.two-text }
+if: { right-image-component-desktop.two-text }
 spacing.fixed.px: 80
 
 -- ftd.column:
@@ -1243,7 +1276,7 @@ color: $inherited.colors.border-strong
 spacing.fixed.px: 24
 
 -- ftd.row:
-if: { !right-image-component-desktop.two-text }
+if: { right-image-component-desktop.two-text }
 spacing.fixed.px: 18
 
 -- ftd.image:
@@ -1329,7 +1362,7 @@ color: $inherited.colors.border-strong
 -- end: ftd.column
 
 -- ftd.column:
-if: {! right-image-component-desktop.two-text }
+if: { right-image-component-desktop.two-text }
 spacing.fixed.px: 80
 
 -- ftd.column:
@@ -1809,17 +1842,20 @@ src: $benefits-card-desktop.logo
 align-self: center
 width: auto
 height: auto
+
 -- ftd.text: $benefits-card-desktop.title
 if: { benefits-card-desktop.role == NULL}
 role: $inherited.types.heading-large
 color: $inherited.colors.text
 width.fixed.px if { benefits-card-desktop.widthfill}: 943
+text-align if { benefits-card-desktop.widthfill}: center
 
 -- ftd.text: $benefits-card-desktop.title
 if: { benefits-card-desktop.role != NULL}
 role: $inherited.types.heading-hero
 color: $inherited.colors.text
 width.fixed.px if { benefits-card-desktop.widthfill}: 943
+text-align if { benefits-card-desktop.widthfill}: center
 
 -- ftd.text: $benefits-card-desktop.body
 if: { benefits-card-desktop.body != NULL}
@@ -1836,7 +1872,7 @@ min-width.fixed.px: 500
 children: $benefits-card-desktop.benefits-wrap
 spacing.fixed.px: $benefits-card-desktop.spacing
 wrap: true
-margin-top.px: 80
+margin-top.px if { !benefits-card-desktop.widthfill}: 80
 
 -- end: ftd.row
 

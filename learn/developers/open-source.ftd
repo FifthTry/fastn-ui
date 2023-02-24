@@ -25,6 +25,7 @@ width: 1160
 -- ft.right-image-component: Interface
 icon: $assets.files.static.about.about-icon.svg
 image: $assets.files.static.open-source.img.svg
+two-text: true
 domain-text: Personal domain
 
 We belive a uniform language must exist to represent data and prose that any human being can learn easily. Further most software are incompatible with others. 

@@ -22,14 +22,15 @@ link if { cta-button.link != NULL }: $cta-button.link
 background.solid if { cta-button.role == "primary" }: $inherited.colors.cta-primary.base
 background.solid if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.base
 border-radius.px: 30
-padding-vertical.px: 20
-padding-horizontal.px: 42
-align-content: center
+padding-vertical.px if { cta-button.role == "primary" }: 20
+padding-horizontal.px if { cta-button.role == "primary" }: 42
+align-content if { cta-button.role == "primary" }: center
 ;;spacing: space-around
 
 -- ftd.text: $cta-button.title
 if: { $cta-button.title != NULL}
 role: $inherited.types.button-medium
+color: $inherited.colors.background.step-1
 color if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.text
 color if { cta-button.role == "primary" }: $inherited.colors.cta-primary.text
 white-space: nowrap
@@ -41,6 +42,14 @@ src: $assets.files.static.cta-arrow-right.svg
 width: auto
 height: auto
 align-self: center
+
+-- ftd.image:
+if: { cta-button.role != "primary" }
+src: $assets.files.static.cta-arrow.svg
+width: auto
+height: auto
+align-self: center
+
 
 -- end: ftd.row
 
@@ -61,6 +70,7 @@ align-content: center
 
 -- ftd.text: $cta-button.title
 role: $inherited.types.button-small
+color: $inherited.colors.text
 color if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.text
 color if { cta-button.role == "primary" }: $inherited.colors.cta-primary.text
 white-space: nowrap

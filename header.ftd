@@ -748,6 +748,7 @@ width: fill-container
 align-self: start
 
 -- ftd.column:
+if: { loop-section-card.title != NULL }
 background.solid if { loop-section-card.is-heading }: $inherited.colors.custom.four.dark
 padding-vertical.px: 12
 padding-horizontal.px: 24

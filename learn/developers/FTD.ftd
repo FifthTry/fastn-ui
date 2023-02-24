@@ -17,6 +17,7 @@ Fastn provides exhaustive frameworks to set up and  scale
 -- ft.row-container:
 wrap: true
 spacing: 20
+switch-to-column: true
 padding-vertical: 150
 
 

@@ -22,9 +22,9 @@ link if { cta-button.link != NULL }: $cta-button.link
 background.solid if { cta-button.role == "primary" }: $inherited.colors.cta-primary.base
 background.solid if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.base
 border-radius.px: 30
-padding-vertical.px if { cta-button.role == "primary" }: 20
-padding-horizontal.px if { cta-button.role == "primary" }: 42
-align-content if { cta-button.role == "primary" }: center
+padding-vertical.px if { cta-button.role == "primary" || cta-button.role == "secondary"}: 20
+padding-horizontal.px if { cta-button.role == "primary" || cta-button.role == "secondary"}: 42
+align-content if { cta-button.role == "primary"   }: center
 ;;spacing: space-around
 
 -- ftd.text: $cta-button.title

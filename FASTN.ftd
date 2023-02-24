@@ -33,15 +33,15 @@ icon: static/header/sub-section-icon.svg
 - Benefits of Fastn: why-fastn/how-to-use-fastn/benefits-of-fastn/
 
 
-## Features listing page: why-fastn/feature-listing-problem/
+## Features listing page: why-fastn/feature-listing-page/
 icon: static/header/sub-section-icon.svg
 
-- Frontend Infrastructure: why-fastn/feature-listing-problem/front-end-infrastructure/
+- Frontend Infrastructure: why-fastn/feature-listing-page/front-end-infrastructure/
 
--  Building Web Pages: why-fastn/feature-listing-problem/building-webpages/
-- Component Library:  why-fastn/feature-listing-problem/component-library
-- Internet OS: why-fastn/feature-listing-problem/internet-os/
-- Templates: why-fastn/feature-listing-problem/templates/
+-  Building Web Pages: why-fastn/feature-listing-page/building-webpages/
+- Component Library:  why-fastn/feature-listing-page/component-library
+- Internet OS: why-fastn/feature-listing-page/internet-os/
+- Templates: why-fastn/feature-listing-page/templates/
 
 # Use Cases: use-cases/
 

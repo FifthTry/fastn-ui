@@ -22,7 +22,7 @@ width: 1160
 -- ft.hero-section.info: Browse dozens of professionaly designed templates. Easily change structurestyle, and graphics -then host instantly.
 
 -- ft.right-image-component: Interface
-icon: $assets.files.static.aboutos.img.svg
+icon: $assets.files.static.aboutos.img1.svg
 image: $assets.files.static.open-source.display.svg
 two-text: true
 domain-text: Personal domain

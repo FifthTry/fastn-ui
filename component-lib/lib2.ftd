@@ -202,7 +202,6 @@ spacing.fixed.px if { row-container-mobile.spacing != NULL }: $row-container-mob
 overflow-x if {!row-container-mobile.slides}: auto
 wrap if {row-container-mobile.slides}: true
 padding-horizontal.px: 24
-
 ;;padding-horizontal.px: 24
 
 -- end: ftd.row

@@ -71,13 +71,6 @@ image: $assets.files.static.component.right-image.svg
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
 
--- ft.right-image-component: Authoring
-icon: $assets.files.static.learn.element.svg
-cta-text: Explore More
-cta-link: /
-image: $assets.files.static.component.right-image.svg
-
-Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
 
 -- ft.row-container:
 spacing: 24

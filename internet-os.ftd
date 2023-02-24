@@ -14,7 +14,7 @@ $show-breadcrum: true
 -- ft.left-image-component: In a Nutshell
 cta-text: Explore More
 cta-link: /
-image: $assets.files.static.open-source.img.svg
+image: $assets.files.static.nutshell.svg
 top: true
 
 We belive a uniform language must exist to represent data and prose that any human being can learn easily. Further most software are incompatible with others. A graph made in one software one can not be used with another software. 
@@ -34,7 +34,7 @@ wrap: true
 switch-to-column: true
 margin-bottom: 150
 spacing: 80
-width: 900
+width: 1160
 
 -- ft.display-card: FTD
 image: $assets.files.static.open-source.display.svg
@@ -44,7 +44,9 @@ bgcolor: $inherited.colors.border-strong
 textcolor: $inherited.colors.text-strong
 titlecolor: $inherited.colors.text
 padding-vertical: 60
+spacing: true
 center: true
+width: 540
 
 You can package your components as fastn packages to share with community and access community shared ones.
 
@@ -56,6 +58,8 @@ bgcolor: $inherited.colors.border-strong
 textcolor: $inherited.colors.text-strong
 titlecolor: $inherited.colors.text
 padding-vertical: 60
+spacing: true
+width: 540
 
 You can package your components as fastn packages to share with community and access community shared ones.
 
@@ -67,6 +71,8 @@ bgcolor: $inherited.colors.border-strong
 textcolor: $inherited.colors.text-strong
 titlecolor: $inherited.colors.text
 padding-vertical: 60
+spacing: true
+width: 540
 
 You can package your components as fastn packages to share with community and access community shared ones.
 
@@ -78,6 +84,8 @@ bgcolor: $inherited.colors.border-strong
 textcolor: $inherited.colors.text-strong
 titlecolor: $inherited.colors.text
 padding-vertical: 60
+spacing: true
+width: 540
 
 You can package your components as fastn packages to share with community and access community shared ones.
 

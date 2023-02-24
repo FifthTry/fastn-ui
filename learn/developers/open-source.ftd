@@ -14,13 +14,6 @@ width: 1160
 
 -- ft.hero-section.info: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
 
--- ft.right-image-component: Available via Github
-image: $assets.files.static.open-source.img.svg
-padding-vertical: 105
-join-btn: true
-
-We belive a uniform language must exist to represent data and prose that any human being can learn easily. Further most software are incompatible with others. A graph made in one software one can not be used with another software. 
-
 -- ft.hero-section: Loreum ipsum
 image: $assets.files.static.open-source.background.svg
 center-img: true
@@ -32,56 +25,12 @@ width: 1160
 -- ft.right-image-component: Interface
 icon: $assets.files.static.about.about-icon.svg
 image: $assets.files.static.open-source.img.svg
-two-text: true
 domain-text: Personal domain
 
 We belive a uniform language must exist to represent data and prose that any human being can learn easily. Further most software are incompatible with others. 
 
 -- ft.trending-templates: You got questions in mind ? We have answers
 no-img: true
-
--- ft.row-container:
-spacing: 24
-wrap: true
-switch-to-column: true
-
--- border-box: Dark mode For Images
-cta-text: Explore More
-cta-link: /
-
-Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
-
--- border-box: Dark mode For Images
-cta-text: Explore More
-cta-link: /
-
-Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
-
--- border-box: Dark mode For Images
-cta-text: Explore More
-cta-link: /
-
-Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
-
--- border-box: Dark mode For Images
-cta-text: Explore More
-cta-link: /
-
-Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
-
--- end: ft.row-container
-
--- ft.excel-promo-card: YC Winter batch 2021
-image: $assets.files.static.open-source.ycomb.svg
-bgcolor: $inherited.colors.background.step-1
-cta-text: Explore More
-cta-link: /
-cta-role: primary
-left: true
-
--- ft.excel-promo-card.info: 
-
-Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
 
 -- ft.footer:
 

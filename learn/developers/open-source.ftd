@@ -7,7 +7,6 @@
 -- ft.page: Internet OS
 
 -- ft.hero-section: Fastn is Open Source
-image: $assets.files.static.open-source.open-src.png
 center: true
 height: 485
 width: 1160

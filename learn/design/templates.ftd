@@ -6,7 +6,6 @@
 bg-color: $inherited.colors.background.step-1
 
 -- ft.hero-section: Templates for you
-image: $assets.files.static.open-source.open-src.png
 center: true
 height: 485
 width: 1160

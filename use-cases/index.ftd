@@ -24,17 +24,17 @@ switch-to-column: true
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.tem1.svg
 width: 345
-link: use-cases/
+
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.tem1.svg
 width: 345
-link: use-cases/
+
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.tem1.svg
 width: 345
-link: use-cases/
+
 
 -- end: ft.row-container
 
@@ -62,26 +62,26 @@ slides: true
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
+
+
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
 
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
+
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
-link: use-cases/
 
 -- end: ft.row-container
 
@@ -110,25 +110,25 @@ slides: true
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
+
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
+
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
+
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
+
 
 -- end: ft.row-container
 
@@ -157,25 +157,25 @@ wrap: true
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
+
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
+
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
+
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
+
 
 -- end: ft.row-container
 
@@ -203,25 +203,25 @@ slides: true
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
+
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
+
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
+
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
-link: use-cases/
+
 
 -- end: ft.row-container
 

@@ -22,9 +22,9 @@
 
 -- optional ftd.image-src site-logo: NULL
 
--- string login-button-link: /
+-- string login-button-link: index.html
 
--- string site-url: /
+-- string site-url: index.html
 
 -- integer $width: 1160
 

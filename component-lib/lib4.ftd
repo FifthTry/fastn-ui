@@ -67,9 +67,11 @@ ftd.color titlecolor: $inherited.colors.background.base
 optional integer height:
 
 
+
 -- ftd.column:
 width.fixed.px: $display-card.width
 max-width.fixed.px: $display-card.width
+width if {ftd.device == "mobile"}: fill-container
 align-self if {display-card.center} : center
 background.solid: $display-card.bgcolor
 border-radius.px: 12

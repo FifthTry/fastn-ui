@@ -13,6 +13,7 @@ optional boolean is-active: true
 optional boolean is-disabled: false
 optional boolean is-heading: false
 optional boolean is-open: false
+optional boolean is-row: false
 optional integer number: 
 optional string path: 
 header-item list children: 
@@ -35,6 +36,7 @@ url: why-fastn/why-fastn/
 font-icon: $assets.files.static.header.sub-section-icon.svg
 is-active: true
 is-heading: true
+is-row: false
 body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 -- header-item.children:
@@ -68,19 +70,20 @@ body: Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id moles
 url: why-fastn/how-to-use-fastn/
 font-icon: $assets.files.static.header.sub-section-icon.svg
 is-active: false
-is-heading: true
+is-heading: false
+is-row: false
 body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 -- header-item.children:
 
--- header-item: Benefits of fastn
+-- header-item: Benefits of fastn Part 2
 url: why-fastn/how-to-use-fastn/benefits-of-fastn/
 
 -- end: header-item
 
 -- header-item: 
 font-icon: $assets.files.static.header.menu-icons.smily-icon.svg
-body: Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id molestie mi commodo. Sit curabitur nulla sit vel enim hac pulvinar in ultricies sit urna.
+body: Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id molestie mi com m u modo. Sit curabitur nulla sit vel enim hac pulvinar in ultricies sit urna.
 
 -- end: header-item
 
@@ -105,6 +108,7 @@ url: why-fastn/feature-listing-page/
 font-icon: $assets.files.static.header.sub-section-icon.svg
 is-active: false
 is-heading: false
+is-row: true
 body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 -- header-item.children:
@@ -161,6 +165,7 @@ body: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod te
 -- header-item: 
 is-active: false
 is-heading: false
+is-row: true
 url: use-cases/
 
 -- end: header-item
@@ -223,6 +228,7 @@ url: learn/learn/
 font-icon: $assets.files.static.header.sub-section-icon.svg
 is-active: true
 is-heading: true
+is-row: true
 body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 -- header-item.children:
@@ -269,7 +275,8 @@ body: Lorem ipsum dolor sit amet, consectetur elit.
 url: learn/design/
 font-icon: $assets.files.static.header.sub-section-icon.svg
 is-active: false
-is-heading: true
+is-heading: false
+is-row: true
 body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 -- header-item.children:
@@ -319,6 +326,7 @@ url: learn/developers/
 font-icon: $assets.files.static.header.sub-section-icon.svg
 is-active: false
 is-heading: false
+is-row: true
 body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 -- header-item.children:
@@ -381,6 +389,7 @@ url: build/landing-page/
 font-icon: $assets.files.static.header.sub-section-icon.svg
 is-active: true
 is-heading: true
+is-row: true
 body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 -- header-item.children:
@@ -398,7 +407,8 @@ body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 url: build/microsite/
 font-icon: $assets.files.static.header.sub-section-icon.svg
 is-active: false
-is-heading: true
+is-heading: false
+is-row: true
 body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 -- header-item.children:
@@ -416,7 +426,8 @@ body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 url: build/blog-section/
 font-icon: $assets.files.static.header.sub-section-icon.svg
 is-active: false
-is-heading: true
+is-heading: false
+is-row: true
 body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 -- header-item.children:

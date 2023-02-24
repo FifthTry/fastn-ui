@@ -702,7 +702,8 @@ is-active: $obj.is-active
 toc: $obj.children
 parent-id: menu-items
 icon: $obj.font-icon
-is-heading: $obj.is-heading
+$is-heading: *$obj.is-heading
+$is-row: *$obj.is-row
 body: $obj.body
 
 -- end: ftd.column
@@ -729,47 +730,40 @@ body: $obj.body
 -- component loop-section-card:
 caption title:
 optional body body:
-boolean $mouse-in: false
 $toc.header-item list toc:
 boolean is-active: false
 string link:
 optional ftd.image-src icon:
-boolean $show-sub-menu: false
 string parent-id: 
-boolean is-heading: false
+boolean $is-heading: false
+boolean $is-row: false
 
 -- ftd.column: 
 width: fill-container
-
--- ftd.row:
-width: fill-container
-
+$on-mouse-enter$: $ftd.set-bool($a = $loop-section-card.is-heading, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $loop-section-card.is-heading, v = false)
 
 -- ftd.column:
 width: fill-container
 align-self: start
 
 -- ftd.column:
-background.solid if { loop-section-card.mouse-in }: $inherited.colors.custom.four.dark
-background.solid if { loop-section-card.is-active }: $inherited.colors.custom.four.dark
+background.solid if { loop-section-card.is-heading }: $inherited.colors.custom.four.dark
 padding-vertical.px: 12
 padding-horizontal.px: 24
 border-color: $inherited.colors.custom.five
-border-color if { loop-section-card.mouse-in || loop-section-card.is-active }: $inherited.colors.border-strong
+border-color if { loop-section-card.is-heading }: $inherited.colors.border-strong
 border-width.px: 1
 border-radius.px: 5
-$on-mouse-enter$: $ftd.set-bool($a = $loop-section-card.mouse-in, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $loop-section-card.mouse-in, v = false)
 spacing.fixed.px: 12
 cursor: default
-$on-click$: $ftd.set-bool($a = $loop-section-card.show-sub-menu, v = true)
-$on-click-outside$: $ftd.set-bool($a = $loop-section-card.show-sub-menu, v = false)
 
 -- ftd.row:
 if: { loop-section-card.title != NULL }
 width: fill-container
 spacing.fixed.px: 12
 align-self: center
+
 
 -- ftd.image:
 if: { loop-section-card.icon != NULL }
@@ -813,26 +807,25 @@ min-height.fixed.px: 500
 anchor.id: $loop-section-card.parent-id
 right.px: 0
 top.px: 0
+z-index if { loop-section-card.is-heading }: 999999
 
 -- ftd.column:
 width: fill-container
-;;if: { loop-section-card.show-sub-menu || loop-section-card.is-active}
-if: { loop-section-card.show-sub-menu || loop-section-card.title == NULL }
+if: { loop-section-card.is-heading || loop-section-card.title == NULL }
 align-content: center
-margin-left.px: 38
+padding-left.px: 30
+margin-left.px: 20
 margin-top.px: 40
-padding-right.px: 40
+padding-right.px: 30
 
 -- toc-items: 
 if: { !ftd.is_empty(loop-section-card.toc) }
 toc: $loop-section-card.toc
-is-heading: $loop-section-card.is-heading
- 
--- end: ftd.column
+is-row: $loop-section-card.is-row
 
 -- end: ftd.column
 
--- end: ftd.row
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -848,13 +841,13 @@ is-heading: $loop-section-card.is-heading
 
 -- component toc-items:
 $toc.header-item list toc:
-boolean is-heading: false
+optional boolean is-row: false
 
 -- ftd.column:
 width: fill-container
 
 -- ftd.row:
-if: { !toc-items.is-heading }
+if: { toc-items.is-row }
 width: fill-container
 wrap: true
 spacing: space-between
@@ -865,11 +858,12 @@ $loop$: $toc-items.toc as $obj
 link: $obj.url
 body: $obj.body
 icon: $obj.font-icon
+is-row: $toc-items.is-row
 
 -- end: ftd.row
 
 -- ftd.column:
-if: { toc-items.is-heading}
+if: { !toc-items.is-row}
 width: fill-container
 align-self: start
 
@@ -879,6 +873,7 @@ $loop$: $toc-items.toc as $obj
 link: $obj.url
 body: $obj.body
 icon: $obj.font-icon
+is-row: $toc-items.is-row
 
 -- end: ftd.column
 
@@ -898,11 +893,12 @@ icon: $obj.font-icon
 -- component toc-items-loop:
 optional caption title: 
 string link:
-boolean is-heading: false
+optional boolean is-row: false
 optional string body: 
 optional ftd.image-src icon:
 
 -- ftd.column:
+width.fixed.percent if { toc-items-loop.is-row }: 49
 width: fill-container
 spacing.fixed.px: 12
 margin-bottom.px: 28

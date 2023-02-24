@@ -44,7 +44,7 @@ spacing: 34
 bg-color: $inherited.colors.custom.two
 logo: $assets.files.static.uses.image1.svg
 
- Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
 
 -- ft.cta-button: Features
 role: primary

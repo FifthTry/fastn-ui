@@ -6,7 +6,11 @@
 -- import: fifthtry.github.io/fastn-ui/typography as tf
 -- import: fifthtry.github.io/bling/detail as detail
 -- import: fifthtry.github.io/fastn-ui/header as h
-
+-- import: fifthtry.github.io/fastn-ui/header-data as toc
+-- import: fifthtry.github.io/fastn-ui/component-lib/lib4 as lib4
+-- import: fifthtry.github.io/fastn-ui/component-lib/lib5 as lib5
+-- import: fifthtry.github.io/fastn-ui/component-lib/lib2 as lib2
+-- import: fifthtry.github.io/fastn-ui/component-lib/lib3 as lib3
 
 -- integer $current-slide: 1
 
@@ -216,76 +220,300 @@ boolean show-arrow: false
 optional integer width:
 boolean align-center: false
 
+-- lib5.cta-button: $cta-button.title
+role: $cta-button.role
+link: $cta-button.link
+medium: $cta-button.medium
+show-arrow: $cta-button.show-arrow
+width: $cta-button.width
+align-center: $cta-button.align-center
+
+-- end: cta-button
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component menu-links:
+caption title:
+string link:
+optional ftd.image-src icon:
+boolean is-active: false
+boolean $mouse-in: false
+boolean $show-menu: false
+integer width: 
+optional integer idx:
+$toc.header-item list sub-sections: 
+;;optional pr.toc-item current-section: 
+;;optional pr.toc-item current-subsection: 
+;;optional pr.toc-item current-page: 
+;;pr.toc-item list toc:
+optional string parent-id: 
+
 -- ftd.column:
-align-self if { cta-button.align-center }: center
-;;margin-top.px if { cta-button.align-center && ftd.device != "mobile"}: 100
-margin-top.px if { cta-button.align-center && ftd.device == "mobile"}: 40
+width: fill-container
+$on-mouse-enter$: $ftd.set-bool($a = $menu-links.show-menu, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $menu-links.show-menu, v = false)
 
--- ftd.row:
-if: {!cta-button.medium}
-width.fixed.px if { cta-button.width != NULL}: $cta-button.width
-spacing.fixed.px: 10
-link if { cta-button.link != NULL }: $cta-button.link
-background.solid if { cta-button.role == "primary" }: $inherited.colors.cta-primary.base
-background.solid if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.base
-border-radius.px: 30
-padding-vertical.px: 20
-padding-horizontal.px: 42
-align-content: center
-;;spacing: space-around
+-- ftd.column:
 
--- ftd.text: $cta-button.title
-if: { $cta-button.title != NULL}
-role: $inherited.types.button-medium
-color if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.text
-color if { cta-button.role == "primary" }: $inherited.colors.cta-primary.text
+-- ftd.text: $menu-links.title
+role: $inherited.types.button-large
+link: $menu-links.link
+color: $inherited.colors.cta-primary.text
+color if { $menu-links.is-active }: $inherited.colors.cta-primary.base
+color if { $menu-links.mouse-in }: $inherited.colors.cta-primary.base
+color if { !$menu-links.mouse-in }: $inherited.colors.text
+$on-mouse-enter$: $ftd.set-bool($a = $menu-links.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $menu-links.mouse-in, v = false)
 white-space: nowrap
-text-align: center
+
+-- ftd.column:
+if: { $menu-links.show-menu }
+anchor: parent
+top.px: 18
+left.calc: 50% -30px
+z-index: 0
 
 -- ftd.image:
-if: { cta-button.show-arrow }
-src: $assets.files.static.cta-arrow-right.svg
-width: auto
+src: $assets.files.static.header.polygon.svg
+width: fill-container
 height: auto
-align-self: center
 
--- end: ftd.row
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { $menu-links.show-menu }
+width: fill-container
+max-width.fixed.px: $menu-links.width
+anchor.id: $menu-links.parent-id
+z-index: 999
+top.px: 94
+left.px: 0
+;;left.px: $divideToTwo(a = $menu-links.width)
+$on-click-outside$: $ftd.set-bool($a = $menu-links.show-menu, v = false)
+
+-- ftd.column:
+width: fill-container
+background.solid: $inherited.colors.custom.five
+padding-vertical.px: 42
+padding-horizontal.px: 42
+border-radius.px: 12
+;;min-height.fixed.px: 500
+
+-- ftd.column:
+width.fixed.percent: 50
+height: fill-container
+z-index: 0
+background.solid: $inherited.colors.background.step-1
+anchor: parent
+right.px: 0
+top.px: 0
+border-top-right-radius.px: 12
+border-bottom-right-radius.px: 12
+
+-- end: ftd.column
 
 -- ftd.row:
-if: {cta-button.medium}
-width.fixed.px if { cta-button.width != NULL}: $cta-button.width
-spacing.fixed.px: 10
-link if { cta-button.link != NULL }: $cta-button.link
-background.solid if { cta-button.role == "primary" }: $inherited.colors.cta-primary.base
-background.solid if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.base
-border-radius.px: 30
-padding-vertical.px: 20
-padding-horizontal.px: 42
-padding-vertical.px if {ftd.device == "mobile"}: 15
-padding-horizontal.px if {ftd.device == "mobile"}: 30
-align-content: center
-;;spacing: space-around
+width: fill-container
+spacing.fixed.px: 60
+z-index: 111
 
--- ftd.text: $cta-button.title
-role: $inherited.types.button-small
-color if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.text
-color if { cta-button.role == "primary" }: $inherited.colors.cta-primary.text
-white-space: nowrap
-text-align: center
+
+-- ftd.column:
+width.fixed.px: 240
+
+;; left column
+
+-- ftd.column:
+
+-- ftd.text: $menu-links.title
+link: $menu-links.link
+role: $inherited.types.heading-small
+color: $inherited.colors.text.dark
+
+-- ftd.text: 
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong.dark
+margin-top.px: 12
+width: fill-container
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua. 
 
 -- ftd.image:
-if: { cta-button.show-arrow }
-src: $assets.files.static.cta-arrow-right.svg
+if: { menu-links.icon != NULL }
+src: $menu-links.icon
 width: auto
-width.fixed.px if {ftd.device == "mobile"}: 19
 height: auto
-align-self: center
+margin-top.px: 40 
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+;;min-height.fixed.px: 500
+;;background.solid: red
+spacing.fixed.px: 12
+
+;; right column
+
+-- loop-section-card: $obj.title
+if: { !ftd.is_empty(menu-links.sub-sections) }
+$loop$: $menu-links.sub-sections as $obj
+link: $obj.url
+is-active: $obj.is-active
+toc: $obj.children
+;;current-subsection: $menu-links.title
+;;current-page: $menu-links.current-page
+parent-id: menu-items
+icon: $obj.font-icon
+is-heading: $obj.is-heading
+
+-- end: ftd.column
 
 -- end: ftd.row
 
 -- end: ftd.column
 
--- end: cta-button
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: menu-links
+
+
+
+
+
+
+
+
+
+
+-- component loop-section-card:
+caption title:
+boolean $mouse-in: false
+;;optional pr.toc-item current-section: 
+;;optional pr.toc-item current-subsection: 
+;;optional pr.toc-item current-page: 
+$toc.header-item list toc:
+boolean is-active: false
+string link:
+optional ftd.image-src icon:
+boolean $show-sub-menu: false
+string parent-id: 
+boolean is-heading: false
+
+-- ftd.column: 
+width: fill-container
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 60
+
+-- ftd.column:
+width.fixed.px: 284
+align-self: start
+
+-- ftd.column:
+background.solid if { loop-section-card.mouse-in }: $inherited.colors.custom.four.dark
+background.solid if { loop-section-card.is-active }: $inherited.colors.custom.four.dark
+padding-vertical.px: 12
+padding-horizontal.px: 24
+border-color: $inherited.colors.custom.five
+border-color if { loop-section-card.mouse-in || loop-section-card.is-active }: $inherited.colors.border-strong
+border-width.px: 1
+border-radius.px: 5
+$on-mouse-enter$: $ftd.set-bool($a = $loop-section-card.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $loop-section-card.mouse-in, v = false)
+spacing.fixed.px: 12
+max-width.fixed.px: 234
+cursor: default
+$on-click$: $ftd.set-bool($a = $loop-section-card.show-sub-menu, v = true)
+$on-click-outside$: $ftd.set-bool($a = $loop-section-card.show-sub-menu, v = false)
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 12
+align-self: center
+
+-- ftd.image:
+if: { loop-section-card.icon != NULL }
+src: $loop-section-card.icon
+width: auto
+height: auto
+align-self: center
+
+-- ftd.text: $loop-section-card.title
+link: $loop-section-card.link
+role: $inherited.types.copy-small
+color: $inherited.colors.text.dark
+white-space: nowrap
+align-self: center
+
+-- ftd.image:
+src: $assets.files.static.header.sub-section-right-arrow.svg
+width: auto
+height: auto
+align-self: center
+margin-left.px: 4
+
+-- end: ftd.row
+
+-- ftd.text: 
+text: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+role: $inherited.types.fine-print
+color: $inherited.colors.text-strong.dark
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width.fixed.percent: 51
+;;background.solid: #333333
+min-height.fixed.px: 500
+anchor.id: $loop-section-card.parent-id
+right.px: 0
+top.px: 0
+
+-- ftd.column:
+width: fill-container
+;;if: { loop-section-card.show-sub-menu || loop-section-card.is-active}
+if: { loop-section-card.show-sub-menu }
+align-content: center
+margin-left.px: 38
+margin-top.px: 40
+
+-- toc-items: 
+if: { !ftd.is_empty(loop-section-card.toc) }
+toc: $loop-section-card.toc
+is-heading: $loop-section-card.is-heading
+ 
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: loop-section-card
+
 
 
 
@@ -311,11 +539,7 @@ boolean bottom: false
 optional boolean small-img: false
 optional boolean top-img: false
 
--- ftd.column:
-width: fill-container
-
--- hero-section-desktop: $hero-section.title
-if: {ftd.device != "mobile"}
+-- lib2.hero-section: $hero-section.title
 image: $hero-section.image
 cta-left-text: $hero-section.cta-left-text
 cta-right-text: $hero-section.cta-right-text
@@ -329,539 +553,15 @@ bottom: $hero-section.bottom
 small-img: $hero-section.small-img
 top-img: $hero-section.top-img
 
--- hero-section-mobile: $hero-section.title
-if: {ftd.device == "mobile"}
-image: $hero-section.image
-cta-left-text: $hero-section.cta-left-text
-cta-right-text: $hero-section.cta-right-text
-info: $hero-section.info
-width: $hero-section.width
-childs: $hero-section.childs
-center: $hero-section.center
-height: $hero-section.height
-bottom: $hero-section.bottom
-small-img: $hero-section.small-img
-top-img: $hero-section.top-img
-
--- end: ftd.column
-
 -- end: hero-section
-
-
-
-
-
-
-
-
-
-
--- component hero-section-mobile: 
-caption title: 
-optional ftd.image-src image: 
-optional string cta-left-text:
-optional string cta-right-text:
-optional string info:
-integer width: 
-children childs:
-boolean center: false
-integer height:
-boolean bottom:
-optional boolean small-img:
-optional boolean top-img:
-
--- ftd.column:
-align-self if {hero-section-mobile.center }: center
-align-content if {hero-section-mobile.center}: center
-width: fill-container
-padding-horizontal.px: 16
-margin-top.px if { hero-section-mobile.bottom }: 30
-
--- ftd.image:
-if: { hero-section-mobile.image != NULL && hero-section-mobile.top-img}
-src: $hero-section-mobile.image
-width: fill-container
-height: auto
-
--- ftd.text: $hero-section-mobile.title
-role: $inherited.types.heading-hero
-color: $inherited.colors.text-strong
-text-align if {hero-section-mobile.bottom}: center
-
--- ftd.text:
-if: { hero-section-mobile.info != NULL }
-text: $hero-section-mobile.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text
-margin-top.px: 15
-text-align if {hero-section-mobile.bottom}: center
-
--- ftd.row:
-spacing.fixed.px: 33
-margin-top.px: 10
-margin-bottom.px: 40
-
--- cta-button: $hero-section-mobile.cta-left-text
-if: { hero-section-mobile.cta-left-text != NULL }
-role: primary
-medium: true
-link: /
-show-arrow: true
-width: 162
-
--- cta-button: $hero-section-mobile.cta-right-text
-if: { hero-section-mobile.cta-right-text != NULL }
-role: secondary
-medium: true
-link: /
-width: 162
-
--- end: ftd.row
-
--- ftd.image:
-if: { hero-section-mobile.image != NULL && !hero-section-mobile.top-img }
-src: $hero-section-mobile.image
-width: fill-container
-height: auto
-
--- ftd.column:
-width: fill-container
-children: $hero-section-mobile.childs
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: hero-section-mobile
-
-
-
-
-
-
-
-
-
-
--- component hero-section-desktop: 
-caption title: 
-optional ftd.image-src image: 
-optional string cta-left-text:
-optional string cta-right-text:
-optional string info:
-integer width: $width
-children childs:
-boolean center: 
-boolean center-img:
-integer height: 
-boolean bottom:
-optional boolean small-img:
-optional boolean top-img:
-
--- ftd.column:
-width: fill-container
-z-index: 0
-max-width.fixed.px: 1460
-align-self: center
-align-content if {hero-section-desktop.center}: center
-min-height.fixed.px: $hero-section-desktop.height
-
--- ftd.column:
-if: { hero-section-desktop.small-img }
-width.fixed.percent: 48
-anchor: parent
-left.px: 300
-top.px: 120
-z-index: -1
-
--- ftd.image:
-if: { hero-section-desktop.image != NULL}
-src: $hero-section-desktop.image
-width: fill-container
-height: auto
-
--- end: ftd.column
-
--- ftd.column:
-if: { hero-section-desktop.center-img }
-width.fixed.percent: 80
-anchor: parent
-left.px: 140
-top.px: 20
-z-index: -1
-
--- ftd.image:
-if: { hero-section-desktop.image != NULL}
-src: $hero-section-desktop.image
-width: fill-container
-height: auto
-
--- end: ftd.column
-
--- ftd.column:
-if: { !hero-section-desktop.bottom && !hero-section-desktop.small-img && !hero-section-desktop.center-img }
-width: fill-container
-anchor: parent
-right.px: 0
-top.px: 0
-z-index: -1
-
--- ftd.image:
-if: { hero-section-desktop.image != NULL }
-src: $hero-section-desktop.image
-width: fill-container
-height: auto
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $hero-section-desktop.width
-align-self: center
-align-content if {hero-section-desktop.center || hero-section-desktop.center-img}: center
-
--- ftd.text: $hero-section-desktop.title
-role: $inherited.types.heading-hero
-color: $inherited.colors.text
-padding-right.px if { !hero-section-desktop.center && !hero-section-desktop.center-img}: 200
-text-align if { hero-section-desktop.bottom || hero-section-desktop.center || hero-section-desktop.center-img}: center
-
--- ftd.text:
-if: { $hero-section-desktop.info != NULL }
-text: $hero-section-desktop.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text
-max-width.fixed.px if { !hero-section-desktop.center && !hero-section-desktop.center-img  }: 520
-max-width.fixed.px if { hero-section-desktop.center-img  }: 622
-max-width.fixed.px: 715
-margin-top.px: 15
-text-align if { hero-section-desktop.bottom || hero-section-desktop.center || hero-section-desktop.center-img}: center
-
--- ftd.column:
-width: fill-container
-margin-top.px: 40
-align-content if {hero-section-desktop.center}: center
-
--- ftd.row:
-spacing.fixed.px: 24
-
--- cta-button: $hero-section-desktop.cta-left-text
-if: { $hero-section-desktop.cta-left-text != NULL }
-role: primary
-link: /
-show-arrow: true
-width: 220
-
--- cta-button: $hero-section-desktop.cta-right-text
-if: { hero-section-desktop.cta-right-text != NULL }
-role: secondary
-link: /
-width: 220
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
-if: { hero-section-desktop.bottom}
-
--- ftd.image:
-if: { hero-section-desktop.image != NULL }
-src: $hero-section-desktop.image
-width: fill-container
-height: auto
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-children: $hero-section-desktop.childs
-max-width.fixed.px: $hero-section-desktop.width
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: hero-section-desktop
-
-
-
 
 -- component metrics-card:
 integer width: $width
 
--- ftd.column:
-width: fill-container
-
--- metrics-card-desktop:
-if: { ftd.device != "mobile" }
+-- lib3.metrics-card:
 width: $metrics-card.width
-
--- metrics-card-mobile:
-if: { ftd.device == "mobile" }
-width: $metrics-card.width
-
--- end: ftd.column
 
 -- end: metrics-card
-
-
-
-
-
-
-
-
-
-
--- component metrics-card-desktop:
-integer width:
-
--- ftd.column:
-width: fill-container
-background.solid: $inherited.colors.background.step-1 
-padding-vertical.px: 96
-z-index: 10
-align-content: center
-
--- ftd.column:
-width: fill-container
-align-self: center
-max-width.fixed.px: $metrics-card-desktop.width
-
--- ftd.row:
-width: fill-container
-align-self: center
-
--- ftd.column:
-width: fill-container
-align-content: center
-spacing.fixed.px: 14
-
--- ftd.image:
-src: $assets.files.static.projects-icon.svg
-width: auto
-height.fixed.px: 86
-
--- ftd.text: 500
-role: $inherited.types.heading-medium
-color: $inherited.colors.text
-
--- ftd.text: Projects created
-role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-align-content: center
-spacing.fixed.px: 14
-
--- ftd.image:
-src: $assets.files.static.hostings-icon.svg
-width: auto
-height.fixed.px: 86
-
--- ftd.text: 200
-role: $inherited.types.heading-medium
-color: $inherited.colors.text
-
--- ftd.text: Hostings
-role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-align-content: center
-spacing.fixed.px: 14
-
--- ftd.image:
-src: $assets.files.static.feature-icon-1.svg
-width: auto
-height.fixed.px: 86
-
--- ftd.text: 90
-role: $inherited.types.heading-medium
-color: $inherited.colors.text
-
--- ftd.text: Loreum ipsums
-role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-align-content: center
-spacing.fixed.px: 14
-
--- ftd.image:
-src: $assets.files.static.feature-icon-2.svg
-width: auto
-height.fixed.px: 86
-
--- ftd.text: 16
-role: $inherited.types.heading-medium
-color: $inherited.colors.text
-
--- ftd.text: Loreum ipsums
-role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: metrics-card-desktop
-
-
-
-
-
-
-
-
-
-
--- component metrics-card-mobile:
-integer width:
-
--- ftd.column:
-width: fill-container
-background.solid: $inherited.colors.background.step-1 
-padding-vertical.px: 50
-z-index: 10
-align-content: center
-
--- ftd.column:
-width: fill-container
-
--- ftd.row:
-width: fill-container
-spacing.fixed.px: 15
-align-content: center
-
--- ftd.column:
-width: fill-container
-align-content: center
-spacing.fixed.px: 14
-
--- ftd.image:
-src: $assets.files.static.projects-icon.svg
-width: auto
-height.fixed.px: 60
-
--- ftd.text: 500
-role: $inherited.types.heading-medium
-color: $inherited.colors.text
-
--- ftd.text: Projects created
-role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
-
--- end: ftd.column
-
--- ftd.column:
-border-left-width.px: 1
-border-color: $inherited.colors.border
-height.fixed.px: 50
-;;width.fixed.px: 45
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-align-content: center
-spacing.fixed.px: 14
-
--- ftd.image:
-src: $assets.files.static.hostings-icon.svg
-width: auto
-height.fixed.px: 60
-
--- ftd.text: 200
-role: $inherited.types.heading-medium
-color: $inherited.colors.text
-
--- ftd.text: Projects created
-role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
-
--- end: ftd.column
-
--- end: ftd.row
-
--- ftd.row:
-width: fill-container
-spacing.fixed.px: 15
-align-content: center
-margin-top.px: 40
-
--- ftd.column:
-width: fill-container
-align-content: center
-spacing.fixed.px: 14
-
--- ftd.image:
-src: $assets.files.static.feature-icon-1.svg
-width: auto
-height.fixed.px: 60
-
--- ftd.text: 90
-role: $inherited.types.heading-medium
-color: $inherited.colors.text
-
--- ftd.text: Hostings
-role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
-
--- end: ftd.column
-
--- ftd.column:
-border-left-width.px: 1
-border-color: $inherited.colors.border
-height.fixed.px: 50
-;;width.fixed.px: 45
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-align-content: center
-spacing.fixed.px: 14
-
--- ftd.image:
-src: $assets.files.static.feature-icon-2.svg
-width: auto
-height.fixed.px: 60
-
--- ftd.text: 16
-role: $inherited.types.heading-medium
-color: $inherited.colors.text
-
--- ftd.text: Hostings
-role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: metrics-card-mobile
-
 
 
 
@@ -875,94 +575,12 @@ color: $inherited.colors.text-strong
 children fearures-wrap:
 integer width: $width
 
--- ftd.column:
-width: fill-container
 
--- features-card-desktop:
-if: { ftd.device != "mobile" }
+-- lib3.features-card:
 fearures-wrap: $features-card.fearures-wrap
 width: $features-card.width
-
--- features-card-mobile:
-if: { ftd.device == "mobile" }
-fearures-wrap: $features-card.fearures-wrap
-width: $features-card.width
-
--- end: ftd.column
 
 -- end: features-card
-
-
-
-
-
-
-
-
-
-
--- component features-card-desktop:
-children fearures-wrap:
-integer width: $width
-
--- ftd.column:
-margin-bottom.px: 30
-margin-top.px: 70
-width: fill-container
-padding-vertical.px: 150
-z-index: 1111
-align-content: center
-
--- ftd.column:
-width.fixed.px: $features-card-desktop.width
-
--- end: ftd.column
-
--- ftd.column:
-width.fixed.px: $features-card-desktop.width
-children: $features-card-desktop.fearures-wrap
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: features-card-desktop
-
-
-
-
-
-
-
-
-
-
--- component features-card-mobile:
-children fearures-wrap:
-integer width: $width
-
--- ftd.column:
-margin-bottom.px: 30
-margin-top.px: 70
-width: fill-container
-z-index: 1111
-
--- ftd.column:
-width: fill-container
-
--- end: ftd.column
-
--- ftd.column:
-padding-horizontal.px: 16
-width: fill-container
-children: $features-card-mobile.fearures-wrap
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: features-card-mobile
-
 
 
 
@@ -984,23 +602,8 @@ children card-wrap:
 integer z-index: 0
 integer width: $width
 
--- ftd.column:
-width: fill-container
 
--- snippet-card-left-desktop: $snippet-card-left.title
-if:{ftd.device != "mobile"}
-description: $snippet-card-left.description
-cta-text: $snippet-card-left.cta-text
-bgcolor: $snippet-card-left.bgcolor
-image-mask: $snippet-card-left.image-mask
-link: $snippet-card-left.link
-pull-top: $snippet-card-left.pull-top
-card-wrap: $snippet-card-left.card-wrap
-z-index: $snippet-card-left.z-index
-width: $snippet-card-left.width
-
--- snippet-card-left-mobile: $snippet-card-left.title
-if:{ftd.device == "mobile"}
+-- lib3.snippet-card-left: $snippet-card-left.title
 description: $snippet-card-left.description
 cta-text: $snippet-card-left.cta-text
 bgcolor: $snippet-card-left.bgcolor
@@ -1010,218 +613,8 @@ pull-top: $snippet-card-left.pull-top
 card-wrap: $snippet-card-left.card-wrap
 z-index: $snippet-card-left.z-index
 
--- end: ftd.column
 
 -- end: snippet-card-left
-
-
-
-
-
-
-
-
-
-
--- component snippet-card-left-mobile:
-caption title:
-optional string description:
-optional string cta-text:
-optional ftd.color bgcolor: 
-optional ftd.image-src image-mask: $assets.files.static.features.web-project-mask.svg
-optional string link: 
-optional integer pull-top: 0
-children card-wrap:
-integer z-index: 0
-
--- ftd.column:
-width: fill-container
-margin-bottom.px: 40
-
--- ftd.column:
-width: fill-container
-
--- ftd.column:
-width: fill-container
-background.solid: $snippet-card-left-mobile.bgcolor
-border-radius.px: 30
-align-content: center
-padding.px: 6
-
--- ftd.column:
-width: fill-container
-margin-top.px: -12
-border-width.px: 1
-border-color: $inherited.colors.border
-border-radius.px: 20
-padding-vertical.px: 6
-padding-horizontal.px: 11
-align-content: center
-
--- ftd.column:
-background.solid: $inherited.colors.border.dark
-border-width.px: 1
-border-color: $inherited.colors.border
-border-radius.px: 20
-padding-vertical.px: 16
-padding-horizontal.px: 16
-spacing.fixed.px: 10
-link: $snippet-card-left-mobile.link
-max-width.fixed.px: 200
-
--- ftd.image:
-src: $snippet-card-left-mobile.image-mask
-width: fill-container
-height: auto
-
--- ftd.text: $snippet-card-left-mobile.title
-role: $inherited.types.button-large
-color: $inherited.colors.cta-secondary.text
-
--- ftd.text: 
-text: $snippet-card-left-mobile.description
-role: $inherited.types.fine-print
-color: $inherited.colors.cta-secondary.text
-
--- ftd.text: $snippet-card-left-mobile.cta-text
-color: $inherited.colors.cta-secondary.text
-role: $inherited.types.copy-small
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-children: $snippet-card-left-mobile.card-wrap
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: snippet-card-left-mobile
-
-
-
-
-
-
-
-
-
-
--- component snippet-card-left-desktop:
-caption title:
-optional string description:
-optional string cta-text:
-optional ftd.color bgcolor: 
-optional ftd.image-src image-mask: $assets.files.static.features.web-project-mask.svg
-optional string link: 
-optional integer pull-top: 0
-children card-wrap:
-integer z-index: 0
-integer width: $width
-
--- ftd.column:
-width: fill-container
-align-content: center
-margin-top.px: $snippet-card-left-desktop.pull-top
-z-index: $snippet-card-left-desktop.z-index
-
--- ftd.row:
-width: fill-container
-spacing.fixed.px: 14
-
--- ftd.column:
-
--- ftd.column:
-width: fill-container
-min-width.fixed.px: 510
-align-content: center
-margin-left.px: 22
-
--- ftd.column:
-width: fill-container
-padding-vertical.px: 16
-;;padding-horizontal.px: 22
-border-color: $inherited.colors.border
-border-width.px: 1
-border-radius.px: 32
-
--- ftd.column:
-width: fill-container
-background.solid: $snippet-card-left-desktop.bgcolor
-border-radius.px: 30
-align-content: center
-padding-vertical.px: 22
-margin-left.px: -22
-
--- ftd.column:
-max-width.fixed.px: 280
-background.solid: $inherited.colors.border.dark
-border-width.px: 1
-border-color: $inherited.colors.border
-border-radius.px: 20
-padding-vertical.px: 16
-padding-horizontal.px: 16
-spacing.fixed.px: 10
-link: $snippet-card-left-desktop.link
-
--- ftd.image:
-src: $snippet-card-left-desktop.image-mask
-width.fixed.px: 250
-height.fixed.px: 130
-
--- ftd.text: $snippet-card-left-desktop.title
-role: $inherited.types.button-large
-color: $inherited.colors.cta-secondary.text
-
--- ftd.text: 
-text: $snippet-card-left-desktop.description
-role: $inherited.types.fine-print
-color: $inherited.colors.cta-secondary.text
-
--- ftd.text: $snippet-card-left-desktop.cta-text
-color: $inherited.colors.cta-secondary.text
-role: $inherited.types.copy-small
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column 
-
--- ftd.column:
-width: fill-container
-children: $snippet-card-left-desktop.card-wrap
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-margin-left.px: 22
-margin-top.px: 122
-
--- ftd.image:
-src: $assets.files.static.features.floating-arrow-right.svg
-width: auto
-height: auto
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: snippet-card-left-desktop
 
 
 
@@ -1244,11 +637,7 @@ optional boolean hide-arrows: false
 children card-wrap:
 integer z-index: 0
 
--- ftd.column: 
-width: fill-container
-
--- snippet-card-right-desktop: $snippet-card-right.title
-if:{ftd.device != "mobile"}
+-- lib3.snippet-card-right: $snippet-card-right.title
 description: $snippet-card-right.description
 cta-text: $snippet-card-right.cta-text
 bgcolor: $snippet-card-right.bgcolor
@@ -1258,20 +647,6 @@ pull-top: $snippet-card-right.pull-top
 hide-arrows: $snippet-card-right.hide-arrows
 card-wrap: $snippet-card-right.card-wrap
 z-index: $snippet-card-right.z-index
-
--- snippet-card-right-mobile: $snippet-card-right.title
-if:{ftd.device == "mobile"}
-description: $snippet-card-right.description
-cta-text: $snippet-card-right.cta-text
-bgcolor: $snippet-card-right.bgcolor
-image-mask: $snippet-card-right.image-mask
-link: $snippet-card-right.link
-pull-top: $snippet-card-right.pull-top
-hide-arrows: $snippet-card-right.hide-arrows
-card-wrap: $snippet-card-right.card-wrap
-z-index: $snippet-card-right.z-index
-
--- end: ftd.column
 
 -- end: snippet-card-right
 
@@ -1279,213 +654,6 @@ z-index: $snippet-card-right.z-index
 
 
 
-
-
-
-
-
--- component snippet-card-right-mobile:
-caption title:
-optional string description:
-optional string cta-text:
-optional ftd.color bgcolor: $inherited.colors.custom.three
-optional ftd.image-src image-mask: $assets.files.static.features.web-project-mask.svg
-optional string link: 
-optional integer pull-top: 0
-optional boolean hide-arrows: false
-children card-wrap:
-integer z-index: 0
-
--- ftd.column:
-width: fill-container
-margin-bottom.px: 40
-
--- ftd.column:
-width: fill-container
-
--- ftd.column:
-width: fill-container
-background.solid: $snippet-card-right-mobile.bgcolor
-border-radius.px: 30
-align-content: center
-padding.px: 6
-
--- ftd.column:
-width: fill-container
-margin-top.px: -12
-border-width.px: 1
-border-color: $inherited.colors.border
-border-radius.px: 20
-padding-vertical.px: 26
-padding-horizontal.px: 16
-align-content: center
-
--- ftd.column:
-background.solid: $inherited.colors.border.dark
-border-width.px: 1
-border-color: $inherited.colors.border
-border-radius.px: 20
-padding-vertical.px: 16
-padding-horizontal.px: 16
-spacing.fixed.px: 10
-link: $snippet-card-right-mobile.link
-max-width.fixed.px: 200
-
--- ftd.image:
-src: $snippet-card-right-mobile.image-mask
-width: fill-container
-height: auto
-
--- ftd.text: $snippet-card-right-mobile.title
-role: $inherited.types.button-large
-color: $inherited.colors.cta-secondary.text
-
--- ftd.text: 
-text: $snippet-card-right-mobile.description
-role: $inherited.types.fine-print
-color: $inherited.colors.cta-secondary.text
-
--- ftd.text: $snippet-card-right-mobile.cta-text
-color: $inherited.colors.cta-secondary.text
-role: $inherited.types.copy-small
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-children: $snippet-card-right-mobile.card-wrap
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: snippet-card-right-mobile
-
-
-
-
-
-
-
-
-
-
--- component snippet-card-right-desktop:
-caption title:
-optional string description:
-optional string cta-text:
-optional ftd.color bgcolor: #EBBE52
-optional ftd.image-src image-mask: $assets.files.static.features.web-project-mask.svg
-optional string link: 
-optional integer pull-top: 0
-optional boolean hide-arrows: false
-children card-wrap:
-integer z-index: 0
-
--- ftd.column:
-width: fill-container
-align-content: center
-margin-top.px: $snippet-card-right-desktop.pull-top
-z-index: $snippet-card-right-desktop.z-index
-
--- ftd.row:
-width: fill-container
-spacing.fixed.px: 14
-
--- ftd.column:
-width: fill-container
-margin-left.px: 22
-margin-top.px: 220
-align-content: right
-
--- ftd.image:
-if: { !snippet-card-right-desktop.hide-arrows }
-src: $assets.files.static.features.floating-arrow-left.svg
-width: auto
-height: auto
-
--- end: ftd.column
-
--- ftd.column:
-
--- ftd.column:
-width: fill-container
-min-width.fixed.px: 510
-align-content: center
-margin-left.px: 22
-
--- ftd.column:
-width: fill-container
-padding-vertical.px: 16
-;;padding-horizontal.px: 22
-border-color: $inherited.colors.border
-border-width.px: 1
-border-radius.px: 32
-
--- ftd.column:
-width: fill-container
-background.solid: $snippet-card-right-desktop.bgcolor
-border-radius.px: 30
-align-content: center
-padding-vertical.px: 22
-margin-left.px: -22
-
--- ftd.column:
-max-width.fixed.px: 280
-background.solid: $inherited.colors.border.dark
-border-width.px: 1
-border-color: $inherited.colors.border
-border-radius.px: 20
-padding-vertical.px: 16
-padding-horizontal.px: 16
-spacing.fixed.px: 10
-link: $snippet-card-right-desktop.link
-
--- ftd.image:
-src: $snippet-card-right-desktop.image-mask
-width.fixed.px: 250
-height.fixed.px: 130
-
--- ftd.text: $snippet-card-right-desktop.title
-role: $inherited.types.button-large
-color: $inherited.colors.cta-secondary.text
-
--- ftd.text: 
-text: $snippet-card-right-desktop.description
-role: $inherited.types.fine-print
-color: $inherited.colors.cta-secondary.text
-
--- ftd.text: $snippet-card-right-desktop.cta-text
-color: $inherited.colors.cta-secondary.text
-role: $inherited.types.copy-small
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column 
-
--- ftd.column:
-width: fill-container
-children: $snippet-card-right-desktop.card-wrap
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: snippet-card-right-desktop
 
 
 
@@ -1503,30 +671,10 @@ optional string description:
 optional string cta-title:
 optional string cta-link:
 
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 10
-margin-top.px: 40
-margin-top.px if {ftd.device == "mobile}: 36
-z-index: 1111
-
--- ftd.text: $featured-card-text.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- ftd.text:
-text: $featured-card-text.description
-role: $inherited.types.copy-regular
-color: $inherited.colors.text-strong
-margin-bottom.px: 22
-
--- cta-button: $featured-card-text.cta-title
-if: { featured-card-text.cta-title != NULL }
-role: primary
-link: $featured-card-text.cta-link
-show-arrow: true
-
--- end: ftd.column
+-- lib3.featured-card-text: $featured-card-text.title
+description: $featured-card-text.description
+cta-title: $featured-card-text.cta-title
+cta-link: $featured-card-text.cta-link
 
 -- end: featured-card-text
 
@@ -1541,7 +689,7 @@ show-arrow: true
 
 -- component benefits-card:
 caption title:
-optional integer width: $width
+optional integer width:  $width
 children benefits-wrap:
 optional body body:
 integer spacing: 160
@@ -1551,180 +699,19 @@ ftd.color bg-color: $inherited.colors.background.step-1
 optional ftd.image-src logo:
 
 
--- ftd.column:
-width: fill-container
-
--- benefits-card-desktop: $benefits-card.title
-if: { ftd.device != "mobile" }
-width: $benefits-card.width
-benefits-wrap: $benefits-card.benefits-wrap
-body: $benefits-card.body
-spacing: $benefits-card.spacing
-bg-color: $benefits-card.bg-color
-role: $benefits-card.role
-widthfill: $benefits-card.widthfill
-logo: $benefits-card.logo
+-- lib4.benefits-card: $benefits-card.title
+width: $benefits-card.width 
+benefits-wrap: $benefits-card.benefits-wrap 
+body: $benefits-card.body 
+spacing: $benefits-card.spacing 
+widthfill: $benefits-card.widthfill 
+role: $benefits-card.role 
+bg-color: $benefits-card.bg-color 
+logo: $benefits-card.logo 
 
 
--- benefits-card-mobile: $benefits-card.title
-if: { ftd.device == "mobile" }
-width: $benefits-card.width
-benefits-wrap: $benefits-card.benefits-wrap
-body: $benefits-card.body
-spacing: $benefits-card.spacing
-role: $benefits-card.role
-bg-color: $benefits-card.bg-color
-widthfill: $benefits-card.widthfill
-
--- end: ftd.column
 
 -- end: benefits-card
-
-
-
-
-
-
-
-
-
-
--- component benefits-card-desktop:
-caption title:
-optional integer width: $width
-children benefits-wrap:
-optional body body:
-integer spacing:
-optional string role:
-ftd.color bg-color: 
-boolean widthfill:
-optional ftd.image-src logo:
-
--- ftd.column:
-width: fill-container
-background.solid: $benefits-card-desktop.bg-color
-align-content: center
-align-self: center
-
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px if { !benefits-card-desktop.widthfill}: $benefits-card-desktop.width
-align-self: center
-align-content: center
-padding-vertical.px: 80
-spacing.fixed.px: 32
-
--- ftd.image: 
-if: { benefits-card-desktop.logo != NULL}
-src: $benefits-card-desktop.logo
-align-self: center
-width: auto
-height: auto
--- ftd.text: $benefits-card-desktop.title
-if: { benefits-card-desktop.role == NULL}
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-width.fixed.px if { benefits-card-desktop.widthfill}: 943
-
--- ftd.text: $benefits-card-desktop.title
-if: { benefits-card-desktop.role != NULL}
-role: $inherited.types.heading-hero
-color: $inherited.colors.text
-width.fixed.px if { benefits-card-desktop.widthfill}: 943
-
--- ftd.text: $benefits-card-desktop.body
-if: { benefits-card-desktop.body != NULL}
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-width.fixed.px if { benefits-card-desktop.widthfill}: 943
-text-align if { benefits-card-desktop.widthfill}: center
-
--- ftd.row:
-width: fill-container
-width if { benefits-card-desktop.widthfill}: fill-container
-align-content: center
-min-width.fixed.px: 500
-children: $benefits-card-desktop.benefits-wrap
-spacing.fixed.px: $benefits-card-desktop.spacing
-wrap: true
-margin-top.px: 80
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: benefits-card-desktop
-
-
-
-
-
-
-
-
--- component benefits-card-mobile:
-caption title:
-optional integer width: $width
-children benefits-wrap:
-optional body body:
-integer spacing:
-optional string role:
-ftd.color bg-color: 
-boolean widthfill:
-
-
--- ftd.column:
-width: fill-container
-background.solid: $benefits-card-mobile.bg-color
-align-content: center
-align-self: center
-
--- ftd.column:
-width: fill-container
-align-self: center
-align-content: center
-margin-top.px: 50
-margin-bottom.px: 50
-
-
--- ftd.text: $benefits-card-mobile.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-padding-horizontal.px: 24
-
--- ftd.text: $benefits-card-mobile.body
-if: { benefits-card-mobile.body != NULL}
-role: $inherited.types.copy-regular
-color: $inherited.colors.text-strong
-padding-horizontal.px: 24
-
--- ftd.row:
-width: fill-container
-align-content: center
-children: $benefits-card-mobile.benefits-wrap
-spacing.fixed.px if {!benefits-card-mobile.widthfill}: 48
-padding-horizontal.px if {!benefits-card-mobile.widthfill}: 24
-wrap: true
-margin-top.px: 40
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: benefits-card-mobile
-
-
-
-
-
-
-
-
 
 
 -- component benefits-info-card:
@@ -1733,43 +720,11 @@ caption title:
 optional string info:
 boolean align-left: false
 
--- ftd.column:
-width.fixed.px if {ftd.device != "mobile"}: 500
-spacing.fixed.px: 70
 
-
--- ftd.row:
-min-width.fixed.px if {ftd.device != "mobile"}: 500
-wrap: true
-
--- ftd.column:
-width: fill-container
-align-content if { !benefits-info-card.align-left}: center
-spacing.fixed.px if { benefits-info-card.align-left &&ftd.device != "mobile"}: 16
-spacing.fixed.px if { benefits-info-card.align-left &&ftd.device == "mobile"}: 40
-
--- ftd.image:
-src: $benefits-info-card.icon
-width: auto
-height: auto
-align-self if { !benefits-info-card.align-left}: center
-
--- ftd.text: $benefits-info-card.title
-role: $inherited.types.heading-medium
-color: $inherited.colors.text
-text-align if { !benefits-info-card.align-left}: center
-
--- ftd.text:
-text: $benefits-info-card.info
-color: $inherited.colors.text-strong
-role: $inherited.types.copy-regular
-text-align if { !benefits-info-card.align-left}: center
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.column
+-- lib4.benefits-info-card: $benefits-info-card.title
+icon: $benefits-info-card.icon 
+info: $benefits-info-card.info 
+align-left: $benefits-info-card.align-left 
 
 -- end: benefits-info-card
 
@@ -1793,11 +748,7 @@ optional ftd.color bgcolor: $inherited.colors.background.step-2
 optional ftd.image image:
 optional integer margin-top:
 
--- ftd.column:
-width: fill-container
-
--- trending-templates-desktop: $trending-templates.title
-if: { ftd.device != "mobile" }
+-- lib3.trending-templates: $trending-templates.title
 info: $trending-templates.info
 cta-text: $trending-templates.cta-text
 cta-link: $trending-templates.cta-link
@@ -1809,232 +760,8 @@ bgcolor: $trending-templates.bgcolor
 image: $trending-templates.image
 margin-top: $trending-templates.margin-top
 
--- trending-templates-mobile: $trending-templates.title
-if: { ftd.device == "mobile" }
-info: $trending-templates.info
-cta-text: $trending-templates.cta-text
-cta-link: $trending-templates.cta-link
-width: $trending-templates.width
-trending-wrap: $trending-templates.trending-wrap
-no-img: $trending-templates.no-img
-img: $trending-templates.img
-bgcolor: $trending-templates.bgcolor
-image: $trending-templates.image
-
--- end: ftd.column
-
 -- end: trending-templates
 
-
-
-
-
-
-
-
-
-
--- component trending-templates-desktop:
-caption title:
-optional string info:
-optional string cta-text:
-optional string cta-link:
-integer width: $width
-children trending-wrap:
-optional boolean no-img:
-optional boolean img:
-optional ftd.color bgcolor:
-optional ftd.image image:
-optional integer margin-top:
-
--- ftd.column:
-width: fill-container
-padding-top.px if {!trending-templates-desktop.no-img}: 150
-padding-bottom.px if {!trending-templates-desktop.no-img}: 240
-background.solid: $trending-templates-desktop.bgcolor
-margin-top.px if {trending-templates-desktop.no-img}: $trending-templates-desktop.margin-top
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $trending-templates-desktop.width
-align-content: center
-align-self: center
-
--- ftd.image:
-if: {!trending-templates-desktop.no-img}
-src: $assets.files.static.templates.hanging-icon-1.svg
-width: auto
-height: auto
-anchor: parent
-top.px: 0
-left.px: 0
-
--- ftd.image:
-if: {!trending-templates-desktop.no-img}
-src: $assets.files.static.templates.hanging-icon-2.svg
-width: auto
-height: auto
-anchor: parent
-top.px: 10
-right.px: 0
-
--- ftd.image:
-if: {!trending-templates-desktop.no-img}
-src: $assets.files.static.templates.hanging-icon-3.svg
-width: auto
-height: auto
-anchor: parent
-top.px: 500
-right.px: -100
-
--- ftd.image:
-if: {!trending-templates-desktop.no-img}
-src: $assets.files.static.templates.hanging-icon-4.svg
-width: auto
-height: auto
-anchor: parent
-top.px: 640
-left.px: -80
-
--- ftd.column:
-width.fixed.px: 500
-width.fixed.percent if {trending-templates-desktop.no-img}: 55
-align-self: center
-align-content: center
-spacing.fixed.px: 16
-margin-bottom.px: 40
-
--- ftd.text: $trending-templates-desktop.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-text-align: center
-
--- ftd.text:
-if: {$trending-templates-desktop.info != NULL}
-text: $trending-templates-desktop.info
-color: $inherited.colors.text-strong
-role: $inherited.types.copy-large
-margin-bottom.px: 16
-text-align: center
-
--- cta-button: $trending-templates-desktop.cta-text
-if: { trending-templates-desktop.cta-text != NULL }
-role: primary
-link: $trending-templates-desktop.cta-link
-show-arrow: true
-
--- end: ftd.column
-
--- ftd.row:
-width: fill-container
-align-content: center
-min-width.fixed.px: 300
-wrap: true
-children: $trending-templates-desktop.trending-wrap
-spacing.fixed.px: 130
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: trending-templates-desktop
-
-
-
-
-
-
-
-
-
-
--- component trending-templates-mobile:
-caption title:
-optional string info:
-optional string cta-text:
-optional string cta-link:
-integer width: $width
-children trending-wrap:
-optional boolean no-img:
-optional boolean img:
-optional ftd.color bgcolor:
-optional ftd.image image:
-
--- ftd.column:
-width: fill-container
-width.fixed.percent if {trending-templates-mobile.no-img}: 85
-align-self if {trending-templates-mobile.no-img}: center
-margin-bottom.px: 70
-margin-top.px: 70
-
--- ftd.column:
-width: fill-container
-align-content: center
-align-self: center
-spacing.fixed.px: 24
-
--- ftd.image:
-if: {!trending-templates-mobile.no-img}
-src: $assets.files.static.templates.hanging-icon-1.svg
-width.fixed.px: 42
-height.fixed.px: 42
-anchor: parent
-top.px: -30
-left.px: -10
-
--- ftd.image:
-if: {!trending-templates-mobile.no-img}
-src: $assets.files.static.templates.hanging-icon-2.svg
-width.fixed.px: 43
-height.fixed.px: 43
-anchor: parent
-top.px: -30
-right.px: -13
-
--- ftd.column:
-align-self: center
-align-content: center
-spacing.fixed.px: 24
-margin-bottom.px: 40
-
--- ftd.text: $trending-templates-mobile.title
-color: $inherited.colors.text
-role: $inherited.types.heading-hero
-text-align: center
-
--- ftd.text:
-if: {$trending-templates-mobile.info != NULL}
-text: $trending-templates-mobile.info
-color: $inherited.colors.text
-role: $inherited.types.copy-small
-text-align: center
-
--- cta-button: $trending-templates-mobile.cta-text
-if: { trending-templates-mobile.cta-text != NULL }
-role: primary
-link: $trending-templates-mobile.cta-link
-show-arrow: false
-
--- end: ftd.column
-
--- ftd.row:
-width: fill-container
-align-content: center
-min-width.fixed.px: 300
-wrap: true
-children: $trending-templates-mobile.trending-wrap
-spacing.fixed.px: 27
-max-width.fixed.px: 345
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: trending-templates-mobile
 
 
 
@@ -2050,114 +777,12 @@ caption title:
 ftd.image-src image: $assets.files.static.templates.image-1.svg
 optional string link:
 
--- ftd.column:
 
--- trending-card-desktop: $trending-card.title
-if: { ftd.device != "mobile"}
+-- lib3.trending-card: $trending-card.title
 image: $trending-card.image
 link: $trending-card.link
-
--- trending-card-mobile: $trending-card.title
-if: { ftd.device == "mobile"}
-image: $trending-card.image
-link: $trending-card.link
-
--- end: ftd.column
 
 -- end: trending-card
-
-
-
-
-
-
-
-
-
-
--- component trending-card-desktop:
-caption title:
-ftd.image-src image:
-optional string link:
-
--- ftd.column:
-width.fixed.px: 300
-margin-bottom.px: -90
-
--- ftd.row:
-min-width.fixed.px: 300
-wrap: true
-
--- ftd.column:
-width: fill-container
-align-content: center
-link: $trending-card-desktop.link
-spacing.fixed.px: 15
-
--- ftd.image:
-src: $trending-card-desktop.image
-width: auto
-height: auto
-
--- ftd.text: $trending-card-desktop.title
-role: $inherited.types.heading-small
-color: $inherited.colors.text-strong
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: trending-card-desktop
-
-
-
-
-
-
-
-
-
-
--- component trending-card-mobile:
-caption title:
-ftd.image-src image:
-optional string link:
-
--- ftd.column:
-width: fill-container
-
--- ftd.row:
-min-width.fixed.px: 100
-wrap: true
-
--- ftd.column:
-align-content: center
-link: $trending-card-mobile.link
-spacing.fixed.px: 24
-margin-bottom.px: 27
-
--- ftd.image:
-src: $trending-card-mobile.image
-width.fixed.px: 154
-height.fixed.px: 154
-
--- ftd.text: $trending-card-mobile.title
-role: $inherited.types.heading-small
-color: $inherited.colors.text-strong
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: trending-card-mobile
-
-
-
-
 
 
 
@@ -2182,11 +807,8 @@ optional string cta-left-text:
 optional string cta-right-text:
 optional boolean center: false
 
--- ftd.column:
-width: fill-container
 
--- excel-promo-card-desktop: $excel-promo-card.title
-if: { ftd.device != "mobile" }
+-- lib3.excel-promo-card: $excel-promo-card.title
 info: $excel-promo-card.info
 cta-text: $excel-promo-card.cta-text
 cta-link: $excel-promo-card.cta-link
@@ -2203,316 +825,9 @@ two-btn: $excel-promo-card.two-btn
 cta-left-text: $excel-promo-card.cta-left-text
 cta-right-text: $excel-promo-card.cta-right-text
 
-
--- excel-promo-card-mobile: $excel-promo-card.title
-if: { ftd.device == "mobile" }
-info: $excel-promo-card.info
-cta-text: $excel-promo-card.cta-text
-cta-link: $excel-promo-card.cta-link
-cta-role: $excel-promo-card.cta-role
-image: $excel-promo-card.image
-bgcolor: $excel-promo-card.bgcolor
-width: $excel-promo-card.width
-promo-wrap: $excel-promo-card.promo-wrap
-keep-dark: $excel-promo-card.keep-dark
-left: $excel-promo-card.left
-right: $excel-promo-card.right
-center: $excel-promo-card.center
-two-btn: $excel-promo-card.two-btn
-cta-left-text: $excel-promo-card.cta-left-text
-cta-right-text: $excel-promo-card.cta-right-text
-
-
--- end: ftd.column
 
 -- end: excel-promo-card
 
-
-
-
-
-
-
-
-
-
--- component excel-promo-card-desktop:
-caption title:
-optional string info:
-optional string cta-text:
-optional string cta-link:
-optional string cta-role:
-optional string cta-left-text:
-optional string cta-right-text:
-optional ftd.image-src image:
-optional ftd.color bgcolor: $inherited.colors.custom.two
-integer width: $width
-children promo-wrap:
-boolean keep-dark: true
-boolean left:
-boolean right:
-optional boolean center:
-boolean two-btn:
-
-
--- ftd.column:
-width: fill-container
-background.solid: $excel-promo-card-desktop.bgcolor
-padding-vertical.px: 60
-padding-horizontal.px: 140
-;;margin-top.px if { excel-promo-card-desktop.left }: 150
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px if {!excel-promo-card-desktop.two-btn } : $excel-promo-card-desktop.width
-max-width.fixed.px if { excel-promo-card-desktop.left }: 1439
-align-self: center
-
--- ftd.row:
-width: fill-container
-
--- ftd.column:
-if: { excel-promo-card-desktop.left}
-width.fixed.percent: 30
-align-self: center
-
--- ftd.image:
-if: { excel-promo-card-desktop.image != NULL}
-src: $excel-promo-card-desktop.image
-width: auto
-height: auto
-align-self: center
-
--- end: ftd.column
-
--- ftd.column:
-width.fixed.percent: 70
-width.fixed.percent if { excel-promo-card-desktop.left}: 100
-align-self: start
-margin-left.px if { excel-promo-card-desktop.left}: 163
-
--- ftd.column:
-max-width.fixed.px if { !excel-promo-card-desktop.left || !excel-promo-card-desktop.two-btn }: 600
-max-width.fixed.px if { excel-promo-card-desktop.two-btn}: 620
-spacing.fixed.px: 16
-padding-top.px if { excel-promo-card-desktop.right}: 250
-padding-top.px if { excel-promo-card-desktop.center}: 100
-padding-left.px if { !excel-promo-card-desktop.right}: 50
-
--- ftd.text: $excel-promo-card-desktop.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-color if { excel-promo-card-desktop.keep-dark }: $inherited.colors.text.dark
-
--- ftd.text:
-text: $excel-promo-card-desktop.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-color if { excel-promo-card-desktop.keep-dark }: $inherited.colors.text-strong.dark
-margin-bottom.px: 16
-
--- ftd.column:
-
--- cta-button: $excel-promo-card-desktop.cta-text
-if: { excel-promo-card-desktop.cta-text != NULL }
-role: $excel-promo-card-desktop.cta-role
-link: $excel-promo-card-desktop.cta-link
-width: 220
-show-arrow: true
-
--- end: ftd.column
-
--- ftd.row:
-if: { $excel-promo-card-desktop.two-btn }
-spacing.fixed.px: 24
-
--- cta-button: $excel-promo-card-desktop.cta-left-text
-if: { $excel-promo-card-desktop.cta-left-text != NULL }
-role: primary
-link: /
-show-arrow: true
-width: 220
-
--- cta-button: $excel-promo-card-desktop.cta-right-text
-if: { excel-promo-card-desktop.cta-right-text != NULL }
-role: secondary
-link: /
-width: 220
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
-if: { !excel-promo-card-desktop.left }
-width.fixed.percent: 30
-align-self: end
-
--- ftd.image:
-src: $excel-promo-card-desktop.image
-width: auto
-height: auto
-align-self: center
-
--- end: ftd.column
-
--- end: ftd.row
-
--- ftd.column:
-width: fill-container
-children: $excel-promo-card-desktop.promo-wrap
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: excel-promo-card-desktop
-
-
-
-
-
-
-
-
-
-
--- component excel-promo-card-mobile:
-caption title:
-optional string info:
-optional string cta-text:
-optional string cta-link:
-optional string cta-role: 
-optional ftd.image-src image:
-optional ftd.color bgcolor: $inherited.colors.custom.two
-integer width: $width
-children promo-wrap:
-boolean keep-dark: true
-boolean left:
-boolean right:
-optional boolean center:
-boolean two-btn:
-optional string cta-left-text:
-optional string cta-right-text:
-
--- ftd.column:
-width: fill-container
-background.solid: $excel-promo-card-mobile.bgcolor
-padding-horizontal.px: 34
-padding-vertical.px: 26
-
--- ftd.column:
-width: fill-container
-align-self if {!excel-promo-card-mobile.left} : center
-
--- ftd.row:
-width: fill-container
-
--- ftd.column:
-align-self if {!excel-promo-card-mobile.left} : center
-width: fill-container
-
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 32
-align-content if { !excel-promo-card-mobile.left || !excel-promo-card-mobile.right }: center
-
--- ftd.text: $excel-promo-card-mobile.title
-role: $inherited.types.heading-large
-color: $inherited.colors.accent.secondary
-text-align if { !excel-promo-card-mobile.left || !excel-promo-card-mobile.right}: center
-
--- ftd.text:
-text: $excel-promo-card-mobile.info
-role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
-text-align if { !excel-promo-card-mobile.left || !excel-promo-card-mobile.right}: center
- 
--- ftd.column:
-
--- cta-button: $excel-promo-card-mobile.cta-text
-if: { excel-promo-card-mobile.cta-text != NULL }
-role: $excel-promo-card-mobile.cta-role
-link: $excel-promo-card-mobile.cta-link
-width: 220
-show-arrow: true
-
--- end: ftd.column
-
--- ftd.row:
-if: { $excel-promo-card-mobile.two-btn }
-spacing.fixed.px: 33
-margin-top.px: 10
-margin-bottom.px: 40
-
--- cta-button: $excel-promo-card-mobile.cta-left-text
-if: { $excel-promo-card-mobile.cta-left-text != NULL }
-role: primary
-link: /
-show-arrow: true
-width: 150
-
--- cta-button: $excel-promo-card-mobile.cta-right-text
-if: { excel-promo-card-mobile.cta-right-text != NULL }
-role: secondary
-link: /
-width: 150
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
-z-index: 1
-
--- ftd.image:
-if: {!excel-promo-card-mobile.left || !excel-promo-card-mobile.right }
-src: $assets.files.static.create-fastn.svg
-width.fixed.px: 89
-height.fixed.px: 140
-anchor: parent
-top.px: -18
-left.px: -35
-
--- end: ftd.column
-
--- ftd.image:
-if: { excel-promo-card-mobile.left}
-src: $excel-promo-card-mobile.image
-width.fixed.px: 93
-margin-top.px: 150
-
--- end: ftd.row
-
-
--- ftd.column:
-width: fill-container
-
--- ftd.image:
-if: { excel-promo-card-mobile.right}
-src: $excel-promo-card-mobile.image
-width.fixed.px: 300
-margin-top.px: 32
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-children: $excel-promo-card-mobile.promo-wrap
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: excel-promo-card-mobile
 
 
 
@@ -2531,162 +846,17 @@ optional string info:
 integer width: $width
 children icons-wrap:
 
--- ftd.column:
-width: fill-container
-
--- card-with-icons-bottom-desktop: $card-with-icons-bottom.title
-if: { ftd.device != "mobile" }
+-- lib3.card-with-icons-bottom: $card-with-icons-bottom.title
 cta-text: $card-with-icons-bottom.cta-text
 cta-link: $card-with-icons-bottom.cta-link
 info: $card-with-icons-bottom.info
 width: $card-with-icons-bottom.width
 icons-wrap: $card-with-icons-bottom.icons-wrap
-
--- card-with-icons-bottom-mobile: $card-with-icons-bottom.title
-if: { ftd.device == "mobile" }
-cta-text: $card-with-icons-bottom.cta-text
-cta-link: $card-with-icons-bottom.cta-link
-info: $card-with-icons-bottom.info
-width: $card-with-icons-bottom.width
-icons-wrap: $card-with-icons-bottom.icons-wrap
-
--- end: ftd.column
 
 -- end: card-with-icons-bottom
 
 
 
-
-
-
-
-
-
-
--- component card-with-icons-bottom-desktop:
-caption title:
-optional string cta-text:
-optional string cta-link:
-optional string info:
-integer width: $width
-children icons-wrap:
-
--- ftd.column:
-width: fill-container
-padding-vertical.px: 150
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $card-with-icons-bottom-desktop.width
-align-self: center
-
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 16
-
--- ftd.text: $card-with-icons-bottom-desktop.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- ftd.text: 
-if: { card-with-icons-bottom-desktop.info != NULL }
-text: $card-with-icons-bottom-desktop.info
-role: $inherited.types.copy-small
-color: $inherited.colors.text
-margin-bottom.px: 16
-
--- cta-button: $card-with-icons-bottom-desktop.cta-text
-if: { card-with-icons-bottom-desktop.cta-text != NULL }
-role: primary
-link: $card-with-icons-bottom-desktop.cta-link
-width: 220
-
--- end: ftd.column
-
--- ftd.row:
-width: fill-container
-children: $card-with-icons-bottom-desktop.icons-wrap
-margin-top.px: 80
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: card-with-icons-bottom-desktop
-
-
-
-
-
-
-
-
-
-
--- component card-with-icons-bottom-mobile:
-caption title:
-optional string cta-text:
-optional string cta-link:
-optional string info:
-integer width: $width
-children icons-wrap:
-
--- ftd.column:
-width: fill-container
-padding-vertical.px: 86
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $card-with-icons-bottom-mobile.width
-align-self: center
-
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 16
-align-content: center
-
--- ftd.column:
-spacing.fixed.px: 24
-width: fill-container
-align-content: center
-
-
--- ftd.text: $card-with-icons-bottom-mobile.title
-role: $inherited.types.heading-hero
-color: $inherited.colors.text
-text-align: center
-
--- ftd.text: 
-if: { card-with-icons-bottom-mobile.info != NULL }
-text: $card-with-icons-bottom-mobile.info
-role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
-margin-bottom.px: 16
-text-align: center
-
--- cta-button: $card-with-icons-bottom-mobile.cta-text
-if: { card-with-icons-bottom-mobile.cta-text != NULL }
-role: primary
-link: $card-with-icons-bottom-mobile.cta-link
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-children: $card-with-icons-bottom-mobile.icons-wrap
-margin-top.px: 40
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: card-with-icons-bottom-mobile
 
 
 
@@ -2701,97 +871,10 @@ margin-top.px: 40
 optional caption title:
 ftd.image-src src:
 
--- ftd.column:
-width: fill-container
-align-self: center
-
--- image-card-with-title-desktop: $image-card-with-title.title
-if: { ftd.device != "mobile" }
+-- lib3.image-card-with-title: $image-card-with-title.title
 src: $image-card-with-title.src
-
--- image-card-with-title-mobile: $image-card-with-title.title
-if: { ftd.device == "mobile" }
-src: $image-card-with-title.src
-
--- end: ftd.column
 
 -- end: image-card-with-title
-
-
-
-
-
-
-
-
-
-
--- component image-card-with-title-desktop:
-optional caption title:
-ftd.image-src src:
-
--- ftd.column:
-width: fill-container
-align-content: center
-align-self: center
-spacing.fixed.px: 16
-
--- ftd.text: $image-card-with-title-desktop.title
-if: { image-card-with-title-desktop.title != NULL }
-role: $inherited.types.heading-small
-color: $inherited.colors.text
-
--- ftd.image:
-src: $image-card-with-title-desktop.src
-width: auto
-height: auto
-align-self: center
-
--- end: ftd.column
-
--- end: image-card-with-title-desktop
-
-
-
-
-
-
-
-
-
-
--- component image-card-with-title-mobile:
-optional caption title:
-ftd.image-src src:
-
--- ftd.column:
-width: fill-container
-align-content: center
-align-self: center
-spacing.fixed.px: 16
-
--- ftd.image:
-src: $image-card-with-title-mobile.src
-width: auto
-height: auto
-align-self: center
-margin-bottom.px: 16
-margin-bottom.px if {image-card-with-title-mobile.title == NULL }: 26
-margin-top.px if {image-card-with-title-mobile.title == NULL }: 26
-
--- ftd.text: $image-card-with-title-mobile.title
-if: { image-card-with-title-mobile.title != NULL }
-role: $inherited.types.copy-large
-color: $inherited.colors.text
-
--- end: ftd.column
-
--- end: image-card-with-title-mobile
-
-
-
-
-
 
 
 
@@ -2807,11 +890,7 @@ integer width: $width
 ftd.color bgcolor: $inherited.colors.custom.two
 children card-wrap:
 
-
--- ftd.column:
-width: fill-container
-
--- rounded-corner-card-desktop: $rounded-corner-card.title
+-- lib3.rounded-corner-card: $rounded-corner-card.title
 if: { ftd.device != "mobile"}
 info: $rounded-corner-card.info
 cta-text: $rounded-corner-card.cta-text
@@ -2821,219 +900,7 @@ width: $rounded-corner-card.width
 bgcolor: $rounded-corner-card.bgcolor
 card-wrap: $rounded-corner-card.card-wrap
 
--- rounded-corner-card-mobile: $rounded-corner-card.title
-if: { ftd.device == "mobile"}
-info: $rounded-corner-card.info
-cta-text: $rounded-corner-card.cta-text
-cta-link: $rounded-corner-card.cta-link
-image: $rounded-corner-card.image
-width: $rounded-corner-card.width
-bgcolor: $rounded-corner-card.bgcolor
-card-wrap: $rounded-corner-card.card-wrap
-
--- end: ftd.column
-
 -- end: rounded-corner-card
-
-
-
-
-
-
-
-
-
-
--- component rounded-corner-card-desktop:
-caption title:
-optional string info:
-optional string cta-text:
-optional string cta-link:
-optional ftd.image-src image:
-integer width: $width
-ftd.color bgcolor: $inherited.colors.custom.two
-children card-wrap:
-
--- ftd.column:
-width: fill-container
-padding-vertical.px: 168
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $rounded-corner-card-desktop.width
-align-self: center
-
--- ftd.column:
-width: fill-container
-background.solid if { rounded-corner-card-desktop.bgcolor != NULL }: $rounded-corner-card-desktop.bgcolor
-border-radius.px: 30
-z-index: 0
-height: fill-container
-min-height.fixed.px: 440
-
--- ftd.column:
-width: fill-container
-height: fill-container
-border-width.px: 1
-border-color: $inherited.colors.border
-border-radius.px: 30
-z-index: 11
-anchor: parent
-right.px: -22
-top.px: -20
-
--- ftd.row:
-width: fill-container
-padding-vertical.px: 80
-padding-horizontal.px: 60
-
--- ftd.column:
-width.fixed.percent: 40
-
--- ftd.image:
-if: { rounded-corner-card-desktop.image != NULL}
-src: $rounded-corner-card-desktop.image
-width: auto
-height: auto
-
--- end: ftd.column
-
--- ftd.column:
-width.fixed.percent: 60
-spacing.fixed.px: 24
-align-self: center
-
--- ftd.text: $rounded-corner-card-desktop.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text.dark
-
--- ftd.text:
-text: $rounded-corner-card-desktop.info
-color: $inherited.colors.text-strong.dark
-role: $inherited.types.copy-large
-margin-bottom.px: 16
-
--- cta-button: $rounded-corner-card-desktop.cta-text
-if: { rounded-corner-card-desktop.cta-text != NULL }
-role: secondary
-link: $rounded-corner-card-desktop.cta-link
-width: 220
-
--- end: ftd.column
-
--- end: ftd.row
-
--- ftd.column:
-width: fill-container
-children: $rounded-corner-card-desktop.card-wrap
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: rounded-corner-card-desktop
-
-
-
-
-
-
-
-
-
-
--- component rounded-corner-card-mobile:
-caption title:
-optional string info:
-optional string cta-text:
-optional string cta-link:
-optional ftd.image-src image:
-integer width: $width
-ftd.color bgcolor: $inherited.colors.custom.two
-children card-wrap:
-
--- ftd.column:
-width: fill-container
-padding-top.px: 70
-padding-bottom.px: 42
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $rounded-corner-card-mobile.width
-align-self: center
-padding-horizontal.px: 16
-
--- ftd.column:
-width: fill-container
-background.solid if { rounded-corner-card-mobile.bgcolor != NULL }: $rounded-corner-card-mobile.bgcolor
-z-index: 0
-height: fill-container
-min-height.fixed.px: 370
-border-radius.px: 10
-
--- ftd.column:
-width: fill-container
-height: fill-container
-border-width.px: 1
-border-color: $inherited.colors.border
-z-index: 11
-anchor: parent
-right.px: -6
-top.px: -16
-border-radius.px: 15
-
--- ftd.row:
-width: fill-container
-padding-vertical.px: 70
-padding-horizontal.px: 16
-
--- ftd.column:
-spacing.fixed.px: 26
-align-self: center
-width: fill-container
-
--- ftd.text: $rounded-corner-card-mobile.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text.dark
-
--- ftd.text:
-text: $rounded-corner-card-mobile.info
-color: $inherited.colors.text.dark
-role: $inherited.types.copy-regular
-margin-bottom.px: 16
-
--- cta-button: $rounded-corner-card-mobile.cta-text
-if: { rounded-corner-card-mobile.cta-text != NULL }
-role: secondary
-link: $rounded-corner-card-mobile.cta-link
-width: 220
-
--- end: ftd.column
-
--- end: ftd.row
-
--- ftd.column:
-width: fill-container
-children: $rounded-corner-card-mobile.card-wrap
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: rounded-corner-card-mobile
-
 
 
 
@@ -3051,122 +918,16 @@ optional ftd.image-src text-image-2:
 optional integer spacing: 
 integer width: $width
 
--- ftd.column:
-width: fill-container
 
--- text-bubble-desktop:
-if: { ftd.device != "mobile" }
+-- lib2.text-bubble:
 bgcolor: $text-bubble.bgcolor
 text-image-1: $text-bubble.text-image-1
 text-image-2: $text-bubble.text-image-2
 spacing: $text-bubble.spacing
 width: $text-bubble.width
 
--- text-bubble-mobile:
-if: { ftd.device == "mobile" }
-bgcolor: $text-bubble.bgcolor
-text-image-1: $text-bubble.text-image-1
-text-image-2: $text-bubble.text-image-2
-spacing: $text-bubble.spacing
-width: $text-bubble.width
-
--- end: ftd.column
 
 -- end: text-bubble
-
-
-
-
-
-
-
-
-
-
--- component text-bubble-desktop:
-optional ftd.color bgcolor:
-optional ftd.image-src text-image-1: 
-optional ftd.image-src text-image-2: 
-optional integer spacing: 
-integer width:
-
--- ftd.column:
-width: fill-container
-
--- ftd.column:
-width: fill-container
-border-radius.px: 28
-background.solid: $text-bubble-desktop.bgcolor
-spacing.fixed.px: $text-bubble-desktop.spacing
-padding-vertical.px: 40
-padding-horizontal.px: 40
-max-width.fixed.px: $text-bubble-desktop.width
-
--- ftd.image:
-if: { text-bubble-desktop.text-image-1 != NULL }
-src: $text-bubble-desktop.text-image-1
-width: auto
-height: auto
-
--- ftd.image:
-if: { text-bubble-desktop.text-image-2 != NULL }
-src: $text-bubble-desktop.text-image-2
-width: auto
-height: auto
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: text-bubble-desktop
-
-
-
-
-
-
-
-
-
-
-
--- component text-bubble-mobile:
-optional ftd.color bgcolor:
-optional ftd.image-src text-image-1: 
-optional ftd.image-src text-image-2: 
-optional integer spacing: 
-integer width:
-
--- ftd.column:
-width: fill-container
-
--- ftd.column:
-width: fill-container
-border-radius.px: 28
-background.solid: $text-bubble-mobile.bgcolor
-spacing.fixed.px: 45
-padding-vertical.px: 40
-max-width.fixed.px: $text-bubble-mobile.width
-margin-top.px: 40
-
--- ftd.image:
-if: { text-bubble-mobile.text-image-1 != NULL }
-src: $text-bubble-mobile.text-image-1
-width: fill-container
-height: auto
-
--- ftd.image:
-if: { text-bubble-mobile.text-image-2 != NULL }
-src: $text-bubble-mobile.text-image-2
-width: fill-container
-height: auto
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: text-bubble-mobile
-
 
 
 
@@ -3183,94 +944,13 @@ optional string lang:
 integer width: $width
 optional boolean show-double: true
 
--- ftd.column:
-width: fill-container
-padding-horizontal.px: 18
-padding-vertical.px: 14
-background.solid: $code-block-system.bgcolor
-border-radius.px: 15
-max-width.fixed.px if {ftd.device!= "mobile"}: $code-block-system.width
-align-self: center
-
--- ftd.column:
-
--- ftd.row:
-spacing.fixed.px: 10
-
--- ftd.column:
-width.fixed.px: 16
-height.fixed.px: 16
-background.solid: #D46A63
-border-radius.px: 100
-
--- end: ftd.column
-
--- ftd.column:
-width.fixed.px: 16
-height.fixed.px: 16
-background.solid: #EBBE52
-border-radius.px: 100
-
--- end: ftd.column
-
--- ftd.column:
-width.fixed.px: 16
-height.fixed.px: 16
-background.solid: #4AA35C
-border-radius.px: 100
-
--- end: ftd.column
-
--- ftd.text: $code-block-system.title
-if: { code-block-system.title != NULL }
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-margin-left.px: 22
-
--- end: ftd.row
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-margin-top.px: 60
-white-space: break-spaces
-overflow-x: auto
-
--- ftd.code:
-if: {code-block-system.show-double}
-;;if: { $ftd.dark-mode }
-text: $code-block-system.body
+-- lib2.code-block-system: $code-block-system.title
+body: $code-block-system.body
+bgcolor: $code-block-system.bgcolor
+code-bg: $code-block-system.code-bg
 lang: $code-block-system.lang
-width: fill-container
-role: $inherited.types.copy-regular
-color: $inherited.colors.text
-padding-top.px: 10
-padding-left.px: 20
-padding-bottom.px: 10
-padding-right.px: 20
-background.solid if { code-block-system.code-bg != NULL }: $code-block-system.code-bg
-overflow-x: auto
-white-space: break-spaces
-
--- ftd.code:
-;;if: { !$ftd.dark-mode }
-text: $code-block-system.body
-lang: $code-block-system.lang
-width: fill-container
-role: $inherited.types.copy-regular
-color: $inherited.colors.text
-padding-top.px: 10
-padding-left.px: 20
-padding-bottom.px: 10
-padding-right.px: 20
-background.solid if { code-block-system.code-bg != NULL }: $code-block-system.code-bg
-overflow-x: auto
-white-space: break-spaces
-
--- end: ftd.column
-
--- end: ftd.column
+show-double: $code-block-system.show-double
+width: $code-block-system.width
 
 -- end: code-block-system
 
@@ -3301,12 +981,7 @@ boolean title-medium: false
 boolean align-left: false
 boolean slides: false
 
-
--- ftd.column:
-width: fill-container
-
--- row-container-desktop: $row-container.title
-if: { ftd.device != "mobile" }
+-- lib2.row-container: $row-container.title
 spacing: $row-container.spacing
 margin-bottom: $row-container.margin-bottom
 margin-top: $row-container.margin-top
@@ -3320,183 +995,8 @@ align-left: $row-container.align-left
 title-medium: $row-container.title-medium
 slides: $row-container.slides
 
--- row-container-mobile: $row-container.title
-if: { ftd.device == "mobile" }
-spacing: $row-container.spacing
-row-wrap: $row-container.row-wrap
-width: $row-container.width
-padding-vertical: $row-container.padding-vertical
-wrap: $row-container.wrap
-index: $row-container.index
-reset: $row-container.reset
-switch-to-column: $row-container.switch-to-column
-title-medium: $row-container.title-medium
-align-left: $row-container.align-left
-slides: $row-container.slides
-
--- end: ftd.column
-
 -- end: row-container
 
-
-
-
-
-
-
-
-
-
--- component row-container-desktop:
-optional caption title:
-optional integer spacing:
-optional integer margin-bottom:
-optional integer margin-top:
-children row-wrap:
-integer width:
-optional integer padding-vertical: 
-boolean wrap:
-optional integer index:
-optional integer reset:
-boolean title-medium: 
-boolean align-left: 
-boolean slides: 
-
--- ftd.column:
-if: { row-container-desktop.index == row-container-desktop.reset }
-align-self: center
-width.fixed.px: $row-container-desktop.width
-max-width.fixed.px: $row-container-desktop.width
-padding-vertical.px if { row-container-desktop.padding-vertical != NULL }: $row-container-desktop.padding-vertical
-align-content if {!row-container-desktop.align-left }: center
-margin-bottom.px if { row-container-desktop.margin-bottom != NULL }: $row-container-desktop.margin-bottom
-margin-top.px if { row-container-desktop.margin-top != NULL }: $row-container-desktop.margin-top
-
--- ftd.column:
-if: { !row-container-desktop.title-medium }
-
--- ftd.text: $row-container-desktop.title
-if: { row-container-desktop.title != NULL }
-role: $inherited.types.heading-large
-color: $inherited.colors.text-strong
-text-align if {!row-container-desktop.align-left }: center
-margin-bottom.px: 80
-
--- end: ftd.column
-
--- ftd.column:
-if: { row-container-desktop.title-medium }
-
--- ftd.text: $row-container-desktop.title
-if: { row-container-desktop.title != NULL }
-role: $inherited.types.heading-medium
-color: $inherited.colors.text-strong
-align-self: center
-margin-bottom.px: 80
-text-align: center
-
--- end: ftd.column
-
--- ftd.row:
-width: fill-container
-children: $row-container-desktop.row-wrap
-spacing.fixed.px if { row-container-desktop.spacing != NULL }: $row-container-desktop.spacing
-max-width.fixed.px: $row-container-desktop.width
-align-self if { !row-container-desktop.align-left }: center
-align-content if { !row-container-desktop.align-left }: center
-wrap: $row-container-desktop.wrap
-overflow-y if {row-container-desktop.slides}: auto
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: row-container-desktop
-
-
-
-
-
-
-
-
-
-
--- component row-container-mobile:
-optional caption title:
-optional integer spacing:
-children row-wrap:
-integer width:
-optional integer padding-vertical: 
-boolean wrap:
-optional integer index:
-optional integer reset:
-boolean switch-to-column: false
-boolean title-medium: 
-boolean align-left:
-boolean slides:
-
--- ftd.column:
-width: fill-container
-if:{ row-container-mobile.index == row-container-mobile.reset }
-align-self: center
-padding-vertical.px if { row-container-mobile.padding-vertical != NULL }: $row-container-mobile.padding-vertical
-align-content: center
-
--- ftd.column:
-if: { !row-container-mobile.title-medium }
-
--- ftd.text: $row-container-mobile.title
-if: { row-container-mobile.title != NULL }
-role: $inherited.types.heading-large
-color: $inherited.colors.text-strong
-align-self: center
-margin-bottom.px: 40
-text-align: center
-
--- end: ftd.column
-
--- ftd.column:
-if: { row-container-mobile.title-medium }
-
--- ftd.text: $row-container-mobile.title
-if: { row-container-mobile.title != NULL }
-role: $inherited.types.heading-medium
-color: $inherited.colors.text-strong
-align-self: center
-margin-bottom.px: 40
-;;padding-horizontal.px: 24
-text-align: center
-
--- end: ftd.column
-
--- ftd.row:
-if: { !row-container-mobile.switch-to-column }
-width.fixed.calc: 100vw
-children: $row-container-mobile.row-wrap
-spacing.fixed.px if { row-container-mobile.spacing != NULL }: $row-container-mobile.spacing
-overflow-x if {!row-container-mobile.slides}: auto
-wrap if {row-container-mobile.slides}: true
-padding-horizontal.px: 24
-
-;;padding-horizontal.px: 24
-
--- end: ftd.row
-
--- ftd.column:
-if: { row-container-mobile.switch-to-column }
-width: fill-container
-children: $row-container-mobile.row-wrap
-spacing.fixed.px if { row-container-mobile.spacing != NULL }: $row-container-mobile.spacing
-align-self: center
-align-content: center
-;;padding-horizontal.px: 24
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: row-container-mobile
 
 
 -- component col-container:
@@ -3508,124 +1008,19 @@ optional integer width:
 optional integer spacing: 
 optional boolean align-left:  false
 
--- ftd.column:
-width: fill-container
-
--- col-container-desktop: $col-container.title
-if: {ftd.device != "mobile"}
+-- lib2.col-container: $col-container.title
 col-wrap: $col-container.col-wrap
 body: $col-container.body
 padding-vertical: $col-container.padding-vertical
 width: $col-container.width
 spacing: $col-container.spacing
 align-left: $col-container.align-left
-
--- col-container-mobile: $col-container.title
-if: {ftd.device == "mobile"}
-col-wrap: $col-container.col-wrap
-body: $col-container.body
-padding-vertical: $col-container.padding-vertical
-width: $col-container.width
-spacing: $col-container.spacing
-align-left: $col-container.align-left
-
--- end: ftd.column
 
 -- end: col-container
 
 
 
--- component col-container-desktop:
-children col-wrap:
-optional caption title:
-optional body body:
-optional integer padding-vertical: 
-optional integer width: 
-optional integer spacing: 
-optional boolean align-left:  false
 
--- ftd.column:
-width: fill-container
-max-width.fixed.px if { col-container-desktop.width != NULL }: $col-container-desktop.width
-align-self: center
-padding-vertical.px if { col-container-desktop.padding-vertical != NULL}: $col-container-desktop.padding-vertical
-padding-vertical.px: 80
-
-
--- ftd.text: $col-container-desktop.title
-if: { col-container-desktop.title != NULL }
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-text-align: center
-width: fill-container
-
--- ftd.column:
-width.fixed.px: 615
-align-self: center
-margin-top.px : 15
-
--- ftd.text: $col-container-desktop.body
-if: { col-container-desktop.body != NULL }
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-text-align: center
-width: fill-container
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-align-self: center
-max-width.fixed.px if { col-container-desktop.width != NULL }: $col-container-desktop.width
-children: $col-container-desktop.col-wrap
-margin-top.px if { col-container-desktop.spacing != NULL }: $col-container-desktop.spacing
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: col-container-desktop
-
-
--- component col-container-mobile:
-children col-wrap:
-optional caption title:
-optional body body:
-optional integer padding-vertical: 
-optional integer width: 
-optional integer spacing: 
-optional boolean align-left:  false
-
--- ftd.column:
-width: fill-container
-padding-horizontal.px : 16
-padding-vertical.px: 80
-spacing.fixed.px if { !col-container-mobile.align-left  }: 12
-
--- ftd.text: $col-container-mobile.title
-if: { col-container-mobile.title != NULL }
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-width: fill-container
-
--- ftd.text: $col-container-mobile.body
-if: { col-container-mobile.body != NULL }
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-width: fill-container
-
--- ftd.column:
-width: fill-container
-align-self: center
-max-width.fixed.px if { col-container-mobile.width != NULL }: $col-container-mobile.width
-children: $col-container-mobile.col-wrap
-spacing.fixed.px if { col-container-mobile.spacing != NULL }: $col-container-mobile.spacing
-margin.px if { col-container-mobile.spacing != NULL }: $col-container-mobile.spacing
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: col-container-mobile
 
 
 -- component rectangle-card:
@@ -3634,36 +1029,13 @@ integer width: $width
 children wrapper:
 optional ftd.color bgcolor: $inherited.colors.accent.primary
 
--- ftd.column:
-min-width.fixed.px : $rectangle-card.width
-max-width.fixed.px: $rectangle-card.width
+-- lib2.rectangle-card:
+width: $rectangle-card.width
+wrapper: $rectangle-card.wrapper
+show-border: $rectangle-card.show-border
+bgcolor: $rectangle-card.bgcolor
 
--- ftd.column:
-if: { rectangle-card.show-border }
-width: fill-container
-height: fill-container
-border-width.px: 1
-border-color: $inherited.colors.border
-border-radius.px: 30
-z-index: 11
-anchor: parent
-right.px: -15
-bottom.px: -15
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-children: $rectangle-card.wrapper
-background.solid: $rectangle-card.bgcolor
-border-radius.px: 30
-padding-vertical.px: 48
-padding-horizontal.px: 34
-z-index: 0
-
--- end: ftd.column
-
--- end: ftd.column
+-- end: lib2.rectangle-card
 
 -- end: rectangle-card
 
@@ -3683,32 +1055,11 @@ optional body body:
 optional ftd.color body-color: $inherited.colors.border.dark
 integer width: $width
 
--- ftd.column:
-width: fill-container
-align-self: center
-align-content: center
-spacing.fixed.px: 32
-max-width.fixed.px: $title-with-body-card.width
-min-height.fixed.px if {ftd.device != "mobile"}: 450
-min-height.fixed.px if {ftd.device == "mobile"}: 430
-
--- ftd.image:
-if: { title-with-body-card.logo != NULL }
-src: $title-with-body-card.logo
-width: auto
-height.fixed.px: 70
-
--- ftd.text: $title-with-body-card.title
-if: { title-with-body-card.title != NULL }
-role: $inherited.types.heading-small
-color: $title-with-body-card.body-color
-
--- ftd.text:
-text: $title-with-body-card.body
-color: $title-with-body-card.body-color
-role: $inherited.types.copy-regular
-
--- end: ftd.column
+-- lib2.title-with-body-card: $title-with-body-card.title
+logo: $title-with-body-card.logo
+body: $title-with-body-card.body
+body-color: $title-with-body-card.body-color
+width: $title-with-body-card.width
 
 -- end: title-with-body-card
 
@@ -3727,133 +1078,18 @@ children slider-wrap:
 integer width: $width
 integer pull-top: 0
 
--- ftd.column:
-width: fill-container
 
--- logo-slider-desktop:
-if: { ftd.device != "mobile" }
+-- lib2.logo-slider:
 active-item: $logo-slider.active-item
 slider-wrap: $logo-slider.slider-wrap
 width: $logo-slider.width
 pull-top: $logo-slider.pull-top
 
--- logo-slider-mobile:
-if: { ftd.device == "mobile" }
-active-item: $logo-slider.active-item
-slider-wrap: $logo-slider.slider-wrap
-width: $logo-slider.width
-pull-top: $logo-slider.pull-top
-
--- end: ftd.column
 
 -- end: logo-slider
 
 
 
-
-
-
-
-
-
-
--- component logo-slider-desktop:
-optional string active-item:
-children slider-wrap:
-integer width:
-integer pull-top:
-
--- ftd.column:
-width: fill-container
-align-self: center
-align-content: center
-max-width.fixed.px: $logo-slider-desktop.width
-padding-bottom.px: 150
-margin-top.px: $logo-slider-desktop.pull-top
-
--- ftd.row:
-width: fill-container
-overflow-x: auto
-align-content: center
-spacing.fixed.px: 55
-
--- ftd.image:
-src: $assets.files.static.slider.arrow-left.svg
-width: auto
-height: auto
-
--- ftd.row:
-width: fill-container
-max-width.fixed.px: $logo-slider-desktop.width
-overflow-x: auto
-children: $logo-slider-desktop.slider-wrap
-spacing.fixed.px: 55
-
--- end: ftd.row
-
--- ftd.image:
-src: $assets.files.static.slider.arrow-right.svg
-width: auto
-height: auto
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: logo-slider-desktop
-
-
-
-
-
-
-
-
-
-
--- component logo-slider-mobile:
-optional string active-item:
-children slider-wrap:
-integer width:
-integer pull-top:
-
--- ftd.column:
-width: fill-container
-align-self: center
-align-content: center
-padding-bottom.px: 48
-
--- ftd.row:
-overflow-x: auto
-width.fixed.calc: 100vw
-align-content: center
-spacing.fixed.px: 14
-padding-horizontal.px: 24
-
-
--- ftd.image:
-src: $assets.files.static.slider.arrow-left.svg
-width.fixed.px: 20
-height.fixed.px: 20
-
--- ftd.row:
-width: fill-container
-overflow-x: auto
-children: $logo-slider-mobile.slider-wrap
-spacing.fixed.px: 14
-
--- end: ftd.row
-
--- ftd.image:
-src: $assets.files.static.slider.arrow-right.svg
-height: auto
-width.fixed.px: 20
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: logo-slider-mobile
 
 
 
@@ -3872,40 +1108,11 @@ optional boolean $active-item: false
 optional boolean $mouse-in: false
 integer index:
 
--- ftd.column:
-width: fill-container
-
--- ftd.column:
-padding-vertical.px: 15
-padding-horizontal.px: 45
-padding-vertical.px if {ftd.device == "mobile"}: 6
-padding-horizontal.px if {ftd.device == "mobile"}: 25
-border-radius.px: 9
-border-color if { !$slider-item.mouse-in }: $inherited.colors.border-strong
-border-color if { $slider-item.mouse-in }: $inherited.colors.shadow
-border-color if { $slider-item.active-item }: $inherited.colors.shadow
-border-color if { !$slider-item.active-item }: $inherited.colors.border-strong
-border-width.px: 1
-$on-mouse-enter$: $ftd.set-bool($a = $slider-item.mouse-in, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $slider-item.mouse-in, v = false)
-$on-click$: $ftd.toggle($a = $slider-item.active-item)
-$on-click$: $ftd.set-integer($a = $current-slide, v = $slider-item.index)
-
--- ftd.image:
-src: $slider-item.icon
-width: auto
-height.fixed.px: 58
-height.fixed.px if {ftd.device == "mobile"}: 31
-
--- ftd.text: $slider-item.title
-if: { slider-item.title != NULL }
-role: $inherited.types.copy-large
-color if { !$slider-item.mouse-in }: $inherited.colors.border-strong
-color if { $slider-item.mouse-in }: $inherited.colors.shadow
-
--- end: ftd.column
-
--- end: ftd.column
+-- lib2.slider-item: $slider-item.title
+icon: $slider-item.icon
+$active-item: $slider-item.active-item
+$mouse-in: $slider-item.mouse-in
+index: $slider-item.index
 
 -- end: slider-item
 
@@ -3929,11 +1136,7 @@ optional string cta-text:
 boolean cta: false
 integer spacing: 24
 
--- ftd.column:
-width: fill-container
-
--- heart-line-title-card-desktop: $heart-line-title-card.title
-if: { ftd.device != "mobile" }
+-- lib2.heart-line-title-card: $heart-line-title-card.title
 body: $heart-line-title-card.body
 show-arrow: $heart-line-title-card.show-arrow
 width: $heart-line-title-card.width
@@ -3943,233 +1146,8 @@ cta-url: $heart-line-title-card.cta-url
 cta-text: $heart-line-title-card.cta-text
 spacing: $heart-line-title-card.spacing
 
--- heart-line-title-card-mobile: $heart-line-title-card.title
-if: { ftd.device == "mobile" }
-body: $heart-line-title-card.body
-show-arrow: $heart-line-title-card.show-arrow
-width: $heart-line-title-card.width
-wrapper: $heart-line-title-card.wrapper
-cta: $heart-line-title-card.cta
-cta-url: $heart-line-title-card.cta-url
-cta-text: $heart-line-title-card.cta-text
-spacing: $heart-line-title-card.spacing
-
--- end: ftd.column
 
 -- end: heart-line-title-card
-
-
-
-
-
-
-
-
-
-
--- component heart-line-title-card-desktop:
-optional caption title:
-optional body body:
-boolean show-arrow:
-integer width:
-children wrapper:
-optional string cta-url:
-optional string cta-text:
-boolean cta: 
-integer spacing: 
-
--- ftd.column:
-width: fill-container
-z-index: 0
-align-self: center
-padding-bottom.px: 80
-
--- ftd.row:
-width: fill-container
-align-self: center
-align-content: center
-spacing.fixed.px: $heart-line-title-card-desktop.spacing
-
--- ftd.image:
-src: $assets.files.static.chart-line-type-1.svg
-width: auto
-width if { heart-line-title-card-desktop.cta-text != NULL}: fill-container
-height: auto
-align-self: center
-
--- ftd.text: $heart-line-title-card-desktop.title
-if: { heart-line-title-card-desktop.title != NULL}
-role: $inherited.types.heading-large
-color: $inherited.colors.text-strong
-align-self: center
-width: fill-container
-margin-top.px: 24
-text-align: center
-white-space: nowrap
-
--- cta-button: $heart-line-title-card-desktop.cta-text
-if: { heart-line-title-card-desktop.cta-text != NULL }
-role: primary
-link: $heart-line-title-card-desktop.cta-url
-show-arrow: true
-
--- ftd.image:
-src: $assets.files.static.chart-line-type-2.svg
-width: auto
-height: auto
-align-self: center
-
--- end: ftd.row
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $heart-line-title-card-desktop.width
-align-content: center
-align-self: center
-spacing.fixed.px: 16
-
--- ftd.image:
-if: { heart-line-title-card-desktop.show-arrow }
-src: $assets.files.static.arrow-zigzag.svg
-width: auto
-height: auto
-
--- ftd.text:
-if: { heart-line-title-card-desktop.body != NULL }
-text: $heart-line-title-card-desktop.body
-color: $inherited.colors.text
-role: $inherited.types.copy-large
-text-align: center
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $heart-line-title-card-desktop.width
-align-content: center
-align-self: center
-children: $heart-line-title-card-desktop.wrapper
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: heart-line-title-card-desktop
-
-
-
-
-
-
-
-
-
-
--- component heart-line-title-card-mobile:
-optional caption title:
-optional body body:
-boolean show-arrow:
-integer width:
-children wrapper:
-optional string cta-url:
-optional string cta-text:
-boolean cta: 
-integer spacing: 
-
--- ftd.column:
-width: fill-container
-z-index: 0
-align-self: center
-align-content: center
-padding-bottom.px: 24
-padding-horizontal.px if { heart-line-title-card-mobile.title != NULL }: 12
-
-
--- ftd.column:
-margin-bottom.px if { heart-line-title-card-mobile.cta-text != NULL }: 33
-
--- cta-button: $heart-line-title-card-mobile.cta-text
-if: { heart-line-title-card-mobile.cta-text != NULL }
-role: primary
-link: $heart-line-title-card-mobile.cta-url
-show-arrow: true
-
--- end: ftd.column
--- ftd.row:
-width: fill-container
-spacing.fixed.px if { heart-line-title-card-mobile.cta-text != NULL }: 50
-
--- ftd.image:
-src: $assets.files.static.chart-line-type-2.svg
-width: fill-container
-width.fixed.px if { heart-line-title-card-mobile.cta-text != NULL }: 160
-height: auto
-
--- ftd.image:
-if: { heart-line-title-card-mobile.cta-text != NULL }
-src: $assets.files.static.chart-line-type-2.svg
-width.fixed.px: 160
-height: auto
-
--- end: ftd.row
-
--- ftd.row:
-align-self: center
-align-content: center
-spacing.fixed.px: 24
-width.fixed.px: 345
-
--- ftd.text: $heart-line-title-card-mobile.title
-if: { heart-line-title-card-mobile.title != NULL }
-role: $inherited.types.heading-large
-color: $inherited.colors.text-strong
-align-self: center
-width: fill-container
-margin-top.px: 24
-text-align: center
-
--- end: ftd.row
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $heart-line-title-card-mobile.width
-align-content: center
-align-self: center
-spacing.fixed.px: 16
-
--- ftd.image:
-if: { heart-line-title-card-mobile.show-arrow }
-src: $assets.files.static.arrow-zigzag.svg
-width.fixed.px: 132
-height.fixed.px: 20
-align-self: end
-
--- ftd.text:
-if: { heart-line-title-card-mobile.body != NULL }
-text: $heart-line-title-card-mobile.body
-color: $inherited.colors.text
-role: $inherited.types.copy-small
-text-align: center
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $heart-line-title-card-mobile.width
-align-content: center
-align-self: center
-children: $heart-line-title-card-mobile.wrapper
-padding-horizontal.px: 12
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: heart-line-title-card-mobile
-
-
-
-
 
 
 
@@ -4189,129 +1167,17 @@ optional boolean right: false
 optional string cta-text:
 optional string cta-link:
 
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $testimonial-card.width
-padding-horizontal.px if { ftd.device == "mobile" }: 24
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $testimonial-card.width
-margin-top.px: $testimonial-card.margin-top
-right.px: $testimonial-card.margin-right
-right.px if { ftd.device == "mobile"}: 0
-margin-top.px if { ftd.device == "mobile"}: 12
-
--- ftd.column:
-if: {!testimonial-card.right}
-width: fill-container
-height: fill-container
-border-width.px: 1
-border-color: $inherited.colors.border-strong
-border-radius.px: 30
-z-index: 0
-anchor: parent
-left.px: -18
-bottom.px: -18
-background.solid: $testimonial-card.bgcolor
-left.px if { ftd.device == "mobile"}: -12
-
--- end: ftd.column
-
--- ftd.column:
-if: {testimonial-card.right}
-width: fill-container
-height: fill-container
-border-width.px: 1
-border-color: $inherited.colors.border-strong
-border-radius.px: 30
-z-index: 0
-anchor: parent
-left.px: 10
-bottom.px: -15
-background.solid: $testimonial-card.bgcolor
-left.px if { ftd.device == "mobile"}: -12
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-background.solid: $testimonial-card.bg-color
-padding-vertical.px: 34
-padding-horizontal.px: 26
-padding-bottom.px if {!testimonial-card.right}: 70
-spacing.fixed.px: 32
-z-index: 11
-border-radius.px: 30
-
--- ftd.column:
-if: {testimonial-card.right}
-width: fill-container
-align-content: center
-spacing.fixed.px: 26
-
--- ftd.text: $testimonial-card.title
-role: $inherited.types.heading-medium
-color: $inherited.colors.text
-text-align: center
-
--- ftd.text:
-if: { testimonial-card.body != NULL }
-text: $testimonial-card.body
-color: $inherited.colors.text-strong
-role: $inherited.types.copy-regular
-
--- cta-button: $testimonial-card.cta-text
-role: primary
-link: $testimonial-card.cta-link
-show-arrow: true
-
--- end: ftd.column
-
--- ftd.row:
-if: {!testimonial-card.right}
-width: fill-container
-spacing.fixed.px: 26
-
--- ftd.image:
-if: { testimonial-card.avatar != NULL }
-src: $testimonial-card.avatar
-width.fixed.px: 104
-height.fixed.px: 96
-border-radius.px: 30
-align-self: center
-
--- ftd.text:
-if: { testimonial-card.body != NULL }
-text: $testimonial-card.body
-color: $inherited.colors.custom.seven
-role: $inherited.types.copy-regular
-align-self: center
-
--- end: ftd.row
-
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 6
-
--- ftd.text: $testimonial-card.title
-if: {!testimonial-card.right}
-role: $inherited.types.blockquote
-color: $inherited.colors.custom.seven
-
--- ftd.text:
-if: { testimonial-card.label != NULL } 
-text: $testimonial-card.label
-role: $inherited.types.fine-print
-color: $inherited.colors.custom.seven
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
+-- lib2.testimonial-card: $testimonial-card.title
+label: $testimonial-card.label
+body: $testimonial-card.body
+bgcolor: $testimonial-card.bgcolor
+bg-color: $testimonial-card.bg-color
+width: $testimonial-card.width
+margin-top: $testimonial-card.margin-top
+cta-text: $testimonial-card.cta-text
+cta-link: $testimonial-card.cta-link
+right: $testimonial-card.right
+margin-right: $testimonial-card.margin-right
 
 -- end: testimonial-card
 
@@ -4329,421 +1195,11 @@ color: $inherited.colors.custom.seven
 pr.toc-item list footer-toc: $footer-toc.sections
 integer width: $footer-width
 
--- ftd.column:
-width: fill-container
-
--- footer-desktop: 
-if: {ftd.device != "mobile"}
+-- lib2.footer: 
 footer-toc: $footer.footer-toc
-
--- footer-mobile: 
-if: {ftd.device == "mobile"}
-footer-toc: $footer.footer-toc
-
--- end: ftd.column
+width: $footer.width
 
 -- end: footer
-
-
-
-
-
-
-
-
-
-
--- component footer-desktop:
-pr.toc-item list footer-toc: 
-integer width: $footer-width
-
--- ftd.column:
-width: fill-container
-border-top-width.px: 1
-border-color: #333333
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $footer-desktop.width
-padding-vertical.px: 60
-padding-horizontal.px: 60
-align-self: center
-
--- ftd.row:
-width: fill-container
-
--- ftd.text: Fastn
-role: $inherited.types.heading-medium
-color: $inherited.colors.text-strong
-width.fixed.px: 200
-
--- ftd.column:
-width: fill-container
-
--- ftd.row:
-width: fill-container
-spacing.fixed.px: 70
-
-
--- footer-loop: $obj.title
-$loop$: $footer-desktop.footer-toc as $obj
-children: $obj.children
-url: $obj.url
-
--- end: ftd.row
-
--- end: ftd.column
-
-;;-- dark-mode-switcher:
-
--- end: ftd.row
-
--- dropdown:
-
--- ftd.row:
-width: fill-container
-border-top-width.px: 1
-border-color: $inherited.colors.border-strong
-margin-top.px: 82
-padding-top.px: 17
-
--- ftd.row:
-width: fill-container
-spacing.fixed.px: 18
-
--- ftd.image:
-src: $assets.files.static.footer.discord.svg
-width.fixed.px: 42
-
--- ftd.image:
-src: $assets.files.static.footer.linkedin.svg
-width.fixed.px: 42
-
--- ftd.image:
-src: $assets.files.static.footer.twitter.svg
-width.fixed.px: 42
-
--- end: ftd.row
-
--- ftd.text: © 2023 Fastn.inc
-role: $inherited.types.button-medium
-color: $inherited.colors.text-strong
-white-space: nowrap
-align-self: center
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: footer-desktop
-
-
-
-
-
-
-
-
-
-
--- component footer-mobile:
-pr.toc-item list footer-toc: 
-integer width: 1320
-
--- ftd.column:
-width: fill-container
-border-top-width.px: 1
-border-color: #333333
-
--- ftd.column:
-width: fill-container
-padding-vertical.px: 30
-
--- ftd.text: Fastn
-role: $inherited.types.heading-small
-text-align: center
-color: $inherited.colors.text-strong
-width: fill-container
-
--- ftd.column:
-width: fill-container
-
--- footer-loop: $obj.title
-$loop$: $footer-mobile.footer-toc as $obj
-children: $obj.children
-url: $obj.url
-
--- end: ftd.column
-
-;;-- dark-mode-switcher:
-
--- dropdown:
-
--- ftd.column:
-width: fill-container
-border-top-width.px: 1
-border-color: $inherited.colors.border-strong
-margin-top.px: 82
-padding-top.px: 17
-spacing.fixed.px: 18
-
--- ftd.row:
-align-self: center
-spacing.fixed.px: 18
-
--- ftd.image:
-src: $assets.files.static.footer.discord.svg
-width.fixed.px: 42
-
--- ftd.image:
-src: $assets.files.static.footer.linkedin.svg
-width.fixed.px: 42
-
--- ftd.image:
-src: $assets.files.static.footer.twitter.svg
-width.fixed.px: 42
-
--- end: ftd.row
-
--- ftd.text: © 2022 Fastn.inc
-role: $inherited.types.button-medium
-color: #707070
-text-align: center
-width: fill-container
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: footer-mobile
-
-
-
-
-
-
-
-
-
-
-
-
--- component footer-loop:
-caption title:
-string url:
-pr.toc-item list children:
-boolean $shows-data: false
-
--- ftd.column:
-width: fill-container
-
--- footer-loop-mobile: $footer-loop.title
-if: {ftd.device == "mobile"}
-url: $footer-loop.url
-children: $footer-loop.children 
-$shows-data: $footer-loop.shows-data
-
--- footer-loop-desktop: $footer-loop.title
-if: {ftd.device != "mobile"}
-url: $footer-loop.url
-children: $footer-loop.children 
-
-
--- end: ftd.column
-
--- end: footer-loop
-
--- component footer-loop-mobile:
-caption title:
-string url:
-pr.toc-item list children:
-boolean $shows-data: 
-
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 14
-
--- ftd.column:
-border-color: $inherited.colors.border-strong
-border-bottom-width.px: 1
-width: fill-container
-padding-vertical.px: 16
-padding-horizontal.px: 16
-
--- ftd.row:
-width: fill-container
-
--- ftd.text: $footer-loop-mobile.title
-role: $inherited.types.heading-tiny
-width: fill-container
-color: $inherited.colors.text-strong
-link: $footer-loop-mobile.url
-
--- ftd.image:
-if: {footer-loop-mobile.shows-data}
-src: $assets.files.static.footer.drop-up.svg
-width.fixed.px: 16
-$on-click$: $ftd.toggle($a= $footer-loop-mobile.shows-data)
-align-self: center
-
--- ftd.image:
-if: {!footer-loop-mobile.shows-data}
-src: $assets.files.static.footer.drop-down.svg
-width.fixed.px: 16
-$on-click$: $ftd.toggle($a= $footer-loop-mobile.shows-data)
-align-self: center
-
--- end: ftd.row
-
--- ftd.column:
-spacing.fixed.px: 14
-margin-top.px if { $footer-loop-mobile.shows-data }: 12
-
--- children-loop: $obj.title
-if: {footer-loop-mobile.shows-data}
-url: $obj.url
-children:  $obj.children
-$loop$: $footer-loop-mobile.children as $obj
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: footer-loop-mobile
-
-
-
-
-
-
-
-
-
-
-
--- component footer-loop-desktop:
-caption title:
-string url:
-pr.toc-item list children:
-
--- ftd.column:
-spacing.fixed.px: 14
-
--- ftd.text: $footer-loop-desktop.title
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-link: $footer-loop-desktop.url
-
--- children-loop: $obj.title
-url: $obj.url
-children: $obj.children
-$loop$: $footer-loop-desktop.children as $obj
-
--- end: ftd.column
-
--- end: footer-loop-desktop
-
-
-
-
-
-
-
-
-
-
-
--- component children-loop:
-caption title:
-string url:
-pr.toc-item list children:
-
--- ftd.column:
-spacing.fixed.px: 14
-
--- ftd.text: $children-loop.title
-if: { ftd.device != "mobile"}
-role: $inherited.types.copy-small
-color: $inherited.colors.text
-link: $children-loop.url
-
--- ftd.text: $children-loop.title
-if: { ftd.device == "mobile"}
-role: $inherited.types.button-medium
-color: $inherited.colors.text
-link: $children-loop.url
-
-;;-- ftd.column:
-;;spacing.fixed.px: 14
-;;if: { !ftd.is_empty(children-loop.children) }
-
-;;-- children-loop: $obj.title
-;;url: $obj.url
-;;children: $obj.children
-;;$loop$: $children-loop.children as $obj
-
-;; -- end: ftd.column
-
--- end: ftd.column
-
--- end: children-loop
-
-
-
-
-
-
-
-
-
-
-
-
--- component footer-instance:
-pr.toc-item footer-toc:
-
--- ftd.column:
-width: fill-container
-
--- ftd.text: $footer-instance.footer-toc.title
-role: $inherited.types.heading-small
-color: $inherited.colors.text-strong
-link: $footer-instance.footer-toc.url
-
--- footer-link: $obj.title
-$loop$: $footer-instance.footer-toc.children as $obj
-url: $obj.url
-
--- end: ftd.column
-
--- end: footer-instance
-
-
-
-
--- component footer-link:
-string url:
-caption title:
-
--- ftd.column:
-width: fill-container
-
--- ftd.text: $footer-link.title
-role: $inherited.types.copy-small
-color: $inherited.colors.text
-link: $footer-link.url
-
--- end: ftd.column
-
--- end: footer-link
-
-
 
 
 
@@ -5550,16 +2006,7 @@ $h4.body
 
 -- component hr:
 
--- ftd.column:
-if: {ftd.device != "mobile"}
-background.solid: $inherited.colors.border-strong
-width: fill-container
-height.fixed.px: 1
-margin-top.px: 36
-margin-bottom.px: 36
-
-
--- end: ftd.column
+-- lib4.hr:
 
 -- end: hr
 
@@ -5581,20 +2028,14 @@ optional string cta-link:
 optional string cta-role:
 optional ftd.image-src image:
 optional integer padding-vertical:
-optional boolean top: false
-optional boolean bottom: false
-optional boolean btn: false
 optional boolean join-btn: false
 optional boolean two-text: false
 optional boolean top: false
 optional boolean bottom: false
 optional boolean btn: false
 
--- ftd.column:
-width: fill-container
 
--- right-image-component-desktop: $right-image-component.title
-if: { ftd.device != "mobile" }
+-- lib4.right-image-component: $right-image-component.title
 icon: $right-image-component.icon
 info: $right-image-component.info
 domain-text: $right-image-component.domain-text
@@ -5609,659 +2050,8 @@ two-text: $right-image-component.two-text
 bottom: $right-image-component.bottom
 btn: $right-image-component.btn
 
--- right-image-component-mobile: $right-image-component.title
-if: { ftd.device == "mobile" }
-icon: $right-image-component.icon
-info: $right-image-component.info
-domain-text: $right-image-component.domain-text
-cta-text: $right-image-component.cta-text
-cta-link: $right-image-component.cta-link
-image: $right-image-component.image
-top: $right-image-component.top
-join-btn: $right-image-component.join-btn
-two-text: $right-image-component.two-text
-bottom: $right-image-component.bottom
-btn: $right-image-component.btn
-
--- end: ftd.column
-
 -- end: right-image-component
 
-
-
-
-
-
-
-
-
-
--- component right-image-component-desktop:
-optional ftd.image-src icon:
-caption title:
-body info:
-optional string domain-text:
-string cta-text:
-string cta-link:
-optional string cta-role:
-optional ftd.image-src image:
-integer padding-vertical:
-optional boolean top:
-optional boolean join-btn:
-optional boolean two-text:
-optional boolean bottom:
-optional boolean btn:
-
--- ftd.row:
-width: fill-container
-max-width.fixed.px: 1160
-align-self: center
-padding-bottom.px: 150
-padding-top.px if {right-image-component-desktop.padding-vertical != NULL}:  $right-image-component-desktop.padding-vertical
-
--- ftd.column:
-if: { !right-image-component-desktop.two-text }
-width: fill-container
-spacing.fixed.px: 32
-
--- ftd.image:
-if: { right-image-component-desktop.icon != NULL && !right-image-component-desktop.bottom }
-src: $right-image-component-desktop.icon
-width.fixed.px: 70
-height.fixed.px: 67
-
--- ftd.text: $right-image-component-desktop.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-padding-left.px if { right-image-component-desktop.btn }: 70
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- ftd.column:
-if: { !right-image-component-desktop.bottom && !right-image-component-desktop.btn && !right-image-component-desktop.join-btn }
-
--- cta-button: $right-image-component-desktop.cta-text
-role: $right-image-component-desktop.cta-role
-link: $right-image-component-desktop.cta-link
-show-arrow: true
-width: 140
-
--- end: ftd.column
-
--- ftd.row:
-if: { right-image-component-desktop.join-btn }
-spacing.fixed.px: 18
-
--- ftd.column:
-align-content: center
-spacing.fixed.px: 18
-
--- ftd.image:
-src: $assets.files.static.open-source.discord.svg
-link: /
-
--- ftd.text: Join Now
-role: $inherited.types.label-small
-color: $inherited.colors.border-strong
-
--- end: ftd.column
-
--- ftd.column:
-align-content: center
-spacing.fixed.px: 18
-
--- ftd.image:
-src: $assets.files.static.open-source.github.svg
-link: /
-
--- ftd.text: Join Now
-role: $inherited.types.label-small
-color: $inherited.colors.border-strong
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.column
-
--- ftd.column:
-if: { right-image-component-desktop.two-text }
-spacing.fixed.px: 80
-
--- ftd.column:
-spacing.fixed.px: 24
-
--- ftd.row:
-spacing.fixed.px: 18
-
--- ftd.image:
-if: { right-image-component-desktop.icon != NULL && !right-image-component-desktop.bottom }
-src: $right-image-component-desktop.icon
-width.fixed.px: 70
-height.fixed.px: 67
-
--- ftd.text: $right-image-component-desktop.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- end: ftd.row
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- ftd.row:
-align-content: center
-spacing.fixed.px: 18
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- ftd.column:
-height.fixed.px: 8
-width.fixed.px: 8
-border-radius.px: 100
-background.solid: $inherited.colors.accent.primary
-
--- end: ftd.column
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- end: ftd.row
-
--- end: ftd.column
-
--- ftd.column:
-spacing.fixed.px: 24
-
--- ftd.row:
-if: { right-image-component-desktop.two-text }
-spacing.fixed.px: 18
-
--- ftd.image:
-if: { right-image-component-desktop.icon != NULL && !right-image-component-desktop.bottom }
-src: $right-image-component-desktop.icon
-width.fixed.px: 70
-height.fixed.px: 67
-
--- ftd.text: $right-image-component-desktop.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- end: ftd.row
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- ftd.row:
-align-content: center
-spacing.fixed.px: 18
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- ftd.column:
-height.fixed.px: 8
-width.fixed.px: 8
-border-radius.px: 100
-background.solid: $inherited.colors.accent.primary
-
--- end: ftd.column
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- end: ftd.row
-
--- end: ftd.column
-
--- ftd.row:
-if: { right-image-component-desktop.join-btn }
-spacing.fixed.px: 18
-
--- ftd.column:
-align-content: center
-spacing.fixed.px: 18
-
--- ftd.image:
-src: $assets.files.static.open-source.discord.svg
-link: /
-
--- ftd.text: Join Now
-role: $inherited.types.label-small
-color: $inherited.colors.border-strong
-
--- end: ftd.column
-
--- ftd.column:
-align-content: center
-spacing.fixed.px: 18
-
--- ftd.image:
-src: $assets.files.static.open-source.github.svg
-link: /
-
--- ftd.text: Join Now
-role: $inherited.types.label-small
-color: $inherited.colors.border-strong
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.column
-
--- ftd.column:
-if: { right-image-component-desktop.two-text }
-spacing.fixed.px: 80
-
--- ftd.column:
-spacing.fixed.px: 24
-
--- ftd.row:
-spacing.fixed.px: 18
-
--- ftd.image:
-if: { right-image-component-desktop.icon != NULL && !right-image-component-desktop.bottom }
-src: $right-image-component-desktop.icon
-width.fixed.px: 70
-height.fixed.px: 67
-
--- ftd.text: $right-image-component-desktop.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- end: ftd.row
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- ftd.row:
-align-content: center
-spacing.fixed.px: 18
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- ftd.column:
-height.fixed.px: 8
-width.fixed.px: 8
-border-radius.px: 100
-background.solid: $inherited.colors.accent.primary
-
--- end: ftd.column
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- end: ftd.row
-
--- end: ftd.column
-
--- ftd.column:
-spacing.fixed.px: 24
-
--- ftd.row:
-if: { right-image-component-desktop.two-text }
-spacing.fixed.px: 18
-
--- ftd.image:
-if: { right-image-component-desktop.icon != NULL && !right-image-component-desktop.bottom }
-src: $right-image-component-desktop.icon
-width.fixed.px: 70
-height.fixed.px: 67
-
--- ftd.text: $right-image-component-desktop.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- end: ftd.row
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- ftd.row:
-align-content: center
-spacing.fixed.px: 18
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- ftd.column:
-height.fixed.px: 8
-width.fixed.px: 8
-border-radius.px: 100
-background.solid: $inherited.colors.accent.primary
-
--- end: ftd.column
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
-if: {right-image-component-desktop.image != NULL}
-width: fill-container
-padding-vertical.px if { !right-image-component-desktop.btn }: 30
-padding-left.px if { !right-image-component-desktop.btn }: 90
-height.fixed.px if {right-image-component-desktop.two-text}: 626
-width.fixed.px if {right-image-component-desktop.two-text}: 512
-
--- ftd.image:
-src: $right-image-component-desktop.image
-width: auto
-height: auto
-height.fixed.px if {right-image-component-desktop.two-text}: 626
-width.fixed.px if {right-image-component-desktop.two-text}: 512
-
--- ftd.column:
-if: {right-image-component-desktop.bottom}
-align-self: end
-margin-top.px: -35
-
--- ftd.image:
-if: { right-image-component-desktop.icon != NULL }
-src: $right-image-component-desktop.icon
-width.fixed.px: 70
-
--- end: ftd.column
-
--- ftd.column:
-if: {right-image-component-desktop.bottom}
-align-self: end
-margin-top.px: -35
-
--- ftd.image:
-if: { right-image-component-desktop.icon != NULL }
-src: $right-image-component-desktop.icon
-width.fixed.px: 70
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: right-image-component-desktop
-
-
-
-
-
-
-
-
-
-
--- component right-image-component-mobile:
-optional ftd.image-src icon:
-caption title:
-body info:
-optional string domain-text:
-string cta-text:
-string cta-link:
-optional ftd.image-src image:
-optional boolean top:
-optional boolean join-btn:
-optional boolean two-text:
-optional boolean bottom:
-optional boolean btn:
-
--- ftd.column:
-width: fill-container
-margin-top.px if { !right-image-component-mobile.top } : 70
-padding-horizontal.px: 16
-
--- ftd.column:
-if: { !right-image-component-mobile.two-text }
-width: fill-container
-spacing.fixed.px: 32
-
--- ftd.image:
-if: { right-image-component-mobile.icon != NULL && !right-image-component-mobile.bottom }
-src: $right-image-component-mobile.icon
-width.fixed.px: 70
-height.fixed.px: 67
-
--- ftd.text: $right-image-component-mobile.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- ftd.text:
-if: { right-image-component-mobile.info != NULL }
-text: $right-image-component-mobile.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- ftd.column:
-if: { !right-image-component-mobile.bottom && !right-image-component-mobile.btn && !right-image-component-mobile.join-btn }
-
--- cta-button: $right-image-component-mobile.cta-text
-role: primary
-link: $right-image-component-mobile.cta-link
-show-arrow: true
-
--- end: ftd.column
-
--- ftd.row:
-if: { right-image-component-mobile.join-btn }
-spacing.fixed.px: 18
-
--- ftd.column:
-align-content: center
-spacing.fixed.px: 18
-
--- ftd.image:
-src: $assets.files.static.open-source.discord.svg
-link: /
-
--- ftd.text: Join Now
-role: $inherited.types.label-small
-color: $inherited.colors.border-strong
-
--- end: ftd.column
-
--- ftd.column:
-align-content: center
-spacing.fixed.px: 18
-
--- ftd.image:
-src: $assets.files.static.open-source.github.svg
-link: /
-
--- ftd.text: Join Now
-role: $inherited.types.label-small
-color: $inherited.colors.border-strong
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.column
-
--- ftd.column:
-if: { right-image-component-mobile.two-text }
-spacing.fixed.px: 80
-
--- ftd.column:
-spacing.fixed.px: 24
-
--- ftd.row:
-spacing.fixed.px: 18
-
--- ftd.image:
-if: { right-image-component-mobile.icon != NULL && !right-image-component-mobile.bottom }
-src: $right-image-component-mobile.icon
-width.fixed.px: 70
-height.fixed.px: 67
-
--- ftd.text: $right-image-component-mobile.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- end: ftd.row
-
--- ftd.text:
-if: { right-image-component-mobile.info != NULL }
-text: $right-image-component-mobile.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- ftd.row:
-align-content: center
-spacing.fixed.px: 18
-
--- ftd.text:
-if: { right-image-component-mobile.info != NULL }
-text: $right-image-component-mobile.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- ftd.column:
-height.fixed.px: 8
-width.fixed.px: 8
-border-radius.px: 100
-background.solid: $inherited.colors.accent.primary
-
--- end: ftd.column
-
--- ftd.text:
-if: { right-image-component-mobile.info != NULL }
-text: $right-image-component-mobile.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- end: ftd.row
-
--- end: ftd.column
-
--- ftd.column:
-spacing.fixed.px: 24
-
--- ftd.row:
-if: { right-image-component-mobile.two-text }
-spacing.fixed.px: 18
-
--- ftd.image:
-if: { right-image-component-mobile.icon != NULL && !right-image-component-mobile.bottom }
-src: $right-image-component-mobile.icon
-width.fixed.px: 70
-height.fixed.px: 67
-
--- ftd.text: $right-image-component-mobile.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- end: ftd.row
-
--- ftd.text:
-if: { right-image-component-mobile.info != NULL }
-text: $right-image-component-mobile.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- ftd.row:
-align-content: center
-spacing.fixed.px: 18
-
--- ftd.text:
-if: { right-image-component-mobile.info != NULL }
-text: $right-image-component-mobile.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- ftd.column:
-height.fixed.px: 8
-width.fixed.px: 8
-border-radius.px: 100
-background.solid: $inherited.colors.accent.primary
-
--- end: ftd.column
-
--- ftd.text:
-if: { right-image-component-mobile.info != NULL }
-text: $right-image-component-mobile.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
-
--- ftd.column:
-if: {right-image-component-mobile.image != NULL}
-padding-vertical.px: 32
-align-self: center
-
--- ftd.image:
-src: $right-image-component-mobile.image
-width.fixed.px: 343
-
--- ftd.column:
-if: {right-image-component-mobile.bottom}
-align-self: end
-margin-top.px: -35
-
--- ftd.image:
-if: { right-image-component-mobile.icon != NULL }
-src: $right-image-component-mobile.icon
-width.fixed.px: 70
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: right-image-component-mobile
 
 
 
@@ -6280,13 +2070,10 @@ string cta-text:
 string cta-link:
 optional string cta-role:
 ftd.image-src image:
-optional boolean top:
+boolean top: false
 
--- ftd.column:
-width: fill-container
 
--- left-image-component-desktop: $left-image-component.title
-if: { ftd.device != "mobile" }
+-- lib4.left-image-component: $left-image-component.title
 icon: $left-image-component.icon
 info: $left-image-component.info
 cta-text: $left-image-component.cta-text
@@ -6295,150 +2082,11 @@ cta-role: $left-image-component.cta-role
 image: $left-image-component.image
 top: $left-image-component.top
 
--- left-image-component-mobile: $left-image-component.title
-if: { ftd.device == "mobile" }
-icon: $left-image-component.icon
-info: $left-image-component.info
-cta-text: $left-image-component.cta-text
-cta-link: $left-image-component.cta-link
-image: $left-image-component.image
-
--- end: ftd.column
-
 -- end: left-image-component
 
 
 
 
-
-
-
-
-
--- component left-image-component-desktop:
-optional ftd.image-src icon:
-caption title:
-body info:
-string cta-text:
-string cta-link:
-optional string cta-role:
-ftd.image-src image:
-optional boolean top:
-
--- ftd.row:
-width: fill-container
-margin-top.px if { left-image-component-desktop.top} : 100
-padding-bottom.px: 150
-max-width.fixed.px: 1160
-align-self: center
-
--- ftd.column:
-width: fill-container
-padding-vertical.px if { !left-image-component-desktop.top}: 101
-padding-vertical.px if { left-image-component-desktop.top}: 30
-
--- ftd.image:
-src: $left-image-component-desktop.image
-width: auto
-height: auto
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 24
-padding-left.px: 119
-padding-top.px if { left-image-component-desktop.top }: 30
-
--- ftd.image:
-if: { left-image-component-desktop.icon != NULL}
-src: $left-image-component-desktop.icon
-width.fixed.px: 70
-height.fixed.px: 67
-
--- ftd.text: $left-image-component-desktop.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- ftd.text:
-text: $left-image-component-desktop.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- cta-button: $left-image-component-desktop.cta-text
-role: $left-image-component-desktop.cta-role
-link: $left-image-component-desktop.cta-link
-show-arrow: true
-width: 140
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: left-image-component-desktop
-
-
-
-
-
-
-
-
-
-
--- component left-image-component-mobile:
-optional ftd.image-src icon:
-caption title:
-body info:
-string cta-text:
-string cta-link:
-ftd.image-src image:
-optional integer padding-vertical:
-
--- ftd.column:
-width: fill-container
-margin-top.px: 70
-padding-horizontal.px: 16
-
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 32
-
--- ftd.image:
-if: { left-image-component-mobile.icon != NULL}
-src: $left-image-component-mobile.icon
-width.fixed.px: 70
-height.fixed.px: 67
-
--- ftd.text: $left-image-component-mobile.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- ftd.text:
-text: $left-image-component-mobile.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- cta-button: $left-image-component-mobile.cta-text
-role: primary
-link: $left-image-component-mobile.cta-link
-show-arrow: true
-
--- end: ftd.column
-
--- ftd.column:
-padding-vertical.px: 32
-align-self: center
-
--- ftd.image:
-src: $left-image-component-mobile.image
-width.fixed.px: 343
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: left-image-component-mobile
 
 
 
@@ -6455,152 +2103,15 @@ body info:
 integer width: $width
 optional ftd.color bgcolor: $inherited.colors.background.step-1
 
--- ftd.column:
-width: fill-container
 
--- hosting-hero-desktop: $hosting-hero.title
-if: { ftd.device != "mobile"}
+-- lib4.hosting-hero: $hosting-hero.title
 image: $hosting-hero.image
 info: $hosting-hero.info
 width: $hosting-hero.width
 bgcolor: $hosting-hero.bgcolor
 
--- hosting-hero-mobile: $hosting-hero.title
-if: { ftd.device == "mobile"}
-image: $hosting-hero.image
-info: $hosting-hero.info
-width: $hosting-hero.width
-bgcolor: $hosting-hero.bgcolor
-
--- end: ftd.column
 
 -- end: hosting-hero
-
-
-
-
-
-
-
-
-
-
--- component hosting-hero-desktop:
-ftd.image-src image:
-caption title:
-body info:
-integer width:
-optional ftd.color bgcolor:
-
--- ftd.column:
-width: fill-container
-background.solid: $hosting-hero-desktop.bgcolor
-margin-top.px: 50
-padding-bottom.px: 100
-
--- ftd.column:
-width: fill-container
-align-self: center
-
--- ftd.row:
-width: fill-container
-
--- ftd.column:
-align-self: start
-padding-top.px: 100
-padding-left.px: 180
-
--- ftd.column:
-spacing.fixed.px: 16
-
--- ftd.text: $hosting-hero-desktop.title
-role: $inherited.types.heading-hero
-color: $inherited.colors.text
-
--- ftd.text:
-text: $hosting-hero-desktop.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
-align-self: end
-
--- ftd.image:
-src: $hosting-hero-desktop.image
-width:auto
-height:auto
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: hosting-hero-desktop
-
-
-
-
-
-
-
-
-
-
--- component hosting-hero-mobile:
-ftd.image-src image:
-caption title:
-body info:
-integer width:
-optional ftd.color bgcolor:
-
--- ftd.column:
-width: fill-container
-background.solid: $hosting-hero-mobile.bgcolor
-margin-top.px: 50
-padding-horizontal.px: 16
-padding-vertical.px: 46
-
--- ftd.column:
-width: fill-container
-align-self: center
-
--- ftd.row:
-width: fill-container
-
--- ftd.column:
-align-self: start
-
--- ftd.column:
-spacing.fixed.px: 16
-
--- ftd.text: $hosting-hero-mobile.title
-role: $inherited.types.heading-medium
-color: $inherited.colors.text
-
--- ftd.text:
-text: $hosting-hero-mobile.info
-role: $inherited.types.copy-regular
-color: $inherited.colors.text-strong
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: hosting-hero-mobile
-
 
 
 
@@ -6615,87 +2126,15 @@ ftd.image-src image: $assets.files.static.hosting.stage-hero.svg
 integer height: 600
 optional integer width:
 
--- ftd.column:
 
--- stages-vertical-image-desktop:
-if: { ftd.device != "mobile" }
+-- lib4.stages-vertical-image:
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
 height: $stages-vertical-image.height
-
-
--- stages-vertical-image-mobile:
-if: { ftd.device == "mobile" }
-image: $stages-vertical-image.image
-width: $stages-vertical-image.width
-height: $stages-vertical-image.height
-
--- end: ftd.column
 
 -- end: stages-vertical-image
 
 
-
-
-
-
-
-
-
-
--- component stages-vertical-image-desktop:
-ftd.image-src image:
-integer height: 600
-optional integer width:
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $width
-align-content: center
-align-self: center
-
--- ftd.image:
-src: $stages-vertical-image-desktop.image
-width: fill-container
-width.fixed.px if {stages-vertical-image-desktop.width != NULL}: $stages-vertical-image-desktop.width
-height: auto
-align-self: center
-
--- end: ftd.column
-
--- end: stages-vertical-image-desktop
-
-
-
-
-
-
-
-
-
-
--- component stages-vertical-image-mobile:
-ftd.image-src image:
-integer height: 
-optional integer width:
-
--- ftd.column:
-;;width: fill-container
-;;align-content: center
-
--- ftd.column:
-padding-vertical.px: 70
-
--- ftd.image:
-src: $stages-vertical-image-mobile.image
-width: fill-container
-height.fixed.px: 204
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: stages-vertical-image-mobile
 
 
 
@@ -6716,11 +2155,7 @@ string cta-link:
 optional body info:
 optional boolean right: false
 
--- ftd.column:
-width: fill-container
-
--- stages-vertical-desktop: $stages-vertical.title
-if: { ftd.device != "mobile" }
+-- lib4.stages-vertical: $stages-vertical.title
 rect: $stages-vertical.rect
 stage: $stages-vertical.stage
 stage-bgcolor: $stages-vertical.stage-bgcolor
@@ -6729,271 +2164,9 @@ cta-link: $stages-vertical.cta-link
 info: $stages-vertical.info
 right: $stages-vertical.right
 
--- stages-vertical-mobile: $stages-vertical.title
-if: { ftd.device == "mobile" }
-rect: $stages-vertical.rect
-stage: $stages-vertical.stage
-stage-bgcolor: $stages-vertical.stage-bgcolor
-cta-text: $stages-vertical.cta-text
-cta-link: $stages-vertical.cta-link
-info: $stages-vertical.info
-right: $stages-vertical.right
-
-
--- end: ftd.column
+-- end: lib4.stages-vertical
 
 -- end: stages-vertical
-
-
-
-
-
-
-
-
-
-
--- component stages-vertical-desktop:
-optional caption title:
-ftd.image-src rect:
-integer stage:
-optional ftd.color stage-bgcolor:
-string cta-text:
-string cta-link:
-optional body info:
-optional boolean right:
-
--- ftd.row:
-width: fill-container
-padding-vertical.px: 150
-align-content: center
-padding-top.px if {stages-vertical-desktop.right}: 60
-padding-bottom.px if {stages-vertical-desktop.right}: 200
-
--- ftd.row:
-
--- ftd.column:
-if: { !stages-vertical-desktop.right }
-align-content: center
-
--- ftd.image:
-src: $stages-vertical-desktop.rect
-height: auto
-width: auto
-
--- ftd.integer: $stages-vertical-desktop.stage
-role: $inherited.types.heading-small
-color: $inherited.colors.text
-anchor: parent
-top.px: 48
-right.px: 54
-
--- ftd.column:
-border-width.px: 1
-border-color: $inherited.colors.border
-anchor: parent
-top.px: 122
-min-height.fixed.px: 600
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
-width.fixed.px: 600
-padding-top.px: 28
-padding-left.px: 18
-
--- ftd.column:
-spacing.fixed.px: 40
-
--- ftd.text: $stages-vertical-desktop.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- ftd.text:
-text: $stages-vertical-desktop.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- ftd.column:
-if: { !stages-vertical-desktop.right }
-padding-vertical.px: 40
-
--- detail.detail: Lorem Ipsum
-image: $assets.files.static.hosting.bullet.svg
-
--- end: detail.detail
-
--- detail.detail: Lorem Ipsum
-image: $assets.files.static.hosting.bullet.svg
-
--- end: detail.detail
-
--- detail.detail: Lorem Ipsum
-image: $assets.files.static.hosting.bullet.svg
-
--- end: detail.detail
-
--- detail.detail: Lorem Ipsum
-image: $assets.files.static.hosting.bullet.svg
-
--- end: detail.detail
-
--- end: ftd.column
-
-
--- cta-button: $stages-vertical-desktop.cta-text
-if: { stages-vertical-desktop.cta-text != NULL }
-role: primary
-link: $stages-vertical-desktop.cta-link
-show-arrow: true
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
-if: { stages-vertical-desktop.right }
-align-content: center
-
--- ftd.image:
-src: $stages-vertical-desktop.rect
-height: auto
-width: auto
-
--- ftd.integer: $stages-vertical-desktop.stage
-role: $inherited.types.heading-small
-color: $inherited.colors.text
-anchor: parent
-top.px: 48
-right.px: 54
-
--- ftd.column:
-border-width.px: 1
-border-color: $inherited.colors.border
-anchor: parent
-top.px: 122
-min-height.fixed.px: 400
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
-if: { !stages-vertical-desktop.right }
-padding-vertical.px: 148
-padding-left.px: 25
-
--- ftd.image:
-src: $assets.files.static.hosting.rect-img.svg
-height.fixed.px: 440
-width: auto
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.row
-
--- end: stages-vertical-desktop
-
-
-
-
-
-
-
-
-
-
--- component stages-vertical-mobile:
-optional caption title:
-ftd.image-src rect:
-integer stage:
-optional ftd.color stage-bgcolor:
-string cta-text:
-string cta-link:
-optional body info:
-optional boolean right:
-
--- ftd.column:
-width: fill-container
-
--- ftd.column:
-width: fill-container
-align-content: center
-
--- ftd.image:
-src: $stages-vertical-mobile.rect
-height: auto
-width: auto
-
--- ftd.integer: $stages-vertical-mobile.stage
-role: $inherited.types.heading-small
-color: $inherited.colors.text
-anchor: parent
-top.px: 48
-
--- ftd.column:
-border-width.px: 1
-border-color: $inherited.colors.border
-anchor: parent
-top.px: 122
-min-height.fixed.px: 35
-;;height.fixed.px: 750
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-padding-horizontal.px: 16
-padding-vertical.px: 30
-align-content: left
-spacing.fixed.px: 24
-
--- ftd.text: $stages-vertical-mobile.title
-role: $inherited.types.heading-medium
-color: $inherited.colors.text
-
--- ftd.text:
-text: $stages-vertical-mobile.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-text-align: justify
-
--- ftd.text: $stages-vertical-mobile.cta-text
-role: $inherited.types.button-medium
-color: $inherited.colors.cta-primary.text
-white-space: nowrap
-text-align: center
-border-radius.px: 30
-border-width.px: 1
-background.solid: $inherited.colors.cta-primary.base
-padding-vertical.px: 20
-padding-horizontal.px: 42
-
--- end: ftd.column
-
--- ftd.column:
-if: { !stages-vertical-mobile.right }
-padding-vertical.px: 32
-
--- ftd.image:
-src: $assets.files.static.hosting.stage-hero.svg
-height.fixed.px: 204
-width: auto
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: stages-vertical-mobile
-
-
-
 
 
 
@@ -7007,39 +2180,11 @@ optional body info:
 optional boolean num: false
 optional integer numb:
 
--- ftd.row:
-width.fixed.px if {ftd.device != "mobile"}: 436
-spacing.fixed.px: 18
-
--- ftd.integer: $key-features.numb
-if: { key-features.num }
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-anchor: parent
-top.px: 20
-left.px: 40
-
--- ftd.image:
-src: $key-features.icon
-width: auto
-height: auto
-
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 8
-
--- ftd.text: $key-features.title
-role: $inherited.types.heading-small
-color: $inherited.colors.text
-
--- ftd.text:
-text: $key-features.info
-color: $inherited.colors.text-strong
-role: $inherited.types.copy-regular
-
--- end: ftd.column
-
--- end: ftd.row
+-- lib4.key-features: $key-features.title
+icon: $key-features.icon
+info: $key-features.info
+num: $key-features.num
+numb: $key-features.numb
 
 -- end: key-features
 
@@ -7068,41 +2213,11 @@ ftd.image-src image:
 ftd.color bgcolor: $inherited.colors.background.step-2
 optional boolean top: false
 
--- ftd.column:
-width.fixed.px: 372
-background.solid: $card.bgcolor
-height.fixed.px: 476
-border-color: $inherited.colors.border-strong
-border-radius.px: 10
-padding-vertical.px: 22
-padding-horizontal.px: 26
-spacing.fixed.px if {card.top}: 32
-
--- ftd.image:
-if: {card.top}
-src: $card.image
-width.fixed.px: 332
-height: auto
-
--- ftd.text: $card.title
-role: $inherited.types.heading-small
-color: $inherited.colors.text
-margin-bottom.px if {!card.top}: 12
-
--- ftd.text:
-text: $card.body
-role: $inherited.types.copy-regular
-color: $inherited.colors.text-strong
-margin-bottom.px if {!card.top}: 24
-
--- ftd.image:
-if: {!card.top}
-src: $card.image
-width.fixed.px: 255
-height: auto
-align-self: center
-
--- end: ftd.column
+-- lib4.card: $card.title
+body: $card.body
+image: $card.image
+bgcolor: $card.bgcolor
+top: $card.top
 
 -- end: card
 
@@ -7119,27 +2234,8 @@ caption title: Landing Page
 integer width: 364
 
 
--- ftd.row:
-background.solid: $inherited.colors.background.step-1
-width.fixed.px: $search-bar.width
-padding-horizontal.px: 33
-border-radius.px: 38
-padding-vertical.px: 19
-align-self: start
-spacing.fixed.px: 20
-
--- ftd.image:
-src: $assets.files.static.search.svg
-width: auto
-align-self: center
-
--- ftd.text: $search-bar.title
-role: $inherited.types.copy-regular
-color: $inherited.colors.accent.primary
-
-
--- end: ftd.row
-
+-- lib4.search-bar: $search-bar.title
+width: $search-bar.width
 
 -- end: search-bar
 
@@ -7154,42 +2250,18 @@ color: $inherited.colors.accent.primary
 
 
 
--- record card-data:
-caption title:
-body body:
-ftd.image-src image:
-
-
-
--- record tab:
-caption title:
-integer index:
-card-data list cards:
-
-
-
 -- component tabs:
 caption title:
 optional boolean $active-item: false
 optional boolean $mouse-in: false
 integer index: 
 
--- ftd.column:
-padding-bottom.px: 7
-border-bottom-width.px: 2
-$on-mouse-enter$: $ftd.set-bool($a = $tabs.mouse-in, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $tabs.mouse-in, v = false)
-$on-click$: $ftd.toggle($a = $tabs.active-item)
-$on-click$: $ftd.set-integer($a = $current-tab, v = $tabs.index)
-border-color if { tabs.index == current-tab }: $inherited.colors.accent.primary
 
--- ftd.text: $tabs.title
-role: $inherited.types.button-large
-color: $inherited.colors.text-strong
-color if { tabs.index == current-tab }: $inherited.colors.text
-white-space: nowrap
+-- lib4.tabs: $tabs.title
+$active-item: $tabs.active-item
+$mouse-in: $tabs.mouse-in
+index: $tabs.index
 
--- end: ftd.column
 
 -- end: tabs
 
@@ -7216,56 +2288,33 @@ optional integer border-width:
 optional string cta-text:
 optional string cta-link:
 boolean center: false
+boolean spacing: false
 optional integer padding-vertical:
 ftd.color bgcolor: $inherited.colors.text
 ftd.color textcolor: $inherited.colors.background.base
 ftd.color titlecolor: $inherited.colors.background.base
 optional integer height:
+boolean role: false
 
--- ftd.column:
-width.fixed.px: $display-card.width
-max-width.fixed.px: $display-card.width
-align-self if {display-card.center} : center
-background.solid: $display-card.bgcolor
-border-radius.px: 12
-border-width.px if {display-card.border-width != NULL}: $display-card.border-width
-border-color if {display-card.border-width != NULL}: $inherited.colors.border-strong
-margin-top.px if {display-card.padding-vertical != NULL}: $display-card.padding-vertical
-margin-bottom.px if {display-card.padding-vertical != NULL}: $display-card.padding-vertical
-padding-horizontal.px if {display-card.border-width != NULL}: 15
+-- lib4.display-card: $display-card.title
+image: $display-card.image
+info: $display-card.info
+width: $display-card.width
+border-width: $display-card.border-width
+cta-text: $display-card.cta-text
+cta-link: $display-card.cta-link
+center: $display-card.center
+padding-vertical: $display-card.padding-vertical
+bgcolor: $display-card.bgcolor
+textcolor: $display-card.textcolor
+titlecolor: $display-card.titlecolor
+spacing: $display-card.spacing
+role: $display-card.role
 
--- ftd.image:
-if: { display-card.image != NULL }
-src: $display-card.image
-width: fill-container
-border-radius.px: 12
-
--- ftd.column:
-spacing.fixed.px: 12
-padding-horizontal.px: 15
-padding-vertical.px: 17
-
--- ftd.text: $display-card.title
-role: $inherited.types.heading-tiny
-color: $display-card.titlecolor
-
--- ftd.text: 
-text: $display-card.info
-role: $inherited.types.copy-small
-color: $display-card.textcolor
-
--- cta-button: $display-card.cta-text
-if: { display-card.cta-text != NULL }
-role: primary
-link: $display-card.cta-link
-show-arrow: true
-
-
--- end: ftd.column
-
--- end: ftd.column
+-- end: lib4.display-card
 
 -- end: display-card
+
 
 
 
@@ -7282,24 +2331,15 @@ integer spacing: 90
 integer width: $width
 optional integer reset:
 
--- ftd.column:
-width: fill-container
-align-content: center
-align-self: center
-height: fill-container
+-- lib4.column-wrap:
+height: $column-wrap.height
+wrap: $column-wrap.wrap
+index: $column-wrap.index
+wraper: $column-wrap.wraper
+spacing: $column-wrap.spacing
+reset: $column-wrap.reset
+width: $column-wrap.width
 
-
--- ftd.column:
-if: { column-wrap.index == column-wrap.reset }
-wrap if { column-wrap.wrap }: true
-children: $column-wrap.wraper
-height.fixed.px if { column-wrap.height != NULL }: $column-wrap.height
-spacing.fixed.px: $column-wrap.spacing
-width: fill-container
-max-width.fixed.px: $column-wrap.width
-
--- end: ftd.column
-
--- end: ftd.column
+-- end: lib4.column-wrap
 
 -- end: column-wrap

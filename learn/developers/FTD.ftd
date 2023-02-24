@@ -73,8 +73,9 @@ Most websites only change colors of background and text when using dark mode, Fa
 
 -- ft.display-card: Hands on Workshop
 width: 1160
-image: $assets.files.static.card.card4.svg
+image: $assets.files.static.card.card6.svg
 center: true
+role: true
 titlecolor: $inherited.colors.text
 textcolor: $inherited.colors.text-strong
 bgcolor: $inherited.colors.background.base
@@ -98,6 +99,7 @@ lorem a non luctus aenean dolor. Quis facilisi ridiculus enim yirf.
 width: 1160
 image: $assets.files.static.card.card4.svg
 center: true
+role: true
 titlecolor: $inherited.colors.text
 textcolor: $inherited.colors.text-strong
 bgcolor: $inherited.colors.background.base

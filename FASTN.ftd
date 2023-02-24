@@ -89,7 +89,8 @@ icon: static/header/sub-section-icon.svg
 ## Blog Section: build/blog-section/
 
 ## Landing Page: build/landing-page/
-- Documenatation: learn/design/documenatation/
+
+- Documenatation: build/landing-page/documentation/
 
 ## Microsite: build/microsite/
 

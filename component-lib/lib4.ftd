@@ -1178,7 +1178,7 @@ if: { !right-image-component-desktop.bottom && !right-image-component-desktop.bt
 role: $right-image-component-desktop.cta-role
 link: $right-image-component-desktop.cta-link
 show-arrow: true
-width: 140
+
 
 -- end: ftd.column
 
@@ -1561,7 +1561,7 @@ color: $inherited.colors.text-strong
 if: { !right-image-component-mobile.bottom && !right-image-component-mobile.btn && !right-image-component-mobile.join-btn }
 
 -- lib5.cta-button: $right-image-component-mobile.cta-text
-role: primary
+role: secondary
 link: $right-image-component-mobile.cta-link
 show-arrow: true
 

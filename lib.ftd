@@ -2119,7 +2119,7 @@ integer height: 600
 optional integer width:
 
 
--- lib4.tages-vertical-image:
+-- lib4.stages-vertical-image:
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
 height: $stages-vertical-image.height

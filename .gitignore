@@ -3,3 +3,4 @@
 .packages/ftd-lang.github.io/fpm-ui/FPM.ftd
 .build/
 .packages
+.idea

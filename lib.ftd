@@ -529,6 +529,8 @@ caption title:
 optional ftd.image-src image: 
 optional string cta-left-text:
 optional string cta-right-text:
+optional string cta-left-url:
+optional string cta-right-url:
 optional string info:
 integer width: $width
 children childs:
@@ -543,6 +545,8 @@ optional boolean top-img: false
 image: $hero-section.image
 cta-left-text: $hero-section.cta-left-text
 cta-right-text: $hero-section.cta-right-text
+cta-left-url: $hero-section.cta-left-url
+cta-right-url: $hero-section.cta-right-url
 info: $hero-section.info
 width: $hero-section.width
 childs: $hero-section.childs
@@ -554,6 +558,16 @@ small-img: $hero-section.small-img
 top-img: $hero-section.top-img
 
 -- end: hero-section
+
+
+
+
+
+
+
+
+
+
 
 -- component metrics-card:
 integer width: $width

@@ -1637,6 +1637,8 @@ caption title:
 optional ftd.image-src image: 
 optional string cta-left-text:
 optional string cta-right-text:
+optional string cta-left-url:
+optional string cta-right-url:
 optional string info:
 integer width: $width
 children childs:
@@ -1655,6 +1657,8 @@ if: {ftd.device != "mobile"}
 image: $hero-section.image
 cta-left-text: $hero-section.cta-left-text
 cta-right-text: $hero-section.cta-right-text
+cta-left-url: $hero-section.cta-left-url
+cta-right-url: $hero-section.cta-right-url
 info: $hero-section.info
 width: $hero-section.width
 childs: $hero-section.childs
@@ -1670,6 +1674,8 @@ if: {ftd.device == "mobile"}
 image: $hero-section.image
 cta-left-text: $hero-section.cta-left-text
 cta-right-text: $hero-section.cta-right-text
+cta-left-url: $hero-section.cta-left-url
+cta-right-url: $hero-section.cta-right-url
 info: $hero-section.info
 width: $hero-section.width
 childs: $hero-section.childs
@@ -1692,13 +1698,15 @@ top-img: $hero-section.top-img
 
 
 
--- component hero-section-mobile: 
-caption title: 
-optional ftd.image-src image: 
+-- component hero-section-mobile:
+caption title:
+optional ftd.image-src image:
 optional string cta-left-text:
 optional string cta-right-text:
+optional string cta-left-url:
+optional string cta-right-url:
 optional string info:
-integer width: 
+integer width:
 children childs:
 boolean center: false
 integer height:
@@ -1741,7 +1749,7 @@ margin-bottom.px: 40
 if: { hero-section-mobile.cta-left-text != NULL }
 role: primary
 medium: true
-link: /
+link: $hero-section-mobile.cta-left-url
 show-arrow: true
 width: 162
 
@@ -1749,7 +1757,7 @@ width: 162
 if: { hero-section-mobile.cta-right-text != NULL }
 role: secondary
 medium: true
-link: /
+link: $hero-section-mobile.cta-right-url
 width: 162
 
 -- end: ftd.row
@@ -1779,17 +1787,19 @@ children: $hero-section-mobile.childs
 
 
 
--- component hero-section-desktop: 
-caption title: 
-optional ftd.image-src image: 
+-- component hero-section-desktop:
+caption title:
+optional ftd.image-src image:
 optional string cta-left-text:
 optional string cta-right-text:
+optional string cta-left-url:
+optional string cta-right-url:
 optional string info:
 integer width: $width
 children childs:
-boolean center: 
+boolean center:
 boolean center-img:
-integer height: 
+integer height:
 boolean bottom:
 optional boolean small-img:
 optional boolean top-img:
@@ -1884,14 +1894,14 @@ spacing.fixed.px: 24
 -- lib5.cta-button: $hero-section-desktop.cta-left-text
 if: { $hero-section-desktop.cta-left-text != NULL }
 role: primary
-link: /
+link: $hero-section-desktop.cta-left-url
 show-arrow: true
 width: 220
 
 -- lib5.cta-button: $hero-section-desktop.cta-right-text
 if: { hero-section-desktop.cta-right-text != NULL }
 role: secondary
-link: /
+link: $hero-section-desktop.cta-right-url
 width: 220
 
 -- end: ftd.row
@@ -2064,6 +2074,3 @@ min-width.fixed.px: 112
 -- end: ftd.column
 
 -- end: mode-changer
-
-
-

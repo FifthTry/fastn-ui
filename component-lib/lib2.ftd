@@ -1,10 +1,10 @@
 -- import: fifthtry.github.io/fastn-ui/assets
 -- import: fifthtry.github.io/fastn-ui/component-lib/lib5 as lib5
+-- import: fifthtry.github.io/fastn-ui/lib as lib
 
 -- import: fastn/processors as pr
 
 
--- integer $current-slide: 1
 
 -- integer $width: 1160
 
@@ -667,7 +667,7 @@ border-width.px: 1
 $on-mouse-enter$: $ftd.set-bool($a = $slider-item.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $slider-item.mouse-in, v = false)
 $on-click$: $ftd.toggle($a = $slider-item.active-item)
-$on-click$: $ftd.set-integer($a = $current-slide, v = $slider-item.index)
+$on-click$: $ftd.set-integer($a = $lib.current-slide, v = $slider-item.index)
 
 -- ftd.image:
 src: $slider-item.icon

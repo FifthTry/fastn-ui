@@ -421,7 +421,7 @@ At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentes
 
 -- ft.row-container: 
 spacing: 80
-index: 2
+index: 5
 reset: $ft.current-slide
 
 
@@ -551,7 +551,7 @@ index: 1
 
 -- ft.slider-item: 
 icon: $assets.files.static.slider.angular-js-logo.svg
-index: 2
+index: 5
 
 -- ft.slider-item: 
 icon: $assets.files.static.slider.flutter-logo.svg

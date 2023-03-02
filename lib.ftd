@@ -757,6 +757,7 @@ optional string cta-link:
 integer width: $width
 children trending-wrap:
 optional boolean no-img: false
+optional boolean system-image: false
 optional boolean img:
 optional ftd.color bgcolor: $inherited.colors.background.step-2
 optional ftd.image image:
@@ -769,6 +770,7 @@ cta-link: $trending-templates.cta-link
 width: $trending-templates.width
 trending-wrap: $trending-templates.trending-wrap
 no-img: $trending-templates.no-img
+system-image: $trending-templates.system-image
 img: $trending-templates.img
 bgcolor: $trending-templates.bgcolor
 image: $trending-templates.image
@@ -2042,11 +2044,14 @@ optional string cta-link:
 optional string cta-role:
 optional ftd.image-src image:
 optional integer padding-vertical:
+optional integer width:
 optional boolean join-btn: false
 optional boolean two-text: false
 optional boolean top: false
 optional boolean bottom: false
 optional boolean btn: false
+optional boolean no-btn: false
+optional ftd.color bgcolor:
 
 
 -- lib4.right-image-component: $right-image-component.title
@@ -2058,11 +2063,14 @@ cta-link: $right-image-component.cta-link
 cta-role: $right-image-component.cta-role
 image: $right-image-component.image
 padding-vertical: $right-image-component.padding-vertical
+width: $right-image-component.width
 top: $right-image-component.top
 join-btn: $right-image-component.join-btn
 two-text: $right-image-component.two-text
 bottom: $right-image-component.bottom
 btn: $right-image-component.btn
+no-btn: $right-image-component.no-btn
+bgcolor: $right-image-component.bgcolor
 
 -- end: right-image-component
 
@@ -2083,6 +2091,8 @@ body info:
 string cta-text:
 string cta-link:
 optional string cta-role:
+optional boolean col-img: false
+optional boolean down-img: false
 ftd.image-src image:
 boolean top: false
 
@@ -2093,6 +2103,8 @@ info: $left-image-component.info
 cta-text: $left-image-component.cta-text
 cta-link: $left-image-component.cta-link
 cta-role: $left-image-component.cta-role
+col-img: $left-image-component.col-img
+down-img: $left-image-component.down-img
 image: $left-image-component.image
 top: $left-image-component.top
 

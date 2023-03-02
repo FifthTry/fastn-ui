@@ -636,6 +636,7 @@ integer height: 600
 optional integer width:
 
 -- ftd.column:
+width: fill-container
 
 -- stages-vertical-image-desktop:
 if: { ftd.device != "mobile" }
@@ -673,6 +674,7 @@ width: fill-container
 max-width.fixed.px: $width
 align-content: center
 align-self: center
+margin-top.px: 55
 
 -- ftd.image:
 src: $stages-vertical-image-desktop.image
@@ -893,6 +895,8 @@ body info:
 string cta-text:
 string cta-link:
 optional string cta-role:
+optional boolean col-img: false
+optional boolean down-img: false
 ftd.image-src image:
 boolean top:
 
@@ -906,6 +910,8 @@ info: $left-image-component.info
 cta-text: $left-image-component.cta-text
 cta-link: $left-image-component.cta-link
 cta-role: $left-image-component.cta-role
+col-img: $left-image-component.col-img
+down-img: $left-image-component.down-img
 image: $left-image-component.image
 top: $left-image-component.top
 
@@ -936,17 +942,24 @@ body info:
 string cta-text:
 string cta-link:
 optional string cta-role:
+optional boolean col-img:
+optional boolean down-img:
 ftd.image-src image:
 optional boolean top:
 
 -- ftd.row:
-width: fill-container
+width if { !left-image-component-desktop.col-img}: fill-container
 margin-top.px if { left-image-component-desktop.top} : 100
-padding-bottom.px: 150
+margin-bottom.px if { left-image-component-desktop.down-img} : 40
+width.fixed.px if { left-image-component-desktop.col-img}: 563
+padding-bottom.px if { !left-image-component-desktop.down-img }: 150
 max-width.fixed.px: 1160
 align-self: center
+background.solid if { left-image-component-desktop.down-img }: $inherited.colors.border-strong
+border-radius.px if { left-image-component-desktop.down-img }: 30
 
 -- ftd.column:
+if: { !left-image-component-desktop.col-img && !left-image-component-desktop.down-img }
 width: fill-container
 padding-vertical.px if { !left-image-component-desktop.top}: 101
 padding-vertical.px if { left-image-component-desktop.top}: 30
@@ -961,8 +974,10 @@ height: auto
 -- ftd.column:
 width: fill-container
 spacing.fixed.px: 24
-padding-left.px: 119
+padding-left.px if { !left-image-component-desktop.col-img && !left-image-component-desktop.down-img}: 119
 padding-top.px if { left-image-component-desktop.top }: 30
+padding-vertical.px if { left-image-component-desktop.down-img}: 80
+padding-horizontal.px if { left-image-component-desktop.down-img}: 38
 
 -- ftd.image:
 if: { left-image-component-desktop.icon != NULL}
@@ -971,8 +986,13 @@ width.fixed.px: 70
 height.fixed.px: 67
 
 -- ftd.text: $left-image-component-desktop.title
-role: $inherited.types.heading-large
+role: $inherited.types.heading-medium
 color: $inherited.colors.text
+
+-- ftd.image:
+if: { left-image-component-desktop.col-img }
+src: $left-image-component-desktop.image
+width.fixed.px: 563
 
 -- ftd.text:
 text: $left-image-component-desktop.info
@@ -983,6 +1003,11 @@ color: $inherited.colors.text-strong
 role: $left-image-component-desktop.cta-role
 link: $left-image-component-desktop.cta-link
 show-arrow: true
+
+-- ftd.image:
+if: { left-image-component-desktop.down-img }
+src: $left-image-component-desktop.image
+width: fill-container
 
 -- end: ftd.column
 
@@ -1071,6 +1096,7 @@ optional string cta-link:
 optional string cta-role:
 optional ftd.image-src image:
 optional integer padding-vertical:
+optional integer width:
 optional boolean top: false
 optional boolean bottom: false
 optional boolean btn: false
@@ -1079,6 +1105,8 @@ optional boolean two-text: false
 optional boolean top: false
 optional boolean bottom: false
 optional boolean btn: false
+optional boolean no-btn: false
+optional ftd.color bgcolor:
 
 -- ftd.column:
 width: fill-container
@@ -1093,11 +1121,14 @@ cta-link: $right-image-component.cta-link
 cta-role: $right-image-component.cta-role
 image: $right-image-component.image
 padding-vertical: $right-image-component.padding-vertical
+width: $right-image-component.width
 top: $right-image-component.top
 join-btn: $right-image-component.join-btn
 two-text: $right-image-component.two-text
 bottom: $right-image-component.bottom
 btn: $right-image-component.btn
+no-btn: $right-image-component.no-btn
+bgcolor: $right-image-component.bgcolor
 
 -- right-image-component-mobile: $right-image-component.title
 if: { ftd.device == "mobile" }
@@ -1112,6 +1143,7 @@ join-btn: $right-image-component.join-btn
 two-text: $right-image-component.two-text
 bottom: $right-image-component.bottom
 btn: $right-image-component.btn
+bgcolor: $right-image-component.bgcolor
 
 -- end: ftd.column
 
@@ -1136,11 +1168,14 @@ string cta-link:
 optional string cta-role:
 optional ftd.image-src image:
 integer padding-vertical:
+integer width:
 optional boolean top:
 optional boolean join-btn:
 optional boolean two-text:
 optional boolean bottom:
 optional boolean btn:
+optional boolean no-btn:
+optional ftd.color bgcolor:
 
 -- ftd.row:
 width: fill-container
@@ -1150,7 +1185,7 @@ padding-bottom.px: 150
 padding-top.px if {right-image-component-desktop.padding-vertical != NULL}:  $right-image-component-desktop.padding-vertical
 
 -- ftd.column:
-if: { !right-image-component-desktop.two-text }
+if: { !right-image-component-desktop.two-text && !right-image-component-desktop.no-btn  }
 width: fill-container
 spacing.fixed.px: 32
 
@@ -1163,23 +1198,22 @@ height.fixed.px: 67
 -- ftd.text: $right-image-component-desktop.title
 role: $inherited.types.heading-large
 color: $inherited.colors.text
-padding-left.px if { right-image-component-desktop.btn }: 70
+padding-left.px if { right-image-component-desktop.btn && !right-image-component-desktop.no-btn }: 70
 
 -- ftd.text:
-if: { right-image-component-desktop.info != NULL }
+if: { right-image-component-desktop.info != NULL && !right-image-component-desktop.no-btn }
 text: $right-image-component-desktop.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 
 -- ftd.column:
-if: { !right-image-component-desktop.bottom && !right-image-component-desktop.btn && !right-image-component-desktop.join-btn }
+if: { !right-image-component-desktop.bottom && !right-image-component-desktop.btn && !right-image-component-desktop.no-btn && !right-image-component-desktop.join-btn }
 
 -- lib5.cta-button: $right-image-component-desktop.cta-text
 role: $right-image-component-desktop.cta-role
 link: $right-image-component-desktop.cta-link
 show-arrow: true
 
-
 -- end: ftd.column
 
 -- ftd.row:
@@ -1474,8 +1508,52 @@ color: $inherited.colors.border-strong
 
 -- end: ftd.column
 
+-- ftd.row:
+if: { right-image-component-desktop.no-btn }
+width.fixed.px: $right-image-component-desktop.width
+background.solid: $inherited.colors.background.step-1
+border-radius.px: 30
+padding-vertical.px: 40
+padding-horizontal.px: 24
+spacing.fixed.px: 36
+
 -- ftd.column:
-if: { right-image-component-desktop.image != NULL }
+width.fixed.px: 510
+padding-top.px: 50
+spacing.fixed.px: 32
+
+-- ftd.image:
+if: { right-image-component-desktop.icon != NULL && !right-image-component-desktop.bottom }
+src: $right-image-component-desktop.icon
+width.fixed.px: 70
+height.fixed.px: 67
+
+-- ftd.text: $right-image-component-desktop.title
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+
+-- ftd.text:
+if: { right-image-component-desktop.info != NULL }
+text: $right-image-component-desktop.info
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { right-image-component-desktop.image != NULL && right-image-component-desktop.no-btn }
+
+-- ftd.image:
+src: $right-image-component-desktop.image
+width: auto
+height: auto
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.column:
+if: { right-image-component-desktop.image != NULL && !right-image-component-desktop.no-btn }
 width: fill-container
 padding-vertical.px if { !right-image-component-desktop.btn }: 30
 padding-left.px if { !right-image-component-desktop.btn }: 90
@@ -1500,7 +1578,6 @@ src: $right-image-component-desktop.icon
 width.fixed.px: 70
 
 -- end: ftd.column
-
 
 -- end: ftd.column
 
@@ -1530,6 +1607,7 @@ optional boolean join-btn:
 optional boolean two-text:
 optional boolean bottom:
 optional boolean btn:
+optional ftd.color bgcolor:
 
 -- ftd.column:
 width: fill-container

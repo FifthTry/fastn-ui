@@ -935,6 +935,7 @@ optional string cta-link:
 integer width: $width
 children trending-wrap:
 optional boolean no-img: false
+optional boolean system-image: false
 optional boolean img:
 optional ftd.color bgcolor: $inherited.colors.background.step-2
 optional ftd.image image:
@@ -951,6 +952,7 @@ cta-link: $trending-templates.cta-link
 width: $trending-templates.width
 trending-wrap: $trending-templates.trending-wrap
 no-img: $trending-templates.no-img
+system-image: $trending-templates.system-image
 img: $trending-templates.img
 bgcolor: $trending-templates.bgcolor
 image: $trending-templates.image
@@ -989,6 +991,7 @@ optional string cta-link:
 integer width: $width
 children trending-wrap:
 optional boolean no-img:
+optional boolean system-image:
 optional boolean img:
 optional ftd.color bgcolor:
 optional ftd.image image:
@@ -996,10 +999,25 @@ optional integer margin-top:
 
 -- ftd.column:
 width: fill-container
-padding-top.px if {!trending-templates-desktop.no-img}: 150
+padding-top.px if {!trending-templates-desktop.no-img && !trending-templates-desktop.system-image}: 150
 padding-bottom.px if {!trending-templates-desktop.no-img}: 240
 background.solid: $trending-templates-desktop.bgcolor
 margin-top.px if {trending-templates-desktop.no-img && trending-templates-desktop.margin-top != NULL}: $trending-templates-desktop.margin-top
+
+-- ftd.column:
+if: {trending-templates-desktop.system-image}
+width: fill-container
+padding-bottom.px: 150
+
+-- ftd.image:
+src: $assets.files.static.design.back-img.svg
+width.fixed.percent: 100
+height: auto
+anchor: parent
+top.px: 0
+left.px: 0
+
+-- end: ftd.column
 
 -- ftd.column:
 width: fill-container
@@ -1008,7 +1026,7 @@ align-content: center
 align-self: center
 
 -- ftd.image:
-if: {!trending-templates-desktop.no-img}
+if: {!trending-templates-desktop.no-img && !trending-templates-desktop.system-image}
 src: $assets.files.static.templates.hanging-icon-1.svg
 width: auto
 height: auto
@@ -1017,7 +1035,7 @@ top.px: 0
 left.px: 0
 
 -- ftd.image:
-if: {!trending-templates-desktop.no-img}
+if: {!trending-templates-desktop.no-img && !trending-templates-desktop.system-image }
 src: $assets.files.static.templates.hanging-icon-2.svg
 width: auto
 height: auto
@@ -1026,7 +1044,7 @@ top.px: 10
 right.px: 0
 
 -- ftd.image:
-if: {!trending-templates-desktop.no-img}
+if: {!trending-templates-desktop.no-img && !trending-templates-desktop.system-image}
 src: $assets.files.static.templates.hanging-icon-3.svg
 width: auto
 height: auto
@@ -1035,7 +1053,7 @@ top.px: 500
 right.px: -100
 
 -- ftd.image:
-if: {!trending-templates-desktop.no-img}
+if: {!trending-templates-desktop.no-img && !trending-templates-desktop.system-image}
 src: $assets.files.static.templates.hanging-icon-4.svg
 width: auto
 height: auto
@@ -1045,11 +1063,13 @@ left.px: -80
 
 -- ftd.column:
 width.fixed.px: 500
+width.fixed.px if {trending-templates-desktop.system-image}: 715
 width.fixed.percent if {trending-templates-desktop.no-img}: 55
 align-self: center
 align-content: center
 spacing.fixed.px: 16
 margin-bottom.px: 40
+z-index: 10
 
 -- ftd.text: $trending-templates-desktop.title
 role: $inherited.types.heading-large
@@ -1403,7 +1423,6 @@ boolean right:
 optional boolean center:
 boolean two-btn:
 
-
 -- ftd.column:
 width: fill-container
 background.solid: $excel-promo-card-desktop.bgcolor
@@ -1497,7 +1516,7 @@ width: 220
 -- ftd.column:
 if: { !excel-promo-card-desktop.left }
 width.fixed.percent: 30
-align-self: end
+;;align-self: end
 
 -- ftd.image:
 src: $excel-promo-card-desktop.image

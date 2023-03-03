@@ -335,10 +335,11 @@ optional caption title:
 ftd.image-src rect:
 integer stage:
 optional ftd.color stage-bgcolor:
-string cta-text:
-string cta-link:
+optional string cta-text:
+optional string cta-link:
 optional body info:
 optional boolean right: false
+optional boolean no-line: false
 
 -- ftd.column:
 width: fill-container
@@ -352,6 +353,7 @@ cta-text: $stages-vertical.cta-text
 cta-link: $stages-vertical.cta-link
 info: $stages-vertical.info
 right: $stages-vertical.right
+no-line: $stages-vertical.no-line
 
 -- stages-vertical-mobile: $stages-vertical.title
 if: { ftd.device == "mobile" }
@@ -362,7 +364,6 @@ cta-text: $stages-vertical.cta-text
 cta-link: $stages-vertical.cta-link
 info: $stages-vertical.info
 right: $stages-vertical.right
-
 
 -- end: ftd.column
 
@@ -382,14 +383,15 @@ optional caption title:
 ftd.image-src rect:
 integer stage:
 optional ftd.color stage-bgcolor:
-string cta-text:
-string cta-link:
+optional string cta-text:
+optional string cta-link:
 optional body info:
 optional boolean right:
+optional boolean no-line:
 
 -- ftd.row:
 width: fill-container
-padding-vertical.px: 150
+padding-vertical.px if { !stages-vertical-desktop.no-line } : 150
 align-content: center
 padding-top.px if {stages-vertical-desktop.right}: 60
 padding-bottom.px if {stages-vertical-desktop.right}: 200
@@ -413,6 +415,7 @@ top.px: 48
 right.px: 54
 
 -- ftd.column:
+if: { !stages-vertical-desktop.no-line }
 border-width.px: 1
 border-color: $inherited.colors.border
 anchor: parent
@@ -442,7 +445,7 @@ color: $inherited.colors.text-strong
 
 -- ftd.column:
 if: { !stages-vertical-desktop.right }
-padding-vertical.px: 40
+padding-vertical.px if { !stages-vertical-desktop.no-line }: 40
 
 -- detail.detail: Lorem Ipsum
 image: $assets.files.static.hosting.bullet.svg
@@ -465,7 +468,6 @@ image: $assets.files.static.hosting.bullet.svg
 -- end: detail.detail
 
 -- end: ftd.column
-
 
 -- lib5.cta-button: $stages-vertical-desktop.cta-text
 if: { stages-vertical-desktop.cta-text != NULL }
@@ -536,8 +538,8 @@ optional caption title:
 ftd.image-src rect:
 integer stage:
 optional ftd.color stage-bgcolor:
-string cta-text:
-string cta-link:
+optional string cta-text:
+optional string cta-link:
 optional body info:
 optional boolean right:
 
@@ -583,12 +585,15 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text
 
 -- ftd.text:
+if: { stages-vertical-mobile.info != NULL }
 text: $stages-vertical-mobile.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 text-align: justify
 
--- ftd.text: $stages-vertical-mobile.cta-text
+-- ftd.text:
+if: { stages-vertical-mobile.cta-text != NULL }
+text: $stages-vertical-mobile.cta-text
 role: $inherited.types.button-medium
 color: $inherited.colors.cta-primary.text
 white-space: nowrap
@@ -674,7 +679,7 @@ width: fill-container
 max-width.fixed.px: $width
 align-content: center
 align-self: center
-margin-top.px: 55
+padding-vertical.px: 150
 
 -- ftd.image:
 src: $stages-vertical-image-desktop.image
@@ -733,6 +738,9 @@ caption title:
 body info:
 integer width: $width
 optional ftd.color bgcolor: $inherited.colors.background.step-1
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- ftd.column:
 width: fill-container
@@ -743,6 +751,9 @@ image: $hosting-hero.image
 info: $hosting-hero.info
 width: $hosting-hero.width
 bgcolor: $hosting-hero.bgcolor
+cta-text: $hosting-hero.cta-text
+cta-link: $hosting-hero.cta-link
+cta-role: $hosting-hero.cta-role
 
 -- hosting-hero-mobile: $hosting-hero.title
 if: { ftd.device == "mobile"}
@@ -770,6 +781,9 @@ caption title:
 body info:
 integer width:
 optional ftd.color bgcolor:
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- ftd.column:
 width: fill-container
@@ -800,6 +814,11 @@ color: $inherited.colors.text
 text: $hosting-hero-desktop.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
+
+-- lib5.cta-button: $hosting-hero-desktop.cta-text
+role: $hosting-hero-desktop.cta-role
+link: $hosting-hero-desktop.cta-link
+show-arrow: true
 
 -- end: ftd.column
 

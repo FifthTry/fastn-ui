@@ -2128,13 +2128,18 @@ caption title:
 body info:
 integer width: $width
 optional ftd.color bgcolor: $inherited.colors.background.step-1
-
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- lib4.hosting-hero: $hosting-hero.title
 image: $hosting-hero.image
 info: $hosting-hero.info
 width: $hosting-hero.width
 bgcolor: $hosting-hero.bgcolor
+cta-text: $hosting-hero.cta-text
+cta-link: $hosting-hero.cta-link
+cta-role: $hosting-hero.cta-role
 
 
 -- end: hosting-hero
@@ -2176,10 +2181,11 @@ optional caption title:
 ftd.image-src rect:
 integer stage:
 optional ftd.color stage-bgcolor:
-string cta-text:
-string cta-link:
+optional string cta-text:
+optional string cta-link:
 optional body info:
 optional boolean right: false
+optional boolean no-line: false
 
 -- lib4.stages-vertical: $stages-vertical.title
 rect: $stages-vertical.rect
@@ -2189,6 +2195,7 @@ cta-text: $stages-vertical.cta-text
 cta-link: $stages-vertical.cta-link
 info: $stages-vertical.info
 right: $stages-vertical.right
+no-line: $stages-vertical.no-line
 
 -- end: lib4.stages-vertical
 

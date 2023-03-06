@@ -1641,6 +1641,7 @@ optional string cta-left-url:
 optional string cta-right-url:
 optional string info:
 integer width: $width
+optional integer margin-top:
 children childs:
 boolean center: false
 boolean center-img: false
@@ -1662,6 +1663,7 @@ cta-left-url: $hero-section.cta-left-url
 cta-right-url: $hero-section.cta-right-url
 info: $hero-section.info
 width: $hero-section.width
+margin-top: $hero-section.margin-top
 childs: $hero-section.childs
 center: $hero-section.center
 center-img: $hero-section.center-img
@@ -1798,6 +1800,7 @@ optional string cta-left-url:
 optional string cta-right-url:
 optional string info:
 integer width: $width
+optional integer margin-top:
 children childs:
 boolean center:
 boolean center-img:
@@ -1814,7 +1817,7 @@ max-width.fixed.px: 1460
 align-self: center
 align-content if {hero-section-desktop.center}: center
 min-height.fixed.px: $hero-section-desktop.height
-margin-top.px: $hero-section-desktop.margin-top
+margin-top.px if {$hero-section-desktop.margin-top != NULL}: $hero-section-desktop.margin-top
 
 -- ftd.column:
 if: { hero-section-desktop.small-img }

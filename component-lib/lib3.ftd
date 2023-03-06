@@ -1453,6 +1453,20 @@ width: fill-container
 
 -- ftd.column:
 width: fill-container
+anchor: parent
+right.px: 0
+top.px: 0
+z-index: 1
+
+-- ftd.image:
+if: { $excel-promo-card-desktop.back-image != NULL}
+src: $excel-promo-card-desktop.back-image
+width: fill-container
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
 max-width.fixed.px if {!excel-promo-card-desktop.two-btn } : $excel-promo-card-desktop.width
 max-width.fixed.px if { excel-promo-card-desktop.left }: 1439
 align-self: center

@@ -1,0 +1,412 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fastn
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+
+-- record blog:
+integer index:
+caption title:
+body body:
+ftd.image-src image:
+
+
+-- integer $image-hover: 1
+
+-- blog list blog-list:
+
+-- blog: Branding with unique illustrations
+index: 1
+image: $assets.files.static.blog-details.image.svg
+
+Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie porttitor elementum maecenas lacinia tristique proin pellentesque malesuada aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada adipiscing eu cras. 
+
+-- blog: Branding with unique illustrations
+index: 2
+image: $assets.files.static.blog-details.image.svg
+
+Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie porttitor elementum maecenas lacinia tristique proin pellentesque malesuada aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada adipiscing eu cras. 
+
+
+-- blog: Branding with unique illustrations
+index: 3
+image: $assets.files.static.blog-details.image.svg
+
+Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie porttitor elementum maecenas lacinia tristique proin pellentesque malesuada aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada adipiscing eu cras. 
+
+
+
+-- blog: Branding with unique illustrations
+index: 4
+image: $assets.files.static.blog-details.image.svg
+
+Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie porttitor elementum maecenas lacinia tristique proin pellentesque malesuada aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada adipiscing eu cras. 
+
+
+-- blog: Branding with unique illustrations
+index: 5
+image: $assets.files.static.blog-details.image.svg
+
+Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie porttitor elementum maecenas lacinia tristique proin pellentesque malesuada aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada adipiscing eu cras. 
+
+-- end: blog-list
+
+-- integer image-hover: 1
+
+
+
+
+
+
+
+
+
+
+-- ft.page:
+
+-- title-date-time-model:
+
+-- blog-details:
+
+-- ft.card-with-icons-bottom: Related Blogs
+
+-- blog-card:
+
+-- blog-card:
+
+-- end: ft.card-with-icons-bottom
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+-- component list-loop-image:
+ftd.image-src image:
+integer index:
+
+-- ftd.image:
+if: {image-hover == $list-loop-image.index }
+src: $list-loop-image.image
+width: fill-container
+margin-bottom.px: 80
+
+-- end: list-loop-image
+
+
+
+
+
+
+
+
+
+
+-- component blog-details:
+blog list blog-list: $blog-list
+children post-wrap:
+
+
+-- ftd.column:
+width.fixed.px: 1164
+align-self: center
+
+-- ftd.row:
+width.fixed.px: 1164
+align-self: center
+spacing.fixed.px: 56
+
+-- ftd.column:
+width.fixed.percent: 75
+
+-- list-loop-image:
+$loop$: $blog-details.blog-list as $obj
+image: $obj.image
+index: $obj.index
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 48
+
+-- list-loop:
+$loop$: $blog-details.blog-list as $obj
+title: $obj.title
+body: $obj.body
+index: $obj.index
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+spacing.fixed.px: 20
+width.fixed.percent: 25
+height: fill-container
+
+-- list-loop-title:
+$loop$: $blog-details.blog-list as $obj
+title: $obj.title
+index: $obj.index
+
+-- ftd.image:
+src: $assets.files.static.blog-details.left-bg.svg
+width: fill-container
+height: auto
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.column:
+children: $blog-details.post-wrap
+width: fill-container
+
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: blog-details
+
+
+
+
+
+
+
+
+
+
+-- component list-loop-title:
+caption title:
+integer index:
+
+-- ftd.row:
+width: fill-container
+color: $inherited.colors.text
+spacing.fixed.px: 15
+
+-- ftd.image:
+if: {image-hover== $list-loop-title.index}
+src: $assets.files.static.blog-details.active.svg
+
+-- ftd.image:
+if: {image-hover != $list-loop-title.index}
+src: $assets.files.static.blog-details.inactive.svg
+
+-- ftd.row:
+spacing.fixed.px: 4
+
+-- ftd.integer: $list-loop-title.index
+role: $inherited.types.blockquote
+
+-- ftd.row:
+border-radius.px: 100
+padding-horizontal.px: 1
+padding-vertical.px: 1
+background.solid: $inherited.colors.text
+align-content: bottom-center
+align-self: end
+margin-bottom.px: 25
+
+-- end: ftd.row
+
+-- ftd.text: $list-loop-title.title
+role: $inherited.types.blockquote
+$on-click$: $ftd.set-integer($a= $image-hover, v= $list-loop-title.index)
+margin-left.px: 4
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: list-loop-title
+
+
+
+
+
+
+
+
+
+
+-- component list-loop:
+caption title:
+body body:
+integer index:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 20
+color: $inherited.colors.text
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 4
+
+-- ftd.row:
+
+-- ftd.integer: $list-loop.index
+role: $inherited.types.heading-small
+
+-- ftd.row:
+border-radius.px: 100
+padding-horizontal.px: 1
+padding-vertical.px: 1
+background.solid: $inherited.colors.text
+align-content: bottom-center
+align-self: end
+margin-bottom.px: 8
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.text: $list-loop.title
+role: $inherited.types.heading-small
+
+-- end: ftd.row
+
+-- ftd.text: $list-loop.body
+role: $inherited.types.copy-regular
+
+-- end: ftd.column
+
+-- end: list-loop
+
+
+
+
+
+
+
+
+
+
+
+-- component title-date-time-model:
+caption title: Trending UI elements
+string date: Dec 23, 2022
+string time: 07 min
+string model: Design 
+
+-- ftd.column:
+width.fixed.px: 1164
+align-self: center
+color: $inherited.colors.text
+spacing.fixed.px: 10
+margin-bottom.px: 40
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 16
+
+-- ftd.text: $title-date-time-model.model
+role: $inherited.types.fine-print
+
+-- ftd.text: |
+role: $inherited.types.fine-print
+
+-- ftd.text: $title-date-time-model.time
+role: $inherited.types.fine-print
+
+-- ftd.text: |
+role: $inherited.types.fine-print
+
+-- ftd.text: $title-date-time-model.date
+role: $inherited.types.fine-print
+
+-- end: ftd.row
+
+-- ftd.text: $title-date-time-model.title 
+role: $inherited.types.heading-medium
+
+-- end: ftd.column
+
+-- end: title-date-time-model
+
+
+
+
+
+
+
+
+
+
+-- component blog-card:
+ftd.image-src image: $assets.files.static.blog-details.post.svg
+caption title: Trending UI elements
+string type: UI | UX
+string time: 07 min
+string model: Design 
+
+-- ftd.column:
+width.fixed.px: 569
+margin-left.px: 40
+
+-- ftd.column:
+width: fill-container
+;;padding-horizontal.px: 22
+border-color: $inherited.colors.border
+border-width.px: 1
+border-radius.px: 32
+
+-- ftd.column:
+width: fill-container
+border-radius.px: 30
+align-content: center
+margin-left.px: 17
+margin-bottom.px: -24
+padding-top.px: 24
+
+-- ftd.image:
+src: $blog-card.image
+border-radius.px: 32
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.row:
+width: fill-container
+margin-top.px: 48
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 13
+
+-- ftd.text: $blog-card.title 
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+
+-- ftd.text: $blog-card.type
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- ftd.column:
+spacing.fixed.px: 13
+
+-- ftd.text: $blog-card.model 
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- ftd.text: $blog-card.time
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: blog-card

@@ -83,6 +83,8 @@ padding-horizontal.px if {display-card.border-width != NULL}: 15
 padding-horizontal.px if {display-card.spacing}: 62
 padding-vertical.px if {display-card.spacing}: 74
 spacing.fixed.px if {display-card.role}: 40
+spacing.fixed.px: 40
+height.fixed.px: 744
 
 -- ftd.image:
 if: { display-card.image != NULL }
@@ -909,12 +911,13 @@ color: $inherited.colors.text-strong
 
 -- component left-image-component:
 optional ftd.image-src icon:
-caption title:
+optional caption title:
 body info:
 string cta-text:
 string cta-link:
 optional string cta-role:
 optional boolean col-img: false
+optional boolean padding: false
 optional boolean down-img: false
 ftd.image-src image:
 boolean top:
@@ -930,6 +933,7 @@ cta-text: $left-image-component.cta-text
 cta-link: $left-image-component.cta-link
 cta-role: $left-image-component.cta-role
 col-img: $left-image-component.col-img
+padding: $left-image-component.padding
 down-img: $left-image-component.down-img
 image: $left-image-component.image
 top: $left-image-component.top
@@ -956,12 +960,13 @@ image: $left-image-component.image
 
 -- component left-image-component-desktop:
 optional ftd.image-src icon:
-caption title:
+optional caption title:
 body info:
 string cta-text:
 string cta-link:
 optional string cta-role:
 optional boolean col-img:
+optional boolean padding:
 optional boolean down-img:
 ftd.image-src image:
 optional boolean top:
@@ -971,7 +976,7 @@ width if { !left-image-component-desktop.col-img}: fill-container
 margin-top.px if { left-image-component-desktop.top} : 100
 margin-bottom.px if { left-image-component-desktop.down-img} : 40
 width.fixed.px if { left-image-component-desktop.col-img}: 563
-padding-bottom.px if { !left-image-component-desktop.down-img }: 150
+padding-bottom.px if { !left-image-component-desktop.down-img && !left-image-component-desktop.padding }: 150
 max-width.fixed.px: 1160
 align-self: center
 background.solid if { left-image-component-desktop.down-img }: $inherited.colors.border-strong
@@ -1005,6 +1010,7 @@ width.fixed.px: 70
 height.fixed.px: 67
 
 -- ftd.text: $left-image-component-desktop.title
+if: { left-image-component-desktop.title != NULL}
 role: $inherited.types.heading-medium
 color: $inherited.colors.text
 
@@ -1045,7 +1051,7 @@ width: fill-container
 
 -- component left-image-component-mobile:
 optional ftd.image-src icon:
-caption title:
+optional caption title:
 body info:
 string cta-text:
 string cta-link:
@@ -1068,6 +1074,7 @@ width.fixed.px: 70
 height.fixed.px: 67
 
 -- ftd.text: $left-image-component-mobile.title
+if: { left-image-component-mobile.title != NULL}
 role: $inherited.types.heading-large
 color: $inherited.colors.text
 
@@ -1578,6 +1585,7 @@ padding-vertical.px if { !right-image-component-desktop.btn }: 30
 padding-left.px if { !right-image-component-desktop.btn }: 90
 height.fixed.px if {right-image-component-desktop.two-text}: 626
 width.fixed.px if {right-image-component-desktop.two-text}: 512
+align-self: center
 
 -- ftd.image:
 src: $right-image-component-desktop.image

@@ -1340,10 +1340,12 @@ optional string cta-text:
 optional string cta-link:
 optional string cta-role: 
 optional ftd.image-src image: $assets.files.static.charts-image.svg
+optional ftd.image-src back-image:
 optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
 children promo-wrap:
 boolean left: false
+boolean top: false
 boolean right: false
 boolean keep-dark: true
 boolean two-btn: false
@@ -1361,11 +1363,13 @@ cta-text: $excel-promo-card.cta-text
 cta-link: $excel-promo-card.cta-link
 cta-role: $excel-promo-card.cta-role
 image: $excel-promo-card.image
+back-image: $excel-promo-card.back-image
 bgcolor: $excel-promo-card.bgcolor
 width: $excel-promo-card.width
 promo-wrap: $excel-promo-card.promo-wrap
 keep-dark: $excel-promo-card.keep-dark
 left: $excel-promo-card.left
+top: $excel-promo-card.top
 right: $excel-promo-card.right
 center: $excel-promo-card.center
 two-btn: $excel-promo-card.two-btn
@@ -1414,11 +1418,13 @@ optional string cta-role:
 optional string cta-left-text:
 optional string cta-right-text:
 optional ftd.image-src image:
+optional ftd.image-src back-image:
 optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
 children promo-wrap:
 boolean keep-dark: true
 boolean left:
+boolean top:
 boolean right:
 optional boolean center:
 boolean two-btn:
@@ -1428,7 +1434,22 @@ width: fill-container
 background.solid: $excel-promo-card-desktop.bgcolor
 padding-vertical.px: 60
 padding-horizontal.px: 140
-;;margin-top.px if { excel-promo-card-desktop.left }: 150
+margin-top.px if { excel-promo-card-desktop.top }: 150
+
+-- ftd.column:
+if: {excel-promo-card-desktop.top}
+width: fill-container
+anchor: parent
+right.px: 0
+top.px: 0
+z-index: 1
+
+-- ftd.image:
+if: { $excel-promo-card-desktop.back-image != NULL}
+src: $excel-promo-card-desktop.back-image
+width: fill-container
+
+-- end: ftd.column
 
 -- ftd.column:
 width: fill-container

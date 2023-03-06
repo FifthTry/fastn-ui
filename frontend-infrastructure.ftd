@@ -1,0 +1,157 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+
+
+
+
+
+
+
+
+
+
+
+-- ft.page: Frontend Infrastructure
+
+-- ft.hero-section: Fastn makes front end development simple yet Flexible!
+image: $assets.files.static.frontend.background.svg
+center: true
+height: 445
+width: 1160
+margin-top: 150
+
+-- ft.hero-section.info: Simply select designs that appeal to you, and customize to truly make it your own!
+
+-- ft.excel-promo-card: Benefits of Fastn
+image: $assets.files.static.frontend.features.svg
+back-image: $assets.files.static.frontend.feature-back.svg
+bgcolor: $inherited.colors.background.step-2
+top: true
+
+-- ft.excel-promo-card.info: 
+
+Browse dozens of professionaly designed templates. Easily change structurestyle, and graphics -then host instantly.
+
+-- ft.right-image-component: Design System
+icon: $assets.files.static.events.upcoming-section-logo.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.frontend.card.svg
+padding-vertical: 105
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries. 
+
+-- ft.left-image-component: Fastn.Colours
+icon: $assets.files.static.frontend.icon.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.frontend.card2.svg
+
+FastN has an expansive ever-growing color library. It places no restriction when it comes to color palettes or color combinations unlike some design systems. Because it has been incrementally built by designers for developers, FastN color libraries provide an array of compatible options for developers to skin & re-skin their creations to their hearts’ content. 
+
+-- ft.right-image-component: Design System
+icon: $assets.files.static.frontend.icon2.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.frontend.card3.svg
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
+
+-- ft.trending-templates: Libraries
+no-img: true
+
+-- ft.trending-templates.info: Browse dozens of professionaly designed templates. Easily change structure,style,and graphics -then host instantly.
+
+-- ft.row-container:
+wrap: true
+spacing: 80
+
+-- ft.display-card: Component Library
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.frontend.card5.svg
+bgcolor: $inherited.colors.border-strong
+width: 540
+spacing: true
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.display-card: Color Scheme Library
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.frontend.card6.svg
+bgcolor: $inherited.colors.border-strong
+width: 540
+spacing: true
+
+Wide variety of Open source color schemes that look good and are optimised for accessibility and readability. Use one of yours or create your own.
+
+-- ft.display-card: Font Library
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.frontend.card7.svg
+bgcolor: $inherited.colors.border-strong
+width: 540
+spacing: true
+
+Curated font pairings to that make you site look good. We work with Google fonts, and work with designers to curate good looking choices.
+
+-- ft.display-card: Illustrations & Icons Library
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.frontend.card8.svg
+bgcolor: $inherited.colors.border-strong
+width: 540
+spacing: true
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- end: ft.row-container
+
+-- ft.trending-templates: Documentations
+no-img: true
+margin-top: 150
+
+-- ft.trending-templates.info:
+
+Browse dozens of professionaly designed templates. 
+Easily change structure, style, and graphics -then host instantly.
+
+-- ft.left-image-component:
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.frontend.dark.svg
+padding: true
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.frontend.back1.svg
+width: 215
+
+-- ft.left-image-component:
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.frontend.internatinalisation.svg
+padding: true
+
+Convert your icon libraries, fonts, color schemes to fastn to help others create better design, and gain mind share and join our growing community of people making the web prettier and more accessible.
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.frontend.back2.svg
+width: 215
+
+-- ft.left-image-component:
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.frontend.contribute.svg
+
+Coming Soon.
+We are working towards adding support to internationalisation to FTD and once there all our components will be translated in various languages to make your website even more accessible.
+
+-- ft.footer:
+
+-- end: ft.page

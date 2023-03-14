@@ -17,7 +17,6 @@ $show-breadcrum: true
 cta-text: Explore More
 cta-link: /
 cta-role: primary
-margin-top: 50
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc , libero et velit interdum, ac aliquet  libero et velit interdum libero et velit interdum odio mattis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc , libero et velit interdum, ac aliquet  libero et velit interdum libero et velit interdum odio mattis.
 

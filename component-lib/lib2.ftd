@@ -1815,7 +1815,7 @@ max-width.fixed.px: 1460
 align-self: center
 align-content if {hero-section-desktop.center}: center
 min-height.fixed.px: $hero-section-desktop.height
-margin-top.px: $hero-section-desktop.margin-top
+margin-top.px if {hero-section-desktop.margin-top != NULL}: $hero-section-desktop.margin-top
 
 -- ftd.column:
 if: { hero-section-desktop.small-img }

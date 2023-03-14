@@ -820,7 +820,7 @@ color: $inherited.colors.text-strong
 -- lib5.cta-button: $hosting-hero-desktop.cta-text
 role: $hosting-hero-desktop.cta-role
 link: $hosting-hero-desktop.cta-link
-show-arrow: true
+;;show-arrow: true
 
 -- end: ftd.column
 
@@ -919,6 +919,8 @@ optional string cta-role:
 optional boolean col-img: false
 optional boolean padding: false
 optional boolean down-img: false
+optional boolean ext-img: false
+optional boolean right-btn: false
 ftd.image-src image:
 boolean top:
 
@@ -935,6 +937,8 @@ cta-role: $left-image-component.cta-role
 col-img: $left-image-component.col-img
 padding: $left-image-component.padding
 down-img: $left-image-component.down-img
+ext-img: $left-image-component.ext-img
+right-btn: $left-image-component.right-btn
 image: $left-image-component.image
 top: $left-image-component.top
 
@@ -968,6 +972,8 @@ optional string cta-role:
 optional boolean col-img:
 optional boolean padding:
 optional boolean down-img:
+optional boolean ext-img:
+optional boolean right-btn:
 ftd.image-src image:
 optional boolean top:
 
@@ -983,9 +989,9 @@ background.solid if { left-image-component-desktop.down-img }: $inherited.colors
 border-radius.px if { left-image-component-desktop.down-img }: 30
 
 -- ftd.column:
-if: { !left-image-component-desktop.col-img && !left-image-component-desktop.down-img }
+if: { !left-image-component-desktop.col-img && !left-image-component-desktop.right-btn && !left-image-component-desktop.down-img }
 width: fill-container
-padding-vertical.px if { !left-image-component-desktop.top}: 101
+padding-vertical.px if { !left-image-component-desktop.top && !left-image-component-desktop.ext-img}: 101
 padding-vertical.px if { left-image-component-desktop.top}: 30
 
 -- ftd.image:
@@ -996,6 +1002,7 @@ height: auto
 -- end: ftd.column
 
 -- ftd.column:
+if: {!left-image-component-desktop.right-btn}
 width: fill-container
 spacing.fixed.px: 24
 padding-left.px if { !left-image-component-desktop.col-img && !left-image-component-desktop.down-img}: 119
@@ -1030,7 +1037,52 @@ link: $left-image-component-desktop.cta-link
 show-arrow: true
 
 -- ftd.image:
+if: { left-image-component-desktop.ext-img }
+src: $assets.files.static.feature-list.down-img.svg
+width: fill-container
+
+-- ftd.image:
 if: { left-image-component-desktop.down-img }
+src: $left-image-component-desktop.image
+width: fill-container
+
+-- end: ftd.column
+
+-- ftd.column:
+if: {left-image-component-desktop.right-btn}
+width: fill-container
+spacing.fixed.px: 24
+padding-vertical.px if { left-image-component-desktop.right-btn}: 80
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 32
+align-content: center
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.text: $left-image-component-desktop.title
+if: { left-image-component-desktop.title != NULL}
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- ftd.text:
+text: $left-image-component-desktop.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- end: ftd.column
+
+-- lib5.cta-button: $left-image-component-desktop.cta-text
+role: $left-image-component-desktop.cta-role
+link: $left-image-component-desktop.cta-link
+show-arrow: true
+
+-- end: ftd.row
+
+-- ftd.image:
 src: $left-image-component-desktop.image
 width: fill-container
 

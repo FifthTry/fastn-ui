@@ -759,6 +759,7 @@ optional string cta-link:
 integer width: $width
 children trending-wrap:
 optional boolean no-img: false
+optional boolean blank: false
 optional boolean system-image: false
 optional boolean img:
 optional ftd.color bgcolor: $inherited.colors.background.step-2
@@ -772,6 +773,7 @@ cta-link: $trending-templates.cta-link
 width: $trending-templates.width
 trending-wrap: $trending-templates.trending-wrap
 no-img: $trending-templates.no-img
+blank: $trending-templates.blank
 system-image: $trending-templates.system-image
 img: $trending-templates.img
 bgcolor: $trending-templates.bgcolor
@@ -2100,6 +2102,8 @@ optional string cta-role:
 optional boolean col-img: false
 optional boolean padding: false
 optional boolean down-img: false
+optional boolean ext-img: false
+optional boolean right-btn: false
 ftd.image-src image:
 boolean top: false
 
@@ -2113,6 +2117,8 @@ cta-role: $left-image-component.cta-role
 col-img: $left-image-component.col-img
 padding: $left-image-component.padding
 down-img: $left-image-component.down-img
+ext-img: $left-image-component.ext-img
+right-btn: $left-image-component.right-btn
 image: $left-image-component.image
 top: $left-image-component.top
 

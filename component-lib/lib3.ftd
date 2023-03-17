@@ -1504,7 +1504,7 @@ max-width.fixed.px if { excel-promo-card-desktop.two-btn}: 620
 spacing.fixed.px: 16
 padding-top.px if { excel-promo-card-desktop.right}: 250
 padding-top.px if { excel-promo-card-desktop.center}: 100
-padding-left.px if { !excel-promo-card-desktop.right}: 50
+;;padding-left.px if { !excel-promo-card-desktop.right}: 50
 
 -- ftd.text: $excel-promo-card-desktop.title
 role: $inherited.types.heading-large

@@ -711,6 +711,7 @@ optional body body:
 integer spacing: 160
 boolean widthfill: false
 optional string role:
+optional boolean to-left: false
 ftd.color bg-color: $inherited.colors.background.step-1
 optional ftd.image-src logo:
 
@@ -721,7 +722,8 @@ benefits-wrap: $benefits-card.benefits-wrap
 body: $benefits-card.body 
 spacing: $benefits-card.spacing 
 widthfill: $benefits-card.widthfill 
-role: $benefits-card.role 
+role: $benefits-card.role
+to-left: $benefits-card.to-left
 bg-color: $benefits-card.bg-color 
 logo: $benefits-card.logo 
 
@@ -2167,15 +2169,21 @@ cta-role: $hosting-hero.cta-role
 
 
 -- component stages-vertical-image:
+optional caption title:
 ftd.image-src image: $assets.files.static.hosting.stage-hero.svg
+optional ftd.image-src icon:
 integer height: 600
 optional integer width:
+optional boolean icon-text: false
 
 
 -- lib4.stages-vertical-image:
+title: $stages-vertical-image.title
+icon: $stages-vertical-image.icon
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
 height: $stages-vertical-image.height
+icon-text: $stages-vertical-image.icon-text
 
 -- end: stages-vertical-image
 

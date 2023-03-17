@@ -638,18 +638,23 @@ width: auto
 
 
 -- component stages-vertical-image:
+optional caption title:
 ftd.image-src image: $assets.files.static.hosting.stage-hero.svg
+optional ftd.image-src icon:
 integer height: 600
 optional integer width:
+optional boolean icon-text: false
 
 -- ftd.column:
-width: fill-container
 
 -- stages-vertical-image-desktop:
 if: { ftd.device != "mobile" }
+title: $stages-vertical-image.title
+icon: $stages-vertical-image.icon
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
 height: $stages-vertical-image.height
+icon-text: $stages-vertical-image.icon-text
 
 
 -- stages-vertical-image-mobile:
@@ -672,23 +677,49 @@ height: $stages-vertical-image.height
 
 
 -- component stages-vertical-image-desktop:
+optional caption title:
 ftd.image-src image:
+optional ftd.image-src icon:
 integer height: 600
 optional integer width:
+optional boolean icon-text:
 
 -- ftd.column:
 width: fill-container
 max-width.fixed.px: $width
 align-content: center
 align-self: center
-padding-vertical.px: 150
+padding-vertical.px if { !stages-vertical-image-desktop.icon-text }: 150
+padding-bottom.px if { stages-vertical-image-desktop.icon-text }: 56
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 22
+
+-- ftd.row:
+if: {stages-vertical-image-desktop.icon-text}
+width: fill-container
+spacing.fixed.px: 10
+
+-- ftd.image:
+src: $stages-vertical-image-desktop.icon
+width.fixed.px: 20
+
+-- ftd.text: $stages-vertical-image-desktop.title
+role: $inherited.types.heading-tiny
+color: $inherited.colors.text
+
+-- end: ftd.row
 
 -- ftd.image:
 src: $stages-vertical-image-desktop.image
+width.fixed.px if { stages-vertical-image-desktop.icon-text }: 236
 width: fill-container
 width.fixed.px if {stages-vertical-image-desktop.width != NULL}: $stages-vertical-image-desktop.width
 height: auto
-align-self: center
+align-self if { !stages-vertical-image-desktop.icon-text }: center
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -1259,7 +1290,7 @@ optional ftd.color bgcolor:
 width: fill-container
 max-width.fixed.px: 1160
 align-self: center
-padding-bottom.px: 150
+;;padding-bottom.px: 150
 padding-top.px if {right-image-component-desktop.padding-vertical != NULL}:  $right-image-component-desktop.padding-vertical
 
 -- ftd.column:
@@ -1927,6 +1958,7 @@ optional body body:
 integer spacing: 160
 boolean widthfill: false
 optional string role:
+optional boolean to-left: false
 ftd.color bg-color: $inherited.colors.background.step-1
 optional ftd.image-src logo:
 
@@ -1942,6 +1974,7 @@ body: $benefits-card.body
 spacing: $benefits-card.spacing
 bg-color: $benefits-card.bg-color
 role: $benefits-card.role
+to-left: $benefits-card.to-left
 widthfill: $benefits-card.widthfill
 logo: $benefits-card.logo
 
@@ -1976,6 +2009,7 @@ children benefits-wrap:
 optional body body:
 integer spacing:
 optional string role:
+optional boolean to-left:
 ftd.color bg-color: 
 boolean widthfill:
 optional ftd.image-src logo:
@@ -1985,15 +2019,15 @@ width: fill-container
 background.solid: $benefits-card-desktop.bg-color
 align-content: center
 align-self: center
-
+padding-top.px if { benefits-card-desktop.to-left }: 150
 
 -- ftd.column:
 width: fill-container
 max-width.fixed.px if { !benefits-card-desktop.widthfill}: $benefits-card-desktop.width
-align-self: center
-align-content: center
-padding-vertical.px: 80
-spacing.fixed.px: 32
+align-self if {!benefits-card-desktop.to-left}: center
+align-content if {!benefits-card-desktop.to-left}: center
+padding-vertical.px if {!benefits-card-desktop.to-left}: 80
+spacing.fixed.px if {!benefits-card-desktop.to-left}: 32
 
 -- ftd.image: 
 if: { benefits-card-desktop.logo != NULL}

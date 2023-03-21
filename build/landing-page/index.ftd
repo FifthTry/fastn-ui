@@ -1,0 +1,187 @@
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fifthtry.github.io/fastn-ui/assets
+
+-- ft.page: Events
+width: 1160
+
+-- ft.hero-section: Loreum ipsum
+height: 340
+
+-- ft.hero-section.info:
+
+Fastn provides exhaustive frameworks to set up and  scale
+ your project in minutes. Fastn provides exhaustive 
+ frameworks to set up and  scale your project in minutes.
+
+-- ft.row-container:
+align-left: true
+padding-vertical: 84
+
+-- ft.search-bar:
+
+-- end: ft.row-container
+
+-- ft.row-container:
+spacing: 50
+align-left: true
+padding-vertical: 75
+
+-- ft.tabs: Landing Page
+index: 1
+$active-item: true
+
+-- ft.tabs: API & Documentation
+index: 2
+
+-- ft.tabs: Microsite
+index: 3
+
+-- ft.tabs: Blogs
+index: 4
+
+
+-- end: ft.row-container
+
+-- ft.column-wrap:
+wrap: true
+height: 1308
+index: 1
+reset: $ft.current-tab
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card2.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card2.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+
+-- end: ft.column-wrap
+
+-- ft.column-wrap:
+wrap: true
+height: 1308
+index: 2
+reset: $ft.current-tab
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card2.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card2.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- end: ft.column-wrap
+
+-- ft.column-wrap:
+wrap: true
+height: 1308
+index: 3
+reset: $ft.current-tab
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card2.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card2.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- end: ft.column-wrap
+
+
+-- ft.column-wrap:
+wrap: true
+height: 1308
+index: 4
+reset: $ft.current-tab
+
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card2.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card2.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+
+-- end: ft.column-wrap
+
+-- ft.footer:
+
+-- end: ft.page

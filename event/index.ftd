@@ -1,0 +1,251 @@
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fastn-cs
+-- import: fastn/processors as pr
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fifthtry.github.io/fastn-ui/events as event
+-- import: fifthtry.github.io/common as common
+
+
+-- integer $width: 1160
+
+-- integer $current-active: 1
+
+
+-- common.host amitu: Amit Upadhyay
+title: CEO, FifthTry, Inc
+email: amitu@fifthtry.com
+website: www.fifthtry.com
+avatar: $assets.files.static.amitu.jpg
+
+-- common.venue venue:
+name: 91Springboard
+location: https://goo.gl/maps/zJb9qGMSq6JcUpd58
+address: 175 & 176, Bannerghatta Main Rd, Dollars Colony, Phase 4, J. P. Nagar, Bengaluru, Karnataka 560076
+website: www.91springboard.com
+
+
+
+
+
+
+
+
+
+-- ft.page: Events
+$show-breadcrum: true
+
+
+-- event.event-list-title: Fastn Events 2023
+
+At nulla tristique facilisis augue. Lectus diam dignissim
+erat blandit pellentesque egestas nulla.
+
+
+-- event.event-list: Upcoming
+
+-- event.upcoming-event: FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.placeholder.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+index: 1
+reset: $current-active
+link: event/event-details/
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+
+-- event.upcoming-event:FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.upcoming-2.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+index: 2
+reset: $current-active
+link: event/event-details/
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+
+-- event.upcoming-event:FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.upcoming-3.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+index: 3
+reset: $current-active
+link: event/event-details/
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+
+-- event.upcoming-event:FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.upcoming-4.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+index: 4
+reset: $current-active
+link: event/event-details/
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+
+-- event.upcoming-event:FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.placeholder.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+index: 5
+reset: $current-active
+link: event/event-details/
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+-- event.pagination:
+
+-- event.number-item: 1
+$active-item: true
+index: 1
+
+-- event.number-item: 2
+index: 2
+
+-- event.number-item: 3
+index: 3
+
+-- event.number-item: 4
+index: 4
+
+-- event.number-item: 5
+index: 5
+
+-- end: event.pagination
+
+-- end: event.event-list
+
+
+
+
+
+-- event.event-list: Past Events
+icon: $assets.files.static.events.past-section-logo.svg
+show-grid: true
+bgcolor: $inherited.colors.background.step-1
+
+-- event.past-event: FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.past.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+index: 1
+reset: $current-active
+link: event/event-details/
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+-- event.past-event: FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.past.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+index: 2
+reset: $current-active
+link: event/event-details/
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+-- event.pagination:
+
+-- event.number-item: 1
+$active-item: true
+index: 1
+
+-- event.number-item: 2
+index: 2
+
+-- end: event.pagination
+
+-- end: event.event-list
+
+
+
+
+
+-- ft.col-container:
+padding-vertical: 150
+
+-- ft.heart-line-title-card: Subscribe now
+show-arrow: false
+
+-- ft.row-container:
+wrap: true
+switch-to-column: true
+spacing: 80
+
+-- ft.social-card: DISCORD
+link: /
+icon: $assets.files.static.footer.discord.svg
+
+-- ft.social-card: TWITTER
+link: /
+icon: $assets.files.static.footer.twitter.svg
+
+-- ft.social-card: LINKEDIN
+link: /
+icon: $assets.files.static.footer.linkedin.svg
+
+-- end: ft.row-container
+
+-- end: ft.col-container
+
+
+
+
+
+-- ft.footer:
+
+-- end: ft.page

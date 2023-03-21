@@ -1,0 +1,166 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fastn
+-- import: fastn/processors as pr
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fifthtry.github.io/fastn-ui/events as et
+-- import: fastn-cs
+
+
+
+
+
+
+
+
+
+
+-- ft.page: WHY FASTN
+bg-color: $inherited.colors.background.step-1
+
+-- ft.hero-section: How to use Fastn?
+image: $assets.files.static.why-use-background.svg
+center: true
+height: 485
+width: 1160
+
+-- ft.hero-section.info: At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
+
+-- ft.row-container:
+spacing: 24
+spacing if {ftd.device == "mobile"}: 32
+switch-to-column if {ftd.device == "mobile"}: true
+margin-top: 150
+
+-- ft.stages-vertical: Select your theme & deploy on Github.
+rect: $assets.files.static.hosting.rect-img2.svg
+stage: 01
+cta-text: Get Started
+cta-link: /
+right: true
+
+Fastn needs a place to store your content and deploy your site. Most of ours users prefer storing the content on Github and deploying on Github pages.
+
+-- ft.code-block-system:
+lang: ftd
+width: 412
+show-double: false
+
+\-- import: fastn
+\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
+zip: github.com/<username_or_orgname>
+
+-- end: ft.row-container
+
+-- ft.row-container:
+spacing: 24
+spacing if {ftd.device == "mobile"}: 32
+switch-to-column if {ftd.device == "mobile"}: true
+
+-- ft.stages-vertical: Dynamic Sites
+rect: $assets.files.static.hosting.rect-num.svg
+stage: 02
+cta-text: Get Started
+cta-link: /
+right: true
+
+If your content website uses any of these features : 
+
+1. Authenticated / private pages
+2. Load dynamic data
+
+-- ft.code-block-system:
+lang: ftd
+width: 412
+show-double: false
+
+\-- import: fastn
+\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
+zip: github.com/<username_or_orgname>
+
+-- end: ft.row-container
+
+-- ft.row-container:
+spacing: 24
+spacing if {ftd.device == "mobile"}: 32
+switch-to-column if {ftd.device == "mobile"}: true
+
+-- ft.testimonial-card: Create a local project
+bgcolor: $inherited.colors.custom.two
+bg-color: $inherited.colors.background.step-2
+width: 500
+right: true
+cta-text: Explore more
+cta-link: /
+
+At nulla tristique facilisis augue. 
+
+Lectus diam dignissim erat blandit pellentesque 
+
+egestas nulla .
+
+-- end: ft.row-container
+
+
+-- ft.row-container:
+spacing: 24
+spacing if {ftd.device == "mobile"}: 32
+switch-to-column if {ftd.device == "mobile"}: true
+margin-top: 150
+
+-- ft.stages-vertical: Where is content storted?
+rect: $assets.files.static.hosting.rect-num.svg
+stage: 03
+cta-text: Get Started
+cta-link: /
+right: true
+
+Fastn needs a place to store your content and deploy your site. Most of ours users prefer storing the content on Github and deploying on Github pages.
+
+-- ft.code-block-system:
+lang: ftd
+width: 412
+show-double: false
+
+\-- import: fastn
+\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
+zip: github.com/<username_or_orgname>
+
+-- end: ft.row-container
+
+-- ft.row-container:
+spacing: 24
+spacing if {ftd.device == "mobile"}: 32
+switch-to-column if {ftd.device == "mobile"}: true
+
+-- ft.stages-vertical: How to edit content?
+rect: $assets.files.static.hosting.rect-img2.svg
+stage: 04
+cta-text: Get Started
+cta-link: /
+right: true
+
+If your content website uses any of these features : 
+
+1. Authenticated / private pages
+2. Load dynamic data
+
+-- ft.code-block-system:
+lang: ftd
+width: 412
+show-double: false
+
+\-- import: fastn
+\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
+zip: github.com/<username_or_orgname>
+
+-- end: ft.row-container
+
+-- ft.hero-section: Ready to launch your next website on Fastn?
+center: true
+cta-left-text: hosting
+height: 485
+width: 862
+
+-- ft.footer:
+
+-- end: ft.page

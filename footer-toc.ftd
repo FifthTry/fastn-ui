@@ -1,0 +1,421 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+
+-- component toc:
+
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 14
+
+-- ftd.text: Why fastn
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+link: /
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 14
+
+-- ftd.text: Fastn
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: How to use Fastn
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Feature listing
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: toc
+
+
+
+
+
+
+
+-- component toc1:
+
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 14
+
+-- ftd.text: Use Case
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+link: /
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 14
+
+-- ftd.text: Landing Page
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Microsite
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Documentation Page
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Blog Page
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: toc1
+
+
+
+
+
+
+
+-- component toc2:
+
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 14
+
+-- ftd.text: Learn
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+link: /
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 14
+
+-- ftd.text: Contributors
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Authoring
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Learning FTD
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Open Source
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Internet OS
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: toc2
+
+
+
+
+
+
+-- component toc3:
+
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 14
+
+-- ftd.text: Design
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+link: /
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 14
+
+-- ftd.text: Template list
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Component list
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Font list
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Icons /Illustrations
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Design Theory
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Color Library
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: toc3
+
+
+
+
+
+
+
+-- component toc4:
+
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 14
+
+-- ftd.text: Developers
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+link: /
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 14
+
+-- ftd.text: FTD
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Hosting
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Builder Manual
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Blog
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Events
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- ftd.text: Open source
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: /
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: toc4
+
+
+
+
+
+
+
+-- component toc5:
+
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 14
+
+-- ftd.text: Build
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+link: /
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 14
+
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: toc5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component menu-details-1:
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 32
+
+-- ftd.image:
+src: $assets.files.static.header.menu-icons.smily-icon.svg
+width: auto
+height: auto
+align-self: center
+
+-- ftd.text: Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id molestie mi commodo. Sit curabitur nulla sit vel enim hac pulvinar in ultricies sit urna.
+color: $inherited.colors.text
+role: $inherited.types.fine-print
+
+-- end: ftd.row
+
+-- end: menu-details-1
+
+
+
+
+
+
+
+
+
+
+-- component menu-details-2:
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 32
+
+-- ftd.image:
+src: $assets.files.static.header.menu-icons.sad-icon.svg
+width: auto
+height: auto
+align-self: center
+
+-- ftd.text: Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id molestie mi commodo. Sit curabitur nulla sit vel enim hac pulvinar in ultricies sit urna.
+color: $inherited.colors.text
+role: $inherited.types.fine-print
+
+-- end: ftd.row
+
+-- end: menu-details-2
+
+
+
+
+
+
+
+
+
+
+-- component menu-details-3:
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 32
+
+-- ftd.image:
+src: $assets.files.static.header.menu-icons.square-face-icon.svg
+width: auto
+height: auto
+align-self: center
+
+-- ftd.text: Lorem ipsum dolor sit amet consectetur. Quis lobortis ultrices id id molestie mi commodo. Sit curabitur nulla sit vel enim hac pulvinar in ultricies sit urna.
+color: $inherited.colors.text
+role: $inherited.types.fine-print
+
+-- end: ftd.row
+
+-- end: menu-details-3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component toc-items:
+caption title:
+string link: 
+
+-- ftd.row:
+width: fill-container
+wrap: true
+spacing: space-between
+
+-- ftd.column:
+max-width.fixed.percent: 50
+
+-- ftd.text: $toc-items.title
+role: $inherited.types.copy-large
+color: $inherited.colors.text
+link: $toc-items.link
+
+-- ftd.text: 
+role: $inherited.types.fine-print
+color: $inherited.colors.text-strong
+
+Lorem ipsum dolor sit amet, consectetur elit.
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: toc-items

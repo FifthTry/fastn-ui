@@ -1,0 +1,265 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+
+
+
+
+
+
+
+
+
+
+
+-- ft.page: Why fastn
+bg-color: $inherited.colors.background.step-1
+
+-- ft.hero-section: Dream. Design. Develop.
+image: $assets.files.static.why-fastn.background.svg
+center: true
+cta-left-text: Explore More
+height: 485
+width: 1160
+
+-- ft.hero-section.info: Fastn is here to serve to your unique requirements with an easy-to-use platform. At nulla tristique facilisis augue. Lectus diam dignissim.
+
+
+-- ft.benefits-card: Key features of Fastn
+spacing: 0
+bg-color: $inherited.colors.background.base
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform.
+
+-- ft.row-container:
+width: 1160
+wrap: true
+spacing: 92
+spacing if {ftd.device == "mobile"}: 40
+switch-to-column: true
+
+-- key-features: Lorem ipsum dolor
+icon: $assets.files.static.why-fastn.element.svg
+
+Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+
+-- key-features: Lorem ipsum dolor
+icon: $assets.files.static.why-fastn.element2.svg
+
+Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+
+-- key-features: Lorem ipsum dolor
+icon: $assets.files.static.why-fastn.element3.svg
+
+Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+
+-- key-features: Lorem ipsum dolor
+icon: $assets.files.static.why-fastn.element4.svg
+
+Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+
+-- end: ft.row-container
+
+-- ft.cta-button: Features
+role: primary
+link: /
+show-arrow: true
+align-center: true
+
+-- end: ft.benefits-card
+
+-- ft.excel-promo-card: How to use Fastn?
+image: $assets.files.static.why-fastn.image.png
+bgcolor: $inherited.colors.background.step-1
+cta-text: Get Started
+cta-link: /
+cta-role: primary
+left: true
+
+-- ft.excel-promo-card.info: 
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform.
+
+-- ft.benefits-card: Benefits of fastn
+spacing: 0
+bg-color: $inherited.colors.background.base
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform.
+
+
+
+-- ft.row-container:
+align-left: true
+switch-to-column: true
+
+-- ft.benefits-info-card: Everyoe is everywhere
+icon: $assets.files.static.why-fastn.group.svg
+align-left: true
+
+-- ft.benefits-info-card.info: 
+
+Metaverse and other web 3.0 destinations are global.
+ You no longer have audiences restricted to local 
+& hyperlocal cohorts.
+
+-- end: ft.benefits-info-card
+
+-- end: ft.row-container
+
+-- ft.hr:
+
+-- ft.row-container:
+wrap: true
+spacing: 248
+spacing if {ftd.device == "mobile"}: 32
+switch-to-column: true
+
+-- ft.benefits-info-card: Everyone is everywhere
+icon: $assets.files.static.why-fastn.group2.svg
+align-left: true
+
+-- ft.benefits-info-card.info: 
+
+Metaverse and other web 3.0 destinations are global.
+ You no longer have audiences restricted to local 
+& hyperlocal cohorts.
+
+-- end: ft.benefits-info-card
+
+-- ft.code-block-system:
+if: {ftd.device != "mobile"}
+lang: ftd
+width: 412
+show-double: false
+
+\-- import: fastn
+\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
+zip: github.com/<username_or_orgname>
+
+-- end: ft.row-container
+
+-- ft.hr:
+
+-- ft.row-container:
+wrap: true
+spacing: 248
+spacing if {ftd.device == "mobile"}: 32
+switch-to-column: true
+
+-- ft.benefits-info-card: Everyone is everywhere
+icon: $assets.files.static.why-fastn.group3.svg
+align-left: true
+
+-- ft.benefits-info-card.info: 
+
+Metaverse and other web 3.0 destinations are global.
+ You no longer have audiences restricted to local 
+& hyperlocal cohorts.
+
+
+-- end: ft.benefits-info-card
+
+
+-- ft.code-block-system:
+if: {ftd.device != "mobile"}
+lang: ftd
+width: 412
+show-double: false
+
+\-- import: fastn
+\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
+zip: github.com/<username_or_orgname>
+
+
+-- end: ft.row-container
+
+-- ft.hr:
+
+-- ft.row-container:
+align-left: true
+switch-to-column: true
+
+-- ft.benefits-info-card: Everyone is everywhere
+icon: $assets.files.static.why-fastn.group4.svg
+align-left: true
+
+-- ft.benefits-info-card.info: 
+
+Metaverse and other web 3.0 destinations are global.
+ You no longer have audiences restricted to local 
+& hyperlocal cohorts.
+
+
+-- end: ft.benefits-info-card
+
+-- end: ft.row-container
+
+-- end : ft.benefits-card
+
+-- ft.benefits-card: Everything you need to build anything you want
+spacing: 0
+role: primary
+widthfill: true
+bg-color: $inherited.colors.background.base
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform.
+
+-- ft.heart-line-title-card:
+cta-text: Explore more
+cta-url: /
+show-arrow: false
+width: 1500
+spacing: 130
+
+-- end: ft.benefits-card
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+-- component key-features:
+ftd.image-src icon: $assets.files.static.benefits.benefits-icon-1.svg
+caption title:
+optional body info:
+
+-- ftd.row:
+width.fixed.px if {ftd.device != "mobile"}: 436
+spacing.fixed.px: 18
+
+-- ftd.image:
+src: $key-features.icon
+width: auto
+height: auto
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 8
+
+-- ftd.text: $key-features.title
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+
+-- ftd.text:
+if: { key-features.info != NULL }
+text: $key-features.info
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-regular
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: key-features
+
+
+
+
+
+
+
+

@@ -1,0 +1,120 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fastn
+-- import: fastn/processors as pr
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fastn-cs
+
+
+
+
+
+-- ft.page: About OS
+$show-breadcrum: true
+
+-- ft.left-image-component: In a Nutshell
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.nutshell.svg
+top: true
+
+We belive a uniform language must exist to represent data and prose that any human being can learn easily. Further most software are incompatible with others. A graph made in one software one can not be used with another software. 
+
+-- ft.metrics-card:
+
+-- ft.trending-templates: Features
+no-img: true
+margin-top: 150
+
+-- ft.trending-templates.info:
+
+We belive a uniform language must exist to represent data and prose that any human being can learn easily. Further most software are incompatible with others. A graph made in one software one can not be used with another software. 
+
+-- ft.row-container:
+wrap: true
+switch-to-column: true
+margin-bottom: 150
+spacing: 80
+width: 1160
+
+-- ft.display-card: FTD
+image: $assets.files.static.open-source.display.svg
+cta-text: explore more
+cta-link: /
+bgcolor: $inherited.colors.border-strong
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+padding-vertical: 60
+spacing: true
+center: true
+width: 540
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.display-card: FTD
+image: $assets.files.static.open-source.display.svg
+cta-text: explore more
+cta-link: /
+bgcolor: $inherited.colors.border-strong
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+padding-vertical: 60
+spacing: true
+width: 540
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.display-card: FTD
+image: $assets.files.static.open-source.display.svg
+cta-text: explore more
+cta-link: /
+bgcolor: $inherited.colors.border-strong
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+padding-vertical: 60
+spacing: true
+width: 540
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.display-card: FTD
+image: $assets.files.static.open-source.display.svg
+cta-text: explore more
+cta-link: /
+bgcolor: $inherited.colors.border-strong
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+padding-vertical: 60
+spacing: true
+width: 540
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- end: ft.row-container
+
+-- ft.trending-templates: You got questions in mind ? We have answers
+no-img: true
+margin-top: 5
+
+-- ft.hr:
+
+-- ft.right-image-component: Dark mode For Images
+cta-text: Explore More
+cta-link: /
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are. Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- ft.right-image-component: Dark mode For Images
+cta-text: Explore More
+cta-link: /
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are. Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- ft.right-image-component: Dark mode For Images
+cta-text: Explore More
+cta-link: /
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are. Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- ft.footer:
+
+-- end: ft.page

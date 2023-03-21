@@ -1,0 +1,76 @@
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+
+-- ft.page: Events
+
+-- ft.row-container:
+
+-- code: hello world ftd
+lang: ftd
+
+
+\-- ftd.column show-repo:
+repo o:
+padding.px: 20
+width: fill-container
+border-radius.px: 5
+
+-- end: ft.row-container
+
+-- ft.footer:
+
+-- end: ft.page
+
+-- component code:
+optional caption caption:
+optional body body:
+string lang:
+
+-- ftd.column:
+padding-bottom.px: 12
+padding-top.px: 12
+width: fill-container
+
+-- ftd.text: $code.caption
+if: {code.caption != NULL}
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+width: fill-container
+background.solid: $inherited.colors.custom.five
+padding-top.px: 10
+padding-bottom.px: 10
+padding-left.px: 20
+padding-right.px: 20
+border-top-left-radius.px: 4
+border-top-right-radius.px: 4
+
+-- ftd.code:
+text: $code.body
+lang: $code.lang
+width: fill-container
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+padding-top.px: 10
+padding-left.px: 20
+padding-bottom.px: 10
+padding-right.px: 20
+background.solid: #2b303b
+border-top-left-radius.px if {$code.caption == NULL}: 4
+border-top-right-radius.px if {$code.caption == NULL}: 4
+border-bottom-left-radius.px: 4
+border-bottom-right-radius.px: 4
+overflow-x: auto
+
+
+-- end: ftd.column
+
+-- end: code
+
+
+
+
+
+
+
+
+
+

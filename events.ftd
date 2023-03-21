@@ -1,0 +1,1834 @@
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fastn-cs
+-- import: fastn/processors as pr
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fifthtry.github.io/common as common
+
+
+-- integer $width: 1160
+
+-- integer $current-active: 1
+
+
+-- common.host amitu: Amit Upadhyay
+title: CEO, FifthTry, Inc
+email: amitu@fifthtry.com
+website: www.fifthtry.com
+avatar: $assets.files.static.amitu.jpg
+
+-- common.venue venue:
+name: 91Springboard
+location: https://goo.gl/maps/zJb9qGMSq6JcUpd58
+address: 175 & 176, Bannerghatta Main Rd, Dollars Colony, Phase 4, J. P. Nagar, Bengaluru, Karnataka 560076
+website: www.91springboard.com
+
+
+
+
+
+
+
+
+
+-- ft.page: Events
+$show-breadcrum: true
+
+
+-- event-list-title: Fastn Events 2023
+
+At nulla tristique facilisis augue. Lectus diam dignissim
+erat blandit pellentesque egestas nulla.
+
+
+-- event-list: Upcoming
+
+-- upcoming-event: FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.placeholder.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+index: 1
+reset: $current-active
+link: event-detail/
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+
+-- upcoming-event:FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.upcoming-2.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+index: 2
+reset: $current-active
+link: event-detail/
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+
+-- upcoming-event:FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.upcoming-3.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+index: 3
+reset: $current-active
+link: event-detail/
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+
+-- upcoming-event:FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.upcoming-4.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+index: 4
+reset: $current-active
+link: event-detail/
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+
+-- upcoming-event:FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.placeholder.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+index: 5
+reset: $current-active
+link: event-detail/
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+-- pagination:
+
+-- number-item: 1
+$active-item: true
+index: 1
+
+-- number-item: 2
+index: 2
+
+-- number-item: 3
+index: 3
+
+-- number-item: 4
+index: 4
+
+-- number-item: 5
+index: 5
+
+-- end: pagination
+
+-- end: event-list
+
+
+
+
+
+-- event-list: Past Events
+icon: $assets.files.static.events.past-section-logo.svg
+show-grid: true
+bgcolor: $inherited.colors.background.step-1
+
+-- past-event: FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.past.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+index: 1
+reset: $current-active
+link: event-detail/
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+-- past-event: FTD Hands - On Workshop (Beta)
+image: $assets.files.static.events.past.svg
+day: SUN,
+date: 08
+month: JAN
+time: 12:30 PM IST
+cta-text: Online
+cta-link: /
+index: 2
+reset: $current-active
+link: event-detail/
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local. (edited) 
+white_check_mark
+eyes
+raised_hands
+
+-- pagination:
+
+-- number-item: 1
+$active-item: true
+index: 1
+
+-- number-item: 2
+index: 2
+
+-- end: pagination
+
+-- end: event-list
+
+
+
+
+
+-- ft.col-container:
+padding-vertical: 150
+
+-- ft.heart-line-title-card: Subscribe now
+show-arrow: false
+
+-- ft.row-container:
+wrap: true
+switch-to-column: true
+spacing: 80
+
+-- ft.social-card: DISCORD
+link: /
+icon: $assets.files.static.footer.discord.svg
+
+-- ft.social-card: TWITTER
+link: /
+icon: $assets.files.static.footer.twitter.svg
+
+-- ft.social-card: LINKEDIN
+link: /
+icon: $assets.files.static.footer.linkedin.svg
+
+-- end: ft.row-container
+
+-- end: ft.col-container
+
+
+
+
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+
+-- component pagination:
+children next-wrapper:
+
+-- ftd.row:
+children: $pagination.next-wrapper
+width: fill-container
+align-content: center
+spacing.fixed.px: 16
+margin-top.px: 80
+margin-top.px if {ftd.device == "mobile"}: 40
+
+-- end: ftd.row
+
+-- end:pagination
+
+
+
+
+
+
+
+
+
+
+-- component number-item:
+optional caption title:
+optional boolean $active-item: false
+optional boolean $mouse-in: false
+integer index:
+
+-- ftd.column:
+padding-vertical.px: 5 
+padding-horizontal.px: 15
+border-radius.px: 5
+background.solid if { number-item.mouse-in }: $inherited.colors.accent.primary
+border-color : $inherited.colors.border-strong
+background.solid if { number-item.index == current-active }: $inherited.colors.accent.primary
+border-color if { number-item.index == current-active }: $inherited.colors.text
+border-width.px: 2
+border-color if { !number-item.mouse-in }: $inherited.colors.border-strong
+border-color if { number-item.mouse-in }: $inherited.colors.text
+$on-mouse-enter$: $ftd.set-bool($a = $number-item.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $number-item.mouse-in, v = false)
+$on-click$: $ftd.toggle($a = $number-item.active-item)
+$on-click$: $ftd.set-integer($a = $current-active, v = $number-item.index)
+
+-- ftd.text: $number-item.title
+if: { number-item.title != NULL }
+role: $inherited.types.button-medium
+color if { !$number-item.mouse-in }: $inherited.colors.text
+color if { $number-item.mouse-in }: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: number-item
+
+
+
+
+
+
+
+-- component event-list-title:
+ftd.image-src image: $assets.files.static.event-background.svg
+caption title: Fastn Events
+body info:
+
+-- ftd.column:
+width: fill-container
+
+-- event-title-desktop: $event-list-title.title
+if:  {ftd.device != "mobile"}
+info: $event-list-title.info
+image: $event-list-title.image
+
+-- event-title-mobile: $event-list-title.title
+if:  {ftd.device == "mobile"}
+info: $event-list-title.info
+image: $event-list-title.image
+
+-- end: ftd.column
+
+-- end: event-list-title
+
+
+
+
+
+
+
+
+
+
+-- component event-title-desktop:
+ftd.image-src image: $assets.files.static.event-background.svg
+caption title: Fastn Events
+body info:
+
+-- ftd.column:
+width: fill-container
+background.solid: $inherited.colors.background.step-1
+
+-- ftd.column:
+align-self: center
+align-content: center
+spacing.fixed.px: 16
+margin-bottom.px: 40
+margin-top.px: 60
+width: fill-container
+height.fixed.px: 413
+
+-- ftd.column:
+anchor: parent
+z-index: 1
+
+-- ftd.image:
+src: $event-title-desktop.image
+width:auto
+height:auto
+
+-- end: ftd.column
+
+-- ftd.text: $event-title-desktop.title
+role: $inherited.types.heading-hero
+color: $inherited.colors.text
+text-align: center
+z-index: 1
+
+-- ftd.text:
+text: $event-title-desktop.info
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-large
+margin-bottom.px: 16
+text-align: center
+z-index: 1
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: event-title-desktop
+
+
+
+
+
+
+
+
+
+
+-- component event-title-mobile:
+ftd.image-src image: $assets.files.static.event-background.svg
+caption title: Fastn Events
+body info:
+
+-- ftd.column:
+width: fill-container
+padding-horizontal.px: 16
+padding-vertical.px: 24
+align-self: center
+align-content: center
+spacing.fixed.px: 16
+background.solid: $inherited.colors.background.step-1
+
+-- ftd.text: $event-title-mobile.title
+role: $inherited.types.heading-hero
+color: $inherited.colors.text
+text-align: center
+z-index: 1
+
+-- ftd.text:
+text: $event-title-mobile.info
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-large
+margin-bottom.px: 16
+text-align: center
+z-index: 1
+
+-- ftd.image:
+src: $event-title-mobile.image
+width.fixed.percent: 70
+height:auto
+
+-- end: ftd.column
+
+-- end: event-title-mobile
+
+
+
+
+
+
+
+
+
+
+-- component event-list:
+children wrap:
+caption title:
+ftd.image-src icon: $assets.files.static.events.upcoming-section-logo.svg
+boolean show-grid: false
+ftd.color bgcolor: $inherited.colors.background.base
+
+-- ftd.column:
+width: fill-container
+
+-- event-list-desktop: $event-list.title
+if: {ftd.device != "mobile"}
+wrap: $event-list.wrap
+icon: $event-list.icon
+show-grid:  $event-list.show-grid
+bgcolor: $event-list.bgcolor
+
+-- event-list-mobile: $event-list.title
+if: {ftd.device == "mobile"}
+wrap: $event-list.wrap
+icon: $event-list.icon
+bgcolor: $event-list.bgcolor
+
+-- end: ftd.column
+
+-- end: event-list
+
+
+
+
+
+
+
+
+
+
+-- component event-list-desktop:
+children wrap:
+caption title:
+ftd.image-src icon: $assets.files.static.events.upcoming-section-logo.svg
+boolean show-grid: false
+ftd.color bgcolor: $inherited.colors.background.overlay
+
+-- ftd.column:
+width: fill-container
+background.solid: $event-list-desktop.bgcolor
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px: $width
+align-self: center
+margin-top.px: 150
+
+-- ftd.row:
+padding-horizontal.px: 24
+padding-bottom.px if { event-list-desktop.show-grid} : 70
+
+-- ftd.image:
+src: $event-list-desktop.icon
+width.fixed.px: 40
+align-self: center
+
+-- ftd.text: $event-list-desktop.title
+color: $inherited.colors.text
+role: $inherited.types.heading-medium
+padding-left.px: 24
+
+-- end: ftd.row
+
+-- ftd.column:
+if: { !event-list-desktop.show-grid }
+children: $event-list-desktop.wrap
+width: fill-container
+max-width.fixed.px: $width
+align-self: center
+spacing.fixed.px: 20
+margin-bottom.px: 150
+margin-top.px: 40
+
+-- end: ftd.column
+
+-- ftd.row:
+if: { event-list-desktop.show-grid }
+children: $event-list-desktop.wrap
+width: fill-container
+max-width.fixed.px: $width
+wrap: true
+spacing.fixed.px: 20
+margin-bottom.px: 64
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: event-list-desktop
+
+
+
+
+
+
+
+
+
+
+-- component event-list-mobile:
+children wrap:
+caption title:
+ftd.image-src icon: $assets.files.static.events.upcoming-section-logo.svg
+boolean show-grid: false
+ftd.color bgcolor: $inherited.colors.background.overlay
+
+-- ftd.column:
+width: fill-container
+background.solid: $event-list-mobile.bgcolor
+padding-top.px : 70
+padding-bottom.px : 50
+spacing.fixed.px: 24
+
+-- ftd.row:
+padding-horizontal.px: 24
+
+-- ftd.image:
+src: $event-list-mobile.icon
+width.fixed.px: 40
+align-self: center
+
+-- ftd.text: $event-list-mobile.title
+color: $inherited.colors.text
+role: $inherited.types.heading-medium
+padding-left.px: 24
+
+-- end: ftd.row
+
+-- ftd.column:
+children: $event-list-mobile.wrap
+width: fill-container
+spacing.fixed.px: 40
+padding-bottom.px: 40
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: event-list-mobile
+
+
+
+
+
+
+
+
+
+
+-- component upcoming-event:
+ftd.image-src image:
+caption title:
+body info:
+string day:
+string month:
+integer date:
+string time:
+optional string cta-text:
+optional string cta-link:
+optional integer index:
+optional integer reset:
+boolean $is-hover: false
+string link: /
+
+-- ftd.column:
+
+-- upcoming-event-desktop: $upcoming-event.title
+if: {ftd.device != "mobile"}
+image: $upcoming-event.image
+info: $upcoming-event.info
+day: $upcoming-event.day
+month: $upcoming-event.month
+date: $upcoming-event.date
+time: $upcoming-event.time
+cta-text: $upcoming-event.cta-text
+cta-link: $upcoming-event.cta-link
+index: $upcoming-event.index
+reset: $upcoming-event.reset
+link: $upcoming-event.link
+$is-hover: $upcoming-event.is-hover
+
+-- upcoming-event-mobile: $upcoming-event.title
+if: {ftd.device == "mobile"}
+image: $upcoming-event.image
+info: $upcoming-event.info
+day: $upcoming-event.day
+month: $upcoming-event.month
+date: $upcoming-event.date
+time: $upcoming-event.time
+cta-text: $upcoming-event.cta-text
+cta-link: $upcoming-event.cta-link
+index: $upcoming-event.index
+reset: $upcoming-event.reset
+$is-hover: $upcoming-event.is-hover
+link: $upcoming-event.link
+
+-- end: ftd.column
+
+-- end: upcoming-event
+
+
+
+
+
+
+
+
+
+
+
+-- component upcoming-event-desktop:
+ftd.image-src image:
+caption title:
+body info:
+string day:
+string month:
+integer date:
+string time:
+optional string cta-text:
+optional string cta-link:
+optional integer index:
+optional integer reset:
+boolean $is-hover: 
+string link:
+
+-- ftd.row:
+align-self: center
+width.fixed.px: $width
+border-bottom-width.px: 1
+border-color: $inherited.colors.border-strong
+padding-bottom.px: 56
+
+-- ftd.row:
+align-self: center
+width.fixed.px: $width
+max-height.fixed.px: 378
+$on-mouse-enter$: $ftd.set-bool($a=$upcoming-event-desktop.is-hover, v=true) 
+$on-mouse-leave$: $ftd.set-bool($a=$upcoming-event-desktop.is-hover, v=false) 
+background.solid if {upcoming-event-desktop.is-hover}: $inherited.colors.accent.primary
+background.solid if { upcoming-event-desktop.index == upcoming-event-desktop.reset }:$inherited.colors.accent.primary 
+
+-- ftd.column:
+min-width.fixed.px: 440
+height.fixed.px: 300
+
+-- ftd.image:
+src: $upcoming-event-desktop.image
+height: fill-container
+width: fill-container
+link: $upcoming-event-desktop.link
+
+-- end: ftd.column
+
+-- ftd.column:
+link: $upcoming-event-desktop.link
+
+-- ftd.column:
+padding-left.px: 24
+padding-vertical.px: 23
+spacing.fixed.px: 12
+
+-- ftd.row:
+spacing.fixed.px: 10
+
+-- ftd.text: $upcoming-event-desktop.day
+color: $inherited.colors.text
+role: $inherited.types.heading-tiny
+
+-- ftd.text: $upcoming-event-desktop.month
+color: $inherited.colors.text
+role: $inherited.types.heading-tiny
+
+-- ftd.integer: $upcoming-event-desktop.date
+color: $inherited.colors.text
+role: $inherited.types.heading-tiny
+
+-- ftd.column:
+width.fixed.px: 4
+height.fixed.px: 4
+border-radius.px: 100
+background.solid: $inherited.colors.text
+align-self: center
+align-content: center
+
+-- end: ftd.column
+
+-- ftd.text: $upcoming-event-desktop.time
+color: $inherited.colors.text
+role: $inherited.types.heading-tiny
+
+-- end: ftd.row
+
+-- ftd.text: $upcoming-event-desktop.title
+color: $inherited.colors.text
+role: $inherited.types.heading-small
+
+-- ftd.text: $upcoming-event-desktop.info
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-large
+
+-- ftd.row:
+spacing.fixed.px: 10
+link if { upcoming-event-desktop.cta-link != NULL }: $upcoming-event-desktop.cta-link
+border-color : $inherited.colors.cta-secondary.base
+border-width.px: 1
+border-radius.px: 30
+padding-vertical.px: 8
+padding-horizontal.px: 20
+align-content: center
+margin-top.px: 20
+
+-- ftd.image:
+src: $assets.files.static.events.video.svg
+width.fixed.px: 20
+
+-- ftd.text: $upcoming-event-desktop.cta-text
+role: $inherited.types.button-medium
+color: $inherited.colors.cta-primary.text
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: upcoming-event-desktop
+
+
+
+
+
+
+
+
+
+
+-- component upcoming-event-mobile:
+ftd.image-src image:
+caption title:
+body info:
+string day:
+string month:
+integer date:
+string time:
+optional string cta-text:
+optional string cta-link:
+optional integer index:
+optional integer reset:
+boolean $is-hover:
+string link:
+
+-- ftd.column:
+border-bottom-width.px: 1
+border-color: $inherited.colors.border-strong
+width: fill-container
+$on-mouse-enter$: $ftd.set-bool($a=$upcoming-event-mobile.is-hover, v=true) 
+$on-mouse-leave$: $ftd.set-bool($a=$upcoming-event-mobile.is-hover, v=false) 
+background.solid if {upcoming-event-mobile.is-hover}: $inherited.colors.accent.primary
+
+-- ftd.column:
+spacing.fixed.px: 24
+width: fill-container
+padding-top.px: 24
+padding-bottom.px: 40
+padding-horizontal.px: 24
+background.solid : $inherited.colors.background.base
+background.solid if { upcoming-event-mobile.index == upcoming-event-mobile.reset }: $inherited.colors.accent.primary
+
+-- ftd.image:
+src: $upcoming-event-mobile.image
+height.fixed.px: 300
+width: fill-container
+link: $upcoming-event-mobile.link
+
+-- ftd.column:
+spacing.fixed.px: 12
+link: $upcoming-event-mobile.link
+
+-- ftd.row:
+spacing.fixed.px: 10
+
+-- ftd.text: $upcoming-event-mobile.day
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
+
+-- ftd.text: $upcoming-event-mobile.month
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
+
+-- ftd.integer: $upcoming-event-mobile.date
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
+
+-- ftd.column:
+width.fixed.px: 4
+height.fixed.px: 4
+border-radius.px: 100
+background.solid: $inherited.colors.accent.primary
+align-self: center
+align-content: center
+
+-- end: ftd.column
+
+-- ftd.text: $upcoming-event-mobile.time
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
+-- end: ftd.row
+
+-- ftd.text: $upcoming-event-mobile.title
+color: $inherited.colors.text
+role: $inherited.types.heading-medium
+
+-- ftd.text: $upcoming-event-mobile.info
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-large
+
+-- ftd.row:
+spacing.fixed.px: 10
+link if { upcoming-event-mobile.cta-link != NULL }: $upcoming-event-mobile.cta-link
+border-color : $inherited.colors.text
+border-radius.px: 30
+border-width.px: 1
+padding-vertical.px: 8
+padding-horizontal.px: 20
+align-content: center
+
+-- ftd.image:
+src: $assets.files.static.events.video.svg
+width.fixed.px: 20
+
+-- ftd.text: $upcoming-event-mobile.cta-text
+role: $inherited.types.button-medium
+color: $inherited.colors.cta-primary.text
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: upcoming-event-mobile
+
+
+
+
+
+
+
+
+
+
+-- component past-event:
+ftd.image-src image:
+caption title:
+body info:
+string day:
+string month:
+integer date:
+string time:
+optional string cta-text:
+optional string cta-link:
+optional integer index:
+optional integer reset:
+boolean $is-hover: false
+string link: /
+
+-- ftd.column:
+width.fixed.px if {ftd.device != "mobile"}: 566
+background.solid : $inherited.colors.background.base
+$on-mouse-enter$: $ftd.set-bool($a=$past-event.is-hover, v=true) 
+$on-mouse-leave$: $ftd.set-bool($a=$past-event.is-hover, v=false) 
+background.solid if {past-event.is-hover}: $inherited.colors.accent.primary
+background.solid if { past-event.index == past-event.reset }: $inherited.colors.accent.primary
+padding-vertical.px if {ftd.device == "mobile"}: 24
+padding-horizontal.px if {ftd.device == "mobile"}: 24
+
+-- ftd.image:
+src: $past-event.image
+height.fixed.px if {ftd.device != "mobile"}: 300
+width: fill-container
+link: $past-event.link
+
+-- ftd.column:
+link: $past-event.link
+
+-- ftd.column:
+padding-vertical.px: 40
+padding-horizontal.px if {ftd.device != "mobile"}: 32
+spacing.fixed.px: 12
+
+-- ftd.row:
+spacing.fixed.px: 10
+
+-- ftd.text: $past-event.day
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
+
+-- ftd.text: $past-event.month
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
+
+-- ftd.integer: $past-event.date
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
+
+-- ftd.column:
+width.fixed.px: 4
+height.fixed.px: 4
+border-radius.px: 100
+background.solid: $inherited.colors.accent.primary
+align-self: center
+align-content: center
+
+-- end: ftd.column
+
+-- ftd.text: $past-event.time
+color: $inherited.colors.accent.primary
+role: $inherited.types.heading-tiny
+-- end: ftd.row
+
+-- ftd.text: $past-event.title
+color: $inherited.colors.text
+role: $inherited.types.heading-medium
+
+-- ftd.text: $past-event.info
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-large
+
+-- ftd.row:
+spacing.fixed.px: 10
+link if { past-event.cta-link != NULL }: $past-event.cta-link
+border-color : $inherited.colors.text
+border-radius.px: 30
+border-width.px: 1
+padding-vertical.px: 8
+padding-horizontal.px: 20
+align-content: center
+
+-- ftd.image:
+src: $assets.files.static.events.video.svg
+width.fixed.px: 20
+
+-- ftd.text: $past-event.cta-text
+role: $inherited.types.button-medium
+color: $inherited.colors.cta-primary.text
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: past-event
+
+
+
+
+
+
+
+
+
+
+-- component speakers:
+children wrap:
+caption title:
+
+-- ftd.column:
+width: fill-container
+
+-- speakers-desktop: $speakers.title
+if: {ftd.device != "mobile"}
+wrap: $speakers.wrap
+
+
+-- speakers-mobile: $speakers.title
+if: {ftd.device == "mobile"}
+wrap: $speakers.wrap
+
+-- end: ftd.column
+
+-- end: speakers
+
+
+
+
+
+
+
+
+
+
+-- component speakers-desktop:
+children wrap:
+caption title:
+
+-- ftd.column:
+max-width.fixed.px: 1160
+align-self: center
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.text: $speakers-desktop.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- ftd.row:
+children:$speakers-desktop.wrap
+wrap: true
+width.fixed.percent: 70
+spacing.fixed.px: 24
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: speakers-desktop
+
+
+
+
+
+
+
+
+
+
+-- component speakers-mobile:
+children wrap:
+caption title:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+padding-horizontal.px: 16
+
+-- ftd.text: $speakers-mobile.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+width: fill-container
+
+-- ftd.row:
+children:$speakers-mobile.wrap
+wrap: true
+width: fill-container
+spacing.fixed.px: 44
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: speakers-mobile
+
+
+
+
+
+
+
+
+
+
+-- component speaker:
+caption title:
+ftd.image-src avatar: $assets.files.static.avatar.svg
+optional string link:
+optional string profile:
+optional string email:
+
+-- ftd.row:
+spacing.fixed.px: 24
+margin-right.px: 84
+
+-- ftd.image:
+src: $speaker.avatar
+width.fixed.px: 64
+height: auto
+border-radius.px: 100
+
+-- ftd.column:
+spacing.fixed.px: 8
+align-self: center
+
+-- ftd.text: $speaker.title
+role: $inherited.types.heading-tiny
+color: $inherited.colors.text
+
+-- ftd.text: $speaker.profile
+if: { speaker.profile != NULL }
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+link: $speaker.link
+
+-- ftd.text: $speaker.email
+if: { speaker.email != NULL }
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: speaker
+
+
+
+
+
+
+
+
+
+
+-- component event:
+optional caption title:
+ftd.image-src banner-src:
+optional string start-time:
+optional string end-time:
+optional string start-day:
+optional string start-month:
+optional string start-date:
+optional string end-day:
+optional string end-month:
+optional string end-date:
+optional string event-link:
+optional string event-type:
+optional string presence:
+optional body body:
+children wrap:
+common.host host: 
+common.venue venue: 
+
+-- ftd.column:
+width: fill-container
+
+-- event-desktop: $event.title
+if: {ftd.device != "mobile"}
+banner-src: $event.banner-src
+start-time: $event.start-time
+end-time: $event.end-time
+start-day: $event.start-day
+start-month: $event.start-month
+start-date: $event.start-date
+end-day: $event.end-day
+end-month: $event.end-month
+end-date: $event.end-date
+event-link: $event.event-link
+event-type: $event.event-type
+presence: $event.presence
+body: $event.body
+wrap: $event.wrap
+venue: $event.venue
+host: $event.host
+
+-- event-mobile: $event.title
+if: {ftd.device == "mobile"}
+banner-src: $event.banner-src
+start-time: $event.start-time
+end-time: $event.end-time
+start-day: $event.start-day
+start-month: $event.start-month
+start-date: $event.start-date
+end-day: $event.end-day
+end-month: $event.end-month
+end-date: $event.end-date
+event-link: $event.event-link
+event-type: $event.event-type
+presence: $event.presence
+body: $event.body
+wrap: $event.wrap
+venue: $event.venue
+host: $event.host
+
+-- end: ftd.column
+
+-- end: event
+
+
+
+
+
+
+
+
+
+
+-- component event-desktop:
+optional caption title:
+ftd.image-src banner-src:
+optional string start-time:
+optional string end-time:
+optional string start-day:
+optional string start-month:
+optional string start-date:
+optional string end-day:
+optional string end-month:
+optional string end-date:
+optional string event-link:
+optional string event-type:
+optional string presence:
+optional body body:
+children wrap:
+common.host host:
+common.venue venue:
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px: 1160
+align-self: center
+spacing.fixed.px: 48
+margin-top.px: 80
+
+-- ftd.text: $event-desktop.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- ftd.image:
+src: $event-desktop.banner-src
+width: fill-container
+height: auto
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 48
+
+-- ftd.column:
+width.fixed.percent: 60
+spacing.fixed.px: 24
+
+-- ftd.text: Overview
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- ftd.text: 
+text: $event-desktop.body
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- ftd.column:
+children: $event-desktop.wrap
+width: fill-container
+spacing.fixed.px: 48
+padding-bottom.px: 48
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width.fixed.percent: 40
+padding-vertical.px: 52
+padding-horizontal.px: 36
+border-radius.px: 6
+border-color: $inherited.colors.border-strong
+border-width.px: 1
+spacing.fixed.px: 42
+
+-- ftd.column:
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.host.svg
+height.fixed.px: 32
+width.fixed.px: 32
+
+-- body-wrap: $event-desktop.host.name
+title: $event-desktop.host.title
+email: $event-desktop.host.email
+website: $event-desktop.host.website
+avatar: $event-desktop.host.avatar
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+spacing.fixed.px: 24
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.venue.svg
+height.fixed.px: 32
+width.fixed.px: 32
+
+-- ftd.row:
+
+-- body-wrap: $event-desktop.venue.name
+is-venue: true
+website: $event-desktop.venue.website
+location: $event-desktop.venue.location
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.clock.svg
+
+-- ftd.row:
+width: fill-container
+wrap: true
+spacing.fixed.px: 10
+
+-- ftd.row:
+
+-- title-name: $event-desktop.start-day
+
+-- ftd.text: ,
+role: $inherited.types.button-medium
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- title-name: $event-desktop.start-month
+
+-- title-name: $event-desktop.start-date
+
+-- title-name: at
+
+-- title-name: $event-desktop.start-time
+
+-- title-name: to
+
+-- ftd.row:
+
+-- title-name: $event-desktop.end-day
+
+-- ftd.text: ,
+role: $inherited.types.button-medium
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- title-name: $event-desktop.end-month
+
+-- title-name: $event-desktop.end-date
+
+-- title-name: at
+
+-- title-name: $event-desktop.end-time
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.live-recording.svg
+
+-- ftd.column:
+spacing.fixed.px: 8
+
+-- title-name: $event-desktop.event-type
+
+-- title-name: $event-desktop.event-link
+url: $event-desktop.event-link
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 24
+align-content: center
+
+-- ftd.image:
+src: $assets.files.static.events.share.svg
+
+-- title-name: Share now
+url: $event-desktop.event-link
+text-color: $inherited.colors.accent.primary
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: event-desktop
+
+
+
+
+
+
+
+
+
+
+-- component event-mobile:
+optional caption title:
+ftd.image-src banner-src:
+optional string start-time:
+optional string end-time:
+optional string start-day:
+optional string start-month:
+optional string start-date:
+optional string end-day:
+optional string end-month:
+optional string end-date:
+optional string event-link:
+optional string event-type:
+optional string presence:
+optional body body:
+children wrap:
+common.host host:
+common.venue venue:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 40
+padding-horizontal.px: 16
+padding-top.px: 40
+
+-- ftd.text: $event-mobile.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+width: fill-container
+text-align: center
+
+-- ftd.image:
+src: $event-mobile.banner-src
+width: fill-container
+height: auto
+
+-- ftd.column:
+padding-vertical.px: 32
+padding-horizontal.px: 26
+border-radius.px: 6
+border-color: $inherited.colors.border-strong
+border-width.px: 1
+spacing.fixed.px: 24
+
+-- ftd.row:
+width: fill-container
+wrap: true
+spacing.fixed.px: 10
+
+-- ftd.column:
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.host.svg
+height.fixed.px: 32
+width.fixed.px: 32
+
+-- body-wrap: $event-mobile.host.name
+title: $event-mobile.host.title
+email: $event-mobile.host.email
+website: $event-mobile.host.website
+avatar: $event-mobile.host.avatar
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+spacing.fixed.px: 24
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.venue.svg
+height.fixed.px: 32
+width.fixed.px: 32
+
+-- ftd.row:
+
+-- body-wrap: $event-mobile.venue.name
+is-venue: true
+website: $event-mobile.venue.website
+location: $event-mobile.venue.location
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.clock.svg
+
+-- ftd.row:
+width: fill-container
+wrap: true
+spacing.fixed.px: 10
+
+-- ftd.row:
+
+-- title-name: $event-mobile.start-day
+
+-- ftd.text: ,
+role: $inherited.types.button-medium
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- title-name: $event-mobile.start-month
+
+-- title-name: $event-mobile.start-date
+
+-- title-name: at
+
+-- title-name: $event-mobile.start-time
+
+-- title-name: to
+
+-- ftd.row:
+
+-- title-name: $event-mobile.end-day
+
+-- ftd.text: ,
+role: $inherited.types.button-medium
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- title-name: $event-mobile.end-month
+
+-- title-name: $event-mobile.end-date
+
+-- title-name: at
+
+-- title-name: $event-mobile.end-time
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $assets.files.static.events.live-recording.svg
+
+-- ftd.column:
+spacing.fixed.px: 8
+
+-- title-name: $event-mobile.event-type
+
+-- title-name: $event-mobile.event-link
+url: $event-mobile.event-link
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+
+-- ftd.row:
+spacing.fixed.px: 24
+align-content: center
+
+-- ftd.image:
+src: $assets.files.static.events.share.svg
+
+-- title-name: Share now
+url: $event-mobile.event-link
+text-color: $inherited.colors.accent.primary
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.text: Overview
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- ftd.text: 
+text: $event-mobile.body
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- ftd.column:
+children: $event-mobile.wrap
+width: fill-container
+spacing.fixed.px: 40
+padding-bottom.px: 40
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: event-mobile
+
+
+
+
+
+
+
+
+
+
+-- component title-name:
+caption title:
+ftd.color text-color: $inherited.colors.text
+optional string url:
+
+-- ftd.column:
+
+-- ftd.text: $title-name.title
+if: {title-name.url != NULL}
+role: $inherited.types.button-medium
+color: $title-name.text-color
+link: $title-name.url
+
+-- ftd.text: $title-name.title
+if: {title-name.url == NULL}
+role: $inherited.types.button-medium
+color: $title-name.text-color
+
+-- end: ftd.column
+
+-- end: title-name
+
+
+
+
+
+
+
+
+
+
+-- component event-terms:
+caption title:
+optional body body:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.text: $event-terms.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- ftd.text: 
+if:{ event-terms.body != NULL }
+text: $event-terms.body 
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: event-terms
+
+
+
+
+
+
+
+
+
+
+-- component body-wrap:
+caption name:
+optional string title:
+optional string email:
+optional string website:
+optional string location:
+ftd.image-src avatar: $assets.files.static.avatar.svg
+optional body bio:
+boolean is-venue: false
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.image:
+if: { !body-wrap.is-venue}
+src: $body-wrap.avatar
+height.fixed.px: 32
+width.fixed.px: 32
+border-radius.px: 100
+
+-- ftd.column:
+padding-horizontal.px if { !body-wrap.is-venue} : 16
+spacing.fixed.px: 16
+
+-- ftd.text: $body-wrap.name
+role: $inherited.types.copy-large
+color: $inherited.colors.text
+
+-- ftd.text: $body-wrap.title
+if: { body-wrap.title != NULL }
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text: $body-wrap.email
+if: { body-wrap.email != NULL }
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text: $body-wrap.website
+if: { body-wrap.website != NULL }
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text: $body-wrap.location
+if: { body-wrap.location != NULL }
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- ftd.text:
+if: { body-wrap.bio != NULL}
+text: $body-wrap.bio
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: body-wrap
+
+
+
+
+
+
+
+
+
+

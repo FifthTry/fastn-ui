@@ -419,42 +419,68 @@ margin-top.px: 60
 white-space: break-spaces
 overflow-x: auto
 
--- ftd.code:
+-- code:
 if: {code-block-system.show-double}
-;;if: { $ftd.dark-mode }
-text: $code-block-system.body
+body: $code-block-system.body
 lang: $code-block-system.lang
-width: fill-container
-role: $inherited.types.copy-regular
-color: $inherited.colors.text
-padding-top.px: 10
-padding-left.px: 20
-padding-bottom.px: 10
-padding-right.px: 20
-background.solid if { code-block-system.code-bg != NULL }: $code-block-system.code-bg
-overflow-x: auto
-white-space: break-spaces
+code-bg: $code-block-system.code-bg
 
--- ftd.code:
-;;if: { !$ftd.dark-mode }
-text: $code-block-system.body
+-- code:
+body: $code-block-system.body
 lang: $code-block-system.lang
-width: fill-container
-role: $inherited.types.copy-regular
-color: $inherited.colors.text
-padding-top.px: 10
-padding-left.px: 20
-padding-bottom.px: 10
-padding-right.px: 20
-background.solid if { code-block-system.code-bg != NULL }: $code-block-system.code-bg
-overflow-x: auto
-white-space: break-spaces
+code-bg: $code-block-system.code-bg
 
 -- end: ftd.column
 
 -- end: ftd.column
 
 -- end: code-block-system
+
+
+
+-- component code:
+optional ftd.color code-bg: $inherited.colors.custom.five
+optional body body:
+optional string lang:
+
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.code:
+if: { ftd.dark-mode }
+text: $code.body
+lang: $code.lang
+width: fill-container
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+padding-top.px: 10
+padding-left.px: 20
+padding-bottom.px: 10
+padding-right.px: 20
+background.solid if { code.code-bg != NULL }: $code.code-bg
+overflow-x: auto
+white-space: break-spaces
+
+-- ftd.code:
+if: { !ftd.dark-mode }
+text: $code.body
+lang: $code.lang
+width: fill-container
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+padding-top.px: 10
+padding-left.px: 20
+padding-bottom.px: 10
+padding-right.px: 20
+background.solid if { code.code-bg != NULL }: $code.code-bg
+overflow-x: auto
+white-space: break-spaces
+theme: base16-ocean.light
+
+-- end: ftd.column
+
+-- end: code
 
 
 

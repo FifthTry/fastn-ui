@@ -618,7 +618,6 @@ children card-wrap:
 integer z-index: 0
 integer width: $width
 
-
 -- lib3.snippet-card-left: $snippet-card-left.title
 description: $snippet-card-left.description
 cta-text: $snippet-card-left.cta-text
@@ -712,6 +711,7 @@ integer spacing: 160
 boolean widthfill: false
 optional string role:
 optional boolean to-left: false
+optional boolean no-margin: false
 optional boolean left-align: false
 optional boolean center-text: false
 ftd.color bg-color: $inherited.colors.background.step-1
@@ -726,6 +726,7 @@ spacing: $benefits-card.spacing
 widthfill: $benefits-card.widthfill 
 role: $benefits-card.role
 to-left: $benefits-card.to-left
+no-margin: $benefits-card.no-margin
 left-align: $benefits-card.left-align
 center-text: $benefits-card.center-text
 bg-color: $benefits-card.bg-color 
@@ -2218,12 +2219,18 @@ caption title:
 optional body info:
 optional boolean num: false
 optional integer numb:
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- lib4.key-features: $key-features.title
 icon: $key-features.icon
 info: $key-features.info
 num: $key-features.num
 numb: $key-features.numb
+cta-text: $key-features.cta-text
+cta-link: $key-features.cta-link
+cta-role: $key-features.cta-role
 
 -- end: key-features
 
@@ -2251,12 +2258,18 @@ body body:
 ftd.image-src image:
 ftd.color bgcolor: $inherited.colors.background.step-2
 optional boolean top: false
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- lib4.card: $card.title
 body: $card.body
 image: $card.image
 bgcolor: $card.bgcolor
 top: $card.top
+cta-text: $card.cta-text
+cta-link: $card.cta-link
+cta-role: $card.cta-role
 
 -- end: card
 
@@ -2326,6 +2339,7 @@ integer width: 318
 optional integer border-width:
 optional string cta-text:
 optional string cta-link:
+optional string cta-role:
 boolean center: false
 boolean spacing: false
 optional integer padding-vertical:
@@ -2342,6 +2356,7 @@ width: $display-card.width
 border-width: $display-card.border-width
 cta-text: $display-card.cta-text
 cta-link: $display-card.cta-link
+cta-role: $display-card.cta-role
 center: $display-card.center
 padding-vertical: $display-card.padding-vertical
 bgcolor: $display-card.bgcolor

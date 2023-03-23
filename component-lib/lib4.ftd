@@ -57,6 +57,7 @@ integer width: 318
 optional integer border-width:
 optional string cta-text:
 optional string cta-link:
+optional string cta-role:
 boolean role: false
 boolean center: false
 optional integer padding-vertical:
@@ -94,6 +95,7 @@ border-radius.px: 12
 spacing.fixed.px: 16
 padding-horizontal.px if { display-card.image == NULL }: 15
 padding-vertical.px if { display-card.image == NULL }: 17
+padding-horizontal.px: 15
 
 -- ftd.text: $display-card.title
 if: { display-card.image == NULL }
@@ -124,7 +126,8 @@ if: {!display-card.role}
 -- lib5.cta-button: $display-card.cta-text
 if: { display-card.cta-text != NULL }
 link: $display-card.cta-link
-
+role: $display-card.cta-role
+show-arrow: true
 
 -- end: ftd.row
 
@@ -135,9 +138,8 @@ margin-top.px: 24
 -- lib5.cta-button: $display-card.cta-text
 if: { display-card.cta-text != NULL }
 link: $display-card.cta-link
+role: $display-card.cta-role
 show-arrow: true
-role: primary
-
 
 -- end: ftd.row
 
@@ -224,11 +226,18 @@ body body:
 ftd.image-src image:
 ftd.color bgcolor: $inherited.colors.background.step-2
 optional boolean top: false
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- ftd.column:
 width.fixed.px: 332
 background.solid: $card.bgcolor
+background.solid if {ftd.device == "mobile"}: $inherited.colors.border-strong
+padding-horizontal.px: 24
+padding-vertical.px: 24
 height.fixed.px: 476
+height.fixed.px if {ftd.device == "mobile"}: 450
 border-color: $inherited.colors.border-strong
 border-radius.px: 10
 spacing.fixed.px if {card.top}: 32
@@ -254,8 +263,20 @@ margin-bottom.px if {!card.top}: 24
 if: {!card.top}
 src: $card.image
 width.fixed.px: 255
+width.fixed.px if {ftd.device == "mobile"}: 165
 height: auto
 align-self: center
+
+-- ftd.column:
+if: {ftd.device == "mobile"}
+
+-- lib5.cta-button: $card.cta-text
+if: { card.cta-text != NULL }
+role: $card.cta-role
+link: $card.cta-link
+show-arrow: true
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -277,7 +298,11 @@ ftd.image-src icon: $assets.files.static.benefits.benefits-icon-1.svg
 caption title:
 optional body info:
 optional boolean num: false
+optional boolean btn: false
 optional integer numb:
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- ftd.row:
 width.fixed.px if {ftd.device != "mobile"}: 436
@@ -720,12 +745,12 @@ optional integer width:
 ;;align-content: center
 
 -- ftd.column:
-padding-vertical.px: 70
+padding-vertical.px: 40
 
 -- ftd.image:
 src: $stages-vertical-image-mobile.image
 width: fill-container
-height.fixed.px: 204
+height.fixed.px: $stages-vertical-image-mobile.height
 
 -- end: ftd.column
 
@@ -1789,6 +1814,7 @@ integer spacing: 160
 boolean widthfill: false
 optional string role:
 optional boolean to-left: false
+optional boolean no-margin: false
 optional boolean left-align: false
 optional boolean center-text: false
 ftd.color bg-color: $inherited.colors.background.step-1
@@ -1808,7 +1834,7 @@ bg-color: $benefits-card.bg-color
 role: $benefits-card.role
 widthfill: $benefits-card.widthfill
 logo: $benefits-card.logo
-
+no-margin: $benefits-card.no-margin
 
 -- benefits-card-mobile: $benefits-card.title
 if: { ftd.device == "mobile" }
@@ -1821,6 +1847,7 @@ left-align: $benefits-card.left-align
 center-text: $benefits-card.center-text
 bg-color: $benefits-card.bg-color
 widthfill: $benefits-card.widthfill
+logo: $benefits-card.logo
 
 -- end: ftd.column
 
@@ -1842,6 +1869,7 @@ children benefits-wrap:
 optional body body:
 integer spacing:
 optional string role:
+optional boolean no-margin:
 ftd.color bg-color: 
 boolean widthfill:
 optional ftd.image-src logo:
@@ -1851,7 +1879,6 @@ width: fill-container
 background.solid: $benefits-card-desktop.bg-color
 align-content: center
 align-self: center
-
 
 -- ftd.column:
 width: fill-container
@@ -1897,7 +1924,7 @@ min-width.fixed.px: 500
 children: $benefits-card-desktop.benefits-wrap
 spacing.fixed.px: $benefits-card-desktop.spacing
 wrap: true
-margin-top.px if { !benefits-card-desktop.widthfill}: 80
+margin-top.px if { !benefits-card-desktop.widthfill && !benefits-card-desktop.no-margin}: 80
 
 -- end: ftd.row
 
@@ -1925,7 +1952,7 @@ optional boolean left-align:
 optional boolean center-text:
 ftd.color bg-color: 
 boolean widthfill:
-
+optional ftd.image-src logo:
 
 -- ftd.column:
 width: fill-container
@@ -1942,6 +1969,12 @@ align-self if {benefits-card-mobile.left-align}: start
 margin-top.px: 50
 margin-bottom.px: 50
 
+-- ftd.image: 
+if: { benefits-card-mobile.logo != NULL}
+src: $benefits-card-mobile.logo
+align-self: center
+width: auto
+height: auto
 
 -- ftd.text: $benefits-card-mobile.title
 role: $inherited.types.heading-large

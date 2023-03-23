@@ -23,6 +23,7 @@ At nulla tristique facilisis augue. Lectus diam dignissimerat blandit pellentesq
 -- ft.right-image-component: About Builder Manual
 cta-text: Explore More
 cta-link: /
+cta-role: primary
 image: $assets.files.static.builder.rectangle.svg
 padding-vertical: 120
 
@@ -36,34 +37,52 @@ switch-to-column: true
 
 -- ft.card: FTD
 image: $assets.files.static.builder.common.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
 
 You can package your components as fastn packages to share with community and access community shared ones.
 
 
 -- ft.card: FTD
 image: $assets.files.static.builder.common.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
 
 You can package your components as fastn packages to share with community and access community shared ones.
 
 
 -- ft.card: FTD
 image: $assets.files.static.builder.common.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
 
 You can package your components as fastn packages to share with community and access community shared ones.
 
 
 -- ft.card: FTD
 image: $assets.files.static.builder.common.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
 
 You can package your components as fastn packages to share with community and access community shared ones.
 
 -- ft.card: FTD
 image: $assets.files.static.builder.common.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
 
 You can package your components as fastn packages to share with community and access community shared ones.
 
 -- ft.card: FTD
 image: $assets.files.static.builder.common.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
 
 You can package your components as fastn packages to share with community and access community shared ones.
 
@@ -73,6 +92,7 @@ You can package your components as fastn packages to share with community and ac
 icon: $assets.files.static.builder.icon-1.svg
 cta-text: Explore More
 cta-link: /
+cta-role: primary
 image: $assets.files.static.builder.rectangle.svg
 padding-vertical: 150
 
@@ -83,6 +103,7 @@ Fastn is powered by a one of a kind design system guiding the overarching framew
 icon: $assets.files.static.builder.icon-2.svg
 cta-text: Explore More
 cta-link: /
+cta-role: primary
 image: $assets.files.static.builder.rectangle.svg
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
@@ -92,6 +113,7 @@ Fastn is powered by a one of a kind design system guiding the overarching framew
 icon: $assets.files.static.builder.icon-1.svg
 cta-text: Explore More
 cta-link: /
+cta-role: primary
 image: $assets.files.static.builder.rectangle.svg
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.

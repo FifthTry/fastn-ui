@@ -17,32 +17,46 @@ Fastn provides exhaustive frameworks to set up and  scale your project in minute
 
 
 -- ft.row-container: Featured Templates 
-spacing: 12
+spacing: 24
 padding-vertical: 120
 switch-to-column: true
 
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.tem1.svg
-width: 345
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.uses.card.svg
+bgcolor: $inherited.colors.text
+textcolor: $inherited.colors.border-strong
+titlecolor: $inherited.colors.border-strong
+width: 343
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.tem1.svg
-width: 345
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.uses.card.svg
+bgcolor: $inherited.colors.text
+textcolor: $inherited.colors.border-strong
+titlecolor: $inherited.colors.border-strong
+width: 343
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.tem1.svg
-width: 345
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.uses.card.svg
+bgcolor: $inherited.colors.text
+textcolor: $inherited.colors.border-strong
+titlecolor: $inherited.colors.border-strong
+width: 343
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 -- end: ft.row-container
-
 
 -- ft.benefits-card: Landing Page
 spacing: 34
 bg-color: $inherited.colors.custom.two
 logo: $assets.files.static.uses.image1.svg
+no-margin: true
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
 
@@ -52,9 +66,9 @@ link: /
 show-arrow: true
 align-center: true
 
-
 -- ft.row-container:
 spacing: 12
+spacing if {ftd.device =="mobile"}: 24
 padding-vertical: 0
 slides: true
 
@@ -95,6 +109,7 @@ switch-to-column: true
 icon: $assets.files.static.events.upcoming-section-logo.svg
 cta-text: Explore More
 cta-link: /
+cta-role: primary
 padding-vertical: 105
 
 
@@ -138,6 +153,7 @@ width if {ftd.device == "mobile"}: 156
 spacing: 34
 bg-color: $inherited.colors.custom.two
 logo: $assets.files.static.uses.image1.svg
+no-margin: true
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
 
@@ -150,8 +166,9 @@ align-center: true
 
 -- ft.row-container:
 spacing: 12
+spacing if {ftd.device =="mobile"}: 24
 padding-vertical: 0
-wrap: true
+slides: true
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
@@ -190,6 +207,7 @@ switch-to-column: true
 icon: $assets.files.static.events.upcoming-section-logo.svg
 cta-text: Explore More
 cta-link: /
+cta-role: primary
 padding-vertical: 105
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
@@ -197,6 +215,7 @@ Fastn is powered by a one of a kind design system guiding the overarching framew
 -- ft.row-container:
 width: 650
 spacing: 12
+spacing if {ftd.device == "mobile"}: 24
 slides: true
 
 -- ft.stages-vertical-image:

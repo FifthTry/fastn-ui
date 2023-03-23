@@ -26,37 +26,41 @@ switch-to-column: true
 icon: $assets.files.static.events.upcoming-section-logo.svg
 cta-text: Explore More
 cta-link: /
-
+cta-role: primary
 
 We have designed and developed below components using FTD and FPM package. Use them for writing e-books, blogs, web technical documentation etc.
-
 
 -- ft.row-container:
 width: 650
 spacing: 12
 wrap: true
+switch-to-column: true
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.builder.theme.svg
 width: 304
 width if {ftd.device == "mobile"}: 156
+height if {ftd.device == "mobile"}: 113
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.builder.theme-2.svg
 width: 304
 width if {ftd.device == "mobile"}: 156
+height if {ftd.device == "mobile"}: 113
 
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.builder.theme-3.svg
 width: 304
 width if {ftd.device == "mobile"}: 156
+height if {ftd.device == "mobile"}: 113
 
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.builder.theme-3.svg
 width: 304
 width if {ftd.device == "mobile"}: 156
+height if {ftd.device == "mobile"}: 113
 
 
 -- end: ft.row-container
@@ -116,6 +120,7 @@ We have a youtube channel filled with plethora of content about fastn.
 icon: $assets.files.static.builder.icon-1.svg
 cta-text: Explore More
 cta-link: /
+cta-role: primary
 image: $assets.files.static.builder.rectangle.svg
 padding-vertical: 105
 
@@ -126,6 +131,7 @@ Fastn is powered by a one of a kind design system guiding the overarching framew
 icon: $assets.files.static.builder.icon-2.svg
 cta-text: Explore More
 cta-link: /
+cta-role: primary
 image: $assets.files.static.builder.rectangle.svg
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
@@ -135,6 +141,7 @@ Fastn is powered by a one of a kind design system guiding the overarching framew
 icon: $assets.files.static.builder.icon-1.svg
 cta-text: Explore More
 cta-link: /
+cta-role: primary
 image: $assets.files.static.builder.rectangle.svg
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.

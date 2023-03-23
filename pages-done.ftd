@@ -27,13 +27,8 @@ color: $inherited.colors.background.base
 NOT DONE :- 
 
 17. Templates --17
-24. Internet OS --24
 26. Open Source --26
-36. Builder Manual --36
 37. Open Source --37
-38. INTERNET OS --38
-39. Use Cases --39
-41. Authoring --41
 43. Landing Page --43
 11. Front End Infrastructure - in new branch --11
 8. Design Systems - in new branch
@@ -90,6 +85,11 @@ DONE :- (21/03/23)
 27. Learn --27 
 29. Learn FTD - Developers --29
 35. FTD --35
+36. Builder Manual --36
+24. Internet OS --24
+38. INTERNET OS --38
+39. Use Cases --39
+41. Authoring --41
 
 -- end: ftd.column
 

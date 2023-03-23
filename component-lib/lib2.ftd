@@ -17,6 +17,7 @@ optional integer margin-top:
 children row-wrap:
 integer width: $width
 optional integer padding-vertical: 
+optional integer padding-horizontal: 
 boolean wrap: false
 optional integer index:
 optional integer reset:
@@ -50,6 +51,7 @@ spacing: $row-container.spacing
 row-wrap: $row-container.row-wrap
 width: $row-container.width
 padding-vertical: $row-container.padding-vertical
+padding-horizontal: $row-container.padding-horizontal
 wrap: $row-container.wrap
 index: $row-container.index
 reset: $row-container.reset
@@ -152,6 +154,7 @@ optional integer spacing:
 children row-wrap:
 integer width:
 optional integer padding-vertical: 
+optional integer padding-horizontal: 
 boolean wrap:
 optional integer index:
 optional integer reset:
@@ -161,10 +164,11 @@ boolean align-left:
 boolean slides:
 
 -- ftd.column:
-width: fill-container
 if:{ row-container-mobile.index == row-container-mobile.reset }
+width: fill-container
 align-self: center
 padding-vertical.px if { row-container-mobile.padding-vertical != NULL }: $row-container-mobile.padding-vertical
+padding-horizontal.px if { row-container-mobile.padding-horizontal != NULL }: $row-container-mobile.padding-horizontal
 align-content: center
 
 -- ftd.column:
@@ -194,6 +198,18 @@ text-align: center
 
 -- end: ftd.column
 
+-- ftd.column:
+if: { row-container-mobile.switch-to-column }
+width.fixed.calc: 100vw
+children: $row-container-mobile.row-wrap
+spacing.fixed.px if { row-container-mobile.spacing != NULL }: $row-container-mobile.spacing
+align-self: center
+align-content: center
+padding-horizontal.px if { row-container-mobile.padding-horizontal != NULL }: $row-container-mobile.padding-horizontal
+;;padding-horizontal.px: 24
+
+-- end: ftd.column
+
 -- ftd.row:
 if: { !row-container-mobile.switch-to-column }
 width.fixed.calc: 100vw
@@ -205,17 +221,6 @@ padding-horizontal.px: 24
 ;;padding-horizontal.px: 24
 
 -- end: ftd.row
-
--- ftd.column:
-if: { row-container-mobile.switch-to-column }
-width: fill-container
-children: $row-container-mobile.row-wrap
-spacing.fixed.px if { row-container-mobile.spacing != NULL }: $row-container-mobile.spacing
-align-self: center
-align-content: center
-;;padding-horizontal.px: 24
-
--- end: ftd.column
 
 -- end: ftd.column
 
@@ -1670,6 +1675,7 @@ integer width: $width
 children childs:
 boolean center: false
 boolean center-img: false
+boolean dot-img: false
 integer height: 870
 boolean bottom: false
 optional boolean small-img: false
@@ -1690,6 +1696,7 @@ width: $hero-section.width
 childs: $hero-section.childs
 center: $hero-section.center
 center-img: $hero-section.center-img
+dot-img: $hero-section.dot-img
 height: $hero-section.height
 bottom: $hero-section.bottom
 small-img: $hero-section.small-img
@@ -1710,6 +1717,7 @@ height: $hero-section.height
 bottom: $hero-section.bottom
 small-img: $hero-section.small-img
 top-img: $hero-section.top-img
+dot-img: $hero-section.dot-img
 
 -- end: ftd.column
 
@@ -1739,24 +1747,40 @@ integer height:
 boolean bottom:
 optional boolean small-img:
 optional boolean top-img:
+optional boolean dot-img:
 
 -- ftd.column:
-align-self if {hero-section-mobile.center }: center
-align-content if {hero-section-mobile.center}: center
+align-self if {hero-section-mobile.center || hero-section-mobile.top-img }: center
+align-content if {hero-section-mobile.center || hero-section-mobile.top-img}: center
 width: fill-container
 padding-horizontal.px: 16
-margin-top.px if { hero-section-mobile.bottom }: 30
+padding-horizontal.px if {hero-section-mobile.top-img}: 53
+margin-top.px if { hero-section-mobile.bottom || hero-section-mobile.top-img || hero-section-mobile.dot-img }: 30
 
 -- ftd.image:
 if: { hero-section-mobile.image != NULL && hero-section-mobile.top-img}
 src: $hero-section-mobile.image
 width: fill-container
 height: auto
+z-index: 1
+anchor: parent
+top.px: -14
+
+-- ftd.image:
+if: { hero-section-mobile.image != NULL && hero-section-mobile.dot-img}
+src: $hero-section-mobile.image
+width.fixed.percent: 85
+height: auto
+z-index: 1
+anchor: parent
+top.px: 6
+left.px: 4
 
 -- ftd.text: $hero-section-mobile.title
 role: $inherited.types.heading-hero
 color: $inherited.colors.text-strong
-text-align if {hero-section-mobile.bottom}: center
+text-align if {hero-section-mobile.bottom || hero-section-mobile.top-img }: center
+z-index: 2
 
 -- ftd.text:
 if: { hero-section-mobile.info != NULL }
@@ -1764,7 +1788,7 @@ text: $hero-section-mobile.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text
 margin-top.px: 15
-text-align if {hero-section-mobile.bottom}: center
+text-align if {hero-section-mobile.bottom || hero-section-mobile.top-img || hero-section-mobile.dot-img}: center
 
 -- ftd.row:
 spacing.fixed.px: 33
@@ -1789,7 +1813,7 @@ width: 162
 -- end: ftd.row
 
 -- ftd.image:
-if: { hero-section-mobile.image != NULL && !hero-section-mobile.top-img }
+if: { hero-section-mobile.image != NULL && !hero-section-mobile.top-img && !hero-section-mobile.dot-img }
 src: $hero-section-mobile.image
 width: fill-container
 height: auto
@@ -1825,6 +1849,7 @@ integer width: $width
 children childs:
 boolean center:
 boolean center-img:
+boolean dot-img:
 integer height:
 boolean bottom:
 optional boolean small-img:
@@ -1871,7 +1896,23 @@ height: auto
 -- end: ftd.column
 
 -- ftd.column:
-if: { !hero-section-desktop.bottom && !hero-section-desktop.small-img && !hero-section-desktop.center-img }
+if: { hero-section-desktop.dot-img }
+width.fixed.percent: 52
+anchor: parent
+left.px: 250
+top.px: 44
+z-index: -1
+
+-- ftd.image:
+if: { hero-section-desktop.image != NULL}
+src: $hero-section-desktop.image
+width: fill-container
+height: auto
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { !hero-section-desktop.bottom && !hero-section-desktop.small-img && !hero-section-desktop.center-img && !hero-section-desktop.dot-img}
 width: fill-container
 anchor: parent
 right.px: 0

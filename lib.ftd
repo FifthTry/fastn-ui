@@ -536,6 +536,7 @@ integer width: $width
 children childs:
 boolean center: false
 boolean center-img: false
+boolean dot-img: false
 integer height: 870
 boolean bottom: false
 optional boolean small-img: false
@@ -552,6 +553,7 @@ width: $hero-section.width
 childs: $hero-section.childs
 center: $hero-section.center
 center-img: $hero-section.center-img
+dot-img: $hero-section.dot-img
 height: $hero-section.height
 bottom: $hero-section.bottom
 small-img: $hero-section.small-img
@@ -709,6 +711,9 @@ optional body body:
 integer spacing: 160
 boolean widthfill: false
 optional string role:
+optional boolean to-left: false
+optional boolean left-align: false
+optional boolean center-text: false
 ftd.color bg-color: $inherited.colors.background.step-1
 optional ftd.image-src logo:
 
@@ -719,7 +724,10 @@ benefits-wrap: $benefits-card.benefits-wrap
 body: $benefits-card.body 
 spacing: $benefits-card.spacing 
 widthfill: $benefits-card.widthfill 
-role: $benefits-card.role 
+role: $benefits-card.role
+to-left: $benefits-card.to-left
+left-align: $benefits-card.left-align
+center-text: $benefits-card.center-text
 bg-color: $benefits-card.bg-color 
 logo: $benefits-card.logo 
 
@@ -814,7 +822,12 @@ optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
 children promo-wrap:
 boolean left: false
+optional boolean no-img: false
+optional boolean top-img: false
+optional boolean down-img: false
+boolean top: false
 boolean right: false
+boolean left-text: false
 boolean keep-dark: true
 boolean two-btn: false
 optional string cta-left-text:
@@ -833,7 +846,12 @@ width: $excel-promo-card.width
 promo-wrap: $excel-promo-card.promo-wrap
 keep-dark: $excel-promo-card.keep-dark
 left: $excel-promo-card.left
+no-img: $excel-promo-card.no-img
+top-img: $excel-promo-card.top-img
+down-img: $excel-promo-card.down-img
+top: $excel-promo-card.top
 right: $excel-promo-card.right
+left-text: $excel-promo-card.left-text
 center: $excel-promo-card.center
 two-btn: $excel-promo-card.two-btn
 cta-left-text: $excel-promo-card.cta-left-text
@@ -905,7 +923,7 @@ ftd.color bgcolor: $inherited.colors.custom.two
 children card-wrap:
 
 -- lib3.rounded-corner-card: $rounded-corner-card.title
-if: { ftd.device != "mobile"}
+;;if: { ftd.device != "mobile"}
 info: $rounded-corner-card.info
 cta-text: $rounded-corner-card.cta-text
 cta-link: $rounded-corner-card.cta-link
@@ -987,6 +1005,7 @@ optional integer margin-top:
 children row-wrap:
 integer width: $width
 optional integer padding-vertical: 
+optional integer padding-horizontal: 
 boolean wrap: false
 optional integer index:
 optional integer reset:
@@ -1002,9 +1021,11 @@ margin-top: $row-container.margin-top
 row-wrap: $row-container.row-wrap
 width: $row-container.width
 padding-vertical: $row-container.padding-vertical
+padding-horizontal: $row-container.padding-horizontal
 wrap: $row-container.wrap
 index: $row-container.index
 reset: $row-container.reset
+switch-to-column: $row-container.switch-to-column
 align-left: $row-container.align-left
 title-medium: $row-container.title-medium
 slides: $row-container.slides
@@ -2168,6 +2189,8 @@ string cta-text:
 string cta-link:
 optional body info:
 optional boolean right: false
+optional boolean no-line: false
+optional boolean top-line: false
 
 -- lib4.stages-vertical: $stages-vertical.title
 rect: $stages-vertical.rect
@@ -2177,6 +2200,8 @@ cta-text: $stages-vertical.cta-text
 cta-link: $stages-vertical.cta-link
 info: $stages-vertical.info
 right: $stages-vertical.right
+no-line: $stages-vertical.no-line
+top-line: $stages-vertical.top-line
 
 -- end: lib4.stages-vertical
 

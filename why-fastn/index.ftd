@@ -16,8 +16,9 @@ bg-color: $inherited.colors.background.step-1
 
 -- ft.hero-section: Dream. Design. Develop.
 image: $assets.files.static.why-fastn.background.svg
+top-img: true
 center: true
-cta-left-text: Explore More
+cta-left-text: Get Started
 height: 485
 width: 1160
 
@@ -81,6 +82,7 @@ Fastn is here to serve to your unique requirements with an easy-to-use platform.
 
 -- ft.benefits-card: Benefits of fastn
 spacing: 0
+left-align: true
 bg-color: $inherited.colors.background.base
 
 Fastn is here to serve to your unique requirements with an easy-to-use platform.
@@ -90,8 +92,9 @@ Fastn is here to serve to your unique requirements with an easy-to-use platform.
 -- ft.row-container:
 align-left: true
 switch-to-column: true
+padding-horizontal: 24
 
--- ft.benefits-info-card: Everyoe is everywhere
+-- ft.benefits-info-card: Faster hosting
 icon: $assets.files.static.why-fastn.group.svg
 align-left: true
 
@@ -112,8 +115,9 @@ wrap: true
 spacing: 248
 spacing if {ftd.device == "mobile"}: 32
 switch-to-column: true
+padding-horizontal: 24
 
--- ft.benefits-info-card: Everyone is everywhere
+-- ft.benefits-info-card: Faster hosting
 icon: $assets.files.static.why-fastn.group2.svg
 align-left: true
 
@@ -144,8 +148,9 @@ wrap: true
 spacing: 248
 spacing if {ftd.device == "mobile"}: 32
 switch-to-column: true
+padding-horizontal: 24
 
--- ft.benefits-info-card: Everyone is everywhere
+-- ft.benefits-info-card: Faster hosting
 icon: $assets.files.static.why-fastn.group3.svg
 align-left: true
 
@@ -177,8 +182,9 @@ zip: github.com/<username_or_orgname>
 -- ft.row-container:
 align-left: true
 switch-to-column: true
+padding-horizontal: 24
 
--- ft.benefits-info-card: Everyone is everywhere
+-- ft.benefits-info-card: Faster hosting
 icon: $assets.files.static.why-fastn.group4.svg
 align-left: true
 
@@ -200,6 +206,7 @@ spacing: 0
 role: primary
 widthfill: true
 bg-color: $inherited.colors.background.base
+center-text: true
 
 Fastn is here to serve to your unique requirements with an easy-to-use platform.
 

@@ -246,9 +246,11 @@ link: /
 
 
 -- ft.excel-promo-card: If you know Excel, you know Fastn !!
+no-img: true
 cta-text: Learn More
 cta-link: /
 cta-role: secondary
+image: $assets.files.static.charts-image.svg
 
 -- ft.excel-promo-card.info:
 
@@ -332,7 +334,7 @@ spacing: 80
 switch-to-column: true
 padding-vertical: 80
 spacing if {ftd.device == "mobile"}: 60
-padding-vertical if {ftd.device == "mobile"}: 0
+padding-vertical if {ftd.device == "mobile"}: 40
 
 -- ft.text-bubble:
 text-image-1: $assets.files.static.text-with-circle.svg

@@ -4,34 +4,23 @@
 
 -- ft.page: FTD
 
--- ft.hero-section: Loreum ipsum
+-- ft.hero-section: Learn FTD
 height: 340
 center: true
+dot-img: true
+image: $assets.files.static.learn-ftd.background.svg
+margin-top: 100
 
 -- ft.hero-section.info:
 
-Fastn provides exhaustive frameworks to set up and  scale
- your project in minutes. Fastn provides exhaustive 
- frameworks to set up and  scale your project in minutes.
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
 
 -- ft.row-container:
 wrap: true
 spacing: 20
 switch-to-column: true
 padding-vertical: 150
-
-
--- ft.display-card: Why FTD?
-center: true
-width: 570
-titlecolor: $inherited.colors.text
-textcolor: $inherited.colors.text-strong
-bgcolor: $inherited.colors.background.base
-border-width: 1
-cta-text: feature
-cta-link:/
-
-Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+padding-vertical if {ftd.device == "mobile"}: 70
 
 -- ft.display-card: Why FTD?
 center: true
@@ -69,12 +58,23 @@ cta-link:/
 
 Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
 
+-- ft.display-card: Why FTD?
+center: true
+width: 570
+titlecolor: $inherited.colors.text
+textcolor: $inherited.colors.text-strong
+bgcolor: $inherited.colors.background.base
+border-width: 1
+cta-text: feature
+cta-link:/
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
 
 -- end: ft.row-container
 
 -- ft.display-card: Hands on Workshop
 width: 1160
-image: $assets.files.static.card.card6.svg
+image: $assets.files.static.learn-ftd.card.svg
 center: true
 role: true
 titlecolor: $inherited.colors.text
@@ -82,7 +82,6 @@ textcolor: $inherited.colors.text-strong
 bgcolor: $inherited.colors.background.base
 cta-text: feature
 cta-link:/
-padding-vertical: 45
 
 Lorem ipsum dolor sit amet consectetur. In consequat at massa
 risus at. Morbi faucibus quis vulputate bibendum. Lectus dui 
@@ -92,9 +91,6 @@ Lorem ipsum dolor sit amet consectetur. In consequat at massa
 risus at. Morbi faucibus quis vulputate bibendum. Lectus dui 
 blandit erat mauris bibendum tempus amet. Placerat in auctor 
 lorem a non luctus aenean dolor. Quis facilisi ridiculus enim yirf.
-
-
-
 
 -- ft.display-card: Crash Course
 width: 1160
@@ -106,7 +102,7 @@ textcolor: $inherited.colors.text-strong
 bgcolor: $inherited.colors.background.base
 cta-text: feature
 cta-link:/
-padding-vertical: 45
+padding-vertical: 150
 
 Lorem ipsum dolor sit amet consectetur. In consequat at massa
 risus at. Morbi faucibus quis vulputate bibendum. Lectus dui 

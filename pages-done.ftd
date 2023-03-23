@@ -1,0 +1,96 @@
+-- ftd.row:
+width: fill-container
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.text:
+role: $inherited.types.copy-large
+color: $inherited.colors.background.base
+
+DONE :-
+
+1. Hosting --15
+2. Events --32
+3. Contributions - in new branch --42
+4. Feature Listing --7
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.text:
+role: $inherited.types.copy-large
+color: $inherited.colors.background.base
+
+NOT DONE :- 
+
+17. Templates --17
+24. Internet OS --24
+26. Open Source --26
+36. Builder Manual --36
+37. Open Source --37
+38. INTERNET OS --38
+39. Use Cases --39
+41. Authoring --41
+43. Landing Page --43
+11. Front End Infrastructure - in new branch --11
+8. Design Systems - in new branch
+2. Icons - Dev
+3. Fonts - Dev
+4. Colors - Dev
+5. Component- Dev
+9. Documentation Page
+12. Icons & Illustration Page
+13. Font List page
+14. Colors
+18. Template detail page
+20. Buttons
+21. Headers
+22. Other Components
+28. Design 
+30. Blogs - Detail
+31. Blogs
+33. Design System - Learn
+34. Developers
+40. Templates Learn
+47. Explore more
+48. Authentication
+49. WASM Support
+50. Backend Support
+51. Deployment
+52. CLI & API
+23. Building Webapps
+44. API & Documentation **** same as landing page
+45. Blogs **** same as landing page
+46. Microsite **** same as landing page
+53. Landing Page - Template **** same as landing page
+54. API - Template **** same as landing page
+55. Blogs - Template **** same as landing page
+56. Microsite - Template **** same as landing page
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.text:
+role: $inherited.types.copy-large
+color: $inherited.colors.background.base
+
+DONE :- (21/03/23)
+
+1. Homepage
+6. Why Fastn?
+16. Components
+19. Component Library
+10. How to use Fastn
+25. About OS
+27. Learn --27 
+29. Learn FTD - Developers --29
+35. FTD --35
+
+-- end: ftd.column
+
+-- end: ftd.row

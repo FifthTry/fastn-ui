@@ -13,6 +13,7 @@ $show-breadcrum: true
 image: $assets.files.static.component.component-hero.png
 bgcolor: $inherited.colors.background.step-2
 right: true
+left-text: true
 
 -- ft.excel-promo-card.info: 
 
@@ -52,6 +53,7 @@ bgcolor: $inherited.colors.background.step-1
 cta-text: Download
 cta-link: /
 cta-role: primary
+top-img: true
 left: true
 
 -- ft.excel-promo-card.info: 

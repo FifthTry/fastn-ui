@@ -59,6 +59,7 @@ wrap: true
 switch-to-column: true
 margin-bottom: 150
 spacing: 82
+spacing if {ftd.device == "mobile"}: 40
 
 -- ft.card: FTD
 top: true

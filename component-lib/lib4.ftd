@@ -66,12 +66,10 @@ ftd.color textcolor: $inherited.colors.background.base
 ftd.color titlecolor: $inherited.colors.background.base
 optional integer height:
 
-
-
 -- ftd.column:
 width.fixed.px: $display-card.width
 max-width.fixed.px: $display-card.width
-width if {ftd.device == "mobile"}: fill-container
+width.fixed.px if {ftd.device == "mobile"}: 343
 align-self if {display-card.center} : center
 background.solid: $display-card.bgcolor
 border-radius.px: 12
@@ -83,6 +81,8 @@ padding-horizontal.px if {display-card.border-width != NULL}: 15
 padding-horizontal.px if {display-card.spacing}: 62
 padding-vertical.px if {display-card.spacing}: 74
 spacing.fixed.px if {display-card.role}: 40
+spacing.fixed.px: 40
+height.fixed.px if {display-card.height != NULL}: $display-card.height
 
 -- ftd.image:
 if: { display-card.image != NULL }
@@ -339,6 +339,8 @@ string cta-text:
 string cta-link:
 optional body info:
 optional boolean right: false
+optional boolean no-line: false
+optional boolean top-line: false
 
 -- ftd.column:
 width: fill-container
@@ -362,6 +364,7 @@ cta-text: $stages-vertical.cta-text
 cta-link: $stages-vertical.cta-link
 info: $stages-vertical.info
 right: $stages-vertical.right
+top-line: $stages-vertical.top-line
 
 
 -- end: ftd.column
@@ -540,6 +543,7 @@ string cta-text:
 string cta-link:
 optional body info:
 optional boolean right:
+optional boolean top-line:
 
 -- ftd.column:
 width: fill-container
@@ -547,6 +551,18 @@ width: fill-container
 -- ftd.column:
 width: fill-container
 align-content: center
+margin-top.px if {stages-vertical-mobile.top-line}: 47
+
+-- ftd.column:
+if: { stages-vertical-mobile.top-line}
+border-width.px: 1
+border-color: $inherited.colors.border
+anchor: parent
+top.px: -45
+min-height.fixed.px: 45
+;;height.fixed.px: 750
+
+-- end: ftd.column
 
 -- ftd.image:
 src: $stages-vertical-mobile.rect
@@ -1106,6 +1122,7 @@ info: $right-image-component.info
 domain-text: $right-image-component.domain-text
 cta-text: $right-image-component.cta-text
 cta-link: $right-image-component.cta-link
+cta-role: $right-image-component.cta-role
 image: $right-image-component.image
 top: $right-image-component.top
 join-btn: $right-image-component.join-btn
@@ -1524,6 +1541,7 @@ body info:
 optional string domain-text:
 string cta-text:
 string cta-link:
+optional string cta-role:
 optional ftd.image-src image:
 optional boolean top:
 optional boolean join-btn:
@@ -1561,7 +1579,7 @@ color: $inherited.colors.text-strong
 if: { !right-image-component-mobile.bottom && !right-image-component-mobile.btn && !right-image-component-mobile.join-btn }
 
 -- lib5.cta-button: $right-image-component-mobile.cta-text
-role: secondary
+role: $right-image-component-mobile.cta-role
 link: $right-image-component-mobile.cta-link
 show-arrow: true
 
@@ -1770,6 +1788,9 @@ optional body body:
 integer spacing: 160
 boolean widthfill: false
 optional string role:
+optional boolean to-left: false
+optional boolean left-align: false
+optional boolean center-text: false
 ftd.color bg-color: $inherited.colors.background.step-1
 optional ftd.image-src logo:
 
@@ -1796,6 +1817,8 @@ benefits-wrap: $benefits-card.benefits-wrap
 body: $benefits-card.body
 spacing: $benefits-card.spacing
 role: $benefits-card.role
+left-align: $benefits-card.left-align
+center-text: $benefits-card.center-text
 bg-color: $benefits-card.bg-color
 widthfill: $benefits-card.widthfill
 
@@ -1898,6 +1921,8 @@ children benefits-wrap:
 optional body body:
 integer spacing:
 optional string role:
+optional boolean left-align:
+optional boolean center-text:
 ftd.color bg-color: 
 boolean widthfill:
 
@@ -1912,6 +1937,8 @@ align-self: center
 width: fill-container
 align-self: center
 align-content: center
+align-content if {benefits-card-mobile.left-align}: left
+align-self if {benefits-card-mobile.left-align}: start
 margin-top.px: 50
 margin-bottom.px: 50
 
@@ -1920,12 +1947,14 @@ margin-bottom.px: 50
 role: $inherited.types.heading-large
 color: $inherited.colors.text
 padding-horizontal.px: 24
+text-align if {benefits-card-mobile.center-text}: center
 
 -- ftd.text: $benefits-card-mobile.body
 if: { benefits-card-mobile.body != NULL}
 role: $inherited.types.copy-regular
 color: $inherited.colors.text-strong
 padding-horizontal.px: 24
+text-align if {benefits-card-mobile.center-text}: center
 
 -- ftd.row:
 width: fill-container

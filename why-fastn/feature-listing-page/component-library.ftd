@@ -9,15 +9,7 @@
 -- ft.page: Components Library
 $show-breadcrum: true
 
--- ft.excel-promo-card: Component Library
-image: $assets.files.static.component.component-hero.png
-bgcolor: $inherited.colors.background.step-2
-right: true
-left-text: true
-
--- ft.excel-promo-card.info: 
-
-Fastn is here to serve to your unique requirements with an easy-to-use platform.
+-- excel-promo-card-bg:
 
 -- ft.right-image-component: Button
 icon: $assets.files.static.events.upcoming-section-logo.svg
@@ -46,6 +38,48 @@ image: $assets.files.static.component.right-image.svg
 
 FastN typographic library comes with named typographic roles. Once a role has been picked the design system specifies the attributes associated with a particular role. Thus with pre-defined value sets for font family, size, line height etc, a designer can focus on specific application of the typographic components, leading to very consistent design, yet highly customizable from a design standpoint
 
+-- excel-promo-card-step1:
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+
+-- component excel-promo-card-bg:
+children promo-wrap:
+
+-- ft.excel-promo-card: Component Library
+image: $assets.files.static.component.component-hero.png
+bgcolor: $inherited.colors.background.step-2
+right: true
+left-text: true
+promo-wrap: $excel-promo-card-bg.promo-wrap
+
+-- ft.excel-promo-card.info: 
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform.
+
+-- end: excel-promo-card-bg
+
+
+
+
+
+
+
+
+
+
+-- component excel-promo-card-step1:
+children promo-wrap:
 
 -- ft.excel-promo-card: Use it for free and start creating now!
 image: $assets.files.static.component.figma-icon.svg
@@ -55,11 +89,10 @@ cta-link: /
 cta-role: primary
 top-img: true
 left: true
+promo-wrap: $excel-promo-card-step1.promo-wrap
 
 -- ft.excel-promo-card.info: 
 
 Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
 
--- ft.footer:
-
--- end: ft.page
+-- end: excel-promo-card-step1

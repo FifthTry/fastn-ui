@@ -235,6 +235,7 @@ optional ftd.image-src text-image-1:
 optional ftd.image-src text-image-2: 
 optional integer spacing: 
 integer width: $width
+children space:
 
 -- ftd.column:
 width: fill-container
@@ -246,6 +247,7 @@ text-image-1: $text-bubble.text-image-1
 text-image-2: $text-bubble.text-image-2
 spacing: $text-bubble.spacing
 width: $text-bubble.width
+space: $text-bubble.space
 
 -- text-bubble-mobile:
 if: { ftd.device == "mobile" }
@@ -254,6 +256,7 @@ text-image-1: $text-bubble.text-image-1
 text-image-2: $text-bubble.text-image-2
 spacing: $text-bubble.spacing
 width: $text-bubble.width
+space: $text-bubble.space
 
 -- end: ftd.column
 
@@ -274,6 +277,7 @@ optional ftd.image-src text-image-1:
 optional ftd.image-src text-image-2: 
 optional integer spacing: 
 integer width:
+children space:
 
 -- ftd.column:
 width: fill-container
@@ -321,6 +325,7 @@ optional ftd.image-src text-image-1:
 optional ftd.image-src text-image-2: 
 optional integer spacing: 
 integer width:
+children space:
 
 -- ftd.column:
 width: fill-container
@@ -369,6 +374,7 @@ optional body body:
 optional string lang: 
 integer width: $width
 optional boolean show-double: true
+children code:
 
 -- ftd.column:
 width: fill-container
@@ -860,6 +866,7 @@ optional ftd.image-src logo:
 optional body body:
 optional ftd.color body-color: $inherited.colors.border.dark
 integer width: $width
+children card:
 
 -- ftd.column:
 width: fill-container
@@ -1161,6 +1168,7 @@ integer margin-right: 0
 optional boolean right: false
 optional string cta-text:
 optional string cta-link:
+children card:
 
 -- ftd.column:
 width: fill-container

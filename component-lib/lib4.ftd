@@ -16,6 +16,7 @@ children wraper:
 integer spacing: 90
 integer width: $width
 optional integer reset:
+optional boolean switch-to-row: false
 
 -- ftd.column:
 width: fill-container
@@ -23,9 +24,8 @@ align-content: center
 align-self: center
 height: fill-container
 
-
 -- ftd.column:
-if: { column-wrap.index == column-wrap.reset }
+if: { ftd.device != "mobile" && column-wrap.index == column-wrap.reset }
 wrap if { column-wrap.wrap }: true
 children: $column-wrap.wraper
 height.fixed.px if { column-wrap.height != NULL }: $column-wrap.height
@@ -34,6 +34,18 @@ width: fill-container
 max-width.fixed.px: $column-wrap.width
 
 -- end: ftd.column
+
+-- ftd.row:
+if: { ftd.device == "mobile" }
+wrap if { column-wrap.wrap }: true
+children: $column-wrap.wraper
+height: fill-container
+spacing.fixed.px: $column-wrap.spacing
+width: fill-container
+max-width.fixed.px: $column-wrap.width
+padding-horizontal.px: 24
+
+-- end: ftd.row
 
 -- end: ftd.column
 
@@ -66,6 +78,7 @@ ftd.color bgcolor: $inherited.colors.text
 ftd.color textcolor: $inherited.colors.background.base
 ftd.color titlecolor: $inherited.colors.background.base
 optional integer height:
+children child:
 
 -- ftd.column:
 width.fixed.px: $display-card.width
@@ -675,6 +688,7 @@ width: auto
 ftd.image-src image: $assets.files.static.hosting.stage-hero.svg
 integer height: 600
 optional integer width:
+children child:
 
 -- ftd.column:
 
@@ -683,6 +697,7 @@ if: { ftd.device != "mobile" }
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
 height: $stages-vertical-image.height
+child: $stages-vertical-image.child
 
 
 -- stages-vertical-image-mobile:
@@ -690,6 +705,7 @@ if: { ftd.device == "mobile" }
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
 height: $stages-vertical-image.height
+child: $stages-vertical-image.child
 
 -- end: ftd.column
 
@@ -708,6 +724,7 @@ height: $stages-vertical-image.height
 ftd.image-src image:
 integer height: 600
 optional integer width:
+children child:
 
 -- ftd.column:
 width: fill-container
@@ -739,6 +756,7 @@ align-self: center
 ftd.image-src image:
 integer height: 
 optional integer width:
+children child:
 
 -- ftd.column:
 ;;width: fill-container
@@ -1120,6 +1138,7 @@ optional boolean two-text: false
 optional boolean top: false
 optional boolean bottom: false
 optional boolean btn: false
+children child:
 
 -- ftd.column:
 width: fill-container
@@ -1139,6 +1158,7 @@ join-btn: $right-image-component.join-btn
 two-text: $right-image-component.two-text
 bottom: $right-image-component.bottom
 btn: $right-image-component.btn
+child: $right-image-component.child
 
 -- right-image-component-mobile: $right-image-component.title
 if: { ftd.device == "mobile" }
@@ -1154,6 +1174,7 @@ join-btn: $right-image-component.join-btn
 two-text: $right-image-component.two-text
 bottom: $right-image-component.bottom
 btn: $right-image-component.btn
+child: $right-image-component.child
 
 -- end: ftd.column
 
@@ -1183,6 +1204,7 @@ optional boolean join-btn:
 optional boolean two-text:
 optional boolean bottom:
 optional boolean btn:
+children child:
 
 -- ftd.row:
 width: fill-container
@@ -1406,117 +1428,6 @@ color: $inherited.colors.border-strong
 -- end: ftd.column
 
 -- ftd.column:
-if: { right-image-component-desktop.two-text }
-spacing.fixed.px: 80
-
--- ftd.column:
-spacing.fixed.px: 24
-
--- ftd.row:
-spacing.fixed.px: 18
-
--- ftd.image:
-if: { right-image-component-desktop.icon != NULL && !right-image-component-desktop.bottom }
-src: $right-image-component-desktop.icon
-width.fixed.px: 70
-height.fixed.px: 67
-
--- ftd.text: $right-image-component-desktop.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- end: ftd.row
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- ftd.row:
-align-content: center
-spacing.fixed.px: 18
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- ftd.column:
-height.fixed.px: 8
-width.fixed.px: 8
-border-radius.px: 100
-background.solid: $inherited.colors.accent.primary
-
--- end: ftd.column
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- end: ftd.row
-
--- end: ftd.column
-
--- ftd.column:
-spacing.fixed.px: 24
-
--- ftd.row:
-if: { right-image-component-desktop.two-text }
-spacing.fixed.px: 18
-
--- ftd.image:
-if: { right-image-component-desktop.icon != NULL && !right-image-component-desktop.bottom }
-src: $right-image-component-desktop.icon
-width.fixed.px: 70
-height.fixed.px: 67
-
--- ftd.text: $right-image-component-desktop.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
-
--- end: ftd.row
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.info
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
-
--- ftd.row:
-align-content: center
-spacing.fixed.px: 18
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- ftd.column:
-height.fixed.px: 8
-width.fixed.px: 8
-border-radius.px: 100
-background.solid: $inherited.colors.accent.primary
-
--- end: ftd.column
-
--- ftd.text:
-if: { right-image-component-desktop.info != NULL }
-text: $right-image-component-desktop.domain-text
-role: $inherited.types.copy-small
-color: $inherited.colors.border-strong
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- ftd.column:
 if: { right-image-component-desktop.image != NULL }
 width: fill-container
 padding-vertical.px if { !right-image-component-desktop.btn }: 30
@@ -1573,6 +1484,7 @@ optional boolean join-btn:
 optional boolean two-text:
 optional boolean bottom:
 optional boolean btn:
+children child:
 
 -- ftd.column:
 width: fill-container

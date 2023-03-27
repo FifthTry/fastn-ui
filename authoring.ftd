@@ -5,22 +5,14 @@
 -- import: fifthtry.github.io/fastn-ui/events as et
 -- import: fastn-cs
 
--- ft.page: Authoring
-bg-color: $inherited.colors.background.step-1
-
--- ft.hero-section: Fastn helps you create your website.
-height: 485
-center: true
-width: 1080
-bottom: true
-
--- ft.hero-section.info: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
 
 
 
--- ft.row-container:
-spacing: 48
-switch-to-column: true
+-- page:
+
+-- hero-section-485:
+
+-- row-container-48:
 
 -- ft.right-image-component: Featured components
 icon: $assets.files.static.events.upcoming-section-logo.svg
@@ -30,57 +22,23 @@ cta-role: primary
 
 We have designed and developed below components using FTD and FPM package. Use them for writing e-books, blogs, web technical documentation etc.
 
--- ft.row-container:
-width: 650
-spacing: 12
-wrap: true
-switch-to-column: true
+-- row-container-12:
 
--- ft.stages-vertical-image:
-image: $assets.files.static.builder.theme.svg
-width: 304
-width if {ftd.device == "mobile"}: 156
-height if {ftd.device == "mobile"}: 113
+-- stages-vertical-image-1:
 
--- ft.stages-vertical-image:
-image: $assets.files.static.builder.theme-2.svg
-width: 304
-width if {ftd.device == "mobile"}: 156
-height if {ftd.device == "mobile"}: 113
+-- stages-vertical-image-2:
 
+-- stages-vertical-image-3:
 
--- ft.stages-vertical-image:
-image: $assets.files.static.builder.theme-3.svg
-width: 304
-width if {ftd.device == "mobile"}: 156
-height if {ftd.device == "mobile"}: 113
+-- stages-vertical-image-3:
 
+-- end: row-container-12
 
--- ft.stages-vertical-image:
-image: $assets.files.static.builder.theme-3.svg
-width: 304
-width if {ftd.device == "mobile"}: 156
-height if {ftd.device == "mobile"}: 113
+-- end: row-container-48
 
+-- benefits-card-0:
 
--- end: ft.row-container
-
--- end: ft.row-container
-
-
--- ft.benefits-card: How to use
-logo: $assets.files.static.builder.icon-3.svg
-spacing: 0
-bg-color: $inherited.colors.background.base
-
-We have designed and developed below components using FTD and FPM package. Use them for writing e-books, blogs, web technical documentation etc.
-
--- ft.row-container:
-width: 1160
-wrap: true
-spacing: 92
-spacing if {ftd.device == "mobile"}: 40
-switch-to-column: true
+-- row-container-92:
 
 -- ft.key-features: Install FPM
 icon: $assets.files.static.builder.outline.svg
@@ -110,22 +68,11 @@ numb: 04
 
 We have a youtube channel filled with plethora of content about fastn.
 
--- end: ft.row-container
+-- end: row-container-92
 
+-- end: benefits-card-0
 
--- end: ft.benefits-card
-
-
--- ft.right-image-component: Button
-icon: $assets.files.static.builder.icon-1.svg
-cta-text: Explore More
-cta-link: /
-cta-role: primary
-image: $assets.files.static.builder.rectangle.svg
-padding-vertical: 105
-
-Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
-
+-- right-image-component-105:
 
 -- ft.left-image-component: Button
 icon: $assets.files.static.builder.icon-2.svg
@@ -135,7 +82,6 @@ cta-role: primary
 image: $assets.files.static.builder.rectangle.svg
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
-
 
 -- ft.right-image-component: Button
 icon: $assets.files.static.builder.icon-1.svg
@@ -148,4 +94,211 @@ Fastn is powered by a one of a kind design system guiding the overarching framew
 
 -- ft.footer:
 
--- end: ft.page
+-- end: page
+
+
+
+
+
+
+
+
+
+-- component page:
+children wrapper:
+
+-- ft.page: Authoring
+bg-color: $inherited.colors.background.step-1
+wrapper: $page.wrapper
+
+-- end: page
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-485:
+children childs:
+
+-- ft.hero-section: Fastn helps you create your website.
+height: 485
+center: true
+width: 1080
+bottom: true
+childs: $hero-section-485.childs
+
+-- ft.hero-section.info: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+
+-- end: hero-section-485
+
+
+
+
+
+
+
+
+
+
+-- component row-container-48:
+children row-wrap:
+
+-- ft.row-container:
+spacing: 48
+switch-to-column: true
+row-wrap: $row-container-48.row-wrap
+
+-- end: row-container-48
+
+
+
+
+
+
+
+
+
+
+-- component row-container-12:
+children row-wrap:
+
+-- ft.row-container:
+width: 650
+spacing: 12
+wrap: true
+switch-to-column: true
+row-wrap: $row-container-12.row-wrap
+
+-- end: row-container-12
+
+
+
+
+
+
+
+
+
+
+-- component stages-vertical-image-1:
+children child:
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.builder.theme.svg
+width: 304
+width if {ftd.device == "mobile"}: 156
+height if {ftd.device == "mobile"}: 113
+child: $stages-vertical-image-1.child
+
+-- end: stages-vertical-image-1
+
+
+
+
+
+
+
+
+
+
+-- component stages-vertical-image-2:
+children child:
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.builder.theme-2.svg
+width: 304
+width if {ftd.device == "mobile"}: 156
+height if {ftd.device == "mobile"}: 113
+child: $stages-vertical-image-2.child
+
+-- end: stages-vertical-image-2
+
+
+
+
+
+
+
+
+
+
+-- component stages-vertical-image-3:
+children child:
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.builder.theme-3.svg
+width: 304
+width if {ftd.device == "mobile"}: 156
+height if {ftd.device == "mobile"}: 113
+child: $stages-vertical-image-3.child
+
+-- end: stages-vertical-image-3
+
+
+
+
+
+
+
+
+
+-- component benefits-card-0:
+children benefits-wrap:
+
+-- ft.benefits-card: How to use
+logo: $assets.files.static.builder.icon-3.svg
+spacing: 0
+bg-color: $inherited.colors.background.base
+benefits-wrap: $benefits-card-0.benefits-wrap
+
+We have designed and developed below components using FTD and FPM package. Use them for writing e-books, blogs, web technical documentation etc.
+
+-- end: benefits-card-0
+
+
+
+
+
+
+-- component row-container-92:
+children row-wrap:
+
+-- ft.row-container:
+width: 1160
+wrap: true
+spacing: 92
+spacing if {ftd.device == "mobile"}: 40
+switch-to-column: true
+row-wrap: $row-container-92.row-wrap
+
+-- end: row-container-92
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-105:
+children child:
+
+-- ft.right-image-component: Button
+icon: $assets.files.static.builder.icon-1.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.builder.rectangle.svg
+padding-vertical: 105
+child: $right-image-component-105.child
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
+
+-- end: right-image-component-105

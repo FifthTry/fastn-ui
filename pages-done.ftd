@@ -26,10 +26,6 @@ color: $inherited.colors.background.base
 
 NOT DONE :- 
 
-17. Templates --17
-26. Open Source --26
-37. Open Source --37
-43. Landing Page --43
 11. Front End Infrastructure - in new branch --11
 8. Design Systems - in new branch
 2. Icons - Dev
@@ -57,13 +53,6 @@ NOT DONE :-
 51. Deployment
 52. CLI & API
 23. Building Webapps
-44. API & Documentation **** same as landing page
-45. Blogs **** same as landing page
-46. Microsite **** same as landing page
-53. Landing Page - Template **** same as landing page
-54. API - Template **** same as landing page
-55. Blogs - Template **** same as landing page
-56. Microsite - Template **** same as landing page
 
 -- end: ftd.column
 
@@ -90,6 +79,17 @@ DONE :- (21/03/23)
 38. INTERNET OS --38
 39. Use Cases --39
 41. Authoring --41
+44. API & Documentation
+45. Blogs
+46. Microsite
+53. Landing Page - Template
+54. API - Template
+55. Blogs - Template
+56. Microsite - Template
+17. Templates --17
+43. Landing Page --43
+26. Open Source --26
+37. Open Source --37
 
 -- end: ftd.column
 

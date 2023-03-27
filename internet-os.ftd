@@ -11,18 +11,7 @@
 -- ft.page: Internet OS
 $show-breadcrum: true
 
--- ft.excel-promo-card: Internet OS
-image: $assets.files.static.internet.background.png
-bgcolor: $inherited.colors.background.step-2
-right if {ftd.device == "mobile"}: true
-center if {ftd.device != "mobile"}: true
-cta-text: Explore More
-cta-link: /
-cta-role: primary
-
--- ft.excel-promo-card.info: 
-
-An approach built on the back of an extremely versatile design system  to balance design thinking with developmental ease!
+-- excel-promo-card-bg:
 
 -- ft.left-image-component: In a Nutshell
 cta-text: Explore More
@@ -35,83 +24,21 @@ We belive a uniform language must exist to represent data and prose that any hum
 
 -- ft.metrics-card:
 
--- ft.trending-templates: Features
-no-img: true
-margin-top: 150
+-- trending-templates-150:
 
--- ft.trending-templates.info:
+-- row-container-80:
 
-We belive a uniform language must exist to represent data and prose that any human being can learn easily. Further most software are incompatible with others. A graph made in one software one can not be used with another software. 
+-- display-card-60:
 
--- ft.row-container:
-wrap: true
-switch-to-column: true
-margin-bottom: 150
-spacing: 80
-width: 1160
+-- display-card-60:
 
--- ft.display-card: FTD
-image: $assets.files.static.open-source.display.svg
-cta-text: explore more
-cta-link: /
-cta-role: primary
-bgcolor: $inherited.colors.border-strong
-textcolor: $inherited.colors.text-strong
-titlecolor: $inherited.colors.text
-padding-vertical: 60
-spacing: true
-center: true
-width: 540
+-- display-card-60:
 
-You can package your components as fastn packages to share with community and access community shared ones.
+-- display-card-60:
 
--- ft.display-card: FTD
-image: $assets.files.static.open-source.display.svg
-cta-text: explore more
-cta-link: /
-cta-role: primary
-bgcolor: $inherited.colors.border-strong
-textcolor: $inherited.colors.text-strong
-titlecolor: $inherited.colors.text
-padding-vertical: 60
-spacing: true
-width: 540
+-- end: row-container-80
 
-You can package your components as fastn packages to share with community and access community shared ones.
-
--- ft.display-card: FTD
-image: $assets.files.static.open-source.display.svg
-cta-text: explore more
-cta-link: /
-cta-role: primary
-bgcolor: $inherited.colors.border-strong
-textcolor: $inherited.colors.text-strong
-titlecolor: $inherited.colors.text
-padding-vertical: 60
-spacing: true
-width: 540
-
-You can package your components as fastn packages to share with community and access community shared ones.
-
--- ft.display-card: FTD
-image: $assets.files.static.open-source.display.svg
-cta-text: explore more
-cta-link: /
-cta-role: primary
-bgcolor: $inherited.colors.border-strong
-textcolor: $inherited.colors.text-strong
-titlecolor: $inherited.colors.text
-padding-vertical: 60
-spacing: true
-width: 540
-
-You can package your components as fastn packages to share with community and access community shared ones.
-
--- end: ft.row-container
-
--- ft.trending-templates: You got questions in mind ? We have answers
-no-img: true
-margin-top: 5
+-- trending-templates-5:
 
 -- ft.hr:
 
@@ -139,3 +66,125 @@ Most websites only change colors of background and text when using dark mode, Fa
 -- ft.footer:
 
 -- end: ft.page
+
+
+
+
+
+
+
+
+
+
+-- component excel-promo-card-bg:
+children promo-wrap:
+
+-- ft.excel-promo-card: Internet OS
+image: $assets.files.static.internet.background.png
+bgcolor: $inherited.colors.background.step-2
+right if {ftd.device == "mobile"}: true
+center if {ftd.device != "mobile"}: true
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+promo-wrap: $excel-promo-card-bg.promo-wrap
+
+-- ft.excel-promo-card.info: 
+
+An approach built on the back of an extremely versatile design system  to balance design thinking with developmental ease!
+
+
+-- end: excel-promo-card-bg
+
+
+
+
+
+
+
+
+
+
+-- component trending-templates-150:
+children trending-wrap:
+
+-- ft.trending-templates: Features
+no-img: true
+margin-top: 150
+trending-wrap: $trending-templates-150.trending-wrap
+
+-- ft.trending-templates.info:
+
+We belive a uniform language must exist to represent data and prose that any human being can learn easily. Further most software are incompatible with others. A graph made in one software one can not be used with another software. 
+
+-- end: trending-templates-150
+
+
+
+
+
+
+
+
+
+
+-- component row-container-80:
+children row-wrap:
+
+-- ft.row-container:
+wrap: true
+switch-to-column: true
+margin-bottom: 150
+spacing: 80
+width: 1160
+row-wrap: $row-container-80.row-wrap
+
+-- end: row-container-80
+
+
+
+
+
+
+
+
+
+
+-- component display-card-60:
+children child:
+
+-- ft.display-card: FTD
+image: $assets.files.static.open-source.display.svg
+cta-text: explore more
+cta-link: /
+cta-role: primary
+bgcolor: $inherited.colors.border-strong
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+padding-vertical: 60
+spacing: true
+width: 540
+child: $display-card-60.child
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- end: display-card-60
+
+
+
+
+
+
+
+
+
+
+-- component trending-templates-5:
+children trending-wrap:
+
+-- ft.trending-templates: You got questions in mind ? We have answers
+no-img: true
+margin-top: 5
+trending-wrap: $trending-templates-5.trending-wrap
+
+-- end: trending-templates-5

@@ -7,7 +7,6 @@
 -- code: hello world ftd
 lang: ftd
 
-
 \-- ftd.column show-repo:
 repo o:
 padding.px: 20
@@ -19,6 +18,15 @@ border-radius.px: 5
 -- ft.footer:
 
 -- end: ft.page
+
+
+
+
+
+
+
+
+
 
 -- component code:
 optional caption caption:
@@ -60,17 +68,6 @@ border-bottom-left-radius.px: 4
 border-bottom-right-radius.px: 4
 overflow-x: auto
 
-
 -- end: ftd.column
 
 -- end: code
-
-
-
-
-
-
-
-
-
-

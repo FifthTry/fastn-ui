@@ -13,42 +13,11 @@
 
 -- ft.page: Learn
 
--- ft.hero-section: If you know excel, you know fastn
-image: $assets.files.static.learn.learn-hero.svg
-center: true
-height: 485
-width: 800
-bottom: true
+-- hero-section-485:
 
--- ft.hero-section.info: At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
+-- excel-promo-card-bg:
 
--- end: ft.hero-section
-
--- ft.excel-promo-card: You identify as
-image: $assets.files.static.learn.learn-rect.png
-bgcolor: $inherited.colors.background.step-1
-cta-left-text: Developer
-cta-right-text: Designer
-two-btn: true
-no-img: true
-down-img: true
-
--- ft.excel-promo-card.info: 
-
-Simply select designs that appeal to you, and customize
-to truly make it your own!
-
--- end: ft.excel-promo-card
-
--- ft.right-image-component: Design System
-icon: $assets.files.static.events.upcoming-section-logo.svg
-cta-text: Explore More
-cta-link: /
-cta-role: primary
-image: $assets.files.static.component.right-image.svg
-padding-vertical: 105
-
-Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
+-- right-image-component-105:
 
 -- ft.left-image-component: Contributor
 icon: $assets.files.static.learn.element.svg
@@ -77,11 +46,7 @@ image: $assets.files.static.component.right-image.svg
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
 
-
--- ft.row-container:
-spacing: 24
-spacing if {ftd.device == "mobile"}: 32
-switch-to-column if {ftd.device == "mobile"}: true
+-- row-container-24:
 
 -- ft.stages-vertical: Download lorem ipsum
 rect: $assets.files.static.hosting.rect-num.svg
@@ -92,21 +57,11 @@ right: true
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.
 
--- ft.code-block-system:
-lang: ftd
-width: 412
-show-double: false
+-- code-block-system-412:
 
-\-- import: fastn
-\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
-zip: github.com/<username_or_orgname>
+-- end: row-container-24
 
--- end: ft.row-container
-
--- ft.row-container:
-spacing: 24
-spacing if {ftd.device == "mobile"}: 32
-switch-to-column if {ftd.device == "mobile"}: true
+-- row-container-24:
 
 -- ft.stages-vertical: Download lorem ipsum
 rect: $assets.files.static.hosting.rect-img2.svg
@@ -118,17 +73,133 @@ top-line: true
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.
 
+-- code-block-system-412:
+
+-- end: row-container-24
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-485:
+children childs:
+
+-- ft.hero-section: If you know excel, you know fastn
+image: $assets.files.static.learn.learn-hero.svg
+center: true
+height: 485
+width: 800
+bottom: true
+childs: $hero-section-485.childs
+
+-- ft.hero-section.info: At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
+
+-- end: hero-section-485
+
+
+
+
+
+
+
+
+
+
+-- component excel-promo-card-bg:
+children promo-wrap:
+
+-- ft.excel-promo-card: You identify as
+image: $assets.files.static.learn.learn-rect.png
+bgcolor: $inherited.colors.background.step-1
+cta-left-text: Developer
+cta-right-text: Designer
+two-btn: true
+no-img: true
+down-img: true
+promo-wrap: $excel-promo-card-bg.promo-wrap
+
+-- ft.excel-promo-card.info: 
+
+Simply select designs that appeal to you, and customize
+to truly make it your own!
+
+-- end: excel-promo-card-bg
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-105:
+children child:
+
+-- ft.right-image-component: Design System
+icon: $assets.files.static.events.upcoming-section-logo.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.component.right-image.svg
+padding-vertical: 105
+child: $right-image-component-105.child
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
+
+-- end: right-image-component-105
+
+
+
+
+
+
+
+
+
+
+-- component row-container-24:
+children row-wrap:
+
+-- ft.row-container:
+spacing: 24
+spacing if {ftd.device == "mobile"}: 32
+switch-to-column if {ftd.device == "mobile"}: true
+row-wrap: $row-container-24.row-wrap
+
+-- end: row-container-24
+
+
+
+
+
+
+
+
+
+
+
+-- component code-block-system-412:
+children code:
+
 -- ft.code-block-system:
 lang: ftd
 width: 412
 show-double: false
+code: $code-block-system-412.code
 
 \-- import: fastn
 \-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
 zip: github.com/<username_or_orgname>
 
--- end: ft.row-container
-
--- ft.footer:
-
--- end: ft.page
+-- end: code-block-system-412

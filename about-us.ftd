@@ -54,54 +54,68 @@ no-img: true
 
 Fastn is here to serve to your unique requirements with an easy-to-use platform. At nulla tristique facilisis augue. Lectus diam dignissim.
 
+-- row-container-82:
+
+-- ft.card: FTD
+top: true
+image: $assets.files.static.aboutos.card2.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.card: FTD
+top: true
+image: $assets.files.static.aboutos.card2.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.card: FTD
+top: true
+image: $assets.files.static.aboutos.card2.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.card: FTD
+top: true
+image: $assets.files.static.aboutos.card2.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.card: FTD
+top: true
+image: $assets.files.static.aboutos.card2.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- ft.card: FTD
+top: true
+image: $assets.files.static.aboutos.card2.svg
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- end: row-container-82
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+
+-- component row-container-82:
+children row-wrap:
+
 -- ft.row-container:
 wrap: true
 switch-to-column: true
 margin-bottom: 150
 spacing: 82
 spacing if {ftd.device == "mobile"}: 40
+row-wrap: $row-container-82.row-wrap
 
--- ft.card: FTD
-top: true
-image: $assets.files.static.aboutos.card2.svg
-
-You can package your components as fastn packages to share with community and access community shared ones.
-
--- ft.card: FTD
-top: true
-image: $assets.files.static.aboutos.card2.svg
-
-You can package your components as fastn packages to share with community and access community shared ones.
-
--- ft.card: FTD
-top: true
-image: $assets.files.static.aboutos.card2.svg
-
-You can package your components as fastn packages to share with community and access community shared ones.
-
--- ft.card: FTD
-top: true
-image: $assets.files.static.aboutos.card2.svg
-
-You can package your components as fastn packages to share with community and access community shared ones.
-
--- ft.card: FTD
-top: true
-image: $assets.files.static.aboutos.card2.svg
-
-You can package your components as fastn packages to share with community and access community shared ones.
-
--- ft.card: FTD
-top: true
-image: $assets.files.static.aboutos.card2.svg
-
-You can package your components as fastn packages to share with community and access community shared ones.
-
--- end: ft.row-container
-
-
-
-
--- ft.footer:
-
--- end: ft.page
+-- end: row-container-82

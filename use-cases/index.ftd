@@ -2,8 +2,131 @@
 -- import: fifthtry.github.io/fastn-ui/lib as ft
 
 
+-- page:
+
+-- excel-promo-card-bg:
+
+-- row-container-12:
+
+-- display-card-1:
+
+-- display-card-1:
+
+-- display-card-1:
+
+-- end: row-container-12
+
+-- benefits-card-bg:
+
+-- ft.cta-button: Features
+role: primary
+link: /
+show-arrow: true
+align-center: true
+
+-- row-container-slide:
+
+-- stages-vertical-image-1:
+
+-- stages-vertical-image-1:
+
+-- stages-vertical-image-1:
+
+-- stages-vertical-image-1:
+
+-- end: row-container-slide
+
+-- end: benefits-card-bg
+
+-- row-container-48:
+
+-- right-image-component-105:
+
+-- row-container-650:
+
+-- stages-vertical-image-1:
+
+-- stages-vertical-image-1:
+
+-- stages-vertical-image-1:
+
+-- stages-vertical-image-1:
+
+-- end: row-container-650
+
+-- end: row-container-48
+
+-- benefits-card-34:
+
+-- ft.cta-button: Features
+role: primary
+link: /
+show-arrow: true
+align-center: true
+
+-- row-container-slide:
+
+-- stages-vertical-image-1:
+
+-- stages-vertical-image-1:
+
+-- stages-vertical-image-1:
+
+-- stages-vertical-image-1:
+
+-- end: row-container-slide
+
+-- end: benefits-card-34
+
+-- row-container-48:
+
+-- right-image-component-microsite:
+
+-- row-container-650:
+
+-- stages-vertical-image-1:
+
+-- stages-vertical-image-1:
+
+-- stages-vertical-image-1:
+
+-- stages-vertical-image-1:
+
+-- end: row-container-650
+
+-- end: row-container-48
+
+-- ft.footer:
+
+-- end: page
+
+
+
+
+
+
+
+
+
+-- component page:
+children wrapper:
+
 -- ft.page: Use Cases
 bg-color: $inherited.colors.background.step-1
+wrapper: $page.wrapper
+
+-- end: page
+
+
+
+
+
+
+
+
+
+-- component excel-promo-card-bg:
+children promo-wrap:
 
 -- ft.excel-promo-card: Loreum ipsum
 image: $assets.files.static.uses.use-case.svg
@@ -15,11 +138,41 @@ right if {ftd.device == "mobile"} : true
 
 Fastn provides exhaustive frameworks to set up and  scale your project in minutes. Fastn provides exhaustive frameworks to set up and  scale your project in minutes.
 
+-- end: excel-promo-card-bg
+
+
+
+
+
+
+
+
+
+
+-- component row-container-12:
+children row-wrap:
 
 -- ft.row-container: Featured Templates 
-spacing: 24
+spacing: 12
 padding-vertical: 120
 switch-to-column: true
+align-left: true
+row-wrap: $row-container-12.row-wrap
+
+-- end: row-container-12
+
+
+
+
+
+
+
+
+
+
+
+-- component display-card-1:
+children child:
 
 -- ft.display-card: Nextra:  Docs Starter Kit
 image: $assets.files.static.uses.card.svg
@@ -27,83 +180,106 @@ bgcolor: $inherited.colors.text
 textcolor: $inherited.colors.border-strong
 titlecolor: $inherited.colors.border-strong
 width: 343
+child: $display-card-1.child
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-
--- ft.display-card: Nextra:  Docs Starter Kit
-image: $assets.files.static.uses.card.svg
-bgcolor: $inherited.colors.text
-textcolor: $inherited.colors.border-strong
-titlecolor: $inherited.colors.border-strong
-width: 343
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+-- end: display-card-1
 
 
--- ft.display-card: Nextra:  Docs Starter Kit
-image: $assets.files.static.uses.card.svg
-bgcolor: $inherited.colors.text
-textcolor: $inherited.colors.border-strong
-titlecolor: $inherited.colors.border-strong
-width: 343
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
--- end: ft.row-container
+
+
+
+
+
+
+-- component benefits-card-bg:
+children benefits-wrap:
 
 -- ft.benefits-card: Landing Page
 spacing: 34
 bg-color: $inherited.colors.custom.two
 logo: $assets.files.static.uses.image1.svg
 no-margin: true
+benefits-wrap: $benefits-card-bg.benefits-wrap
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
 
--- ft.cta-button: Features
-role: primary
-link: /
-show-arrow: true
-align-center: true
+-- end: benefits-card-bg
+
+
+
+
+
+
+
+
+
+
+-- component row-container-slide:
+children row-wrap:
 
 -- ft.row-container:
 spacing: 12
 spacing if {ftd.device =="mobile"}: 24
 padding-vertical: 0
 slides: true
+row-wrap: $row-container-slide.row-wrap
+
+-- end: row-container-slide
+
+
+
+
+
+
+
+
+
+
+-- component stages-vertical-image-1:
+children child:
 
 -- ft.stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
 width if {ftd.device == "mobile"}: 156
+child: $stages-vertical-image-1.child
+
+-- end: stages-vertical-image-1
 
 
 
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
 
 
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
 
 
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
 
 
--- end: ft.row-container
 
--- end: ft.benefits-card
+-- component row-container-48:
+children row-wrap:
 
 -- ft.row-container:
 spacing: 48
 switch-to-column: true
+row-wrap: $row-container-48.row-wrap
+
+-- end: row-container-48
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-105:
+children child:
 
 -- ft.right-image-component: API & Documentation
 icon: $assets.files.static.events.upcoming-section-logo.svg
@@ -111,97 +287,66 @@ cta-text: Explore More
 cta-link: /
 cta-role: primary
 padding-vertical: 105
-
+child: $right-image-component-105.child
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
+
+-- end: right-image-component-105
+
+
+
+
+
+
+
+
+
+
+-- component row-container-650:
+children row-wrap:
 
 -- ft.row-container:
 width: 650
 spacing: 12
 slides: true
+row-wrap: $row-container-650.row-wrap
+
+-- end: row-container-650
 
 
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
 
 
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
 
 
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
 
 
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
 
 
--- end: ft.row-container
-
--- end: ft.row-container
+-- component benefits-card-34:
+children benefits-wrap:
 
 -- ft.benefits-card: Blog Page
 spacing: 34
 bg-color: $inherited.colors.custom.two
 logo: $assets.files.static.uses.image1.svg
 no-margin: true
+benefits-wrap: $benefits-card-34.benefits-wrap
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
 
--- ft.cta-button: Features
-role: primary
-link: /
-show-arrow: true
-align-center: true
+-- end: benefits-card-34
 
 
--- ft.row-container:
-spacing: 12
-spacing if {ftd.device =="mobile"}: 24
-padding-vertical: 0
-slides: true
-
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
 
 
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
 
 
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
 
 
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
 
 
--- end: ft.row-container
-
--- end: ft.benefits-card
-
-
--- ft.row-container:
-spacing: 48
-switch-to-column: true
+-- component right-image-component-microsite:
+children child:
 
 -- ft.right-image-component: Microsite
 icon: $assets.files.static.events.upcoming-section-logo.svg
@@ -209,43 +354,8 @@ cta-text: Explore More
 cta-link: /
 cta-role: primary
 padding-vertical: 105
+child: $right-image-component-microsite.child
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
 
--- ft.row-container:
-width: 650
-spacing: 12
-spacing if {ftd.device == "mobile"}: 24
-slides: true
-
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
-
-
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
-
-
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
-
-
--- ft.stages-vertical-image:
-image: $assets.files.static.uses.1.svg
-width: 245
-width if {ftd.device == "mobile"}: 156
-
-
--- end: ft.row-container
-
--- end: ft.row-container
-
--- ft.footer:
-
--- end: ft.page
+-- end: right-image-component-microsite

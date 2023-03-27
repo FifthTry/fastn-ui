@@ -85,7 +85,7 @@ icon: $assets.files.static.benefits.benefits-icon-1.svg
 -- ft.benefits-info-card.info: 
 
 Metaverse and other web 3.0 destinations are global.
- You no longer have audiences restricted to local 
+You no longer have audiences restricted to local 
 & hyperlocal cohorts.
 
 -- end: ft.benefits-info-card
@@ -96,7 +96,7 @@ icon: $assets.files.static.benefits.benefits-icon-2.svg
 -- ft.benefits-info-card.info: 
 
 Metaverse and other web 3.0 destinations are global.
- You no longer have audiences restricted to local 
+You no longer have audiences restricted to local 
 & hyperlocal cohorts.
 
 -- end: ft.benefits-info-card
@@ -107,7 +107,7 @@ icon: $assets.files.static.benefits.benefits-icon-3.svg
 -- ft.benefits-info-card.info: 
 
 Metaverse and other web 3.0 destinations are global.
- You no longer have audiences restricted to local 
+You no longer have audiences restricted to local 
 & hyperlocal cohorts.
 
 -- end: ft.benefits-info-card
@@ -118,7 +118,7 @@ icon: $assets.files.static.benefits.benefits-icon-4.svg
 -- ft.benefits-info-card.info: 
 
 Metaverse and other web 3.0 destinations are global.
- You no longer have audiences restricted to local 
+You no longer have audiences restricted to local 
 & hyperlocal cohorts.
 
 -- end: ft.benefits-info-card
@@ -235,15 +235,10 @@ Easily change structure,style,and graphics -then host instantly.
 
 -- row-container-80:
 
--- ft.text-bubble:
-text-image-1: $assets.files.static.text-with-circle.svg
-text-image-2: $assets.files.static.text-without-circle.svg
-spacing: 170
-
+-- text-bubble-170:
 
 -- ft.code-block-system:
 lang: ftd
-
 
 \-- import: fastn
 \-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
@@ -251,187 +246,65 @@ zip: github.com/<username_or_orgname>
 
 -- end: row-container-80
 
-
 -- end: excel-promo-card-bg
 
--- ft.row-container: How FASTN is better than { REACT.js }
-padding-vertical: 150
-padding-vertical if {ftd.device == "mobile"}: 44
-
+-- row-container-150:
 
 ;; Repeat below `row-continer` for slider items
 
--- ft.row-container: 
-spacing: 80
-index: 1
-reset: $ft.current-slide
+-- row-container-80:
 
+-- rectangle-card-425:
 
--- ft.rectangle-card:
-width: 425
+-- title-with-body-card-fastn:
 
+-- end: rectangle-card-425
 
--- ft.title-with-body-card: Fastn
-logo: $assets.files.static.slider.fastn-slider-logo.svg
-width: 325
+-- rectangle-card-bg:
 
+-- title-with-body-card-react:
 
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+-- end: rectangle-card-bg
 
+-- end: row-container-80
 
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+-- row-container-5:
 
+-- rectangle-card-425:
 
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+-- title-with-body-card-fastn:
 
+-- end: rectangle-card-425
 
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+-- rectangle-card-bg:
 
+-- title-with-body-card-angular:
 
+-- end: rectangle-card-bg
 
+-- end: row-container-5
 
--- end: ft.rectangle-card
+-- row-container-reset:
 
--- ft.rectangle-card:
-show-border: false
-bgcolor: $inherited.colors.custom.four.light
-width: 425
+-- rectangle-card-425:
 
--- ft.title-with-body-card: React JS
-logo: $assets.files.static.slider.react-js-logo.svg
-body-color: #222222
-width: 325
+-- title-with-body-card-fastn:
 
+-- end: rectangle-card-425
 
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+-- rectangle-card-bg:
 
+-- title-with-body-card-flutter:
 
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+-- end: rectangle-card-bg
 
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-
--- end: ft.rectangle-card
-
-
--- end: ft.row-container
-
--- ft.row-container: 
-spacing: 80
-index: 5
-reset: $ft.current-slide
-
--- ft.rectangle-card:
-width: 425
-
--- ft.title-with-body-card: Fastn
-logo: $assets.files.static.slider.fastn-slider-logo.svg
-width: 325
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
--- end: ft.rectangle-card
-
--- ft.rectangle-card:
-show-border: false
-bgcolor: $inherited.colors.custom.four.light
-width: 425
-
--- ft.title-with-body-card: Angular JS
-logo: $assets.files.static.slider.angular-js-logo.svg
-body-color: #222222
-width: 325
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-
--- end: ft.rectangle-card
-
-
--- end: ft.row-container
-
--- ft.row-container:
-spacing: 80
-index: 3
-reset: $ft.current-slide
-
-
--- ft.rectangle-card:
-width: 425
-
-
--- ft.title-with-body-card: Fastn
-logo: $assets.files.static.slider.fastn-slider-logo.svg
-width: 325
-
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-
-
-
--- end: ft.rectangle-card
-
--- ft.rectangle-card:
-show-border: false
-bgcolor: $inherited.colors.custom.four.light
-width: 425
-
--- ft.title-with-body-card: Flutter
-logo: $assets.files.static.slider.flutter-logo.svg
-body-color: #222222
-width: 325
-
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-
--- end: ft.rectangle-card
-
-
--- end: ft.row-container
+-- end: row-container-reset
 
 ;; repeat of `row-container` ends
 
--- end: ft.row-container
+-- end: row-container-150
 
--- ft.logo-slider:
-pull-top: -70
+-- logo-slider-70:
 
 -- ft.slider-item: 
 icon: $assets.files.static.slider.react-js-logo.svg
@@ -458,7 +331,7 @@ index: 2
 icon: $assets.files.static.slider.flutter-logo.svg
 index: 3
 
--- end: ft.logo-slider
+-- end: logo-slider-70
 
 -- ft.heart-line-title-card: Loved by 1M+folks
 
@@ -466,84 +339,34 @@ Browse dozens of professionaly designed templates.
 
 Easily change structure,style,and graphics -then host instantly.
 
--- ft.row-container:
-wrap: true
-spacing: 80
-switch-to-column: true
-spacing if {ftd.device == "mobile"}: 32
+-- row-container-32:
 
--- ft.testimonial-card: Jenny Wilson
-avatar: $assets.files.static.testimonials.avatar-1.svg
-bgcolor: $inherited.colors.custom.two
-label: CEO, ABC Company
-width: 500
+-- testimonial-card-1:
 
-At nulla tristique facilisis augue. 
+-- testimonial-card-2:
 
-Lectus diam dignissim erat blandit pellentesque 
+-- testimonial-card-3:
 
-egestas nulla .
+-- testimonial-card-4:
 
--- ft.testimonial-card: Jenny Wilson
-avatar: $assets.files.static.testimonials.avatar-2.svg
-bgcolor: #EF8435
-label: CEO, ABC Company
-width: 500
-margin-top: 80
-margin-right: -80
+-- end: row-container-32
 
-At nulla tristique facilisis augue. 
+-- rounded-corner-card-bg:
 
-Lectus diam dignissim erat blandit pellentesque 
-
-egestas nulla .
-
--- ft.testimonial-card: Jenny Wilson
-avatar: $assets.files.static.testimonials.avatar-3.svg
-bgcolor: #EBBE52
-label: CEO, ABC Company
-width: 500
-margin-top: -80
-
-At nulla tristique facilisis augue. 
-
-Lectus diam dignissim erat blandit pellentesque 
-
-egestas nulla .
-
--- ft.testimonial-card: Jenny Wilson
-avatar: $assets.files.static.testimonials.avatar-4.svg
-bgcolor: #4AA35C
-label: CEO, ABC Company
-width: 500
-margin-top: 80
-margin-right: -80
-
-At nulla tristique facilisis augue. 
-
-Lectus diam dignissim erat blandit pellentesque 
-
-egestas nulla .
-
--- end: ft.row-container
-
--- ft.rounded-corner-card: Become a Builder
-cta-text: Learn More
-cta-link: /
-image: $assets.files.static.charts-image.svg
-bgcolor: $inherited.colors.accent.primary
-
--- ft.rounded-corner-card.info:
-
-Browse dozens of professionaly designed templates. 
-
-Easily change structure,style,and graphics -then host instantly.
-
--- end: ft.rounded-corner-card
+-- end: rounded-corner-card-bg
 
 -- ft.footer:
 
 -- end: ft.page
+
+
+
+
+
+
+
+
+
 
 -- component row-container-80:
 children row-wrap:
@@ -557,6 +380,7 @@ padding-vertical if {ftd.device == "mobile"}: 40
 row-wrap: $row-container-80.row-wrap
 
 -- end: row-container-80
+
 
 
 
@@ -589,6 +413,7 @@ This is a card Description, write something here to describe about the content o
 
 
 
+
 -- component snippet-card-right-1000:
 children card-wrap:
 
@@ -605,6 +430,7 @@ card-wrap: $snippet-card-right-1000.card-wrap
 This is a card Description, write something here to describe about the content of the card
 
 -- end: snippet-card-right-1000
+
 
 
 
@@ -682,3 +508,430 @@ promo-wrap: $excel-promo-card-bg.promo-wrap
 Browse dozens of professionaly designed templates. Easily change structure,style,and graphics -then host instantly.
 
 -- end: excel-promo-card-bg
+
+
+
+
+
+
+
+
+
+
+-- component text-bubble-170:
+children space:
+
+-- ft.text-bubble:
+text-image-1: $assets.files.static.text-with-circle.svg
+text-image-2: $assets.files.static.text-without-circle.svg
+spacing: 170
+space: $text-bubble-170.space
+
+-- end: text-bubble-170
+
+
+
+
+
+
+
+
+
+
+-- component row-container-150:
+children row-wrap:
+
+-- ft.row-container: How FASTN is better than { REACT.js }
+padding-vertical: 150
+padding-vertical if {ftd.device == "mobile"}: 44
+row-wrap: $row-container-150.row-wrap
+
+-- end: row-container-150
+
+
+
+
+
+
+
+
+
+
+-- component row-container-80:
+children row-wrap:
+
+-- ft.row-container: 
+spacing: 80
+index: 1
+reset: $ft.current-slide
+row-wrap: $row-container-80.row-wrap
+
+-- end: row-container-80
+
+
+
+
+
+
+
+
+
+
+-- component rectangle-card-425:
+children wrapper:
+
+-- ft.rectangle-card:
+width: 425
+wrapper: $rectangle-card-425.wrapper
+
+-- end: rectangle-card-425
+
+
+
+
+
+
+
+
+
+
+-- component title-with-body-card-fastn:
+children card:
+
+-- ft.title-with-body-card: Fastn
+logo: $assets.files.static.slider.fastn-slider-logo.svg
+width: 325
+card: $title-with-body-card-fastn.card
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+-- end: title-with-body-card-fastn
+
+
+
+
+
+
+
+
+
+
+-- component rectangle-card-bg:
+children wrapper:
+
+-- ft.rectangle-card:
+show-border: false
+bgcolor: $inherited.colors.custom.four.light
+width: 425
+wrapper: $rectangle-card-bg.wrapper
+
+-- end: rectangle-card-bg
+
+
+
+
+
+
+
+
+
+
+-- component title-with-body-card-react:
+children card:
+
+-- ft.title-with-body-card: React JS
+logo: $assets.files.static.slider.react-js-logo.svg
+body-color: $inherited.colors.custom.five
+width: 325
+card: $title-with-body-card-react.card
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+-- end: title-with-body-card-react
+
+
+
+
+
+
+
+
+
+
+-- component row-container-5:
+children row-wrap:
+
+-- ft.row-container: 
+spacing: 80
+index: 5
+reset: $ft.current-slide
+row-wrap: $row-container-5.row-wrap
+
+-- end: row-container-5
+
+
+
+
+
+
+
+
+
+
+-- component title-with-body-card-angular:
+children card:
+
+-- ft.title-with-body-card: Angular JS
+logo: $assets.files.static.slider.angular-js-logo.svg
+body-color: $inherited.colors.custom.five
+width: 325
+card: $title-with-body-card-angular.card
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+-- end: title-with-body-card-angular
+
+
+
+
+
+
+
+
+
+
+-- component row-container-reset:
+children row-wrap:
+
+-- ft.row-container:
+spacing: 80
+index: 3
+reset: $ft.current-slide
+row-wrap: $row-container-reset.row-wrap
+
+-- end: row-container-reset
+
+
+
+
+
+
+
+
+
+
+-- component title-with-body-card-flutter:
+children card: 
+
+-- ft.title-with-body-card: Flutter
+logo: $assets.files.static.slider.flutter-logo.svg
+body-color: $inherited.colors.custom.five
+width: 325
+card: $title-with-body-card-flutter.card
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
+
+-- end: title-with-body-card-flutter
+
+
+
+
+
+
+
+
+
+
+-- component logo-slider-70:
+children slider-wrap:
+
+-- ft.logo-slider:
+pull-top: -70
+slider-wrap: $logo-slider-70.slider-wrap
+
+-- end: logo-slider-70
+
+
+
+
+
+
+
+
+
+
+-- component row-container-32:
+children row-wrap:
+
+-- ft.row-container:
+wrap: true
+spacing: 80
+switch-to-column: true
+spacing if {ftd.device == "mobile"}: 32
+row-wrap: $row-container-32.row-wrap
+
+-- end: row-container-32
+
+
+
+
+
+
+
+
+
+
+-- component testimonial-card-1:
+children card:
+
+-- ft.testimonial-card: Jenny Wilson
+avatar: $assets.files.static.testimonials.avatar-1.svg
+bgcolor: $inherited.colors.custom.two
+label: CEO, ABC Company
+width: 500
+card: $testimonial-card-1.card
+
+At nulla tristique facilisis augue. 
+
+Lectus diam dignissim erat blandit pellentesque 
+
+egestas nulla .
+
+-- end: testimonial-card-1
+
+
+
+
+
+
+
+
+
+
+-- component testimonial-card-2:
+children card:
+
+-- ft.testimonial-card: Jenny Wilson
+avatar: $assets.files.static.testimonials.avatar-2.svg
+bgcolor: $inherited.colors.shadow
+label: CEO, ABC Company
+width: 500
+margin-top: 80
+margin-right: -80
+card: $testimonial-card-2.card
+
+At nulla tristique facilisis augue. 
+
+Lectus diam dignissim erat blandit pellentesque 
+
+egestas nulla .
+
+-- end: testimonial-card-2
+
+
+
+
+
+
+
+
+
+
+-- component testimonial-card-3:
+children card:
+
+-- ft.testimonial-card: Jenny Wilson
+avatar: $assets.files.static.testimonials.avatar-3.svg
+bgcolor: $inherited.colors.custom.three
+label: CEO, ABC Company
+width: 500
+margin-top: -80
+card: $testimonial-card-3.card
+
+At nulla tristique facilisis augue. 
+
+Lectus diam dignissim erat blandit pellentesque 
+
+egestas nulla .
+
+-- end: testimonial-card-3
+
+
+
+
+
+
+
+
+
+
+-- component testimonial-card-4:
+children card:
+
+-- ft.testimonial-card: Jenny Wilson
+avatar: $assets.files.static.testimonials.avatar-4.svg
+bgcolor: $inherited.colors.custom.one
+label: CEO, ABC Company
+width: 500
+margin-top: 80
+margin-right: -80
+card: $testimonial-card-4.card
+
+At nulla tristique facilisis augue. 
+
+Lectus diam dignissim erat blandit pellentesque 
+
+egestas nulla .
+
+-- end: testimonial-card-4
+
+
+
+
+
+
+
+
+
+
+-- component rounded-corner-card-bg:
+children card-wrap:
+
+-- ft.rounded-corner-card: Become a Builder
+cta-text: Learn More
+cta-link: /
+image: $assets.files.static.charts-image.svg
+bgcolor: $inherited.colors.accent.primary
+card-wrap: $rounded-corner-card-bg.card-wrap
+
+-- ft.rounded-corner-card.info:
+
+Browse dozens of professionaly designed templates. 
+
+Easily change structure,style,and graphics -then host instantly.
+
+-- end: rounded-corner-card-bg

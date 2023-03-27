@@ -950,7 +950,7 @@ optional ftd.image-src text-image-1:
 optional ftd.image-src text-image-2: 
 optional integer spacing: 
 integer width: $width
-
+children space:
 
 -- lib2.text-bubble:
 bgcolor: $text-bubble.bgcolor
@@ -958,7 +958,7 @@ text-image-1: $text-bubble.text-image-1
 text-image-2: $text-bubble.text-image-2
 spacing: $text-bubble.spacing
 width: $text-bubble.width
-
+space: $text-bubble.space
 
 -- end: text-bubble
 
@@ -976,6 +976,7 @@ optional body body:
 optional string lang: 
 integer width: $width
 optional boolean show-double: true
+children code:
 
 -- lib2.code-block-system: $code-block-system.title
 body: $code-block-system.body
@@ -984,6 +985,7 @@ code-bg: $code-block-system.code-bg
 lang: $code-block-system.lang
 show-double: $code-block-system.show-double
 width: $code-block-system.width
+code: $code-block-system.code
 
 -- end: code-block-system
 
@@ -1090,12 +1092,14 @@ optional ftd.image-src logo:
 optional body body:
 optional ftd.color body-color: $inherited.colors.border.dark
 integer width: $width
+children card:
 
 -- lib2.title-with-body-card: $title-with-body-card.title
 logo: $title-with-body-card.logo
 body: $title-with-body-card.body
 body-color: $title-with-body-card.body-color
 width: $title-with-body-card.width
+card: $title-with-body-card.card
 
 -- end: title-with-body-card
 
@@ -1202,6 +1206,7 @@ integer margin-right: 0
 optional boolean right: false
 optional string cta-text:
 optional string cta-link:
+children card:
 
 -- lib2.testimonial-card: $testimonial-card.title
 label: $testimonial-card.label
@@ -1214,6 +1219,7 @@ cta-text: $testimonial-card.cta-text
 cta-link: $testimonial-card.cta-link
 right: $testimonial-card.right
 margin-right: $testimonial-card.margin-right
+card: $testimonial-card.card
 
 -- end: testimonial-card
 
@@ -2069,7 +2075,7 @@ optional boolean two-text: false
 optional boolean top: false
 optional boolean bottom: false
 optional boolean btn: false
-
+children child:
 
 -- lib4.right-image-component: $right-image-component.title
 icon: $right-image-component.icon
@@ -2085,6 +2091,7 @@ join-btn: $right-image-component.join-btn
 two-text: $right-image-component.two-text
 bottom: $right-image-component.bottom
 btn: $right-image-component.btn
+child: $right-image-component.child
 
 -- end: right-image-component
 
@@ -2161,12 +2168,13 @@ bgcolor: $hosting-hero.bgcolor
 ftd.image-src image: $assets.files.static.hosting.stage-hero.svg
 integer height: 600
 optional integer width:
-
+children child:
 
 -- lib4.stages-vertical-image:
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
 height: $stages-vertical-image.height
+child: $stages-vertical-image.child
 
 -- end: stages-vertical-image
 
@@ -2348,6 +2356,7 @@ ftd.color textcolor: $inherited.colors.background.base
 ftd.color titlecolor: $inherited.colors.background.base
 optional integer height:
 boolean role: false
+children child:
 
 -- lib4.display-card: $display-card.title
 image: $display-card.image
@@ -2364,6 +2373,7 @@ textcolor: $display-card.textcolor
 titlecolor: $display-card.titlecolor
 spacing: $display-card.spacing
 role: $display-card.role
+child: $display-card.child
 
 -- end: lib4.display-card
 
@@ -2384,6 +2394,7 @@ children wraper:
 integer spacing: 90
 integer width: $width
 optional integer reset:
+optional boolean switch-to-row: false
 
 -- lib4.column-wrap:
 height: $column-wrap.height
@@ -2393,6 +2404,7 @@ wraper: $column-wrap.wraper
 spacing: $column-wrap.spacing
 reset: $column-wrap.reset
 width: $column-wrap.width
+switch-to-row: $column-wrap.switch-to-row
 
 -- end: lib4.column-wrap
 

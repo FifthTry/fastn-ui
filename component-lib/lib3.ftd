@@ -968,6 +968,7 @@ cta-link: $trending-templates.cta-link
 width: $trending-templates.width
 trending-wrap: $trending-templates.trending-wrap
 no-img: $trending-templates.no-img
+system-image: $trending-templates.system-image
 img: $trending-templates.img
 bgcolor: $trending-templates.bgcolor
 image: $trending-templates.image
@@ -975,7 +976,6 @@ image: $trending-templates.image
 -- end: ftd.column
 
 -- end: trending-templates
-
 
 
 
@@ -1011,6 +1011,7 @@ margin-top.px if {trending-templates-desktop.no-img && trending-templates-deskto
 if: {trending-templates-desktop.system-image}
 width: fill-container
 padding-bottom.px: 150
+margin-top.px: 150
 
 -- ftd.image:
 src: $assets.files.static.design.back-img.svg
@@ -1120,7 +1121,6 @@ spacing.fixed.px: 130
 
 
 
-
 -- component trending-templates-mobile:
 caption title:
 optional string info:
@@ -1129,6 +1129,7 @@ optional string cta-link:
 integer width: $width
 children trending-wrap:
 optional boolean no-img:
+optional boolean system-image:
 optional boolean img:
 optional ftd.color bgcolor:
 optional ftd.image image:
@@ -1147,7 +1148,7 @@ align-self: center
 spacing.fixed.px: 24
 
 -- ftd.image:
-if: {!trending-templates-mobile.no-img}
+if: {!trending-templates-mobile.no-img && !trending-templates-mobile.system-image}
 src: $assets.files.static.templates.hanging-icon-1.svg
 width.fixed.px: 42
 height.fixed.px: 42
@@ -1156,7 +1157,7 @@ top.px: -30
 left.px: -10
 
 -- ftd.image:
-if: {!trending-templates-mobile.no-img}
+if: {!trending-templates-mobile.no-img && !trending-templates-mobile.system-image}
 src: $assets.files.static.templates.hanging-icon-2.svg
 width.fixed.px: 43
 height.fixed.px: 43
@@ -1164,11 +1165,22 @@ anchor: parent
 top.px: -30
 right.px: -13
 
+-- ftd.image:
+if: {trending-templates-mobile.system-image}
+src: $assets.files.static.design.back-img.svg
+width.fixed.percent: 100
+height: auto
+anchor: parent
+top.px: 0
+left.px: 0
+z-index: 1
+
 -- ftd.column:
 align-self: center
 align-content: center
 spacing.fixed.px: 24
 margin-bottom.px: 40
+z-index: 10
 
 -- ftd.text: $trending-templates-mobile.title
 color: $inherited.colors.text
@@ -1343,16 +1355,20 @@ optional string info:
 optional string cta-text:
 optional string cta-link:
 optional string cta-role: 
-optional ftd.image-src image: $assets.files.static.charts-image.svg
+optional ftd.image-src image:
 optional ftd.image-src back-image:
 optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
 children promo-wrap:
 boolean left: false
+optional boolean no-img: false
+optional boolean down-img: false
 boolean top: false
 boolean right: false
+boolean left-text: false
 boolean keep-dark: true
 boolean two-btn: false
+boolean top-img:
 optional string cta-left-text:
 optional string cta-right-text:
 optional boolean center: false
@@ -1367,12 +1383,12 @@ cta-text: $excel-promo-card.cta-text
 cta-link: $excel-promo-card.cta-link
 cta-role: $excel-promo-card.cta-role
 image: $excel-promo-card.image
-back-image: $excel-promo-card.back-image
 bgcolor: $excel-promo-card.bgcolor
 width: $excel-promo-card.width
 promo-wrap: $excel-promo-card.promo-wrap
 keep-dark: $excel-promo-card.keep-dark
 left: $excel-promo-card.left
+no-img: $excel-promo-card.no-img
 top: $excel-promo-card.top
 right: $excel-promo-card.right
 center: $excel-promo-card.center
@@ -1393,7 +1409,11 @@ width: $excel-promo-card.width
 promo-wrap: $excel-promo-card.promo-wrap
 keep-dark: $excel-promo-card.keep-dark
 left: $excel-promo-card.left
+no-img: $excel-promo-card.no-img
+top-img: $excel-promo-card.top-img
+down-img: $excel-promo-card.down-img
 right: $excel-promo-card.right
+left-text: $excel-promo-card.left-text
 center: $excel-promo-card.center
 two-btn: $excel-promo-card.two-btn
 cta-left-text: $excel-promo-card.cta-left-text
@@ -1422,52 +1442,24 @@ optional string cta-role:
 optional string cta-left-text:
 optional string cta-right-text:
 optional ftd.image-src image:
-optional ftd.image-src back-image:
 optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
 children promo-wrap:
 boolean keep-dark: true
 boolean left:
+optional boolean no-img:
 boolean top:
 boolean right:
 optional boolean center:
 boolean two-btn:
+
 
 -- ftd.column:
 width: fill-container
 background.solid: $excel-promo-card-desktop.bgcolor
 padding-vertical.px: 60
 padding-horizontal.px: 140
-margin-top.px if { excel-promo-card-desktop.top }: 150
-
--- ftd.column:
-if: {excel-promo-card-desktop.top}
-width: fill-container
-anchor: parent
-right.px: 0
-top.px: 0
-z-index: 1
-
--- ftd.image:
-if: { $excel-promo-card-desktop.back-image != NULL}
-src: $excel-promo-card-desktop.back-image
-width: fill-container
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-anchor: parent
-right.px: 0
-top.px: 0
-z-index: 1
-
--- ftd.image:
-if: { $excel-promo-card-desktop.back-image != NULL}
-src: $excel-promo-card-desktop.back-image
-width: fill-container
-
--- end: ftd.column
+;;margin-top.px if { excel-promo-card-desktop.left }: 150
 
 -- ftd.column:
 width: fill-container
@@ -1494,24 +1486,30 @@ align-self: center
 
 -- ftd.column:
 width.fixed.percent: 70
-width.fixed.percent if { excel-promo-card-desktop.left}: 100
-align-self: start
+width.fixed.percent if { excel-promo-card-desktop.left ||  excel-promo-card-desktop.no-img}: 100
+align-self if { !excel-promo-card-desktop.no-img}: start
+align-self if { excel-promo-card-desktop.no-img}: center
+align-content if { excel-promo-card-desktop.no-img}: center
 margin-left.px if { excel-promo-card-desktop.left}: 163
 
 -- ftd.column:
 max-width.fixed.px if { !excel-promo-card-desktop.left || !excel-promo-card-desktop.two-btn }: 600
 max-width.fixed.px if { excel-promo-card-desktop.two-btn}: 620
 spacing.fixed.px: 16
+align-self if { excel-promo-card-desktop.no-img}: center
+align-content if { excel-promo-card-desktop.no-img}: center
 padding-top.px if { excel-promo-card-desktop.right}: 250
 padding-top.px if { excel-promo-card-desktop.center}: 100
-;;padding-left.px if { !excel-promo-card-desktop.right}: 50
+padding-left.px if { !excel-promo-card-desktop.right && !excel-promo-card-desktop.center}: 50
 
 -- ftd.text: $excel-promo-card-desktop.title
 role: $inherited.types.heading-large
 color: $inherited.colors.text
 color if { excel-promo-card-desktop.keep-dark }: $inherited.colors.text.dark
+text-align if { excel-promo-card-desktop.no-img}: center
 
 -- ftd.text:
+if: {excel-promo-card-desktop.info != NULL}
 text: $excel-promo-card-desktop.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
@@ -1553,9 +1551,9 @@ width: 220
 -- end: ftd.column
 
 -- ftd.column:
-if: { !excel-promo-card-desktop.left }
+if: { !excel-promo-card-desktop.left && !excel-promo-card-desktop.no-img }
 width.fixed.percent: 30
-;;align-self: end
+align-self: end
 
 -- ftd.image:
 src: $excel-promo-card-desktop.image
@@ -1600,7 +1598,11 @@ integer width: $width
 children promo-wrap:
 boolean keep-dark: true
 boolean left:
+optional boolean no-img:
+optional boolean down-img:
 boolean right:
+boolean top-img:
+boolean left-text:
 optional boolean center:
 boolean two-btn:
 optional string cta-left-text:
@@ -1614,31 +1616,41 @@ padding-vertical.px: 26
 
 -- ftd.column:
 width: fill-container
-align-self if {!excel-promo-card-mobile.left} : center
+align-self if {!excel-promo-card-mobile.left || !excel-promo-card-mobile.left-text || !excel-promo-card-mobile.top-img} : center
+spacing.fixed.px if {excel-promo-card-mobile.top-img}: 24
+
+-- ftd.image:
+if: { excel-promo-card-mobile.top-img}
+src: $excel-promo-card-mobile.image
+width.fixed.px: 66
+margin-top.px: 32
 
 -- ftd.row:
 width: fill-container
 
 -- ftd.column:
-align-self if {!excel-promo-card-mobile.left} : center
+align-self if {!excel-promo-card-mobile.left && !excel-promo-card-mobile.left-text && !excel-promo-card-mobile.top-img} : center
 width: fill-container
 
 -- ftd.column:
 width: fill-container
 spacing.fixed.px: 32
-align-content if { !excel-promo-card-mobile.left || !excel-promo-card-mobile.right }: center
+align-content if { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right && !excel-promo-card-mobile.left-text && !excel-promo-card-mobile.top-img}: center
 
 -- ftd.text: $excel-promo-card-mobile.title
 role: $inherited.types.heading-large
 color: $inherited.colors.accent.secondary
-text-align if { !excel-promo-card-mobile.left || !excel-promo-card-mobile.right}: center
+text-align if { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right && !excel-promo-card-mobile.left-text && !excel-promo-card-mobile.top-img}: center
+text-align if { excel-promo-card-mobile.left-text}: start
 
 -- ftd.text:
+if: {excel-promo-card-mobile.info != NULL}
 text: $excel-promo-card-mobile.info
 role: $inherited.types.copy-small
 color: $inherited.colors.text-strong
-text-align if { !excel-promo-card-mobile.left || !excel-promo-card-mobile.right}: center
- 
+text-align if { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right && !excel-promo-card-mobile.left-text && !excel-promo-card-mobile.top-img}: center
+text-align if { excel-promo-card-mobile.left-text}: start
+
 -- ftd.column:
 
 -- lib5.cta-button: $excel-promo-card-mobile.cta-text
@@ -1646,7 +1658,6 @@ if: { excel-promo-card-mobile.cta-text != NULL }
 role: $excel-promo-card-mobile.cta-role
 link: $excel-promo-card-mobile.cta-link
 width: 220
-show-arrow: true
 
 -- end: ftd.column
 
@@ -1671,17 +1682,23 @@ width: 150
 
 -- end: ftd.row
 
+-- ftd.image:
+if: { excel-promo-card-mobile.down-img}
+src: $excel-promo-card-mobile.image
+width: fill-container
+
 -- end: ftd.column
 
 -- end: ftd.column
 
 -- ftd.column:
+if: {!excel-promo-card-mobile.no-img}
 z-index: 1
 
 -- ftd.image:
-if: {!excel-promo-card-mobile.left || !excel-promo-card-mobile.right }
+if: { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right && !excel-promo-card-mobile.top-img }
 src: $assets.files.static.create-fastn.svg
-width.fixed.px: 89
+width.fixed.px: 80
 height.fixed.px: 140
 anchor: parent
 top.px: -18
@@ -1690,7 +1707,7 @@ left.px: -35
 -- end: ftd.column
 
 -- ftd.image:
-if: { excel-promo-card-mobile.left}
+if: { excel-promo-card-mobile.left && !excel-promo-card-mobile.no-img && !excel-promo-card-mobile.top-img}
 src: $excel-promo-card-mobile.image
 width.fixed.px: 93
 margin-top.px: 150
@@ -1699,12 +1716,13 @@ margin-top.px: 150
 
 
 -- ftd.column:
+if: {!excel-promo-card-mobile.no-img}
 width: fill-container
 
 -- ftd.image:
 if: { excel-promo-card-mobile.right}
 src: $excel-promo-card-mobile.image
-width.fixed.px: 300
+width.fixed.percent: 100
 margin-top.px: 32
 
 -- end: ftd.column
@@ -2233,4 +2251,3 @@ children: $rounded-corner-card-mobile.card-wrap
 -- end: ftd.column
 
 -- end: rounded-corner-card-mobile
-

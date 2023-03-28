@@ -61,6 +61,7 @@ bottom: true
 
 -- ft.trending-templates: “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”
 blank: true
+no-img: true
 
 -- ft.trending-templates.info:
 

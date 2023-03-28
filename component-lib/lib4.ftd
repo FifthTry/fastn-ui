@@ -235,25 +235,55 @@ color: $inherited.colors.accent.primary
 
 -- component card:
 caption title: 
-body body:
+optional body body:
 ftd.image-src image:
+optional ftd.image-src src:
 ftd.color bgcolor: $inherited.colors.background.step-2
 optional boolean top: false
+optional boolean icon: false
+optional boolean fill: false
 optional string cta-text:
 optional string cta-link:
 optional string cta-role:
 
 -- ftd.column:
 width.fixed.px: 332
+width.fixed.px if {card.icon}: 236
 background.solid: $card.bgcolor
-background.solid if {ftd.device == "mobile"}: $inherited.colors.border-strong
+background.solid if {ftd.device == "mobile" && !card.icon && !card.fill}: $inherited.colors.border-strong
 padding-horizontal.px: 24
 padding-vertical.px: 24
+padding-horizontal.px if {card.fill}: 150
 height.fixed.px: 476
+height.fixed.px if { card.icon}: 270
 height.fixed.px if {ftd.device == "mobile"}: 450
+height.fixed.px if {ftd.device == "mobile" && card.icon}: 270
 border-color: $inherited.colors.border-strong
 border-radius.px: 10
 spacing.fixed.px if {card.top}: 32
+spacing.fixed.px if {card.icon}: 22
+
+-- ftd.row:
+if: { card.icon }
+spacing.fixed.px: 10
+
+-- ftd.image:
+src: $card.src
+width: auto
+
+-- ftd.text: $card.title
+role: $inherited.types.heading-tiny
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.image:
+if: { card.icon }
+src: $card.image
+width: auto
+
+-- ftd.column:
+if: {!card.icon && !card.fill}
 
 -- ftd.image:
 if: {card.top}
@@ -268,6 +298,7 @@ margin-bottom.px if {!card.top}: 12
 
 -- ftd.text:
 text: $card.body
+if: { card.body != NULL}
 role: $inherited.types.copy-regular
 color: $inherited.colors.text-strong
 margin-bottom.px if {!card.top}: 24
@@ -288,6 +319,8 @@ if: { card.cta-text != NULL }
 role: $card.cta-role
 link: $card.cta-link
 show-arrow: true
+
+-- end: ftd.column
 
 -- end: ftd.column
 

@@ -26,15 +26,11 @@ color: $inherited.colors.background.base
 
 NOT DONE :- 
 
-11. Front End Infrastructure - in new branch --11
-8. Design Systems - in new branch
 2. Icons - Dev
 3. Fonts - Dev
 4. Colors - Dev
 5. Component- Dev
 9. Documentation Page
-12. Icons & Illustration Page
-13. Font List page
 14. Colors
 18. Template detail page
 20. Buttons
@@ -43,7 +39,6 @@ NOT DONE :-
 28. Design 
 30. Blogs - Detail
 31. Blogs
-33. Design System - Learn
 34. Developers
 40. Templates Learn
 47. Explore more
@@ -52,7 +47,6 @@ NOT DONE :-
 50. Backend Support
 51. Deployment
 52. CLI & API
-23. Building Webapps
 
 -- end: ftd.column
 
@@ -90,6 +84,12 @@ DONE :- (21/03/23)
 43. Landing Page --43
 26. Open Source --26
 37. Open Source --37
+11. Front End Infrastructure - in new branch --11
+8. Design Systems - in new branch
+23. Building Webapps
+33. Design System - Learn
+12. Icons & Illustration Page
+13. Font List page
 
 -- end: ftd.column
 

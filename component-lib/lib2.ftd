@@ -1960,7 +1960,7 @@ max-width.fixed.px if { !hero-section-desktop.center && !hero-section-desktop.ce
 max-width.fixed.px if { hero-section-desktop.center-img  }: 622
 max-width.fixed.px: 715
 margin-top.px: 15
-text-align if { hero-section-desktop.bottom || hero-section-desktop.center || hero-section-desktop.center-img}: center
+text-align if { hero-section-desktop.center || hero-section-desktop.center-img}: center
 
 -- ftd.column:
 width: fill-container

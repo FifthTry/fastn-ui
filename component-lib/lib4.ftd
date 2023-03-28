@@ -724,6 +724,7 @@ optional integer width:
 children child:
 
 -- ftd.column:
+width: fill-container
 
 -- stages-vertical-image-desktop:
 if: { ftd.device != "mobile" }
@@ -762,6 +763,7 @@ children child:
 -- ftd.column:
 width: fill-container
 max-width.fixed.px: $width
+margin-top.px: 25
 align-content: center
 align-self: center
 

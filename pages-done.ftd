@@ -31,15 +31,13 @@ NOT DONE :-
 4. Colors - Dev
 5. Component- Dev
 9. Documentation Page
+18. Template detail page
 20. Buttons
 21. Headers
 22. Other Components
 28. Design 
-30. Blogs - Detail
 31. Blogs
 34. Developers
-40. Templates Learn
-47. Explore more
 48. Authentication
 49. WASM Support
 50. Backend Support
@@ -83,13 +81,19 @@ DONE :- (21/03/23)
 26. Open Source --26
 37. Open Source --37
 11. Front End Infrastructure - in new branch --11
-8. Design Systems - in new branch
+8. Design Systems - in new branch	
 23. Building Webapps
 33. Design System - Learn
 12. Icons & Illustration Page
 13. Font List page
 14. Colors
-18. Template detail page
+12. Icons & Illustration Page
+13. Font List page
+14. Colors
+40. Templates Learn
+33. Design System - Learn
+47. Explore more
+30. Blogs - Detail
 
 -- end: ftd.column
 

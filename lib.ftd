@@ -769,6 +769,8 @@ integer width: $width
 children trending-wrap:
 optional boolean no-img: false
 optional boolean img:
+optional boolean blank: false
+optional boolean system-image: false
 optional ftd.color bgcolor: $inherited.colors.background.step-2
 optional ftd.image image:
 optional integer margin-top:
@@ -781,6 +783,8 @@ width: $trending-templates.width
 trending-wrap: $trending-templates.trending-wrap
 no-img: $trending-templates.no-img
 img: $trending-templates.img
+blank: $trending-templates.blank
+system-image: $trending-templates.system-image
 bgcolor: $trending-templates.bgcolor
 image: $trending-templates.image
 margin-top: $trending-templates.margin-top
@@ -2077,6 +2081,8 @@ optional boolean two-text: false
 optional boolean top: false
 optional boolean bottom: false
 optional boolean btn: false
+optional boolean no-btn: false
+optional ftd.color bgcolor:
 children child:
 
 -- lib4.right-image-component: $right-image-component.title
@@ -2093,6 +2099,8 @@ join-btn: $right-image-component.join-btn
 two-text: $right-image-component.two-text
 bottom: $right-image-component.bottom
 btn: $right-image-component.btn
+no-btn: $right-image-component.no-btn
+bgcolor: $right-image-component.bgcolor
 child: $right-image-component.child
 
 -- end: right-image-component
@@ -2111,11 +2119,12 @@ child: $right-image-component.child
 optional ftd.image-src icon:
 caption title:
 body info:
-string cta-text:
-string cta-link:
+optional string cta-text:
+optional string cta-link:
 optional string cta-role:
-ftd.image-src image:
+optional ftd.image-src image:
 boolean top: false
+boolean no-img: false
 
 
 -- lib4.left-image-component: $left-image-component.title
@@ -2126,6 +2135,7 @@ cta-link: $left-image-component.cta-link
 cta-role: $left-image-component.cta-role
 image: $left-image-component.image
 top: $left-image-component.top
+no-img: $left-image-component.no-img
 
 -- end: left-image-component
 
@@ -2271,6 +2281,7 @@ ftd.color bgcolor: $inherited.colors.background.step-2
 optional boolean top: false
 optional boolean icon: false
 optional boolean fill: false
+optional boolean no-btn: false
 optional string cta-text:
 optional string cta-link:
 optional string cta-role:
@@ -2283,6 +2294,7 @@ bgcolor: $card.bgcolor
 top: $card.top
 icon: $card.icon
 fill: $card.fill
+no-btn: $card.no-btn
 cta-text: $card.cta-text
 cta-link: $card.cta-link
 cta-role: $card.cta-role

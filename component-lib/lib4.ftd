@@ -72,12 +72,13 @@ optional string cta-link:
 optional string cta-role:
 boolean role: false
 boolean center: false
+boolean down: false
 optional integer padding-vertical:
 boolean spacing: false
 ftd.color bgcolor: $inherited.colors.text
 ftd.color textcolor: $inherited.colors.background.base
 ftd.color titlecolor: $inherited.colors.background.base
-optional integer height:
+optional boolean height: false
 children child:
 
 -- ftd.column:
@@ -96,10 +97,51 @@ padding-horizontal.px if {display-card.spacing}: 62
 padding-vertical.px if {display-card.spacing}: 74
 spacing.fixed.px if {display-card.role}: 40
 spacing.fixed.px: 40
-height.fixed.px if {display-card.height != NULL}: $display-card.height
+height.fixed.px if {display-card.height}: 500
+padding-top.px if {display-card.down}: 150
+
+-- ftd.column:
+if: {display-card.height}
+width: fill-container
+spacing.fixed.px: 32
+align-content: center
 
 -- ftd.image:
+if: { display-card.image != NULL}
+src: $display-card.image
+height.fixed.px: 149
+border-radius.px: 12
+
+-- ftd.column:
+padding-horizontal.px: 28
+spacing.fixed.px: 24
+
+-- ftd.text: $display-card.title
+role: $inherited.types.heading-small
+color: $display-card.titlecolor
+
+-- ftd.text: 
 if: { display-card.image != NULL }
+text: $display-card.info
+role: $inherited.types.copy-regular
+color: $display-card.textcolor
+
+-- lib5.cta-button: $display-card.cta-text
+if: { display-card.cta-text != NULL }
+link: $display-card.cta-link
+role: $display-card.cta-role
+show-arrow: true
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: {!display-card.height}
+width: fill-container
+
+-- ftd.image:
+if: { display-card.image != NULL && !display-card.down }
 src: $display-card.image
 width: fill-container
 border-radius.px: 12
@@ -132,7 +174,6 @@ text: $display-card.info
 role: $inherited.types.copy-large
 color: $display-card.textcolor
 
-
 -- ftd.row:
 if: {!display-card.role}
 
@@ -157,6 +198,14 @@ show-arrow: true
 -- end: ftd.row
 
 -- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.image:
+if: { display-card.image != NULL && display-card.down }
+src: $display-card.image
+width: fill-container
+border-radius.px: 12
 
 -- end: ftd.column
 

@@ -1524,7 +1524,6 @@ if: { excel-promo-card-desktop.cta-text != NULL }
 role: $excel-promo-card-desktop.cta-role
 link: $excel-promo-card-desktop.cta-link
 width: 220
-show-arrow: true
 
 -- end: ftd.column
 
@@ -1747,12 +1746,13 @@ children: $excel-promo-card-mobile.promo-wrap
 
 
 -- component card-with-icons-bottom:
-caption title:
+optional caption title:
 optional string cta-text:
 optional string cta-link:
 optional string info:
 integer width: $width
 children icons-wrap:
+optional boolean no-padding: false
 
 -- ftd.column:
 width: fill-container
@@ -1764,6 +1764,7 @@ cta-link: $card-with-icons-bottom.cta-link
 info: $card-with-icons-bottom.info
 width: $card-with-icons-bottom.width
 icons-wrap: $card-with-icons-bottom.icons-wrap
+no-padding: $card-with-icons-bottom.no-padding
 
 -- card-with-icons-bottom-mobile: $card-with-icons-bottom.title
 if: { ftd.device == "mobile" }
@@ -1787,16 +1788,17 @@ icons-wrap: $card-with-icons-bottom.icons-wrap
 
 
 -- component card-with-icons-bottom-desktop:
-caption title:
+optional caption title:
 optional string cta-text:
 optional string cta-link:
 optional string info:
 integer width: $width
 children icons-wrap:
+optional boolean no-padding:
 
 -- ftd.column:
 width: fill-container
-padding-vertical.px: 150
+padding-vertical.px if {!card-with-icons-bottom-desktop.no-padding}: 150
 
 -- ftd.column:
 width: fill-container
@@ -1808,6 +1810,7 @@ width: fill-container
 spacing.fixed.px: 16
 
 -- ftd.text: $card-with-icons-bottom-desktop.title
+if: {card-with-icons-bottom-desktop.title != NULL}
 role: $inherited.types.heading-large
 color: $inherited.colors.text
 
@@ -1849,7 +1852,7 @@ margin-top.px: 80
 
 
 -- component card-with-icons-bottom-mobile:
-caption title:
+optional caption title:
 optional string cta-text:
 optional string cta-link:
 optional string info:
@@ -1877,6 +1880,7 @@ align-content: center
 
 
 -- ftd.text: $card-with-icons-bottom-mobile.title
+if: {card-with-icons-bottom-mobile.title != NULL}
 role: $inherited.types.heading-hero
 color: $inherited.colors.text
 text-align: center

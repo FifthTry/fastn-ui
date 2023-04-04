@@ -1873,6 +1873,7 @@ optional boolean top-img:
 width: fill-container
 z-index: 0
 max-width.fixed.px: 1460
+max-width.fixed.px if {hero-section-desktop.top-img}: 1160
 align-self: center
 align-content if {hero-section-desktop.center}: center
 min-height.fixed.px: $hero-section-desktop.height

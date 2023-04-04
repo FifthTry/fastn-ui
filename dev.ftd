@@ -111,6 +111,30 @@ Most websites only change colors of background and text when using dark mode, Fa
 
 -- display-card-5:
 
+-- community: Join our community now!
+logo1: $assets.files.static.dev.utube.svg
+logo2: $assets.files.static.dev.discord.svg
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.dev.youtube.svg
+sub-title-1: We have a youtube channel filled with plethora of content about fastn.
+sub-title-2: Meet folks who are learning FTD like you!
+
+-- title: Learn from experiences
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform. At nulla tristique facilisis augue. Lectus diam dignissim.
+
+-- ft.left-image-component: Creating personal website using FTD
+image: $assets.files.static.dev.left-img.svg
+cta-text: Explore more
+cta-link: /
+role: UI/UX
+type: Design
+time: 7Min
+timestamp: true
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local.
+
 -- ft.trending-templates: Become a builder
 system-image: true
 cta-text: Explore More
@@ -120,6 +144,8 @@ cta-link: /
 
 At nulla tristique facilisis augue. Lectus diam dignissim
 erat blandit pellentesque egestas nulla.
+
+-- ft.footer:
 
 -- end: ft.page
 
@@ -287,10 +313,11 @@ optional ftd.image-src src:
 
 -- ftd.column:
 width: fill-container
-padding-horizontal.px: 180
+padding-horizontal.px if {ftd.device != "mobile"}: 180
 padding-vertical.px: 64
 
 -- ftd.row:
+if: {ftd.device != "mobile"}
 spacing.fixed.px: 50
 
 -- ftd.column:
@@ -320,12 +347,51 @@ link: $approach.cta-link
 width: fill-container
 
 -- ftd.image:
-src: $assets.files.static.card.youtube.svg
+src: $assets.files.static.dev.youtube.svg
 width: fill-container
 
 -- end: ftd.column
 
 -- end: ftd.row
+
+-- ftd.column:
+if: {ftd.device == "mobile"}
+spacing.fixed.px: 50
+padding-horizontal.px: 24
+
+-- ftd.column:
+width.fixed.percent: 100
+spacing.fixed.px: 24
+
+-- ftd.text: 01/08
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- ftd.text: $approach.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text-strong
+
+-- ftd.text:
+text: $approach.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- ft.cta-button: $approach.cta-text
+role: $approach.cta-role
+link: $approach.cta-link
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.image:
+src: $assets.files.static.dev.youtube.svg
+width: fill-container
+
+-- end: ftd.column
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -440,3 +506,279 @@ child: $display-card-5.child
 Join this upcoming workshop
 
 -- end: display-card-5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component community:
+caption title:
+ftd.image-src logo1:
+ftd.image-src logo2:
+string sub-title-1:
+string sub-title-2:
+string cta-text:
+string cta-link:
+ftd.image-src image:
+
+-- ftd.column:
+width: fill-container
+
+-- community-desktop: $community.title
+if: {ftd.device != "mobile"}
+logo1: $community.logo1
+logo2: $community.logo2
+sub-title-1: $community.sub-title-1
+sub-title-2: $community.sub-title-2
+cta-text: $community.cta-text
+cta-link: $community.cta-link
+image: $community.image
+
+-- community-mobile: $community.title
+if: {ftd.device == "mobile"}
+logo1: $community.logo1
+logo2: $community.logo2
+sub-title-1: $community.sub-title-1
+sub-title-2: $community.sub-title-2
+cta-text: $community.cta-text
+cta-link: $community.cta-link
+image: $community.image
+
+-- end: ftd.column
+
+-- end: community
+
+
+
+
+
+
+
+
+
+-- component community-desktop:
+caption title:
+ftd.image-src logo1:
+ftd.image-src logo2:
+string sub-title-1:
+string sub-title-2:
+string cta-text:
+string cta-link:
+ftd.image-src image:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 22
+align-content: center
+padding-vertical.px: 150
+
+-- ftd.column:
+align-content: left
+
+-- ftd.text: $community-desktop.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 89
+align-content: center
+
+-- ftd.column:
+width.fixed.px: 650
+spacing.fixed.px: 64
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $community-desktop.logo1
+width: auto
+
+-- ftd.column:
+spacing.fixed.px: 18
+
+-- ftd.text: $community-desktop.sub-title-1
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+
+-- ft.cta-button: $community-desktop.cta-text
+link: $community-desktop.cta-link
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $community-desktop.logo2
+width: auto
+
+-- ftd.column:
+spacing.fixed.px: 18
+
+-- ftd.text: $community-desktop.sub-title-2
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+
+-- ft.cta-button: $community-desktop.cta-text
+link: $community-desktop.cta-link
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.image:
+src: $community-desktop.image
+width: auto
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: community-desktop
+
+
+
+
+
+
+
+
+
+
+-- component community-mobile:
+caption title:
+ftd.image-src logo1:
+ftd.image-src logo2:
+string sub-title-1:
+string sub-title-2:
+string cta-text:
+string cta-link:
+ftd.image-src image:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 40
+align-content: center
+padding-top.px: 100
+padding-horizontal.px: 24
+
+-- ftd.text: $community-mobile.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 40
+align-content: center
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.image:
+src: $community-mobile.logo1
+width: auto
+
+-- ftd.column:
+spacing.fixed.px: 18
+
+-- ftd.text: $community-mobile.sub-title-1
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+
+-- ft.cta-button: $community-mobile.cta-text
+link: $community-mobile.cta-link
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $community-mobile.logo2
+width: auto
+
+-- ftd.column:
+spacing.fixed.px: 18
+
+-- ftd.text: $community-mobile.sub-title-2
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+
+-- ft.cta-button: $community-mobile.cta-text
+link: $community-mobile.cta-link
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.image:
+src: $community-mobile.image
+width.fixed.px: 343
+
+-- end: ftd.column
+
+-- end: community-mobile
+
+
+
+
+
+
+
+
+
+
+-- component title:
+caption title:
+optional body body:
+optional boolean width: false
+optional boolean align: false
+
+-- ftd.column:
+width: fill-container
+width.fixed.percent if {title.width}: 74
+padding-bottom.px if {title.width}: 80
+align-self if {title.width}: center
+padding-vertical.px: 50
+padding-horizontal.px: 180
+padding-horizontal.px if { ftd.device == "mobile"}: 16
+spacing.fixed.px: 32
+
+-- ftd.text: $title.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+text-align if {title.width || title.align}: center
+
+-- ftd.text:
+text: $title.body
+if: {title.body != NULL}
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- end: ftd.column
+
+-- end: title

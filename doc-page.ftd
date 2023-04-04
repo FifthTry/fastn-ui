@@ -70,7 +70,7 @@ current-subsection: $doc-page.current-subsection
 current-page: $doc-page.current-page
 toc: $doc-page.toc
 ;;footer-toc: $doc-page.footer-toc
-logo:  $doc-page.logo
+logo: $doc-page.logo
 sitename: $doc-page.sitename
 login-button: $doc-page.login-button
 width: $doc-page.width
@@ -92,7 +92,7 @@ current-subsection: $doc-page.current-subsection
 current-page: $doc-page.current-page
 toc: $doc-page.toc
 ;;footer-toc: $doc-page.footer-toc
-logo:  $doc-page.logo
+logo: $doc-page.logo
 sitename: $doc-page.sitename
 login-button: $doc-page.login-button
 width: $doc-page.width
@@ -198,7 +198,7 @@ padding-bottom.px: 6
 -- ftd.text: 
 if: { doc-page-desktop.body != NULL}
 text: $doc-page-desktop.body
-role:   $inherited.types.copy-regular
+role: $inherited.types.copy-regular
 color: $inherited.colors.text
 margin-top.px: 20
 
@@ -282,7 +282,7 @@ padding-top.px: 100
 -- ftd.text: 
 if: { doc-page-mobile.body != NULL}
 text: $doc-page-mobile.body
-role:   $inherited.types.copy-regular
+role: $inherited.types.copy-regular
 color: $inherited.colors.text
 margin-top.px: 20
 
@@ -381,7 +381,6 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text
 
 -- end: ftd.row
-
 
 -- ftd.column:
 if: { !ftd.is_empty(toc-page.toc.children)}

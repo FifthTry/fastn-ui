@@ -935,7 +935,9 @@ optional string cta-link:
 integer width: $width
 children trending-wrap:
 optional boolean no-img: false
+optional boolean system-image: false
 optional boolean img:
+optional boolean blank: false
 optional ftd.color bgcolor: $inherited.colors.background.step-2
 optional ftd.image image:
 optional integer margin-top:
@@ -951,6 +953,8 @@ cta-link: $trending-templates.cta-link
 width: $trending-templates.width
 trending-wrap: $trending-templates.trending-wrap
 no-img: $trending-templates.no-img
+blank: $trending-templates.blank
+system-image: $trending-templates.system-image
 img: $trending-templates.img
 bgcolor: $trending-templates.bgcolor
 image: $trending-templates.image
@@ -964,6 +968,7 @@ cta-link: $trending-templates.cta-link
 width: $trending-templates.width
 trending-wrap: $trending-templates.trending-wrap
 no-img: $trending-templates.no-img
+system-image: $trending-templates.system-image
 img: $trending-templates.img
 bgcolor: $trending-templates.bgcolor
 image: $trending-templates.image
@@ -971,7 +976,6 @@ image: $trending-templates.image
 -- end: ftd.column
 
 -- end: trending-templates
-
 
 
 
@@ -989,17 +993,35 @@ optional string cta-link:
 integer width: $width
 children trending-wrap:
 optional boolean no-img:
+optional boolean system-image:
 optional boolean img:
+optional boolean blank:
 optional ftd.color bgcolor:
 optional ftd.image image:
 optional integer margin-top:
 
 -- ftd.column:
 width: fill-container
-padding-top.px if {!trending-templates-desktop.no-img}: 150
-padding-bottom.px if {!trending-templates-desktop.no-img}: 240
+padding-top.px if {!trending-templates-desktop.no-img && !trending-templates-desktop.blank && !trending-templates-desktop.system-image}: 150
+padding-bottom.px if {!trending-templates-desktop.no-img && !trending-templates-desktop.blank}: 240
 background.solid: $trending-templates-desktop.bgcolor
-margin-top.px if {trending-templates-desktop.no-img && trending-templates-desktop.margin-top != NULL}: $trending-templates-desktop.margin-top
+margin-top.px if {trending-templates-desktop.no-img && trending-templates-desktop.blank && trending-templates-desktop.margin-top != NULL}: $trending-templates-desktop.margin-top
+
+-- ftd.column:
+if: {trending-templates-desktop.system-image}
+width: fill-container
+padding-bottom.px: 150
+margin-top.px: 150
+
+-- ftd.image:
+src: $assets.files.static.design.back-img.svg
+width.fixed.percent: 100
+height: auto
+anchor: parent
+top.px: 0
+left.px: 0
+
+-- end: ftd.column
 
 -- ftd.column:
 width: fill-container
@@ -1008,7 +1030,7 @@ align-content: center
 align-self: center
 
 -- ftd.image:
-if: {!trending-templates-desktop.no-img}
+if: {!trending-templates-desktop.no-img && !trending-templates-desktop.blank && !trending-templates-desktop.system-image}
 src: $assets.files.static.templates.hanging-icon-1.svg
 width: auto
 height: auto
@@ -1017,7 +1039,7 @@ top.px: 0
 left.px: 0
 
 -- ftd.image:
-if: {!trending-templates-desktop.no-img}
+if: {!trending-templates-desktop.no-img && !trending-templates-desktop.blank && !trending-templates-desktop.system-image }
 src: $assets.files.static.templates.hanging-icon-2.svg
 width: auto
 height: auto
@@ -1026,7 +1048,7 @@ top.px: 10
 right.px: 0
 
 -- ftd.image:
-if: {!trending-templates-desktop.no-img}
+if: {!trending-templates-desktop.no-img && !trending-templates-desktop.blank && !trending-templates-desktop.system-image}
 src: $assets.files.static.templates.hanging-icon-3.svg
 width: auto
 height: auto
@@ -1035,7 +1057,7 @@ top.px: 500
 right.px: -100
 
 -- ftd.image:
-if: {!trending-templates-desktop.no-img}
+if: {!trending-templates-desktop.no-img && !trending-templates-desktop.blank && !trending-templates-desktop.system-image}
 src: $assets.files.static.templates.hanging-icon-4.svg
 width: auto
 height: auto
@@ -1045,11 +1067,15 @@ left.px: -80
 
 -- ftd.column:
 width.fixed.px: 500
+width.fixed.px if {trending-templates-desktop.system-image}: 715
 width.fixed.percent if {trending-templates-desktop.no-img}: 55
+width.fixed.px if { trending-templates-desktop.blank}: 1265
 align-self: center
 align-content: center
 spacing.fixed.px: 16
 margin-bottom.px: 40
+margin-top.px if {trending-templates-desktop.no-img}: 80
+z-index: 10
 
 -- ftd.text: $trending-templates-desktop.title
 role: $inherited.types.heading-large
@@ -1096,7 +1122,6 @@ spacing.fixed.px: 130
 
 
 
-
 -- component trending-templates-mobile:
 caption title:
 optional string info:
@@ -1105,6 +1130,7 @@ optional string cta-link:
 integer width: $width
 children trending-wrap:
 optional boolean no-img:
+optional boolean system-image:
 optional boolean img:
 optional ftd.color bgcolor:
 optional ftd.image image:
@@ -1123,7 +1149,7 @@ align-self: center
 spacing.fixed.px: 24
 
 -- ftd.image:
-if: {!trending-templates-mobile.no-img}
+if: {!trending-templates-mobile.no-img && !trending-templates-mobile.system-image}
 src: $assets.files.static.templates.hanging-icon-1.svg
 width.fixed.px: 42
 height.fixed.px: 42
@@ -1132,7 +1158,7 @@ top.px: -30
 left.px: -10
 
 -- ftd.image:
-if: {!trending-templates-mobile.no-img}
+if: {!trending-templates-mobile.no-img && !trending-templates-mobile.system-image}
 src: $assets.files.static.templates.hanging-icon-2.svg
 width.fixed.px: 43
 height.fixed.px: 43
@@ -1140,11 +1166,22 @@ anchor: parent
 top.px: -30
 right.px: -13
 
+-- ftd.image:
+if: {trending-templates-mobile.system-image}
+src: $assets.files.static.design.back-img.svg
+width.fixed.percent: 100
+height: auto
+anchor: parent
+top.px: 0
+left.px: 0
+z-index: 1
+
 -- ftd.column:
 align-self: center
 align-content: center
 spacing.fixed.px: 24
 margin-bottom.px: 40
+z-index: 10
 
 -- ftd.text: $trending-templates-mobile.title
 color: $inherited.colors.text
@@ -1319,14 +1356,20 @@ optional string info:
 optional string cta-text:
 optional string cta-link:
 optional string cta-role: 
-optional ftd.image-src image: $assets.files.static.charts-image.svg
+optional ftd.image-src image:
+optional ftd.image-src back-image:
 optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
 children promo-wrap:
 boolean left: false
+optional boolean no-img: false
+optional boolean down-img: false
+boolean top: false
 boolean right: false
+boolean left-text: false
 boolean keep-dark: true
 boolean two-btn: false
+boolean top-img:
 optional string cta-left-text:
 optional string cta-right-text:
 optional boolean center: false
@@ -1346,6 +1389,8 @@ width: $excel-promo-card.width
 promo-wrap: $excel-promo-card.promo-wrap
 keep-dark: $excel-promo-card.keep-dark
 left: $excel-promo-card.left
+no-img: $excel-promo-card.no-img
+top: $excel-promo-card.top
 right: $excel-promo-card.right
 center: $excel-promo-card.center
 two-btn: $excel-promo-card.two-btn
@@ -1365,7 +1410,11 @@ width: $excel-promo-card.width
 promo-wrap: $excel-promo-card.promo-wrap
 keep-dark: $excel-promo-card.keep-dark
 left: $excel-promo-card.left
+no-img: $excel-promo-card.no-img
+top-img: $excel-promo-card.top-img
+down-img: $excel-promo-card.down-img
 right: $excel-promo-card.right
+left-text: $excel-promo-card.left-text
 center: $excel-promo-card.center
 two-btn: $excel-promo-card.two-btn
 cta-left-text: $excel-promo-card.cta-left-text
@@ -1399,6 +1448,8 @@ integer width: $width
 children promo-wrap:
 boolean keep-dark: true
 boolean left:
+optional boolean no-img:
+boolean top:
 boolean right:
 optional boolean center:
 boolean two-btn:
@@ -1436,24 +1487,30 @@ align-self: center
 
 -- ftd.column:
 width.fixed.percent: 70
-width.fixed.percent if { excel-promo-card-desktop.left}: 100
-align-self: start
+width.fixed.percent if { excel-promo-card-desktop.left ||  excel-promo-card-desktop.no-img}: 100
+align-self if { !excel-promo-card-desktop.no-img}: start
+align-self if { excel-promo-card-desktop.no-img}: center
+align-content if { excel-promo-card-desktop.no-img}: center
 margin-left.px if { excel-promo-card-desktop.left}: 163
 
 -- ftd.column:
 max-width.fixed.px if { !excel-promo-card-desktop.left || !excel-promo-card-desktop.two-btn }: 600
 max-width.fixed.px if { excel-promo-card-desktop.two-btn}: 620
 spacing.fixed.px: 16
+align-self if { excel-promo-card-desktop.no-img}: center
+align-content if { excel-promo-card-desktop.no-img}: center
 padding-top.px if { excel-promo-card-desktop.right}: 250
 padding-top.px if { excel-promo-card-desktop.center}: 100
-padding-left.px if { !excel-promo-card-desktop.right}: 50
+padding-left.px if { !excel-promo-card-desktop.right && !excel-promo-card-desktop.center}: 50
 
 -- ftd.text: $excel-promo-card-desktop.title
 role: $inherited.types.heading-large
 color: $inherited.colors.text
 color if { excel-promo-card-desktop.keep-dark }: $inherited.colors.text.dark
+text-align if { excel-promo-card-desktop.no-img}: center
 
 -- ftd.text:
+if: {excel-promo-card-desktop.info != NULL}
 text: $excel-promo-card-desktop.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
@@ -1495,8 +1552,8 @@ width: 220
 -- end: ftd.column
 
 -- ftd.column:
-if: { !excel-promo-card-desktop.left }
-width.fixed.percent: 30
+if: { !excel-promo-card-desktop.left && !excel-promo-card-desktop.no-img }
+width.fixed.percent: 29
 align-self: end
 
 -- ftd.image:
@@ -1542,7 +1599,11 @@ integer width: $width
 children promo-wrap:
 boolean keep-dark: true
 boolean left:
+optional boolean no-img:
+optional boolean down-img:
 boolean right:
+boolean top-img:
+boolean left-text:
 optional boolean center:
 boolean two-btn:
 optional string cta-left-text:
@@ -1556,31 +1617,41 @@ padding-vertical.px: 26
 
 -- ftd.column:
 width: fill-container
-align-self if {!excel-promo-card-mobile.left} : center
+align-self if {!excel-promo-card-mobile.left || !excel-promo-card-mobile.left-text || !excel-promo-card-mobile.top-img} : center
+spacing.fixed.px if {excel-promo-card-mobile.top-img}: 24
+
+-- ftd.image:
+if: { excel-promo-card-mobile.top-img}
+src: $excel-promo-card-mobile.image
+width.fixed.px: 66
+margin-top.px: 32
 
 -- ftd.row:
 width: fill-container
 
 -- ftd.column:
-align-self if {!excel-promo-card-mobile.left} : center
+align-self if {!excel-promo-card-mobile.left && !excel-promo-card-mobile.left-text && !excel-promo-card-mobile.top-img} : center
 width: fill-container
 
 -- ftd.column:
 width: fill-container
 spacing.fixed.px: 32
-align-content if { !excel-promo-card-mobile.left || !excel-promo-card-mobile.right }: center
+align-content if { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right && !excel-promo-card-mobile.left-text && !excel-promo-card-mobile.top-img}: center
 
 -- ftd.text: $excel-promo-card-mobile.title
 role: $inherited.types.heading-large
 color: $inherited.colors.accent.secondary
-text-align if { !excel-promo-card-mobile.left || !excel-promo-card-mobile.right}: center
+text-align if { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right && !excel-promo-card-mobile.left-text && !excel-promo-card-mobile.top-img}: center
+text-align if { excel-promo-card-mobile.left-text}: start
 
 -- ftd.text:
+if: {excel-promo-card-mobile.info != NULL}
 text: $excel-promo-card-mobile.info
 role: $inherited.types.copy-small
 color: $inherited.colors.text-strong
-text-align if { !excel-promo-card-mobile.left || !excel-promo-card-mobile.right}: center
- 
+text-align if { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right && !excel-promo-card-mobile.left-text && !excel-promo-card-mobile.top-img}: center
+text-align if { excel-promo-card-mobile.left-text}: start
+
 -- ftd.column:
 
 -- lib5.cta-button: $excel-promo-card-mobile.cta-text
@@ -1588,7 +1659,6 @@ if: { excel-promo-card-mobile.cta-text != NULL }
 role: $excel-promo-card-mobile.cta-role
 link: $excel-promo-card-mobile.cta-link
 width: 220
-show-arrow: true
 
 -- end: ftd.column
 
@@ -1613,17 +1683,23 @@ width: 150
 
 -- end: ftd.row
 
+-- ftd.image:
+if: { excel-promo-card-mobile.down-img}
+src: $excel-promo-card-mobile.image
+width: fill-container
+
 -- end: ftd.column
 
 -- end: ftd.column
 
 -- ftd.column:
+if: {!excel-promo-card-mobile.no-img}
 z-index: 1
 
 -- ftd.image:
-if: {!excel-promo-card-mobile.left || !excel-promo-card-mobile.right }
+if: { !excel-promo-card-mobile.left && !excel-promo-card-mobile.right && !excel-promo-card-mobile.top-img }
 src: $assets.files.static.create-fastn.svg
-width.fixed.px: 89
+width.fixed.px: 80
 height.fixed.px: 140
 anchor: parent
 top.px: -18
@@ -1632,7 +1708,7 @@ left.px: -35
 -- end: ftd.column
 
 -- ftd.image:
-if: { excel-promo-card-mobile.left}
+if: { excel-promo-card-mobile.left && !excel-promo-card-mobile.no-img && !excel-promo-card-mobile.top-img}
 src: $excel-promo-card-mobile.image
 width.fixed.px: 93
 margin-top.px: 150
@@ -1641,12 +1717,13 @@ margin-top.px: 150
 
 
 -- ftd.column:
+if: {!excel-promo-card-mobile.no-img}
 width: fill-container
 
 -- ftd.image:
 if: { excel-promo-card-mobile.right}
 src: $excel-promo-card-mobile.image
-width.fixed.px: 300
+width.fixed.percent: 100
 margin-top.px: 32
 
 -- end: ftd.column

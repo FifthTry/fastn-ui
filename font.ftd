@@ -1,0 +1,262 @@
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fifthtry.github.io/fastn-ui/assets
+
+
+
+
+
+-- ft.page: Font Library
+$show-breadcrum: true
+
+-- hero-section-250:
+
+-- right-image-component-1:
+
+-- title-img: Heading
+image: $assets.files.static.font.card.svg
+
+-- ft.row-container:
+wrap: true
+switch-to-column: true
+
+-- title-img: Copy
+image: $assets.files.static.font.card.svg
+
+-- title-img: Button
+image: $assets.files.static.font.card.svg
+
+-- end: ft.row-container
+
+-- ft.cta-button: Learn More
+role: primary
+link: /
+show-arrow: true
+align-center: true
+
+-- right-image-component-2:
+
+-- title-img: Manrope
+image: $assets.files.static.font.card1.svg
+
+-- title-img: Type Weights
+image: $assets.files.static.font.card2.svg
+
+-- ft.cta-button: Download Font
+role: primary
+link: /
+show-arrow: true
+medium: true
+align-center: true
+
+-- title: Usage
+
+Lorem ipsum dolor sit amet consectetur. In arcu arcu tellus ac semper quam. Convallis pellentesque id urna consectetur aliquet faucibus tempor dolor mauris. Enim sed amet at mi massa turpis. Tortor tristique aliquam orci sed convallis. Volutpat arcu augue tortor feugiat. Adipiscing ornare leo quam amet morbi eleifend suscipit.
+
+-- right-image-component-80:
+
+-- ft.left-image-component: Select your theme & deploy on Github.
+cta-text: Get Started
+cta-link: /
+cta-role: primary
+image: $assets.files.static.illustration.code.svg
+
+Lorem ipsum dolor sit amet consectetur. In arcu arcu tellus ac semper quam. Convallis pellentesque id urna consectetur aliquet faucibus tempor dolor mauris. Enim sed amet at mi massa turpis. Tortor tristique aliquam orci sed convallis. Volutpat arcu augue tortor feugiat. Adipiscing ornare leo quam amet morbi eleifend suscipit.
+
+-- excel-promo-card-step1:
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+
+-- component title-img:
+caption title:
+ftd.image-src image:
+
+-- ftd.column:
+width: fill-container
+align-content: center
+padding-vertical.px: 40
+padding-horizontal.px if { ftd.device == "mobile"}: 16
+
+-- ftd.column:
+spacing.fixed.px: 24
+
+-- ftd.text: $title-img.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- ftd.image:
+src: $title-img.image
+width: auto
+width.fixed.px if {ftd.device == "mobile"}: 364
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: title-img
+
+
+
+
+
+
+
+
+
+
+-- component title:
+caption title:
+optional body body:
+
+-- ftd.column:
+width: fill-container
+padding-vertical.px: 50
+padding-horizontal.px: 180
+padding-horizontal.px if { ftd.device == "mobile"}: 16
+spacing.fixed.px: 32
+
+-- ftd.text: $title.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- ftd.text:
+text: $title.body
+if: {title.body != NULL}
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- end: ftd.column
+
+-- end: title
+
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-80:
+children child:
+
+-- ft.right-image-component: Select your theme & deploy on Github.
+image: $assets.files.static.illustration.code.svg
+cta-text: Get Started
+cta-link: /
+cta-role: primary
+padding-vertical: 80
+child: $right-image-component-80.child
+
+Fastn needs a place to store your content and deploy your site. Most of ours users prefer storing the content on Github and deploying on Github pages.
+
+-- end: right-image-component-80
+
+
+
+
+
+
+
+
+
+
+
+
+-- component excel-promo-card-step1:
+children promo-wrap:
+
+-- ft.excel-promo-card: Use it for free and start creating now!
+image: $assets.files.static.component.figma-icon.svg
+bgcolor: $inherited.colors.background.step-1
+cta-text: Download
+cta-link: /
+cta-role: primary
+top-img: true
+left: true
+promo-wrap: $excel-promo-card-step1.promo-wrap
+
+-- ft.excel-promo-card.info: 
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- end: excel-promo-card-step1
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-250:
+children childs:
+
+-- ft.hero-section: Font Library
+image: $assets.files.static.font.background.png
+center-img: true
+margin-top: true
+height: 250
+childs: $hero-section-250.childs
+
+-- ft.hero-section.info: At nulla tristique facilisis augue. Lectus diam dignissimerat blandit pellentesque egestas nulla.
+
+-- end: hero-section-250
+
+
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-1:
+children child:
+
+-- ft.right-image-component: Typography
+padding-vertical: 250
+bottom: true
+child: $right-image-component-1.child
+
+Lorem ipsum dolor sit amet consectetur. In arcu arcu tellus ac semper quam. Convallis pellentesque id urna consectetur aliquet faucibus tempor dolor mauris. Enim sed amet at mi massa turpis. Tortor tristique aliquam orci sed convallis. Volutpat arcu augue tortor feugiat. Adipiscing ornare leo quam amet morbi eleifend suscipit.
+
+-- end: right-image-component-1
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-2:
+children child:
+
+-- ft.right-image-component: Brand Typography
+padding-vertical: 150
+bottom: true
+child: $right-image-component-2.child
+
+Lorem ipsum dolor sit amet consectetur. In arcu arcu tellus ac semper quam. Convallis pellentesque id urna consectetur aliquet faucibus tempor dolor mauris. Enim sed amet at mi massa turpis. Tortor tristique aliquam orci sed convallis. Volutpat arcu augue tortor feugiat. Adipiscing ornare leo quam amet morbi eleifend suscipit.
+
+-- end: right-image-component-2

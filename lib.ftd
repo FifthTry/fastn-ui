@@ -536,9 +536,12 @@ integer width: $width
 children childs:
 boolean center: false
 boolean center-img: false
+boolean dot-img: false
 integer height: 870
+optional boolean margin-top: true
 boolean bottom: false
 optional boolean small-img: false
+optional boolean right-img: false
 optional boolean top-img: false
 
 -- lib2.hero-section: $hero-section.title
@@ -552,9 +555,12 @@ width: $hero-section.width
 childs: $hero-section.childs
 center: $hero-section.center
 center-img: $hero-section.center-img
+dot-img: $hero-section.dot-img
 height: $hero-section.height
+margin-top: $hero-section.margin-top
 bottom: $hero-section.bottom
 small-img: $hero-section.small-img
+right-img: $hero-section.right-img
 top-img: $hero-section.top-img
 
 -- end: hero-section
@@ -615,7 +621,6 @@ optional integer pull-top: 0
 children card-wrap:
 integer z-index: 0
 integer width: $width
-
 
 -- lib3.snippet-card-left: $snippet-card-left.title
 description: $snippet-card-left.description
@@ -709,6 +714,10 @@ optional body body:
 integer spacing: 160
 boolean widthfill: false
 optional string role:
+optional boolean to-left: false
+optional boolean no-margin: false
+optional boolean left-align: false
+optional boolean center-text: false
 ftd.color bg-color: $inherited.colors.background.step-1
 optional ftd.image-src logo:
 
@@ -719,7 +728,11 @@ benefits-wrap: $benefits-card.benefits-wrap
 body: $benefits-card.body 
 spacing: $benefits-card.spacing 
 widthfill: $benefits-card.widthfill 
-role: $benefits-card.role 
+role: $benefits-card.role
+to-left: $benefits-card.to-left
+no-margin: $benefits-card.no-margin
+left-align: $benefits-card.left-align
+center-text: $benefits-card.center-text
 bg-color: $benefits-card.bg-color 
 logo: $benefits-card.logo 
 
@@ -758,6 +771,8 @@ integer width: $width
 children trending-wrap:
 optional boolean no-img: false
 optional boolean img:
+optional boolean blank: false
+optional boolean system-image: false
 optional ftd.color bgcolor: $inherited.colors.background.step-2
 optional ftd.image image:
 optional integer margin-top:
@@ -770,6 +785,8 @@ width: $trending-templates.width
 trending-wrap: $trending-templates.trending-wrap
 no-img: $trending-templates.no-img
 img: $trending-templates.img
+blank: $trending-templates.blank
+system-image: $trending-templates.system-image
 bgcolor: $trending-templates.bgcolor
 image: $trending-templates.image
 margin-top: $trending-templates.margin-top
@@ -814,7 +831,12 @@ optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
 children promo-wrap:
 boolean left: false
+optional boolean no-img: false
+optional boolean top-img: false
+optional boolean down-img: false
+boolean top: false
 boolean right: false
+boolean left-text: false
 boolean keep-dark: true
 boolean two-btn: false
 optional string cta-left-text:
@@ -833,7 +855,12 @@ width: $excel-promo-card.width
 promo-wrap: $excel-promo-card.promo-wrap
 keep-dark: $excel-promo-card.keep-dark
 left: $excel-promo-card.left
+no-img: $excel-promo-card.no-img
+top-img: $excel-promo-card.top-img
+down-img: $excel-promo-card.down-img
+top: $excel-promo-card.top
 right: $excel-promo-card.right
+left-text: $excel-promo-card.left-text
 center: $excel-promo-card.center
 two-btn: $excel-promo-card.two-btn
 cta-left-text: $excel-promo-card.cta-left-text
@@ -905,7 +932,7 @@ ftd.color bgcolor: $inherited.colors.custom.two
 children card-wrap:
 
 -- lib3.rounded-corner-card: $rounded-corner-card.title
-if: { ftd.device != "mobile"}
+;;if: { ftd.device != "mobile"}
 info: $rounded-corner-card.info
 cta-text: $rounded-corner-card.cta-text
 cta-link: $rounded-corner-card.cta-link
@@ -931,7 +958,7 @@ optional ftd.image-src text-image-1:
 optional ftd.image-src text-image-2: 
 optional integer spacing: 
 integer width: $width
-
+children space:
 
 -- lib2.text-bubble:
 bgcolor: $text-bubble.bgcolor
@@ -939,7 +966,7 @@ text-image-1: $text-bubble.text-image-1
 text-image-2: $text-bubble.text-image-2
 spacing: $text-bubble.spacing
 width: $text-bubble.width
-
+space: $text-bubble.space
 
 -- end: text-bubble
 
@@ -957,6 +984,7 @@ optional body body:
 optional string lang: 
 integer width: $width
 optional boolean show-double: true
+children code:
 
 -- lib2.code-block-system: $code-block-system.title
 body: $code-block-system.body
@@ -965,6 +993,7 @@ code-bg: $code-block-system.code-bg
 lang: $code-block-system.lang
 show-double: $code-block-system.show-double
 width: $code-block-system.width
+code: $code-block-system.code
 
 -- end: code-block-system
 
@@ -987,6 +1016,7 @@ optional integer margin-top:
 children row-wrap:
 integer width: $width
 optional integer padding-vertical: 
+optional integer padding-horizontal: 
 boolean wrap: false
 optional integer index:
 optional integer reset:
@@ -1002,9 +1032,11 @@ margin-top: $row-container.margin-top
 row-wrap: $row-container.row-wrap
 width: $row-container.width
 padding-vertical: $row-container.padding-vertical
+padding-horizontal: $row-container.padding-horizontal
 wrap: $row-container.wrap
 index: $row-container.index
 reset: $row-container.reset
+switch-to-column: $row-container.switch-to-column
 align-left: $row-container.align-left
 title-medium: $row-container.title-medium
 slides: $row-container.slides
@@ -1068,12 +1100,14 @@ optional ftd.image-src logo:
 optional body body:
 optional ftd.color body-color: $inherited.colors.border.dark
 integer width: $width
+children card:
 
 -- lib2.title-with-body-card: $title-with-body-card.title
 logo: $title-with-body-card.logo
 body: $title-with-body-card.body
 body-color: $title-with-body-card.body-color
 width: $title-with-body-card.width
+card: $title-with-body-card.card
 
 -- end: title-with-body-card
 
@@ -1180,6 +1214,7 @@ integer margin-right: 0
 optional boolean right: false
 optional string cta-text:
 optional string cta-link:
+children card:
 
 -- lib2.testimonial-card: $testimonial-card.title
 label: $testimonial-card.label
@@ -1192,6 +1227,7 @@ cta-text: $testimonial-card.cta-text
 cta-link: $testimonial-card.cta-link
 right: $testimonial-card.right
 margin-right: $testimonial-card.margin-right
+card: $testimonial-card.card
 
 -- end: testimonial-card
 
@@ -2047,7 +2083,9 @@ optional boolean two-text: false
 optional boolean top: false
 optional boolean bottom: false
 optional boolean btn: false
-
+optional boolean no-btn: false
+optional ftd.color bgcolor:
+children child:
 
 -- lib4.right-image-component: $right-image-component.title
 icon: $right-image-component.icon
@@ -2063,6 +2101,9 @@ join-btn: $right-image-component.join-btn
 two-text: $right-image-component.two-text
 bottom: $right-image-component.bottom
 btn: $right-image-component.btn
+no-btn: $right-image-component.no-btn
+bgcolor: $right-image-component.bgcolor
+child: $right-image-component.child
 
 -- end: right-image-component
 
@@ -2080,11 +2121,12 @@ btn: $right-image-component.btn
 optional ftd.image-src icon:
 caption title:
 body info:
-string cta-text:
-string cta-link:
+optional string cta-text:
+optional string cta-link:
 optional string cta-role:
-ftd.image-src image:
+optional ftd.image-src image:
 boolean top: false
+boolean no-img: false
 
 
 -- lib4.left-image-component: $left-image-component.title
@@ -2095,6 +2137,7 @@ cta-link: $left-image-component.cta-link
 cta-role: $left-image-component.cta-role
 image: $left-image-component.image
 top: $left-image-component.top
+no-img: $left-image-component.no-img
 
 -- end: left-image-component
 
@@ -2139,12 +2182,13 @@ bgcolor: $hosting-hero.bgcolor
 ftd.image-src image: $assets.files.static.hosting.stage-hero.svg
 integer height: 600
 optional integer width:
-
+children child:
 
 -- lib4.stages-vertical-image:
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
 height: $stages-vertical-image.height
+child: $stages-vertical-image.child
 
 -- end: stages-vertical-image
 
@@ -2168,6 +2212,8 @@ string cta-text:
 string cta-link:
 optional body info:
 optional boolean right: false
+optional boolean no-line: false
+optional boolean top-line: false
 
 -- lib4.stages-vertical: $stages-vertical.title
 rect: $stages-vertical.rect
@@ -2177,6 +2223,8 @@ cta-text: $stages-vertical.cta-text
 cta-link: $stages-vertical.cta-link
 info: $stages-vertical.info
 right: $stages-vertical.right
+no-line: $stages-vertical.no-line
+top-line: $stages-vertical.top-line
 
 -- end: lib4.stages-vertical
 
@@ -2193,12 +2241,18 @@ caption title:
 optional body info:
 optional boolean num: false
 optional integer numb:
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- lib4.key-features: $key-features.title
 icon: $key-features.icon
 info: $key-features.info
 num: $key-features.num
 numb: $key-features.numb
+cta-text: $key-features.cta-text
+cta-link: $key-features.cta-link
+cta-role: $key-features.cta-role
 
 -- end: key-features
 
@@ -2222,16 +2276,30 @@ numb: $key-features.numb
 
 -- component card:
 caption title: 
-body body:
+optional body body:
 ftd.image-src image:
+optional ftd.image-src src:
 ftd.color bgcolor: $inherited.colors.background.step-2
 optional boolean top: false
+optional boolean icon: false
+optional boolean fill: false
+optional boolean no-btn: false
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- lib4.card: $card.title
 body: $card.body
 image: $card.image
+src: $card.src
 bgcolor: $card.bgcolor
 top: $card.top
+icon: $card.icon
+fill: $card.fill
+no-btn: $card.no-btn
+cta-text: $card.cta-text
+cta-link: $card.cta-link
+cta-role: $card.cta-role
 
 -- end: card
 
@@ -2301,14 +2369,17 @@ integer width: 318
 optional integer border-width:
 optional string cta-text:
 optional string cta-link:
+optional string cta-role:
 boolean center: false
 boolean spacing: false
+boolean down: false
 optional integer padding-vertical:
 ftd.color bgcolor: $inherited.colors.text
 ftd.color textcolor: $inherited.colors.background.base
 ftd.color titlecolor: $inherited.colors.background.base
-optional integer height:
+optional boolean height: false
 boolean role: false
+children child:
 
 -- lib4.display-card: $display-card.title
 image: $display-card.image
@@ -2317,13 +2388,17 @@ width: $display-card.width
 border-width: $display-card.border-width
 cta-text: $display-card.cta-text
 cta-link: $display-card.cta-link
+cta-role: $display-card.cta-role
 center: $display-card.center
+down: $display-card.down
 padding-vertical: $display-card.padding-vertical
 bgcolor: $display-card.bgcolor
 textcolor: $display-card.textcolor
 titlecolor: $display-card.titlecolor
 spacing: $display-card.spacing
 role: $display-card.role
+height: $display-card.height
+child: $display-card.child
 
 -- end: lib4.display-card
 
@@ -2344,6 +2419,7 @@ children wraper:
 integer spacing: 90
 integer width: $width
 optional integer reset:
+optional boolean switch-to-row: false
 
 -- lib4.column-wrap:
 height: $column-wrap.height
@@ -2353,6 +2429,7 @@ wraper: $column-wrap.wraper
 spacing: $column-wrap.spacing
 reset: $column-wrap.reset
 width: $column-wrap.width
+switch-to-row: $column-wrap.switch-to-row
 
 -- end: lib4.column-wrap
 

@@ -11,31 +11,13 @@
 
 
 
--- ft.page: Why fastn
-bg-color: $inherited.colors.background.step-1
+-- page:
 
--- ft.hero-section: Dream. Design. Develop.
-image: $assets.files.static.why-fastn.background.svg
-center: true
-cta-left-text: Explore More
-height: 485
-width: 1160
+-- hero-section-485:
 
--- ft.hero-section.info: Fastn is here to serve to your unique requirements with an easy-to-use platform. At nulla tristique facilisis augue. Lectus diam dignissim.
+-- benefits-card-bg:
 
-
--- ft.benefits-card: Key features of Fastn
-spacing: 0
-bg-color: $inherited.colors.background.base
-
-Fastn is here to serve to your unique requirements with an easy-to-use platform.
-
--- ft.row-container:
-width: 1160
-wrap: true
-spacing: 92
-spacing if {ftd.device == "mobile"}: 40
-switch-to-column: true
+-- row-container-92:
 
 -- key-features: Lorem ipsum dolor
 icon: $assets.files.static.why-fastn.element.svg
@@ -57,7 +39,7 @@ icon: $assets.files.static.why-fastn.element4.svg
 
 Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
 
--- end: ft.row-container
+-- end: row-container-92
 
 -- ft.cta-button: Features
 role: primary
@@ -65,156 +47,97 @@ link: /
 show-arrow: true
 align-center: true
 
--- end: ft.benefits-card
+-- end: benefits-card-bg
 
--- ft.excel-promo-card: How to use Fastn?
-image: $assets.files.static.why-fastn.image.png
-bgcolor: $inherited.colors.background.step-1
-cta-text: Get Started
-cta-link: /
-cta-role: primary
-left: true
+-- excel-promo-card-bg:
 
--- ft.excel-promo-card.info: 
+-- benefits-card-0:
 
-Fastn is here to serve to your unique requirements with an easy-to-use platform.
+-- row-container-24:
 
--- ft.benefits-card: Benefits of fastn
-spacing: 0
-bg-color: $inherited.colors.background.base
-
-Fastn is here to serve to your unique requirements with an easy-to-use platform.
-
-
-
--- ft.row-container:
-align-left: true
-switch-to-column: true
-
--- ft.benefits-info-card: Everyoe is everywhere
+-- ft.benefits-info-card: Faster hosting
 icon: $assets.files.static.why-fastn.group.svg
 align-left: true
 
 -- ft.benefits-info-card.info: 
 
 Metaverse and other web 3.0 destinations are global.
- You no longer have audiences restricted to local 
+You no longer have audiences restricted to local 
 & hyperlocal cohorts.
 
 -- end: ft.benefits-info-card
 
--- end: ft.row-container
+-- end: row-container-24
 
 -- ft.hr:
 
--- ft.row-container:
-wrap: true
-spacing: 248
-spacing if {ftd.device == "mobile"}: 32
-switch-to-column: true
+-- row-container-248:
 
--- ft.benefits-info-card: Everyone is everywhere
+-- ft.benefits-info-card: Faster hosting
 icon: $assets.files.static.why-fastn.group2.svg
 align-left: true
 
 -- ft.benefits-info-card.info: 
 
 Metaverse and other web 3.0 destinations are global.
- You no longer have audiences restricted to local 
+You no longer have audiences restricted to local 
 & hyperlocal cohorts.
 
 -- end: ft.benefits-info-card
 
--- ft.code-block-system:
-if: {ftd.device != "mobile"}
-lang: ftd
-width: 412
-show-double: false
+-- code-block-system-412:
 
-\-- import: fastn
-\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
-zip: github.com/<username_or_orgname>
-
--- end: ft.row-container
+-- end: row-container-248
 
 -- ft.hr:
 
--- ft.row-container:
-wrap: true
-spacing: 248
-spacing if {ftd.device == "mobile"}: 32
-switch-to-column: true
+-- row-container-248:
 
--- ft.benefits-info-card: Everyone is everywhere
+-- ft.benefits-info-card: Faster hosting
 icon: $assets.files.static.why-fastn.group3.svg
 align-left: true
 
 -- ft.benefits-info-card.info: 
 
 Metaverse and other web 3.0 destinations are global.
- You no longer have audiences restricted to local 
+You no longer have audiences restricted to local 
 & hyperlocal cohorts.
-
 
 -- end: ft.benefits-info-card
 
+-- code-block-system-412:
 
--- ft.code-block-system:
-if: {ftd.device != "mobile"}
-lang: ftd
-width: 412
-show-double: false
-
-\-- import: fastn
-\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
-zip: github.com/<username_or_orgname>
-
-
--- end: ft.row-container
+-- end: row-container-248
 
 -- ft.hr:
 
--- ft.row-container:
-align-left: true
-switch-to-column: true
+--  row-container-24:
 
--- ft.benefits-info-card: Everyone is everywhere
+-- ft.benefits-info-card: Faster hosting
 icon: $assets.files.static.why-fastn.group4.svg
 align-left: true
 
 -- ft.benefits-info-card.info: 
 
 Metaverse and other web 3.0 destinations are global.
- You no longer have audiences restricted to local 
+You no longer have audiences restricted to local 
 & hyperlocal cohorts.
-
 
 -- end: ft.benefits-info-card
 
--- end: ft.row-container
+-- end: row-container-24
 
--- end : ft.benefits-card
+-- end : benefits-card-0
 
--- ft.benefits-card: Everything you need to build anything you want
-spacing: 0
-role: primary
-widthfill: true
-bg-color: $inherited.colors.background.base
+-- benefits-card-role:
 
-Fastn is here to serve to your unique requirements with an easy-to-use platform.
+-- heart-line-title-card-130:
 
--- ft.heart-line-title-card:
-cta-text: Explore more
-cta-url: /
-show-arrow: false
-width: 1500
-spacing: 130
-
--- end: ft.benefits-card
+-- end: benefits-card-role
 
 -- ft.footer:
 
--- end: ft.page
+-- end: page
 
 
 
@@ -263,3 +186,243 @@ role: $inherited.types.copy-regular
 
 
 
+
+
+-- component page:
+children wrapper:
+
+-- ft.page: Why fastn
+bg-color: $inherited.colors.background.step-1
+wrapper: $page.wrapper
+
+-- end: page
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-485:
+children childs:
+
+-- ft.hero-section: Dream. Design. Develop.
+image: $assets.files.static.why-fastn.background.svg
+top-img: true
+center: true
+cta-left-text: Get Started
+height: 485
+width: 1160
+childs: $hero-section-485.childs
+
+-- ft.hero-section.info: Fastn is here to serve to your unique requirements with an easy-to-use platform. At nulla tristique facilisis augue. Lectus diam dignissim.
+
+-- end: hero-section-485
+
+
+
+
+
+
+
+
+
+
+-- component benefits-card-bg:
+children benefits-wrap:
+
+-- ft.benefits-card: Key features of Fastn
+spacing: 0
+bg-color: $inherited.colors.background.base
+benefits-wrap: $benefits-card-bg.benefits-wrap
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform.
+
+-- end: benefits-card-bg
+
+
+
+
+
+
+
+
+
+
+-- component row-container-92:
+children row-wrap:
+
+-- ft.row-container:
+width: 1160
+wrap: true
+spacing: 92
+spacing if {ftd.device == "mobile"}: 40
+switch-to-column: true
+row-wrap: $row-container-92.row-wrap
+
+-- end: row-container-92
+
+
+
+
+
+
+
+
+
+
+-- component excel-promo-card-bg:
+children promo-wrap:
+
+-- ft.excel-promo-card: How to use Fastn?
+image: $assets.files.static.why-fastn.image.png
+bgcolor: $inherited.colors.background.step-1
+cta-text: Get Started
+cta-link: /
+cta-role: primary
+left: true
+promo-wrap: $excel-promo-card-bg.promo-wrap
+
+-- ft.excel-promo-card.info: 
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform.
+
+-- end: excel-promo-card-bg
+
+
+
+
+
+
+
+
+
+
+-- component benefits-card-0:
+children benefits-wrap:
+
+-- ft.benefits-card: Benefits of fastn
+spacing: 0
+left-align: true
+bg-color: $inherited.colors.background.base
+benefits-wrap: $benefits-card-0.benefits-wrap
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform.
+
+-- end: benefits-card-0
+
+
+
+
+
+
+
+
+
+
+-- component row-container-24:
+children row-wrap:
+
+-- ft.row-container:
+align-left: true
+switch-to-column: true
+padding-horizontal: 24
+row-wrap: $row-container-24.row-wrap
+
+-- end: row-container-24
+
+
+
+
+
+
+
+
+
+
+-- component row-container-248:
+children row-wrap:
+
+-- ft.row-container:
+wrap: true
+spacing: 248
+spacing if {ftd.device == "mobile"}: 32
+switch-to-column: true
+padding-horizontal: 24
+row-wrap: $row-container-248.row-wrap
+
+-- end: row-container-248
+
+
+
+
+
+
+
+
+
+
+-- component code-block-system-412:
+children code:
+
+-- ft.code-block-system:
+if: {ftd.device != "mobile"}
+lang: ftd
+width: 412
+show-double: false
+code: $code-block-system-412.code
+
+\-- import: fastn
+\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
+zip: github.com/<username_or_orgname>
+
+-- end: code-block-system-412
+
+
+
+
+
+
+
+
+
+
+-- component benefits-card-role:
+children benefits-wrap:
+
+-- ft.benefits-card: Everything you need to build anything you want
+spacing: 0
+role: primary
+widthfill: true
+bg-color: $inherited.colors.background.base
+center-text: true
+benefits-wrap: $benefits-card-role.benefits-wrap
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform.
+
+-- end: benefits-card-role
+
+
+
+
+
+
+
+
+
+
+-- component heart-line-title-card-130:
+children wrapper:
+
+-- ft.heart-line-title-card:
+cta-text: Explore more
+cta-url: /
+show-arrow: false
+width: 1500
+spacing: 130
+wrapper: $heart-line-title-card-130.wrapper
+
+-- end: heart-line-title-card-130

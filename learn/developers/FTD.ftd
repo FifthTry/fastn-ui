@@ -4,46 +4,87 @@
 
 -- ft.page: FTD
 
--- ft.hero-section: Loreum ipsum
+-- hero-section-340:
+
+-- row-container-20:
+
+-- display-card-570:
+
+-- display-card-570:
+
+-- display-card-570:
+
+-- display-card-570:
+
+-- end: row-container-20
+
+-- display-card-1:
+
+-- display-card-2:
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-340:
+children childs:
+
+-- ft.hero-section: Learn FTD
 height: 340
 center: true
+dot-img: true
+image: $assets.files.static.learn-ftd.background.svg
+;;margin-top: 100
+childs: $hero-section-340.childs
 
 -- ft.hero-section.info:
 
-Fastn provides exhaustive frameworks to set up and  scale
- your project in minutes. Fastn provides exhaustive 
- frameworks to set up and  scale your project in minutes.
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
+
+-- end: hero-section-340
+
+
+
+
+
+
+
+
+
+
+-- component row-container-20:
+children row-wrap:
 
 -- ft.row-container:
 wrap: true
 spacing: 20
 switch-to-column: true
 padding-vertical: 150
+padding-vertical if {ftd.device == "mobile"}: 70
+row-wrap: $row-container-20.row-wrap
+
+-- end: row-container-20
 
 
--- ft.display-card: Why FTD?
-center: true
-width: 570
-titlecolor: $inherited.colors.text
-textcolor: $inherited.colors.text-strong
-bgcolor: $inherited.colors.background.base
-border-width: 1
-cta-text: feature
-cta-link:/
 
-Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
 
--- ft.display-card: Why FTD?
-center: true
-width: 570
-titlecolor: $inherited.colors.text
-textcolor: $inherited.colors.text-strong
-bgcolor: $inherited.colors.background.base
-border-width: 1
-cta-text: feature
-cta-link:/
 
-Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+
+
+
+
+-- component display-card-570:
+children child:
 
 -- ft.display-card: Why FTD?
 center: true
@@ -54,27 +95,28 @@ bgcolor: $inherited.colors.background.base
 border-width: 1
 cta-text: feature
 cta-link:/
+cta-role: primary
+child: $display-card-570.child
 
 Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
 
--- ft.display-card: Why FTD?
-center: true
-width: 570
-titlecolor: $inherited.colors.text
-textcolor: $inherited.colors.text-strong
-bgcolor: $inherited.colors.background.base
-border-width: 1
-cta-text: feature
-cta-link:/
-
-Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+-- end: display-card-570
 
 
--- end: ft.row-container
+
+
+
+
+
+
+
+
+-- component display-card-1:
+children child:
 
 -- ft.display-card: Hands on Workshop
 width: 1160
-image: $assets.files.static.card.card6.svg
+image: $assets.files.static.learn-ftd.card.svg
 center: true
 role: true
 titlecolor: $inherited.colors.text
@@ -82,7 +124,8 @@ textcolor: $inherited.colors.text-strong
 bgcolor: $inherited.colors.background.base
 cta-text: feature
 cta-link:/
-padding-vertical: 45
+cta-role: primary
+child: $display-card-1.child
 
 Lorem ipsum dolor sit amet consectetur. In consequat at massa
 risus at. Morbi faucibus quis vulputate bibendum. Lectus dui 
@@ -93,8 +136,20 @@ risus at. Morbi faucibus quis vulputate bibendum. Lectus dui
 blandit erat mauris bibendum tempus amet. Placerat in auctor 
 lorem a non luctus aenean dolor. Quis facilisi ridiculus enim yirf.
 
+-- end: display-card-1
 
 
+
+
+
+
+
+
+
+
+
+-- component display-card-2:
+children child:
 
 -- ft.display-card: Crash Course
 width: 1160
@@ -106,7 +161,9 @@ textcolor: $inherited.colors.text-strong
 bgcolor: $inherited.colors.background.base
 cta-text: feature
 cta-link:/
-padding-vertical: 45
+cta-role: primary
+padding-vertical: 150
+child: $display-card-2.child
 
 Lorem ipsum dolor sit amet consectetur. In consequat at massa
 risus at. Morbi faucibus quis vulputate bibendum. Lectus dui 
@@ -117,6 +174,4 @@ risus at. Morbi faucibus quis vulputate bibendum. Lectus dui
 blandit erat mauris bibendum tempus amet. Placerat in auctor 
 lorem a non luctus aenean dolor. Quis facilisi ridiculus enim yirf.
 
--- ft.footer:
-
--- end: ft.page
+-- end: display-card-2

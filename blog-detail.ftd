@@ -8,7 +8,6 @@ caption title:
 body body:
 ftd.image-src image:
 
-
 -- integer $image-hover: 1
 
 -- blog list blog-list:

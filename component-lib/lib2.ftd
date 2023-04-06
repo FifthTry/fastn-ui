@@ -1685,8 +1685,10 @@ boolean center: false
 boolean center-img: false
 boolean dot-img: false
 integer height: 870
+optional boolean margin-top: false
 boolean bottom: false
 optional boolean small-img: false
+optional boolean right-img: false
 optional boolean top-img: false
 
 -- ftd.column:
@@ -1706,8 +1708,10 @@ center: $hero-section.center
 center-img: $hero-section.center-img
 dot-img: $hero-section.dot-img
 height: $hero-section.height
+margin-top: $hero-section.margin-top
 bottom: $hero-section.bottom
 small-img: $hero-section.small-img
+right-img: $hero-section.right-img
 top-img: $hero-section.top-img
 
 -- hero-section-mobile: $hero-section.title
@@ -1860,8 +1864,10 @@ boolean center:
 boolean center-img:
 boolean dot-img:
 integer height:
+optional boolean margin-top:
 boolean bottom:
 optional boolean small-img:
+optional boolean right-img:
 optional boolean top-img:
 
 -- ftd.column:
@@ -1871,6 +1877,7 @@ max-width.fixed.px: 1460
 align-self: center
 align-content if {hero-section-desktop.center}: center
 min-height.fixed.px: $hero-section-desktop.height
+margin-top.px if { hero-section-desktop.margin-top}: 100
 
 -- ftd.column:
 if: { hero-section-desktop.small-img }
@@ -1922,10 +1929,26 @@ height: auto
 -- end: ftd.column
 
 -- ftd.column:
-if: { !hero-section-desktop.bottom && !hero-section-desktop.small-img && !hero-section-desktop.center-img && !hero-section-desktop.dot-img}
+if: { !hero-section-desktop.bottom && !hero-section-desktop.small-img && !hero-section-desktop.center-img && !hero-section-desktop.dot-img && !hero-section-desktop.right-img}
 width: fill-container
 anchor: parent
 right.px: 0
+top.px: 0
+z-index: -1
+
+-- ftd.image:
+if: { hero-section-desktop.image != NULL }
+src: $hero-section-desktop.image
+width: fill-container
+height: auto
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { hero-section-desktop.right-img}
+width.fixed.percent: 25
+anchor: parent
+right.px: 100
 top.px: 0
 z-index: -1
 
@@ -1958,7 +1981,7 @@ max-width.fixed.px if { !hero-section-desktop.center && !hero-section-desktop.ce
 max-width.fixed.px if { hero-section-desktop.center-img  }: 622
 max-width.fixed.px: 715
 margin-top.px: 15
-text-align if { hero-section-desktop.bottom || hero-section-desktop.center || hero-section-desktop.center-img}: center
+text-align if { hero-section-desktop.center || hero-section-desktop.center-img}: center
 
 -- ftd.column:
 width: fill-container

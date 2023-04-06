@@ -14,22 +14,11 @@
 
 
 
--- ft.page: WHY FASTN
-bg-color: $inherited.colors.background.step-1
+-- page:
 
--- ft.hero-section: How to use Fastn?
-image: $assets.files.static.why-use-background.svg
-center: true
-height: 485
-width: 1160
+-- hero-section-485:
 
--- ft.hero-section.info: At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
-
--- ft.row-container:
-spacing: 24
-spacing if {ftd.device == "mobile"}: 32
-switch-to-column if {ftd.device == "mobile"}: true
-margin-top: 150
+-- row-container-24:
 
 -- ft.stages-vertical: Select your theme & deploy on Github.
 rect: $assets.files.static.hosting.rect-img2.svg
@@ -40,21 +29,11 @@ right: true
 
 Fastn needs a place to store your content and deploy your site. Most of ours users prefer storing the content on Github and deploying on Github pages.
 
--- ft.code-block-system:
-lang: ftd
-width: 412
-show-double: false
+-- code-block-system-412:
 
-\-- import: fastn
-\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
-zip: github.com/<username_or_orgname>
+-- end: row-container-24
 
--- end: ft.row-container
-
--- ft.row-container:
-spacing: 24
-spacing if {ftd.device == "mobile"}: 32
-switch-to-column if {ftd.device == "mobile"}: true
+-- row-container-32:
 
 -- ft.stages-vertical: Dynamic Sites
 rect: $assets.files.static.hosting.rect-num.svg
@@ -62,27 +41,181 @@ stage: 02
 cta-text: Get Started
 cta-link: /
 right: true
+top-line: true
 
 If your content website uses any of these features : 
 
 1. Authenticated / private pages
 2. Load dynamic data
 
--- ft.code-block-system:
-lang: ftd
-width: 412
-show-double: false
+-- code-block-system-412:
 
-\-- import: fastn
-\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
-zip: github.com/<username_or_orgname>
+-- end: row-container-32
 
--- end: ft.row-container
+-- row-container-32:
+
+-- testimonial-card-500:
+
+-- end: row-container-32
+
+-- row-container-24:
+
+-- ft.stages-vertical: Where is content storted?
+rect: $assets.files.static.hosting.rect-num.svg
+stage: 03
+cta-text: Get Started
+cta-link: /
+right: true
+top-line: true
+
+Fastn needs a place to store your content and deploy your site. Most of ours users prefer storing the content on Github and deploying on Github pages.
+
+-- code-block-system-412:
+
+-- end: row-container-24
+
+-- row-container-32:
+
+-- ft.stages-vertical: How to edit content?
+rect: $assets.files.static.hosting.rect-img2.svg
+stage: 04
+cta-text: Get Started
+cta-link: /
+right: true
+top-line: true
+
+If your content website uses any of these features : 
+
+1. Authenticated / private pages
+2. Load dynamic data
+
+code-block-system-412:
+
+-- end: row-container-32
+
+-- excel-promo-card-1:
+
+-- ft.footer:
+
+-- end: page
+
+
+
+
+
+
+
+
+
+
+-- component page:
+children wrapper:
+
+-- ft.page: WHY FASTN
+bg-color: $inherited.colors.background.step-1
+wrapper: $page.wrapper
+
+-- end: page
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-485:
+children childs:
+
+-- ft.hero-section: How to use Fastn?
+image: $assets.files.static.why-use-background.svg
+center: true
+height: 485
+width: 1160
+childs: $hero-section-485.childs
+
+-- ft.hero-section.info: At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
+
+-- end: hero-section-485
+
+
+
+
+
+
+
+
+
+
+-- component row-container-24:
+children row-wrap:
 
 -- ft.row-container:
 spacing: 24
 spacing if {ftd.device == "mobile"}: 32
 switch-to-column if {ftd.device == "mobile"}: true
+margin-top: 150
+row-wrap: $row-container-24.row-wrap
+
+-- end: row-container-24
+
+
+
+
+
+
+
+
+
+
+-- component code-block-system-412:
+children code:
+
+-- ft.code-block-system:
+lang: ftd
+width: 412
+show-double: false
+code: $code-block-system-412.code
+
+\-- import: fastn
+\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
+zip: github.com/<username_or_orgname>
+
+-- end: code-block-system-412
+
+
+
+
+
+
+
+
+
+
+-- component row-container-32:
+children row-wrap:
+
+-- ft.row-container:
+spacing: 24
+spacing if {ftd.device == "mobile"}: 32
+switch-to-column if {ftd.device == "mobile"}: true
+row-wrap: $row-container-32.row-wrap
+
+-- end: row-container-32
+
+
+
+
+
+
+
+
+
+
+-- component testimonial-card-500:
+children card:
 
 -- ft.testimonial-card: Create a local project
 bgcolor: $inherited.colors.custom.two
@@ -91,6 +224,7 @@ width: 500
 right: true
 cta-text: Explore more
 cta-link: /
+card: $testimonial-card-500.card
 
 At nulla tristique facilisis augue. 
 
@@ -98,69 +232,26 @@ Lectus diam dignissim erat blandit pellentesque
 
 egestas nulla .
 
--- end: ft.row-container
+-- end: testimonial-card-500
 
 
--- ft.row-container:
-spacing: 24
-spacing if {ftd.device == "mobile"}: 32
-switch-to-column if {ftd.device == "mobile"}: true
-margin-top: 150
 
--- ft.stages-vertical: Where is content storted?
-rect: $assets.files.static.hosting.rect-num.svg
-stage: 03
-cta-text: Get Started
+
+
+
+
+
+
+
+-- component excel-promo-card-1:
+children promo-wrap:
+
+-- ft.excel-promo-card: Ready to launch your next website on Fastn?
+no-img: true
+bgcolor: $inherited.colors.background.step-1
+cta-text: Hosting
 cta-link: /
-right: true
+cta-role: primary
+promo-wrap: $excel-promo-card-1.promo-wrap
 
-Fastn needs a place to store your content and deploy your site. Most of ours users prefer storing the content on Github and deploying on Github pages.
-
--- ft.code-block-system:
-lang: ftd
-width: 412
-show-double: false
-
-\-- import: fastn
-\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
-zip: github.com/<username_or_orgname>
-
--- end: ft.row-container
-
--- ft.row-container:
-spacing: 24
-spacing if {ftd.device == "mobile"}: 32
-switch-to-column if {ftd.device == "mobile"}: true
-
--- ft.stages-vertical: How to edit content?
-rect: $assets.files.static.hosting.rect-img2.svg
-stage: 04
-cta-text: Get Started
-cta-link: /
-right: true
-
-If your content website uses any of these features : 
-
-1. Authenticated / private pages
-2. Load dynamic data
-
--- ft.code-block-system:
-lang: ftd
-width: 412
-show-double: false
-
-\-- import: fastn
-\-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
-zip: github.com/<username_or_orgname>
-
--- end: ft.row-container
-
--- ft.hero-section: Ready to launch your next website on Fastn?
-center: true
-cta-left-text: hosting
-height: 485
-width: 862
-
--- ft.footer:
-
--- end: ft.page
+-- end: excel-promo-card-1

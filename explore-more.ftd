@@ -1,0 +1,312 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+
+
+
+
+
+
+
+
+
+
+
+-- ft.page: Explore More
+bg-color: $inherited.colors.background.step-1
+
+-- ft.hero-section: Lorem ipsum dolor sit amet, consectetur
+center: true
+cta-left-text: Explore
+height: 485
+width: 1160
+
+-- ft.hero-section.info: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.Lorem ipsum dolor sit amet, consectetur adipiscing.
+
+-- ft.right-image-component: What do we do
+image: $assets.files.static.explore.exp.svg
+padding-vertical: 100
+
+-- title: Accerate your project delivery now with Fastn
+width: true
+
+-- ft.row-container:
+wrap: true
+switch-to-column: true
+
+-- ft.card: Fastn Developin’
+image: $assets.files.static.explore.card3.svg
+no-btn: true
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero .
+
+-- ft.card: Fastn Developin’
+image: $assets.files.static.explore.card2.svg
+no-btn: true
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero .
+
+-- ft.card: Fastn Developin’
+image: $assets.files.static.explore.card1.svg
+no-btn: true
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero .
+
+-- end: ft.row-container
+
+-- ft.right-image-component: Connect top-notch tools
+image: $assets.files.static.explore.img.svg
+bottom: true
+
+-- title: Unleash your tech’s potential with Fastn features
+width: true
+
+-- row-container-20:
+
+-- display-card-570:
+
+-- display-card-2:
+
+-- display-card-570:
+
+-- display-card-2:
+
+-- end: row-container-20
+
+-- ft.right-image-component: Faster hosting
+icon: $assets.files.static.builder.icon-1.svg
+
+Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.
+
+-- ft.left-image-component: Faster hosting
+icon: $assets.files.static.builder.icon-3.svg
+no-img: true
+
+Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.
+
+-- ft.right-image-component: Faster hosting
+icon: $assets.files.static.builder.icon-2.svg
+
+Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.
+
+-- ft.left-image-component: Faster hosting
+icon: $assets.files.static.builder.icon-1.svg
+no-img: true
+
+Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.Metaverse and other web 3.0 destinations are global. You no longer have audiences restricted to local & hyperlocal cohorts.
+
+-- title: Leading the industry & delivering the best in class solutions
+align: true
+
+-- solution-card:
+name: -Lorem Ipsum
+image: $assets.files.static.explore.card5.svg
+
+Choose from thousands of existing integrations or  create your own. Choose from thousands of existing integrations or  create your own
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+
+-- component title:
+caption title:
+optional body body:
+optional boolean width: false
+optional boolean align: false
+
+-- ftd.column:
+width: fill-container
+width.fixed.percent if {title.width}: 74
+padding-bottom.px if {title.width}: 80
+align-self if {title.width}: center
+padding-vertical.px: 50
+padding-horizontal.px: 180
+padding-horizontal.px if { ftd.device == "mobile"}: 16
+spacing.fixed.px: 32
+
+-- ftd.text: $title.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+text-align if {title.width || title.align}: center
+
+-- ftd.text:
+text: $title.body
+if: {title.body != NULL}
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- end: ftd.column
+
+-- end: title
+
+
+
+
+
+
+
+
+
+
+-- component row-container-20:
+children row-wrap:
+
+-- ft.row-container:
+wrap: true
+spacing: 20
+switch-to-column: true
+padding-vertical: 150
+padding-vertical if {ftd.device == "mobile"}: 70
+row-wrap: $row-container-20.row-wrap
+
+-- end: row-container-20
+
+
+
+
+
+
+
+
+
+
+-- component display-card-570:
+children child:
+
+-- ft.display-card: FPM: Static site generator
+center: true
+width: 570
+titlecolor: $inherited.colors.text
+textcolor: $inherited.colors.text-strong
+bgcolor: $inherited.colors.background.step-1
+border-width: 1
+child: $display-card-570.child
+padding-vertical: 10
+
+fpm can also convert ftd files to static HTML files, so you can use it as a static site generator, and publish FTD files on github pages, S3 etc static site hosting sites.
+
+-- end: display-card-570
+
+
+
+
+
+
+
+
+
+
+-- component display-card-2:
+children child:
+
+-- ft.display-card: Distributing Static Assets
+center: true
+width: 570
+titlecolor: $inherited.colors.text
+textcolor: $inherited.colors.text-strong
+bgcolor: $inherited.colors.background.step-1
+border-width: 1
+child: $display-card-2.child
+padding-vertical: 10
+
+fpm can also convert ftd files to static HTML files, so you can use it as a static site generator, and publish FTD files on github pages, S3 etc static site hosting sites.
+
+-- end: display-card-2
+
+
+
+
+
+
+
+
+
+-- component solution-card:
+ftd.image-src image:
+body info:
+string name:
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.row:
+if: {ftd.device == "desktop"}
+width: fill-container
+height.fixed.px: 358
+border-radius.px: 5
+border-width.px: 1
+border-color: $inherited.colors.border
+spacing.fixed.px: 77
+align-content: center
+padding-horizontal.px: 80
+
+-- ftd.image:
+src: $solution-card.image
+width: auto
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.text:
+text: $solution-card.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- ftd.text:
+text: $solution-card.name
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+text-align: end
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.column:
+if: {ftd.device == "mobile"}
+width: fill-container
+height: auto
+border-radius.px: 5
+border-width.px: 1
+border-color: $inherited.colors.border
+spacing.fixed.px: 24
+align-content: center
+padding-horizontal.px: 24
+padding-vertical.px: 24
+
+-- ftd.image:
+src: $solution-card.image
+width: auto
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.text:
+text: $solution-card.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- ftd.text:
+text: $solution-card.name
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+text-align: end
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: solution-card
+

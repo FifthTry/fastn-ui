@@ -1,0 +1,430 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+
+
+
+
+
+
+
+
+
+
+
+-- ft.page: Other Components
+
+-- hero-section-485:
+
+-- stages-vertical-image-1:
+
+-- title: All components
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
+
+-- row-container-1:
+
+-- display-card-1:
+
+-- display-card-2:
+
+-- display-card-3:
+
+-- display-card-4:
+
+-- display-card-5:
+
+-- display-card-6:
+
+-- display-card-1:
+
+-- display-card-7:
+
+-- display-card-8:
+
+-- display-card-9:
+
+-- display-card-10:
+
+-- display-card-11:
+
+-- end: row-container-1
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-485:
+children childs:
+
+-- ft.hero-section: Other Components
+center: true
+height: 245
+width: 1160
+childs: $hero-section-485.childs
+
+-- ft.hero-section.info: At nulla tristique facilisis augue. Lectus diam dignissimerat blandit pellentesque egestas nulla.
+
+-- end: hero-section-485
+
+
+
+
+
+
+
+
+
+-- component stages-vertical-image-1:
+children child:
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.other.group.svg
+width: 1520
+height: 150
+child: $stages-vertical-image-1.child
+
+-- end: stages-vertical-image-1
+
+
+
+
+
+
+
+
+
+
+-- component title:
+caption title:
+optional body body:
+
+-- ftd.column:
+width: fill-container
+padding-vertical.px: 50
+padding-horizontal.px: 180
+padding-horizontal.px if { ftd.device == "mobile"}: 16
+spacing.fixed.px: 32
+
+-- ftd.text: $title.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- ftd.text:
+text: $title.body
+if: {title.body != NULL}
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- end: ftd.column
+
+-- end: title
+
+
+
+
+
+
+
+
+
+
+-- component display-card-1:
+children child:
+
+-- ft.display-card: Sliders >
+image: $assets.files.static.other.card1.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-1.child
+
+3 Variants
+
+-- end: display-card-1
+
+
+
+
+
+
+
+
+
+
+-- component display-card-2:
+children child:
+
+-- ft.display-card: Icon Notification Badge >
+image: $assets.files.static.other.card2.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-2.child
+
+3 Variants
+
+-- end: display-card-2
+
+
+
+
+
+
+
+
+
+-- component display-card-3:
+children child:
+
+-- ft.display-card: Progress >
+image: $assets.files.static.other.card3.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-3.child
+
+3 Variants
+
+-- end: display-card-3
+
+
+
+
+
+
+
+
+
+-- component display-card-4:
+children child:
+
+-- ft.display-card: Avatar Group >
+image: $assets.files.static.other.card4.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-4.child
+
+3 Variants
+
+-- end: display-card-4
+
+
+
+
+
+
+
+
+
+-- component display-card-5:
+children child:
+
+-- ft.display-card: Spinner >
+image: $assets.files.static.other.card5.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-5.child
+
+3 Variants
+
+-- end: display-card-5
+
+
+
+
+
+
+
+
+
+
+-- component display-card-6:
+children child:
+
+-- ft.display-card: Chips >
+image: $assets.files.static.other.card6.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-6.child
+
+3 Variants
+
+-- end: display-card-6
+
+
+
+
+
+
+
+
+
+
+-- component display-card-7:
+children child:
+
+-- ft.display-card: Tags >
+image: $assets.files.static.other.card8.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-7.child
+
+3 Variants
+
+-- end: display-card-7
+
+
+
+
+
+
+
+
+
+
+-- component display-card-8:
+children child:
+
+-- ft.display-card: Status Indicator >
+image: $assets.files.static.other.card9.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-8.child
+
+3 Variants
+
+-- end: display-card-8
+
+
+
+
+
+
+
+
+
+
+-- component display-card-9:
+children child:
+
+-- ft.display-card: Dots >
+image: $assets.files.static.other.card10.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-9.child
+
+3 Variants
+
+-- end: display-card-9
+
+
+
+
+
+
+
+
+
+
+-- component display-card-10:
+children child:
+
+-- ft.display-card: Data >
+image: $assets.files.static.other.card11.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-10.child
+
+3 Variants
+
+-- end: display-card-10
+
+
+
+
+
+
+
+
+
+
+-- component display-card-11:
+children child:
+
+-- ft.display-card: Calendar >
+image: $assets.files.static.other.card12.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-11.child
+
+3 Variants
+
+-- end: display-card-11
+
+
+
+
+
+
+
+
+-- component row-container-1:
+children row-wrap:
+
+-- ft.row-container:
+wrap: true
+switch-to-column: true
+spacing: 32
+padding-vertical: 80
+row-wrap: $row-container-1.row-wrap
+
+-- end: row-container-1

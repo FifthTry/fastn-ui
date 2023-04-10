@@ -882,12 +882,13 @@ cta-right-text: $excel-promo-card.cta-right-text
 
 
 -- component card-with-icons-bottom:
-caption title:
+optional caption title:
 optional string cta-text:
 optional string cta-link:
 optional string info:
 integer width: $width
 children icons-wrap:
+optional boolean no-padding: false
 
 -- lib3.card-with-icons-bottom: $card-with-icons-bottom.title
 cta-text: $card-with-icons-bottom.cta-text
@@ -895,6 +896,7 @@ cta-link: $card-with-icons-bottom.cta-link
 info: $card-with-icons-bottom.info
 width: $card-with-icons-bottom.width
 icons-wrap: $card-with-icons-bottom.icons-wrap
+no-padding: $card-with-icons-bottom.no-padding
 
 -- end: card-with-icons-bottom
 
@@ -2128,6 +2130,10 @@ body info:
 optional string cta-text:
 optional string cta-link:
 optional string cta-role:
+optional string role:
+optional string type:
+optional string time:
+optional boolean timestamp:
 optional boolean col-img: false
 optional boolean padding: false
 optional boolean down-img: false
@@ -2151,6 +2157,10 @@ ext-img: $left-image-component.ext-img
 right-btn: $left-image-component.right-btn
 image: $left-image-component.image
 top: $left-image-component.top
+role: $left-image-component.role
+type: $left-image-component.type
+time: $left-image-component.time
+timestamp: $left-image-component.timestamp
 child: $left-image-component.child
 no-img: $left-image-component.no-img
 
@@ -2390,6 +2400,7 @@ optional string cta-role:
 boolean center: false
 boolean spacing: false
 boolean down: false
+boolean down-img: false
 optional integer padding-vertical:
 ftd.color bgcolor: $inherited.colors.text
 ftd.color textcolor: $inherited.colors.background.base
@@ -2408,6 +2419,7 @@ cta-link: $display-card.cta-link
 cta-role: $display-card.cta-role
 center: $display-card.center
 down: $display-card.down
+down-img: $display-card.down-img
 padding-vertical: $display-card.padding-vertical
 bgcolor: $display-card.bgcolor
 textcolor: $display-card.textcolor

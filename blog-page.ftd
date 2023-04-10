@@ -1,0 +1,193 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+
+-- ft.page: Developer
+$show-breadcrum: true
+
+-- hero-section-1:
+
+-- row-container-50:
+
+-- ft.tabs: All
+index: 1
+$active-item: true
+
+-- ft.tabs: Design
+index: 2
+
+-- ft.tabs: Development
+index: 3
+
+-- ft.tabs: Mobile
+index: 4
+
+-- ft.tabs: Website
+index: 4
+
+-- end: row-container-50
+
+-- row-container-1:
+
+-- blog-card:
+
+-- blog-card:
+
+-- blog-card:
+
+-- blog-card:
+
+-- blog-card:
+
+-- blog-card:
+
+-- end: row-container-1
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-1:
+children childs:
+
+-- ft.hero-section: Know Our Stories
+image: $assets.files.static.blog.back.png
+
+-- ft.hero-section.info:
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform. At nulla tristique facilisis augue. Lectus diam dignissim.
+
+-- end: hero-section-1
+
+
+
+
+
+
+
+
+
+
+-- component row-container-50:
+children row-wrap:
+
+-- ft.row-container:
+spacing: 50
+align-left: true
+padding-vertical: 50
+row-wrap: $row-container-50.row-wrap
+
+-- end: row-container-50
+
+
+
+
+
+
+
+
+
+
+-- component blog-card:
+ftd.image-src image: $assets.files.static.blog-details.post.svg
+caption title: Trending UI elements
+string type: UI | UX
+string time: 07 min
+string model: Design 
+
+-- ftd.column:
+width.fixed.px: 430
+width.fixed.px if {ftd.device == "mobile"}: 320
+margin-left.px: 40
+
+-- ftd.column:
+width: fill-container
+;;padding-horizontal.px: 22
+border-color: $inherited.colors.border
+border-width.px: 1
+border-radius.px: 32
+
+-- ftd.column:
+width: fill-container
+border-radius.px: 30
+align-content: center
+margin-left.px: 17
+margin-bottom.px: -24
+padding-top.px: 24
+
+-- ftd.image:
+src: $blog-card.image
+border-radius.px: 32
+width.fixed.px: 425
+width.fixed.px if {ftd.device == "mobile"}: 280
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.row:
+width: fill-container
+margin-top.px: 48
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 13
+
+-- ftd.text: $blog-card.title 
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+
+-- ftd.text: $blog-card.type
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- ftd.column:
+spacing.fixed.px: 13
+
+-- ftd.text: $blog-card.model 
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- ftd.text: $blog-card.time
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: blog-card
+
+
+
+
+
+
+
+
+
+
+
+-- component row-container-1:
+children row-wrap:
+
+-- ft.row-container:
+wrap: true
+switch-to-column: true
+padding-vertical: 50
+spacing: 50
+row-wrap: $row-container-1.row-wrap
+
+-- end: row-container-1

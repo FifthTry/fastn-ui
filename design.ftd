@@ -1,35 +1,154 @@
 -- import: fifthtry.github.io/fastn-ui/assets
--- import: fastn
--- import: fastn/processors as pr
 -- import: fifthtry.github.io/fastn-ui/lib as ft
--- import: fastn-cs
 
-
-
-
-
--- ft.page: Design System
+-- ft.page: Design
 $show-breadcrum: true
 
--- hero-section-740:
+-- hero-section-1:
 
--- ft.right-image-component: What  is Design System
-image: $assets.files.static.design.right.png
-bottom: true
+-- approach: Our Approach
+cta-text: Learn more
+cta-link: /
 
-Lorem ipsum dolor sit amet consectetur. In consequat at massa risus at. Morbi faucibus quis vulputate bibendum. Lectus dui blandit erat mauris bibendum tempus amet. Placerat in auctor lorem a non luctus aenean dolor. Quis facilisi ridiculus enim yirf.
+We belive a uniform language must exist to represent data and prose that any human being can learn easily. Further most software are incompatible with others. A graph made in one software one can not be used with another software. 
 
--- row-container-36:
+-- ft.benefits-card: Benefits Of Fastn
 
--- right-image-component-bg:
+-- ft.benefits-info-card: Everyone is everywhere
+icon: $assets.files.static.benefits.benefits-icon-1.svg
 
--- right-image-component-step1:
+-- ft.benefits-info-card.info: 
 
--- end: row-container-36
+Metaverse and other web 3.0 destinations are global.
+You no longer have audiences restricted to local 
+& hyperlocal cohorts.
 
--- right-image-component-2:
+-- end: ft.benefits-info-card
 
--- ft.trending-templates: Want to learn Design System!
+-- ft.benefits-info-card: Everyone is everywhere
+icon: $assets.files.static.benefits.benefits-icon-2.svg
+
+-- ft.benefits-info-card.info: 
+
+Metaverse and other web 3.0 destinations are global.
+You no longer have audiences restricted to local 
+& hyperlocal cohorts.
+
+-- end: ft.benefits-info-card
+
+-- ft.benefits-info-card: Everyone is everywhere
+icon: $assets.files.static.benefits.benefits-icon-3.svg
+
+-- ft.benefits-info-card.info: 
+
+Metaverse and other web 3.0 destinations are global.
+You no longer have audiences restricted to local 
+& hyperlocal cohorts.
+
+-- end: ft.benefits-info-card
+
+-- ft.benefits-info-card: Everyone is everywhere
+icon: $assets.files.static.benefits.benefits-icon-4.svg
+
+-- ft.benefits-info-card.info: 
+
+Metaverse and other web 3.0 destinations are global.
+You no longer have audiences restricted to local 
+& hyperlocal cohorts.
+
+-- end: ft.benefits-info-card
+
+-- end: ft.benefits-card
+
+-- trending-templates-150:
+
+-- row-container-80:
+
+-- display-card-1:
+
+-- display-card-2:
+
+-- display-card-3:
+
+-- display-card-1:
+
+-- display-card-2:
+
+-- display-card-3:
+
+-- end: row-container-80
+
+-- ft.excel-promo-card: We got you covered with 100+ Templates
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.dev.img.svg
+right: true
+
+-- ft.excel-promo-card.info:
+
+Browse dozens of professionaly designed templates. Easily change structure,style,and graphics -then host instantly.
+
+-- end: ft.excel-promo-card
+
+
+-- ft.trending-templates: You got questions in mind ? We have answers
+no-img: true
+
+-- row-container-24:
+
+-- border-box: Dark mode For Image
+cta-text: Explore More
+cta-link: /
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- border-box: Dark mode For Image
+cta-text: Explore More
+cta-link: /
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- border-box: Dark mode For Image
+cta-text: Explore More
+cta-link: /
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- border-box: Dark mode For Image
+cta-text: Explore More
+cta-link: /
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- end: row-container-24
+
+-- display-card-5:
+
+-- community: Join our community now!
+logo1: $assets.files.static.dev.utube.svg
+logo2: $assets.files.static.dev.discord.svg
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.dev.youtube.svg
+sub-title-1: We have a youtube channel filled with plethora of content about fastn.
+sub-title-2: Meet folks who are learning FTD like you!
+
+-- title: Learn from experiences
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform. At nulla tristique facilisis augue. Lectus diam dignissim.
+
+-- ft.left-image-component: Creating personal website using FTD
+image: $assets.files.static.dev.left-img.svg
+cta-text: Explore more
+cta-link: /
+role: UI/UX
+type: Design
+time: 7Min
+timestamp: true
+
+Metaverse and other web 3.0 destinations are global.  You no longer have audiences restricted to local.
+
+-- ft.trending-templates: Become a contributor
 system-image: true
 cta-text: Explore More
 cta-link: /
@@ -38,79 +157,6 @@ cta-link: /
 
 At nulla tristique facilisis augue. Lectus diam dignissim
 erat blandit pellentesque egestas nulla.
-
--- row-container-32:
-
--- ft.left-image-component: Fastn.Colours
-cta-text: Explore More
-cta-link: /
-icon: $assets.files.static.design.icon6.svg
-image: $assets.files.static.design.card.svg
-col-img: true
-cta-role: primary
-
-FastN has an expansive ever-growing color library. It places no restriction when it comes to color palettes or color combinations unlike some design systems. Because it has been incrementally built by designers for developers, FastN color libraries provide an array of compatible options for developers to skin & re-skin their creations to their hearts’ content.
-
--- ft.left-image-component: Fastn.Type
-cta-text: Explore More
-cta-link: /
-icon: $assets.files.static.design.icon5.svg
-image: $assets.files.static.design.card2.svg
-col-img: true
-cta-role: primary
-
-FastN has an expansive ever-growing color library. It places no restriction when it comes to color palettes or color combinations unlike some design systems. Because it has been incrementally built by designers for developers, FastN color libraries provide an array of compatible options for developers to skin & re-skin their creations to their hearts’ content.
-
--- end: row-container-32
-
--- ft.trending-templates: Libraries
-no-img: true
-cta-text: Learn More
-cta-link: /
-
--- ft.trending-templates.info:
-
-Browse dozens of professionaly designed templates. 
-Easily change structure,style,and graphics -then host instantly.
-
--- ft.left-image-component: Fastn.Type
-cta-text: Explore More
-cta-link: /
-image: $assets.files.static.design.card3.svg
-down-img: true
-cta-role: primary
-
-FastN has an expansive ever-growing color library. It places no restriction when it comes to color palettes or color combinations unlike some design systems. Because it has been incrementally built by designers for developers, FastN color libraries provide an array of compatible options for developers to skin & re-skin their creations to their hearts’ content.
-
--- row-container-32:
-
--- ft.left-image-component: Color Scheme Library
-cta-text: Explore More
-cta-link: /
-image: $assets.files.static.design.card5.svg
-down-img: true
-cta-role: primary
-
-Wide variety of Open source color schemes that look good and are optimised for accessibility and readability. Use one of yours or create your own.
-
--- ft.left-image-component: Font Library
-cta-text: Explore More
-cta-link: /
-image: $assets.files.static.design.card6.svg
-down-img: true
-cta-role: primary
-
-Curated font pairings to that make you site look good. We work with Google fonts, and work with designers to curate good looking choices. Use one of yours or create your own.
-
--- end: row-container-32
-
--- excel-promo-card-bg:
-
--- ft.stages-vertical-image:
-image: $assets.files.static.design.card3.svg
-top: true
-
--- end: excel-promo-card-bg
 
 -- ft.footer:
 
@@ -125,21 +171,20 @@ top: true
 
 
 
--- component hero-section-740:
+
+-- component hero-section-1:
 children childs:
 
--- ft.hero-section: A consistent, non-restructive open design system!
-center: true
-height: 740
-childs: $hero-section-740.childs
+-- ft.hero-section: Everything you need to build anything you want
+height: 420
+image: $assets.files.static.dev.back.png
+right-img: true
 
--- ft.hero-section.info: Fastn is here to serve to your unique requirements with an easy-to-use platform. At nulla tristique facilisis augue. Lectus diam dignissim.
+-- ft.hero-section.info:
 
--- end: hero-section-740
+Fastn provides exhaustive frameworks to set up and scale your project in minutes.
 
-
-
-
+-- end: hero-section-1
 
 
 
@@ -147,89 +192,39 @@ childs: $hero-section-740.childs
 
 
 
--- component row-container-36:
+-- component trending-templates-150:
+children trending-wrap:
+
+-- ft.trending-templates: Libraries
+no-img: true
+trending-wrap: $trending-templates-150.trending-wrap
+
+-- ft.trending-templates.info:
+
+Browse dozens of professionaly designed templates. Easily change structure,style,and graphics -then host instantly.
+
+-- end: trending-templates-150
+
+
+
+
+
+
+
+
+
+
+-- component row-container-80:
 children row-wrap:
 
 -- ft.row-container:
+wrap: true
 switch-to-column: true
-spacing: 36
-padding-vertical: 84
-row-wrap: $row-container-36.row-wrap
-
--- end: row-container-36
-
-
-
-
-
-
-
-
-
-
--- component right-image-component-bg:
-children child:
-
--- ft.right-image-component: How to use Design System?
-icon: $assets.files.static.design.icon.svg
-no-btn: true
-bgcolor: $inherited.colors.background.step-1
-width: 562
-child: $right-image-component-bg.child
-
-Fastn is here to serve to your unique requirements with an easy-to-use platform.
-
--- end: right-image-component-bg
-
-
-
-
-
-
-
-
-
-
--- component right-image-component-step1:
-children child:
-
--- ft.right-image-component: How to use Design System?
-icon: $assets.files.static.design.icon2.svg
-no-btn: true
-bgcolor: $inherited.colors.background.step-1
-width: 562
-child: $right-image-component-step1.child
-
-Fastn is here to serve to your unique requirements with an easy-to-use platform.
-
--- end: right-image-component-step1
-
-
-
-
-
-
-
-
-
-
-
-
-
--- component right-image-component-2:
-children child:
-
--- ft.right-image-component: Benefits of Design System
-icon: $assets.files.static.design.icon2.svg
-no-btn: true
-bgcolor: $inherited.colors.background.step-1
+spacing: 20
 width: 1160
-image: $assets.files.static.design.right-img.svg
-child: $right-image-component-2.child
+row-wrap: $row-container-80.row-wrap
 
-Fastn is here to serve to your unique requirements with an easy-to-use platform.
-
--- end: right-image-component-2
+-- end: row-container-80
 
 
 
@@ -240,46 +235,562 @@ Fastn is here to serve to your unique requirements with an easy-to-use platform.
 
 
 
+-- component display-card-1:
+children child:
 
-
--- component row-container-32:
-children row-wrap:
-
--- ft.row-container:
-switch-to-column: true
-spacing: 32
-row-wrap: $row-container-32.row-wrap
-
--- end: row-container-32
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- component excel-promo-card-bg:
-children promo-wrap:
-
--- ft.excel-promo-card: Illustrations & Icons Library
-image: $assets.files.static.design.img.png
-bgcolor: $inherited.colors.background.step-2
-cta-text: Explore more
+-- ft.display-card: Component Library
+image: $assets.files.static.dev.card.svg
+cta-text: explore more
 cta-link: /
 cta-role: primary
-right: true
-promo-wrap: $excel-promo-card-bg.promo-wrap
+bgcolor: $inherited.colors.background.step-1
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+width: 365
+height: true
+child: $display-card-1.child
 
--- ft.excel-promo-card.info: 
+You can package your components as fastn packages to share with community and access community shared ones.
 
-You can package your components as fastn packages
-to share with community and access community shared ones.
+-- end: display-card-1
 
--- end: excel-promo-card-bg
+
+
+-- component display-card-2:
+children child:
+
+-- ft.display-card: Color Scheme Library
+image: $assets.files.static.dev.card2.svg
+cta-text: explore more
+cta-link: /
+cta-role: primary
+bgcolor: $inherited.colors.background.step-1
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+width: 365
+height: true
+child: $display-card-2.child
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- end: display-card-2
+
+
+
+
+
+
+
+
+
+
+
+-- component display-card-3:
+children child:
+
+-- ft.display-card: Font Library
+image: $assets.files.static.dev.card3.svg
+cta-text: explore more
+cta-link: /
+cta-role: primary
+bgcolor: $inherited.colors.background.step-1
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+width: 365
+height: true
+child: $display-card-3.child
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- end: display-card-3
+
+
+
+
+
+
+
+
+
+
+
+
+-- component approach:
+caption title:
+body info:
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
+optional string number:
+optional ftd.image-src src:
+
+-- ftd.column:
+width: fill-container
+padding-horizontal.px if {ftd.device != "mobile"}: 180
+padding-vertical.px: 64
+
+-- ftd.row:
+if: {ftd.device != "mobile"}
+spacing.fixed.px: 50
+
+-- ftd.column:
+width.fixed.percent: 100
+spacing.fixed.px: 24
+
+-- ftd.text: 01/08
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- ftd.text: $approach.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text-strong
+
+-- ftd.text:
+text: $approach.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- ft.cta-button: $approach.cta-text
+role: $approach.cta-role
+link: $approach.cta-link
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.image:
+src: $assets.files.static.dev.youtube.svg
+width: fill-container
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.column:
+if: {ftd.device == "mobile"}
+spacing.fixed.px: 50
+padding-horizontal.px: 24
+
+-- ftd.column:
+width.fixed.percent: 100
+spacing.fixed.px: 24
+
+-- ftd.text: 01/08
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- ftd.text: $approach.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text-strong
+
+-- ftd.text:
+text: $approach.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- ft.cta-button: $approach.cta-text
+role: $approach.cta-role
+link: $approach.cta-link
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.image:
+src: $assets.files.static.dev.youtube.svg
+width: fill-container
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: approach
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component border-box:
+caption title:
+body info:
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
+
+-- ftd.column:
+padding-vertical.px: 40
+
+-- ftd.column:
+border-width.px: 1
+border-radius.px: 12
+border-color: $inherited.colors.border-strong
+;;width: fill-container
+max-width.fixed.px: 563
+padding-vertical.px: 31
+padding-horizontal.px: 40
+spacing.fixed.px: 12
+width.fixed.px if { ftd.device == "mobile" }: 343
+
+-- ftd.text: $border-box.title
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+
+-- ftd.text:
+text: $border-box.info
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
+
+-- ft.cta-button: $border-box.cta-text
+if: { border-box.cta-text != NULL }
+role: $border-box.cta-role
+link: $border-box.cta-link
+width: 140
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: border-box
+
+
+
+
+
+
+
+
+
+
+
+-- component row-container-24:
+children row-wrap:
+
+-- ft.row-container:
+spacing: 24
+wrap: true
+switch-to-column: true
+row-wrap: $row-container-24.row-wrap
+
+-- end: row-container-24
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component display-card-5:
+children child:
+
+-- ft.display-card: Want to learn more about Fastn ?
+width: 1160
+image: $assets.files.static.dev.card6.svg
+down: true
+center: true
+titlecolor: $inherited.colors.text
+textcolor: $inherited.colors.text-strong
+bgcolor: $inherited.colors.background.base
+cta-text: feature
+cta-link:/
+cta-role: primary
+child: $display-card-5.child
+
+Join this upcoming workshop
+
+-- end: display-card-5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component community:
+caption title:
+ftd.image-src logo1:
+ftd.image-src logo2:
+string sub-title-1:
+string sub-title-2:
+string cta-text:
+string cta-link:
+ftd.image-src image:
+
+-- ftd.column:
+width: fill-container
+
+-- community-desktop: $community.title
+if: {ftd.device != "mobile"}
+logo1: $community.logo1
+logo2: $community.logo2
+sub-title-1: $community.sub-title-1
+sub-title-2: $community.sub-title-2
+cta-text: $community.cta-text
+cta-link: $community.cta-link
+image: $community.image
+
+-- community-mobile: $community.title
+if: {ftd.device == "mobile"}
+logo1: $community.logo1
+logo2: $community.logo2
+sub-title-1: $community.sub-title-1
+sub-title-2: $community.sub-title-2
+cta-text: $community.cta-text
+cta-link: $community.cta-link
+image: $community.image
+
+-- end: ftd.column
+
+-- end: community
+
+
+
+
+
+
+
+
+
+-- component community-desktop:
+caption title:
+ftd.image-src logo1:
+ftd.image-src logo2:
+string sub-title-1:
+string sub-title-2:
+string cta-text:
+string cta-link:
+ftd.image-src image:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 22
+align-content: center
+padding-vertical.px: 150
+
+-- ftd.column:
+align-content: left
+
+-- ftd.text: $community-desktop.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 89
+align-content: center
+
+-- ftd.column:
+width.fixed.px: 650
+spacing.fixed.px: 64
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $community-desktop.logo1
+width: auto
+
+-- ftd.column:
+spacing.fixed.px: 18
+
+-- ftd.text: $community-desktop.sub-title-1
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+
+-- ft.cta-button: $community-desktop.cta-text
+link: $community-desktop.cta-link
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $community-desktop.logo2
+width: auto
+
+-- ftd.column:
+spacing.fixed.px: 18
+
+-- ftd.text: $community-desktop.sub-title-2
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+
+-- ft.cta-button: $community-desktop.cta-text
+link: $community-desktop.cta-link
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.image:
+src: $community-desktop.image
+width: auto
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: community-desktop
+
+
+
+
+
+
+
+
+
+
+-- component community-mobile:
+caption title:
+ftd.image-src logo1:
+ftd.image-src logo2:
+string sub-title-1:
+string sub-title-2:
+string cta-text:
+string cta-link:
+ftd.image-src image:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 40
+align-content: center
+padding-top.px: 100
+padding-horizontal.px: 24
+
+-- ftd.text: $community-mobile.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 40
+align-content: center
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.image:
+src: $community-mobile.logo1
+width: auto
+
+-- ftd.column:
+spacing.fixed.px: 18
+
+-- ftd.text: $community-mobile.sub-title-1
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+
+-- ft.cta-button: $community-mobile.cta-text
+link: $community-mobile.cta-link
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $community-mobile.logo2
+width: auto
+
+-- ftd.column:
+spacing.fixed.px: 18
+
+-- ftd.text: $community-mobile.sub-title-2
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+
+-- ft.cta-button: $community-mobile.cta-text
+link: $community-mobile.cta-link
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.image:
+src: $community-mobile.image
+width.fixed.px: 343
+
+-- end: ftd.column
+
+-- end: community-mobile
+
+
+
+
+
+
+
+
+
+
+-- component title:
+caption title:
+optional body body:
+optional boolean width: false
+optional boolean align: false
+
+-- ftd.column:
+width: fill-container
+width.fixed.percent if {title.width}: 74
+padding-bottom.px if {title.width}: 80
+align-self if {title.width}: center
+padding-vertical.px: 50
+padding-horizontal.px: 180
+padding-horizontal.px if { ftd.device == "mobile"}: 16
+spacing.fixed.px: 32
+
+-- ftd.text: $title.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+text-align if {title.width || title.align}: center
+
+-- ftd.text:
+text: $title.body
+if: {title.body != NULL}
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- end: ftd.column
+
+-- end: title

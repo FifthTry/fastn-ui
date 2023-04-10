@@ -827,6 +827,7 @@ optional string cta-text:
 optional string cta-link:
 optional string cta-role: 
 optional ftd.image-src image: $assets.files.static.charts-image.svg
+optional ftd.image-src back-image:
 optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
 children promo-wrap:
@@ -850,6 +851,7 @@ cta-text: $excel-promo-card.cta-text
 cta-link: $excel-promo-card.cta-link
 cta-role: $excel-promo-card.cta-role
 image: $excel-promo-card.image
+back-image: $excel-promo-card.back-image
 bgcolor: $excel-promo-card.bgcolor
 width: $excel-promo-card.width
 promo-wrap: $excel-promo-card.promo-wrap
@@ -2080,6 +2082,7 @@ optional string cta-link:
 optional string cta-role:
 optional ftd.image-src image:
 optional integer padding-vertical:
+optional integer width:
 optional boolean join-btn: false
 optional boolean two-text: false
 optional boolean top: false
@@ -2098,6 +2101,7 @@ cta-link: $right-image-component.cta-link
 cta-role: $right-image-component.cta-role
 image: $right-image-component.image
 padding-vertical: $right-image-component.padding-vertical
+width: $right-image-component.width
 top: $right-image-component.top
 join-btn: $right-image-component.join-btn
 two-text: $right-image-component.two-text
@@ -2121,7 +2125,7 @@ child: $right-image-component.child
 
 -- component left-image-component:
 optional ftd.image-src icon:
-caption title:
+optional caption title:
 body info:
 optional string cta-text:
 optional string cta-link:
@@ -2130,10 +2134,15 @@ optional string role:
 optional string type:
 optional string time:
 optional boolean timestamp:
+optional boolean col-img: false
+optional boolean padding: false
+optional boolean down-img: false
+optional boolean ext-img: false
+optional boolean right-btn: false
+children child:
 optional ftd.image-src image:
 boolean top: false
 boolean no-img: false
-
 
 -- lib4.left-image-component: $left-image-component.title
 icon: $left-image-component.icon
@@ -2141,12 +2150,18 @@ info: $left-image-component.info
 cta-text: $left-image-component.cta-text
 cta-link: $left-image-component.cta-link
 cta-role: $left-image-component.cta-role
+col-img: $left-image-component.col-img
+padding: $left-image-component.padding
+down-img: $left-image-component.down-img
+ext-img: $left-image-component.ext-img
+right-btn: $left-image-component.right-btn
 image: $left-image-component.image
 top: $left-image-component.top
 role: $left-image-component.role
 type: $left-image-component.type
 time: $left-image-component.time
 timestamp: $left-image-component.timestamp
+child: $left-image-component.child
 no-img: $left-image-component.no-img
 
 -- end: left-image-component
@@ -2192,11 +2207,13 @@ bgcolor: $hosting-hero.bgcolor
 ftd.image-src image: $assets.files.static.hosting.stage-hero.svg
 integer height: 600
 optional integer width:
+optional boolean top: false
 children child:
 
 -- lib4.stages-vertical-image:
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
+top: $stages-vertical-image.top
 height: $stages-vertical-image.height
 child: $stages-vertical-image.child
 

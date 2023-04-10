@@ -906,6 +906,9 @@ caption title:
 body info:
 integer width: $width
 optional ftd.color bgcolor: $inherited.colors.background.step-1
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- ftd.column:
 width: fill-container
@@ -916,6 +919,9 @@ image: $hosting-hero.image
 info: $hosting-hero.info
 width: $hosting-hero.width
 bgcolor: $hosting-hero.bgcolor
+cta-text: $hosting-hero.cta-text
+cta-link: $hosting-hero.cta-link
+cta-role: $hosting-hero.cta-role
 
 -- hosting-hero-mobile: $hosting-hero.title
 if: { ftd.device == "mobile"}
@@ -923,6 +929,9 @@ image: $hosting-hero.image
 info: $hosting-hero.info
 width: $hosting-hero.width
 bgcolor: $hosting-hero.bgcolor
+cta-text: $hosting-hero.cta-text
+cta-link: $hosting-hero.cta-link
+cta-role: $hosting-hero.cta-role
 
 -- end: ftd.column
 
@@ -943,6 +952,9 @@ caption title:
 body info:
 integer width:
 optional ftd.color bgcolor:
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- ftd.column:
 width: fill-container
@@ -973,6 +985,10 @@ color: $inherited.colors.text
 text: $hosting-hero-desktop.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
+
+-- lib5.cta-button: $hosting-hero-desktop.cta-text
+role: $hosting-hero-desktop.cta-role
+link: $hosting-hero-desktop.cta-link
 
 -- end: ftd.column
 
@@ -1011,6 +1027,9 @@ caption title:
 body info:
 integer width:
 optional ftd.color bgcolor:
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- ftd.column:
 width: fill-container
@@ -1040,6 +1059,10 @@ color: $inherited.colors.text
 text: $hosting-hero-mobile.info
 role: $inherited.types.copy-regular
 color: $inherited.colors.text-strong
+
+-- lib5.cta-button: $hosting-hero-mobile.cta-text
+role: $hosting-hero-mobile.cta-role
+link: $hosting-hero-mobile.cta-link
 
 -- end: ftd.column
 

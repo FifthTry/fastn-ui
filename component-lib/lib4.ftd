@@ -73,6 +73,7 @@ optional string cta-role:
 boolean role: false
 boolean center: false
 boolean down: false
+boolean down-img: false
 optional integer padding-vertical:
 boolean spacing: false
 ftd.color bgcolor: $inherited.colors.text
@@ -101,7 +102,43 @@ height.fixed.px if {display-card.height}: 500
 padding-top.px if {display-card.down}: 150
 
 -- ftd.column:
-if: {display-card.height}
+if: {display-card.down-img}
+width: fill-container
+spacing.fixed.px: 32
+
+-- ftd.column:
+padding-horizontal.px if {ftd.device != "mobile"}: 28
+spacing.fixed.px: 24
+
+-- ftd.text: $display-card.title
+role: $inherited.types.heading-small
+color: $display-card.titlecolor
+
+-- ftd.text: 
+if: { display-card.image != NULL }
+text: $display-card.info
+role: $inherited.types.copy-regular
+color: $display-card.textcolor
+
+-- lib5.cta-button: $display-card.cta-text
+if: { display-card.cta-text != NULL }
+link: $display-card.cta-link
+role: $display-card.cta-role
+show-arrow: true
+
+-- ftd.image:
+if: { display-card.image != NULL}
+src: $display-card.image
+height.fixed.px: 149
+height.fixed.px if {ftd.device == "mobile"}: 245
+border-radius.px: 12
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: {display-card.height && !display-card.down-img}
 width: fill-container
 spacing.fixed.px: 32
 align-content: center
@@ -137,7 +174,7 @@ show-arrow: true
 -- end: ftd.column
 
 -- ftd.column:
-if: {!display-card.height}
+if: {!display-card.height && !display-card.down-img}
 width: fill-container
 
 -- ftd.image:
@@ -1136,6 +1173,9 @@ body info:
 optional string cta-text:
 optional string cta-link:
 optional string cta-role:
+optional string role:
+optional string type:
+optional string time:
 optional boolean col-img: false
 optional boolean padding: false
 optional boolean down-img: false
@@ -1144,6 +1184,7 @@ optional boolean right-btn: false
 children child:
 optional ftd.image-src image:
 boolean top:
+optional boolean timestamp: false
 boolean no-img:
 
 -- ftd.column:
@@ -1163,6 +1204,10 @@ ext-img: $left-image-component.ext-img
 right-btn: $left-image-component.right-btn
 image: $left-image-component.image
 top: $left-image-component.top
+role: $left-image-component.role
+type: $left-image-component.type
+time: $left-image-component.time
+timestamp: $left-image-component.timestamp
 child: $left-image-component.child
 no-img: $left-image-component.no-img
 
@@ -1173,6 +1218,10 @@ info: $left-image-component.info
 cta-text: $left-image-component.cta-text
 cta-link: $left-image-component.cta-link
 image: $left-image-component.image
+role: $left-image-component.role
+type: $left-image-component.type
+time: $left-image-component.time
+timestamp: $left-image-component.timestamp
 child: $left-image-component.child
 no-img: $left-image-component.no-img
 
@@ -1203,6 +1252,10 @@ optional boolean right-btn:
 children child:
 optional ftd.image-src image:
 optional boolean top:
+optional string role:
+optional string type:
+optional string time:
+optional boolean timestamp:
 optional boolean no-img:
 
 -- ftd.row:
@@ -1219,7 +1272,7 @@ border-radius.px if { left-image-component-desktop.down-img }: 30
 -- ftd.column:
 if: {!left-image-component-desktop.no-img}
 width: fill-container
-padding-vertical.px if { !left-image-component-desktop.top && !left-image-component-desktop.ext-img}: 101
+padding-vertical.px if { !left-image-component-desktop.top && !left-image-component-desktop.timestamp && !left-image-component-desktop.ext-img}: 101
 padding-vertical.px if { left-image-component-desktop.top}: 30
 
 -- ftd.image:
@@ -1237,6 +1290,41 @@ spacing.fixed.px: 24
 padding-left.px if {!left-image-component-desktop.no-img}: 119
 padding-top.px if { left-image-component-desktop.top }: 30
 align-content if {left-image-component-desktop.no-img}: right
+
+-- ftd.row:
+if: {left-image-component-desktop.timestamp}
+spacing.fixed.px: 24
+align-content: center
+
+-- ftd.text: $left-image-component-desktop.role
+role: $inherited.types.heading-tiny
+color: $inherited.colors.accent.primary
+
+-- ftd.column:
+width.fixed.px: 5
+height.fixed.px: 5
+border-radius.px: 100
+background.solid: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- ftd.text: $left-image-component-desktop.type
+role: $inherited.types.heading-tiny
+color: $inherited.colors.accent.primary
+
+-- ftd.column:
+width.fixed.px: 5
+height.fixed.px: 5
+border-radius.px: 100
+background.solid: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- ftd.text: $left-image-component-desktop.time
+role: $inherited.types.heading-tiny
+color: $inherited.colors.accent.primary
+
+-- end: ftd.row
 
 -- ftd.image:
 if: { left-image-component-desktop.icon != NULL}
@@ -1336,6 +1424,10 @@ optional string cta-text:
 optional string cta-link:
 optional ftd.image-src image:
 optional integer padding-vertical:
+optional string role:
+optional string type:
+optional string time:
+optional boolean timestamp:
 children child:
 boolean no-img:
 
@@ -1381,6 +1473,42 @@ src: $left-image-component-mobile.image
 width.fixed.px: 343
 
 -- end: ftd.column
+
+-- ftd.row:
+if: {left-image-component-mobile.timestamp}
+spacing.fixed.px: 24
+align-content: center
+align-self: center
+
+-- ftd.text: $left-image-component-mobile.role
+role: $inherited.types.heading-tiny
+color: $inherited.colors.accent.primary
+
+-- ftd.column:
+width.fixed.px: 5
+height.fixed.px: 5
+border-radius.px: 100
+background.solid: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- ftd.text: $left-image-component-mobile.type
+role: $inherited.types.heading-tiny
+color: $inherited.colors.accent.primary
+
+-- ftd.column:
+width.fixed.px: 5
+height.fixed.px: 5
+border-radius.px: 100
+background.solid: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- ftd.text: $left-image-component-mobile.time
+role: $inherited.types.heading-tiny
+color: $inherited.colors.accent.primary
+
+-- end: ftd.row
 
 -- end: ftd.column
 

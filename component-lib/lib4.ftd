@@ -849,6 +849,7 @@ title: $stages-vertical-image.title
 icon: $stages-vertical-image.icon
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
+top: $stages-vertical-image.top
 height: $stages-vertical-image.height
 icon-text: $stages-vertical-image.icon-text
 top: $stages-vertical-image.top
@@ -860,6 +861,7 @@ title: $stages-vertical-image.title
 icon: $stages-vertical-image.icon
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
+top: $stages-vertical-image.top
 height: $stages-vertical-image.height
 icon-text: $stages-vertical-image.icon-text
 top: $stages-vertical-image.top
@@ -996,6 +998,9 @@ caption title:
 body info:
 integer width: $width
 optional ftd.color bgcolor: $inherited.colors.background.step-1
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- ftd.column:
 width: fill-container
@@ -1006,6 +1011,9 @@ image: $hosting-hero.image
 info: $hosting-hero.info
 width: $hosting-hero.width
 bgcolor: $hosting-hero.bgcolor
+cta-text: $hosting-hero.cta-text
+cta-link: $hosting-hero.cta-link
+cta-role: $hosting-hero.cta-role
 
 -- hosting-hero-mobile: $hosting-hero.title
 if: { ftd.device == "mobile"}
@@ -1013,6 +1021,9 @@ image: $hosting-hero.image
 info: $hosting-hero.info
 width: $hosting-hero.width
 bgcolor: $hosting-hero.bgcolor
+cta-text: $hosting-hero.cta-text
+cta-link: $hosting-hero.cta-link
+cta-role: $hosting-hero.cta-role
 
 -- end: ftd.column
 
@@ -1033,6 +1044,9 @@ caption title:
 body info:
 integer width:
 optional ftd.color bgcolor:
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- ftd.column:
 width: fill-container
@@ -1063,6 +1077,10 @@ color: $inherited.colors.text
 text: $hosting-hero-desktop.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
+
+-- lib5.cta-button: $hosting-hero-desktop.cta-text
+role: $hosting-hero-desktop.cta-role
+link: $hosting-hero-desktop.cta-link
 
 -- end: ftd.column
 
@@ -1101,6 +1119,9 @@ caption title:
 body info:
 integer width:
 optional ftd.color bgcolor:
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- ftd.column:
 width: fill-container
@@ -1131,6 +1152,10 @@ color: $inherited.colors.text
 text: $hosting-hero-mobile.info
 role: $inherited.types.copy-regular
 color: $inherited.colors.text-strong
+
+-- lib5.cta-button: $hosting-hero-mobile.cta-text
+role: $hosting-hero-mobile.cta-role
+link: $hosting-hero-mobile.cta-link
 
 -- end: ftd.column
 
@@ -1381,6 +1406,61 @@ if: { left-image-component-desktop.title != NULL}
 role: $inherited.types.heading-medium
 color: $inherited.colors.text
 
+-- ftd.image:
+if: { left-image-component-desktop.col-img }
+src: $left-image-component-desktop.image
+width.fixed.px: 563
+
+-- ftd.text:
+text: $left-image-component-desktop.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- end: ftd.column
+
+-- lib5.cta-button: $left-image-component-desktop.cta-text
+role: $left-image-component-desktop.cta-role
+link: $left-image-component-desktop.cta-link
+show-arrow: true
+
+-- end: ftd.row
+
+-- ftd.image:
+src: $left-image-component-desktop.image
+width: fill-container
+
+-- ftd.image:
+if: { left-image-component-desktop.ext-img }
+src: $assets.files.static.feature-list.down-img.svg
+width: fill-container
+
+-- ftd.image:
+if: { left-image-component-desktop.down-img }
+src: $left-image-component-desktop.image
+width: fill-container
+
+-- end: ftd.column
+
+-- ftd.column:
+if: {left-image-component-desktop.right-btn}
+width: fill-container
+spacing.fixed.px: 24
+padding-vertical.px if { left-image-component-desktop.right-btn}: 80
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 32
+align-content: center
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.text: $left-image-component-desktop.title
+if: { left-image-component-desktop.title != NULL}
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
 -- ftd.text:
 text: $left-image-component-desktop.info
 role: $inherited.types.copy-large
@@ -1511,7 +1591,6 @@ color: $inherited.colors.accent.primary
 -- end: ftd.column
 
 -- end: left-image-component-mobile
-
 
 
 

@@ -1783,6 +1783,7 @@ top.px: -14
 if: { hero-section-mobile.image != NULL && hero-section-mobile.dot-img}
 src: $hero-section-mobile.image
 width.fixed.percent: 85
+width.fixed.percent if {hero-section-mobile.center}: 100
 height: auto
 z-index: 1
 anchor: parent
@@ -1792,7 +1793,7 @@ left.px: 4
 -- ftd.text: $hero-section-mobile.title
 role: $inherited.types.heading-hero
 color: $inherited.colors.text-strong
-text-align if {hero-section-mobile.bottom || hero-section-mobile.top-img }: center
+text-align if {hero-section-mobile.bottom || hero-section-mobile.top-img || hero-section-mobile.center }: center
 z-index: 2
 
 -- ftd.text:
@@ -1915,9 +1916,10 @@ height: auto
 -- ftd.column:
 if: { hero-section-desktop.dot-img }
 width.fixed.percent: 52
+width.fixed.percent if { hero-section-desktop.center }: 100
 anchor: parent
-left.px: 250
-top.px: 44
+left.px if { !hero-section-desktop.center }: 250
+top.px if { !hero-section-desktop.center }: 44
 z-index: -1
 
 -- ftd.image:

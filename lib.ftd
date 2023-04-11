@@ -2198,22 +2198,26 @@ cta-role: $hosting-hero.cta-role
 
 
 -- component stages-vertical-image:
+optional caption title:
 ftd.image-src image: $assets.files.static.hosting.stage-hero.svg
+optional ftd.image-src icon:
 integer height: 600
 optional integer width:
 optional boolean top: false
+optional boolean icon-text: false
 children child:
 
 -- lib4.stages-vertical-image:
+title: $stages-vertical-image.title
+icon: $stages-vertical-image.icon
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
-top: $stages-vertical-image.top
 height: $stages-vertical-image.height
+icon-text: $stages-vertical-image.icon-text
+top: $stages-vertical-image.top
 child: $stages-vertical-image.child
 
 -- end: stages-vertical-image
-
-
 
 
 
@@ -2229,8 +2233,8 @@ optional caption title:
 ftd.image-src rect:
 integer stage:
 optional ftd.color stage-bgcolor:
-string cta-text:
-string cta-link:
+optional string cta-text:
+optional string cta-link:
 optional body info:
 optional boolean right: false
 optional boolean no-line: false

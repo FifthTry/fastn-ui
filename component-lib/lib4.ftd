@@ -481,8 +481,8 @@ optional caption title:
 ftd.image-src rect:
 integer stage:
 optional ftd.color stage-bgcolor:
-string cta-text:
-string cta-link:
+optional string cta-text:
+optional string cta-link:
 optional body info:
 optional boolean right: false
 optional boolean no-line: false
@@ -531,8 +531,8 @@ optional caption title:
 ftd.image-src rect:
 integer stage:
 optional ftd.color stage-bgcolor:
-string cta-text:
-string cta-link:
+optional string cta-text:
+optional string cta-link:
 optional body info:
 optional boolean right:
 
@@ -685,8 +685,8 @@ optional caption title:
 ftd.image-src rect:
 integer stage:
 optional ftd.color stage-bgcolor:
-string cta-text:
-string cta-link:
+optional string cta-text:
+optional string cta-link:
 optional body info:
 optional boolean right:
 optional boolean top-line:
@@ -750,16 +750,9 @@ role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 text-align: justify
 
--- ftd.text: $stages-vertical-mobile.cta-text
-role: $inherited.types.button-medium
-color: $inherited.colors.cta-primary.text
-white-space: nowrap
-text-align: center
-border-radius.px: 30
-border-width.px: 1
-background.solid: $inherited.colors.cta-primary.base
-padding-vertical.px: 20
-padding-horizontal.px: 42
+-- lib5.cta-button: $stages-vertical-mobile.cta-text
+role: primary
+link: $stages-vertical-mobile.cta-link
 
 -- end: ftd.column
 
@@ -793,30 +786,37 @@ width: auto
 
 
 -- component stages-vertical-image:
+optional caption title:
 ftd.image-src image: $assets.files.static.hosting.stage-hero.svg
+optional ftd.image-src icon:
 integer height: 600
 optional integer width:
+optional boolean icon-text: false
 optional boolean top: false
 children child:
 
 -- ftd.column:
-width: fill-container
 
 -- stages-vertical-image-desktop:
 if: { ftd.device != "mobile" }
+title: $stages-vertical-image.title
+icon: $stages-vertical-image.icon
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
-top: $stages-vertical-image.top
 height: $stages-vertical-image.height
+icon-text: $stages-vertical-image.icon-text
+top: $stages-vertical-image.top
 child: $stages-vertical-image.child
-
 
 -- stages-vertical-image-mobile:
 if: { ftd.device == "mobile" }
+title: $stages-vertical-image.title
+icon: $stages-vertical-image.icon
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
-top: $stages-vertical-image.top
 height: $stages-vertical-image.height
+icon-text: $stages-vertical-image.icon-text
+top: $stages-vertical-image.top
 child: $stages-vertical-image.child
 
 -- end: ftd.column
@@ -833,26 +833,50 @@ child: $stages-vertical-image.child
 
 
 -- component stages-vertical-image-desktop:
+optional caption title:
 ftd.image-src image:
+optional ftd.image-src icon:
 integer height: 600
 optional integer width:
+optional boolean icon-text:
 optional boolean top:
 children child:
 
 -- ftd.column:
 width: fill-container
 max-width.fixed.px: $width
-margin-top.px: 25
 align-content: center
 align-self: center
-margin-top.px if { stages-vertical-image-desktop.top }: 56
+padding-vertical.px if { !stages-vertical-image-desktop.icon-text }: 150
+padding-bottom.px if { stages-vertical-image-desktop.icon-text }: 56
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 22
+
+-- ftd.row:
+if: {stages-vertical-image-desktop.icon-text}
+spacing.fixed.px: 10
+
+-- ftd.image:
+src: $stages-vertical-image-desktop.icon
+width.fixed.px: 20
+
+-- ftd.text: $stages-vertical-image-desktop.title
+role: $inherited.types.heading-tiny
+color: $inherited.colors.text
+
+-- end: ftd.row
 
 -- ftd.image:
 src: $stages-vertical-image-desktop.image
+width.fixed.px if { stages-vertical-image-desktop.icon-text }: 236
 width: fill-container
 width.fixed.px if {stages-vertical-image-desktop.width != NULL}: $stages-vertical-image-desktop.width
 height: auto
-align-self: center
+align-self if { !stages-vertical-image-desktop.icon-text }: center
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -868,23 +892,44 @@ align-self: center
 
 
 -- component stages-vertical-image-mobile:
+optional caption title:
 ftd.image-src image:
-integer height: 
+optional ftd.image-src icon:
+integer height: 600
 optional integer width:
+optional boolean icon-text:
 optional boolean top:
 children child:
 
 -- ftd.column:
-;;width: fill-container
-;;align-content: center
+padding-vertical.px: 40
 
 -- ftd.column:
-padding-vertical.px: 40
+width: fill-container
+spacing.fixed.px: 22
+
+-- ftd.row:
+if: {stages-vertical-image-mobile.icon-text}
+width: fill-container
+spacing.fixed.px: 10
+
+-- ftd.image:
+src: $stages-vertical-image-mobile.icon
+width.fixed.px: 20
+
+-- ftd.text: $stages-vertical-image-mobile.title
+role: $inherited.types.heading-tiny
+color: $inherited.colors.text
+
+-- end: ftd.row
 
 -- ftd.image:
 src: $stages-vertical-image-mobile.image
+width.fixed.px if { stages-vertical-image-mobile.icon-text }: 236
 width: fill-container
-height.fixed.px: $stages-vertical-image-mobile.height
+width.fixed.px if {stages-vertical-image-mobile.width != NULL}: $stages-vertical-image-mobile.width
+height.fixed.px: 204
+align-self if { !stages-vertical-image-mobile.icon-text }: center
 
 -- end: ftd.column
 

@@ -7,6 +7,8 @@
 
 
 
+
+
 -- page:
 
 -- hero-section-485:
@@ -76,7 +78,6 @@ image: $assets.files.static.builder.rectangle.svg
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
 
-
 -- ft.right-image-component: FPM Space
 icon: $assets.files.static.builder.icon-1.svg
 cta-text: Explore More
@@ -130,7 +131,6 @@ childs: $hero-section-485.childs
 -- ft.hero-section.info: 
 
 At nulla tristique facilisis augue. Lectus diam dignissimerat blandit pellentesque egestas nulla.
-
 
 -- end: hero-section-485
 

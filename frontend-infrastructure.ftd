@@ -5,12 +5,6 @@
 
 
 
-
-
-
-
-
-
 -- ft.page: Frontend Infrastructure
 
 -- hero-section-445:
@@ -108,7 +102,6 @@ childs: $hero-section-445.childs
 
 
 
-
 -- component excel-promo-card-bg:
 children promo-wrap:
 
@@ -124,7 +117,6 @@ promo-wrap: $excel-promo-card-bg.promo-wrap
 Browse dozens of professionaly designed templates. Easily change structurestyle, and graphics -then host instantly.
 
 -- end: excel-promo-card-bg
-
 
 
 
@@ -179,8 +171,6 @@ row-wrap: $row-container-80.row-wrap
 
 
 
-
-
 -- component display-card-1:
 children child:
 
@@ -199,8 +189,6 @@ child: $display-card-1.child
 You can package your components as fastn packages to share with community and access community shared ones.
 
 -- end: display-card-1
-
-
 
 
 
@@ -239,8 +227,6 @@ Wide variety of Open source color schemes that look good and are optimised for a
 
 
 
-
-
 -- component display-card-3:
 children child:
 
@@ -259,8 +245,6 @@ child: $display-card-3.child
 Curated font pairings to that make you site look good. We work with Google fonts, and work with designers to curate good looking choices.
 
 -- end: display-card-3
-
-
 
 
 
@@ -299,8 +283,6 @@ You can package your components as fastn packages to share with community and ac
 
 
 
-
-
 -- component trending-templates-150:
 children trending-wrap:
 
@@ -315,7 +297,6 @@ Browse dozens of professionaly designed templates.
 Easily change structure, style, and graphics -then host instantly.
 
 -- end: trending-templates-150
-
 
 
 
@@ -349,7 +330,6 @@ Most websites only change colors of background and text when using dark mode, Fa
 
 
 
-
 -- component stages-vertical-image-215:
 children child:
 
@@ -359,7 +339,6 @@ width: 215
 child: $stages-vertical-image-215.child
 
 -- end: stages-vertical-image-215
-
 
 
 
@@ -384,7 +363,6 @@ child: $left-image-component-2.child
 Convert your icon libraries, fonts, color schemes to fastn to help others create better design, and gain mind share and join our growing community of people making the web prettier and more accessible.
 
 -- end: left-image-component-2
-
 
 
 

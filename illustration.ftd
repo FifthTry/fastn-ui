@@ -5,7 +5,6 @@
 
 
 
-
 -- ft.page: Icons & Illustration
 $show-breadcrum: true
 
@@ -171,6 +170,8 @@ At nulla tristique facilisis augue. Lectus diam dignissimerat blandit pellentesq
 
 
 
+
+
 -- component right-image-component-105:
 children child:
 
@@ -184,8 +185,6 @@ child: $right-image-component-105.child
 Lorem ipsum dolor sit amet consectetur. In arcu arcu tellus ac semper quam. Convallis pellentesque id urna consectetur aliquet faucibus tempor dolor mauris. Enim sed amet at mi massa turpis. Tortor tristique aliquam orci sed convallis. Volutpat arcu augue tortor feugiat. Adipiscing ornare leo quam amet morbi eleifend suscipit.
 
 -- end: right-image-component-105
-
-
 
 
 
@@ -220,8 +219,6 @@ color: $inherited.colors.text-strong
 -- end: ftd.column
 
 -- end: title
-
-
 
 
 
@@ -268,8 +265,6 @@ child: $right-image-component-80.child
 Fastn needs a place to store your content and deploy your site. Most of ours users prefer storing the content on Github and deploying on Github pages.
 
 -- end: right-image-component-80
-
-
 
 
 

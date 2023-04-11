@@ -146,7 +146,6 @@ childs: $hero-section-740.childs
 
 
 
-
 -- component row-container-36:
 children row-wrap:
 
@@ -155,6 +154,7 @@ switch-to-column: true
 spacing: 36
 padding-vertical: 84
 row-wrap: $row-container-36.row-wrap
+width: 1160
 
 -- end: row-container-36
 
@@ -213,9 +213,6 @@ Fastn is here to serve to your unique requirements with an easy-to-use platform.
 
 
 
-
-
-
 -- component right-image-component-2:
 children child:
 
@@ -240,8 +237,6 @@ Fastn is here to serve to your unique requirements with an easy-to-use platform.
 
 
 
-
-
 -- component row-container-32:
 children row-wrap:
 
@@ -251,10 +246,6 @@ spacing: 32
 row-wrap: $row-container-32.row-wrap
 
 -- end: row-container-32
-
-
-
-
 
 
 

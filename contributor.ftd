@@ -1,0 +1,52 @@
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fifthtry.github.io/fastn-ui/assets
+
+
+
+
+
+-- integer $width: 1160
+
+-- ft.page: Contributor
+$show-breadcrum: true
+
+-- ft.hosting-hero: How to lorem the ipsum on fastn ?
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc , libero et velit interdum, ac aliquet  libero et velit interdum libero et velit interdum odio mattis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc , libero et velit interdum, ac aliquet  libero et velit interdum libero et velit interdum odio mattis.
+
+-- ft.stages-vertical-image:
+
+-- ft.stages-vertical: Download lorem ipsum
+rect: $assets.files.static.hosting.rect-num.svg
+stage: 01
+no-line: true
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.
+
+-- ft.stages-vertical: Download lorem ipsum
+rect: $assets.files.static.hosting.rect-img2.svg
+stage: 02
+no-line: true
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.
+
+-- ft.stages-vertical: Download lorem ipsum
+rect: $assets.files.static.hosting.rect-num.svg
+stage: 03
+no-line: true
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.
+
+-- ft.stages-vertical: Download lorem ipsum
+rect: $assets.files.static.hosting.rect-img2.svg
+stage: 04
+no-line: true
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.
+
+-- ft.footer:
+
+-- end: ft.page

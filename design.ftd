@@ -1,6 +1,10 @@
 -- import: fifthtry.github.io/fastn-ui/assets
 -- import: fifthtry.github.io/fastn-ui/lib as ft
 
+
+
+
+
 -- ft.page: Design
 $show-breadcrum: true
 
@@ -90,7 +94,6 @@ Browse dozens of professionaly designed templates. Easily change structure,style
 
 -- end: ft.excel-promo-card
 
-
 -- ft.trending-templates: You got questions in mind ? We have answers
 no-img: true
 
@@ -171,7 +174,6 @@ erat blandit pellentesque egestas nulla.
 
 
 
-
 -- component hero-section-1:
 children childs:
 
@@ -185,6 +187,9 @@ right-img: true
 Fastn provides exhaustive frameworks to set up and scale your project in minutes.
 
 -- end: hero-section-1
+
+
+
 
 
 
@@ -256,6 +261,13 @@ You can package your components as fastn packages to share with community and ac
 
 
 
+
+
+
+
+
+
+
 -- component display-card-2:
 children child:
 
@@ -284,7 +296,6 @@ You can package your components as fastn packages to share with community and ac
 
 
 
-
 -- component display-card-3:
 children child:
 
@@ -303,8 +314,6 @@ child: $display-card-3.child
 You can package your components as fastn packages to share with community and access community shared ones.
 
 -- end: display-card-3
-
-
 
 
 
@@ -419,10 +428,6 @@ width: fill-container
 
 
 
-
-
-
-
 -- component border-box:
 caption title:
 body info:
@@ -474,7 +479,6 @@ width: 140
 
 
 
-
 -- component row-container-24:
 children row-wrap:
 
@@ -485,10 +489,6 @@ switch-to-column: true
 row-wrap: $row-container-24.row-wrap
 
 -- end: row-container-24
-
-
-
-
 
 
 
@@ -518,10 +518,6 @@ child: $display-card-5.child
 Join this upcoming workshop
 
 -- end: display-card-5
-
-
-
-
 
 
 
@@ -568,6 +564,7 @@ image: $community.image
 -- end: ftd.column
 
 -- end: community
+
 
 
 

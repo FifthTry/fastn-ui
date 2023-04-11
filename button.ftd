@@ -5,12 +5,6 @@
 
 
 
-
-
-
-
-
-
 -- page:
 
 -- hero-section-485:
@@ -203,6 +197,7 @@ child: $display-card-2.child
 
 
 
+
 -- component display-card-3:
 children child:
 
@@ -227,6 +222,7 @@ child: $display-card-3.child
 
 
 
+
 -- component display-card-4:
 children child:
 
@@ -242,6 +238,7 @@ child: $display-card-4.child
 3 Variants
 
 -- end: display-card-4
+
 
 
 
@@ -312,7 +309,6 @@ padding-vertical: 80
 row-wrap: $row-container-1.row-wrap
 
 -- end: row-container-1
-
 
 
 

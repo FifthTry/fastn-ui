@@ -537,6 +537,7 @@ cta-text: $stages-vertical.cta-text
 cta-link: $stages-vertical.cta-link
 info: $stages-vertical.info
 right: $stages-vertical.right
+no-line: $stages-vertical.no-line
 
 -- stages-vertical-mobile: $stages-vertical.title
 if: { ftd.device == "mobile" }
@@ -548,7 +549,7 @@ cta-link: $stages-vertical.cta-link
 info: $stages-vertical.info
 right: $stages-vertical.right
 top-line: $stages-vertical.top-line
-
+no-line: $stages-vertical.no-line
 
 -- end: ftd.column
 
@@ -572,6 +573,7 @@ optional string cta-text:
 optional string cta-link:
 optional body info:
 optional boolean right:
+optional boolean no-line:
 
 -- ftd.row:
 width: fill-container
@@ -599,6 +601,7 @@ top.px: 48
 right.px: 54
 
 -- ftd.column:
+if: {!stages-vertical-desktop.no-line}
 border-width.px: 1
 border-color: $inherited.colors.border
 anchor: parent
@@ -727,6 +730,7 @@ optional string cta-link:
 optional body info:
 optional boolean right:
 optional boolean top-line:
+optional boolean no-line:
 
 -- ftd.column:
 width: fill-container
@@ -759,6 +763,7 @@ anchor: parent
 top.px: 48
 
 -- ftd.column:
+if: {!stages-vertical-mobile.no-line}
 border-width.px: 1
 border-color: $inherited.colors.border
 anchor: parent
@@ -830,9 +835,11 @@ integer height: 600
 optional integer width:
 optional boolean icon-text: false
 optional boolean top: false
+optional boolean width-fill: false
 children child:
 
 -- ftd.column:
+width if {stages-vertical-image.width-fill}: fill-container
 
 -- stages-vertical-image-desktop:
 if: { ftd.device != "mobile" }
@@ -940,6 +947,7 @@ children child:
 
 -- ftd.column:
 padding-vertical.px: 40
+align-self: center
 
 -- ftd.column:
 width: fill-container
@@ -1183,9 +1191,9 @@ optional boolean ext-img: false
 optional boolean right-btn: false
 children child:
 optional ftd.image-src image:
-boolean top:
+optional boolean top: false
 optional boolean timestamp: false
-boolean no-img:
+optional boolean no-img: false
 
 -- ftd.column:
 width: fill-container

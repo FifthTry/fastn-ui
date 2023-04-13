@@ -858,6 +858,7 @@ promo-wrap: $excel-promo-card.promo-wrap
 keep-dark: $excel-promo-card.keep-dark
 left: $excel-promo-card.left
 no-img: $excel-promo-card.no-img
+back-image: $excel-promo-card.back-image
 top-img: $excel-promo-card.top-img
 down-img: $excel-promo-card.down-img
 top: $excel-promo-card.top
@@ -2112,6 +2113,7 @@ bgcolor: $right-image-component.bgcolor
 child: $right-image-component.child
 
 -- end: right-image-component
+
 
 
 

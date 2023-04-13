@@ -229,6 +229,7 @@ padding-horizontal.px: 24
 
 
 
+
 -- component text-bubble:
 optional ftd.color bgcolor: $inherited.colors.custom.one
 optional ftd.image-src text-image-1: 

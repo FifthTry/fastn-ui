@@ -1356,7 +1356,7 @@ optional string info:
 optional string cta-text:
 optional string cta-link:
 optional string cta-role: 
-optional ftd.image-src image:
+optional ftd.image-src image: $assets.files.static.charts-image.svg
 optional ftd.image-src back-image:
 optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
@@ -1386,6 +1386,7 @@ cta-role: $excel-promo-card.cta-role
 image: $excel-promo-card.image
 bgcolor: $excel-promo-card.bgcolor
 width: $excel-promo-card.width
+back-image: $excel-promo-card.back-image
 promo-wrap: $excel-promo-card.promo-wrap
 keep-dark: $excel-promo-card.keep-dark
 left: $excel-promo-card.left
@@ -1443,6 +1444,7 @@ optional string cta-role:
 optional string cta-left-text:
 optional string cta-right-text:
 optional ftd.image-src image:
+optional ftd.image-src back-image:
 optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
 children promo-wrap:
@@ -1461,6 +1463,35 @@ background.solid: $excel-promo-card-desktop.bgcolor
 padding-vertical.px: 60
 padding-horizontal.px: 140
 ;;margin-top.px if { excel-promo-card-desktop.left }: 150
+
+-- ftd.column:
+if: {excel-promo-card-desktop.top}
+width: fill-container
+anchor: parent
+right.px: 0
+top.px: 0
+z-index: 1
+
+-- ftd.image:
+if: { $excel-promo-card-desktop.back-image != NULL}
+src: $excel-promo-card-desktop.back-image
+width: fill-container
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+anchor: parent
+right.px: 0
+top.px: 0
+z-index: 1
+
+-- ftd.image:
+if: { $excel-promo-card-desktop.back-image != NULL}
+src: $excel-promo-card-desktop.back-image
+width: fill-container
+
+-- end: ftd.column
 
 -- ftd.column:
 width: fill-container
@@ -1499,7 +1530,7 @@ max-width.fixed.px if { excel-promo-card-desktop.two-btn}: 620
 spacing.fixed.px: 16
 align-self if { excel-promo-card-desktop.no-img}: center
 align-content if { excel-promo-card-desktop.no-img}: center
-padding-top.px if { excel-promo-card-desktop.right}: 250
+padding-top.px if { excel-promo-card-desktop.right}: 150
 padding-top.px if { excel-promo-card-desktop.center}: 100
 padding-left.px if { !excel-promo-card-desktop.right && !excel-promo-card-desktop.center}: 50
 

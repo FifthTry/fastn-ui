@@ -517,10 +517,6 @@ Join this upcoming workshop
 
 
 
-
-
-
-
 -- component community:
 caption title:
 ftd.image-src logo1:
@@ -557,6 +553,7 @@ image: $community.image
 -- end: ftd.column
 
 -- end: community
+
 
 
 

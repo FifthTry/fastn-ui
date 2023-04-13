@@ -153,6 +153,7 @@ children row-wrap:
 -- ft.row-container:
 spacing: 48
 switch-to-column: true
+wrap if {ftd.device == "mobile"}: true
 row-wrap: $row-container-48.row-wrap
 
 -- end: row-container-48

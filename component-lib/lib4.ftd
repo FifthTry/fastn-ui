@@ -989,7 +989,6 @@ align-self if { !stages-vertical-image-mobile.icon-text }: center
 
 
 
-
 -- component hosting-hero:
 ftd.image-src image: $assets.files.static.hosting.hosting-hero.svg
 caption title:
@@ -1127,6 +1126,7 @@ background.solid: $hosting-hero-mobile.bgcolor
 margin-top.px: 50
 padding-horizontal.px: 16
 padding-vertical.px: 46
+spacing.fixed.px: 24
 
 -- ftd.column:
 width: fill-container
@@ -1159,6 +1159,16 @@ link: $hosting-hero-mobile.cta-link
 -- end: ftd.column
 
 -- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.column:
+align-self: end
+
+-- ftd.image:
+src: $hosting-hero-mobile.image
+width:auto
+height:auto
 
 -- end: ftd.column
 
@@ -1278,7 +1288,7 @@ background.solid if { left-image-component-desktop.down-img }: $inherited.colors
 border-radius.px if { left-image-component-desktop.down-img }: 30
 
 -- ftd.column:
-if: {!left-image-component-desktop.no-img}
+if: {!left-image-component-desktop.no-img && !left-image-component-desktop.col-img && !left-image-component-desktop.down-img && !left-image-component-desktop.right-btn }
 width: fill-container
 padding-vertical.px if { !left-image-component-desktop.top && !left-image-component-desktop.timestamp && !left-image-component-desktop.ext-img}: 101
 padding-vertical.px if { left-image-component-desktop.top}: 30
@@ -1295,7 +1305,9 @@ height: auto
 if: {!left-image-component-desktop.right-btn}
 width: fill-container
 spacing.fixed.px: 24
-padding-left.px if {!left-image-component-desktop.no-img}: 119
+padding-left.px if {!left-image-component-desktop.no-img && !left-image-component-desktop.col-img && !left-image-component-desktop.down-img }: 119
+padding-horizontal.px if {left-image-component-desktop.down-img }: 74
+padding-vertical.px if {left-image-component-desktop.down-img }: 34
 padding-top.px if { left-image-component-desktop.top }: 30
 align-content if {left-image-component-desktop.no-img}: right
 
@@ -1358,6 +1370,61 @@ color: $inherited.colors.text-strong
 -- lib5.cta-button: $left-image-component-desktop.cta-text
 role: $left-image-component-desktop.cta-role
 link: $left-image-component-desktop.cta-link
+
+-- ftd.image:
+if: { left-image-component-desktop.ext-img}
+src: $assets.files.static.feature-list.down-img.svg
+width: fill-container
+
+-- ftd.image:
+if: { left-image-component-desktop.down-img }
+src: $left-image-component-desktop.image
+width: fill-container
+
+-- end: ftd.column
+
+-- ftd.column:
+if: {left-image-component-desktop.right-btn}
+width: fill-container
+spacing.fixed.px: 24
+padding-vertical.px if { left-image-component-desktop.right-btn}: 80
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 32
+align-content: center
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.text: $left-image-component-desktop.title
+if: { left-image-component-desktop.title != NULL}
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- ftd.image:
+if: { left-image-component-desktop.col-img }
+src: $left-image-component-desktop.image
+width.fixed.px: 563
+
+-- ftd.text:
+text: $left-image-component-desktop.info
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+
+-- end: ftd.column
+
+-- lib5.cta-button: $left-image-component-desktop.cta-text
+role: $left-image-component-desktop.cta-role
+link: $left-image-component-desktop.cta-link
+show-arrow: true
+
+-- end: ftd.row
+
+-- ftd.image:
+src: $left-image-component-desktop.image
+width: fill-container
 
 -- ftd.image:
 if: { left-image-component-desktop.ext-img }
@@ -1529,6 +1596,7 @@ color: $inherited.colors.accent.primary
 
 
 
+
 -- component right-image-component:
 optional ftd.image-src icon:
 caption title:
@@ -1624,7 +1692,7 @@ optional ftd.color bgcolor:
 children child:
 
 -- ftd.row:
-width: fill-container
+width.fixed.px if {right-image-component-desktop.width != NULL}: $right-image-component-desktop.width
 max-width.fixed.px: 1160
 align-self: center
 ;;padding-bottom.px: 150

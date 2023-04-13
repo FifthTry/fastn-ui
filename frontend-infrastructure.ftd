@@ -110,6 +110,7 @@ image: $assets.files.static.frontend.features.svg
 back-image: $assets.files.static.frontend.feature-back.svg
 bgcolor: $inherited.colors.background.step-2
 top: true
+right: true
 promo-wrap: $excel-promo-card-bg.promo-wrap
 
 -- ft.excel-promo-card.info: 
@@ -157,6 +158,7 @@ children row-wrap:
 
 -- ft.row-container:
 wrap: true
+switch-to-column: true
 spacing: 80
 row-wrap: $row-container-80.row-wrap
 
@@ -337,6 +339,7 @@ children child:
 image: $assets.files.static.frontend.back1.svg
 width: 215
 child: $stages-vertical-image-215.child
+width-fill: true
 
 -- end: stages-vertical-image-215
 
@@ -380,5 +383,6 @@ children child:
 image: $assets.files.static.frontend.back2.svg
 width: 215
 child: $stages-vertical-image-2.child
+width-fill: true
 
 -- end: stages-vertical-image-2

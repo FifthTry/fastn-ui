@@ -2292,3 +2292,265 @@ switch-to-row: $column-wrap.switch-to-row
 -- end: lib4.column-wrap
 
 -- end: column-wrap
+
+
+
+
+
+
+
+
+
+
+-- component page-1:
+children wrapper:
+
+-- page: Templates
+bg-color: $inherited.colors.background.step-1
+wrapper: $page-1.wrapper
+
+-- end: page-1
+
+
+
+
+
+
+
+
+
+
+-- component excel-promo-card-1:
+children promo-wrap:
+
+-- excel-promo-card: Templates for you
+image: $assets.files.static.templates.temp.svg
+bgcolor: $inherited.colors.background.step-2
+center: true
+right if {ftd.device == "mobile"} : true
+promo-wrap: $excel-promo-card-1.promo-wrap
+
+-- excel-promo-card.info: 
+
+Fastn provides exhaustive frameworks to set up and  scale your project in minutes. Fastn provides exhaustive frameworks to set up and  scale your project in minutes.
+
+-- end: excel-promo-card-1
+
+
+
+
+
+
+
+
+
+
+-- component row-container-1:
+children row-wrap:
+
+-- row-container: Featured Templates 
+spacing: 12
+padding-vertical: 120
+switch-to-column: true
+align-left: true
+row-wrap: $row-container-1.row-wrap
+
+-- end: row-container-1
+
+
+
+
+
+
+
+
+
+
+-- component display-card-1:
+children child:
+
+-- display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.uses.card.svg
+bgcolor: $inherited.colors.text
+textcolor: $inherited.colors.border-strong
+titlecolor: $inherited.colors.border-strong
+width: 343
+child: $display-card-1.child
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- end: display-card-1
+
+
+
+
+
+
+
+
+
+
+-- component benefits-card-1:
+children benefits-wrap:
+
+-- benefits-card: Landing Page
+spacing: 34
+bg-color: $inherited.colors.custom.two
+logo: $assets.files.static.uses.image1.svg
+no-margin: true
+benefits-wrap: $benefits-card-1.benefits-wrap
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
+
+-- end: benefits-card-1
+
+
+
+
+
+
+
+
+
+
+-- component row-container-2:
+children row-wrap:
+
+-- row-container:
+spacing: 12
+spacing if {ftd.device =="mobile"}: 24
+padding-vertical: 0
+slides: true
+row-wrap: $row-container-2.row-wrap
+
+-- end: row-container-2
+
+
+
+
+
+
+
+
+
+
+-- component stages-vertical-image-1:
+children child:
+
+-- stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if {ftd.device == "mobile"}: 156
+child: $stages-vertical-image-1.child
+
+-- end: stages-vertical-image-1
+
+
+
+
+
+
+
+
+
+
+-- component row-container-3:
+children row-wrap:
+
+-- row-container:
+spacing: 48
+switch-to-column: true
+row-wrap: $row-container-3.row-wrap
+
+-- end: row-container-3
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-1:
+children child:
+
+-- right-image-component: API & Documentation
+icon: $assets.files.static.events.upcoming-section-logo.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+padding-vertical: 105
+child: $right-image-component-1.child
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
+
+-- end: right-image-component-1
+
+
+
+
+
+
+
+
+
+
+-- component row-container-4:
+children row-wrap:
+
+-- row-container:
+width: 650
+spacing: 12
+slides: true
+row-wrap: $row-container-4.row-wrap
+
+-- end: row-container-4
+
+
+
+
+
+
+
+
+
+
+-- component benefits-card-2:
+children benefits-wrap:
+
+-- benefits-card: Blog Page
+spacing: 34
+bg-color: $inherited.colors.custom.two
+logo: $assets.files.static.uses.image1.svg
+no-margin: true
+benefits-wrap: $benefits-card-2.benefits-wrap
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
+
+-- end: benefits-card-2
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-2:
+children child:
+
+-- right-image-component: Microsite
+icon: $assets.files.static.events.upcoming-section-logo.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+padding-vertical: 105
+child: $right-image-component-2.child
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
+
+-- end: right-image-component-2

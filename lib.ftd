@@ -1269,7 +1269,7 @@ width: $footer.width
 -- ftd.column:
 padding-vertical.px: 12
 padding-horizontal.px: 14
-background.solid: #111111
+background.solid: $inherited.colors.background.step-1
 
 -- end: ftd.column
 
@@ -1286,7 +1286,7 @@ background.solid: #111111
 
 -- component dropdown:
 caption title: $selected-item
-ftd.color theme-color: #333333
+ftd.color theme-color: $inherited.colors.border-strong
 boolean $show-options: false
 
 -- ftd.column:
@@ -1765,7 +1765,7 @@ max-width.fixed.px: 800
 if: { image.caption != NULL }
 text: $image.caption
 color: $inherited.colors.text
-;; width if {image.width != NULL}: $width
+;; width if { image.width != NULL }: $width
 width: fill-container
 role: $inherited.types.label-large
 border-bottom-left-radius.px: 5
@@ -2327,12 +2327,14 @@ children promo-wrap:
 image: $assets.files.static.templates.temp.svg
 bgcolor: $inherited.colors.background.step-2
 center: true
-right if {ftd.device == "mobile"} : true
+right if { ftd.device == "mobile" }: true
 promo-wrap: $excel-promo-card-1.promo-wrap
 
 -- excel-promo-card.info: 
 
-Fastn provides exhaustive frameworks to set up and  scale your project in minutes. Fastn provides exhaustive frameworks to set up and  scale your project in minutes.
+Fastn provides exhaustive frameworks to set up and  scale your project in
+minutes. Fastn provides exhaustive frameworks to set up and  scale your project
+in minutes.
 
 -- end: excel-promo-card-1
 
@@ -2400,7 +2402,9 @@ logo: $assets.files.static.uses.image1.svg
 no-margin: true
 benefits-wrap: $benefits-card-1.benefits-wrap
 
-Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
+Fastn is powered by a one of a kind design system guiding the overarching
+framework. It has been carefully constructed to imbibe & maintain design
+considerations right through  development & implementation. 
 
 -- end: benefits-card-1
 
@@ -2418,7 +2422,7 @@ children row-wrap:
 
 -- row-container:
 spacing: 12
-spacing if {ftd.device =="mobile"}: 24
+spacing if { ftd.device =="mobile" }: 24
 padding-vertical: 0
 slides: true
 row-wrap: $row-container-2.row-wrap
@@ -2440,7 +2444,7 @@ children child:
 -- stages-vertical-image:
 image: $assets.files.static.uses.1.svg
 width: 245
-width if {ftd.device == "mobile"}: 156
+width if { ftd.device == "mobile" }: 156
 child: $stages-vertical-image-1.child
 
 -- end: stages-vertical-image-1
@@ -2484,7 +2488,9 @@ cta-role: primary
 padding-vertical: 105
 child: $right-image-component-1.child
 
-Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
+Fastn is powered by a one of a kind design system guiding the overarching
+framework. It has been carefully constructed to imbibe & maintain design
+considerations right through  development & implementation. 
 
 -- end: right-image-component-1
 
@@ -2527,7 +2533,9 @@ logo: $assets.files.static.uses.image1.svg
 no-margin: true
 benefits-wrap: $benefits-card-2.benefits-wrap
 
-Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
+Fastn is powered by a one of a kind design system guiding the overarching
+framework. It has been carefully constructed to imbibe & maintain design
+considerations right through  development & implementation. 
 
 -- end: benefits-card-2
 
@@ -2551,6 +2559,8 @@ cta-role: primary
 padding-vertical: 105
 child: $right-image-component-2.child
 
-Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through  development & implementation. 
+Fastn is powered by a one of a kind design system guiding the overarching
+framework. It has been carefully constructed to imbibe & maintain design
+considerations right through  development & implementation. 
 
 -- end: right-image-component-2

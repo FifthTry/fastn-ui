@@ -8,6 +8,7 @@
 
 
 
+
 -- page:
 
 -- hero-section-485:
@@ -95,6 +96,7 @@ Fastn is powered by a one of a kind design system guiding the overarching framew
 -- ft.footer:
 
 -- end: page
+
 
 
 
@@ -248,6 +250,7 @@ child: $stages-vertical-image-3.child
 
 
 
+
 -- component benefits-card-0:
 children benefits-wrap:
 
@@ -260,6 +263,10 @@ benefits-wrap: $benefits-card-0.benefits-wrap
 We have designed and developed below components using FTD and FPM package. Use them for writing e-books, blogs, web technical documentation etc.
 
 -- end: benefits-card-0
+
+
+
+
 
 
 

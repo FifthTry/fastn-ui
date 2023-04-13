@@ -2241,15 +2241,13 @@ child: $stages-vertical-image.child
 
 
 
-
-
 -- component stages-vertical:
 optional caption title:
 ftd.image-src rect:
 integer stage:
 optional ftd.color stage-bgcolor:
-string cta-text:
-string cta-link:
+optional string cta-text:
+optional string cta-link:
 optional body info:
 optional boolean right: false
 optional boolean no-line: false

@@ -8,17 +8,9 @@
 -- ft.page: Explore More
 bg-color: $inherited.colors.background.step-1
 
--- ft.hero-section: Lorem ipsum dolor sit amet, consectetur
-center: true
-cta-left-text: Explore
-height: 485
-width: 1160
+-- hero-section-485:
 
--- ft.hero-section.info: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.Lorem ipsum dolor sit amet, consectetur adipiscing.
-
--- ft.right-image-component: What do we do
-image: $assets.files.static.explore.exp.svg
-padding-vertical: 100
+-- right-image-component-1:
 
 -- title: Accerate your project delivery now with Fastn
 width: true
@@ -223,6 +215,7 @@ fpm can also convert ftd files to static HTML files, so you can use it as a stat
 
 
 
+
 -- component solution-card:
 ftd.image-src image:
 body info:
@@ -304,3 +297,44 @@ text-align: end
 
 -- end: solution-card
 
+
+
+
+
+
+
+
+
+
+-- component hero-section-485:
+children childs:
+
+-- ft.hero-section: Lorem ipsum dolor sit amet, consectetur
+center: true
+cta-left-text: Explore
+height: 485
+width: 1160
+childs: $hero-section-485.childs
+
+-- ft.hero-section.info: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.Lorem ipsum dolor sit amet, consectetur adipiscing.
+
+-- end: hero-section-485
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-1:
+children child:
+
+-- ft.right-image-component: What do we do
+image: $assets.files.static.explore.exp.svg
+padding-vertical: 100
+child: $right-image-component-1.child
+
+-- end: right-image-component-1

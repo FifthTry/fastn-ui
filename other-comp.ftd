@@ -102,6 +102,7 @@ width: 1520
 width-fill: true
 width if {ftd.device == "mobile"}: 620
 height: 150
+width-fill: true
 child: $stages-vertical-image-1.child
 
 -- end: stages-vertical-image-1

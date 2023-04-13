@@ -428,6 +428,7 @@ width: fill-container
 
 
 
+
 -- component border-box:
 caption title:
 body info:
@@ -489,6 +490,7 @@ switch-to-column: true
 row-wrap: $row-container-24.row-wrap
 
 -- end: row-container-24
+
 
 
 

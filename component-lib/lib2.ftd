@@ -1803,6 +1803,7 @@ role: $inherited.types.copy-large
 color: $inherited.colors.text
 margin-top.px: 15
 text-align if {hero-section-mobile.bottom || hero-section-mobile.top-img || hero-section-mobile.dot-img || hero-section-mobile.center}: center
+z-index: 2
 
 -- ftd.row:
 spacing.fixed.px: 33

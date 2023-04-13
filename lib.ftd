@@ -2133,7 +2133,7 @@ optional string cta-role:
 optional string role:
 optional string type:
 optional string time:
-optional boolean timestamp:
+optional boolean timestamp: false
 optional boolean col-img: false
 optional boolean padding: false
 optional boolean down-img: false
@@ -2141,8 +2141,8 @@ optional boolean ext-img: false
 optional boolean right-btn: false
 children child:
 optional ftd.image-src image:
-boolean top: false
-boolean no-img: false
+optional boolean top: false
+optional boolean no-img: false
 
 -- lib4.left-image-component: $left-image-component.title
 icon: $left-image-component.icon
@@ -2208,22 +2208,27 @@ cta-role: $hosting-hero.cta-role
 
 
 -- component stages-vertical-image:
+optional caption title:
 ftd.image-src image: $assets.files.static.hosting.stage-hero.svg
+optional ftd.image-src icon:
 integer height: 600
 optional integer width:
 optional boolean top: false
+optional boolean icon-text: false
+optional boolean width-fill: false
 children child:
 
--- lib4.stages-vertical-image:
+-- lib4.stages-vertical-image: $stages-vertical-image.title
+icon: $stages-vertical-image.icon
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
-top: $stages-vertical-image.top
+width-fill: $stages-vertical-image.width-fill
 height: $stages-vertical-image.height
+icon-text: $stages-vertical-image.icon-text
+top: $stages-vertical-image.top
 child: $stages-vertical-image.child
 
 -- end: stages-vertical-image
-
-
 
 
 
@@ -2239,8 +2244,8 @@ optional caption title:
 ftd.image-src rect:
 integer stage:
 optional ftd.color stage-bgcolor:
-string cta-text:
-string cta-link:
+optional string cta-text:
+optional string cta-link:
 optional body info:
 optional boolean right: false
 optional boolean no-line: false

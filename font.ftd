@@ -148,7 +148,6 @@ color: $inherited.colors.text-strong
 
 
 
-
 -- component right-image-component-80:
 children child:
 
@@ -163,8 +162,6 @@ child: $right-image-component-80.child
 Fastn needs a place to store your content and deploy your site. Most of ours users prefer storing the content on Github and deploying on Github pages.
 
 -- end: right-image-component-80
-
-
 
 
 
@@ -216,8 +213,6 @@ childs: $hero-section-250.childs
 -- ft.hero-section.info: At nulla tristique facilisis augue. Lectus diam dignissimerat blandit pellentesque egestas nulla.
 
 -- end: hero-section-250
-
-
 
 
 

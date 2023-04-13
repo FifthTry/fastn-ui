@@ -2,6 +2,10 @@
 -- import: fastn
 -- import: fifthtry.github.io/fastn-ui/lib as ft
 
+
+
+
+
 -- record blog:
 integer index:
 caption title:
@@ -24,21 +28,17 @@ image: $assets.files.static.blog-details.image.svg
 
 Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie porttitor elementum maecenas lacinia tristique proin pellentesque malesuada aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada adipiscing eu cras. 
 
-
 -- blog: Branding with unique illustrations
 index: 3
 image: $assets.files.static.blog-details.image.svg
 
 Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie porttitor elementum maecenas lacinia tristique proin pellentesque malesuada aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada adipiscing eu cras. 
 
-
-
 -- blog: Branding with unique illustrations
 index: 4
 image: $assets.files.static.blog-details.image.svg
 
 Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie porttitor elementum maecenas lacinia tristique proin pellentesque malesuada aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada adipiscing eu cras. 
-
 
 -- blog: Branding with unique illustrations
 index: 5
@@ -85,6 +85,7 @@ Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin 
 
 
 
+
 -- component list-loop-image:
 ftd.image-src image:
 integer index:
@@ -109,7 +110,6 @@ margin-bottom.px: 80
 -- component blog-details:
 blog list blog-list: $blog-list
 children post-wrap:
-
 
 -- ftd.column:
 width.fixed.px: 1164
@@ -164,7 +164,6 @@ height: auto
 -- ftd.column:
 children: $blog-details.post-wrap
 width: fill-container
-
 
 -- end: ftd.column
 
@@ -278,7 +277,6 @@ role: $inherited.types.copy-regular
 -- end: ftd.column
 
 -- end: list-loop
-
 
 
 

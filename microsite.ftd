@@ -1,6 +1,10 @@
 -- import: fifthtry.github.io/fastn-ui/lib as ft
 -- import: fifthtry.github.io/fastn-ui/assets
 
+
+
+
+
 -- ft.page: Microsite
 
 -- hero-section-340:
@@ -61,6 +65,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 -- ft.footer:
 
 -- end: ft.page
+
 
 
 
@@ -144,7 +149,6 @@ reset: $ft.current-tab
 wraper: $column-wrap-1.wraper
 
 -- end: column-wrap-1
-
 
 
 

@@ -82,8 +82,7 @@ height: 245
 width: 1160
 childs: $hero-section-485.childs
 
--- ft.hero-section.info: At nulla tristique facilisis augue. Lectus diam
-dignissimerat blandit pellentesque egestas nulla.
+-- ft.hero-section.info: At nulla tristique facilisis augue. Lectus dignissimerat blandit pellentesque egestas nulla.
 
 -- end: hero-section-485
 

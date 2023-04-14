@@ -2567,3 +2567,87 @@ spacing if {ftd.device == "mobile"}: 40
 row-wrap: $row-container-5.row-wrap
 
 -- end: row-container-5
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-1:
+children childs:
+
+-- hero-section: Loreum ipsum
+height: 340
+childs: $hero-section-1.childs
+
+-- hero-section.info:
+
+Fastn provides exhaustive frameworks to set up and  scale
+your project in minutes. Fastn provides exhaustive 
+frameworks to set up and  scale your project in minutes.
+
+-- end: hero-section-1
+
+
+
+
+
+
+
+
+
+
+-- component row-container-6:
+children row-wrap:
+
+-- row-container:
+align-left: true
+padding-vertical: 84
+row-wrap: $row-container-6.row-wrap
+
+-- end: row-container-6
+
+
+
+
+
+
+
+
+
+
+-- component row-container-7:
+children row-wrap:
+
+-- row-container:
+spacing: 50
+align-left: true
+padding-vertical: 75
+row-wrap: $row-container-7.row-wrap
+
+-- end: row-container-7
+
+
+
+
+
+
+
+
+
+
+-- component column-wrap-1:
+children wraper:
+
+-- column-wrap:
+wrap: true
+height: 1308
+index: 1
+reset: $current-tab
+wraper: $column-wrap-1.wraper
+
+-- end: column-wrap-1

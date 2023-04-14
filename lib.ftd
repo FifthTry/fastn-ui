@@ -89,7 +89,6 @@ background.solid: $page.bg-color
 
 -- ftd.column:
 width: fill-container
-;; padding-horizontal.px if { ftd.device != "mobile" }: 48
 min-width.fixed.px if { ftd.device != "mobile" }: $page.width
 overflow-x: auto
 
@@ -249,10 +248,6 @@ boolean $show-menu: false
 integer width: 
 optional integer idx:
 $toc.header-item list sub-sections: 
-;; optional pr.toc-item current-section: 
-;; optional pr.toc-item current-subsection: 
-;; optional pr.toc-item current-page: 
-;; pr.toc-item list toc:
 optional string parent-id: 
 
 -- ftd.column:
@@ -297,7 +292,6 @@ anchor.id: $menu-links.parent-id
 z-index: 999
 top.px: 94
 left.px: 0
-;; left.px: $divideToTwo( a = $menu-links.width )
 $on-click-outside$: $ftd.set-bool( $a = $menu-links.show-menu, v = false )
 
 -- ftd.column:
@@ -306,7 +300,6 @@ background.solid: $inherited.colors.custom.five
 padding-vertical.px: 42
 padding-horizontal.px: 42
 border-radius.px: 12
-;; min-height.fixed.px: 500
 
 -- ftd.column:
 width.fixed.percent: 50
@@ -360,8 +353,6 @@ margin-top.px: 40
 
 -- ftd.column:
 width: fill-container
-;; min-height.fixed.px: 500
-;; background.solid: red
 spacing.fixed.px: 12
 
 ;; right column
@@ -372,8 +363,6 @@ $loop$: $menu-links.sub-sections as $obj
 link: $obj.url
 is-active: $obj.is-active
 toc: $obj.children
-;; current-subsection: $menu-links.title
-;; current-page: $menu-links.current-page
 parent-id: menu-items
 icon: $obj.font-icon
 is-heading: $obj.is-heading
@@ -401,10 +390,7 @@ is-heading: $obj.is-heading
 
 -- component loop-section-card:
 caption title:
-boolean $mouse-in: false
-;; optional pr.toc-item current-section: 
-;; optional pr.toc-item current-subsection: 
-;; optional pr.toc-item current-page: 
+boolean $mouse-in: false 
 $toc.header-item list toc:
 boolean is-active: false
 string link:
@@ -1765,7 +1751,6 @@ max-width.fixed.px: 800
 if: { image.caption != NULL }
 text: $image.caption
 color: $inherited.colors.text
-;; width if { image.width != NULL }: $width
 width: fill-container
 role: $inherited.types.label-large
 border-bottom-left-radius.px: 5
@@ -2564,3 +2549,25 @@ framework. It has been carefully constructed to imbibe & maintain design
 considerations right through  development & implementation. 
 
 -- end: right-image-component-2
+
+
+
+
+
+
+
+
+
+
+-- component row-container-5:
+children row-wrap:
+
+-- row-container:
+wrap: true
+switch-to-column: true
+margin-bottom: 150
+spacing: 82
+spacing if {ftd.device == "mobile"}: 40
+row-wrap: $row-container-5.row-wrap
+
+-- end: row-container-5

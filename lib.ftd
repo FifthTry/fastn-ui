@@ -26,10 +26,11 @@
 
 -- string site-url: index.html
 
+-- string $selected-item: System
+
 -- integer $width: 1160
 
 -- integer $footer-width: 1340
-
 
 -- pr.sitemap-data footer-toc:
 $processor$: pr.full-sitemap
@@ -46,8 +47,7 @@ $processor$: pr.full-sitemap
 -- integer divideToTwo(a):
 integer a:
 
-- (a / 2) + 50
-
+- ( a / 2 ) + 50
 
 
 
@@ -89,7 +89,6 @@ background.solid: $page.bg-color
 
 -- ftd.column:
 width: fill-container
-;;padding-horizontal.px if { ftd.device != "mobile" }: 48
 min-width.fixed.px if { ftd.device != "mobile" }: $page.width
 overflow-x: auto
 
@@ -120,7 +119,7 @@ padding-top.px: 12
 padding-bottom.px: 6
 
 -- ftd.row:
-if: {page.show-breadcrum}
+if: { page.show-breadcrum }
 width: fill-container
 spacing.fixed.px: 28
 padding-bottom.px: 27
@@ -177,12 +176,12 @@ color: $inherited.colors.text.dark
 width: fill-container
 max-width.fixed.px: $page.width
 align-self: center
-min-height.fixed.calc if { page.body != NULL}: 100vh
+min-height.fixed.calc if { page.body != NULL }: 100vh
 
 -- ftd.text: 
-if: { page.body != NULL}
+if: { page.body != NULL }
 text: $page.body
-role:   $inherited.types.copy-regular
+role: $inherited.types.copy-regular
 color: $inherited.colors.text
 margin-top.px: 24
 margin-bottom.px: 24
@@ -191,7 +190,7 @@ margin-bottom.px: 24
 
 -- ftd.column:
 width: fill-container
-align-self if {page.width != NULL}: center
+align-self if { page.width != NULL }: center
 children: $page.wrapper
 
 -- end: ftd.column
@@ -239,10 +238,6 @@ align-center: $cta-button.align-center
 
 
 
-
-
-
-
 -- component menu-links:
 caption title:
 string link:
@@ -253,16 +248,12 @@ boolean $show-menu: false
 integer width: 
 optional integer idx:
 $toc.header-item list sub-sections: 
-;;optional pr.toc-item current-section: 
-;;optional pr.toc-item current-subsection: 
-;;optional pr.toc-item current-page: 
-;;pr.toc-item list toc:
 optional string parent-id: 
 
 -- ftd.column:
 width: fill-container
-$on-mouse-enter$: $ftd.set-bool($a = $menu-links.show-menu, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $menu-links.show-menu, v = false)
+$on-mouse-enter$: $ftd.set-bool( $a = $menu-links.show-menu, v = true )
+$on-mouse-leave$: $ftd.set-bool( $a = $menu-links.show-menu, v = false )
 
 -- ftd.column:
 
@@ -273,8 +264,8 @@ color: $inherited.colors.cta-primary.text
 color if { $menu-links.is-active }: $inherited.colors.cta-primary.base
 color if { $menu-links.mouse-in }: $inherited.colors.cta-primary.base
 color if { !$menu-links.mouse-in }: $inherited.colors.text
-$on-mouse-enter$: $ftd.set-bool($a = $menu-links.mouse-in, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $menu-links.mouse-in, v = false)
+$on-mouse-enter$: $ftd.set-bool( $a = $menu-links.mouse-in, v = true )
+$on-mouse-leave$: $ftd.set-bool( $a = $menu-links.mouse-in, v = false )
 white-space: nowrap
 
 -- ftd.column:
@@ -301,8 +292,7 @@ anchor.id: $menu-links.parent-id
 z-index: 999
 top.px: 94
 left.px: 0
-;;left.px: $divideToTwo(a = $menu-links.width)
-$on-click-outside$: $ftd.set-bool($a = $menu-links.show-menu, v = false)
+$on-click-outside$: $ftd.set-bool( $a = $menu-links.show-menu, v = false )
 
 -- ftd.column:
 width: fill-container
@@ -310,7 +300,6 @@ background.solid: $inherited.colors.custom.five
 padding-vertical.px: 42
 padding-horizontal.px: 42
 border-radius.px: 12
-;;min-height.fixed.px: 500
 
 -- ftd.column:
 width.fixed.percent: 50
@@ -330,11 +319,8 @@ width: fill-container
 spacing.fixed.px: 60
 z-index: 111
 
-
 -- ftd.column:
 width.fixed.px: 240
-
-;; left column
 
 -- ftd.column:
 
@@ -349,7 +335,7 @@ color: $inherited.colors.text-strong.dark
 margin-top.px: 12
 width: fill-container
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. 
 
 -- ftd.image:
@@ -365,20 +351,14 @@ margin-top.px: 40
 
 -- ftd.column:
 width: fill-container
-;;min-height.fixed.px: 500
-;;background.solid: red
 spacing.fixed.px: 12
 
-;; right column
-
 -- loop-section-card: $obj.title
-if: { !ftd.is_empty(menu-links.sub-sections) }
+if: { !ftd.is_empty( menu-links.sub-sections ) }
 $loop$: $menu-links.sub-sections as $obj
 link: $obj.url
 is-active: $obj.is-active
 toc: $obj.children
-;;current-subsection: $menu-links.title
-;;current-page: $menu-links.current-page
 parent-id: menu-items
 icon: $obj.font-icon
 is-heading: $obj.is-heading
@@ -406,10 +386,7 @@ is-heading: $obj.is-heading
 
 -- component loop-section-card:
 caption title:
-boolean $mouse-in: false
-;;optional pr.toc-item current-section: 
-;;optional pr.toc-item current-subsection: 
-;;optional pr.toc-item current-page: 
+boolean $mouse-in: false 
 $toc.header-item list toc:
 boolean is-active: false
 string link:
@@ -438,13 +415,13 @@ border-color: $inherited.colors.custom.five
 border-color if { loop-section-card.mouse-in || loop-section-card.is-active }: $inherited.colors.border-strong
 border-width.px: 1
 border-radius.px: 5
-$on-mouse-enter$: $ftd.set-bool($a = $loop-section-card.mouse-in, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $loop-section-card.mouse-in, v = false)
+$on-mouse-enter$: $ftd.set-bool( $a = $loop-section-card.mouse-in, v = true )
+$on-mouse-leave$: $ftd.set-bool( $a = $loop-section-card.mouse-in, v = false )
 spacing.fixed.px: 12
 max-width.fixed.px: 234
 cursor: default
-$on-click$: $ftd.set-bool($a = $loop-section-card.show-sub-menu, v = true)
-$on-click-outside$: $ftd.set-bool($a = $loop-section-card.show-sub-menu, v = false)
+$on-click$: $ftd.set-bool( $a = $loop-section-card.show-sub-menu, v = true )
+$on-click-outside$: $ftd.set-bool( $a = $loop-section-card.show-sub-menu, v = false )
 
 -- ftd.row:
 width: fill-container
@@ -485,7 +462,6 @@ color: $inherited.colors.text-strong.dark
 
 -- ftd.column:
 width.fixed.percent: 51
-;;background.solid: #333333
 min-height.fixed.px: 500
 anchor.id: $loop-section-card.parent-id
 right.px: 0
@@ -493,14 +469,13 @@ top.px: 0
 
 -- ftd.column:
 width: fill-container
-;;if: { loop-section-card.show-sub-menu || loop-section-card.is-active}
 if: { loop-section-card.show-sub-menu }
 align-content: center
 margin-left.px: 38
 margin-top.px: 40
 
 -- toc-items: 
-if: { !ftd.is_empty(loop-section-card.toc) }
+if: { !ftd.is_empty( loop-section-card.toc ) }
 toc: $loop-section-card.toc
 is-heading: $loop-section-card.is-heading
  
@@ -523,7 +498,6 @@ is-heading: $loop-section-card.is-heading
 
 
 
-
 -- component hero-section:
 caption title: 
 optional ftd.image-src image: 
@@ -536,9 +510,12 @@ integer width: $width
 children childs:
 boolean center: false
 boolean center-img: false
+boolean dot-img: false
 integer height: 870
+optional boolean margin-top: true
 boolean bottom: false
 optional boolean small-img: false
+optional boolean right-img: false
 optional boolean top-img: false
 
 -- lib2.hero-section: $hero-section.title
@@ -552,13 +529,15 @@ width: $hero-section.width
 childs: $hero-section.childs
 center: $hero-section.center
 center-img: $hero-section.center-img
+dot-img: $hero-section.dot-img
 height: $hero-section.height
+margin-top: $hero-section.margin-top
 bottom: $hero-section.bottom
 small-img: $hero-section.small-img
+right-img: $hero-section.right-img
 top-img: $hero-section.top-img
 
 -- end: hero-section
-
 
 
 
@@ -585,16 +564,17 @@ width: $metrics-card.width
 
 
 
+
 -- component features-card:
 children fearures-wrap:
 integer width: $width
-
 
 -- lib3.features-card:
 fearures-wrap: $features-card.fearures-wrap
 width: $features-card.width
 
 -- end: features-card
+
 
 
 
@@ -616,7 +596,6 @@ children card-wrap:
 integer z-index: 0
 integer width: $width
 
-
 -- lib3.snippet-card-left: $snippet-card-left.title
 description: $snippet-card-left.description
 cta-text: $snippet-card-left.cta-text
@@ -626,7 +605,6 @@ link: $snippet-card-left.link
 pull-top: $snippet-card-left.pull-top
 card-wrap: $snippet-card-left.card-wrap
 z-index: $snippet-card-left.z-index
-
 
 -- end: snippet-card-left
 
@@ -673,12 +651,6 @@ z-index: $snippet-card-right.z-index
 
 
 
-
-
-
-
-
-
 -- component featured-card-text:
 caption title:
 optional string description:
@@ -703,15 +675,18 @@ cta-link: $featured-card-text.cta-link
 
 -- component benefits-card:
 caption title:
-optional integer width:  $width
+optional integer width: $width
 children benefits-wrap:
 optional body body:
 integer spacing: 160
 boolean widthfill: false
 optional string role:
+optional boolean to-left: false
+optional boolean no-margin: false
+optional boolean left-align: false
+optional boolean center-text: false
 ftd.color bg-color: $inherited.colors.background.step-1
 optional ftd.image-src logo:
-
 
 -- lib4.benefits-card: $benefits-card.title
 width: $benefits-card.width 
@@ -719,13 +694,23 @@ benefits-wrap: $benefits-card.benefits-wrap
 body: $benefits-card.body 
 spacing: $benefits-card.spacing 
 widthfill: $benefits-card.widthfill 
-role: $benefits-card.role 
+role: $benefits-card.role
+to-left: $benefits-card.to-left
+no-margin: $benefits-card.no-margin
+left-align: $benefits-card.left-align
+center-text: $benefits-card.center-text
 bg-color: $benefits-card.bg-color 
 logo: $benefits-card.logo 
 
-
-
 -- end: benefits-card
+
+
+
+
+
+
+
+
 
 
 -- component benefits-info-card:
@@ -734,13 +719,14 @@ caption title:
 optional string info:
 boolean align-left: false
 
-
 -- lib4.benefits-info-card: $benefits-info-card.title
 icon: $benefits-info-card.icon 
 info: $benefits-info-card.info 
 align-left: $benefits-info-card.align-left 
 
 -- end: benefits-info-card
+
+
 
 
 
@@ -758,6 +744,8 @@ integer width: $width
 children trending-wrap:
 optional boolean no-img: false
 optional boolean img:
+optional boolean blank: false
+optional boolean system-image: false
 optional ftd.color bgcolor: $inherited.colors.background.step-2
 optional ftd.image image:
 optional integer margin-top:
@@ -770,6 +758,8 @@ width: $trending-templates.width
 trending-wrap: $trending-templates.trending-wrap
 no-img: $trending-templates.no-img
 img: $trending-templates.img
+blank: $trending-templates.blank
+system-image: $trending-templates.system-image
 bgcolor: $trending-templates.bgcolor
 image: $trending-templates.image
 margin-top: $trending-templates.margin-top
@@ -785,18 +775,20 @@ margin-top: $trending-templates.margin-top
 
 
 
-
 -- component trending-card:
 caption title:
 ftd.image-src image: $assets.files.static.templates.image-1.svg
 optional string link:
-
 
 -- lib3.trending-card: $trending-card.title
 image: $trending-card.image
 link: $trending-card.link
 
 -- end: trending-card
+
+
+
+
 
 
 
@@ -810,17 +802,22 @@ optional string cta-text:
 optional string cta-link:
 optional string cta-role: 
 optional ftd.image-src image: $assets.files.static.charts-image.svg
+optional ftd.image-src back-image:
 optional ftd.color bgcolor: $inherited.colors.custom.two
 integer width: $width
 children promo-wrap:
 boolean left: false
+optional boolean no-img: false
+optional boolean top-img: false
+optional boolean down-img: false
+boolean top: false
 boolean right: false
+boolean left-text: false
 boolean keep-dark: true
 boolean two-btn: false
 optional string cta-left-text:
 optional string cta-right-text:
 optional boolean center: false
-
 
 -- lib3.excel-promo-card: $excel-promo-card.title
 info: $excel-promo-card.info
@@ -833,12 +830,17 @@ width: $excel-promo-card.width
 promo-wrap: $excel-promo-card.promo-wrap
 keep-dark: $excel-promo-card.keep-dark
 left: $excel-promo-card.left
+no-img: $excel-promo-card.no-img
+back-image: $excel-promo-card.back-image
+top-img: $excel-promo-card.top-img
+down-img: $excel-promo-card.down-img
+top: $excel-promo-card.top
 right: $excel-promo-card.right
+left-text: $excel-promo-card.left-text
 center: $excel-promo-card.center
 two-btn: $excel-promo-card.two-btn
 cta-left-text: $excel-promo-card.cta-left-text
 cta-right-text: $excel-promo-card.cta-right-text
-
 
 -- end: excel-promo-card
 
@@ -851,14 +853,14 @@ cta-right-text: $excel-promo-card.cta-right-text
 
 
 
-
 -- component card-with-icons-bottom:
-caption title:
+optional caption title:
 optional string cta-text:
 optional string cta-link:
 optional string info:
 integer width: $width
 children icons-wrap:
+optional boolean no-padding: false
 
 -- lib3.card-with-icons-bottom: $card-with-icons-bottom.title
 cta-text: $card-with-icons-bottom.cta-text
@@ -866,11 +868,9 @@ cta-link: $card-with-icons-bottom.cta-link
 info: $card-with-icons-bottom.info
 width: $card-with-icons-bottom.width
 icons-wrap: $card-with-icons-bottom.icons-wrap
+no-padding: $card-with-icons-bottom.no-padding
 
 -- end: card-with-icons-bottom
-
-
-
 
 
 
@@ -894,6 +894,11 @@ src: $image-card-with-title.src
 
 
 
+
+
+
+
+
 -- component rounded-corner-card:
 caption title:
 optional string info:
@@ -905,7 +910,6 @@ ftd.color bgcolor: $inherited.colors.custom.two
 children card-wrap:
 
 -- lib3.rounded-corner-card: $rounded-corner-card.title
-if: { ftd.device != "mobile"}
 info: $rounded-corner-card.info
 cta-text: $rounded-corner-card.cta-text
 cta-link: $rounded-corner-card.cta-link
@@ -931,7 +935,7 @@ optional ftd.image-src text-image-1:
 optional ftd.image-src text-image-2: 
 optional integer spacing: 
 integer width: $width
-
+children space:
 
 -- lib2.text-bubble:
 bgcolor: $text-bubble.bgcolor
@@ -939,9 +943,12 @@ text-image-1: $text-bubble.text-image-1
 text-image-2: $text-bubble.text-image-2
 spacing: $text-bubble.spacing
 width: $text-bubble.width
-
+space: $text-bubble.space
 
 -- end: text-bubble
+
+
+
 
 
 
@@ -957,6 +964,7 @@ optional body body:
 optional string lang: 
 integer width: $width
 optional boolean show-double: true
+children code:
 
 -- lib2.code-block-system: $code-block-system.title
 body: $code-block-system.body
@@ -965,10 +973,9 @@ code-bg: $code-block-system.code-bg
 lang: $code-block-system.lang
 show-double: $code-block-system.show-double
 width: $code-block-system.width
+code: $code-block-system.code
 
 -- end: code-block-system
-
-
 
 
 
@@ -987,6 +994,7 @@ optional integer margin-top:
 children row-wrap:
 integer width: $width
 optional integer padding-vertical: 
+optional integer padding-horizontal: 
 boolean wrap: false
 optional integer index:
 optional integer reset:
@@ -1002,14 +1010,23 @@ margin-top: $row-container.margin-top
 row-wrap: $row-container.row-wrap
 width: $row-container.width
 padding-vertical: $row-container.padding-vertical
+padding-horizontal: $row-container.padding-horizontal
 wrap: $row-container.wrap
 index: $row-container.index
 reset: $row-container.reset
+switch-to-column: $row-container.switch-to-column
 align-left: $row-container.align-left
 title-medium: $row-container.title-medium
 slides: $row-container.slides
 
 -- end: row-container
+
+
+
+
+
+
+
 
 
 
@@ -1020,7 +1037,7 @@ optional body body:
 optional integer padding-vertical: 
 optional integer width: 
 optional integer spacing: 
-optional boolean align-left:  false
+optional boolean align-left: false
 
 -- lib2.col-container: $col-container.title
 col-wrap: $col-container.col-wrap
@@ -1031,6 +1048,10 @@ spacing: $col-container.spacing
 align-left: $col-container.align-left
 
 -- end: col-container
+
+
+
+
 
 
 
@@ -1068,12 +1089,14 @@ optional ftd.image-src logo:
 optional body body:
 optional ftd.color body-color: $inherited.colors.border.dark
 integer width: $width
+children card:
 
 -- lib2.title-with-body-card: $title-with-body-card.title
 logo: $title-with-body-card.logo
 body: $title-with-body-card.body
 body-color: $title-with-body-card.body-color
 width: $title-with-body-card.width
+card: $title-with-body-card.card
 
 -- end: title-with-body-card
 
@@ -1092,19 +1115,13 @@ children slider-wrap:
 integer width: $width
 integer pull-top: 0
 
-
 -- lib2.logo-slider:
 active-item: $logo-slider.active-item
 slider-wrap: $logo-slider.slider-wrap
 width: $logo-slider.width
 pull-top: $logo-slider.pull-top
 
-
 -- end: logo-slider
-
-
-
-
 
 
 
@@ -1160,8 +1177,12 @@ cta-url: $heart-line-title-card.cta-url
 cta-text: $heart-line-title-card.cta-text
 spacing: $heart-line-title-card.spacing
 
-
 -- end: heart-line-title-card
+
+
+
+
+
 
 
 
@@ -1180,6 +1201,7 @@ integer margin-right: 0
 optional boolean right: false
 optional string cta-text:
 optional string cta-link:
+children card:
 
 -- lib2.testimonial-card: $testimonial-card.title
 label: $testimonial-card.label
@@ -1192,9 +1214,9 @@ cta-text: $testimonial-card.cta-text
 cta-link: $testimonial-card.cta-link
 right: $testimonial-card.right
 margin-right: $testimonial-card.margin-right
+card: $testimonial-card.card
 
 -- end: testimonial-card
-
 
 
 
@@ -1224,19 +1246,14 @@ width: $footer.width
 
 
 
-
-
 -- component dark-mode-switcher:
 
 -- ftd.column:
 padding-vertical.px: 12
 padding-horizontal.px: 14
-background.solid: #111111
-
-
+background.solid: $inherited.colors.background.step-1
 
 -- end: ftd.column
-
 
 -- end: dark-mode-switcher
 
@@ -1249,27 +1266,9 @@ background.solid: #111111
 
 
 
-
-
-
-
-
-
-
-
-
--- string $selected-item: System
-
-
-
-
-
-
-
-
 -- component dropdown:
 caption title: $selected-item
-ftd.color theme-color: #333333
+ftd.color theme-color: $inherited.colors.border-strong
 boolean $show-options: false
 
 -- ftd.column:
@@ -1284,10 +1283,10 @@ border-radius.px: 30
 anchor: parent
 bottom.px: 23
 right.px: 23
-bottom.px if {ftd.device == "mobile}: -65
-right.px if {ftd.device == "mobile}: 104
+bottom.px if { ftd.device == "mobile }: -65
+right.px if { ftd.device == "mobile }: 104
 min-width.fixed.px: 152
-$on-click$: $ftd.toggle($a = $dropdown.show-options)
+$on-click$: $ftd.toggle( $a = $dropdown.show-options )
 border-color: $inherited.colors.border
 border-width.px: 1
 
@@ -1302,7 +1301,6 @@ src: $assets.files.static.footer.down.svg
 width.fixed.px: 12
 height: auto
 align-self: center
-
 
 -- ftd.column:
 if: { $dropdown.show-options }
@@ -1321,13 +1319,17 @@ if: { $dropdown.show-options }
 
 
 
+
+
+
+
+
 -- component mode-changer:
 caption title:
 string $mode-1: Dark
 string $mode-2: Light
 string $mode-3: System
 boolean $mouse-in: false
-
 
 -- ftd.column:
 background.solid: $inherited.colors.background.base
@@ -1346,13 +1348,12 @@ border-radius.px: 10
 if: { mode-changer.title == "System" }
 spacing.fixed.px: 24
 
-
 -- ftd.text: $mode-changer.mode-1
 role: $inherited.types.button-large
 color: $inherited.colors.accent.primary
 padding-right.px: 52
 min-width.fixed.px: 112
-$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-1)
+$on-click$: $ftd.set-string( $a = $selected-item, v = $mode-changer.mode-1 )
 $on-click$: $ftd.enable-dark-mode()
 
 -- ftd.text: $mode-changer.mode-2
@@ -1360,9 +1361,8 @@ role: $inherited.types.button-large
 color: $inherited.colors.accent.primary
 padding-right.px: 52
 width.fixed.px: 112
-$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-2)
+$on-click$: $ftd.set-string( $a = $selected-item, v = $mode-changer.mode-2 )
 $on-click$: $ftd.enable-light-mode()
-
 
 -- end: ftd.column
 
@@ -1370,22 +1370,19 @@ $on-click$: $ftd.enable-light-mode()
 if: { mode-changer.title == "Dark" }
 spacing.fixed.px: 12
 
-
 -- ftd.text: $mode-changer.mode-2
 role: $inherited.types.button-large
 color: $inherited.colors.accent.primary
-$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-2)
+$on-click$: $ftd.set-string( $a = $selected-item, v = $mode-changer.mode-2 )
 $on-click$: $ftd.enable-light-mode()
 min-width.fixed.px: 112
-
 
 -- ftd.text: $mode-changer.mode-3
 role: $inherited.types.button-large
 color: $inherited.colors.accent.primary
-$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-3)
+$on-click$: $ftd.set-string( $a = $selected-item, v = $mode-changer.mode-3 )
 $on-click$: $ftd.enable-system-mode()
 min-width.fixed.px: 112
-
 
 -- end: ftd.column
 
@@ -1393,18 +1390,17 @@ min-width.fixed.px: 112
 if: { mode-changer.title == "Light" }
 spacing.fixed.px: 12
 
-
 -- ftd.text: $mode-changer.mode-1
 role: $inherited.types.button-large
 color: $inherited.colors.accent.primary
-$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-1)
+$on-click$: $ftd.set-string( $a = $selected-item, v = $mode-changer.mode-1 )
 $on-click$: $ftd.enable-dark-mode()
 min-width.fixed.px: 112
 
 -- ftd.text: $mode-changer.mode-3
 role: $inherited.types.button-large
 color: $inherited.colors.accent.primary
-$on-click$: $ftd.set-string($a = $selected-item, v = $mode-changer.mode-3)
+$on-click$: $ftd.set-string( $a = $selected-item, v = $mode-changer.mode-3 )
 $on-click$: $ftd.enable-system-mode()
 min-width.fixed.px: 112
 
@@ -1413,164 +1409,6 @@ min-width.fixed.px: 112
 -- end: ftd.column
 
 -- end: mode-changer
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1617,12 +1455,6 @@ color: $inherited.colors.text
 
 
 
-
-
-
-
-
-
 -- component subsections-links:
 pr.toc-item list item:
 caption title:
@@ -1632,13 +1464,13 @@ boolean is-active:
 -- ftd.column:
 
 -- subsections-links-desktop: $subsections-links.title
-if: {ftd.device != "mobile"}
+if: { ftd.device != "mobile" }
 item: $subsections-links.item
 url: $subsections-links.url
 is-active: $subsections-links.is-active
 
 -- subsections-links-mobile:
-if: {ftd.device == "mobile"}
+if: { ftd.device == "mobile" }
 item: $subsections-links.item
 
 -- end: ftd.column
@@ -1664,14 +1496,13 @@ boolean is-active:
 width: fill-container
 spacing.fixed.px: 12
 
-
 -- ftd.text: $subsections-links-desktop.title
-if: {subsections-links-desktop.is-active}
+if: { subsections-links-desktop.is-active }
 role: $inherited.types.button-medium
 color: $inherited.colors.cta-primary.base
 
 -- subsections-items:
-if: {subsections-links-desktop.is-active}
+if: { subsections-links-desktop.is-active }
 $loop$: $subsections-links-desktop.item as $obj
 item: $obj
 
@@ -1710,6 +1541,9 @@ item: $obj
 
 
 
+
+
+
 -- component subsections-items:
 pr.toc-item item:
 
@@ -1728,6 +1562,14 @@ item: $subsections-items.item
 -- end: subsections-items
 
 
+
+
+
+
+
+
+
+
 -- component subsections-items-desktop:
 pr.toc-item item:
 
@@ -1736,15 +1578,15 @@ align-self: start
 spacing.fixed.px: 12
 
 -- ftd.row:
-if: {subsections-items-desktop.item.is-active}
+if: { subsections-items-desktop.item.is-active }
 spacing.fixed.px: 12
 
 -- ftd.text: $subsections-items-desktop.item.title
-if: {subsections-items-desktop.item.url == NULL}
+if: { subsections-items-desktop.item.url == NULL }
 color: $inherited.colors.text-strong
 color if { subsections-items-desktop.item.is-active }: $inherited.colors.cta-primary.base
 role: $inherited.types.button-medium
-width if {ftd.device != "mobile"}: fill-container
+width if { ftd.device != "mobile" }: fill-container
 white-space: nowrap
 
 -- ftd.text: /
@@ -1754,16 +1596,16 @@ role: $inherited.types.button-medium
 -- end: ftd.row
 
 -- ftd.row:
-if: {subsections-items-desktop.item.is-active}
+if: { subsections-items-desktop.item.is-active }
 spacing.fixed.px: 12
 
 -- ftd.text: $subsections-items-desktop.item.title
-if: {subsections-items-desktop.item.url != NULL}
+if: { subsections-items-desktop.item.url != NULL }
 color: $inherited.colors.text-strong
 link: $subsections-items-desktop.item.url
 color if { subsections-items-desktop.item.is-active }: $inherited.colors.cta-primary.base
 role: $inherited.types.button-medium
-width if {ftd.device != "mobile"}: fill-container
+width if { ftd.device != "mobile" }: fill-container
 white-space: nowrap
 
 -- ftd.text: /
@@ -1771,8 +1613,6 @@ color: $inherited.colors.text
 role: $inherited.types.button-medium
 
 -- end: ftd.row
-
-
 
 -- end: ftd.row
 
@@ -1781,28 +1621,34 @@ role: $inherited.types.button-medium
 
 
 
+
+
+
+
+
+
 -- component subsections-items-mobile:
 pr.toc-item item:
 
 -- ftd.row:
-width if {ftd.device != "mobile"}: fill-container
+width if { ftd.device != "mobile" }: fill-container
 spacing.fixed.px: 12
 
 -- ftd.text: $subsections-items-mobile.item.title
-if: {subsections-items-mobile.item.url == NULL}
+if: { subsections-items-mobile.item.url == NULL }
 color: $inherited.colors.text-strong
 color if { subsections-items-mobile.item.is-active }: $inherited.colors.cta-primary.base
 role: $inherited.types.button-medium
-width if {ftd.device != "mobile"}: fill-container
+width if { ftd.device != "mobile" }: fill-container
 white-space: nowrap
 
 -- ftd.text: $subsections-items-mobile.item.title
-if: {subsections-items-mobile.item.url != NULL}
+if: { subsections-items-mobile.item.url != NULL }
 color: $inherited.colors.text-strong
 link: $subsections-items-mobile.item.url
 color if { subsections-items-mobile.item.is-active }: $inherited.colors.cta-primary.base
 role: $inherited.types.button-medium
-width if {ftd.device != "mobile"}: fill-container
+width if { ftd.device != "mobile" }: fill-container
 white-space: nowrap
 
 -- ftd.text: /
@@ -1833,7 +1679,7 @@ padding-top.px: 12
 width: fill-container
 
 -- ftd.text: $code.caption
-if: {code.caption != NULL}
+if: { code.caption != NULL }
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
 width: fill-container
@@ -1856,8 +1702,8 @@ padding-left.px: 20
 padding-bottom.px: 10
 padding-right.px: 20
 background.solid: #2b303b
-border-top-left-radius.px if {$code.caption == NULL}: 4
-border-top-right-radius.px if {$code.caption == NULL}: 4
+border-top-left-radius.px if { $code.caption == NULL }: 4
+border-top-right-radius.px if { $code.caption == NULL }: 4
 border-bottom-left-radius.px: 4
 border-bottom-right-radius.px: 4
 overflow-x: auto
@@ -1885,35 +1731,33 @@ optional ftd.resizing height:
 ftd.image-src src:
 
 -- ftd.column:
-width if {image.width != NULL}: auto
+width if { image.width != NULL }: auto
 width: auto
 max-width.fixed.px: 800
 height: auto
-align-content if {image.width == NULL}: center
+align-content if { image.width == NULL }: center
 
 -- ftd.image:
 src: $image.src
 width: $image.width
 height: $image.height
 max-width.fixed.px: 800
-;;align-content: $image.alignment
 
 -- ftd.text:
-if: {image.caption != NULL}
+if: { image.caption != NULL }
 text: $image.caption
 color: $inherited.colors.text
-;;width if {image.width != NULL}: $width
 width: fill-container
 role: $inherited.types.label-large
 border-bottom-left-radius.px: 5
 border-bottom-right-radius.px: 5
-background.solid:$inherited.colors.background.step-1
+background.solid: $inherited.colors.background.step-1
 padding-vertical.px: 8
 padding-horizontal.px: 20
 text-align: center
 
 -- ftd.column:
-if: {image.body != NULL}
+if: { image.body != NULL }
 margin-top.px: 20
 
 -- tf.markdown:
@@ -1971,6 +1815,7 @@ $h1.body
 
 
 
+
 -- component h2: 
 caption title:
 optional body body:
@@ -1980,6 +1825,8 @@ optional body body:
 $h2.body
 
 -- end: h2
+
+
 
 
 
@@ -2006,15 +1853,23 @@ $h3.body
 
 
 
+
 -- component h4: 
 caption title:
 optional body body:
 
--- tf.h4: $h3.title
+-- tf.h4: $h4.title
 
 $h4.body
 
 -- end: h4
+
+
+
+
+
+
+
 
 
 
@@ -2023,6 +1878,7 @@ $h4.body
 -- lib4.hr:
 
 -- end: hr
+
 
 
 
@@ -2042,12 +1898,15 @@ optional string cta-link:
 optional string cta-role:
 optional ftd.image-src image:
 optional integer padding-vertical:
+optional integer width:
 optional boolean join-btn: false
 optional boolean two-text: false
 optional boolean top: false
 optional boolean bottom: false
 optional boolean btn: false
-
+optional boolean no-btn: false
+optional ftd.color bgcolor:
+children child:
 
 -- lib4.right-image-component: $right-image-component.title
 icon: $right-image-component.icon
@@ -2058,11 +1917,15 @@ cta-link: $right-image-component.cta-link
 cta-role: $right-image-component.cta-role
 image: $right-image-component.image
 padding-vertical: $right-image-component.padding-vertical
+width: $right-image-component.width
 top: $right-image-component.top
 join-btn: $right-image-component.join-btn
 two-text: $right-image-component.two-text
 bottom: $right-image-component.bottom
 btn: $right-image-component.btn
+no-btn: $right-image-component.no-btn
+bgcolor: $right-image-component.bgcolor
+child: $right-image-component.child
 
 -- end: right-image-component
 
@@ -2075,17 +1938,26 @@ btn: $right-image-component.btn
 
 
 
-
 -- component left-image-component:
 optional ftd.image-src icon:
-caption title:
+optional caption title:
 body info:
-string cta-text:
-string cta-link:
+optional string cta-text:
+optional string cta-link:
 optional string cta-role:
-ftd.image-src image:
-boolean top: false
-
+optional string role:
+optional string type:
+optional string time:
+optional boolean timestamp: false
+optional boolean col-img: false
+optional boolean padding: false
+optional boolean down-img: false
+optional boolean ext-img: false
+optional boolean right-btn: false
+children child:
+optional ftd.image-src image:
+optional boolean top: false
+optional boolean no-img: false
 
 -- lib4.left-image-component: $left-image-component.title
 icon: $left-image-component.icon
@@ -2093,13 +1965,21 @@ info: $left-image-component.info
 cta-text: $left-image-component.cta-text
 cta-link: $left-image-component.cta-link
 cta-role: $left-image-component.cta-role
+col-img: $left-image-component.col-img
+padding: $left-image-component.padding
+down-img: $left-image-component.down-img
+ext-img: $left-image-component.ext-img
+right-btn: $left-image-component.right-btn
 image: $left-image-component.image
 top: $left-image-component.top
+role: $left-image-component.role
+type: $left-image-component.type
+time: $left-image-component.time
+timestamp: $left-image-component.timestamp
+child: $left-image-component.child
+no-img: $left-image-component.no-img
 
 -- end: left-image-component
-
-
-
 
 
 
@@ -2116,14 +1996,18 @@ caption title:
 body info:
 integer width: $width
 optional ftd.color bgcolor: $inherited.colors.background.step-1
-
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- lib4.hosting-hero: $hosting-hero.title
 image: $hosting-hero.image
 info: $hosting-hero.info
 width: $hosting-hero.width
 bgcolor: $hosting-hero.bgcolor
-
+cta-text: $hosting-hero.cta-text
+cta-link: $hosting-hero.cta-link
+cta-role: $hosting-hero.cta-role
 
 -- end: hosting-hero
 
@@ -2135,20 +2019,29 @@ bgcolor: $hosting-hero.bgcolor
 
 
 
+
 -- component stages-vertical-image:
+optional caption title:
 ftd.image-src image: $assets.files.static.hosting.stage-hero.svg
+optional ftd.image-src icon:
 integer height: 600
 optional integer width:
+optional boolean top: false
+optional boolean icon-text: false
+optional boolean width-fill: false
+children child:
 
-
--- lib4.stages-vertical-image:
+-- lib4.stages-vertical-image: $stages-vertical-image.title
+icon: $stages-vertical-image.icon
 image: $stages-vertical-image.image
 width: $stages-vertical-image.width
+width-fill: $stages-vertical-image.width-fill
 height: $stages-vertical-image.height
+icon-text: $stages-vertical-image.icon-text
+top: $stages-vertical-image.top
+child: $stages-vertical-image.child
 
 -- end: stages-vertical-image
-
-
 
 
 
@@ -2164,10 +2057,12 @@ optional caption title:
 ftd.image-src rect:
 integer stage:
 optional ftd.color stage-bgcolor:
-string cta-text:
-string cta-link:
+optional string cta-text:
+optional string cta-link:
 optional body info:
 optional boolean right: false
+optional boolean no-line: false
+optional boolean top-line: false
 
 -- lib4.stages-vertical: $stages-vertical.title
 rect: $stages-vertical.rect
@@ -2177,10 +2072,16 @@ cta-text: $stages-vertical.cta-text
 cta-link: $stages-vertical.cta-link
 info: $stages-vertical.info
 right: $stages-vertical.right
+no-line: $stages-vertical.no-line
+top-line: $stages-vertical.top-line
 
 -- end: lib4.stages-vertical
 
 -- end: stages-vertical
+
+
+
+
 
 
 
@@ -2193,12 +2094,18 @@ caption title:
 optional body info:
 optional boolean num: false
 optional integer numb:
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- lib4.key-features: $key-features.title
 icon: $key-features.icon
 info: $key-features.info
 num: $key-features.num
 numb: $key-features.numb
+cta-text: $key-features.cta-text
+cta-link: $key-features.cta-link
+cta-role: $key-features.cta-role
 
 -- end: key-features
 
@@ -2211,29 +2118,35 @@ numb: $key-features.numb
 
 
 
-
-
-
-
-
-
-
-
-
 -- component card:
 caption title: 
-body body:
+optional body body:
 ftd.image-src image:
+optional ftd.image-src src:
 ftd.color bgcolor: $inherited.colors.background.step-2
 optional boolean top: false
+optional boolean icon: false
+optional boolean fill: false
+optional boolean no-btn: false
+optional string cta-text:
+optional string cta-link:
+optional string cta-role:
 
 -- lib4.card: $card.title
 body: $card.body
 image: $card.image
+src: $card.src
 bgcolor: $card.bgcolor
 top: $card.top
+icon: $card.icon
+fill: $card.fill
+no-btn: $card.no-btn
+cta-text: $card.cta-text
+cta-link: $card.cta-link
+cta-role: $card.cta-role
 
 -- end: card
+
 
 
 
@@ -2247,13 +2160,10 @@ top: $card.top
 caption title: Landing Page
 integer width: 364
 
-
 -- lib4.search-bar: $search-bar.title
 width: $search-bar.width
 
 -- end: search-bar
-
-
 
 
 
@@ -2270,19 +2180,12 @@ optional boolean $active-item: false
 optional boolean $mouse-in: false
 integer index: 
 
-
 -- lib4.tabs: $tabs.title
 $active-item: $tabs.active-item
 $mouse-in: $tabs.mouse-in
 index: $tabs.index
 
-
 -- end: tabs
-
-
-
-
-
 
 
 
@@ -2301,14 +2204,18 @@ integer width: 318
 optional integer border-width:
 optional string cta-text:
 optional string cta-link:
+optional string cta-role:
 boolean center: false
 boolean spacing: false
+boolean down: false
+boolean down-img: false
 optional integer padding-vertical:
 ftd.color bgcolor: $inherited.colors.text
 ftd.color textcolor: $inherited.colors.background.base
 ftd.color titlecolor: $inherited.colors.background.base
-optional integer height:
+optional boolean height: false
 boolean role: false
+children child:
 
 -- lib4.display-card: $display-card.title
 image: $display-card.image
@@ -2317,17 +2224,24 @@ width: $display-card.width
 border-width: $display-card.border-width
 cta-text: $display-card.cta-text
 cta-link: $display-card.cta-link
+cta-role: $display-card.cta-role
 center: $display-card.center
+down: $display-card.down
+down-img: $display-card.down-img
 padding-vertical: $display-card.padding-vertical
 bgcolor: $display-card.bgcolor
 textcolor: $display-card.textcolor
 titlecolor: $display-card.titlecolor
 spacing: $display-card.spacing
 role: $display-card.role
+height: $display-card.height
+child: $display-card.child
 
 -- end: lib4.display-card
 
 -- end: display-card
+
+
 
 
 
@@ -2344,6 +2258,7 @@ children wraper:
 integer spacing: 90
 integer width: $width
 optional integer reset:
+optional boolean switch-to-row: false
 
 -- lib4.column-wrap:
 height: $column-wrap.height
@@ -2353,7 +2268,386 @@ wraper: $column-wrap.wraper
 spacing: $column-wrap.spacing
 reset: $column-wrap.reset
 width: $column-wrap.width
+switch-to-row: $column-wrap.switch-to-row
 
 -- end: lib4.column-wrap
 
 -- end: column-wrap
+
+
+
+
+
+
+
+
+
+
+-- component page-1:
+children wrapper:
+
+-- page: Templates
+bg-color: $inherited.colors.background.step-1
+wrapper: $page-1.wrapper
+
+-- end: page-1
+
+
+
+
+
+
+
+
+
+
+-- component excel-promo-card-1:
+children promo-wrap:
+
+-- excel-promo-card: Templates for you
+image: $assets.files.static.templates.temp.svg
+bgcolor: $inherited.colors.background.step-2
+center: true
+right if { ftd.device == "mobile" }: true
+promo-wrap: $excel-promo-card-1.promo-wrap
+
+-- excel-promo-card.info: 
+
+Fastn provides exhaustive frameworks to set up and  scale your project in
+minutes. Fastn provides exhaustive frameworks to set up and  scale your project
+in minutes.
+
+-- end: excel-promo-card-1
+
+
+
+
+
+
+
+
+
+
+-- component row-container-1:
+children row-wrap:
+
+-- row-container: Featured Templates 
+spacing: 12
+padding-vertical: 120
+switch-to-column: true
+align-left: true
+row-wrap: $row-container-1.row-wrap
+
+-- end: row-container-1
+
+
+
+
+
+
+
+
+
+
+-- component display-card-1:
+children child:
+
+-- display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.uses.card.svg
+bgcolor: $inherited.colors.text
+textcolor: $inherited.colors.border-strong
+titlecolor: $inherited.colors.border-strong
+width: 343
+child: $display-card-1.child
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- end: display-card-1
+
+
+
+
+
+
+
+
+
+
+-- component benefits-card-1:
+children benefits-wrap:
+
+-- benefits-card: Landing Page
+spacing: 34
+bg-color: $inherited.colors.custom.two
+logo: $assets.files.static.uses.image1.svg
+no-margin: true
+benefits-wrap: $benefits-card-1.benefits-wrap
+
+Fastn is powered by a one of a kind design system guiding the overarching
+framework. It has been carefully constructed to imbibe & maintain design
+considerations right through  development & implementation. 
+
+-- end: benefits-card-1
+
+
+
+
+
+
+
+
+
+
+-- component row-container-2:
+children row-wrap:
+
+-- row-container:
+spacing: 12
+spacing if { ftd.device =="mobile" }: 24
+padding-vertical: 0
+slides: true
+row-wrap: $row-container-2.row-wrap
+
+-- end: row-container-2
+
+
+
+
+
+
+
+
+
+
+-- component stages-vertical-image-1:
+children child:
+
+-- stages-vertical-image:
+image: $assets.files.static.uses.1.svg
+width: 245
+width if { ftd.device == "mobile" }: 156
+child: $stages-vertical-image-1.child
+
+-- end: stages-vertical-image-1
+
+
+
+
+
+
+
+
+
+
+-- component row-container-3:
+children row-wrap:
+
+-- row-container:
+spacing: 48
+switch-to-column: true
+row-wrap: $row-container-3.row-wrap
+
+-- end: row-container-3
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-1:
+children child:
+
+-- right-image-component: API & Documentation
+icon: $assets.files.static.events.upcoming-section-logo.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+padding-vertical: 105
+child: $right-image-component-1.child
+
+Fastn is powered by a one of a kind design system guiding the overarching
+framework. It has been carefully constructed to imbibe & maintain design
+considerations right through  development & implementation. 
+
+-- end: right-image-component-1
+
+
+
+
+
+
+
+
+
+
+-- component row-container-4:
+children row-wrap:
+
+-- row-container:
+width: 650
+spacing: 12
+slides: true
+row-wrap: $row-container-4.row-wrap
+
+-- end: row-container-4
+
+
+
+
+
+
+
+
+
+
+-- component benefits-card-2:
+children benefits-wrap:
+
+-- benefits-card: Blog Page
+spacing: 34
+bg-color: $inherited.colors.custom.two
+logo: $assets.files.static.uses.image1.svg
+no-margin: true
+benefits-wrap: $benefits-card-2.benefits-wrap
+
+Fastn is powered by a one of a kind design system guiding the overarching
+framework. It has been carefully constructed to imbibe & maintain design
+considerations right through  development & implementation. 
+
+-- end: benefits-card-2
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-2:
+children child:
+
+-- right-image-component: Microsite
+icon: $assets.files.static.events.upcoming-section-logo.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+padding-vertical: 105
+child: $right-image-component-2.child
+
+Fastn is powered by a one of a kind design system guiding the overarching
+framework. It has been carefully constructed to imbibe & maintain design
+considerations right through  development & implementation. 
+
+-- end: right-image-component-2
+
+
+
+
+
+
+
+
+
+
+-- component row-container-5:
+children row-wrap:
+
+-- row-container:
+wrap: true
+switch-to-column: true
+margin-bottom: 150
+spacing: 82
+spacing if {ftd.device == "mobile"}: 40
+row-wrap: $row-container-5.row-wrap
+
+-- end: row-container-5
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-1:
+children childs:
+
+-- hero-section: Loreum ipsum
+height: 340
+childs: $hero-section-1.childs
+
+-- hero-section.info:
+
+Fastn provides exhaustive frameworks to set up and  scale
+your project in minutes. Fastn provides exhaustive 
+frameworks to set up and  scale your project in minutes.
+
+-- end: hero-section-1
+
+
+
+
+
+
+
+
+
+
+-- component row-container-6:
+children row-wrap:
+
+-- row-container:
+align-left: true
+padding-vertical: 84
+row-wrap: $row-container-6.row-wrap
+
+-- end: row-container-6
+
+
+
+
+
+
+
+
+
+
+-- component row-container-7:
+children row-wrap:
+
+-- row-container:
+spacing: 50
+align-left: true
+padding-vertical: 75
+row-wrap: $row-container-7.row-wrap
+
+-- end: row-container-7
+
+
+
+
+
+
+
+
+
+
+-- component column-wrap-1:
+children wraper:
+
+-- column-wrap:
+wrap: true
+height: 1308
+index: 1
+reset: $current-tab
+wraper: $column-wrap-1.wraper
+
+-- end: column-wrap-1

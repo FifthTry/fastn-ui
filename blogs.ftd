@@ -1,0 +1,215 @@
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fifthtry.github.io/fastn-ui/assets
+
+
+
+
+
+-- ft.page: Blogs
+
+-- hero-section-340:
+
+-- row-container-left:
+
+-- ft.search-bar:
+
+-- end: row-container-left
+
+-- row-container-50:
+
+-- ft.tabs: Landing Page
+index: 1
+
+-- ft.tabs: API & Documentation
+index: 2
+
+-- ft.tabs: Microsite
+index: 3
+
+-- ft.tabs: Blogs
+index: 4
+$active-item: true
+
+-- end: row-container-50
+
+-- column-wrap-1:
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card2.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card2.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- end: column-wrap-1
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-340:
+children childs:
+
+-- ft.hero-section: Loreum ipsum
+height: 340
+childs: $hero-section-340.childs
+
+-- ft.hero-section.info:
+
+Fastn provides exhaustive frameworks to set up and  scale
+your project in minutes. Fastn provides exhaustive 
+frameworks to set up and  scale your project in minutes.
+
+-- end: hero-section-340
+
+
+
+
+
+
+
+
+
+
+-- component row-container-left:
+children row-wrap:
+
+-- ft.row-container:
+align-left: true
+padding-vertical: 84
+row-wrap: $row-container-left.row-wrap
+
+-- end: row-container-left
+
+
+
+
+
+
+
+
+
+
+-- component row-container-50:
+children row-wrap:
+
+-- ft.row-container:
+spacing: 50
+align-left: true
+padding-vertical: 75
+row-wrap: $row-container-50.row-wrap
+
+-- end: row-container-50
+
+
+
+
+
+
+
+
+
+
+-- component column-wrap-1:
+children wraper:
+
+-- ft.column-wrap:
+wrap: true
+height: 1308
+index: 1
+reset: $ft.current-tab
+wraper: $column-wrap-1.wraper
+
+-- end: column-wrap-1
+
+
+
+
+
+
+
+
+
+
+-- component column-wrap-2:
+children wraper:
+
+-- ft.column-wrap:
+wrap: true
+height: 1308
+index: 2
+reset: $ft.current-tab
+wraper: $column-wrap-2.wraper
+
+-- end: column-wrap-2
+
+
+
+
+
+
+
+
+
+
+-- component column-wrap-3:
+children wraper:
+
+-- ft.column-wrap:
+wrap: true
+height: 1308
+index: 3
+reset: $ft.current-tab
+wraper: $column-wrap-3.wraper
+
+-- end: column-wrap-3
+
+
+
+
+
+
+
+
+
+
+-- component column-wrap-4:
+children wraper:
+
+-- ft.column-wrap:
+wrap: true
+height: 1308
+index: 4
+reset: $ft.current-tab
+switch-to-row if { ftd.device == "mobile" }: true 
+wraper: $column-wrap-4.wraper
+
+-- end: column-wrap-4

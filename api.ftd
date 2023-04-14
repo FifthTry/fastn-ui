@@ -1,0 +1,63 @@
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fifthtry.github.io/fastn-ui/assets
+
+-- ft.page: API & Documentation
+
+-- ft.hero-section-1:
+
+-- ft.row-container-6:
+
+-- ft.search-bar:
+
+-- end: ft.row-container-6
+
+-- ft.row-container-7:
+
+-- ft.tabs: Landing Page
+index: 1
+
+-- ft.tabs: API & Documentation
+index: 2
+$active-item: true
+
+-- ft.tabs: Microsite
+index: 3
+
+-- ft.tabs: Blogs
+index: 4
+
+-- end: ft.row-container-7
+
+-- ft.column-wrap-1:
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card2.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- ft.display-card: Nextra:  Docs Starter Kit
+image: $assets.files.static.card.card2.svg
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+-- end: ft.column-wrap-1
+
+-- ft.footer:
+
+-- end: ft.page

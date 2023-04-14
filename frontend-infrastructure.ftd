@@ -1,0 +1,388 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+
+
+
+
+
+-- ft.page: Frontend Infrastructure
+
+-- hero-section-445:
+
+-- excel-promo-card-bg:
+
+-- right-image-component-105:
+
+-- ft.left-image-component: Fastn.Colours
+icon: $assets.files.static.frontend.icon.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.frontend.card2.svg
+
+FastN has an expansive ever-growing color library. It places no restriction when it comes to color palettes or color combinations unlike some design systems. Because it has been incrementally built by designers for developers, FastN color libraries provide an array of compatible options for developers to skin & re-skin their creations to their hearts’ content. 
+
+-- ft.right-image-component: Fastn.Type
+icon: $assets.files.static.frontend.icon2.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.frontend.card3.svg
+
+FastN typographic library comes with named typographic roles. Once a role has been picked the design system specifies the attributes associated with a particular role. Thus with pre-defined value sets for font family, size, line height etc, a designer can focus on specific application of the typographic components, leading to very consistent design, yet highly customizable from a design standpoint
+
+-- ft.trending-templates: Libraries
+no-img: true
+
+-- ft.trending-templates.info: Browse dozens of professionaly designed templates. Easily change structure,style,and graphics -then host instantly.
+
+-- row-container-80:
+
+-- display-card-1:
+
+-- display-card-2:
+
+-- display-card-3:
+
+-- display-card-4:
+
+-- end: row-container-80
+
+-- trending-templates-150:
+
+-- left-image-component-padding:
+
+-- stages-vertical-image-215:
+
+-- left-image-component-2:
+
+-- stages-vertical-image-2:
+
+-- ft.left-image-component:
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.frontend.contribute.svg
+
+Coming Soon.
+We are working towards adding support to internationalisation to FTD and once there all our components will be translated in various languages to make your website even more accessible.
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-445:
+children childs:
+
+-- ft.hero-section: Fastn makes front end development simple yet Flexible!
+image: $assets.files.static.frontend.background.svg
+center: true
+height: 445
+width: 1160
+childs: $hero-section-445.childs
+
+-- ft.hero-section.info: Simply select designs that appeal to you, and customize to truly make it your own!
+
+-- end: hero-section-445
+
+
+
+
+
+
+
+
+
+
+-- component excel-promo-card-bg:
+children promo-wrap:
+
+-- ft.excel-promo-card: Benefits of Fastn
+image: $assets.files.static.frontend.features.svg
+back-image: $assets.files.static.frontend.feature-back.svg
+bgcolor: $inherited.colors.background.step-2
+top: true
+right: true
+promo-wrap: $excel-promo-card-bg.promo-wrap
+
+-- ft.excel-promo-card.info: 
+
+Browse dozens of professionaly designed templates. Easily change structurestyle, and graphics -then host instantly.
+
+-- end: excel-promo-card-bg
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-105:
+children child:
+
+-- ft.right-image-component: Design System
+icon: $assets.files.static.events.upcoming-section-logo.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.frontend.card.svg
+padding-vertical: 105
+child: $right-image-component-105.child
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries. 
+
+-- end: right-image-component-105
+
+
+
+
+
+
+
+
+
+
+-- component row-container-80:
+children row-wrap:
+
+-- ft.row-container:
+wrap: true
+switch-to-column: true
+spacing: 80
+row-wrap: $row-container-80.row-wrap
+
+-- end: row-container-80
+
+
+
+
+
+
+
+
+
+
+-- component display-card-1:
+children child:
+
+-- ft.display-card: Component Library
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.frontend.card5.svg
+bgcolor: $inherited.colors.border-strong
+width: 540
+spacing: true
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+child: $display-card-1.child
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- end: display-card-1
+
+
+
+
+
+
+
+
+
+
+-- component display-card-2:
+children child:
+
+-- ft.display-card: Color Scheme Library
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.frontend.card6.svg
+bgcolor: $inherited.colors.border-strong
+width: 540
+spacing: true
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+child: $display-card-2.child
+
+Wide variety of Open source color schemes that look good and are optimised for accessibility and readability. Use one of yours or create your own.
+
+-- end: display-card-2
+
+
+
+
+
+
+
+
+
+
+-- component display-card-3:
+children child:
+
+-- ft.display-card: Font Library
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.frontend.card7.svg
+bgcolor: $inherited.colors.border-strong
+width: 540
+spacing: true
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+child: $display-card-3.child
+
+Curated font pairings to that make you site look good. We work with Google fonts, and work with designers to curate good looking choices.
+
+-- end: display-card-3
+
+
+
+
+
+
+
+
+
+
+-- component display-card-4:
+children child:
+
+-- ft.display-card: Illustrations & Icons Library
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.frontend.card8.svg
+bgcolor: $inherited.colors.border-strong
+width: 540
+spacing: true
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+child: $display-card-4.child
+
+You can package your components as fastn packages to share with community and access community shared ones.
+
+-- end: display-card-4
+
+
+
+
+
+
+
+
+
+
+-- component trending-templates-150:
+children trending-wrap:
+
+-- ft.trending-templates: Documentations
+no-img: true
+margin-top: 150
+trending-wrap: $trending-templates-150.trending-wrap
+
+-- ft.trending-templates.info:
+
+Browse dozens of professionaly designed templates. 
+Easily change structure, style, and graphics -then host instantly.
+
+-- end: trending-templates-150
+
+
+
+
+
+
+
+
+
+
+-- component left-image-component-padding:
+children child:
+
+-- ft.left-image-component:
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.frontend.dark.svg
+padding: true
+child: $left-image-component-padding.child
+
+Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
+
+-- end: left-image-component-padding
+
+
+
+
+
+
+
+
+
+
+-- component stages-vertical-image-215:
+children child:
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.frontend.back1.svg
+width: 215
+child: $stages-vertical-image-215.child
+width-fill: true
+
+-- end: stages-vertical-image-215
+
+
+
+
+
+
+
+
+
+
+
+-- component left-image-component-2:
+children child:
+
+-- ft.left-image-component:
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.frontend.internatinalisation.svg
+padding: true
+child: $left-image-component-2.child
+
+Convert your icon libraries, fonts, color schemes to fastn to help others create better design, and gain mind share and join our growing community of people making the web prettier and more accessible.
+
+-- end: left-image-component-2
+
+
+
+
+
+
+
+
+
+
+-- component stages-vertical-image-2:
+children child:
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.frontend.back2.svg
+width: 215
+child: $stages-vertical-image-2.child
+width-fill: true
+
+-- end: stages-vertical-image-2

@@ -1,0 +1,74 @@
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fifthtry.github.io/fastn-ui/assets
+
+
+
+
+
+-- ft.page: Features
+$show-breadcrum: true
+
+-- ft.hosting-hero: Everything you need to build anything you want
+image: $assets.files.static.feature-list.background.svg
+
+Fastn provides exhaustive frameworks to set up and scale your project in minutes.
+
+-- ft.left-image-component: Front End Infrastructure
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+right-btn: true
+image: $assets.files.static.feature-list.img.svg
+
+An approach built on the back of an extremely versatile design system to balance 
+design thinking with developmental ease!
+
+-- ft.left-image-component: Templates
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.feature-list.left-img.png
+ext-img: true
+
+A comprehensive library of well designed assets built across various product templates, enabling you to quickstart your product development.
+
+-- ft.left-image-component: Component Library
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+right-btn: true
+image: $assets.files.static.feature-list.img2.svg
+
+A wide array of assets & components sourced across contributors to 
+give an extensive choice for builders & developers
+
+-- ft.left-image-component: Building WebApps
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+right-btn: true
+image: $assets.files.static.feature-list.img3.svg
+
+A wide array of assets & components sourced across contributors 
+to give an extensive choice for builders & developers
+
+-- ft.hero-section: Internet OS
+image: $assets.files.static.feature-list.img4.svg
+center: true
+bottom: true
+
+-- ft.hero-section.info: An approach built on the back of an extremely versatile design system to balance design thinking with developmental ease!
+
+-- ft.trending-templates: “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”
+blank: true
+no-img: true
+
+-- ft.trending-templates.info:
+
+Savannah Nguyen
+
+Founder, abc company
+
+-- ft.footer:
+
+-- end: ft.page

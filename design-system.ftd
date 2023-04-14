@@ -1,0 +1,276 @@
+-- import: fifthtry.github.io/fastn-ui/assets
+-- import: fastn
+-- import: fastn/processors as pr
+-- import: fifthtry.github.io/fastn-ui/lib as ft
+-- import: fastn-cs
+
+
+
+
+
+-- ft.page: Design System
+$show-breadcrum: true
+
+-- hero-section-740:
+
+-- ft.right-image-component: What  is Design System
+image: $assets.files.static.design.right.png
+bottom: true
+
+Lorem ipsum dolor sit amet consectetur. In consequat at massa risus at. Morbi faucibus quis vulputate bibendum. Lectus dui blandit erat mauris bibendum tempus amet. Placerat in auctor lorem a non luctus aenean dolor. Quis facilisi ridiculus enim yirf.
+
+-- row-container-36:
+
+-- right-image-component-bg:
+
+-- right-image-component-step1:
+
+-- end: row-container-36
+
+-- right-image-component-2:
+
+-- ft.trending-templates: Want to learn Design System!
+system-image: true
+cta-text: Explore More
+cta-link: /
+
+-- ft.trending-templates.info:
+
+At nulla tristique facilisis augue. Lectus diam dignissim
+erat blandit pellentesque egestas nulla.
+
+-- row-container-32:
+
+-- ft.left-image-component: Fastn.Colours
+cta-text: Explore More
+cta-link: /
+icon: $assets.files.static.design.icon6.svg
+image: $assets.files.static.design.card.svg
+col-img: true
+cta-role: primary
+
+FastN has an expansive ever-growing color library. It places no restriction when it comes to color palettes or color combinations unlike some design systems. Because it has been incrementally built by designers for developers, FastN color libraries provide an array of compatible options for developers to skin & re-skin their creations to their hearts’ content.
+
+-- ft.left-image-component: Fastn.Type
+cta-text: Explore More
+cta-link: /
+icon: $assets.files.static.design.icon5.svg
+image: $assets.files.static.design.card2.svg
+col-img: true
+cta-role: primary
+
+FastN has an expansive ever-growing color library. It places no restriction when it comes to color palettes or color combinations unlike some design systems. Because it has been incrementally built by designers for developers, FastN color libraries provide an array of compatible options for developers to skin & re-skin their creations to their hearts’ content.
+
+-- end: row-container-32
+
+-- ft.trending-templates: Libraries
+no-img: true
+cta-text: Learn More
+cta-link: /
+
+-- ft.trending-templates.info:
+
+Browse dozens of professionaly designed templates. 
+Easily change structure,style,and graphics -then host instantly.
+
+-- ft.left-image-component: Fastn.Type
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.design.card3.svg
+down-img: true
+cta-role: primary
+
+FastN has an expansive ever-growing color library. It places no restriction when it comes to color palettes or color combinations unlike some design systems. Because it has been incrementally built by designers for developers, FastN color libraries provide an array of compatible options for developers to skin & re-skin their creations to their hearts’ content.
+
+-- row-container-32:
+
+-- ft.left-image-component: Color Scheme Library
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.design.card5.svg
+down-img: true
+cta-role: primary
+
+Wide variety of Open source color schemes that look good and are optimised for accessibility and readability. Use one of yours or create your own.
+
+-- ft.left-image-component: Font Library
+cta-text: Explore More
+cta-link: /
+image: $assets.files.static.design.card6.svg
+down-img: true
+cta-role: primary
+
+Curated font pairings to that make you site look good. We work with Google fonts, and work with designers to curate good looking choices. Use one of yours or create your own.
+
+-- end: row-container-32
+
+-- excel-promo-card-bg:
+
+-- ft.stages-vertical-image:
+image: $assets.files.static.design.card3.svg
+top: true
+
+-- end: excel-promo-card-bg
+
+-- ft.footer:
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-740:
+children childs:
+
+-- ft.hero-section: A consistent, non-restructive open design system!
+center: true
+height: 740
+childs: $hero-section-740.childs
+
+-- ft.hero-section.info: Fastn is here to serve to your unique requirements with an easy-to-use platform. At nulla tristique facilisis augue. Lectus diam dignissim.
+
+-- end: hero-section-740
+
+
+
+
+
+
+
+
+
+
+-- component row-container-36:
+children row-wrap:
+
+-- ft.row-container:
+switch-to-column: true
+spacing: 36
+padding-vertical: 84
+row-wrap: $row-container-36.row-wrap
+width: 1160
+
+-- end: row-container-36
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-bg:
+children child:
+
+-- ft.right-image-component: How to use Design System?
+icon: $assets.files.static.design.icon.svg
+no-btn: true
+bgcolor: $inherited.colors.background.step-1
+width: 562
+child: $right-image-component-bg.child
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform.
+
+-- end: right-image-component-bg
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-step1:
+children child:
+
+-- ft.right-image-component: How to use Design System?
+icon: $assets.files.static.design.icon2.svg
+no-btn: true
+bgcolor: $inherited.colors.background.step-1
+width: 562
+child: $right-image-component-step1.child
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform.
+
+-- end: right-image-component-step1
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-2:
+children child:
+
+-- ft.right-image-component: Benefits of Design System
+icon: $assets.files.static.design.icon2.svg
+no-btn: true
+bgcolor: $inherited.colors.background.step-1
+width: 1160
+image: $assets.files.static.design.right-img.svg
+child: $right-image-component-2.child
+
+Fastn is here to serve to your unique requirements with an easy-to-use platform.
+
+-- end: right-image-component-2
+
+
+
+
+
+
+
+
+
+
+-- component row-container-32:
+children row-wrap:
+
+-- ft.row-container:
+switch-to-column: true
+spacing: 32
+row-wrap: $row-container-32.row-wrap
+
+-- end: row-container-32
+
+
+
+
+
+
+
+
+
+
+-- component excel-promo-card-bg:
+children promo-wrap:
+
+-- ft.excel-promo-card: Illustrations & Icons Library
+image: $assets.files.static.design.img.png
+bgcolor: $inherited.colors.background.step-2
+cta-text: Explore more
+cta-link: /
+cta-role: primary
+right: true
+promo-wrap: $excel-promo-card-bg.promo-wrap
+
+-- ft.excel-promo-card.info: 
+
+You can package your components as fastn packages
+to share with community and access community shared ones.
+
+-- end: excel-promo-card-bg

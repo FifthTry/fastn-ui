@@ -19,7 +19,8 @@
 
 -- title: All components
 
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla.
 
 -- row-container-1:
 
@@ -81,7 +82,8 @@ height: 245
 width: 1160
 childs: $hero-section-485.childs
 
--- ft.hero-section.info: At nulla tristique facilisis augue. Lectus diam dignissimerat blandit pellentesque egestas nulla.
+-- ft.hero-section.info: At nulla tristique facilisis augue. Lectus diam
+dignissimerat blandit pellentesque egestas nulla.
 
 -- end: hero-section-485
 
@@ -102,7 +104,6 @@ width: 1520
 width-fill: true
 width if {ftd.device == "mobile"}: 620
 height: 150
-width-fill: true
 child: $stages-vertical-image-1.child
 
 -- end: stages-vertical-image-1

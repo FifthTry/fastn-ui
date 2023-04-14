@@ -322,8 +322,6 @@ z-index: 111
 -- ftd.column:
 width.fixed.px: 240
 
-;; left column
-
 -- ftd.column:
 
 -- ftd.text: $menu-links.title
@@ -354,8 +352,6 @@ margin-top.px: 40
 -- ftd.column:
 width: fill-container
 spacing.fixed.px: 12
-
-;; right column
 
 -- loop-section-card: $obj.title
 if: { !ftd.is_empty( menu-links.sub-sections ) }

@@ -2352,7 +2352,7 @@ row-wrap: $row-container-1.row-wrap
 -- component display-card-1:
 children child:
 
--- display-card: Nextra:  Docs Starter Kit
+-- display-card: Nextra: Docs Starter Kit
 image: $assets.files.static.uses.card.svg
 bgcolor: $inherited.colors.text
 textcolor: $inherited.colors.border-strong
@@ -2563,7 +2563,7 @@ wrap: true
 switch-to-column: true
 margin-bottom: 150
 spacing: 82
-spacing if {ftd.device == "mobile"}: 40
+spacing if { ftd.device == "mobile" }: 40
 row-wrap: $row-container-5.row-wrap
 
 -- end: row-container-5
@@ -2651,3 +2651,945 @@ reset: $current-tab
 wraper: $column-wrap-1.wraper
 
 -- end: column-wrap-1
+
+
+
+
+
+
+
+
+
+
+-- component snippet-card-left-1:
+children card-wrap:
+
+-- snippet-card-left: Blue Jeans
+cta-text: START NOW
+link: /
+z-index: 10000
+card-wrap: $snippet-card-left-1.card-wrap
+
+-- snippet-card-left.description:
+
+This is a card Description, write something here to describe about the content
+of the card
+
+-- end: snippet-card-left-1
+
+
+
+
+
+
+
+
+
+
+-- component snippet-card-right-1:
+children card-wrap:
+
+-- snippet-card-right: Blue Jeans
+cta-text: START NOW
+link: /
+bgcolor: $inherited.colors.success.text
+pull-top: -80
+z-index: 1000
+card-wrap: $snippet-card-right-1.card-wrap
+
+-- snippet-card-right.description:
+
+This is a card Description, write something here to describe about the content
+of the card
+
+-- end: snippet-card-right-1
+
+
+
+
+
+
+
+
+
+
+-- component snippet-card-left-2:
+children card-wrap:
+
+-- snippet-card-left: Blue Jeans
+cta-text: START NOW
+link: /
+bgcolor: $inherited.colors.shadow
+pull-top: -50
+z-index: 100
+card-wrap: $snippet-card-left-2.card-wrap
+
+-- snippet-card-left.description:
+
+This is a card Description, write something here to describe about the content
+of the card
+
+-- end: snippet-card-left-2
+
+
+
+
+
+
+
+
+
+
+-- component snippet-card-right-2:
+children card-wrap:
+
+-- snippet-card-right: Blue Jeans
+cta-text: START NOW
+link: /
+bgcolor: $inherited.colors.custom.two
+pull-top: -80
+z-index: 1000
+card-wrap: $snippet-card-right-2.card-wrap
+
+-- snippet-card-right.description:
+
+This is a card Description, write something here to describe about the content
+of the card
+
+-- end: snippet-card-right-2
+
+
+
+
+
+
+
+
+
+
+-- component excel-promo-card-2:
+children promo-wrap:
+
+-- excel-promo-card: Create beautiful designs with Fastn
+cta-text: Create Now
+cta-link: /
+cta-role: primary
+bgcolor: $inherited.colors.background.base
+keep-dark: false
+promo-wrap: $excel-promo-card-2.promo-wrap
+
+-- excel-promo-card.info:
+
+Browse dozens of professionaly designed templates. Easily change
+structure,style,and graphics -then host instantly.
+
+-- end: excel-promo-card-2
+
+
+
+
+
+
+
+
+
+
+-- component row-container-8:
+children row-wrap:
+
+-- row-container:
+spacing: 80
+switch-to-column: true
+padding-vertical: 80
+spacing if { ftd.device == "mobile" }: 60
+padding-vertical if { ftd.device == "mobile" }: 40
+row-wrap: $row-container-8.row-wrap
+
+-- end: row-container-8
+
+
+
+
+
+
+
+
+
+
+-- component text-bubble-1:
+children space:
+
+-- text-bubble:
+text-image-1: $assets.files.static.text-with-circle.svg
+text-image-2: $assets.files.static.text-without-circle.svg
+spacing: 170
+space: $text-bubble-1.space
+
+-- end: text-bubble-1
+
+
+
+
+
+
+
+
+
+
+-- component row-container-9:
+children row-wrap:
+
+-- row-container: How FASTN is better than { REACT.js }
+padding-vertical: 150
+padding-vertical if { ftd.device == "mobile" }: 44
+row-wrap: $row-container-9.row-wrap
+
+-- end: row-container-9
+
+
+
+
+
+
+
+
+
+
+-- component rectangle-card-1:
+children wrapper:
+
+-- rectangle-card:
+width: 425
+wrapper: $rectangle-card-1.wrapper
+
+-- end: rectangle-card-1
+
+
+
+
+
+
+
+
+
+
+-- component rectangle-card-2:
+children wrapper:
+
+-- rectangle-card:
+show-border: false
+bgcolor: $inherited.colors.custom.four.light
+width: 425
+wrapper: $rectangle-card-2.wrapper
+
+-- end: rectangle-card-2
+
+
+
+
+
+
+
+
+
+
+-- component title-with-body-card-fastn:
+children card:
+
+-- title-with-body-card: Fastn
+logo: $assets.files.static.slider.fastn-slider-logo.svg
+width: 325
+card: $title-with-body-card-fastn.card
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+-- end: title-with-body-card-fastn
+
+
+
+
+
+
+
+
+
+
+-- component title-with-body-card-react:
+children card:
+
+-- title-with-body-card: React JS
+logo: $assets.files.static.slider.react-js-logo.svg
+body-color: $inherited.colors.custom.five
+width: 325
+card: $title-with-body-card-react.card
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+-- end: title-with-body-card-react
+
+
+
+
+
+
+
+
+
+
+-- component row-container-10:
+children row-wrap:
+
+-- row-container: 
+spacing: 80
+index: 5
+reset: $current-slide
+row-wrap: $row-container-10.row-wrap
+
+-- end: row-container-10
+
+
+
+
+
+
+
+
+
+
+-- component title-with-body-card-angular:
+children card:
+
+-- title-with-body-card: Angular JS
+logo: $assets.files.static.slider.angular-js-logo.svg
+body-color: $inherited.colors.custom.five
+width: 325
+card: $title-with-body-card-angular.card
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+-- end: title-with-body-card-angular
+
+
+
+
+
+
+
+
+
+
+-- component row-container-11:
+children row-wrap:
+
+-- row-container:
+spacing: 80
+index: 3
+reset: $current-slide
+row-wrap: $row-container-11.row-wrap
+
+-- end: row-container-11
+
+
+
+
+
+
+
+
+
+
+-- component title-with-body-card-flutter:
+children card: 
+
+-- title-with-body-card: Flutter
+logo: $assets.files.static.slider.flutter-logo.svg
+body-color: $inherited.colors.custom.five
+width: 325
+card: $title-with-body-card-flutter.card
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla .
+
+-- end: title-with-body-card-flutter
+
+
+
+
+
+
+
+
+
+
+-- component row-container-12:
+children row-wrap:
+
+-- row-container:
+wrap: true
+spacing: 80
+switch-to-column: true
+spacing if { ftd.device == "mobile" }: 32
+row-wrap: $row-container-12.row-wrap
+
+-- end: row-container-12
+
+
+
+
+
+
+
+
+
+
+-- component testimonial-card-1:
+children card:
+
+-- testimonial-card: Jenny Wilson
+avatar: $assets.files.static.testimonials.avatar-1.svg
+bgcolor: $inherited.colors.custom.two
+label: CEO, ABC Company
+width: 500
+card: $testimonial-card-1.card
+
+At nulla tristique facilisis augue. 
+
+Lectus diam dignissim erat blandit pellentesque 
+
+egestas nulla .
+
+-- end: testimonial-card-1
+
+
+
+
+
+
+
+
+
+
+-- component testimonial-card-2:
+children card:
+
+-- testimonial-card: Jenny Wilson
+avatar: $assets.files.static.testimonials.avatar-2.svg
+bgcolor: $inherited.colors.shadow
+label: CEO, ABC Company
+width: 500
+margin-top: 80
+margin-right: -80
+card: $testimonial-card-2.card
+
+At nulla tristique facilisis augue. 
+
+Lectus diam dignissim erat blandit pellentesque 
+
+egestas nulla .
+
+-- end: testimonial-card-2
+
+
+
+
+
+
+
+
+
+
+-- component testimonial-card-3:
+children card:
+
+-- testimonial-card: Jenny Wilson
+avatar: $assets.files.static.testimonials.avatar-3.svg
+bgcolor: $inherited.colors.custom.three
+label: CEO, ABC Company
+width: 500
+margin-top: -80
+card: $testimonial-card-3.card
+
+At nulla tristique facilisis augue. 
+
+Lectus diam dignissim erat blandit pellentesque 
+
+egestas nulla .
+
+-- end: testimonial-card-3
+
+
+
+
+
+
+
+
+
+
+-- component testimonial-card-4:
+children card:
+
+-- testimonial-card: Jenny Wilson
+avatar: $assets.files.static.testimonials.avatar-4.svg
+bgcolor: $inherited.colors.custom.one
+label: CEO, ABC Company
+width: 500
+margin-top: 80
+margin-right: -80
+card: $testimonial-card-4.card
+
+At nulla tristique facilisis augue. 
+
+Lectus diam dignissim erat blandit pellentesque 
+
+egestas nulla .
+
+-- end: testimonial-card-4
+
+
+
+
+
+
+
+
+
+
+-- component rounded-corner-card-1:
+children card-wrap:
+
+-- rounded-corner-card: Become a Builder
+cta-text: Learn More
+cta-link: /
+image: $assets.files.static.charts-image.svg
+bgcolor: $inherited.colors.accent.primary
+card-wrap: $rounded-corner-card-1.card-wrap
+
+-- rounded-corner-card.info:
+
+Browse dozens of professionaly designed templates. 
+
+Easily change structure,style,and graphics -then host instantly.
+
+-- end: rounded-corner-card-1
+
+
+
+
+
+
+
+
+
+
+-- component row-container-13:
+children row-wrap:
+
+-- row-container: 
+spacing: 80
+spacing if { ftd.device == "mobile" }: 2
+index: 1
+reset: $current-slide
+row-wrap: $row-container-13.row-wrap
+
+-- end: row-container-13
+
+
+
+
+
+
+
+
+
+
+-- component logo-slider-1:
+children slider-wrap:
+
+-- logo-slider:
+pull-top: -70
+slider-wrap: $logo-slider-1.slider-wrap
+
+-- end: logo-slider-1
+
+
+
+
+
+
+
+
+
+
+-- component page-2:
+children wrapper:
+
+-- page: Authoring
+bg-color: $inherited.colors.background.step-1
+wrapper: $page-2.wrapper
+
+-- end: page-2
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-2:
+children childs:
+
+-- hero-section: Fastn helps you create your website.
+height: 485
+center: true
+width: 1080
+bottom: true
+childs: $hero-section-2.childs
+
+-- hero-section.info: 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nunc vulputate libero et
+velit interdum, ac aliquet odio mattis.
+
+-- end: hero-section-2
+
+
+
+
+
+
+
+
+
+
+-- component row-container-14:
+children row-wrap:
+
+-- row-container:
+spacing: 48
+switch-to-column: true
+wrap if { ftd.device == "mobile" }: true
+row-wrap: $row-container-14.row-wrap
+
+-- end: row-container-14
+
+
+
+
+
+
+
+
+
+
+-- component row-container-15:
+children row-wrap:
+
+-- row-container:
+width: 650
+spacing: 12
+wrap: true
+switch-to-column: true
+row-wrap: $row-container-15.row-wrap
+
+-- end: row-container-15
+
+
+
+
+
+
+
+
+
+
+-- component stages-vertical-image-1:
+children child:
+
+-- stages-vertical-image:
+image: $assets.files.static.builder.theme.svg
+width: 304
+width if { ftd.device == "mobile" }: 156
+height if { ftd.device == "mobile" }: 113
+child: $stages-vertical-image-1.child
+
+-- end: stages-vertical-image-1
+
+
+
+
+
+
+
+
+
+
+-- component stages-vertical-image-2:
+children child:
+
+-- stages-vertical-image:
+image: $assets.files.static.builder.theme-2.svg
+width: 304
+width if { ftd.device == "mobile" }: 156
+height if { ftd.device == "mobile" }: 113
+child: $stages-vertical-image-2.child
+
+-- end: stages-vertical-image-2
+
+
+
+
+
+
+
+
+
+
+-- component stages-vertical-image-3:
+children child:
+
+-- stages-vertical-image:
+image: $assets.files.static.builder.theme-3.svg
+width: 304
+width if { ftd.device == "mobile" }: 156
+height if { ftd.device == "mobile" }: 113
+child: $stages-vertical-image-3.child
+
+-- end: stages-vertical-image-3
+
+
+
+
+
+
+
+
+
+
+-- component benefits-card-3:
+children benefits-wrap:
+
+-- benefits-card: How to use
+logo: $assets.files.static.builder.icon-3.svg
+spacing: 0
+bg-color: $inherited.colors.background.base
+benefits-wrap: $benefits-card-3.benefits-wrap
+
+We have designed and developed below components using FTD and FPM package. Use
+them for writing e-books, blogs, web technical documentation etc.
+
+-- end: benefits-card-3
+
+
+
+
+
+
+
+
+
+
+-- component row-container-16:
+children row-wrap:
+
+-- row-container:
+width: 1160
+wrap: true
+spacing: 92
+spacing if { ftd.device == "mobile" }: 40
+switch-to-column: true
+row-wrap: $row-container-16.row-wrap
+
+-- end: row-container-16
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-3:
+children child:
+
+-- right-image-component: Button
+icon: $assets.files.static.builder.icon-1.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.builder.rectangle.svg
+padding-vertical: 105
+child: $right-image-component-3.child
+
+Fastn is powered by a one of a kind design system guiding the overarching
+framework. It has been carefully constructed to imbibe & maintain design
+considerations right through development & implementation. The framework is
+consistent and spans across all our component libraries.
+
+-- end: right-image-component-3
+
+
+
+
+
+
+
+
+
+
+-- component page-3:
+children wrapper:
+
+-- page: Builder Manual
+bg-color: $inherited.colors.background.step-1
+wrapper: $page-3.wrapper
+
+-- end: page-3
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-3:
+children childs:
+
+-- hero-section: Builder Manual
+image: $assets.files.static.builder.background.svg
+height: 485
+center: true
+width: 1160
+childs: $hero-section-3.childs
+
+-- hero-section.info: 
+
+At nulla tristique facilisis augue. Lectus diam dignissimerat blandit
+pellentesque egestas nulla.
+
+-- end: hero-section-3
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-4:
+children child:
+
+-- right-image-component: About Builder Manual
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.builder.rectangle.svg
+padding-vertical: 120
+child: $right-image-component-4.child
+
+Fastn is powered by a one of a kind design system guiding the overarching
+framework. It has been carefully constructed to imbibe & maintain design
+considerations right through development & implementation. The framework is
+consistent and spans across all our component libraries.
+
+-- end: right-image-component-4
+
+
+
+
+
+
+
+
+
+
+-- component row-container-17:
+children row-wrap:
+
+-- row-container:
+wrap: true
+spacing if { ftd.device == "mobile" }: 20
+spacing: 82
+margin-top: 150
+width: 1160
+switch-to-column: true
+row-wrap: $row-container-17.row-wrap
+
+-- end: row-container-17
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-5:
+children child:
+
+-- right-image-component: FPM Typography
+icon: $assets.files.static.builder.icon-1.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.builder.rectangle.svg
+padding-vertical: 150
+child: $right-image-component-5.child
+
+Fastn is powered by a one of a kind design system guiding the overarching
+framework. It has been carefully constructed to imbibe & maintain design
+considerations right through development & implementation. The framework is
+consistent and spans across all our component libraries.
+
+-- end: right-image-component-5

@@ -2,10 +2,6 @@
 -- import: fastn
 -- import: fifthtry.github.io/fastn-ui/lib as ft
 
-
-
-
-
 -- record blog:
 integer index:
 caption title:
@@ -20,44 +16,80 @@ ftd.image-src image:
 index: 1
 image: $assets.files.static.blog-details.image.svg
 
-Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie porttitor elementum maecenas lacinia tristique proin pellentesque malesuada aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada adipiscing eu cras. 
+Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin
+donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut
+eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi
+lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie
+ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien
+elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie
+porttitor elementum maecenas lacinia tristique proin pellentesque malesuada
+aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus
+morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada
+adipiscing eu cras. 
 
 -- blog: Branding with unique illustrations
 index: 2
 image: $assets.files.static.blog-details.image.svg
 
-Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie porttitor elementum maecenas lacinia tristique proin pellentesque malesuada aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada adipiscing eu cras. 
+Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin
+donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut
+eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi
+lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie
+ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien
+elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie
+porttitor elementum maecenas lacinia tristique proin pellentesque malesuada
+aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus
+morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada
+adipiscing eu cras. 
 
 -- blog: Branding with unique illustrations
 index: 3
 image: $assets.files.static.blog-details.image.svg
 
-Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie porttitor elementum maecenas lacinia tristique proin pellentesque malesuada aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada adipiscing eu cras. 
+Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin
+donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut
+eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi
+lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie
+ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien
+elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie
+porttitor elementum maecenas lacinia tristique proin pellentesque malesuada
+aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus
+morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada
+adipiscing eu cras. 
 
 -- blog: Branding with unique illustrations
 index: 4
 image: $assets.files.static.blog-details.image.svg
 
-Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie porttitor elementum maecenas lacinia tristique proin pellentesque malesuada aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada adipiscing eu cras. 
+Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin
+donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut
+eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi
+lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie
+ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien
+elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie
+porttitor elementum maecenas lacinia tristique proin pellentesque malesuada
+aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus
+morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada
+adipiscing eu cras. 
 
 -- blog: Branding with unique illustrations
 index: 5
 image: $assets.files.static.blog-details.image.svg
 
-Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie porttitor elementum maecenas lacinia tristique proin pellentesque malesuada aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada adipiscing eu cras. 
+Lorem ipsum dolor sit amet consectetur. Nec imperdiet platea at ante orci proin
+donec a in. Sed neque potenti sem id id. Sed viverra et eget ipsum lorem. In ut
+eu bibendum cursus. Tempor semper elementum in rhoncus aenean suspendisse. Mi
+lacus nisl quisque hendrerit ut malesuada quis amet arcu. Leo amet molestie
+ullamcorper lectus. Mauris aliquam malesuada erat tellus. Ultricies sapien
+elementum a duis non nec urna nibh. At mi magna est tempus ut eu sed. Molestie
+porttitor elementum maecenas lacinia tristique proin pellentesque malesuada
+aliquet. Adipiscing massa imperdiet consectetur maecenas cras nisl. Lectus
+morbi elit proin sit vulputate dui. Faucibus neque tempus in malesuada
+adipiscing eu cras. 
 
 -- end: blog-list
 
 -- integer image-hover: 1
-
-
-
-
-
-
-
-
-
 
 -- ft.page:
 
@@ -91,7 +123,7 @@ ftd.image-src image:
 integer index:
 
 -- ftd.image:
-if: {image-hover == $list-loop-image.index }
+if: { image-hover == $list-loop-image.index }
 src: $list-loop-image.image
 width: fill-container
 margin-bottom.px: 80
@@ -190,11 +222,11 @@ color: $inherited.colors.text
 spacing.fixed.px: 15
 
 -- ftd.image:
-if: {image-hover== $list-loop-title.index}
+if: { image-hover == $list-loop-title.index }
 src: $assets.files.static.blog-details.active.svg
 
 -- ftd.image:
-if: {image-hover != $list-loop-title.index}
+if: { image-hover != $list-loop-title.index }
 src: $assets.files.static.blog-details.inactive.svg
 
 -- ftd.row:
@@ -216,7 +248,7 @@ margin-bottom.px: 25
 
 -- ftd.text: $list-loop-title.title
 role: $inherited.types.blockquote
-$on-click$: $ftd.set-integer($a= $image-hover, v= $list-loop-title.index)
+$on-click$: $ftd.set-integer( $a= $image-hover, v= $list-loop-title.index )
 margin-left.px: 4
 
 -- end: ftd.row
@@ -350,7 +382,6 @@ margin-left.px: 40
 
 -- ftd.column:
 width: fill-container
-;;padding-horizontal.px: 22
 border-color: $inherited.colors.border
 border-width.px: 1
 border-radius.px: 32

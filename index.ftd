@@ -15,7 +15,8 @@ cta-right-text: How to Use
 
 -- ft.hero-section.info:
 
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla.
 
 -- end: ft.hero-section
 
@@ -23,7 +24,7 @@ At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentes
 
 -- ft.features-card:
 
--- snippet-card-left-10000:
+-- ft.snippet-card-left-1:
 
 -- ft.featured-card-text: Front End Infrastructure
 cta-title: Get Started
@@ -34,9 +35,9 @@ cta-link: /
 At nulla tristique facilisis augue. Lectus diam dignissim 
 erat blandit pellentesque egestas nulla .
 
--- end: snippet-card-left-10000
+-- end: ft.snippet-card-left-1
 
--- snippet-card-right-1000:
+-- ft.snippet-card-right-1:
 
 -- ft.featured-card-text: Building WebApps
 cta-title: Get Started
@@ -47,9 +48,9 @@ cta-link: /
 At nulla tristique facilisis augue. Lectus diam dignissim 
 erat blandit pellentesque egestas nulla .
 
--- end: snippet-card-right-1000
+-- end: ft.snippet-card-right-1
 
--- snippet-card-left-100:
+-- ft.snippet-card-left-2:
 
 -- ft.featured-card-text: Component Library
 cta-title: Get Started
@@ -60,9 +61,9 @@ cta-link: /
 At nulla tristique facilisis augue. Lectus diam dignissim 
 erat blandit pellentesque egestas nulla .
 
--- end: snippet-card-left-100
+-- end: ft.snippet-card-left-2
 
--- snippet-card-right-80:
+-- ft.snippet-card-right-2:
 
 -- ft.featured-card-text: Internet OS
 cta-title: Get Started
@@ -73,7 +74,7 @@ cta-link: /
 At nulla tristique facilisis augue. Lectus diam dignissim 
 erat blandit pellentesque egestas nulla .
 
--- end: snippet-card-right-80
+-- end: ft.snippet-card-right-2
 
 -- end: ft.features-card
 
@@ -181,7 +182,8 @@ image: $assets.files.static.charts-image.svg
 
 -- ft.excel-promo-card.info:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
 
 -- end: ft.excel-promo-card
 
@@ -231,11 +233,11 @@ Easily change structure,style,and graphics -then host instantly.
 
 -- end: ft.rounded-corner-card
 
--- excel-promo-card-bg:
+-- ft.excel-promo-card-2:
 
--- row-container-80:
+-- ft.row-container-13:
 
--- text-bubble-170:
+-- ft.text-bubble-1:
 
 -- ft.code-block-system:
 lang: ftd
@@ -244,67 +246,67 @@ lang: ftd
 \-- fastn.package: <username_or_orgname>.github.io/<repo_name> 
 zip: github.com/<username_or_orgname>
 
--- end: row-container-80
+-- end: ft.row-container-13
 
--- end: excel-promo-card-bg
+-- end: ft.excel-promo-card-2
 
--- row-container-150:
+-- ft.row-container-9:
 
 ;; Repeat below `row-continer` for slider items
 
--- row-container-80:
+-- ft.row-container-8:
 
--- rectangle-card-425:
+-- ft.rectangle-card-1:
 
--- title-with-body-card-fastn:
+-- ft.title-with-body-card-fastn:
 
--- end: rectangle-card-425
+-- end: ft.rectangle-card-1
 
--- rectangle-card-bg:
+-- ft.rectangle-card-2:
 
--- title-with-body-card-react:
+-- ft.title-with-body-card-react:
 
--- end: rectangle-card-bg
+-- end: ft.rectangle-card-2
 
--- end: row-container-80
+-- end: ft.row-container-8
 
--- row-container-5:
+-- ft.row-container-10:
 
--- rectangle-card-425:
+-- ft.rectangle-card-1:
 
--- title-with-body-card-fastn:
+-- ft.title-with-body-card-fastn:
 
--- end: rectangle-card-425
+-- end: ft.rectangle-card-1
 
--- rectangle-card-bg:
+-- ft.rectangle-card-2:
 
--- title-with-body-card-angular:
+-- ft.title-with-body-card-angular:
 
--- end: rectangle-card-bg
+-- end: ft.rectangle-card-2
 
--- end: row-container-5
+-- end: ft.row-container-10
 
--- row-container-reset:
+-- ft.row-container-11:
 
--- rectangle-card-425:
+-- ft.rectangle-card-1:
 
--- title-with-body-card-fastn:
+-- ft.title-with-body-card-fastn:
 
--- end: rectangle-card-425
+-- end: ft.rectangle-card-1
 
--- rectangle-card-bg:
+-- ft.rectangle-card-2:
 
--- title-with-body-card-flutter:
+-- ft.title-with-body-card-flutter:
 
--- end: rectangle-card-bg
+-- end: ft.rectangle-card-2
 
--- end: row-container-reset
+-- end: ft.row-container-11
 
 ;; repeat of `row-container` ends
 
--- end: row-container-150
+-- end: ft.row-container-9
 
--- logo-slider-70:
+-- ft.logo-slider-1:
 
 -- ft.slider-item: 
 icon: $assets.files.static.slider.react-js-logo.svg
@@ -331,7 +333,7 @@ index: 2
 icon: $assets.files.static.slider.flutter-logo.svg
 index: 3
 
--- end: logo-slider-70
+-- end: ft.logo-slider-1
 
 -- ft.heart-line-title-card: Loved by 1M+folks
 
@@ -339,599 +341,22 @@ Browse dozens of professionaly designed templates.
 
 Easily change structure,style,and graphics -then host instantly.
 
--- row-container-32:
+-- ft.row-container-12:
 
--- testimonial-card-1:
+-- ft.testimonial-card-1:
 
--- testimonial-card-2:
+-- ft.testimonial-card-2:
 
--- testimonial-card-3:
+-- ft.testimonial-card-3:
 
--- testimonial-card-4:
+-- ft.testimonial-card-4:
 
--- end: row-container-32
+-- end: ft.row-container-12
 
--- rounded-corner-card-bg:
+-- ft.rounded-corner-card-1:
 
--- end: rounded-corner-card-bg
+-- end: ft.rounded-corner-card-1
 
 -- ft.footer:
 
 -- end: ft.page
-
-
-
-
-
-
-
-
-
-
--- component row-container-80:
-children row-wrap:
-
--- ft.row-container:
-spacing: 80
-switch-to-column: true
-padding-vertical: 80
-spacing if {ftd.device == "mobile"}: 60
-padding-vertical if {ftd.device == "mobile"}: 40
-row-wrap: $row-container-80.row-wrap
-
--- end: row-container-80
-
-
-
-
-
-
-
-
-
-
--- component snippet-card-left-10000:
-children card-wrap:
-
--- ft.snippet-card-left: Blue Jeans
-cta-text: START NOW
-link: /
-z-index: 10000
-card-wrap: $snippet-card-left-10000.card-wrap
-
--- ft.snippet-card-left.description:
-
-This is a card Description, write something here to describe about the content of the card
-
--- end: snippet-card-left-10000
-
-
-
-
-
-
-
-
-
-
--- component snippet-card-right-1000:
-children card-wrap:
-
--- ft.snippet-card-right: Blue Jeans
-cta-text: START NOW
-link: /
-bgcolor: $inherited.colors.success.text
-pull-top: -80
-z-index: 1000
-card-wrap: $snippet-card-right-1000.card-wrap
-
--- ft.snippet-card-right.description:
-
-This is a card Description, write something here to describe about the content of the card
-
--- end: snippet-card-right-1000
-
-
-
-
-
-
-
-
-
-
--- component snippet-card-left-100:
-children card-wrap:
-
--- ft.snippet-card-left: Blue Jeans
-cta-text: START NOW
-link: /
-bgcolor: $inherited.colors.shadow
-pull-top: -50
-z-index: 100
-card-wrap: $snippet-card-left-100.card-wrap
-
--- ft.snippet-card-left.description:
-
-This is a card Description, write something here to describe about the content of the card
-
--- end: snippet-card-left-100
-
-
-
-
-
-
-
-
-
-
--- component snippet-card-right-80:
-children card-wrap:
-
--- ft.snippet-card-right: Blue Jeans
-cta-text: START NOW
-link: /
-bgcolor: $inherited.colors.custom.two
-pull-top: -80
-z-index: 1000
-card-wrap: $snippet-card-right-80.card-wrap
-
--- ft.snippet-card-right.description:
-
-This is a card Description, write something here to describe about the content of the card
-
--- end: snippet-card-right-80
-
-
-
-
-
-
-
-
-
-
--- component excel-promo-card-bg:
-children promo-wrap:
-
--- ft.excel-promo-card: Create beautiful designs with Fastn
-cta-text: Create Now
-cta-link: /
-cta-role: primary
-bgcolor: $inherited.colors.background.base
-keep-dark: false
-promo-wrap: $excel-promo-card-bg.promo-wrap
-
--- ft.excel-promo-card.info:
-
-Browse dozens of professionaly designed templates. Easily change structure,style,and graphics -then host instantly.
-
--- end: excel-promo-card-bg
-
-
-
-
-
-
-
-
-
-
--- component text-bubble-170:
-children space:
-
--- ft.text-bubble:
-text-image-1: $assets.files.static.text-with-circle.svg
-text-image-2: $assets.files.static.text-without-circle.svg
-spacing: 170
-space: $text-bubble-170.space
-
--- end: text-bubble-170
-
-
-
-
-
-
-
-
-
-
--- component row-container-150:
-children row-wrap:
-
--- ft.row-container: How FASTN is better than { REACT.js }
-padding-vertical: 150
-padding-vertical if {ftd.device == "mobile"}: 44
-row-wrap: $row-container-150.row-wrap
-
--- end: row-container-150
-
-
-
-
-
-
-
-
-
-
--- component row-container-80:
-children row-wrap:
-
--- ft.row-container: 
-spacing: 80
-index: 1
-reset: $ft.current-slide
-row-wrap: $row-container-80.row-wrap
-
--- end: row-container-80
-
-
-
-
-
-
-
-
-
-
--- component rectangle-card-425:
-children wrapper:
-
--- ft.rectangle-card:
-width: 425
-wrapper: $rectangle-card-425.wrapper
-
--- end: rectangle-card-425
-
-
-
-
-
-
-
-
-
-
--- component title-with-body-card-fastn:
-children card:
-
--- ft.title-with-body-card: Fastn
-logo: $assets.files.static.slider.fastn-slider-logo.svg
-width: 325
-card: $title-with-body-card-fastn.card
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
--- end: title-with-body-card-fastn
-
-
-
-
-
-
-
-
-
-
--- component rectangle-card-bg:
-children wrapper:
-
--- ft.rectangle-card:
-show-border: false
-bgcolor: $inherited.colors.custom.four.light
-width: 425
-wrapper: $rectangle-card-bg.wrapper
-
--- end: rectangle-card-bg
-
-
-
-
-
-
-
-
-
-
--- component title-with-body-card-react:
-children card:
-
--- ft.title-with-body-card: React JS
-logo: $assets.files.static.slider.react-js-logo.svg
-body-color: $inherited.colors.custom.five
-width: 325
-card: $title-with-body-card-react.card
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
--- end: title-with-body-card-react
-
-
-
-
-
-
-
-
-
-
--- component row-container-5:
-children row-wrap:
-
--- ft.row-container: 
-spacing: 80
-index: 5
-reset: $ft.current-slide
-row-wrap: $row-container-5.row-wrap
-
--- end: row-container-5
-
-
-
-
-
-
-
-
-
-
--- component title-with-body-card-angular:
-children card:
-
--- ft.title-with-body-card: Angular JS
-logo: $assets.files.static.slider.angular-js-logo.svg
-body-color: $inherited.colors.custom.five
-width: 325
-card: $title-with-body-card-angular.card
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
--- end: title-with-body-card-angular
-
-
-
-
-
-
-
-
-
-
--- component row-container-reset:
-children row-wrap:
-
--- ft.row-container:
-spacing: 80
-index: 3
-reset: $ft.current-slide
-row-wrap: $row-container-reset.row-wrap
-
--- end: row-container-reset
-
-
-
-
-
-
-
-
-
-
--- component title-with-body-card-flutter:
-children card: 
-
--- ft.title-with-body-card: Flutter
-logo: $assets.files.static.slider.flutter-logo.svg
-body-color: $inherited.colors.custom.five
-width: 325
-card: $title-with-body-card-flutter.card
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla .
-
--- end: title-with-body-card-flutter
-
-
-
-
-
-
-
-
-
-
--- component logo-slider-70:
-children slider-wrap:
-
--- ft.logo-slider:
-pull-top: -70
-slider-wrap: $logo-slider-70.slider-wrap
-
--- end: logo-slider-70
-
-
-
-
-
-
-
-
-
-
--- component row-container-32:
-children row-wrap:
-
--- ft.row-container:
-wrap: true
-spacing: 80
-switch-to-column: true
-spacing if {ftd.device == "mobile"}: 32
-row-wrap: $row-container-32.row-wrap
-
--- end: row-container-32
-
-
-
-
-
-
-
-
-
-
--- component testimonial-card-1:
-children card:
-
--- ft.testimonial-card: Jenny Wilson
-avatar: $assets.files.static.testimonials.avatar-1.svg
-bgcolor: $inherited.colors.custom.two
-label: CEO, ABC Company
-width: 500
-card: $testimonial-card-1.card
-
-At nulla tristique facilisis augue. 
-
-Lectus diam dignissim erat blandit pellentesque 
-
-egestas nulla .
-
--- end: testimonial-card-1
-
-
-
-
-
-
-
-
-
-
--- component testimonial-card-2:
-children card:
-
--- ft.testimonial-card: Jenny Wilson
-avatar: $assets.files.static.testimonials.avatar-2.svg
-bgcolor: $inherited.colors.shadow
-label: CEO, ABC Company
-width: 500
-margin-top: 80
-margin-right: -80
-card: $testimonial-card-2.card
-
-At nulla tristique facilisis augue. 
-
-Lectus diam dignissim erat blandit pellentesque 
-
-egestas nulla .
-
--- end: testimonial-card-2
-
-
-
-
-
-
-
-
-
-
--- component testimonial-card-3:
-children card:
-
--- ft.testimonial-card: Jenny Wilson
-avatar: $assets.files.static.testimonials.avatar-3.svg
-bgcolor: $inherited.colors.custom.three
-label: CEO, ABC Company
-width: 500
-margin-top: -80
-card: $testimonial-card-3.card
-
-At nulla tristique facilisis augue. 
-
-Lectus diam dignissim erat blandit pellentesque 
-
-egestas nulla .
-
--- end: testimonial-card-3
-
-
-
-
-
-
-
-
-
-
--- component testimonial-card-4:
-children card:
-
--- ft.testimonial-card: Jenny Wilson
-avatar: $assets.files.static.testimonials.avatar-4.svg
-bgcolor: $inherited.colors.custom.one
-label: CEO, ABC Company
-width: 500
-margin-top: 80
-margin-right: -80
-card: $testimonial-card-4.card
-
-At nulla tristique facilisis augue. 
-
-Lectus diam dignissim erat blandit pellentesque 
-
-egestas nulla .
-
--- end: testimonial-card-4
-
-
-
-
-
-
-
-
-
-
--- component rounded-corner-card-bg:
-children card-wrap:
-
--- ft.rounded-corner-card: Become a Builder
-cta-text: Learn More
-cta-link: /
-image: $assets.files.static.charts-image.svg
-bgcolor: $inherited.colors.accent.primary
-card-wrap: $rounded-corner-card-bg.card-wrap
-
--- ft.rounded-corner-card.info:
-
-Browse dozens of professionaly designed templates. 
-
-Easily change structure,style,and graphics -then host instantly.
-
--- end: rounded-corner-card-bg

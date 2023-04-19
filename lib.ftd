@@ -2799,10 +2799,6 @@ children row-wrap:
 
 -- row-container:
 spacing: 80
-switch-to-column: true
-padding-vertical: 80
-spacing if { ftd.device == "mobile" }: 60
-padding-vertical if { ftd.device == "mobile" }: 40
 row-wrap: $row-container-8.row-wrap
 
 -- end: row-container-8
@@ -3067,7 +3063,6 @@ children row-wrap:
 wrap: true
 spacing: 80
 switch-to-column: true
-spacing if { ftd.device == "mobile" }: 32
 row-wrap: $row-container-12.row-wrap
 
 -- end: row-container-12
@@ -3225,8 +3220,8 @@ Easily change structure,style,and graphics -then host instantly.
 children row-wrap:
 
 -- row-container: 
-spacing: 80
-spacing if { ftd.device == "mobile" }: 2
+spacing: 10
+padding-vertical: 16
 index: 1
 reset: $current-slide
 row-wrap: $row-container-13.row-wrap
@@ -3593,3 +3588,54 @@ considerations right through development & implementation. The framework is
 consistent and spans across all our component libraries.
 
 -- end: right-image-component-5
+
+
+
+
+
+
+
+
+
+
+-- component hero-section-4:
+children childs:
+
+-- hero-section: Building WebApp
+image: $assets.files.static.webapp.background.svg
+height: 485
+center: true
+dot-img if {ftd.device == "mobile"}: true
+childs: $hero-section-4.childs
+
+-- hero-section.info: 
+
+Simply select designs that appeal to you, and customize to truly make it your
+own!
+
+-- end: hero-section-4
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-6:
+children child:
+
+-- right-image-component: Deployment
+icon: $assets.files.static.events.upcoming-section-logo.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.component.right-image.svg
+padding-vertical: 100
+child: $right-image-component-6.child
+
+Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
+
+-- end: right-image-component-6

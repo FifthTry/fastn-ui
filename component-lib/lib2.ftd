@@ -97,7 +97,6 @@ boolean slides:
 -- ftd.column:
 if: { row-container-desktop.index == row-container-desktop.reset }
 align-self: center
-width.fixed.px: $row-container-desktop.width
 max-width.fixed.px: $row-container-desktop.width
 padding-vertical.px if { row-container-desktop.padding-vertical != NULL }: $row-container-desktop.padding-vertical
 align-content if { !row-container-desktop.align-left }: center
@@ -587,12 +586,14 @@ width.fixed.px: 615
 align-self: center
 margin-top.px: 15
 
--- ftd.text: $col-container-desktop.body
+-- ftd.text:
 if: { col-container-desktop.body != NULL }
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 text-align: center
 width: fill-container
+
+$col-container-desktop.body
 
 -- end: ftd.column
 
@@ -639,11 +640,13 @@ role: $inherited.types.heading-large
 color: $inherited.colors.text
 width: fill-container
 
--- ftd.text: $col-container-mobile.body
+-- ftd.text:
 if: { col-container-mobile.body != NULL }
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 width: fill-container
+
+$col-container-mobile.body
 
 -- ftd.column:
 width: fill-container
@@ -940,9 +943,10 @@ role: $inherited.types.heading-small
 color: $title-with-body-card.body-color
 
 -- ftd.text:
-text: $title-with-body-card.body
 color: $title-with-body-card.body-color
 role: $inherited.types.copy-regular
+
+$title-with-body-card.body
 
 -- end: ftd.column
 
@@ -1075,10 +1079,11 @@ height: auto
 
 -- ftd.text:
 if: { heart-line-title-card-desktop.body != NULL }
-text: $heart-line-title-card-desktop.body
 color: $inherited.colors.text
 role: $inherited.types.copy-large
 text-align: center
+
+$heart-line-title-card-desktop.body
 
 -- end: ftd.column
 
@@ -1185,10 +1190,11 @@ align-self: end
 
 -- ftd.text:
 if: { heart-line-title-card-mobile.body != NULL }
-text: $heart-line-title-card-mobile.body
 color: $inherited.colors.text
 role: $inherited.types.copy-small
 text-align: center
+
+$heart-line-title-card-mobile.body
 
 -- end: ftd.column
 
@@ -1298,9 +1304,10 @@ text-align: center
 
 -- ftd.text:
 if: { testimonial-card.body != NULL }
-text: $testimonial-card.body
 color: $inherited.colors.text-strong
 role: $inherited.types.copy-regular
+
+$testimonial-card.body
 
 -- lib5.cta-button: $testimonial-card.cta-text
 role: primary
@@ -1324,10 +1331,11 @@ align-self: center
 
 -- ftd.text:
 if: { testimonial-card.body != NULL }
-text: $testimonial-card.body
 color: $inherited.colors.custom.seven
 role: $inherited.types.copy-regular
 align-self: center
+
+$testimonial-card.body
 
 -- end: ftd.row
 
@@ -1859,12 +1867,13 @@ z-index: 2
 
 -- ftd.text:
 if: { hero-section-mobile.info != NULL }
-text: $hero-section-mobile.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text
 margin-top.px: 15
 text-align if { hero-section-mobile.bottom || hero-section-mobile.top-img || hero-section-mobile.dot-img || hero-section-mobile.center }: center
 z-index: 2
+
+$hero-section-mobile.info
 
 -- ftd.row:
 spacing.fixed.px: 33
@@ -2038,7 +2047,6 @@ text-align if { hero-section-desktop.bottom || hero-section-desktop.center || he
 
 -- ftd.text:
 if: { $hero-section-desktop.info != NULL }
-text: $hero-section-desktop.info
 role: $inherited.types.copy-large
 color: $inherited.colors.text
 max-width.fixed.px if { !hero-section-desktop.center && !hero-section-desktop.center-img }: 520
@@ -2046,6 +2054,8 @@ max-width.fixed.px if { hero-section-desktop.center-img }: 622
 max-width.fixed.px: 715
 margin-top.px: 15
 text-align if { hero-section-desktop.center || hero-section-desktop.center-img }: center
+
+$hero-section-desktop.info
 
 -- ftd.column:
 width: fill-container

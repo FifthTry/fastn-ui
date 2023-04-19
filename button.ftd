@@ -1,67 +1,64 @@
 -- import: fifthtry.github.io/fastn-ui/assets
 -- import: fifthtry.github.io/fastn-ui/lib as ft
 
+-- ft.page: Button
 
+-- ft.hero-section-5:
 
+-- ft.title: 100+ Button styles
 
+At nulla tristique facilisis augue. Lectus diam dignissim erat blandit
+pellentesque egestas nulla.
 
--- page:
+-- ft.row-container-18:
 
--- hero-section-485:
+-- ft.display-card-2:
 
--- title: 100+ Button styles
+-- ft.display-card-3:
 
-At nulla tristique facilisis augue. Lectus diam dignissim erat blandit pellentesque egestas nulla.
+-- ft.display-card-4:
 
--- row-container-1:
+-- end: ft.row-container-18
 
--- display-card-1:
-
--- display-card-2:
-
--- display-card-3:
-
--- end: row-container-1
-
--- right-component: Fill Button >
+-- ft.right-component: Fill Button >
 image: $assets.files.static.button.right1.svg
 down-img: true
 
 40 Variants
 
--- right-component: Outline Button >
+-- ft.right-component: Outline Button >
 image: $assets.files.static.button.right2.svg
 down-img: true
 
 40 Variants
 
--- right-component: Text Button >
+-- ft.right-component: Text Button >
 image: $assets.files.static.button.right3.svg
 down-img: true
 
 40 Variants
 
--- row-container-1:
+-- ft.row-container-18:
 
--- display-card-1:
+-- ft.display-card-5:
 
--- display-card-2:
+-- ft.display-card-6:
 
--- display-card-3:
+-- ft.display-card-7:
 
--- end: row-container-1
+-- end: ft.row-container-18
 
--- right-component: Radio Button >
+-- ft.right-component: Radio Button >
 image: $assets.files.static.button.right4.svg
 down-img: true
 
 40 Variants
 
--- excel-promo-card-step1:
+-- ft.excel-promo-card-3:
 
 -- ft.footer:
 
--- end: page
+-- end: ft.page
 
 
 
@@ -72,13 +69,8 @@ down-img: true
 
 
 
--- component page:
-children wrapper:
 
--- ft.page: Button
-wrapper: $page.wrapper
 
--- end: page
 
 
 
@@ -89,21 +81,9 @@ wrapper: $page.wrapper
 
 
 
--- component hero-section-485:
-children childs:
 
--- ft.hero-section: Buttons
-image: $assets.files.static.button.back.svg
-top-img: true
-center: true
-cta-left-text: Get Started
-height: 485
-width: 1160
-childs: $hero-section-485.childs
 
--- ft.hero-section.info: At nulla tristique facilisis augue. Lectus diam dignissimerat blandit pellentesque egestas nulla.
 
--- end: hero-section-485
 
 
 
@@ -114,30 +94,11 @@ childs: $hero-section-485.childs
 
 
 
--- component title:
-caption title:
-optional body body:
 
--- ftd.column:
-width: fill-container
-padding-vertical.px: 50
-padding-horizontal.px: 180
-padding-horizontal.px if { ftd.device == "mobile"}: 16
-spacing.fixed.px: 32
 
--- ftd.text: $title.title
-role: $inherited.types.heading-large
-color: $inherited.colors.text
 
--- ftd.text:
-text: $title.body
-if: {title.body != NULL}
-role: $inherited.types.copy-large
-color: $inherited.colors.text-strong
 
--- end: ftd.column
 
--- end: title
 
 
 
@@ -148,21 +109,9 @@ color: $inherited.colors.text-strong
 
 
 
--- component display-card-1:
-children child:
 
--- ft.display-card: Base Buttons >
-image: $assets.files.static.button.card.svg
-textcolor: $inherited.colors.text-strong
-titlecolor: $inherited.colors.text
-bgcolor: $inherited.colors.background.overlay
-width: 365
-down-img: true
-child: $display-card-1.child
 
-3 Variants
 
--- end: display-card-1
 
 
 
@@ -173,218 +122,4 @@ child: $display-card-1.child
 
 
 
--- component display-card-2:
-children child:
 
--- ft.display-card: Button Icon >
-image: $assets.files.static.button.card2.svg
-textcolor: $inherited.colors.text-strong
-titlecolor: $inherited.colors.text
-bgcolor: $inherited.colors.background.overlay
-width: 365
-down-img: true
-child: $display-card-2.child
-
-3 Variants
-
--- end: display-card-2
-
-
-
-
-
-
-
-
-
-
--- component display-card-3:
-children child:
-
--- ft.display-card: Floating Icon >
-image: $assets.files.static.button.card3.svg
-textcolor: $inherited.colors.text-strong
-titlecolor: $inherited.colors.text
-bgcolor: $inherited.colors.background.overlay
-width: 365
-down-img: true
-child: $display-card-3.child
-
-3 Variants
-
--- end: display-card-3
-
-
-
-
-
-
-
-
-
-
--- component display-card-4:
-children child:
-
--- ft.display-card: Button Group >
-image: $assets.files.static.button.card5.svg
-textcolor: $inherited.colors.text-strong
-titlecolor: $inherited.colors.text
-bgcolor: $inherited.colors.background.overlay
-width: 365
-down-img: true
-child: $display-card-4.child
-
-3 Variants
-
--- end: display-card-4
-
-
-
-
-
-
-
-
-
-
--- component display-card-5:
-children child:
-
--- ft.display-card: Split >
-image: $assets.files.static.button.card6.svg
-textcolor: $inherited.colors.text-strong
-titlecolor: $inherited.colors.text
-bgcolor: $inherited.colors.background.overlay
-width: 365
-down-img: true
-child: $display-card-5.child
-
-3 Variants
-
--- end: display-card-5
-
-
-
-
-
-
-
-
-
-
--- component display-card-6:
-children child:
-
--- ft.display-card: Floating Icon >
-image: $assets.files.static.button.card7.svg
-textcolor: $inherited.colors.text-strong
-titlecolor: $inherited.colors.text
-bgcolor: $inherited.colors.background.overlay
-width: 365
-down-img: true
-child: $display-card-6.child
-
-3 Variants
-
--- end: display-card-6
-
-
-
-
-
-
-
-
-
-
--- component row-container-1:
-children row-wrap:
-
--- ft.row-container:
-wrap: true
-switch-to-column: true
-spacing: 32
-padding-vertical: 80
-row-wrap: $row-container-1.row-wrap
-
--- end: row-container-1
-
-
-
-
-
-
-
-
-
-
--- component right-component:
-caption title:
-body info:
-ftd.image-src image:
-optional boolean down-img: false
-
--- ftd.row:
-width: fill-container
-padding-horizontal.px if {ftd.device != "mobile"}: 180
-padding-horizontal.px if {ftd.device == "mobile"}: 24
-padding-vertical.px if {ftd.device != "mobile"}: 100
-padding-vertical.px if {ftd.device == "mobile"}: 50
-
--- ftd.column:
-width: fill-container 
-spacing.fixed.px: 12
-
--- ftd.text: $right-component.title
-role: $inherited.types.heading-small
-color: $inherited.colors.text
-
--- ftd.text:
-text: $right-component.info
-role: $inherited.types.copy-regular
-color: $inherited.colors.text-strong
-
--- ftd.image:
-if: {right-component.down-img}
-src: $right-component.image
-width: fill-container
-
--- end: ftd.column
-
--- ftd.image:
-if: {!right-component.down-img}
-src: $right-component.image
-width: fill-container
-
--- end: ftd.row
-
--- end: right-component
-
-
-
-
-
-
-
-
-
-
--- component excel-promo-card-step1:
-children promo-wrap:
-
--- ft.excel-promo-card: Use it for free and start creating now!
-image: $assets.files.static.component.figma-icon.svg
-bgcolor: $inherited.colors.background.step-1
-cta-text: Download
-cta-link: /
-cta-role: primary
-top-img: true
-left: true
-promo-wrap: $excel-promo-card-step1.promo-wrap
-
--- ft.excel-promo-card.info: 
-
-Most websites only change colors of background and text when using dark mode, FastN/FTD also lets you use different images for light and dark modes for those who are obsessed with these things as much as we are.
-
--- end: excel-promo-card-step1

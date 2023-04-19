@@ -1,5 +1,14 @@
 -- import: fifthtry.github.io/fastn-ui/assets
 
+
+
+
+
+
+
+
+
+
 -- component cta-button:
 caption title:
 optional string role:
@@ -11,24 +20,22 @@ boolean align-center: false
 
 -- ftd.column:
 align-self if { cta-button.align-center }: center
-;;margin-top.px if { cta-button.align-center && ftd.device != "mobile"}: 100
-margin-top.px if { cta-button.align-center && ftd.device == "mobile"}: 40
+margin-top.px if { cta-button.align-center && ftd.device == "mobile" }: 40
 
 -- ftd.row:
-if: {!cta-button.medium}
-width.fixed.px if { cta-button.width != NULL}: $cta-button.width
+if: { !cta-button.medium }
+width.fixed.px if { cta-button.width != NULL }: $cta-button.width
 spacing.fixed.px: 10
 link if { cta-button.link != NULL }: $cta-button.link
 background.solid if { cta-button.role == "primary" }: $inherited.colors.cta-primary.base
 background.solid if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.base
 border-radius.px: 30
-padding-vertical.px if { cta-button.role == "primary" || cta-button.role == "secondary"}: 20
-padding-horizontal.px if { cta-button.role == "primary" || cta-button.role == "secondary"}: 42
-align-content if { cta-button.role == "primary"   }: center
-;;spacing: space-around
+padding-vertical.px if { cta-button.role == "primary" || cta-button.role == "secondary" }: 20
+padding-horizontal.px if { cta-button.role == "primary" || cta-button.role == "secondary" }: 42
+align-content if { cta-button.role == "primary" }: center
 
 -- ftd.text: $cta-button.title
-if: { $cta-button.title != NULL}
+if: { $cta-button.title != NULL }
 role: $inherited.types.button-medium
 color: $inherited.colors.background.step-1
 color if { cta-button.role == "secondary" }: $inherited.colors.cta-secondary.text
@@ -50,12 +57,11 @@ width: auto
 height: auto
 align-self: center
 
-
 -- end: ftd.row
 
 -- ftd.row:
-if: {cta-button.medium}
-width.fixed.px if { cta-button.width != NULL}: $cta-button.width
+if: { cta-button.medium }
+width.fixed.px if { cta-button.width != NULL }: $cta-button.width
 spacing.fixed.px: 10
 link if { cta-button.link != NULL }: $cta-button.link
 background.solid if { cta-button.role == "primary" }: $inherited.colors.cta-primary.base
@@ -63,10 +69,9 @@ background.solid if { cta-button.role == "secondary" }: $inherited.colors.cta-se
 border-radius.px: 30
 padding-vertical.px: 20
 padding-horizontal.px: 42
-padding-vertical.px if {ftd.device == "mobile"}: 15
-padding-horizontal.px if {ftd.device == "mobile"}: 30
+padding-vertical.px if { ftd.device == "mobile" }: 15
+padding-horizontal.px if { ftd.device == "mobile" }: 30
 align-content: center
-;;spacing: space-around
 
 -- ftd.text: $cta-button.title
 role: $inherited.types.button-small
@@ -80,7 +85,7 @@ text-align: center
 if: { cta-button.show-arrow }
 src: $assets.files.static.cta-arrow-right.svg
 width: auto
-width.fixed.px if {ftd.device == "mobile"}: 19
+width.fixed.px if { ftd.device == "mobile" }: 19
 height: auto
 align-self: center
 
@@ -89,5 +94,3 @@ align-self: center
 -- end: ftd.column
 
 -- end: cta-button
-
-

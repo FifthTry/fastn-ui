@@ -5,17 +5,13 @@
 -- import: fifthtry.github.io/fastn-ui/events as et
 -- import: fastn-cs
 
+-- ft.page-3:
 
+-- ft.hero-section-3:
 
+-- ft.right-image-component-4:
 
-
--- page:
-
--- hero-section-485:
-
--- right-image-component-120:
-
--- row-container-20:
+-- ft.row-container-17:
 
 -- ft.card: FTD
 image: $assets.files.static.builder.common.svg
@@ -65,9 +61,9 @@ cta-role: primary
 
 You can package your components as fastn packages to share with community and access community shared ones.
 
--- end: row-container-20
+-- end: ft.row-container-17
 
--- right-image-component-150:
+-- ft.right-image-component-5:
 
 -- ft.left-image-component: FPM Color
 icon: $assets.files.static.builder.icon-2.svg
@@ -89,117 +85,4 @@ Fastn is powered by a one of a kind design system guiding the overarching framew
 
 -- ft.footer:
 
--- end: page
-
-
-
-
-
-
-
-
-
-
--- component page:
-children wrapper:
-
--- ft.page: Builder Manual
-bg-color: $inherited.colors.background.step-1
-wrapper: $page.wrapper
-
--- end: page
-
-
-
-
-
-
-
-
-
-
--- component hero-section-485:
-children childs:
-
--- ft.hero-section: Builder Manual
-image: $assets.files.static.builder.background.svg
-height: 485
-center: true
-width: 1160
-childs: $hero-section-485.childs
-
--- ft.hero-section.info: 
-
-At nulla tristique facilisis augue. Lectus diam dignissimerat blandit pellentesque egestas nulla.
-
--- end: hero-section-485
-
-
-
-
-
-
-
-
-
-
--- component right-image-component-120:
-children child:
-
--- ft.right-image-component: About Builder Manual
-cta-text: Explore More
-cta-link: /
-cta-role: primary
-image: $assets.files.static.builder.rectangle.svg
-padding-vertical: 120
-child: $right-image-component-120.child
-
-Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
-
--- end: right-image-component-120
-
-
-
-
-
-
-
-
-
-
--- component row-container-20:
-children row-wrap:
-
--- ft.row-container:
-wrap: true
-spacing: 20
-width: 1160
-switch-to-column: true
-row-wrap: $row-container-20.row-wrap
-
--- end: row-container-20
-
-
-
-
-
-
-
-
-
-
--- component right-image-component-150:
-children child:
-
--- ft.right-image-component: FPM Typography
-icon: $assets.files.static.builder.icon-1.svg
-cta-text: Explore More
-cta-link: /
-cta-role: primary
-image: $assets.files.static.builder.rectangle.svg
-padding-vertical: 150
-child: $right-image-component-150.child
-
-Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
-
--- end: right-image-component-150
+-- end: ft.page-3

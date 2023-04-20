@@ -21,22 +21,288 @@ pellentesque egestas nulla.
 -- end: ft.row-container-18
 
 -- ft.right-component: Fill Button >
-image: $assets.files.static.button.right1.svg
-down-img: true
 
 40 Variants
+
+-- ft.row-container:
+width: 850
+spacing: 40
+wrap: true
+switch-to-column: true
+
+-- ft.fill-button: Button
+link: /
+role: primary
+
+-- ft.fill-button: Button
+link: /
+role: hover
+
+-- ft.fill-button: Button
+link: /
+role: secondary
+
+-- ft.fill-button: Button
+link: /
+role: pressed
+
+-- ft.fill-button: Button
+link: /
+role: primary
+show-plus: true
+
+-- ft.fill-button: Button
+link: /
+role: hover
+show-plus: true
+
+-- ft.fill-button: Button
+link: /
+role: secondary
+show-plus: true
+
+-- ft.fill-button: Button
+link: /
+role: pressed
+show-plus: true
+
+-- ft.fill-button: Button
+link: /
+role: primary
+show-tick: true
+
+-- ft.fill-button: Button
+link: /
+role: hover
+show-tick: true
+
+-- ft.fill-button: Button
+link: /
+role: secondary
+show-tick: true
+
+-- ft.fill-button: Button
+link: /
+role: pressed
+show-tick: true
+
+-- ft.fill-button: Button
+link: /
+role: primary
+show-plus: true
+show-tick: true
+align-center: true
+
+-- ft.fill-button: Button
+link: /
+role: hover
+show-plus: true
+show-tick: true
+align-center: true
+
+-- ft.fill-button: Button
+link: /
+role: secondary
+show-plus: true
+show-tick: true
+align-center: true
+
+-- ft.fill-button: Button
+link: /
+role: pressed
+show-plus: true
+show-tick: true
+align-center: true
+
+-- end: ft.row-container
 
 -- ft.right-component: Outline Button >
-image: $assets.files.static.button.right2.svg
-down-img: true
 
 40 Variants
+
+-- ft.row-container:
+width: 850
+spacing: 40
+wrap: true
+switch-to-column: true
+
+-- ft.outline-button: Button
+link: /
+role: primary
+
+-- ft.outline-button: Button
+link: /
+role: hover
+
+-- ft.outline-button: Button
+link: /
+role: secondary
+
+-- ft.outline-button: Button
+link: /
+role: pressed
+
+-- ft.outline-button: Button
+link: /
+role: primary
+show-plus: true
+
+-- ft.outline-button: Button
+link: /
+role: hover
+show-plus: true
+
+-- ft.outline-button: Button
+link: /
+role: secondary
+show-plus: true
+
+-- ft.outline-button: Button
+link: /
+role: pressed
+show-plus: true
+
+-- ft.outline-button: Button
+link: /
+role: primary
+show-tick: true
+
+-- ft.outline-button: Button
+link: /
+role: hover
+show-tick: true
+
+-- ft.outline-button: Button
+link: /
+role: secondary
+show-tick: true
+
+-- ft.outline-button: Button
+link: /
+role: pressed
+show-tick: true
+
+-- ft.outline-button: Button
+link: /
+role: primary
+show-plus: true
+show-tick: true
+
+-- ft.outline-button: Button
+link: /
+role: hover
+show-plus: true
+show-tick: true
+
+-- ft.outline-button: Button
+link: /
+role: secondary
+show-plus: true
+show-tick: true
+
+-- ft.outline-button: Button
+link: /
+role: pressed
+show-plus: true
+show-tick: true
+
+-- end: ft.row-container
 
 -- ft.right-component: Text Button >
-image: $assets.files.static.button.right3.svg
-down-img: true
 
 40 Variants
+
+-- ft.row-container:
+width: 850
+spacing: 40
+wrap: true
+switch-to-column: true
+
+-- ft.outline-button: Button
+link: /
+role: primary
+text-btn: true
+
+-- ft.outline-button: Button
+link: /
+role: hover
+
+-- ft.outline-button: Button
+link: /
+role: secondary
+
+-- ft.outline-button: Button
+link: /
+role: pressed
+
+-- ft.outline-button: Button
+link: /
+role: primary
+text-btn: true
+show-plus: true
+
+-- ft.outline-button: Button
+link: /
+role: hover
+show-plus: true
+
+-- ft.outline-button: Button
+link: /
+role: secondary
+show-plus: true
+
+-- ft.outline-button: Button
+link: /
+role: pressed
+show-plus: true
+
+-- ft.outline-button: Button
+link: /
+role: primary
+text-btn: true
+show-tick: true
+
+-- ft.outline-button: Button
+link: /
+role: hover
+show-tick: true
+
+-- ft.outline-button: Button
+link: /
+role: secondary
+show-tick: true
+
+-- ft.outline-button: Button
+link: /
+role: pressed
+show-tick: true
+
+-- ft.outline-button: Button
+link: /
+role: primary
+text-btn: true
+show-plus: true
+show-tick: true
+
+-- ft.outline-button: Button
+link: /
+role: hover
+show-plus: true
+show-tick: true
+
+-- ft.outline-button: Button
+link: /
+role: secondary
+show-plus: true
+show-tick: true
+
+-- ft.outline-button: Button
+link: /
+role: pressed
+show-plus: true
+show-tick: true
+
+-- end: ft.row-container
 
 -- ft.row-container-18:
 
@@ -50,7 +316,7 @@ down-img: true
 
 -- ft.right-component: Radio Button >
 image: $assets.files.static.button.right4.svg
-down-img: true
+down-img if { ftd.device == "mobile" }: true
 
 40 Variants
 

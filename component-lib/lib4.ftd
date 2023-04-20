@@ -2673,7 +2673,7 @@ color: $inherited.colors.text-strong
 -- component right-component:
 caption title:
 body info:
-ftd.image-src image:
+optional ftd.image-src image:
 optional boolean down-img: false
 
 -- ftd.row:
@@ -2704,10 +2704,47 @@ width: fill-container
 -- end: ftd.column
 
 -- ftd.image:
-if: {!right-component.down-img}
+if: { right-component.image != NULL && !right-component.down-img}
 src: $right-component.image
 width: fill-container
 
 -- end: ftd.row
 
 -- end: right-component
+
+
+
+
+
+
+
+
+
+
+-- component img-with-title:
+caption title:
+ftd.image-src image:
+
+-- ftd.column:
+width: fill-container
+align-content: center
+padding-vertical.px: 40
+padding-horizontal.px if { ftd.device == "mobile"}: 16
+
+-- ftd.column:
+spacing.fixed.px: 24
+
+-- ftd.text: $img-with-title.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- ftd.image:
+src: $img-with-title.image
+width: auto
+width.fixed.px if {ftd.device == "mobile"}: 364
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: img-with-title

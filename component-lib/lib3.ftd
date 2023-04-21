@@ -144,7 +144,7 @@ padding-horizontal.px: 16
 align-content: center
 
 -- ftd.column:
-background.solid: $inherited.colors.border.dark
+background.solid: $inherited.colors.text-strong
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 20
@@ -260,7 +260,7 @@ margin-left.px: -22
 
 -- ftd.column:
 max-width.fixed.px: 280
-background.solid: $inherited.colors.border.dark
+background.solid: $inherited.colors.text-strong
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 20
@@ -405,7 +405,7 @@ padding-horizontal.px: 11
 align-content: center
 
 -- ftd.column:
-background.solid: $inherited.colors.border.dark
+background.solid: $inherited.colors.text-strong
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 20
@@ -508,7 +508,7 @@ margin-left.px: -22
 
 -- ftd.column:
 max-width.fixed.px: 280
-background.solid: $inherited.colors.border.dark
+background.solid: $inherited.colors.text-strong
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 20

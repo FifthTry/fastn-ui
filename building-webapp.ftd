@@ -1,14 +1,10 @@
 -- import: fifthtry.github.io/fastn-ui/lib as ft
 -- import: fifthtry.github.io/fastn-ui/assets
 
-
-
-
-
 -- ft.page: Building WebApps
 $show-breadcrum: true
 
--- hero-section-485:
+-- ft.hero-section-4:
 
 -- ft.right-image-component: Authentication
 icon: $assets.files.static.events.upcoming-section-logo.svg
@@ -37,7 +33,7 @@ image: $assets.files.static.component.right-image.svg
 
 Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
 
--- right-image-component-100:
+-- ft.right-image-component-6:
 
 -- ft.left-image-component: CLI & API
 icon: $assets.files.static.component.header-icon.svg
@@ -51,51 +47,3 @@ FastN has an expansive ever-growing color library. It places no restriction when
 -- ft.footer:
 
 -- end: ft.page
-
-
-
-
-
-
-
-
-
-
--- component hero-section-485:
-children childs:
-
--- ft.hero-section: Building WebApp
-image: $assets.files.static.webapp.background.svg
-height: 485
-center: true
-dot-img if {ftd.device == "mobile"}: true
-childs: $hero-section-485.childs
-
--- ft.hero-section.info: Simply select designs that appeal to you, and customize to truly make it your own!
-
--- end: hero-section-485
-
-
-
-
-
-
-
-
-
-
--- component right-image-component-100:
-children child:
-
--- ft.right-image-component: Deployment
-icon: $assets.files.static.events.upcoming-section-logo.svg
-cta-text: Explore More
-cta-link: /
-cta-role: primary
-image: $assets.files.static.component.right-image.svg
-padding-vertical: 100
-child: $right-image-component-100.child
-
-Fastn is powered by a one of a kind design system guiding the overarching framework. It has been carefully constructed to imbibe & maintain design considerations right through development & implementation. The framework is consistent and spans across all our component libraries.
-
--- end: right-image-component-100

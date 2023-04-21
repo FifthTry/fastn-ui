@@ -94,3 +94,188 @@ align-self: center
 -- end: ftd.column
 
 -- end: cta-button
+
+
+
+
+
+
+
+
+
+
+-- component fill-button:
+caption title:
+optional string role:
+string link:
+boolean show-plus: false
+boolean show-tick: false
+boolean align-center: false
+
+-- ftd.column:
+align-self: center
+margin-top.px if { fill-button.align-center && ftd.device == "mobile" }: 40
+
+-- ftd.row:
+width.fixed.px: 180
+spacing.fixed.px: 10
+link if { fill-button.link != NULL }: $fill-button.link
+background.solid if { fill-button.role == "primary" }: $inherited.colors.cta-primary.base
+background.solid if { fill-button.role == "hover" }: $inherited.colors.cta-primary.hover
+background.solid if { fill-button.role == "secondary" }: $inherited.colors.cta-secondary.base
+background.solid if { fill-button.role == "pressed" }: $inherited.colors.cta-primary.pressed
+border-radius.px: 8
+padding-vertical.px if { fill-button.role == "primary" || fill-button.role == "hover" || fill-button.role == "secondary" || fill-button.role == "pressed" }: 20
+padding-horizontal.px if { fill-button.role == "primary" || fill-button.role == "hover" || fill-button.role == "secondary" || fill-button.role == "pressed" }: 25
+padding-left.px if { !fill-button.show-plus && !fill-button.show-tick }: 50
+align-content: center
+
+-- ftd.image:
+if: { fill-button.show-plus }
+src: $assets.files.static.plus.svg
+width.fixed.px: 22
+height.fixed.px: 23
+align-self: center
+
+-- ftd.text: $fill-button.title
+if: { $fill-button.title != NULL }
+role: $inherited.types.heading-tiny
+color: $inherited.colors.background.step-1
+color if { fill-button.role == "secondary" }: $inherited.colors.text-strong
+color if { fill-button.role == "primary" }: $inherited.colors.text-strong
+color if { fill-button.role == "hover" }: $inherited.colors.text-strong
+color if { fill-button.role == "pressed" }: $inherited.colors.text-strong
+white-space: nowrap
+text-align: center
+style: bold
+
+-- ftd.image:
+if: { fill-button.show-tick }
+src: $assets.files.static.tick.svg
+width.fixed.px: 22
+height.fixed.px: 24
+align-self: center
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: fill-button
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component outline-button:
+caption title:
+optional string role:
+string link:
+boolean show-plus: false
+boolean show-tick: false
+boolean align-center: false
+boolean text-btn: false
+
+-- ftd.column:
+align-self if { outline-button.align-center }: center
+margin-top.px if { outline-button.align-center && ftd.device == "mobile" }: 40
+
+-- ftd.row:
+width.fixed.px: 180
+spacing.fixed.px: 10
+link if { outline-button.link != NULL }: $outline-button.link
+background.solid if {!outline-button.text-btn }: $inherited.colors.cta-secondary.base
+border-radius.px: 8
+border-color if { outline-button.role == "primary" && !outline-button.text-btn }: $inherited.colors.cta-primary.base
+border-width.px if { outline-button.role == "primary" && !outline-button.text-btn }: 1
+border-color if { outline-button.role == "secondary" && !outline-button.text-btn }: $inherited.colors.cta-primary.disabled
+border-width.px if { outline-button.role == "secondary" && !outline-button.text-btn }: 1
+border-color if { outline-button.role == "hover" && !outline-button.text-btn }: $inherited.colors.cta-primary.hover
+border-width.px if { outline-button.role == "hover" && !outline-button.text-btn }: 2
+border-color if { outline-button.role == "pressed" && !outline-button.text-btn }: $inherited.colors.cta-primary.pressed
+border-width.px if { outline-button.role == "pressed" && !outline-button.text-btn }: 3
+padding-vertical.px if { outline-button.role == "primary" || outline-button.role == "hover" || outline-button.role == "secondary" || outline-button.role == "pressed" }: 20
+padding-horizontal.px if { outline-button.role == "primary" || outline-button.role == "hover" || outline-button.role == "secondary" || outline-button.role == "pressed" }: 30
+align-content if { outline-button.role == "primary" }: center
+padding-left.px if { !outline-button.show-plus && !outline-button.show-tick }: 50
+
+-- ftd.image:
+if: { outline-button.show-plus && outline-button.role == "primary" }
+src: $assets.files.static.plus-prime.svg
+width.fixed.px: 22
+height.fixed.px: 23
+align-self: center
+
+-- ftd.image:
+if: { outline-button.show-plus && outline-button.role == "hover" }
+src: $assets.files.static.plus-hov.svg
+width.fixed.px: 22
+height.fixed.px: 23
+align-self: center
+
+-- ftd.image:
+if: { outline-button.show-plus && outline-button.role == "secondary" }
+src: $assets.files.static.plus-secn.svg
+width.fixed.px: 22
+height.fixed.px: 23
+align-self: center
+
+-- ftd.image:
+if: { outline-button.show-plus && outline-button.role == "pressed" }
+src: $assets.files.static.plus-press.svg
+width.fixed.px: 22
+height.fixed.px: 23
+align-self: center
+
+-- ftd.text: $outline-button.title
+if: { $outline-button.title != NULL }
+role: $inherited.types.heading-tiny
+color: $inherited.colors.background.step-1
+color if { outline-button.role == "secondary" }: $inherited.colors.cta-primary.disabled
+color if { outline-button.role == "primary" }: $inherited.colors.cta-primary.base
+color if { outline-button.role == "hover" }: $inherited.colors.cta-primary.hover
+color if { outline-button.role == "pressed" }: $inherited.colors.cta-primary.pressed
+white-space: nowrap
+text-align: center
+style: bold
+
+-- ftd.image:
+if: { outline-button.show-tick && outline-button.role == "primary" }
+src: $assets.files.static.tick-prime.svg
+width.fixed.px: 22
+height.fixed.px: 23
+align-self: center
+
+-- ftd.image:
+if: { outline-button.show-tick && outline-button.role == "hover" }
+src: $assets.files.static.tick-hov.svg
+width.fixed.px: 22
+height.fixed.px: 23
+align-self: center
+
+-- ftd.image:
+if: { outline-button.show-tick && outline-button.role == "secondary" }
+src: $assets.files.static.tick-dis.svg
+width.fixed.px: 22
+height.fixed.px: 23
+align-self: center
+
+-- ftd.image:
+if: { outline-button.show-tick && outline-button.role == "pressed" }
+src: $assets.files.static.tick-press.svg
+width.fixed.px: 22
+height.fixed.px: 23
+align-self: center
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: outline-button

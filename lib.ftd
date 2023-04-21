@@ -180,11 +180,12 @@ min-height.fixed.calc if { page.body != NULL }: 100vh
 
 -- ftd.text: 
 if: { page.body != NULL }
-text: $page.body
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
 margin-top.px: 24
 margin-bottom.px: 24
+
+$page.body
 
 -- end: ftd.column
 
@@ -228,6 +229,60 @@ width: $cta-button.width
 align-center: $cta-button.align-center
 
 -- end: cta-button
+
+
+
+
+
+
+
+
+
+
+-- component fill-button:
+caption title:
+optional string role:
+string link:
+boolean show-plus: false
+boolean show-tick: false
+boolean align-center: false
+
+-- lib5.fill-button: $fill-button.title
+role: $fill-button.role
+link: $fill-button.link
+show-plus: $fill-button.show-plus
+show-tick: $fill-button.show-tick
+align-center: $fill-button.align-center
+
+-- end: fill-button
+
+
+
+
+
+
+
+
+
+
+-- component outline-button:
+caption title:
+optional string role:
+string link:
+boolean show-plus: false
+boolean show-tick: false
+boolean align-center: false
+boolean text-btn: false
+
+-- lib5.outline-button: $outline-button.title
+role: $outline-button.role
+link: $outline-button.link
+show-plus: $outline-button.show-plus
+show-tick: $outline-button.show-tick
+align-center: $outline-button.align-center
+text-btn: $outline-button.text-btn
+
+-- end: outline-button
 
 
 
@@ -2088,6 +2143,24 @@ top-line: $stages-vertical.top-line
 
 
 
+-- component img-with-title:
+caption title:
+ftd.image-src image:
+
+-- lib4.img-with-title: $img-with-title.title
+image: $img-with-title.image
+
+-- end: img-with-title
+
+
+
+
+
+
+
+
+
+
 -- component key-features:
 ftd.image-src icon: $assets.files.static.benefits.benefits-icon-1.svg
 caption title:
@@ -2282,6 +2355,47 @@ switch-to-row: $column-wrap.switch-to-row
 
 
 
+
+-- component title:
+caption title:
+optional body body:
+
+-- lib4.title: $title.title
+body: $title.body
+
+-- end: title
+
+
+
+
+
+
+
+
+
+
+-- component right-component:
+caption title:
+body info:
+optional ftd.image-src image:
+optional boolean down-img: false
+
+-- lib4.right-component: $right-component.title
+info: $right-component.info
+image: $right-component.image
+down-img: $right-component.down-img
+
+-- end: right-component
+
+
+
+
+
+
+
+
+;; below components are used in templates.ftd page inside learn -> design
+folder.
 
 -- component page-1:
 children wrapper:
@@ -2546,6 +2660,7 @@ considerations right through  development & implementation.
 
 -- end: right-image-component-2
 
+;; components till here are used in templates.ftd page inside learn/design folder.
 
 
 
@@ -2553,7 +2668,7 @@ considerations right through  development & implementation.
 
 
 
-
+;; below component is used in about-us page.
 
 -- component row-container-5:
 children row-wrap:
@@ -2576,6 +2691,8 @@ row-wrap: $row-container-5.row-wrap
 
 
 
+
+;; below components are used in api.ftd page.
 
 -- component hero-section-1:
 children childs:
@@ -2652,6 +2769,7 @@ wraper: $column-wrap-1.wraper
 
 -- end: column-wrap-1
 
+;; components till here are used in api.ftd page.
 
 
 
@@ -2660,6 +2778,9 @@ wraper: $column-wrap-1.wraper
 
 
 
+
+
+;; below components are used in index.ftd page.
 
 -- component snippet-card-left-1:
 children card-wrap:
@@ -2799,10 +2920,6 @@ children row-wrap:
 
 -- row-container:
 spacing: 80
-switch-to-column: true
-padding-vertical: 80
-spacing if { ftd.device == "mobile" }: 60
-padding-vertical if { ftd.device == "mobile" }: 40
 row-wrap: $row-container-8.row-wrap
 
 -- end: row-container-8
@@ -3067,7 +3184,6 @@ children row-wrap:
 wrap: true
 spacing: 80
 switch-to-column: true
-spacing if { ftd.device == "mobile" }: 32
 row-wrap: $row-container-12.row-wrap
 
 -- end: row-container-12
@@ -3225,8 +3341,8 @@ Easily change structure,style,and graphics -then host instantly.
 children row-wrap:
 
 -- row-container: 
-spacing: 80
-spacing if { ftd.device == "mobile" }: 2
+spacing: 10
+padding-vertical: 16
 index: 1
 reset: $current-slide
 row-wrap: $row-container-13.row-wrap
@@ -3251,6 +3367,7 @@ slider-wrap: $logo-slider-1.slider-wrap
 
 -- end: logo-slider-1
 
+;; components till here are used in index.ftd page.
 
 
 
@@ -3259,6 +3376,9 @@ slider-wrap: $logo-slider-1.slider-wrap
 
 
 
+
+
+;; below components are used in authoring.ftd page.
 
 -- component page-2:
 children wrapper:
@@ -3472,6 +3592,7 @@ consistent and spans across all our component libraries.
 
 -- end: right-image-component-3
 
+;; till right-image-component-3 the components are used in authoring.ftd page.
 
 
 
@@ -3480,6 +3601,9 @@ consistent and spans across all our component libraries.
 
 
 
+
+
+;; below components are used in builder.ftd page.
 
 -- component page-3:
 children wrapper:
@@ -3557,7 +3681,6 @@ children row-wrap:
 
 -- row-container:
 wrap: true
-spacing if { ftd.device == "mobile" }: 20
 spacing: 82
 margin-top: 150
 width: 1160
@@ -3593,3 +3716,433 @@ considerations right through development & implementation. The framework is
 consistent and spans across all our component libraries.
 
 -- end: right-image-component-5
+
+;; components till here are used in authoring.ftd page.
+
+
+
+
+
+
+
+
+
+
+;; below components are used in building-webapp.ftd page.
+
+-- component hero-section-4:
+children childs:
+
+-- hero-section: Building WebApp
+image: $assets.files.static.webapp.background.svg
+height: 485
+center: true
+dot-img if {ftd.device == "mobile"}: true
+childs: $hero-section-4.childs
+
+-- hero-section.info: 
+
+Simply select designs that appeal to you, and customize to truly make it your
+own!
+
+-- end: hero-section-4
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-6:
+children child:
+
+-- right-image-component: Deployment
+icon: $assets.files.static.events.upcoming-section-logo.svg
+cta-text: Explore More
+cta-link: /
+cta-role: primary
+image: $assets.files.static.component.right-image.svg
+padding-vertical: 100
+child: $right-image-component-6.child
+
+Fastn is powered by a one of a kind design system guiding the overarching
+framework. It has been carefully constructed to imbibe & maintain design
+considerations right through development & implementation. The framework is
+consistent and spans across all our component libraries.
+
+-- end: right-image-component-6
+
+;; component till here are used in building-webapp.ftd page.
+
+
+
+
+
+
+
+
+
+
+;; below coomponents are used in button.ftd page.
+
+-- component hero-section-5:
+children childs:
+
+-- hero-section: Buttons
+image: $assets.files.static.button.back.svg
+top-img: true
+center: true
+cta-left-text: Get Started
+height: 485
+width: 1160
+childs: $hero-section-5.childs
+
+-- hero-section.info: 
+
+At nulla tristique facilisis augue. Lectus diamdignissimerat blandit
+pellentesque egestas nulla.
+
+-- end: hero-section-5
+
+
+
+
+
+
+
+
+
+
+-- component display-card-2:
+children child:
+
+-- display-card: Base Buttons >
+image: $assets.files.static.button.card.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-2.child
+
+3 Variants
+
+-- end: display-card-2
+
+
+
+
+
+
+
+
+
+
+-- component display-card-3:
+children child:
+
+-- display-card: Button Icon >
+image: $assets.files.static.button.card2.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-3.child
+
+3 Variants
+
+-- end: display-card-3
+
+
+
+
+
+
+
+
+
+
+-- component display-card-4:
+children child:
+
+-- display-card: Floating Icon >
+image: $assets.files.static.button.card3.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-4.child
+
+3 Variants
+
+-- end: display-card-4
+
+
+
+
+
+
+
+
+
+
+-- component display-card-5:
+children child:
+
+-- display-card: Button Group >
+image: $assets.files.static.button.card5.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-5.child
+
+3 Variants
+
+-- end: display-card-5
+
+
+
+
+
+
+
+
+
+
+-- component display-card-6:
+children child:
+
+-- display-card: Split >
+image: $assets.files.static.button.card6.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-6.child
+
+3 Variants
+
+-- end: display-card-6
+
+
+
+
+
+
+
+
+
+
+-- component display-card-7:
+children child:
+
+-- display-card: Floating Icon >
+image: $assets.files.static.button.card7.svg
+textcolor: $inherited.colors.text-strong
+titlecolor: $inherited.colors.text
+bgcolor: $inherited.colors.background.overlay
+width: 365
+down-img: true
+child: $display-card-7.child
+
+3 Variants
+
+-- end: display-card-7
+
+
+
+
+
+
+
+
+
+
+-- component row-container-18:
+children row-wrap:
+
+-- row-container:
+wrap: true
+switch-to-column: true
+spacing: 32
+padding-vertical: 80
+row-wrap: $row-container-18.row-wrap
+
+-- end: row-container-18
+
+
+
+
+
+
+
+
+
+
+-- component excel-promo-card-3:
+children promo-wrap:
+
+-- excel-promo-card: Use it for free and start creating now!
+image: $assets.files.static.component.figma-icon.svg
+bgcolor: $inherited.colors.background.step-1
+cta-text: Download
+cta-link: /
+cta-role: primary
+top-img: true
+left: true
+promo-wrap: $excel-promo-card-3.promo-wrap
+
+-- excel-promo-card.info: 
+
+Most websites only change colors of background and text when using dark mode,
+FastN/FTD also lets you use different images for light and dark modes for those
+who are obsessed with these things as much as we are.
+
+-- end: excel-promo-card-3
+
+;; components till here are used in button.ftd page.
+
+
+
+
+
+
+
+
+
+
+;; below components are used in colors.ftd page.
+
+-- component excel-promo-card-4:
+children promo-wrap:
+
+-- excel-promo-card: Color Library
+image: $assets.files.static.color.background.png
+bgcolor: $inherited.colors.background.step-2
+center: true
+right: true
+promo-wrap: $excel-promo-card-4.promo-wrap
+
+-- excel-promo-card.info: 
+
+At nulla tristique facilisis augue. Lectus diam dignissimerat blandit
+pellentesque egestas nulla.
+
+-- end: excel-promo-card-4
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-7:
+children child:
+
+-- right-image-component: Typography
+padding-vertical: 150
+bottom: true
+child: $right-image-component-7.child
+
+Lorem ipsum dolor sit amet consectetur. In arcu arcu tellus ac semper quam.
+Convallis pellentesque id urna consectetur aliquet faucibus tempor dolor
+mauris. Enim sed amet at mi massa turpis. Tortor tristique aliquam orci sed
+convallis. Volutpat arcu augue tortor feugiat. Adipiscing ornare leo quam amet
+morbi eleifend suscipit.
+
+-- end: right-image-component-7
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-8:
+children child:
+
+-- right-image-component: Color tokens
+cta-text: Get Started
+cta-link: /
+cta-role: primary
+padding-vertical: 80
+child: $right-image-component-8.child
+
+Lorem ipsum dolor sit amet consectetur. In arcu arcu tellus ac semper quam.
+Convallis pellentesque id urna consectetur aliquet faucibus tempor dolor
+mauris. Enim sed amet at mi massa turpis. Tortor tristique aliquam orci sed
+convallis. Volutpat arcu augue tortor feugiat. Adipiscing ornare leo quam amet
+morbi eleifend suscipit.
+
+-- end: right-image-component-8
+
+
+
+
+
+
+
+
+
+
+-- component right-image-component-9:
+children child:
+
+-- right-image-component: Select your theme & deploy on Github.
+image: $assets.files.static.illustration.code.svg
+cta-text: Get Started
+cta-link: /
+cta-role: primary
+padding-vertical: 80
+child: $right-image-component-9.child
+
+Fastn needs a place to store your content and deploy your site. Most of ours
+users prefer storing the content on Github and deploying on Github pages.
+
+-- end: right-image-component-9
+
+
+
+
+
+
+
+
+
+
+-- component excel-promo-card-5:
+children promo-wrap:
+
+-- excel-promo-card: Use it for free and start creating now!
+image: $assets.files.static.component.figma-icon.svg
+bgcolor: $inherited.colors.background.step-1
+cta-text: Download
+cta-link: /
+cta-role: primary
+top-img: true
+left: true
+promo-wrap: $excel-promo-card-5.promo-wrap
+
+-- excel-promo-card.info: 
+
+Most websites only change colors of background and text when using dark mode,
+FastN/FTD also lets you use different images for light and dark modes for those
+who are obsessed with these things as much as we are.
+
+-- end: excel-promo-card-5
+
+;; components till here are used in colors.ftd page.

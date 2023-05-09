@@ -36,8 +36,9 @@ boolean slides: false
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- row-container-desktop: $row-container.title
-if: { ftd.device != "mobile" }
 spacing: $row-container.spacing
 margin-bottom: $row-container.margin-bottom
 margin-top: $row-container.margin-top
@@ -51,8 +52,11 @@ align-left: $row-container.align-left
 title-medium: $row-container.title-medium
 slides: $row-container.slides
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- row-container-mobile: $row-container.title
-if: { ftd.device == "mobile" }
 spacing: $row-container.spacing
 row-wrap: $row-container.row-wrap
 width: $row-container.width
@@ -65,6 +69,8 @@ switch-to-column: $row-container.switch-to-column
 title-medium: $row-container.title-medium
 align-left: $row-container.align-left
 slides: $row-container.slides
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -248,8 +254,9 @@ children space:
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- text-bubble-desktop:
-if: { ftd.device != "mobile" }
 bgcolor: $text-bubble.bgcolor
 text-image-1: $text-bubble.text-image-1
 text-image-2: $text-bubble.text-image-2
@@ -257,14 +264,19 @@ spacing: $text-bubble.spacing
 width: $text-bubble.width
 space: $text-bubble.space
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- text-bubble-mobile:
-if: { ftd.device == "mobile" }
 bgcolor: $text-bubble.bgcolor
 text-image-1: $text-bubble.text-image-1
 text-image-2: $text-bubble.text-image-2
 spacing: $text-bubble.spacing
 width: $text-bubble.width
 space: $text-bubble.space
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -389,7 +401,7 @@ padding-horizontal.px: 18
 padding-vertical.px: 14
 background.solid: $code-block-system.bgcolor
 border-radius.px: 15
-max-width.fixed.px if { ftd.device!= "mobile" }: $code-block-system.width
+max-width.fixed.px if { ftd.device != "mobile" }: $code-block-system.width
 align-self: center
 
 -- ftd.column:
@@ -527,8 +539,9 @@ optional boolean align-left: false
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- col-container-desktop: $col-container.title
-if: { ftd.device != "mobile" }
 col-wrap: $col-container.col-wrap
 body: $col-container.body
 padding-vertical: $col-container.padding-vertical
@@ -536,14 +549,19 @@ width: $col-container.width
 spacing: $col-container.spacing
 align-left: $col-container.align-left
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- col-container-mobile: $col-container.title
-if: { ftd.device == "mobile" }
 col-wrap: $col-container.col-wrap
 body: $col-container.body
 padding-vertical: $col-container.padding-vertical
 width: $col-container.width
 spacing: $col-container.spacing
 align-left: $col-container.align-left
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -781,19 +799,25 @@ integer pull-top: 0
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- logo-slider-desktop:
-if: { ftd.device != "mobile" }
 active-item: $logo-slider.active-item
 slider-wrap: $logo-slider.slider-wrap
 width: $logo-slider.width
 pull-top: $logo-slider.pull-top
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- logo-slider-mobile:
-if: { ftd.device == "mobile" }
 active-item: $logo-slider.active-item
 slider-wrap: $logo-slider.slider-wrap
 width: $logo-slider.width
 pull-top: $logo-slider.pull-top
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -928,7 +952,7 @@ align-self: center
 align-content: center
 spacing.fixed.px: 32
 max-width.fixed.px: $title-with-body-card.width
-min-height.fixed.px if { ftd.device != "mobile" }: 450
+min-height.fixed.px: 450
 min-height.fixed.px if { ftd.device == "mobile" }: 430
 
 -- ftd.image:
@@ -975,8 +999,9 @@ integer spacing: 24
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- heart-line-title-card-desktop: $heart-line-title-card.title
-if: { ftd.device != "mobile" }
 body: $heart-line-title-card.body
 show-arrow: $heart-line-title-card.show-arrow
 width: $heart-line-title-card.width
@@ -986,8 +1011,11 @@ cta-url: $heart-line-title-card.cta-url
 cta-text: $heart-line-title-card.cta-text
 spacing: $heart-line-title-card.spacing
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- heart-line-title-card-mobile: $heart-line-title-card.title
-if: { ftd.device == "mobile" }
 body: $heart-line-title-card.body
 show-arrow: $heart-line-title-card.show-arrow
 width: $heart-line-title-card.width
@@ -996,6 +1024,8 @@ cta: $heart-line-title-card.cta
 cta-url: $heart-line-title-card.cta-url
 cta-text: $heart-line-title-card.cta-text
 spacing: $heart-line-title-card.spacing
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -1380,15 +1410,22 @@ integer width:
 -- ftd.column:
 width: fill-container
 
--- footer-desktop: 
-if: { ftd.device != "mobile" }
+-- ftd.desktop:
+
+-- footer-desktop:
 footer-toc: $footer.footer-toc
 width: $footer.width
 
--- footer-mobile: 
-if: { ftd.device == "mobile" }
+-- end: ftd.desktop
+
+
+-- ftd.mobile:
+
+-- footer-mobile:
 footer-toc: $footer.footer-toc
 width: $footer.width
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -1584,16 +1621,23 @@ boolean $shows-data: false
 -- ftd.column:
 width: fill-container
 
+-- ftd.mobile:
+
 -- footer-loop-mobile: $footer-loop.title
-if: { ftd.device == "mobile" }
 url: $footer-loop.url
 children: $footer-loop.children 
 $shows-data: $footer-loop.shows-data
 
+-- end: ftd.mobile
+
+
+-- ftd.desktop:
+
 -- footer-loop-desktop: $footer-loop.title
-if: { ftd.device != "mobile" }
 url: $footer-loop.url
-children: $footer-loop.children 
+children: $footer-loop.children
+
+-- end: ftd.desktop
 
 -- end: ftd.column
 
@@ -1716,17 +1760,23 @@ pr.toc-item list children:
 -- ftd.column:
 spacing.fixed.px: 14
 
+-- ftd.desktop:
+
 -- ftd.text: $children-loop.title
-if: { ftd.device != "mobile" }
 role: $inherited.types.copy-small
 color: $inherited.colors.text
 link: $children-loop.url
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- ftd.text: $children-loop.title
-if: { ftd.device == "mobile" }
 role: $inherited.types.button-medium
 color: $inherited.colors.text
 link: $children-loop.url
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -1764,8 +1814,9 @@ optional boolean top-img: false
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- hero-section-desktop: $hero-section.title
-if: { ftd.device != "mobile" }
 image: $hero-section.image
 cta-left-text: $hero-section.cta-left-text
 cta-right-text: $hero-section.cta-right-text
@@ -1784,8 +1835,12 @@ small-img: $hero-section.small-img
 right-img: $hero-section.right-img
 top-img: $hero-section.top-img
 
+-- end: ftd.desktop
+
+
+-- ftd.mobile:
+
 -- hero-section-mobile: $hero-section.title
-if: { ftd.device == "mobile" }
 image: $hero-section.image
 cta-left-text: $hero-section.cta-left-text
 cta-right-text: $hero-section.cta-right-text
@@ -1800,6 +1855,8 @@ bottom: $hero-section.bottom
 small-img: $hero-section.small-img
 top-img: $hero-section.top-img
 dot-img: $hero-section.dot-img
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 

@@ -621,11 +621,11 @@ width: $metrics-card.width
 
 
 -- component features-card:
-children fearures-wrap:
+children features-wrap:
 integer width: $width
 
 -- lib3.features-card:
-fearures-wrap: $features-card.fearures-wrap
+features-wrap: $features-card.features-wrap
 width: $features-card.width
 
 -- end: features-card
@@ -1518,15 +1518,21 @@ boolean is-active:
 
 -- ftd.column:
 
+-- ftd.desktop:
+
 -- subsections-links-desktop: $subsections-links.title
-if: { ftd.device != "mobile" }
 item: $subsections-links.item
 url: $subsections-links.url
 is-active: $subsections-links.is-active
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- subsections-links-mobile:
-if: { ftd.device == "mobile" }
 item: $subsections-links.item
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -1604,13 +1610,20 @@ pr.toc-item item:
 
 -- ftd.column:
 
+-- ftd.desktop:
+
 -- subsections-items-desktop:
-if: { ftd.device != "mobile" }
 item: $subsections-items.item
 
+-- end: ftd.desktop
+
+
+-- ftd.mobile:
+
 -- subsections-items-mobile:
-if: { ftd.device == "mobile" }
 item: $subsections-items.item
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 

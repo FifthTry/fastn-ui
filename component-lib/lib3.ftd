@@ -70,8 +70,9 @@ integer z-index: 0
 -- ftd.column: 
 width: fill-container
 
+-- ftd.desktop:
+
 -- snippet-card-right-desktop: $snippet-card-right.title
-if: { ftd.device != "mobile" }
 description: $snippet-card-right.description
 cta-text: $snippet-card-right.cta-text
 bgcolor: $snippet-card-right.bgcolor
@@ -82,8 +83,12 @@ hide-arrows: $snippet-card-right.hide-arrows
 card-wrap: $snippet-card-right.card-wrap
 z-index: $snippet-card-right.z-index
 
+-- end: ftd.desktop
+
+
+-- ftd.mobile:
+
 -- snippet-card-right-mobile: $snippet-card-right.title
-if: { ftd.device == "mobile" }
 description: $snippet-card-right.description
 cta-text: $snippet-card-right.cta-text
 bgcolor: $snippet-card-right.bgcolor
@@ -93,6 +98,8 @@ pull-top: $snippet-card-right.pull-top
 hide-arrows: $snippet-card-right.hide-arrows
 card-wrap: $snippet-card-right.card-wrap
 z-index: $snippet-card-right.z-index
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -333,8 +340,9 @@ integer width: $width
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- snippet-card-left-desktop: $snippet-card-left.title
-if: { ftd.device != "mobile" }
 description: $snippet-card-left.description
 cta-text: $snippet-card-left.cta-text
 bgcolor: $snippet-card-left.bgcolor
@@ -345,8 +353,12 @@ card-wrap: $snippet-card-left.card-wrap
 z-index: $snippet-card-left.z-index
 width: $snippet-card-left.width
 
+-- end: ftd.desktop
+
+
+-- ftd.mobile:
+
 -- snippet-card-left-mobile: $snippet-card-left.title
-if: { ftd.device == "mobile" }
 description: $snippet-card-left.description
 cta-text: $snippet-card-left.cta-text
 bgcolor: $snippet-card-left.bgcolor
@@ -355,6 +367,8 @@ link: $snippet-card-left.link
 pull-top: $snippet-card-left.pull-top
 card-wrap: $snippet-card-left.card-wrap
 z-index: $snippet-card-left.z-index
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -579,21 +593,27 @@ height: auto
 
 
 -- component features-card:
-children fearures-wrap:
+children features-wrap:
 integer width: $width
 
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- features-card-desktop:
-if: { ftd.device != "mobile" }
-fearures-wrap: $features-card.fearures-wrap
+features-wrap: $features-card.features-wrap
 width: $features-card.width
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- features-card-mobile:
-if: { ftd.device == "mobile" }
-fearures-wrap: $features-card.fearures-wrap
+features-wrap: $features-card.features-wrap
 width: $features-card.width
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -609,7 +629,7 @@ width: $features-card.width
 
 
 -- component features-card-desktop:
-children fearures-wrap:
+children features-wrap:
 integer width: $width
 
 -- ftd.column:
@@ -627,7 +647,7 @@ width.fixed.px: $features-card-desktop.width
 
 -- ftd.column:
 width.fixed.px: $features-card-desktop.width
-children: $features-card-desktop.fearures-wrap
+children: $features-card-desktop.features-wrap
 
 -- end: ftd.column
 
@@ -645,7 +665,7 @@ children: $features-card-desktop.fearures-wrap
 
 
 -- component features-card-mobile:
-children fearures-wrap:
+children features-wrap:
 integer width: $width
 
 -- ftd.column:
@@ -662,7 +682,7 @@ width: fill-container
 -- ftd.column:
 padding-horizontal.px: 16
 width: fill-container
-children: $features-card-mobile.fearures-wrap
+children: $features-card-mobile.features-wrap
 
 -- end: ftd.column
 
@@ -685,13 +705,19 @@ integer width: $width
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- metrics-card-desktop:
-if: { ftd.device != "mobile" }
 width: $metrics-card.width
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- metrics-card-mobile:
-if: { ftd.device == "mobile" }
 width: $metrics-card.width
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -977,8 +1003,9 @@ optional integer margin-top:
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- trending-templates-desktop: $trending-templates.title
-if: { ftd.device != "mobile" }
 info: $trending-templates.info
 cta-text: $trending-templates.cta-text
 cta-link: $trending-templates.cta-link
@@ -992,8 +1019,11 @@ bgcolor: $trending-templates.bgcolor
 image: $trending-templates.image
 margin-top: $trending-templates.margin-top
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- trending-templates-mobile: $trending-templates.title
-if: { ftd.device == "mobile" }
 info: $trending-templates.info
 cta-text: $trending-templates.cta-text
 cta-link: $trending-templates.cta-link
@@ -1004,6 +1034,8 @@ system-image: $trending-templates.system-image
 img: $trending-templates.img
 bgcolor: $trending-templates.bgcolor
 image: $trending-templates.image
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -1270,15 +1302,21 @@ optional string link:
 
 -- ftd.column:
 
+-- ftd.desktop:
+
 -- trending-card-desktop: $trending-card.title
-if: { ftd.device != "mobile" }
 image: $trending-card.image
 link: $trending-card.link
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- trending-card-mobile: $trending-card.title
-if: { ftd.device == "mobile" }
 image: $trending-card.image
 link: $trending-card.link
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -1409,8 +1447,9 @@ optional boolean center: false
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- excel-promo-card-desktop: $excel-promo-card.title
-if: { ftd.device != "mobile" }
 info: $excel-promo-card.info
 cta-text: $excel-promo-card.cta-text
 cta-link: $excel-promo-card.cta-link
@@ -1430,8 +1469,11 @@ two-btn: $excel-promo-card.two-btn
 cta-left-text: $excel-promo-card.cta-left-text
 cta-right-text: $excel-promo-card.cta-right-text
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- excel-promo-card-mobile: $excel-promo-card.title
-if: { ftd.device == "mobile" }
 info: $excel-promo-card.info
 cta-text: $excel-promo-card.cta-text
 cta-link: $excel-promo-card.cta-link
@@ -1451,6 +1493,8 @@ center: $excel-promo-card.center
 two-btn: $excel-promo-card.two-btn
 cta-left-text: $excel-promo-card.cta-left-text
 cta-right-text: $excel-promo-card.cta-right-text
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -1819,8 +1863,9 @@ optional boolean no-padding: false
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- card-with-icons-bottom-desktop: $card-with-icons-bottom.title
-if: { ftd.device != "mobile" }
 cta-text: $card-with-icons-bottom.cta-text
 cta-link: $card-with-icons-bottom.cta-link
 info: $card-with-icons-bottom.info
@@ -1828,13 +1873,18 @@ width: $card-with-icons-bottom.width
 icons-wrap: $card-with-icons-bottom.icons-wrap
 no-padding: $card-with-icons-bottom.no-padding
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- card-with-icons-bottom-mobile: $card-with-icons-bottom.title
-if: { ftd.device == "mobile" }
 cta-text: $card-with-icons-bottom.cta-text
 cta-link: $card-with-icons-bottom.cta-link
 info: $card-with-icons-bottom.info
 width: $card-with-icons-bottom.width
 icons-wrap: $card-with-icons-bottom.icons-wrap
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -1993,13 +2043,19 @@ ftd.image-src src:
 width: fill-container
 align-self: center
 
+-- ftd.desktop:
+
 -- image-card-with-title-desktop: $image-card-with-title.title
-if: { ftd.device != "mobile" }
 src: $image-card-with-title.src
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- image-card-with-title-mobile: $image-card-with-title.title
-if: { ftd.device == "mobile" }
 src: $image-card-with-title.src
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -2098,8 +2154,9 @@ children card-wrap:
 -- ftd.column:
 width: fill-container
 
+-- ftd.desktop:
+
 -- rounded-corner-card-desktop: $rounded-corner-card.title
-if: { ftd.device != "mobile" }
 info: $rounded-corner-card.info
 cta-text: $rounded-corner-card.cta-text
 cta-link: $rounded-corner-card.cta-link
@@ -2108,8 +2165,11 @@ width: $rounded-corner-card.width
 bgcolor: $rounded-corner-card.bgcolor
 card-wrap: $rounded-corner-card.card-wrap
 
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
 -- rounded-corner-card-mobile: $rounded-corner-card.title
-if: { ftd.device == "mobile" }
 info: $rounded-corner-card.info
 cta-text: $rounded-corner-card.cta-text
 cta-link: $rounded-corner-card.cta-link
@@ -2117,6 +2177,8 @@ image: $rounded-corner-card.image
 width: $rounded-corner-card.width
 bgcolor: $rounded-corner-card.bgcolor
 card-wrap: $rounded-corner-card.card-wrap
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
